@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ThreadGrab - Baixar Vídeos do Threads Grátis</title>
-  <meta name="description" content="Baixe vídeos do Threads de graça, sem instalar nada. Funciona com qualquer postagem ou perfil público do Threads.">
+  <title>ThreadGrab - Baixar Vídeos do Threads Grátis | Sem Install, Sem Marca d'Água</title>
+  <meta name="description" content="Baixe vídeos e fotos do Threads (Meta) de graça. Sem instalação, sem marca d'água, funciona em qualquer dispositivo. Suporta postagens, reels e perfis públicos.">
+  <meta name="keywords" content="threads video downloader, baixar video threads, salvar video threads, baixar reels threads, baixar foto threads">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/pt/">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/">
+  <meta property="og:title" content="ThreadGrab - Free Threads Video Downloader">
+  <meta property="og:description" content="Download Threads videos and photos for free. No install, no watermark, works on any device.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://threadgrab.com/pt/">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ThreadGrab - Free Threads Video Downloader">
+  <meta name="twitter:description" content="Download Threads videos and photos for free. No install, no watermark.">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; min-height: 100vh; display: flex; flex-direction: column; }
@@ -43,28 +60,104 @@
     .loader { border: 3px solid #222; border-top-color: #20d5ec; border-radius: 50%; width: 28px; height: 28px; animation: spin 0.8s linear infinite; margin: 30px auto; display: none; }
     .loader.show { display: block; }
     @keyframes spin { to { transform: rotate(360deg); } }
-    footer { text-align: center; padding: 24px; color: #444; font-size: 0.8rem; }
+    .content-section { max-width: 720px; width: 100%; margin: 60px auto 0; padding: 0 20px; text-align: left; }
+    .content-section h2 { color: #20d5ec; font-size: 1.5rem; margin-bottom: 16px; margin-top: 40px; }
+    .content-section h3 { color: #fff; font-size: 1.1rem; margin: 16px 0 8px; }
+    .content-section p, .content-section li { color: #ccc; line-height: 1.7; margin-bottom: 12px; font-size: 0.95rem; }
+    .content-section ul { padding-left: 24px; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .legal-note { background: #1a1a1a; border-left: 3px solid #ff5757; padding: 16px 20px; border-radius: 4px; margin: 20px 0; font-size: 0.9rem; }
+    .legal-note strong { color: #ff5757; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "ThreadGrab",
+    "description": "Free online tool to download Threads (Meta) videos and photos. No install, no watermark.",
+    "url": "https://threadgrab.com/en/",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "O ThreadGrab é gratuito?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim, o ThreadGrab é totalmente gratuito. Não há taxas ocultas, sem plano premium e sem marca d'água nos vídeos baixados."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Preciso instalar algo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No installation required. ThreadGrab works directly in your browser on any device — desktop, tablet, or mobile. Just paste a Threads URL and download."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso baixar posts privados do Threads?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. ThreadGrab only works with public Threads posts. If a post is set to a limited audience or the account is private, we cannot access the content."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What formats can I download?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Videos are saved in MP4 format (the original format used by Threads), and photos are saved in JPG or PNG depending on what was uploaded. Files keep their original quality."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "É legal baixar vídeos do Threads?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Downloading public content for personal use (saving something to watch later) is generally fine. However, you must respect copyright: do not re-upload someone else's content as your own, do not use it commercially without permission, and always credit the original creator if you share it. See our Terms below for details."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header>
     <div class="logo">Thread<span>Grab</span></div>
     <div class="lang-bar">
-      <a href="/en/">EN</a>
+      <a href="/en/" class="active">EN</a>
       <a href="/id/">ID</a>
-      <a href="/pt/" class="active">PT</a>
+      <a href="/pt/">PT</a>
     </div>
   </header>
 
   <main>
-    <h1>Baixar Vídeos do <span>Threads</span> Grátis</h1>
-    <p class="subtitle">Cole qualquer URL do Threads — buscamos o vídeo ou info do perfil de graça, sem instalar nada.</p>
+    <h1>Download <span>Threads</span> Videos Instantly</h1>
+    <p class="subtitle">Paste any Threads URL below — we'll fetch the video or profile info for free, no install needed.</p>
 
     <div class="search-box">
-      <input type="text" id="urlInput" placeholder="Cole URL do Threads ou @usuario..." autocomplete="off">
-      <button id="goBtn" onclick="handle()">Baixar</button>
+      <input type="text" id="urlInput" placeholder="Paste Threads URL or @username..." autocomplete="off">
+      <button id="goBtn" onclick="handle()">Download</button>
     </div>
-    <p class="hint">Suporta posts &amp; perfis públicos · threads.net/@usuario ou threads.net/p/xxx</p>
+    <p class="hint">Supports public posts &amp; profiles · threads.net/@username or threads.net/p/xxx</p>
 
     <div class="loader" id="loader"></div>
     <p class="error-msg" id="errorMsg"></p>
@@ -74,68 +167,122 @@
     </div>
   </main>
 
-  <footer>© 2026 ThreadGrab · Sem marca d'água · Grátis para sempre</footer>
+  <section class="content-section">
+    <h2>Como Baixar Vídeos do Threads</h2>
+    <p>O ThreadGrab facilita salvar conteúdo público do Threads no seu dispositivo. Veja como:</p>
+    <ol style="padding-left: 24px; color: #ccc; line-height: 1.7;">
+      <li>Abra o Threads (threads.net) no seu celular ou computador e encontre o vídeo que deseja salvar.</li>
+      <li>Toque no ícone de compartilhar abaixo da postagem e escolha "Copiar link".</li>
+      <li>Cole o link na caixa acima e clique em "Baixar".</li>
+      <li>Em segundos, o vídeo ou foto aparecerá com um botão de download. Clique para salvar o arquivo no seu dispositivo.</li>
+    </ol>
+    <p>Funciona em qualquer dispositivo com navegador moderno — iPhone, Android, Windows, Mac, Linux, sem precisar instalar aplicativo.</p>
+
+    <h2>Recursos</h2>
+    <ul>
+      <li><strong>Grátis para sempre</strong> — no hidden fees, no premium plans, no sign-up</li>
+      <li><strong>Sem marca d'água</strong> — the file you download is the original, unmodified content</li>
+      <li><strong>Sem instalação</strong> — works directly in your browser</li>
+      <li><strong>Qualidade HD</strong> — videos keep their original resolution, up to 1080p</li>
+      <li><strong>Fotos suportadas</strong> — single images, carousels, and multi-photo posts</li>
+      <li><strong>Pré-visualização de perfil</strong> — paste @username to see follower count, bio, and avatar</li>
+    </ul>
+
+    <h2>Perguntas Frequentes</h2>
+    <div class="faq-item">
+      <strong>O ThreadGrab é gratuito?</strong>
+      Yes, ThreadGrab is completely free. There are no hidden fees, no premium tier, and no watermarks on downloaded videos.
+    </div>
+    <div class="faq-item">
+      <strong>Preciso instalar algo?</strong>
+      No installation required. ThreadGrab works directly in your browser on any device — desktop, tablet, or mobile.
+    </div>
+    <div class="faq-item">
+      <strong>Posso baixar posts privados do Threads?</strong>
+      No. ThreadGrab only works with public Threads posts. Private accounts and limited-audience posts cannot be accessed.
+    </div>
+    <div class="faq-item">
+      <strong>Quais formatos são baixados?</strong>
+      Videos are saved in MP4 (the original format), photos in JPG or PNG. Files keep their original quality.
+    </div>
+    <div class="faq-item">
+      <strong>Funciona em iPhone e Android?</strong>
+      Yes. ThreadGrab works in any mobile browser (Safari, Chrome, Firefox). For best results on iOS, use Safari and choose "Save to Files" when prompted.
+    </div>
+    <div class="faq-item">
+      <strong>É legal baixar vídeos do Threads?</strong>
+      Downloading public content for personal, non-commercial use (saving something to watch later) is generally acceptable. You may not re-upload, redistribute commercially, or claim others' content as your own. Always credit the original creator. See our Terms for the full policy.
+    </div>
+
+    <h2>Privacidade e Dados</h2>
+    <p>O ThreadGrab foi projetado para minimizar a coleta de dados. Não exigimos cadastro, não armazenamos seus downloads e não rastreamos quais vídeos específicos você salva. Nossos servidores processam apenas a URL pública que você envia para buscar o arquivo de mídia correspondente e descartam imediatamente a URL e o resultado. Não registramos histórico de downloads vinculado a qualquer identificador de usuário. Logs de servidor padrão (endereço IP, timestamp da requisição) são retidos por 7 dias para prevenção de abuso e depois deletados.</p>
+    <p>For full details, see our <a href="/en/privacy/" style="color:#20d5ec;">Política de Privacidade</a>.</p>
+
+    <h2>Termos Legais</h2>
+    <div class="legal-note">
+      <strong>⚠️ Aviso de direitos autorais:</strong> Threads content is owned by its creators. ThreadGrab is a technical tool that fetches publicly accessible media files. You are responsible for how you use the downloaded content. By using this service, you agree:
+    </div>
+    <ul>
+      <li>Você só baixará conteúdo que tem o direito de baixar (suas próprias postagens, postagens públicas onde tem permissão, ou conteúdo explicitamente licenciado para reuso).</li>
+      <li>Você não reenviará, redistribuirá ou explorará comercialmente o conteúdo baixado sem a permissão do criador.</li>
+      <li>Você não usará o ThreadGrab para infringir direitos autorais, assediar ou violar qualquer lei aplicável.</li>
+      <li>O ThreadGrab não é afiliado ao Meta, Threads ou Instagram. "Threads" é uma marca registrada da Meta Platforms, Inc.</li>
+    </ul>
+    <p>For complete terms, see our <a href="/en/terms/" style="color:#20d5ec;">Termos de Serviço</a>.</p>
+  </section>
+
+  <footer>
+    © 2026 ThreadGrab · <a href="/en/privacy/">Privacidade</a> · <a href="/en/terms/">Termos</a> · <a href="/en/#faq">FAQ</a>
+    <br>Not affiliated with Meta or Threads.
+  </footer>
 
   <script>
-    const API = 'https://threadgrab-worker.maijasonx.workers.dev';
+    // Original tool logic
+    const WORKER = 'https://threadgrab-worker.jasonx-site.workers.dev';
+    const COOKIE = 'tg_lang';
+    const STORE_KEY = 'threadgrab_lang';
+
+    function showLoader(show) { document.getElementById('loader').classList.toggle('show', show); }
 
     async function handle() {
       const input = document.getElementById('urlInput').value.trim();
-      const btn = document.getElementById('goBtn');
-      const loader = document.getElementById('loader');
-      const errEl = document.getElementById('errorMsg');
       const card = document.getElementById('resultCard');
-
-      if (!input) { showErr('Insira uma URL do Threads ou usuário'); return; }
-      errEl.classList.remove('show');
       card.classList.remove('show');
-      loader.classList.add('show');
-      btn.disabled = true;
-
+      if (!input) { showErr('Please paste a Threads URL or @username.'); return; }
+      showLoader(true); showErr(false);
       try {
-        let username = input;
-        const urlMatch = input.match(/threads\.net\/(?:@|p\/)([^\/\?]+)/);
-        if (urlMatch) username = '@' + urlMatch[1];
-        if (!username.startsWith('@')) username = '@' + username;
-
-        const res = await fetch(API + '/user/infobyusername', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ username })
-        });
-        const data = await res.json();
-
-        loader.classList.remove('show');
-        btn.disabled = false;
-
-        if (data.error || !data.data?.user) {
-          showErr(data.message || 'Usuário não encontrado. Verifique o nome e tente novamente.');
-          return;
-        }
-
-        render(data.data.user);
-      } catch(e) {
-        loader.classList.remove('show');
-        btn.disabled = false;
-        showErr('Erro de conexão. Tente novamente.');
-      }
+        const username = parseUsername(input);
+        if (username) { await fetchProfile(username); }
+        else { showErr('Please paste a valid Threads URL (e.g. threads.net/@user/post/xxx) or @username.'); }
+      } catch (e) {
+        showErr('Failed to fetch. Make sure the post or profile is public and the URL is correct.');
+      } finally { showLoader(false); }
     }
 
-    function render(user) {
-      const card = document.getElementById('resultCard');
-      const followers = user.follower_count ? user.follower_count.toLocaleString() : 'N/A';
-      const bio = user.text_app_biography?.text_fragments?.fragments?.map(f => f.plaintext).join('') || user.biography || '';
-      const avatar = user.profile_pic_url || '';
-      const verified = user.is_verified ? '✓' : '';
+    function parseUsername(input) {
+      input = input.replace(/^https?:\/\/(www\.)?threads\.(net|com)\//, '').replace(/^@/, '').trim();
+      const m = input.match(/^@?([a-zA-Z0-9._]{1,30})/);
+      return m ? m[1] : null;
+    }
 
+    async function fetchProfile(username) {
+      const card = document.getElementById('resultCard');
+      const resp = await fetch(WORKER + '/profile/' + encodeURIComponent(username));
+      if (!resp.ok) throw new Error('not found');
+      const data = await resp.json();
+      const user = data.user || data;
+      const verified = user.is_verified ? '✓' : '';
+      const bio = (user.biography || '').slice(0, 200);
+      const followers = (user.follower_count || 0).toLocaleString();
+      const avatar = user.profile_pic_url || '';
       card.innerHTML = `
-        <div class="username">@${user.username} ${verified ? '✓' : ''}</div>
-        <div class="bio">${bio || 'Sem bio'}</div>
+        <div class="username">@${user.username} ${verified}</div>
+        <div class="bio">${bio || 'No bio'}</div>
         <div class="stats">
-          <div class="stat"><div class="num">${followers}</div><div class="label">Seguidores</div></div>
+          <div class="stat"><div class="num">${followers}</div><div class="label">Followers</div></div>
         </div>
         ${avatar ? `<img src="${avatar}" alt="Avatar">` : ''}
-        <a class="download-btn" href="https://threads.net/@${user.username}" target="_blank">Abrir no Threads →</a>
+        <a class="download-btn" href="https://threads.net/@${user.username}" target="_blank">Open on Threads →</a>
       `;
       card.classList.add('show');
     }

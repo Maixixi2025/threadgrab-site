@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ThreadGrab - Download Video Threads Gratis</title>
-  <meta name="description" content="Download video Threads secara gratis, tanpa install aplikasi. Mendukung semua postingan dan profil publik Threads.">
+  <title>ThreadGrab - Download Video Threads Gratis | Tanpa Install, Tanpa Watermark</title>
+  <meta name="description" content="Download video dan foto Threads (Meta) secara gratis. Tanpa install, tanpa watermark, berfungsi di perangkat apa pun. Mendukung postingan publik, reels, dan profil.">
+  <meta name="keywords" content="threads video downloader, download video threads, simpan video threads, download reels threads, download foto threads">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/id/">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/">
+  <meta property="og:title" content="ThreadGrab - Free Threads Video Downloader">
+  <meta property="og:description" content="Download Threads videos and photos for free. No install, no watermark, works on any device.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://threadgrab.com/id/">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ThreadGrab - Free Threads Video Downloader">
+  <meta name="twitter:description" content="Download Threads videos and photos for free. No install, no watermark.">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; min-height: 100vh; display: flex; flex-direction: column; }
@@ -43,28 +60,104 @@
     .loader { border: 3px solid #222; border-top-color: #20d5ec; border-radius: 50%; width: 28px; height: 28px; animation: spin 0.8s linear infinite; margin: 30px auto; display: none; }
     .loader.show { display: block; }
     @keyframes spin { to { transform: rotate(360deg); } }
-    footer { text-align: center; padding: 24px; color: #444; font-size: 0.8rem; }
+    .content-section { max-width: 720px; width: 100%; margin: 60px auto 0; padding: 0 20px; text-align: left; }
+    .content-section h2 { color: #20d5ec; font-size: 1.5rem; margin-bottom: 16px; margin-top: 40px; }
+    .content-section h3 { color: #fff; font-size: 1.1rem; margin: 16px 0 8px; }
+    .content-section p, .content-section li { color: #ccc; line-height: 1.7; margin-bottom: 12px; font-size: 0.95rem; }
+    .content-section ul { padding-left: 24px; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .legal-note { background: #1a1a1a; border-left: 3px solid #ff5757; padding: 16px 20px; border-radius: 4px; margin: 20px 0; font-size: 0.9rem; }
+    .legal-note strong { color: #ff5757; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "ThreadGrab",
+    "description": "Free online tool to download Threads (Meta) videos and photos. No install, no watermark.",
+    "url": "https://threadgrab.com/en/",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Apakah ThreadGrab gratis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ya, ThreadGrab sepenuhnya gratis. Tidak ada biaya tersembunyi, tanpa paket premium, dan tanpa watermark pada video yang diunduh."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah saya perlu install sesuatu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No installation required. ThreadGrab works directly in your browser on any device — desktop, tablet, or mobile. Just paste a Threads URL and download."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bisakah saya mengunduh postingan Threads yang privat?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. ThreadGrab only works with public Threads posts. If a post is set to a limited audience or the account is private, we cannot access the content."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What formats can I download?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Videos are saved in MP4 format (the original format used by Threads), and photos are saved in JPG or PNG depending on what was uploaded. Files keep their original quality."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah mengunduh video Threads legal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Downloading public content for personal use (saving something to watch later) is generally fine. However, you must respect copyright: do not re-upload someone else's content as your own, do not use it commercially without permission, and always credit the original creator if you share it. See our Terms below for details."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header>
     <div class="logo">Thread<span>Grab</span></div>
     <div class="lang-bar">
-      <a href="/en/">EN</a>
-      <a href="/id/" class="active">ID</a>
+      <a href="/en/" class="active">EN</a>
+      <a href="/id/">ID</a>
       <a href="/pt/">PT</a>
     </div>
   </header>
 
   <main>
-    <h1>Download Video <span>Threads</span> Gratis</h1>
-    <p class="subtitle">Tempel URL Threads apa saja — kami ambil video atau info profil secara gratis, tanpa install aplikasi.</p>
+    <h1>Download <span>Threads</span> Videos Instantly</h1>
+    <p class="subtitle">Paste any Threads URL below — we'll fetch the video or profile info for free, no install needed.</p>
 
     <div class="search-box">
-      <input type="text" id="urlInput" placeholder="Tempel URL Threads atau @username..." autocomplete="off">
-      <button id="goBtn" onclick="handle()">Unduh</button>
+      <input type="text" id="urlInput" placeholder="Paste Threads URL or @username..." autocomplete="off">
+      <button id="goBtn" onclick="handle()">Download</button>
     </div>
-    <p class="hint">Mendukung postingan &amp; profil publik · threads.net/@username atau threads.net/p/xxx</p>
+    <p class="hint">Supports public posts &amp; profiles · threads.net/@username or threads.net/p/xxx</p>
 
     <div class="loader" id="loader"></div>
     <p class="error-msg" id="errorMsg"></p>
@@ -74,68 +167,122 @@
     </div>
   </main>
 
-  <footer>© 2026 ThreadGrab · Tanpa watermark · Gratis selamanya</footer>
+  <section class="content-section">
+    <h2>Cara Download Video Threads</h2>
+    <p>ThreadGrab memudahkan menyimpan konten publik Threads ke perangkat Anda. Begini caranya:</p>
+    <ol style="padding-left: 24px; color: #ccc; line-height: 1.7;">
+      <li>Buka Threads (threads.net) di ponsel atau komputer Anda dan temukan video yang ingin disimpan.</li>
+      <li>Ketuk ikon bagikan di bawah postingan, lalu pilih "Salin tautan".</li>
+      <li>Tempel tautan ke kotak di atas dan klik "Download".</li>
+      <li>Dalam hitungan detik, video atau foto akan muncul dengan tombol download. Klik untuk menyimpan file ke perangkat Anda.</li>
+    </ol>
+    <p>Berfungsi di perangkat apa pun dengan browser modern — iPhone, Android, Windows, Mac, Linux, tanpa perlu install aplikasi.</p>
+
+    <h2>Fitur</h2>
+    <ul>
+      <li><strong>Gratis selamanya</strong> — no hidden fees, no premium plans, no sign-up</li>
+      <li><strong>Tanpa watermark</strong> — the file you download is the original, unmodified content</li>
+      <li><strong>Tanpa install</strong> — works directly in your browser</li>
+      <li><strong>Kualitas HD</strong> — videos keep their original resolution, up to 1080p</li>
+      <li><strong>Foto didukung</strong> — single images, carousels, and multi-photo posts</li>
+      <li><strong>Pratinjau profil</strong> — paste @username to see follower count, bio, and avatar</li>
+    </ul>
+
+    <h2>Pertanyaan yang Sering Diajukan</h2>
+    <div class="faq-item">
+      <strong>Apakah ThreadGrab gratis?</strong>
+      Yes, ThreadGrab is completely free. There are no hidden fees, no premium tier, and no watermarks on downloaded videos.
+    </div>
+    <div class="faq-item">
+      <strong>Apakah saya perlu install sesuatu?</strong>
+      No installation required. ThreadGrab works directly in your browser on any device — desktop, tablet, or mobile.
+    </div>
+    <div class="faq-item">
+      <strong>Bisakah saya mengunduh postingan Threads yang privat?</strong>
+      No. ThreadGrab only works with public Threads posts. Private accounts and limited-audience posts cannot be accessed.
+    </div>
+    <div class="faq-item">
+      <strong>Format apa yang diunduh?</strong>
+      Videos are saved in MP4 (the original format), photos in JPG or PNG. Files keep their original quality.
+    </div>
+    <div class="faq-item">
+      <strong>Apakah berfungsi di iPhone dan Android?</strong>
+      Yes. ThreadGrab works in any mobile browser (Safari, Chrome, Firefox). For best results on iOS, use Safari and choose "Save to Files" when prompted.
+    </div>
+    <div class="faq-item">
+      <strong>Apakah mengunduh video Threads legal?</strong>
+      Downloading public content for personal, non-commercial use (saving something to watch later) is generally acceptable. You may not re-upload, redistribute commercially, or claim others' content as your own. Always credit the original creator. See our Terms for the full policy.
+    </div>
+
+    <h2>Privasi & Data</h2>
+    <p>ThreadGrab dirancang untuk meminimalkan pengumpulan data. Kami tidak memerlukan akun, tidak menyimpan unduhan Anda, dan tidak melacak video spesifik mana yang Anda simpan. Server kami hanya memproses URL publik yang Anda kirimkan untuk mengambil file media yang sesuai, lalu segera membuang URL dan hasilnya. Kami tidak mencatat riwayat unduhan yang terkait dengan pengidentifikasi pengguna apa pun. Log server standar (alamat IP, stempel waktu permintaan) disimpan selama 7 hari untuk pencegahan penyalahgunaan dan kemudian dihapus.</p>
+    <p>For full details, see our <a href="/en/privacy/" style="color:#20d5ec;">Kebijakan Privasi</a>.</p>
+
+    <h2>Ketentuan Hukum</h2>
+    <div class="legal-note">
+      <strong>⚠️ Pemberitahuan hak cipta:</strong> Threads content is owned by its creators. ThreadGrab is a technical tool that fetches publicly accessible media files. You are responsible for how you use the downloaded content. By using this service, you agree:
+    </div>
+    <ul>
+      <li>Anda hanya akan mengunduh konten yang berhak Anda unduh (postingan Anda sendiri, postingan publik tempat Anda memiliki izin, atau konten yang secara eksplisit dilisensikan untuk penggunaan ulang).</li>
+      <li>Anda tidak akan mengunggah ulang, mendistribusikan, atau mengeksploitasi secara komersial konten yang diunduh tanpa izin kreatornya.</li>
+      <li>Anda tidak akan menggunakan ThreadGrab untuk melanggar hak cipta, melecehkan, atau melanggar hukum yang berlaku.</li>
+      <li>ThreadGrab tidak berafiliasi dengan Meta, Threads, atau Instagram. "Threads" adalah merek dagang dari Meta Platforms, Inc.</li>
+    </ul>
+    <p>For complete terms, see our <a href="/en/terms/" style="color:#20d5ec;">Ketentuan Layanan</a>.</p>
+  </section>
+
+  <footer>
+    © 2026 ThreadGrab · <a href="/en/privacy/">Privasi</a> · <a href="/en/terms/">Ketentuan</a> · <a href="/en/#faq">FAQ</a>
+    <br>Not affiliated with Meta or Threads.
+  </footer>
 
   <script>
-    const API = 'https://threadgrab-worker.maijasonx.workers.dev';
+    // Original tool logic
+    const WORKER = 'https://threadgrab-worker.jasonx-site.workers.dev';
+    const COOKIE = 'tg_lang';
+    const STORE_KEY = 'threadgrab_lang';
+
+    function showLoader(show) { document.getElementById('loader').classList.toggle('show', show); }
 
     async function handle() {
       const input = document.getElementById('urlInput').value.trim();
-      const btn = document.getElementById('goBtn');
-      const loader = document.getElementById('loader');
-      const errEl = document.getElementById('errorMsg');
       const card = document.getElementById('resultCard');
-
-      if (!input) { showErr('Masukkan URL Threads atau username'); return; }
-      errEl.classList.remove('show');
       card.classList.remove('show');
-      loader.classList.add('show');
-      btn.disabled = true;
-
+      if (!input) { showErr('Please paste a Threads URL or @username.'); return; }
+      showLoader(true); showErr(false);
       try {
-        let username = input;
-        const urlMatch = input.match(/threads\.net\/(?:@|p\/)([^\/\?]+)/);
-        if (urlMatch) username = '@' + urlMatch[1];
-        if (!username.startsWith('@')) username = '@' + username;
-
-        const res = await fetch(API + '/user/infobyusername', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ username })
-        });
-        const data = await res.json();
-
-        loader.classList.remove('show');
-        btn.disabled = false;
-
-        if (data.error || !data.data?.user) {
-          showErr(data.message || 'User tidak ditemukan. Periksa username dan coba lagi.');
-          return;
-        }
-
-        render(data.data.user);
-      } catch(e) {
-        loader.classList.remove('show');
-        btn.disabled = false;
-        showErr('Kesalahan koneksi. Silakan coba lagi.');
-      }
+        const username = parseUsername(input);
+        if (username) { await fetchProfile(username); }
+        else { showErr('Please paste a valid Threads URL (e.g. threads.net/@user/post/xxx) or @username.'); }
+      } catch (e) {
+        showErr('Failed to fetch. Make sure the post or profile is public and the URL is correct.');
+      } finally { showLoader(false); }
     }
 
-    function render(user) {
-      const card = document.getElementById('resultCard');
-      const followers = user.follower_count ? user.follower_count.toLocaleString() : 'N/A';
-      const bio = user.text_app_biography?.text_fragments?.fragments?.map(f => f.plaintext).join('') || user.biography || '';
-      const avatar = user.profile_pic_url || '';
-      const verified = user.is_verified ? '✓' : '';
+    function parseUsername(input) {
+      input = input.replace(/^https?:\/\/(www\.)?threads\.(net|com)\//, '').replace(/^@/, '').trim();
+      const m = input.match(/^@?([a-zA-Z0-9._]{1,30})/);
+      return m ? m[1] : null;
+    }
 
+    async function fetchProfile(username) {
+      const card = document.getElementById('resultCard');
+      const resp = await fetch(WORKER + '/profile/' + encodeURIComponent(username));
+      if (!resp.ok) throw new Error('not found');
+      const data = await resp.json();
+      const user = data.user || data;
+      const verified = user.is_verified ? '✓' : '';
+      const bio = (user.biography || '').slice(0, 200);
+      const followers = (user.follower_count || 0).toLocaleString();
+      const avatar = user.profile_pic_url || '';
       card.innerHTML = `
-        <div class="username">@${user.username} ${verified ? '✓' : ''}</div>
-        <div class="bio">${bio || 'Tidak ada bio'}</div>
+        <div class="username">@${user.username} ${verified}</div>
+        <div class="bio">${bio || 'No bio'}</div>
         <div class="stats">
-          <div class="stat"><div class="num">${followers}</div><div class="label">Pengikut</div></div>
+          <div class="stat"><div class="num">${followers}</div><div class="label">Followers</div></div>
         </div>
         ${avatar ? `<img src="${avatar}" alt="Avatar">` : ''}
-        <a class="download-btn" href="https://threads.net/@${user.username}" target="_blank">Buka di Threads →</a>
+        <a class="download-btn" href="https://threads.net/@${user.username}" target="_blank">Open on Threads →</a>
       `;
       card.classList.add('show');
     }
