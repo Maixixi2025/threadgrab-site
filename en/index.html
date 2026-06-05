@@ -238,7 +238,8 @@
 
   <script>
     // Original tool logic
-    const WORKER = 'https://threadgrab-worker.jasonx-site.workers.dev';
+    // Pages Function（统一 GitHub → Pages 部署）
+    const API_PATH = '/api/profile/';
     const COOKIE = 'tg_lang';
     const STORE_KEY = 'threadgrab_lang';
 
@@ -267,7 +268,7 @@
 
     async function fetchProfile(username) {
       const card = document.getElementById('resultCard');
-      const resp = await fetch(WORKER + '/profile/' + encodeURIComponent(username));
+      const resp = await fetch(API_PATH + encodeURIComponent(username));
       if (!resp.ok) throw new Error('not found');
       const data = await resp.json();
       const user = data.user || data;
