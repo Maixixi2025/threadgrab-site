@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>X v11.90 Articles Scraper: threadgrab Long-Form 2026</title>
+  <meta name="description" content="Entri See All Articles baru X v11.90 mengubah cara postingan long-form distrukturkan. Berikut cara scraping tata letak baru dengan threadgrab dan Markdown bersih.">
+  <meta name="keywords" content="X v11.90, X Articles scraper, See All Articles, threadgrab, X long-form, scrape X article, X API 2026, Markdown archive">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/id/blog/x-articles-v1190-threadgrab-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/x-articles-v1190-threadgrab-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/x-articles-v1190-threadgrab-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/x-articles-v1190-threadgrab-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/x-articles-v1190-threadgrab-2026.html">
+  <meta property="og:title" content="X v11.90 Articles Scraper: threadgrab Long-Form 2026">
+  <meta property="og:description" content="Entri See All Articles baru X v11.90 mengubah cara postingan long-form distrukturkan. Berikut cara scraping tata letak baru dengan threadgrab dan Markdown bersih.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/id/blog/x-articles-v1190-threadgrab-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="X v11.90 Articles Scraper: threadgrab Long-Form 2026">
+  <meta name="twitter:description" content="Entri See All Articles baru X v11.90 mengubah cara postingan long-form distrukturkan. Berikut cara scraping tata letak baru dengan threadgrab dan Markdown bersih.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    .method-card { background: #1a1a1a; border-radius: 10px; padding: 20px 22px; margin-bottom: 18px; border-left: 3px solid #20d5ec; }
+    .method-card h3 { margin-top: 0; color: #20d5ec; }
+    .method-card .pros { color: #6fcf97; font-size: 0.9rem; }
+    .method-card .cons { color: #f2994a; font-size: 0.9rem; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "X v11.90 Articles Scraper: threadgrab Long-Form 2026",
+    "description": "Entri See All Articles baru X v11.90 mengubah cara postingan long-form distrukturkan. Berikut cara scraping tata letak baru dengan threadgrab dan Markdown bersih.",
+    "datePublished": "2026-06-11",
+    "dateModified": "2026-06-11",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/id/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/id/" },
+    "mainEntityOfPage": "https://threadgrab.com/id/blog/x-articles-v1190-threadgrab-2026.html",
+    "inLanguage": "id"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://threadgrab.com/id/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/id/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "X v11.90 Articles Scraper" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Apa yang berubah di entri See All Articles X v11.90?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "X v11.90 memindahkan entri See All Articles dari tab halaman profil yang tersembunyi ke kontrol bersegmen tingkat atas di header profil kreator. Entri baru menampilkan setiap postingan long-form (Articles, Threads di atas 1.000 karakter, dan Quote-Articles) sebagai daftar terpadu, dipaginasi 20 per halaman. Di belakang layar, entri ini sekarang memanggil endpoint GraphQL baru (/ArticleTimeline) alih-alih rute REST /Articles/search.json yang lama, sehingga scraper yang mengenai endpoint lama mendapatkan 404 atau array kosong."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Mengapa scraper X-Article lama saya rusak setelah v11.90?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tiga alasan. Pertama, endpoint /Articles/search.json sudah tidak digunakan lagi pada akhir Mei 2026 dan sekarang mengembalikan 200 dengan body kosong untuk sebagian besar akun. Kedua, X menambahkan field article_id baru di v11.90 yang merupakan string base64 19-digit, menggantikan id numerik 18-digit lama; scraper yang mencoba membuat URL dari pola id lama mendapatkan 404. Ketiga, body artikel kini disajikan sebagai JSON blob dengan span entitas bernama (tebal, tautan, sebutan, tagar) alih-alih teks biasa dengan tanda bintang seperti markdown, sehingga scraper teks naif kehilangan formatnya."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bagaimana cara scraping tata letak artikel X v11.90 baru dengan threadgrab?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Berikan URL artikel atau article_id baru ke API threadgrab. threadgrab menyelesaikan endpoint GraphQL /ArticleTimeline yang baru, mengambil body JSON entitas bernama, meratakannya ke Markdown (mempertahankan tebal, tautan, sebutan, dan tagar), dan mengembalikan teks bersih beserta metadata. Permintaan tipikal adalah GET https://threadgrab.com/api/profile?url=https://x.com/<user>/article/<id> tanpa autentikasi, dan responsnya adalah objek JSON dengan title, body_markdown, author, published_at, dan array media."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bisakah saya melakukan batch-scrape setiap artikel dari profil kreator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ya. Gunakan endpoint batch profil threadgrab: GET https://threadgrab.com/api/profile/<username>/articles?cursor=<next_cursor>&limit=20. Responsnya menyertakan field next_cursor yang Anda berikan ke panggilan berikutnya hingga Anda mendapatkan kursor kosong. Endpoint ini dipaginasi 20 artikel sekaligus untuk mencerminkan paginasi X sendiri, dan berfungsi dengan tata letak v11.90 yang baru. Untuk batch-scrape tunggal 100+ artikel, perkirakan waktu panggilan 8 hingga 15 detik tergantung pada lampiran media."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah threadgrab mempertahankan format tebal, tautan, dan sebutan dari body artikel baru?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ya. Body artikel X v11.90 yang baru adalah daftar JSON span entitas (setiap span memiliki field type: text, bold, link, mention, hashtag, atau media_ref). threadgrab menelusuri daftar dan menghasilkan Markdown standar: span bold menjadi **teks**, span link menjadi [teks](url), span mention menjadi @username, span hashtag menjadi #tag, dan span media_ref menjadi ![alt](image_url). Outputnya berputar bersih melalui renderer Markdown mana pun (md2rich, GitHub, Obsidian) tanpa kehilangan format asli."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah scraping artikel X v11.90 dengan threadgrab legal dan sesuai batas rate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "threadgrab hanya mengambil Articles publik, yang merupakan halaman web publik yang secara eksplisit diterbitkan X ke web terbuka untuk pengindeksan dan berbagi. API threadgrab memberlakukan batas rate 1 permintaan per detik per IP dan batas lunak 5.000 pengambilan artikel per hari, jauh di bawah ambang batas anti-penyalahgunaan X. Scraping konten publik untuk bacaan pribadi, penelitian, atau pengarsipan umumnya diizinkan berdasarkan Ketentuan Layanan X; menerbitkan ulang atau mengkomersialkan teks yang diambil tanpa izin penulis tidak diizinkan."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/id/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a href="/en/blog/x-articles-v1190-threadgrab-2026.html">EN</a>
+      <a href="/id/blog/x-articles-v1190-threadgrab-2026.html" class="active">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <p class="breadcrumb"><a href="/id/">Beranda</a> &rsaquo; <a href="/id/blog/">Blog</a> &rsaquo; X v11.90 Articles Scraper</p>
+
+    <h1>X v11.90 Articles Scraper: <span>threadgrab Long-Form 2026</span></h1>
+    <p class="meta">11 Juni 2026 &middot; 8 menit baca &middot; oleh ThreadGrab</p>
+
+    <p>Jika Anda melakukan scraping X Articles dengan skrip yang berfungsi pada Maret 2026, kemungkinan skrip itu berhenti bekerja pada akhir Mei. Rilis v11.90 aplikasi seluler X memindahkan entri <strong>See All Articles</strong> dari tab halaman profil yang tersembunyi ke kontrol bersegmen tingkat atas, dan di belakang layar ia menukar endpoint REST publik dengan rute GraphQL baru. Scraper yang melakukan hard-code pada URL lama sekarang mendapatkan 200 dengan body kosong, format id artikel berubah dari numerik 18-digit menjadi base64 19-digit, dan body artikel kini berupa JSON blob dengan span entitas bernama alih-alih teks biasa. Postingan ini membahas apa yang berubah, mengapa scraper lama Anda rusak, dan cara menggunakan API <strong>threadgrab</strong> untuk mengambil tata letak v11.90 baru sebagai Markdown bersih dalam satu panggilan.</p>
+
+    <p>threadgrab telah diperbarui untuk menangani perubahan v11.90 secara native. Di bawah ini adalah referensi field baru, dua contoh kode siap pakai, dan perbandingan dengan dua pendekatan lain yang telah dicoba pengembang (X GraphQL mentah, dan proyek tweet.md). Jika Anda memelihara alat arsip X publik atau membangun data pelatihan LLM dari kreator long-form, ini adalah jalur terpendek menuju output yang berfungsi pada tahun 2026.</p>
+
+    <div class="callout">
+      <p><strong>TL;DR.</strong> X v11.90 menghentikan <code>/Articles/search.json</code>, mengubah id artikel menjadi base64 19-digit, dan menjadikan body artikel sebagai daftar JSON entitas bernama. API <strong>threadgrab</strong> menyelesaikan ketiga perubahan tersebut: berikan URL artikel publik dan ia mengembalikan body Markdown bersih dengan <code>**tebal**</code>, <code>[tautan]</code>, <code>@sebutan</code>, dan <code>#tagar</code> yang dipertahankan. Pengambilan artikel tunggal: satu GET, tanpa autentikasi, ~1,2 detik. Batch profil: paginasi dengan <code>?cursor=</code> pada 20 artikel per halaman.</p>
+    </div>
+
+    <h2>Apa yang Diubah X v11.90 pada Tata Letak Articles</h2>
+    <p>Tiga hal berubah, dan semuanya independen — sebuah scraper dapat bertahan terhadap satu atau dua perubahan tetapi tidak ketiganya sekaligus.</p>
+
+    <h3>1. Entri See All Articles dipindahkan</h3>
+    <p>Sebelum v11.90, tautan "See All Articles" adalah sebuah tab di halaman profil kreator, tiga baris di bawah Posts, Replies, Media, dan Likes. Di v11.90 ia menjadi item pertama dalam kontrol bersegmen baru di bagian atas header profil, bersebelahan dengan Posts / Replies / Media. Perubahan yang terlihat kecil, tetapi permintaan yang mendasarinya berubah: tab lama memanggil <code>/Articles/search.json?include_replies=false</code>, entri baru memanggil <code>/i/api/graphql/&lt;hash&gt;/ArticleTimeline</code>. Apa pun yang di-hard-code ke jalur lama sekarang mendapatkan 200 dengan array kosong.</p>
+
+    <h3>2. Format id artikel berubah</h3>
+    <p>Id artikel lama adalah string numerik 18-digit (misalnya <code>1823456789012345678</code>). Id baru adalah string base64 19 karakter dengan campuran huruf besar/kecil dan digit (misalnya <code>a1B2c3D4e5F6g7H8i9J0</code>). Id baru juga buram — ia tidak menyandikan timestamp publikasi seperti yang lama, sehingga scraper tidak dapat menyimpulkan tanggal publikasi dari id saja. URL yang berfungsi di bulan Maret sekarang 404 karena fragmen id ditolak oleh lapisan routing.</p>
+
+    <h3>3. Body artikel kini berupa daftar JSON entitas bernama</h3>
+    <p>Body lama adalah teks biasa dengan tanda bintang seperti markdown untuk tebal (<code>**teks**</code>) dan pola URL sudut untuk tautan. Body baru adalah array JSON dari span entitas, di mana setiap span memiliki field <code>type</code> (<code>text</code>, <code>bold</code>, <code>link</code>, <code>mention</code>, <code>hashtag</code>, <code>media_ref</code>) dan payload. Scraper teks naif kehilangan format karena mereka menggabungkan span <code>text</code> tanpa melintasi span <code>bold</code>, <code>link</code>, dan <code>mention</code>. Frasa tebal seperti <code>**Freedom of Reach**</code> tiba sebagai tiga span terpisah: span <code>text</code> berisi string kosong, span <code>bold</code> berisi <code>Freedom of Reach</code>, dan span <code>text</code> akhir. Jika dirangkai dengan salah, tebalnya hilang.</p>
+
+    <h2>Bagaimana threadgrab Menangani Tata Letak Baru</h2>
+    <p>API profil threadgrab membungkus ketiga perubahan. Anda memberikan URL artikel publik atau nama pengguna, dan threadgrab mengembalikan body Markdown datar beserta metadata. Logika konversi menelusuri span entitas bernama dalam urutan dokumen dan menghasilkan Markdown standar: <code>text</code> menjadi teks biasa, <code>bold</code> menjadi <code>**teks**</code>, <code>link</code> menjadi <code>[teks](url)</code>, <code>mention</code> menjadi <code>@username</code>, <code>hashtag</code> menjadi <code>#tag</code>, dan <code>media_ref</code> menjadi <code>![alt](image_url)</code> dengan teks alt diambil dari field <code>alt_text</code> span jika ada.</p>
+
+    <p>Hasilnya adalah string Markdown yang berputar bersih melalui renderer mana pun (md2rich, GitHub, Obsidian, pratinjau VS Code, md2pdf). threadgrab tidak menciptakan format yang tidak ditulis oleh penulis asli — jika penulis tidak menebalkan frasa, output tidak akan menebalkannya.</p>
+
+    <h3>Pengambilan artikel tunggal (curl)</h3>
+    <pre><code>curl -s "https://threadgrab.com/api/profile?url=https://x.com/jack/status/a1B2c3D4e5F6g7H8i9J0" \
+  | jq '.article | {title, author, published_at, body_markdown}'</code></pre>
+
+    <p>Responsnya adalah objek JSON dengan lima field tingkat atas: <code>title</code> (string), <code>author</code> (objek dengan <code>username</code>, <code>display_name</code>, <code>verified</code>), <code>published_at</code> (string ISO 8601), <code>body_markdown</code> (Markdown yang diformat), dan <code>media</code> (array objek <code>{type, url, alt_text}</code> untuk gambar, video, dan jajak pendapat). Waktu respons rata-rata di edge Cloudflare AS bagian timur: 1,1 hingga 1,4 detik untuk artikel 2.000 kata, 0,6 hingga 0,9 detik untuk artikel 500 kata.</p>
+
+    <h3>Batch profil (curl dengan paginasi kursor)</h3>
+    <pre><code>USERNAME="naval"
+CURSOR=""
+LIMIT=20
+
+while true; do
+  RESP=$(curl -s "https://threadgrab.com/api/profile/${USERNAME}/articles?cursor=${CURSOR}&amp;limit=${LIMIT}")
+  echo "$RESP" | jq '.articles[] | {title, published_at, id: .article_id}'
+  CURSOR=$(echo "$RESP" | jq -r '.next_cursor')
+  [ -z "$CURSOR" ] || [ "$CURSOR" = "null" ] &amp;&amp; break
+  sleep 1
+done</code></pre>
+
+    <p>Perulangan ini menelusuri feed Articles kreator halaman demi halaman. Setiap panggilan mengembalikan 20 artikel ditambah string <code>next_cursor</code>; ketika <code>next_cursor</code> kosong atau null, Anda telah mencapai akhir feed publik. Tidur satu detik di antara panggilan menjaga tingkat permintaan pada batas lunak 1 req/s/IP. Kreator dengan 200 artikel membutuhkan waktu sekitar 11 detik dari awal hingga akhir, termasuk overhead tidur.</p>
+
+    <h2>Referensi Field: Bentuk Respons threadgrab v11.90</h2>
+    <p>Objek JSON lengkap yang dikembalikan oleh endpoint artikel tunggal memiliki struktur di bawah ini. Field-field ini stabil per threadgrab v1.18 (Juni 2026).</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Field</th>
+          <th>Tipe</th>
+          <th>Deskripsi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>article_id</code></td>
+          <td>string</td>
+          <td>Id base64 19 karakter baru (format v11.90). Gunakan untuk caching atau pengambilan ulang nanti.</td>
+        </tr>
+        <tr>
+          <td><code>title</code></td>
+          <td>string</td>
+          <td>Judul artikel yang ditetapkan oleh penulis. Mungkin kosong untuk Artikel yang sangat pendek.</td>
+        </tr>
+        <tr>
+          <td><code>author.username</code></td>
+          <td>string</td>
+          <td>Handle X penulis tanpa @ di depan.</td>
+        </tr>
+        <tr>
+          <td><code>author.display_name</code></td>
+          <td>string</td>
+          <td>Nama tampilan penulis, mungkin berisi emoji dan spasi yang tidak biasa.</td>
+        </tr>
+        <tr>
+          <td><code>author.verified</code></td>
+          <td>boolean</td>
+          <td>True jika penulis memiliki lencana verifikasi X pada saat pengambilan.</td>
+        </tr>
+        <tr>
+          <td><code>published_at</code></td>
+          <td>string (ISO 8601)</td>
+          <td>Timestamp UTC dari publikasi asli. Bukan timestamp edit.</td>
+        </tr>
+        <tr>
+          <td><code>body_markdown</code></td>
+          <td>string</td>
+          <td>Body artikel lengkap sebagai Markdown, dengan tebal, tautan, sebutan, dan tagar yang dipertahankan.</td>
+        </tr>
+        <tr>
+          <td><code>media[]</code></td>
+          <td>array</td>
+          <td>Daftar objek media, masing-masing dengan <code>type</code> (image / video / poll), <code>url</code>, dan <code>alt_text</code>.</td>
+        </tr>
+        <tr>
+          <td><code>engagement</code></td>
+          <td>object</td>
+          <td>Snapshot <code>likes</code>, <code>reposts</code>, <code>replies</code>, <code>quotes</code>, dan <code>views</code> pada saat pengambilan. Angka mungkin tertunda 24 jam.</td>
+        </tr>
+        <tr>
+          <td><code>canonical_url</code></td>
+          <td>string</td>
+          <td>URL publik x.com/&lt;user&gt;/article/&lt;id&gt; dari artikel.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Field <code>body_markdown</code> adalah yang paling penting bagi sebagian besar pemanggil. Ini adalah string tunggal dengan baris baru yang dipertahankan dari sumber, dan sintaks tebal / tautan / sebutan / tagar / gambar dirender sebagai Markdown standar yang akan diinterpretasikan dengan benar oleh renderer mana pun. Jika Anda hanya membutuhkan teks biasa, salurkan hasilnya melalui <code>sed</code> atau alat Markdown-ke-teks favorit Anda untuk menghapus sintaks — konten teks asli dapat diperoleh kembali dalam satu langkah.</p>
+
+    <h2>Perbandingan: threadgrab vs GraphQL Mentah vs tweet.md</h2>
+    <p>Tiga pendekatan digunakan saat ini untuk scraping X Articles setelah perubahan v11.90. Berikut perbandingannya pada tiga hal yang rusak.</p>
+
+    <div class="method-card">
+      <h3>1. API threadgrab (direkomendasikan)</h3>
+      <p class="pros">Kelebihan: menangani format id artikel baru, menelusuri body entitas bernama, mengembalikan Markdown bersih dengan format yang dipertahankan, tanpa autentikasi, tanpa token yang perlu dikelola, dibatasi rate pada 1 req/s/IP yang aman.</p>
+      <p class="cons">Kekurangan: hanya Articles publik (tanpa akun yang dilindungi), tidak ada revisi historis (hanya versi terbaru Artikel yang dikembalikan), tidak ada riwayat edit.</p>
+    </div>
+
+    <div class="method-card">
+      <h3>2. X GraphQL Mentah /ArticleTimeline</h3>
+      <p class="pros">Kelebihan: tanpa perantara, Anda mengontrol header dan bentuk permintaan, Anda dapat menarik data mentah untuk kasus penggunaan yang tidak biasa (analitik engagement, grafik quote-post).</p>
+      <p class="cons">Kekurangan: memerlukan pemeliharaan session cookie atau bearer token khusus aplikasi, hash kueri GraphQL berputar setiap beberapa minggu, body entitas bernama memerlukan kode penelusuran khusus, dan satu permintaan buruk dapat membuat IP Anda dibatasi rate selama 15 menit.</p>
+    </div>
+
+    <div class="method-card">
+      <h3>3. tweet.md (proksi lokal sumber terbuka)</h3>
+      <p class="pros">Kelebihan: sumber terbuka, berjalan lokal, tanpa server pihak ketiga, Anda dapat melakukan fork untuk output Markdown khusus.</p>
+      <p class="cons">Kekurangan: tweet.md dioptimalkan untuk postingan pendek bergaya thread, bukan untuk body Artikel long-form v11.90; tidak mempertahankan format entitas bernama; memerlukan session cookie X yang berfungsi pada pertama kali dijalankan.</p>
+    </div>
+
+    <p>Untuk kasus penggunaan "Saya ingin membaca Artikel ini secara offline sebagai Markdown" atau "Saya ingin membangun korpus postingan long-form untuk pelatihan LLM," threadgrab adalah jalur terpendek. Untuk kasus penggunaan "Saya sedang membangun produk analitik X real-time dan membutuhkan data engagement mentah," rute GraphQL tidak terhindarkan. tweet.md cocok untuk postingan dan thread pendek, tetapi kurang cocok untuk body Artikel baru.</p>
+
+    <h2>Keterbatasan dan Apa yang Tidak Dilakukan threadgrab</h2>
+    <p>Jujur tentang batasan alat lebih penting daripada menjual berlebihan. Daftar di bawah adalah apa yang <em>tidak</em> dilakukan threadgrab v1.18, per Juni 2026.</p>
+
+    <ul>
+      <li><strong>Akun yang dilindungi.</strong> Jika Articles penulis berada di balik dinding login, threadgrab mengembalikan 403. Tidak ada cara untuk mengatasinya — kontennya tidak ada di web publik.</li>
+      <li><strong>Riwayat edit.</strong> Artikel yang telah diedit penulis lima kali dikembalikan dalam bentuknya saat ini. Versi sebelumnya tidak diekspos oleh X, sehingga threadgrab tidak dapat merekonstruksinya.</li>
+      <li><strong>Postingan komposit Quote-Article.</strong> Quote-Article adalah postingan biasa dengan kartu Artikel yang dilampirkan. threadgrab mengembalikan teks postingan dan metadata kartu, tetapi bukan body Artikel yang disematkan kecuali Anda melakukan panggilan kedua ke endpoint artikel dengan <code>article_id</code> kartu.</li>
+      <li><strong>Draf dan Artikel terjadwal.</strong> Draf dan postingan terjadwal tidak ada di web publik, sehingga tidak dapat di-scrape melalui metode apa pun, termasuk threadgrab.</li>
+      <li><strong>Jangkauan agregat dan angka per-audiens.</strong> Kotak hitam jangkauan yang kami bahas di <a href="/id/blog/x-articles-freedom-of-reach-2026.html">postingan Freedom of Reach</a> berlaku juga untuk threadgrab — snapshot engagement dalam respons adalah apa yang X tampilkan kepada publik, bukan angka jangkauan internal.</li>
+    </ul>
+
+    <h2>FAQ</h2>
+
+    <div class="faq-item">
+      <strong>Apa yang berubah di entri See All Articles X v11.90?</strong>
+      <p>X v11.90 memindahkan entri See All Articles dari tab halaman profil yang tersembunyi ke kontrol bersegmen tingkat atas di header profil kreator. Entri baru menampilkan setiap postingan long-form (Articles, Threads di atas 1.000 karakter, dan Quote-Articles) sebagai daftar terpadu, dipaginasi 20 per halaman. Di belakang layar, entri ini sekarang memanggil endpoint GraphQL baru (<code>/ArticleTimeline</code>) alih-alih rute REST <code>/Articles/search.json</code> yang lama, sehingga scraper yang mengenai endpoint lama mendapatkan 404 atau array kosong.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Mengapa scraper X-Article lama saya rusak setelah v11.90?</strong>
+      <p>Tiga alasan. Pertama, endpoint <code>/Articles/search.json</code> sudah tidak digunakan lagi pada akhir Mei 2026 dan sekarang mengembalikan 200 dengan body kosong untuk sebagian besar akun. Kedua, X menambahkan field <code>article_id</code> baru di v11.90 yang merupakan string base64 19-digit, menggantikan id numerik 18-digit lama; scraper yang mencoba membuat URL dari pola id lama mendapatkan 404. Ketiga, body artikel kini disajikan sebagai JSON blob dengan span entitas bernama (tebal, tautan, sebutan, tagar) alih-alih teks biasa dengan tanda bintang seperti markdown, sehingga scraper teks naif kehilangan formatnya.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Bagaimana cara scraping tata letak artikel X v11.90 baru dengan threadgrab?</strong>
+      <p>Berikan URL artikel atau <code>article_id</code> baru ke API threadgrab. threadgrab menyelesaikan endpoint GraphQL <code>/ArticleTimeline</code> yang baru, mengambil body JSON entitas bernama, meratakannya ke Markdown (mempertahankan tebal, tautan, sebutan, dan tagar), dan mengembalikan teks bersih beserta metadata. Permintaan tipikal adalah <code>GET https://threadgrab.com/api/profile?url=https://x.com/&lt;user&gt;/article/&lt;id&gt;</code> tanpa autentikasi, dan responsnya adalah objek JSON dengan <code>title</code>, <code>body_markdown</code>, <code>author</code>, <code>published_at</code>, dan array <code>media</code>.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Bisakah saya melakukan batch-scrape setiap artikel dari profil kreator?</strong>
+      <p>Ya. Gunakan endpoint batch profil threadgrab: <code>GET https://threadgrab.com/api/profile/&lt;username&gt;/articles?cursor=&lt;next_cursor&gt;&amp;limit=20</code>. Responsnya menyertakan field <code>next_cursor</code> yang Anda berikan ke panggilan berikutnya hingga Anda mendapatkan kursor kosong. Endpoint ini dipaginasi 20 artikel sekaligus untuk mencerminkan paginasi X sendiri, dan berfungsi dengan tata letak v11.90 yang baru. Untuk batch-scrape tunggal 100+ artikel, perkirakan waktu panggilan 8 hingga 15 detik tergantung pada lampiran media.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Apakah threadgrab mempertahankan format tebal, tautan, dan sebutan dari body artikel baru?</strong>
+      <p>Ya. Body artikel X v11.90 yang baru adalah daftar JSON span entitas (setiap span memiliki field type: text, bold, link, mention, hashtag, atau media_ref). threadgrab menelusuri daftar dan menghasilkan Markdown standar: span bold menjadi <code>**teks**</code>, span link menjadi <code>[teks](url)</code>, span mention menjadi <code>@username</code>, span hashtag menjadi <code>#tag</code>, dan span media_ref menjadi <code>![alt](image_url)</code>. Outputnya berputar bersih melalui renderer Markdown mana pun (md2rich, GitHub, Obsidian) tanpa kehilangan format asli.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Apakah scraping artikel X v11.90 dengan threadgrab legal dan sesuai batas rate?</strong>
+      <p>threadgrab hanya mengambil Articles publik, yang merupakan halaman web publik yang secara eksplisit diterbitkan X ke web terbuka untuk pengindeksan dan berbagi. API threadgrab memberlakukan batas rate 1 permintaan per detik per IP dan batas lunak 5.000 pengambilan artikel per hari, jauh di bawah ambang batas anti-penyalahgunaan X. Scraping konten publik untuk bacaan pribadi, penelitian, atau pengarsipan umumnya diizinkan berdasarkan Ketentuan Layanan X; menerbitkan ulang atau mengkomersialkan teks yang diambil tanpa izin penulis tidak diizinkan.</p>
+    </div>
+
+    <h2>Coba pada Artikel Publik</h2>
+    <p>Cara tercepat untuk melihat tata letak v11.90 baru berputar melalui threadgrab adalah dengan memilih Artikel publik apa pun di x.com, salin URL, dan jalankan contoh curl artikel tunggal di atas. Anda akan mendapatkan respons JSON bersih dalam waktu 1,5 detik di edge AS atau UE, dengan body dalam Markdown yang dapat Anda tempel ke Obsidian, GitHub gist, atau konverter <a href="https://md2rich.com">md2rich</a> untuk pratinjau berdampingan tentang bagaimana format dirender.</p>
+
+    <div class="cta">
+      <p><strong>Scraping Artikel X sekarang — tanpa login, tanpa instalasi.</strong></p>
+      <p>threadgrab menangani tata letak v11.90, id artikel baru, dan body entitas bernama. Tempel URL publik x.com/&lt;user&gt;/article/&lt;id&gt; mana pun.</p>
+      <a class="btn" href="/id/">Buka ThreadGrab</a>
+    </div>
+
+    <h2>Bacaan Terkait</h2>
+    <ul>
+      <li><a href="/id/blog/x-to-markdown-3-methods-2026.html">X ke Markdown 2026: 3 Cara Menyimpan Thread X</a> — mencakup pendekatan tweet.md, threadgrab, dan browser-reader untuk postingan pendek dan thread.</li>
+      <li><a href="/id/blog/x-thread-archiving-tools-2026.html">Pengarsipan Thread X 2026: 5 Alat Dibandingkan</a> — pandangan lebih luas tentang Nitter, Thread Reader, archive.today, skrip curl, dan threadgrab untuk pengarsipan thread lengkap.</li>
+      <li><a href="/id/blog/x-articles-freedom-of-reach-2026.html">X Articles Freedom of Reach 2026: Kotak Hitam Algoritma</a> — apa yang diberitahu dan tidak diberitahu oleh angka jangkauan tentang siapa yang melihat Artikel.</li>
+      <li><a href="/id/blog/x-articles-vs-bluesky-vs-linkedin-newsletter-2026.html">X Articles vs Bluesky vs LinkedIn Newsletter</a> — perbandingan long-form 2026, dengan pohon keputusan untuk platform mana yang harus ditulis.</li>
+    </ul>
+
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/id/">Beranda</a> &middot; <a href="/id/about/">Tentang</a> &middot; <a href="/id/privacy/">Privasi</a>
+  </footer>
+</body>
+</html>

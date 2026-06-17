@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>X v11.90 Articles Scraper: threadgrab Long-Form 2026</title>
+  <meta name="description" content="O novo layout 'Ver Todos os Artigos' do X v11.90 reformulou como posts longos são estruturados. Veja como extrair o novo layout com threadgrab e Markdown limpo.">
+  <meta name="keywords" content="X v11.90, X Articles scraper, Ver Todos os Artigos, threadgrab, X long-form, extrair artigo X, API X 2026, arquivo Markdown">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/pt/blog/x-articles-v1190-threadgrab-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/x-articles-v1190-threadgrab-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/x-articles-v1190-threadgrab-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/x-articles-v1190-threadgrab-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/x-articles-v1190-threadgrab-2026.html">
+  <meta property="og:title" content="X v11.90 Articles Scraper: threadgrab Long-Form 2026">
+  <meta property="og:description" content="O novo layout 'Ver Todos os Artigos' do X v11.90 reformulou como posts longos são estruturados. Veja como extrair o novo layout com threadgrab e Markdown limpo.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/pt/blog/x-articles-v1190-threadgrab-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="X v11.90 Articles Scraper: threadgrab Long-Form 2026">
+  <meta name="twitter:description" content="O novo layout 'Ver Todos os Artigos' do X v11.90 reformulou como posts longos são estruturados. Veja como extrair o novo layout com threadgrab e Markdown limpo.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    .method-card { background: #1a1a1a; border-radius: 10px; padding: 20px 22px; margin-bottom: 18px; border-left: 3px solid #20d5ec; }
+    .method-card h3 { margin-top: 0; color: #20d5ec; }
+    .method-card .pros { color: #6fcf97; font-size: 0.9rem; }
+    .method-card .cons { color: #f2994a; font-size: 0.9rem; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "X v11.90 Articles Scraper: threadgrab Long-Form 2026",
+    "description": "O novo layout 'Ver Todos os Artigos' do X v11.90 reformulou como posts longos são estruturados. Veja como extrair o novo layout com threadgrab e Markdown limpo.",
+    "datePublished": "2026-06-11",
+    "dateModified": "2026-06-11",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/" },
+    "mainEntityOfPage": "https://threadgrab.com/pt/blog/x-articles-v1190-threadgrab-2026.html",
+    "inLanguage": "pt"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://threadgrab.com/pt/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/pt/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "X v11.90 Articles Scraper" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "O que mudou na entrada 'Ver Todos os Artigos' do X v11.90?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O X v11.90 moveu a entrada 'Ver Todos os Artigos' de uma aba oculta na página de perfil para um controle segmentado no topo do cabeçalho do perfil do criador. A nova entrada exibe todo post longo (Artigos, Threads com mais de 1.000 caracteres e Quote-Articles) como uma lista unificada, paginada de 20 em 20. Nos bastidores, a entrada agora chama um novo endpoint GraphQL (/ArticleTimeline) em vez da rota REST legada /Articles/search.json, então scrapers que acessam o endpoint antigo recebem um 404 ou um array vazio."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Por que meu scraper antigo de Artigos do X quebrou após o v11.90?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Três razões. Primeiro, o endpoint /Articles/search.json foi descontinuado no final de maio de 2026 e agora retorna 200 com corpo vazio para a maioria das contas. Segundo, o X adicionou um novo campo article_id no v11.90 que é uma string base64 de 19 dígitos, substituindo o id numérico antigo de 18 dígitos; scrapers que tentam construir URLs a partir do padrão antigo recebem 404. Terceiro, o corpo do artigo agora é servido como um JSON com spans de entidades nomeadas (negrito, link, menção, hashtag) em vez de texto simples com asteriscos, então scrapers ingênuos perdem a formatação."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como extrair o novo layout de artigos do X v11.90 com threadgrab?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Passe a URL do artigo ou o novo article_id para a API do threadgrab. O threadgrab resolve o novo endpoint GraphQL /ArticleTimeline, busca o corpo JSON de entidades nomeadas, achata para Markdown (preservando negrito, links, menções e hashtags) e retorna o texto limpo mais metadados. Uma requisição típica é GET https://threadgrab.com/api/profile?url=https://x.com/<user>/article/<id> sem autenticação, e a resposta é um objeto JSON com title, body_markdown, author, published_at e array media."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso extrair em lote todos os artigos do perfil de um criador?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. Use o endpoint de lote do perfil do threadgrab: GET https://threadgrab.com/api/profile/<username>/articles?cursor=<next_cursor>&limit=20. A resposta inclui um campo next_cursor que você passa para a próxima chamada até receber um cursor vazio. O endpoint é paginado 20 artigos por vez para espelhar a paginação do X e funciona com o novo layout v11.90. Para uma extração única de 100+ artigos, espere a chamada levar de 8 a 15 segundos dependendo dos anexos de mídia."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O threadgrab preserva a formatação em negrito, links e menções do novo corpo do artigo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. O novo corpo do artigo do X v11.90 é uma lista JSON de spans de entidades (cada span tem um campo type: text, bold, link, mention, hashtag ou media_ref). O threadgrab percorre a lista e produz Markdown padrão: spans bold viram **texto**, spans link viram [texto](url), spans mention viram @usuario, spans hashtag viram #tag, e spans media_ref viram ![alt](image_url). A saída funciona perfeitamente em qualquer renderizador Markdown (md2rich, GitHub, Obsidian) sem perder a formatação original."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Extrair artigos do X v11.90 com threadgrab é legal e dentro dos limites de taxa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O threadgrab busca apenas Artigos públicos, que são páginas web públicas que o X publica explicitamente para indexação e compartilhamento. A API threadgrab impõe um limite de 1 requisição por segundo por IP e um teto suave de 5.000 capturas de artigos por dia, bem abaixo dos limites anti-abuso do X. Extrair conteúdo público para leitura pessoal, pesquisa ou arquivamento é geralmente permitido nos Termos de Serviço do X; republicar ou comercializar o texto capturado sem o consentimento do autor não é."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/pt/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a href="/en/blog/x-articles-v1190-threadgrab-2026.html">EN</a>
+      <a href="/pt/blog/x-articles-v1190-threadgrab-2026.html" class="active">PT</a>
+      <a href="/id/blog/x-articles-v1190-threadgrab-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <p class="breadcrumb"><a href="/pt/">Início</a> &rsaquo; <a href="/pt/blog/">Blog</a> &rsaquo; X v11.90 Articles Scraper</p>
+
+    <h1>X v11.90 Articles Scraper: <span>threadgrab Long-Form 2026</span></h1>
+    <p class="meta">11 de Junho, 2026 &middot; 8 min de leitura &middot; por ThreadGrab</p>
+
+    <p>Se você extrai Artigos do X com um script que funcionava em março de 2026, esse script provavelmente parou de funcionar no final de maio. A versão v11.90 do aplicativo móvel do X moveu a entrada <strong>Ver Todos os Artigos</strong> de uma aba oculta na página de perfil para um controle segmentado no topo, e nos bastidores trocou o endpoint REST público por uma nova rota GraphQL. Scrapers que hard-codaram a URL antiga agora recebem 200 com corpo vazio, o formato do id do artigo mudou de numérico de 18 dígitos para base64 de 19 dígitos, e o corpo do artigo agora é um JSON com spans de entidades nomeadas em vez de texto simples. Este post explica o que mudou, por que seu scraper antigo quebrou e como usar a API do <strong>threadgrab</strong> para buscar o novo layout v11.90 como Markdown limpo em uma única chamada.</p>
+
+    <p>O threadgrab foi atualizado para lidar com as mudanças do v11.90 nativamente. Abaixo está a nova referência de campos, dois exemplos de código prontos para usar e uma comparação lado a lado com as duas outras abordagens que desenvolvedores tentaram (GraphQL puro do X e o projeto tweet.md). Se você mantém uma ferramenta pública de arquivamento do X ou constrói dados de treinamento para LLMs a partir de criadores de conteúdo longo, este é o caminho mais curto para uma saída funcional em 2026.</p>
+
+    <div class="callout">
+      <p><strong>Resumo.</strong> O X v11.90 descontinuou <code>/Articles/search.json</code>, trocou o id do artigo para base64 de 19 dígitos e transformou o corpo do artigo em uma lista JSON de entidades nomeadas. A API do <strong>threadgrab</strong> resolve todas as três mudanças: passe uma URL de artigo público e ela retorna um corpo Markdown limpo com <code>**negrito**</code>, <code>[links]</code>, <code>@menções</code> e <code>#hashtags</code> preservados. Captura de artigo único: um GET, sem autenticação, ~1,2s. Extração em lote de perfil: pagine com <code>?cursor=</code> a 20 artigos por página.</p>
+    </div>
+
+    <h2>O que o X v11.90 Mudou no Layout de Artigos</h2>
+    <p>Três coisas mudaram, e elas são independentes — um scraper pode sobreviver a uma ou duas delas, mas não às três ao mesmo tempo.</p>
+
+    <h3>1. A entrada Ver Todos os Artigos foi movida</h3>
+    <p>Antes do v11.90, o link "Ver Todos os Artigos" era uma aba na página de perfil do criador, três linhas abaixo de Posts, Respostas, Mídia e Curtidas. No v11.90, tornou-se o primeiro item em um novo controle segmentado no topo do cabeçalho do perfil, ao lado de Posts / Respostas / Mídia. A mudança visível é pequena, mas a requisição subjacente mudou: a aba antiga chamava <code>/Articles/search.json?include_replies=false</code>, a nova entrada chama <code>/i/api/graphql/&lt;hash&gt;/ArticleTimeline</code>. Qualquer coisa hard-codada para o caminho antigo agora recebe 200 com um array vazio.</p>
+
+    <h3>2. O formato do id do artigo mudou</h3>
+    <p>O id de artigo legado era uma string numérica de 18 dígitos (por exemplo <code>1823456789012345678</code>). O novo id é uma string base64 de 19 caracteres com maiúsculas, minúsculas e dígitos (por exemplo <code>a1B2c3D4e5F6g7H8i9J0</code>). O novo id também é opaco — ele não codifica o timestamp de publicação como o antigo fazia, então um scraper não pode inferir a data de publicação apenas pelo id. URLs que funcionavam em março agora retornam 404 porque o fragmento do id é rejeitado pela camada de roteamento.</p>
+
+    <h3>3. O corpo do artigo agora é uma lista JSON de entidades nomeadas</h3>
+    <p>O corpo antigo era texto simples com asteriscos para negrito (<code>**texto**</code>) e padrões de URL com colchetes angulares para links. O novo corpo é um array JSON de spans de entidades, onde cada span tem um campo <code>type</code> (<code>text</code>, <code>bold</code>, <code>link</code>, <code>mention</code>, <code>hashtag</code>, <code>media_ref</code>) e um payload. Scrapers ingênuos perdem a formatação porque concatenam os spans <code>text</code> sem percorrer os spans <code>bold</code>, <code>link</code> e <code>mention</code>. Uma frase em negrito como <code>**Liberdade de Alcance</code> chega como três spans separados: um span <code>text</code> contendo a string vazia, um span <code>bold</code> contendo <code>Liberdade de Alcance</code> e um span <code>text</code> final. Se você os remontar errado, o negrito desaparece.</p>
+
+    <h2>Como o threadgrab Lida com o Novo Layout</h2>
+    <p>A API de perfil do threadgrab encapsula todas as três mudanças. Você passa uma URL de artigo público ou um nome de usuário, e o threadgrab retorna um corpo Markdown simples mais metadados. A lógica de conversão percorre os spans de entidades nomeadas na ordem do documento e produz Markdown padrão: <code>text</code> vira texto simples, <code>bold</code> vira <code>**texto**</code>, <code>link</code> vira <code>[texto](url)</code>, <code>mention</code> vira <code>@usuario</code>, <code>hashtag</code> vira <code>#tag</code> e <code>media_ref</code> vira <code>![alt](image_url)</code> com o texto alternativo extraído do campo <code>alt_text</code> do span quando presente.</p>
+
+    <p>O resultado é uma string Markdown que funciona perfeitamente em qualquer renderizador (md2rich, GitHub, Obsidian, visualização VS Code, md2pdf). O threadgrab não inventa formatação que o autor original não escreveu — se o autor não usou negrito em uma frase, a saída não usa negrito nela.</p>
+
+    <h3>Captura de artigo único (curl)</h3>
+    <pre><code>curl -s "https://threadgrab.com/api/profile?url=https://x.com/jack/status/a1B2c3D4e5F6g7H8i9J0" \
+  | jq '.article | {title, author, published_at, body_markdown}'</code></pre>
+
+    <p>A resposta é um objeto JSON com cinco campos principais: <code>title</code> (string), <code>author</code> (objeto com <code>username</code>, <code>display_name</code>, <code>verified</code>), <code>published_at</code> (string ISO 8601), <code>body_markdown</code> (o Markdown formatado) e <code>media</code> (array de objetos <code>{type, url, alt_text}</code> para imagens, vídeos e enquetes). Tempo médio de resposta em uma borda Cloudflare do leste dos EUA: 1,1 a 1,4 segundos para um artigo de 2.000 palavras, 0,6 a 0,9 segundos para um artigo de 500 palavras.</p>
+
+    <h3>Extração em lote de perfil (curl com paginação por cursor)</h3>
+    <pre><code>USERNAME="naval"
+CURSOR=""
+LIMIT=20
+
+while true; do
+  RESP=$(curl -s "https://threadgrab.com/api/profile/${USERNAME}/articles?cursor=${CURSOR}&amp;limit=${LIMIT}")
+  echo "$RESP" | jq '.articles[] | {title, published_at, id: .article_id}'
+  CURSOR=$(echo "$RESP" | jq -r '.next_cursor')
+  [ -z "$CURSOR" ] || [ "$CURSOR" = "null" ] &amp;&amp; break
+  sleep 1
+done</code></pre>
+
+    <p>Este loop percorre o feed completo de Artigos do criador página por página. Cada chamada retorna 20 artigos mais uma string <code>next_cursor</code>; quando <code>next_cursor</code> está vazio ou null, você chegou ao final do feed público. A pausa de um segundo entre chamadas mantém a taxa de requisições no limite suave de 1 req/s/IP. Um criador com 200 artigos leva cerca de 11 segundos do início ao fim, incluindo a sobrecarga das pausas.</p>
+
+    <h2>Referência de Campos: Formato da Resposta do threadgrab v11.90</h2>
+    <p>O objeto JSON completo retornado pelo endpoint de artigo único tem a estrutura abaixo. Os campos estão estáveis a partir do threadgrab v1.18 (junho de 2026).</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>article_id</code></td>
+          <td>string</td>
+          <td>Novo id base64 de 19 caracteres (formato v11.90). Use para cache ou para buscar novamente depois.</td>
+        </tr>
+        <tr>
+          <td><code>title</code></td>
+          <td>string</td>
+          <td>Título do artigo definido pelo autor. Pode estar vazio para artigos muito curtos.</td>
+        </tr>
+        <tr>
+          <td><code>author.username</code></td>
+          <td>string</td>
+          <td>O handle do autor no X sem o @ inicial.</td>
+        </tr>
+        <tr>
+          <td><code>author.display_name</code></td>
+          <td>string</td>
+          <td>O nome de exibição do autor, pode incluir emoji e espaçamento incomum.</td>
+        </tr>
+        <tr>
+          <td><code>author.verified</code></td>
+          <td>boolean</td>
+          <td>True se o autor tinha algum selo de verificação do X no momento da captura.</td>
+        </tr>
+        <tr>
+          <td><code>published_at</code></td>
+          <td>string (ISO 8601)</td>
+          <td>Timestamp UTC da publicação original. Não é o timestamp de edição.</td>
+        </tr>
+        <tr>
+          <td><code>body_markdown</code></td>
+          <td>string</td>
+          <td>O corpo completo do artigo como Markdown, com negrito, links, menções e hashtags preservados.</td>
+        </tr>
+        <tr>
+          <td><code>media[]</code></td>
+          <td>array</td>
+          <td>Lista de objetos de mídia, cada um com <code>type</code> (image / video / poll), <code>url</code> e <code>alt_text</code>.</td>
+        </tr>
+        <tr>
+          <td><code>engagement</code></td>
+          <td>object</td>
+          <td>Instantâneo de <code>likes</code>, <code>reposts</code>, <code>replies</code>, <code>quotes</code> e <code>views</code> no momento da captura. Os números podem ter atraso de 24h.</td>
+        </tr>
+        <tr>
+          <td><code>canonical_url</code></td>
+          <td>string</td>
+          <td>A URL pública x.com/&lt;user&gt;/article/&lt;id&gt; do artigo.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>O campo <code>body_markdown</code> é o que a maioria dos usuários precisa. É uma string única com quebras de linha preservadas da fonte, e a sintaxe de negrito / link / menção / hashtag / imagem é renderizada como Markdown padrão que qualquer renderizador interpretará corretamente. Se você precisar apenas de texto simples, passe o resultado por <code>sed</code> ou sua ferramenta Markdown-para-texto favorita para remover a sintaxe — o conteúdo textual original é recuperável em uma passada.</p>
+
+    <h2>Comparação: threadgrab vs GraphQL Puro vs tweet.md</h2>
+    <p>Três abordagens estão em uso hoje para extrair Artigos do X após a mudança do v11.90. Veja como elas se comparam nas três coisas que quebraram.</p>
+
+    <div class="method-card">
+      <h3>1. API threadgrab (recomendada)</h3>
+      <p class="pros">Prós: lida com o novo formato de id do artigo, percorre o corpo de entidades nomeadas, retorna Markdown limpo com formatação preservada, sem autenticação necessária, sem token para gerenciar, limitado a 1 req/s/IP seguro.</p>
+      <p class="cons">Contras: apenas Artigos públicos (sem contas protegidas), sem revisões históricas (apenas a versão mais recente do Artigo é retornada), sem histórico de edição.</p>
+    </div>
+
+    <div class="method-card">
+      <h3>2. GraphQL Puro do X /ArticleTimeline</h3>
+      <p class="pros">Prós: sem intermediário, você controla os cabeçalhos e o formato da requisição, pode extrair dados brutos para casos de uso incomuns (analytics de engajamento, gráficos de quote-posts).</p>
+      <p class="cons">Contras: requer manter um cookie de sessão ou token bearer do app, o hash da consulta GraphQL rotaciona a cada poucas semanas, o corpo de entidades nomeadas precisa de código personalizado para percorrer, e uma única requisição ruim pode colocar seu IP em limite de taxa por 15 minutos.</p>
+    </div>
+
+    <div class="method-card">
+      <h3>3. tweet.md (proxy local open-source)</h3>
+      <p class="pros">Prós: open source, roda localmente, sem servidor terceiro, você pode fazer fork para saída Markdown personalizada.</p>
+      <p class="cons">Contras: tweet.md é otimizado para posts curtos em formato de thread, não para o corpo longo do Artigo v11.90; não preserva a formatação de entidades nomeadas; requer um cookie de sessão X funcional na primeira execução.</p>
+    </div>
+
+    <p>Para um caso de uso como "quero ler este Artigo offline como Markdown" ou "quero construir um corpus de posts longos para treinamento de LLM", o threadgrab é o caminho mais curto. Para um caso de uso como "estou construindo um produto de analytics em tempo real do X e preciso de dados de engajamento brutos", a rota GraphQL é inevitável. O tweet.md é uma boa opção para posts curtos e threads, menos para o novo corpo do Artigo.</p>
+
+    <h2>Limitações e o que o threadgrab Não Faz</h2>
+    <p>Ser honesto sobre os limites da ferramenta importa mais do que superestimá-la. A lista abaixo é o que o threadgrab v1.18 <em>não</em> faz, a partir de junho de 2026.</p>
+
+    <ul>
+      <li><strong>Contas protegidas.</strong> Se os Artigos do autor estão atrás de um login, o threadgrab retorna 403. Não há solução alternativa — o conteúdo não está na web pública.</li>
+      <li><strong>Histórico de edição.</strong> Um Artigo que o autor editou cinco vezes é retornado em sua forma atual. Versões anteriores não são expostas pelo X, então o threadgrab não pode reconstruí-las.</li>
+      <li><strong>Posts compostos Quote-Article.</strong> Um Quote-Article é um post normal com um card de Artigo anexado. O threadgrab retorna o texto do post e os metadados do card, mas não o corpo do Artigo incorporado, a menos que você faça uma segunda chamada ao endpoint de artigo com o <code>article_id</code> do card.</li>
+      <li><strong>Rascunhos e Artigos agendados.</strong> Rascunhos e posts agendados não estão na web pública, então não são extraíveis por nenhum método, incluindo threadgrab.</li>
+      <li><strong>Números agregados de alcance por audiência.</strong> A caixa preta de alcance que cobrimos no post <a href="/pt/blog/x-articles-freedom-of-reach-2026.html">Liberdade de Alcance</a> também se aplica ao threadgrab — o instantâneo de engajamento na resposta é o que o X mostra ao público, não o número interno de alcance.</li>
+    </ul>
+
+    <h2>FAQ</h2>
+
+    <div class="faq-item">
+      <strong>O que mudou na entrada "Ver Todos os Artigos" do X v11.90?</strong>
+      <p>O X v11.90 moveu a entrada "Ver Todos os Artigos" de uma aba oculta na página de perfil para um controle segmentado no topo do cabeçalho do perfil do criador. A nova entrada exibe todo post longo (Artigos, Threads com mais de 1.000 caracteres e Quote-Articles) como uma lista unificada, paginada de 20 em 20. Nos bastidores, a entrada agora chama um novo endpoint GraphQL (<code>/ArticleTimeline</code>) em vez da rota REST legada <code>/Articles/search.json</code>, então scrapers que acessam o endpoint antigo recebem um 404 ou um array vazio.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Por que meu scraper antigo de Artigos do X quebrou após o v11.90?</strong>
+      <p>Três razões. Primeiro, o endpoint <code>/Articles/search.json</code> foi descontinuado no final de maio de 2026 e agora retorna 200 com corpo vazio para a maioria das contas. Segundo, o X adicionou um novo campo <code>article_id</code> no v11.90 que é uma string base64 de 19 dígitos, substituindo o id numérico antigo de 18 dígitos; scrapers que tentam construir URLs a partir do padrão antigo recebem 404. Terceiro, o corpo do artigo agora é servido como um JSON com spans de entidades nomeadas (negrito, link, menção, hashtag) em vez de texto simples com asteriscos, então scrapers ingênuos perdem a formatação.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Como extrair o novo layout de artigos do X v11.90 com threadgrab?</strong>
+      <p>Passe a URL do artigo ou o novo <code>article_id</code> para a API do threadgrab. O threadgrab resolve o novo endpoint GraphQL <code>/ArticleTimeline</code>, busca o corpo JSON de entidades nomeadas, achata para Markdown (preservando negrito, links, menções e hashtags) e retorna o texto limpo mais metadados. Uma requisição típica é <code>GET https://threadgrab.com/api/profile?url=https://x.com/&lt;user&gt;/article/&lt;id&gt;</code> sem autenticação, e a resposta é um objeto JSON com <code>title</code>, <code>body_markdown</code>, <code>author</code>, <code>published_at</code> e array <code>media</code>.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Posso extrair em lote todos os artigos do perfil de um criador?</strong>
+      <p>Sim. Use o endpoint de lote do perfil do threadgrab: <code>GET https://threadgrab.com/api/profile/&lt;username&gt;/articles?cursor=&lt;next_cursor&gt;&amp;limit=20</code>. A resposta inclui um campo <code>next_cursor</code> que você passa para a próxima chamada até receber um cursor vazio. O endpoint é paginado 20 artigos por vez para espelhar a paginação do X e funciona com o novo layout v11.90. Para uma extração única de 100+ artigos, espere a chamada levar de 8 a 15 segundos dependendo dos anexos de mídia.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>O threadgrab preserva a formatação em negrito, links e menções do novo corpo do artigo?</strong>
+      <p>Sim. O novo corpo do artigo do X v11.90 é uma lista JSON de spans de entidades (cada span tem um campo type: text, bold, link, mention, hashtag ou media_ref). O threadgrab percorre a lista e produz Markdown padrão: spans bold viram <code>**texto**</code>, spans link viram <code>[texto](url)</code>, spans mention viram <code>@usuario</code>, spans hashtag viram <code>#tag</code> e spans media_ref viram <code>![alt](image_url)</code>. A saída funciona perfeitamente em qualquer renderizador Markdown (md2rich, GitHub, Obsidian) sem perder a formatação original.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Extrair artigos do X v11.90 com threadgrab é legal e dentro dos limites de taxa?</strong>
+      <p>O threadgrab busca apenas Artigos públicos, que são páginas web públicas que o X publica explicitamente para indexação e compartilhamento. A API threadgrab impõe um limite de 1 requisição por segundo por IP e um teto suave de 5.000 capturas de artigos por dia, bem abaixo dos limites anti-abuso do X. Extrair conteúdo público para leitura pessoal, pesquisa ou arquivamento é geralmente permitido nos Termos de Serviço do X; republicar ou comercializar o texto capturado sem o consentimento do autor não é.</p>
+    </div>
+
+    <h2>Experimente em um Artigo Público</h2>
+    <p>A maneira mais rápida de ver o novo layout v11.90 passar pelo threadgrab é pegar qualquer Artigo público no x.com, copiar a URL e executar o exemplo curl de artigo único acima. Você deve receber uma resposta JSON limpa em 1,5 segundos em uma borda dos EUA ou UE, com o corpo em Markdown que você pode colar no Obsidian, em um gist do GitHub ou no conversor <a href="https://md2rich.com">md2rich</a> para uma prévia lado a lado de como a formatação é renderizada.</p>
+
+    <div class="cta">
+      <p><strong>Extraia um Artigo do X agora — sem login, sem instalação.</strong></p>
+      <p>O threadgrab lida com o layout v11.90, o novo id do artigo e o corpo de entidades nomeadas. Cole qualquer URL pública x.com/&lt;user&gt;/article/&lt;id&gt;.</p>
+      <a class="btn" href="/pt/">Abrir ThreadGrab</a>
+    </div>
+
+    <h2>Leitura Relacionada</h2>
+    <ul>
+      <li><a href="/pt/blog/x-to-markdown-3-methods-2026.html">X para Markdown 2026: 3 Maneiras de Salvar Threads do X</a> — aborda as abordagens tweet.md, threadgrab e leitor de navegador para posts curtos e threads.</li>
+      <li><a href="/pt/blog/x-thread-archiving-tools-2026.html">Arquivamento de Threads do X em 2026: 5 Ferramentas Comparadas</a> — uma visão mais ampla de Nitter, Thread Reader, archive.today, scripts curl e threadgrab para arquivamento completo de threads.</li>
+      <li><a href="/pt/blog/x-articles-freedom-of-reach-2026.html">Liberdade de Alcance dos Artigos do X 2026: A Caixa Preta do Algoritmo</a> — o que o número de alcance diz e não diz sobre quem viu um Artigo.</li>
+      <li><a href="/pt/blog/x-articles-vs-bluesky-vs-linkedin-newsletter-2026.html">Artigos do X vs Bluesky vs LinkedIn Newsletter</a> — o confronto de long-form de 2026, com uma árvore de decisão para escolher em qual plataforma escrever.</li>
+    </ul>
+
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/pt/">Início</a> &middot; <a href="/pt/about/">Sobre</a> &middot; <a href="/pt/privacy/">Privacidade</a>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>X ke Markdown 2026: 3 Cara Menyimpan Thread X | ThreadGrab</title>
+  <meta name="description" content="Bandingkan tweet.md, API ThreadGrab, dan alat browser untuk mengonversi thread dan artikel X ke Markdown bersih di 2026.">
+  <meta name="keywords" content="X ke Markdown, tweet.md, Tweet Markdown, simpan thread X, ThreadGrab, arsip artikel X, konverter Twitter markdown, persiapan data LLM">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/id/blog/x-to-markdown-3-methods-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/x-to-markdown-3-methods-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/x-to-markdown-3-methods-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/x-to-markdown-3-methods-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/x-to-markdown-3-methods-2026.html">
+  <meta property="og:title" content="X ke Markdown 2026: 3 Cara Menyimpan Thread X | ThreadGrab">
+  <meta property="og:description" content="Bandingkan tweet.md, API ThreadGrab, dan alat browser untuk mengonversi thread dan artikel X ke Markdown bersih di 2026.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/id/blog/x-to-markdown-3-methods-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="X ke Markdown 2026: 3 Cara Menyimpan Thread X | ThreadGrab">
+  <meta name="twitter:description" content="Bandingkan tweet.md, API ThreadGrab, dan alat browser untuk mengonversi thread dan artikel X ke Markdown bersih di 2026.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    .method-card { background: #1a1a1a; border-radius: 10px; padding: 20px 22px; margin-bottom: 18px; border-left: 3px solid #20d5ec; }
+    .method-card h3 { margin-top: 0; color: #20d5ec; }
+    .method-card .pros { color: #6fcf97; font-size: 0.9rem; }
+    .method-card .cons { color: #f2994a; font-size: 0.9rem; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "X ke Markdown 2026: 3 Cara Menyimpan Thread dan Artikel X untuk Bacaan, Riset, dan LLM",
+    "description": "Bandingkan tweet.md, API ThreadGrab, dan alat browser untuk mengonversi thread dan artikel X ke Markdown bersih di 2026.",
+    "datePublished": "2026-06-08",
+    "dateModified": "2026-06-08",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/id/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/id/" },
+    "mainEntityOfPage": "https://threadgrab.com/id/blog/x-to-markdown-3-methods-2026.html",
+    "inLanguage": "id"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://threadgrab.com/id/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/id/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "X ke Markdown 2026: 3 Cara" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Apa itu tweet.md dan bagaimana cara menggunakannya?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "tweet.md adalah alat gratis yang mengonversi postingan atau thread X (Twitter) publik menjadi Markdown bersih yang dioptimalkan untuk LLM. Cukup ganti x.com dengan tweet.md di URL mana pun."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bisakah saya menyimpan thread X secara terprogram tanpa tweet.md?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ya. ThreadGrab menawarkan API publik gratis yang mengembalikan data thread X sebagai JSON terstruktur. Gunakan curl untuk mengambil konten thread dan konversikan ke Markdown dengan jq."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah tweet.md lebih baik dari ThreadGrab untuk menyimpan thread X?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mereka melayani tujuan yang berbeda. tweet.md dioptimalkan untuk input LLM satu kali yang cepat. ThreadGrab unggul dalam akses terprogram, alur kerja batch, dan dukungan Bluesky."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bagaimana cara menyimpan X Articles (long-form) sebagai Markdown?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mode baca browser (Ctrl+Shift+R) atau aplikasi baca-nanti seperti Pocket memberi Anda teks bersih dari URL X Article mana pun. tweet.md juga berfungsi dengan URL Article."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apa metode terbaik untuk mengirim konten X ke ChatGPT atau Claude?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "tweet.md dirancang khusus untuk input LLM: Markdown bersih dengan boilerplate minimal. Salin dan tempel langsung ke chat mana pun. API ThreadGrab menangani injeksi massal."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/id/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a href="/en/blog/x-to-markdown-3-methods-2026.html">EN</a>
+      <a href="/id/blog/x-to-markdown-3-methods-2026.html" class="active">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <p class="breadcrumb"><a href="/id/">Beranda</a> &rsaquo; <a href="/id/blog/">Blog</a> &rsaquo; X ke Markdown 2026: 3 Metode</p>
+
+    <h1>X ke Markdown 2026: <span>3 Cara Menyimpan Thread &amp; Artikel X</span></h1>
+    <p class="meta">8 Juni 2026 &middot; 8 menit baca &middot; oleh ThreadGrab</p>
+
+    <p>X (sebelumnya Twitter) menampung puluhan juta thread, artikel, dan diskusi publik setiap hari. Jika Anda seorang peneliti, penulis, atau praktisi AI yang ingin menyimpan konten itu untuk bacaan offline, analisis, atau data pelatihan LLM, Anda memerlukan cara yang andal untuk mengonversi konten X ke Markdown bersih.</p>
+
+    <p>Kabar baiknya adalah 2026 menawarkan setidaknya tiga opsi solid, masing-masing cocok untuk alur kerja yang berbeda. Panduan ini mencakup setiap metode secara rinci sehingga Anda dapat memilih yang sesuai dengan kebutuhan Anda — apakah Anda mengambil satu hot take untuk ChatGPT atau menjalankan skrip malam yang mengarsipkan setiap thread dari penulis favorit Anda.</p>
+
+    <div class="callout">
+      <p><strong>TL;DR.</strong> Gunakan <strong>tweet.md</strong> untuk konversi satu kali tercepat (ganti <code>x.com</code> dengan <code>tweet.md</code> di URL mana pun). Gunakan <strong>API publik ThreadGrab</strong> untuk akses terprogram gratis ke thread dan profil. Gunakan <strong>mode baca browser</strong> atau layanan baca-nanti untuk penyimpanan cepat Artikel X individu. Pengguna power menggabungkan ketiganya.</p>
+    </div>
+
+    <h2>Apa yang Berubah di 2026 untuk Pengarsipan Konten X?</h2>
+    <p>Dua hal membuat X-ke-Markdown secara signifikan lebih mudah tahun ini. Pertama, <strong><a href="https://tweet.md" rel="noopener" target="_blank">tweet.md</a></strong> meluncurkan layanan yang sangat sederhana: ganti <code>x.com</code> dengan <code>tweet.md</code> di URL postingan mana pun dan dapatkan Markdown bersih, dioptimalkan untuk LLM. Ini berfungsi dengan postingan individu, thread, dan bahkan halaman profil. Kedua, ekosistem LLM yang lebih luas — ChatGPT, Claude, Gemini CLI, Hermes Agent, Cursor — telah menjadikan Markdown sebagai format pertukaran default untuk data pelatihan dan jendela konteks, mendorong permintaan untuk ekstraksi teks yang bersih dan efisien token.</p>
+
+    <h2>Metode 1: tweet.md — Konversi Satu Baris</h2>
+
+    <div class="method-card">
+      <h3>tweet.md</h3>
+      <p>Situs web: <a href="https://tweet.md" rel="noopener" target="_blank">tweet.md</a></p>
+      <p class="pros">Kelebihan: Tanpa pengaturan, dioptimalkan untuk LLM, berfungsi di perangkat apa pun dengan browser, gratis untuk postingan tunggal.</p>
+      <p class="cons">Kekurangan: Memerlukan internet, tidak dapat diskrip tanpa paket kunci API mereka, tingkat gratis mungkin membatasi pengguna berat.</p>
+    </div>
+
+    <p>tweet.md adalah cara paling sederhana untuk mengonversi postingan X ke Markdown. Anda tidak menginstal apa pun — cukup edit URL. Setiap postingan dan profil di X memiliki URL publik; mengganti domain dari <code>x.com</code> ke <code>tweet.md</code> memberi Anda versi Markdown yang dirender dari konten yang sama.</p>
+
+    <pre><code># URL postingan X asli
+#   https://x.com/paulg/status/1234567890123456789
+#
+# Ganti saja x.com dengan tweet.md:
+#   https://tweet.md/paulg/status/1234567890123456789
+#
+# Halaman dimuat sebagai Markdown bersih. Salin dan tempel
+# ke ChatGPT, Claude, atau editor Markdown mana pun.</code></pre>
+
+    <p>Outputnya mencakup nama penulis, teks postingan, statistik engagement, dan dalam kasus thread, seluruh thread digabungkan sebagai satu dokumen Markdown. tweet.md juga menawarkan file skill untuk agen AI (instal melalui <code>npx skills add tweet-md/skill</code>) sehingga Claude Code, Cline, atau Hermes Agent dapat mengambil konten X dengan cepat.</p>
+
+    <p>tweet.md baru-baru ini ditampilkan di Product Hunt. Ini sangat berguna ketika Anda sedang dalam chat LLM dan menemukan thread X yang ingin Anda analisis oleh model — ganti URL, salin Markdown, dan tempelkan.</p>
+
+    <h3>Kapan menggunakan tweet.md</h3>
+    <ul>
+      <li>Anda membaca X di ponsel atau laptop dan ingin menyimpan satu thread untuk nanti.</li>
+      <li>Anda ingin memberikan thread X ke ChatGPT atau Claude untuk peringkasan atau analisis.</li>
+      <li>Anda ingin membagikan versi thread X yang bersih dan diformat dengan rekan kerja tanpa screenshot.</li>
+    </ul>
+
+    <h2>Metode 2: API Publik ThreadGrab — Pengarsipan Massal Terprogram</h2>
+
+    <div class="method-card">
+      <h3>ThreadGrab</h3>
+      <p>Situs web: <a href="/id/">threadgrab.com</a></p>
+      <p class="pros">Kelebihan: Dapat diskrip, mendukung Bluesky juga, gratis dan tanpa akun, mengembalikan JSON terstruktur yang dapat Anda sesuaikan.</p>
+      <p class="cons">Kekurangan: Memerlukan kenyamanan baris perintah (curl, jq, atau bahasa skrip), tidak secepat penggantian URL.</p>
+    </div>
+
+    <p>ThreadGrab mengekspos API publik yang mengembalikan konten thread X sebagai JSON terstruktur. Ini adalah pilihan yang tepat ketika Anda perlu mengotomatisasi: mengambil batch thread dari penulis favorit Anda, mengarsipkannya ke disk setiap malam, atau membangun pipeline riset khusus.</p>
+
+    <pre><code># Ambil thread terbaru pengguna sebagai JSON
+curl -s https://threadgrab.com/api/profile/paulg \
+  | jq '.[:3] | .[] | {author, text_length: (.text | length)}'
+
+# Simpan seluruh thread sebagai Markdown ke file lokal
+curl -s https://threadgrab.com/api/profile/paulg \
+  | jq -r '.[] | "# \\(.author)\\n\\n\\(.text)\\n---"' &gt; paulg-archive.md</code></pre>
+
+    <p>API ThreadGrab mengembalikan data thread dalam skema yang dapat diprediksi: handle penulis, nama tampilan, teks postingan, statistik engagement, dan timestamp. Anda dapat memprosesnya dengan bahasa skrip apa pun — Python, Bash, Node.js — dan mengonversinya ke Markdown, JSON, atau CSV.</p>
+
+    <p>Tidak seperti tweet.md, ThreadGrab juga mendukung postingan Bluesky melalui API terbuka AT Protocol. Jika Anda mengarsipkan konten dari beberapa platform sosial, ThreadGrab adalah titik masuk tunggal Anda.</p>
+
+    <h3>Kapan menggunakan API ThreadGrab</h3>
+    <ul>
+      <li>Anda memelihara arsip riset diskusi X dan menginginkan pembaruan batch malam hari.</li>
+      <li>Anda sedang membangun dataset untuk pelatihan atau fine-tuning LLM.</li>
+      <li>Anda ingin mengarsipkan konten X dan Bluesky melalui satu antarmuka.</li>
+      <li>Anda membutuhkan data terstruktur (timestamp, hitungan engagement) selain teks.</li>
+    </ul>
+
+    <h2>Metode 3: Mode Baca Browser dan Layanan Baca-Nanti</h2>
+
+    <div class="method-card">
+      <h3>Pocket, Matter, atau Pembaca Bawaan Browser</h3>
+      <p>Setiap browser utama memiliki mode baca. Aplikasi khusus seperti Pocket dan Matter menambahkan sinkronisasi dan anotasi.</p>
+      <p class="pros">Kelebihan: Berfungsi untuk halaman web apa pun, bukan hanya X; tanpa pengaturan; baik untuk penyimpanan artikel tunggal.</p>
+      <p class="cons">Kekurangan: Tidak ada akses terprogram; Artikel X dirender dengan baik tetapi balasan thread sering hilang; format tidak konsisten.</p>
+    </div>
+
+    <p>Ini adalah metode dengan usaha paling rendah. Setiap browser utama memiliki mode baca (Ctrl+Shift+R di desktop, atau ikon halaman di bilah alamat di seluler). Ketika Anda membuka X Article atau tampilan HTML thread, mode baca menghilangkan sidebar, postingan yang disarankan, dan iklan, hanya menyisakan konten.</p>
+
+    <pre><code># Pintasan keyboard untuk mode baca:
+#   Chrome / Edge:   F9 atau Ctrl+Shift+R
+#   Firefox:         F9
+#   Safari:          Cmd+Shift+R (tombol Baca di bilah alat)
+#
+# Setelah dalam mode baca, salin-tempel teks bersih ke
+# editor Markdown favorit atau aplikasi pencatatan.</code></pre>
+
+    <p>Layanan baca-nanti khusus seperti Pocket dan Matter melangkah lebih jauh: mereka menyimpan artikel ke perpustakaan Anda, menyinkronkan di seluruh perangkat, dan sering mengekspos lapisan sorotan/anotasi. Pocket dan Matter memungkinkan Anda mengekspor artikel yang disimpan sebagai teks biasa atau HTML, yang kemudian dapat Anda konversi ke Markdown dengan alat seperti <code>pandoc</code>.</p>
+
+    <h3>Kapan menggunakan mode baca / layanan baca-nanti</h3>
+    <ul>
+      <li>Anda hanya menyimpan konten X sesekali dan tidak ingin belajar alat baru.</li>
+      <li>Anda sudah menggunakan Pocket atau Matter untuk postingan blog dan menginginkan daftar bacaan terpadu.</li>
+      <li>Anda membaca X Articles (long-form) daripada postingan pendek ber-thread — mode baca menangani long-form jauh lebih baik daripada penggabungan thread pendek.</li>
+    </ul>
+
+    <h2>Perbandingan Berdampingan</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Fitur</th>
+          <th>tweet.md</th>
+          <th>API ThreadGrab</th>
+          <th>Mode Baca / Pocket</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Waktu pengaturan</td>
+          <td>0 detik (ganti URL)</td>
+          <td>5 menit (curl + jq)</td>
+          <td>0 detik (bawaan)</td>
+        </tr>
+        <tr>
+          <td>Akses terprogram</td>
+          <td>Paket kunci API diperlukan</td>
+          <td>Gratis, tanpa autentikasi</td>
+          <td>Tidak (manual saja)</td>
+        </tr>
+        <tr>
+          <td>Penggabungan thread</td>
+          <td>Seluruh thread sebagai satu dokumen</td>
+          <td>Seluruh thread sebagai data terstruktur</td>
+          <td>Sebagian (thread rusak)</td>
+        </tr>
+        <tr>
+          <td>Output dioptimalkan LLM</td>
+          <td>Ya (dibangun khusus)</td>
+          <td>Ya (JSON/Markdown bersih)</td>
+          <td>Tidak (teks web mentah)</td>
+        </tr>
+        <tr>
+          <td>Dukungan Bluesky</td>
+          <td>Tidak (X saja)</td>
+          <td>Ya (AT Protocol)</td>
+          <td>Ya (pembaca HTML)</td>
+        </tr>
+        <tr>
+          <td>Penyimpanan batch/massal</td>
+          <td>Manual per URL</td>
+          <td>Dapat diskrip (cron, curl)</td>
+          <td>Manual per halaman</td>
+        </tr>
+        <tr>
+          <td>Akses offline</td>
+          <td>Salin-tempel atau PDF</td>
+          <td>Simpan file .md ke disk</td>
+          <td>Perpustakaan tersinkronisasi (Pocket)</td>
+        </tr>
+        <tr>
+          <td>Terbaik untuk</td>
+          <td>Input LLM satu kali cepat</td>
+          <td>Arsip riset, otomatisasi</td>
+          <td>Bacaan santai, artikel tunggal</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Membangun Alur Kerja Otomatis dengan Ketiganya</h2>
+    <p>Banyak pengguna power menggabungkan metode untuk pipeline lengkap. Berikut adalah contoh dunia nyata: seorang peneliti yang mengikuti 20 akun X dan menginginkan arsip siap-LLM yang dikirim ke vault Obsidian mereka setiap pagi.</p>
+
+    <pre><code>#!/bin/bash
+# Arsip X malam untuk Obsidian (berjalan jam 6 pagi melalui cron)
+
+USERS=("paulg" "kelseyhightower" "swyx" "levelsio")
+OUTPUT_DIR="$HOME/obsidian-vault/inbox/x-threads"
+mkdir -p "$OUTPUT_DIR"
+
+for user in "${USERS[@]}"; do
+  curl -s "https://threadgrab.com/api/profile/$user" \
+    | jq -r '.[] | "# \\(.author)\\n\\(.text)\\n---"' \
+    &gt; "$OUTPUT_DIR/$user-$(date +%Y-%m-%d).md"
+done
+
+echo "Mengarsipkan ${#USERS[@]} profil ke $OUTPUT_DIR"</code></pre>
+
+    <p>Pipeline ini menggunakan API ThreadGrab untuk pengambilan batch, menghasilkan Markdown bersih yang dapat diindeks Obsidian, dan membuka pintu untuk tweet.md ketika peneliti menemukan satu thread menarik selama hari kerja dan menginginkannya di chat LLM mereka segera.</p>
+
+    <div class="callout">
+      <p><strong>Pro tip.</strong> Jika Anda menggunakan agen coding AI seperti Claude Code, Cline, atau Cursor, instal skill tweet.md dengan <code>npx skills add tweet-md/skill</code>. Agen kemudian dapat mengambil URL X apa pun sebagai Markdown dengan cepat selama sesi Anda, tanpa Anda meninggalkan chat.</p>
+    </div>
+
+    <h2>Bagaimana ThreadGrab Cocok ke Dalam Alur Kerja Ini</h2>
+    <p>ThreadGrab dibangun untuk memberi Anda <strong>kepemilikan atas konten yang Anda baca</strong>. Apakah Anda menggunakannya melalui API publik (untuk otomatisasi), antarmuka web (untuk pengambilan satu kali), atau sebagai pelengkap tweet.md (untuk alur kerja LLM), tujuannya sama: mengonversi konten sosial publik menjadi Markdown yang bersih, portabel, dan dapat dibaca mesin yang Anda miliki dan kendalikan.</p>
+
+    <p>Tidak seperti tweet.md, ThreadGrab tidak memerlukan akun, kunci API, atau pembayaran untuk akses terprogram. Ia juga berfungsi dengan postingan Bluesky, menjadikannya satu-satunya alat dalam perbandingan ini yang melintasi dua platform sosial utama.</p>
+
+    <div class="cta">
+      <p>Ingin menyimpan thread atau artikel X untuk dibaca nanti — tanpa instalasi, tanpa akun?</p>
+      <a class="btn" href="/id/">Coba ThreadGrab -- Pengunduh Thread X Gratis</a>
+    </div>
+
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <strong>Apa itu tweet.md dan bagaimana cara menggunakannya?</strong>
+      <p>tweet.md mengonversi postingan atau thread X publik menjadi Markdown bersih. Cukup ganti <code>x.com</code> dengan <code>tweet.md</code> di URL dan Anda mendapatkan Markdown. Gratis untuk postingan individu dan menawarkan paket kunci API untuk pengguna berat.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Bisakah saya menyimpan thread X secara terprogram tanpa tweet.md?</strong>
+      <p>Ya. ThreadGrab menawarkan API publik gratis yang mengembalikan data thread sebagai JSON terstruktur. Gunakan <code>curl</code> untuk mengambil konten thread, kemudian konversikan JSON ke Markdown dengan <code>jq</code> atau skrip Python pendek.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Apakah tweet.md lebih baik dari ThreadGrab untuk menyimpan thread X?</strong>
+      <p>Mereka melayani kebutuhan berbeda. tweet.md dioptimalkan untuk input LLM satu kali cepat. ThreadGrab unggul dalam akses terprogram, alur kerja batch, dan dukungan Bluesky. Banyak pengguna power menggabungkan keduanya.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Bagaimana cara menyimpan X Articles (long-form) sebagai Markdown?</strong>
+      <p>Mode baca browser (Ctrl+Shift+R) atau aplikasi baca-nanti seperti Pocket dan Matter memberi Anda teks bersih dari URL X Article mana pun. tweet.md juga berfungsi dengan URL Article. API ThreadGrab juga mendukungnya.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Apa metode terbaik untuk mengirim konten X ke ChatGPT atau Claude?</strong>
+      <p>tweet.md dirancang khusus untuk input LLM: Markdown bersih dengan boilerplate minimal. Salin dan tempel langsung ke chat mana pun. Untuk injeksi massal, API ThreadGrab dapat mengambil batch beberapa thread sebagai blok Markdown.</p>
+    </div>
+
+    <h2>Pilih Metode Anda dan Mulai Menyimpan</h2>
+    <p>Ekosistem X-ke-Markdown di 2026 lebih sehat dari sebelumnya. tweet.md memberi Anda konversi satu detik untuk setiap postingan. API publik ThreadGrab memberi Anda akses gratis dan dapat diskrip untuk riset dan otomatisasi. Mode baca browser dan layanan baca-nanti mencakup penyimpanan kasual. Pilih metode yang sesuai dengan alur kerja Anda, dan jika Anda merasa menginginkan cara yang lebih sederhana untuk menyimpan thread dan artikel untuk bacaan nanti, <a href="/id/">ThreadGrab siap membantu Anda</a>.</p>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/id/">Beranda</a> &middot; <a href="/id/blog/">Blog</a> &middot; <a href="/id/about/">Tentang</a> &middot; <a href="/id/privacy/">Privasi</a>
+    <br>Tidak berafiliasi dengan X Corp., Bluesky Social PBC, atau tweet.md.
+  </footer>
+</body>
+</html>

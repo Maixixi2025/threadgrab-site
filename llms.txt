@@ -1,0 +1,38 @@
+# ThreadGrab
+
+> Free online tool to save public X (Twitter) threads, Bluesky posts, and LinkedIn articles as clean text or Markdown for offline reading. No install, no account, no watermark.
+
+## Main pages
+
+- [Home (English)](https://threadgrab.com/en/): Save X threads and articles as clean text in one click.
+- [Home (Bahasa Indonesia)](https://threadgrab.com/id/): ThreadGrab versi Bahasa Indonesia.
+- [Home (Português)](https://threadgrab.com/pt/): ThreadGrab em português.
+
+## Blog
+
+- [X v11.90 Articles Scraper: threadgrab Long-Form 2026 | ThreadGrab](https://threadgrab.com/en/blog/x-articles-v1190-threadgrab-2026.html): X v11.90 changed the See All Articles entry to a top-level segmented control and switched the article id to 19-char base64. Here is how to scrape the new layout with threadgrab and clean Markdown.
+- [2026 X Thread Archiving: 5 Tools Compared | ThreadGrab](https://threadgrab.com/en/blog/x-thread-archiving-tools-2026.html): Compare the 5 best tools for saving X (Twitter) threads and articles in 2026 — ThreadGrab, Nitter, Thread Reader, archive.today, and curl+API scripts.
+
+- [X Articles Freedom of Reach 2026 | ThreadGrab](https://threadgrab.com/en/blog/x-articles-freedom-of-reach-2026.html): What X's Freedom of Reach algorithm black box means for long-form creators in 2026 — how reach is hidden, and where to cross-post.
+- [X to Markdown 2026: 3 Ways to Save X Threads | ThreadGrab](https://threadgrab.com/en/blog/x-to-markdown-3-methods-2026.html): A practical guide to converting X threads and articles to clean Markdown using tweet.md, ThreadGrab API, and browser reader mode.
+- [LinkedIn Long-Form 2026: Post-Embarrassing Era | ThreadGrab](https://threadgrab.com/en/blog/linkedin-long-form-post-embarrassing-era-2026.html): A creator strategy guide to LinkedIn 2026: what changed in the algorithm, who benefits from the long-form shift, and how to archive LinkedIn newsletters as Markdown for offline reading.
+- [X Articles vs Bluesky vs LinkedIn Newsletter | ThreadGrab](https://threadgrab.com/en/blog/x-articles-vs-bluesky-vs-linkedin-newsletter-2026.html): A practical 2026 comparison of the three long-form social platforms — X Articles, Bluesky long-form, and LinkedIn Newsletter.
+
+## What ThreadGrab does
+
+- Fetches public X (Twitter) threads, articles, and posts as readable plain text or Markdown.
+- Fetches public Bluesky posts via the AT Protocol's open API.
+- Works in any browser, no install or account required.
+- Free to use, with no watermark, rate-limit, or sign-up wall.
+
+## What ThreadGrab does not do
+
+- Does not fetch private / friends-only posts.
+- Does not log user download history beyond standard 7-day server logs.
+- Does not republish, redistribute, or commercialize fetched content.
+- Is not affiliated with X Corp., Bluesky Social PBC, or LinkedIn / Microsoft.
+
+## Legal
+
+- [Privacy Policy](https://threadgrab.com/en/privacy/)
+- [Terms of Service](https://threadgrab.com/en/terms/)

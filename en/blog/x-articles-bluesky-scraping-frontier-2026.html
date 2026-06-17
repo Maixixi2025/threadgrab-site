@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bluesky vs X Articles 2026: Scraping Frontier | ThreadGrab</title>
+  <meta name="description" content="Bluesky launched long-form content to counter X Articles. Compare how both platforms work for content scraping, archiving, and repurposing in 2026.">
+  <meta name="keywords" content="Bluesky long-form content, X Articles scraping, social content archiving, Bluesky AT Protocol, ThreadGrab, save Bluesky posts, X Articles to Markdown, content scraping 2026, Bluesky vs X Articles">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/en/blog/x-articles-bluesky-scraping-frontier-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/x-articles-bluesky-scraping-frontier-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/x-articles-bluesky-scraping-frontier-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/x-articles-bluesky-scraping-frontier-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/x-articles-bluesky-scraping-frontier-2026.html">
+  <meta property="og:title" content="Bluesky vs X Articles 2026: Scraping Frontier | ThreadGrab">
+  <meta property="og:description" content="Bluesky launched long-form content to counter X Articles. Compare how both platforms work for content scraping, archiving, and repurposing in 2026.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/en/blog/x-articles-bluesky-scraping-frontier-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bluesky vs X Articles 2026: Scraping Frontier | ThreadGrab">
+  <meta name="twitter:description" content="Bluesky launched long-form content to counter X Articles. Compare how both platforms work for content scraping, archiving, and repurposing in 2026.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+    @media (max-width: 640px) { main { padding: 24px 16px 40px; } table { font-size: 0.8rem; } th, td { padding: 8px; } }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Bluesky vs X Articles 2026: The Content Scraping Frontier",
+    "description": "Bluesky launched long-form content to counter X Articles. Compare how both platforms work for content scraping, archiving, and repurposing in 2026.",
+    "datePublished": "2026-06-15",
+    "dateModified": "2026-06-15",
+    "author": {"@type": "Person", "name": "ThreadGrab"},
+    "publisher": {"@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com"},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://threadgrab.com/en/blog/x-articles-bluesky-scraping-frontier-2026.html"}
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/en/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a class="active" href="/en/blog/x-articles-bluesky-scraping-frontier-2026.html">EN</a>
+      <a href="/pt/blog/x-articles-bluesky-scraping-frontier-2026.html">PT</a>
+      <a href="/id/blog/x-articles-bluesky-scraping-frontier-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb"><a href="/en/">Home</a> / <a href="/en/blog/">Blog</a> / X Articles vs Bluesky Scraping</div>
+
+    <h1>X Articles vs Bluesky Long-Form <span>2026</span></h1>
+    <p class="meta">June 15, 2026 &middot; 9 min read &middot; Comparison</p>
+
+    <p>In late May 2026, Bluesky launched a long-form content feature designed to compete directly with X Articles. For the first time, two major social platforms offer native long-form publishing — and content scraping tools like ThreadGrab have a new frontier to cover.</p>
+
+    <p>This is not another "which platform is better for writers" comparison. This is a <strong>technical guide</strong> to scraping, archiving, and repurposing content from both platforms in 2026. If you are a researcher, an AI trainer, or a content creator who wants to own your data, here is what changed and how to adapt.</p>
+
+    <div class="callout">
+      <p><strong>TL;DR.</strong> Both X Articles and Bluesky long-form can be saved as Markdown using ThreadGrab. X uses a proprietary API with stricter rate limits. Bluesky uses the open AT Protocol (free, no API key). For batch archiving, Bluesky is easier to scrape. For single high-value articles, both work identically through ThreadGrab.</p>
+    </div>
+
+    <h2>What Changed: Bluesky Long-Form Content (May 2026)</h2>
+    <p>Bluesky's long-form feature, announced on May 28, 2026, lets users write and publish posts exceeding the traditional 300-character limit. Similar to X Articles, these long-form posts support rich text, headers, lists, and embedded media. The difference is in the underlying protocol: Bluesky builds on the AT Protocol, an open, decentralized standard that any developer can query without authentication.</p>
+
+    <p>X Articles, by contrast, sits inside X's proprietary ecosystem. To scrape them programmatically, you need either the X API (paid tiers starting at $200/month) or a third-party tool like ThreadGrab that reverse-engineers the public web interface.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>X Articles</th>
+          <th>Bluesky Long-Form</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Launch date</td>
+          <td>Late 2024 (public)</td>
+          <td>May 28, 2026</td>
+        </tr>
+        <tr>
+          <td>Protocol</td>
+          <td>Proprietary (X API)</td>
+          <td>Open (AT Protocol)</td>
+        </tr>
+        <tr>
+          <td>Auth required for scraping</td>
+          <td>Yes (API key or web scraping)</td>
+          <td>No (public API)</td>
+        </tr>
+        <tr>
+          <td>Rate limits</td>
+          <td>Strict (100 req / 15 min)</td>
+          <td>Generous (AT Protocol)</td>
+        </tr>
+        <tr>
+          <td>Markdown output via ThreadGrab</td>
+          <td>Yes</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Best for scraping</td>
+          <td>Single articles, individual saves</td>
+          <td>Batch feeds, research archives</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>How to Scrape X Articles in 2026</h2>
+    <p>X Articles are structured as HTML documents rendered inside X's web interface. The key challenge is that X serves articles as part of a React application, meaning the raw HTML source contains minimal content — most of the text is loaded dynamically via JavaScript.</p>
+
+    <p>ThreadGrab handles this by rendering the page server-side and extracting the article body from the DOM tree. The result is clean Markdown with no boilerplate, no sidebar, no suggested posts.</p>
+
+    <pre><code># Save an X Article as Markdown (via ThreadGrab API)
+curl -s "https://threadgrab.com/api/x/article/some-article-title" \
+  | jq -r '.text' > article.md
+
+# Or use the profile API to get the latest article from a user
+curl -s "https://threadgrab.com/api/profile/paulg" \
+  | jq -r '.[] | select(.type == "article") | .text' > paulg-latest.md</code></pre>
+
+    <div class="callout">
+      <p><strong>Pro tip.</strong> X rate-limits anonymous page views aggressively in 2026. If you scrape X Articles directly with curl or Playwright, expect frequent CAPTCHAs and temporary IP blocks. ThreadGrab rotates user agents and proxies so you do not have to.</p>
+    </div>
+
+    <h2>How to Scrape Bluesky Long-Form Content</h2>
+    <p>Bluesky's AT Protocol makes scraping dramatically simpler. Every post — including long-form content — is stored as an AT Protocol record. You can query these records directly through any AT Protocol relay or through Bluesky's public API without authentication.</p>
+
+    <pre><code># Fetch a Bluesky user's recent posts (including long-form) via AT Protocol
+curl -s "https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=username.bsky.social" \
+  | jq -r '.feed[] | .post.record.text' > bsky-archive.md
+
+# ThreadGrab supports Bluesky natively
+curl -s "https://threadgrab.com/api/profile/username.bsky.social" \
+  | jq -r '.[] | .text' > bsky-threadgrab.md</code></pre>
+
+    <p>A critical advantage: Bluesky posts are signed with cryptographic keys and stored on Personal Data Servers (PDS). Even if a post is deleted from the user's timeline, the record may still exist on the PDS, making Bluesky a better platform for long-term content preservation.</p>
+
+    <h2>Side-by-Side: Scraping Comparison</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Criteria</th>
+          <th>X Articles</th>
+          <th>Bluesky Long-Form</th>
+          <th>ThreadGrab (both)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Scraping difficulty</td>
+          <td>High (JS rendering, CAPTCHAs)</td>
+          <td>Low (open API, no CAPTCHA)</td>
+          <td>Minimal (one endpoint)</td>
+        </tr>
+        <tr>
+          <td>Programmatic access</td>
+          <td>X API (paid) or scraping</td>
+          <td>AT Protocol (free, public)</td>
+          <td>Free API, no auth</td>
+        </tr>
+        <tr>
+          <td>Rate limit handling</td>
+          <td>Manual throttling required</td>
+          <td>Generous limits</td>
+          <td>Built-in retry + proxy</td>
+        </tr>
+        <tr>
+          <td>LLM-ready output</td>
+          <td>Depends on tool</td>
+          <td>Depends on tool</td>
+          <td>Clean Markdown by default</td>
+        </tr>
+        <tr>
+          <td>Long-term preservation</td>
+          <td>Content can be deleted</td>
+          <td>Signed records on PDS</td>
+          <td>Save to local .md files</td>
+        </tr>
+        <tr>
+          <td>Batch support</td>
+          <td>Per-article or per-profile</td>
+          <td>Per-feed or per-profile</td>
+          <td>Per-profile (both platforms)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Building a Cross-Platform Archiving Pipeline</h2>
+    <p>The true power of ThreadGrab is treating X and Bluesky as interchangeable sources. Here is a real-world pipeline that archives both platforms into a single Markdown vault:</p>
+
+    <pre><code>#!/bin/bash
+# Cross-platform content archive -- runs daily via cron
+
+USERS_X=("paulg" "kelseyhightower" "levelsio")
+USERS_BSKY=("jack.bsky.social" "tante.bsky.social")
+
+OUTPUT_DIR="$HOME/archive/social-content"
+mkdir -p "$OUTPUT_DIR"
+
+echo "=== Archiving X Articles ==="
+for user in "${USERS_X[@]}"; do
+  curl -s "https://threadgrab.com/api/profile/$user" \
+    | jq -r '.[] | select(.type == "article") | "## \(.author)\n\(.text)\n"' \
+    &gt; "$OUTPUT_DIR/x-$user-$(date +%Y-%m-%d).md"
+done
+
+echo "=== Archiving Bluesky Long-Form ==="
+for user in "${USERS_BSKY[@]}"; do
+  curl -s "https://threadgrab.com/api/profile/$user" \
+    | jq -r '.[] | "## \(.author)\n\(.text)\n"' \
+    &gt; "$OUTPUT_DIR/bsky-$user-$(date +%Y-%m-%d).md"
+done
+
+echo "Archived to $OUTPUT_DIR"</code></pre>
+
+    <p>This pipeline generates one Markdown file per platform per user per day. You can feed these files into Obsidian, Notion, or any LLM knowledge base. The <code>jq</code> filter <code>select(.type == "article")</code> picks only long-form posts from X profiles, while Bluesky's output already exposes the post text directly.</p>
+
+    <h2>What the Bluesky Long-Form Launch Means for Scraping Tools</h2>
+    <p>The launch of Bluesky long-form content reshapes the content scraping landscape in three important ways:</p>
+
+    <ul>
+      <li><strong>More content to archive.</strong> Bluesky users who previously posted only short updates now have an incentive to write long-form articles. The pool of scrapable long-form content just expanded.</li>
+      <li><strong>Open protocol advantage.</strong> Bluesky's AT Protocol is fully documented and publicly queryable. Any scraping tool can integrate it without negotiating an API agreement. This puts pressure on X to either loosen its API restrictions or lose the "most scraped platform" crown to Bluesky.</li>
+      <li><strong>Archiving is now a competitive feature.</strong> As creators diversify across platforms, the ability to archive content from multiple sources through a single tool becomes a decisive advantage. ThreadGrab already supports both X and Bluesky through the same API — one of the few tools that can claim cross-platform parity in 2026.</li>
+    </ul>
+
+    <div class="callout">
+      <p><strong>Note.</strong> Bluesky long-form content is less than three weeks old as of this writing. The AT Protocol relay infrastructure is still maturing. Some long-form posts may take minutes to propagate across relays. For production archiving, use ThreadGrab's API which queries multiple relays and falls back gracefully.</p>
+    </div>
+
+    <h2>Which Platform Should You Scrape — Based on Your Use Case</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Your goal</th>
+          <th>Best platform</th>
+          <th>Recommended method</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>LLM training data</td>
+          <td>Both (diverse sources)</td>
+          <td>ThreadGrab API + jq filter</td>
+        </tr>
+        <tr>
+          <td>Personal research archive</td>
+          <td>Bluesky (open, permanent)</td>
+          <td>AT Protocol direct query</td>
+        </tr>
+        <tr>
+          <td>Journalism / fact-checking</td>
+          <td>X Articles (more authors)</td>
+          <td>ThreadGrab with CAPTCHA bypass</td>
+        </tr>
+        <tr>
+          <td>Monitoring competitors</td>
+          <td>Both (cross-reference)</td>
+          <td>ThreadGrab cron pipeline</td>
+        </tr>
+        <tr>
+          <td>Building a knowledge base</td>
+          <td>Both (max coverage)</td>
+          <td>ThreadGrab + Obsidian vault</td>
+        </tr>
+        <tr>
+          <td>Occasional single-article save</td>
+          <td>Either</td>
+          <td>ThreadGrab web interface</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <strong>Does Bluesky long-form content require authentication to scrape?</strong>
+      <p>No. Bluesky's AT Protocol is public by default. You can query posts, feeds, and profiles without an API key or account. This is a major advantage over X, which requires authentication for programmatic access.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Can ThreadGrab save both X Articles and Bluesky long-form posts?</strong>
+      <p>Yes. ThreadGrab supports both platforms through a single API endpoint. Use the profile API to fetch all recent content from a user, regardless of whether they post on X, Bluesky, or both.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Is Bluesky long-form content permanent once archived via AT Protocol?</strong>
+      <p>Bluesky posts are stored on Personal Data Servers (PDS). If the author deletes a post, the PDS may still retain the record. However, for guaranteed permanence, always save a local copy as Markdown or JSON.</p>
+    </div>
+    <div class="faq-item">
+      <strong>What are the rate limits for scraping X Articles in 2026?</strong>
+      <p>X's anonymous rate limits are approximately 100 page views per 15 minutes per IP. For heavy scraping, use a rotating proxy service or route through ThreadGrab which manages rate limits automatically.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Can I automate a daily archive of both X and Bluesky content?</strong>
+      <p>Yes. Use the cron pipeline shown above. ThreadGrab's API handles both platforms in the same request pattern. Schedule it with a simple cron job — no API keys, no OAuth, no platform-specific code.</p>
+    </div>
+
+    <div class="cta">
+      <p>Start saving X Articles and Bluesky long-form content as Markdown today — no account needed.</p>
+      <a class="btn" href="/en/">Try ThreadGrab — Free Cross-Platform Content Downloader</a>
+    </div>
+
+    <h2>The Scraping Frontier Is Open</h2>
+    <p>The battle between X Articles and Bluesky long-form content is just beginning. For creators, researchers, and archivists, the winner is clear: having two major platforms competing on long-form means more content to discover, more perspectives to archive, and more incentive for tools like ThreadGrab to support both.</p>
+
+    <p>Bluesky's open protocol makes it the easier platform to scrape technically. X Articles has the larger existing library of content. Together, they cover the full spectrum of social long-form publishing in 2026. The smartest archiving strategy uses both.</p>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/en/">Home</a> &middot; <a href="/en/blog/">Blog</a> &middot; <a href="/en/about/">About</a> &middot; <a href="/en/privacy/">Privacy</a>
+    <br>Not affiliated with X Corp. or Bluesky Social PBC.
+  </footer>
+</body>
+</html>

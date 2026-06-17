@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arquivamento de Posts do Bluesky 2026: 5 Maneiras de Salvar Posts, Threads e Feeds | ThreadGrab</title>
+  <meta name="description" content="Compare favoritos do Bluesky, a API do AT Protocol, ThreadGrab, Jetstream e o SDK atproto para salvar posts e feeds do Bluesky em 2026.">
+  <meta name="keywords" content="arquivar Bluesky, salvar posts Bluesky, AT Protocol, backup Bluesky, ThreadGrab Bluesky, favoritos Bluesky, atproto SDK, Jetstream Bluesky, arquivamento redes sociais">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/pt/blog/bluesky-post-archiving-solutions-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/bluesky-post-archiving-solutions-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/bluesky-post-archiving-solutions-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/bluesky-post-archiving-solutions-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/bluesky-post-archiving-solutions-2026.html">
+  <meta property="og:title" content="Arquivamento de Posts do Bluesky 2026: 5 Maneiras de Salvar Posts, Threads e Feeds | ThreadGrab">
+  <meta property="og:description" content="Compare favoritos do Bluesky, a API do AT Protocol, ThreadGrab, Jetstream e o SDK atproto para salvar posts e feeds do Bluesky em 2026.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/pt/blog/bluesky-post-archiving-solutions-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Arquivamento de Posts do Bluesky 2026: 5 Maneiras de Salvar Posts, Threads e Feeds | ThreadGrab">
+  <meta name="twitter:description" content="Compare favoritos do Bluesky, a API do AT Protocol, ThreadGrab, Jetstream e o SDK atproto para salvar posts e feeds do Bluesky em 2026.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 2px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    .method-card { background: #1a1a1a; border-radius: 10px; padding: 20px 22px; margin-bottom: 18px; border-left: 3px solid #20d5ec; }
+    .method-card h3 { margin-top: 0; color: #20d5ec; }
+    .method-card .pros { color: #6fcf97; font-size: 0.9rem; }
+    .method-card .cons { color: #f2994a; font-size: 0.9rem; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Arquivamento de Posts do Bluesky 2026: 5 Maneiras de Salvar Posts, Threads e Feeds",
+    "description": "Compare favoritos do Bluesky, a API do AT Protocol, ThreadGrab, Jetstream e o SDK atproto para salvar posts e feeds do Bluesky em 2026.",
+    "datePublished": "2026-06-14",
+    "dateModified": "2026-06-14",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/" },
+    "mainEntityOfPage": "https://threadgrab.com/pt/blog/bluesky-post-archiving-solutions-2026.html",
+    "inLanguage": "pt"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://threadgrab.com/pt/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/pt/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Arquivamento Bluesky 2026" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "O Bluesky tem favoritos integrados?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. O Bluesky adicionou favoritos nativos em meados de 2025. Você pode favoritar qualquer post clicando no ícone de favorito. Os favoritos são privados e pesquisáveis dentro da sua conta, mas não podem ser exportados como dados estruturados."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso usar a API do AT Protocol para salvar posts do Bluesky gratuitamente?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. O AT Protocol tem uma API aberta com limite de taxa que não requer chave de API. Você pode buscar posts, timelines de usuários e feeds usando requisições HTTP GET simples para endpoints públicos como bsky.social/xrpc/com.atproto.repo.getRecord."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O ThreadGrab suporta arquivamento do Bluesky?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. O ThreadGrab suporta posts do Bluesky através da API aberta do AT Protocol. Você pode usar a API do ThreadGrab para buscar threads e perfis do Bluesky junto com conteúdo do X através de uma única interface, sem necessidade de conta ou chave de API."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O que é Jetstream no ecossistema Bluesky?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Jetstream é um serviço firehose em tempo real para o AT Protocol. Ele fornece um stream WebSocket de cada evento público em toda a rede Bluesky, sendo ideal para pesquisadores que precisam de conjuntos de dados abrangentes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Existe um SDK Python para o AT Protocol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. O SDK Python oficial é atproto (pip install atproto). Ele suporta autenticação, busca de timelines, pesquisa de posts, gerenciamento de favoritos e upload de mídia."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/pt/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a href="/en/blog/bluesky-post-archiving-solutions-2026.html">EN</a>
+      <a href="/pt/blog/bluesky-post-archiving-solutions-2026.html" class="active">PT</a>
+      <a href="/id/blog/bluesky-post-archiving-solutions-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <p class="breadcrumb"><a href="/pt/">Início</a> &rsaquo; <a href="/pt/blog/">Blog</a> &rsaquo; Arquivamento Bluesky 2026: 5 Métodos</p>
+
+    <h1>Arquivamento de Posts do Bluesky 2026: <span>5 Maneiras de Salvar Posts, Threads e Feeds</span></h1>
+    <p class="meta">14 de Junho, 2026 &middot; 9 min de leitura &middot; por ThreadGrab</p>
+
+    <p>O Bluesky cresceu rapidamente ao longo de 2025 e 2026, agora hospedando milhões de usuários ativos e dezenas de milhões de posts públicos todos os meses. Seja você um jornalista acompanhando uma notícia de última hora, um pesquisador construindo um conjunto de dados de mídia social, ou um criador de conteúdo reaproveitando suas próprias threads do Bluesky para artigos longos, você precisa de uma maneira confiável de arquivar conteúdo do Bluesky.</p>
+
+    <p>O AT Protocol, que alimenta o Bluesky, é aberto e descentralizado por design. Isso significa que há mais opções de arquivamento do que em qualquer outra grande plataforma social. Este guia cobre cinco métodos comprovados, desde favoritos integrados até scraping firehose em tempo real, para que você possa escolher o que se encaixa no seu nível técnico e fluxo de trabalho.</p>
+
+    <div class="callout">
+      <p><strong>Resumo.</strong> Use os <strong>favoritos integrados do Bluesky</strong> para salvamentos casuais. Use a <strong>API HTTP do AT Protocol</strong> para acesso programático sem autenticação. Use o <strong>ThreadGrab</strong> para arquivamento multiplataforma (Bluesky + X em uma interface). Use o <strong>Jetstream</strong> para dados firehose em tempo real. Use o <strong>SDK atproto Python</strong> para scripts de arquivamento totalmente personalizados.</p>
+    </div>
+
+    <h2>Por Que o Arquivamento do Bluesky é Importante em 2026</h2>
+    <p>Três tendências tornam o arquivamento do Bluesky particularmente relevante este ano. Primeiro, a base de usuários do Bluesky ultrapassou 30 milhões, tornando-se a terceira maior plataforma de conversação pública depois do X e Threads. Segundo, a plataforma se tornou uma fonte primária para debates de tecnologia, jornalismo e academia -- comunidades que deixaram o X em 2024-2025 migraram para o Bluesky em grande número. Terceiro, o design aberto do AT Protocol significa que arquivar não é apenas possível, mas incentivado: cada post público é acessível através de APIs documentadas sem necessidade de autenticação para acesso de leitura.</p>
+
+    <p>Ao contrário do X, que restringiu o acesso à API a níveis pagos, o AT Protocol do Bluesky permanece completamente aberto. Você pode buscar a timeline de qualquer usuário, a thread de qualquer post, ou o conteúdo de qualquer feed com simples requisições HTTP -- sem chave de API, sem conta de desenvolvedor, sem assinatura mensal. Isso torna o Bluesky a plataforma social mais arquivável em 2026.</p>
+
+    <h2>Método 1: Favoritos Integrados do Bluesky -- O Salvamento Sem Esforço</h2>
+
+    <div class="method-card">
+      <h3>Favoritos Nativos do Bluesky</h3>
+      <p>Disponível no aplicativo Bluesky (web, iOS, Android) desde meados de 2025.</p>
+      <p class="pros">Pros: Zero configuração, privado, pesquisável, funciona em qualquer dispositivo, sem necessidade de habilidades técnicas.</p>
+      <p class="cons">Cons: Sem capacidade de exportação, sem acesso programático, limitado à sua própria conta, sem operações em lote.</p>
+    </div>
+
+    <p>O Bluesky introduziu favoritos nativos em 2025, e eles funcionam exatamente como você esperaria. Clique no ícone de favorito em qualquer post, e ele é salvo em uma coleção privada de favoritos visível apenas para você. Os favoritos são pesquisáveis dentro do aplicativo, e você pode organizá-los em pastas ou usar a lista plana padrão.</p>
+
+    <p>Favoritos são ótimos para uso casual -- você vê uma thread interessante no seu feed de descoberta, favorita, e volta para ler depois. Mas eles têm um limite importante: você não pode exportar seus favoritos como dados estruturados. Se você quiser compilar um conjunto de dados de pesquisa, migrar para outra plataforma, ou executar análise em conteúdo salvo, precisa de um dos métodos abaixo.</p>
+
+    <h3>Quando usar favoritos integrados</h3>
+    <ul>
+      <li>Você salva posts ocasionalmente e só precisa revisitá-los dentro do Bluesky.</li>
+      <li>Você compartilha uma conta Bluesky com uma equipe e quer uma lista de leitura compartilhada.</li>
+      <li>Você não precisa do conteúdo salvo fora do Bluesky.</li>
+    </ul>
+
+    <h2>Método 2: API HTTP do AT Protocol -- A Abordagem Aberta e Sem Autenticação</h2>
+
+    <div class="method-card">
+      <h3>Endpoints Públicos do AT Protocol</h3>
+      <p>URL base: <code>https://bsky.social/xrpc/</code> -- sem autenticação necessária para endpoints de leitura.</p>
+      <p class="pros">Pros: Completamente gratuito, sem necessidade de chave de API, bem documentado, funciona com qualquer cliente HTTP.</p>
+      <p class="cons">Cons: Limitado por taxa (aproximadamente 5.000 requisições por hora por IP), requer familiaridade com estruturas de dados do AT Protocol (CIDs, strong references).</p>
+    </div>
+
+    <p>O AT Protocol expõe um conjunto completo de APIs públicas para leitura de dados. Você pode buscar a timeline de qualquer usuário, qualquer post individual, threads de conversa inteiras e feeds curados -- tudo com simples requisições HTTP GET.</p>
+
+    <pre><code># Buscar a timeline de um usuário (últimos 30 posts)
+curl -s "https://bsky.social/xrpc/app.bsky.feed.getAuthorFeed?actor=bsky.app" \
+  | jq '.feed[:3] | .[] | {author: .post.author.handle, text: .post.record.text}'
+
+# Buscar um post específico por AT-URI
+curl -s "https://bsky.social/xrpc/app.bsky.feed.getPostThread?uri=at://did:plc:.../app.bsky.feed.post/3lmp6q7q2hs2s" \
+  | jq '.thread.post.record.text'
+
+# Pesquisar posts por palavra-chave
+curl -s "https://bsky.social/xrpc/app.bsky.feed.searchPosts?q=arquivar+Bluesky+2026&limit=25" \
+  | jq '.posts[] | {author: .author.handle, text: .record.text}'</code></pre>
+
+    <p>O conceito chave no AT Protocol é a AT-URI -- um identificador descentralizado que aponta para qualquer registro na rede. Cada post, like, follow e feed tem uma AT-URI única. Depois de ter a AT-URI ou DID (Identificador Descentralizado) de um usuário, você pode buscar todo o seu conteúdo público sem qualquer autenticação.</p>
+
+    <p>Os limites de taxa são generosos (cerca de 5.000 requisições por hora por IP), o que é suficiente para arquivamento pessoal e pequenos projetos de pesquisa. Para coleta em larga escala, você precisa do Jetstream (Método 4) ou do firehose.</p>
+
+    <h3>Quando usar a API do AT Protocol</h3>
+    <ul>
+      <li>Você está confortável com curl ou uma linguagem de script como Python ou Node.js.</li>
+      <li>Você precisa arquivar usuários, posts ou feeds específicos em uma agenda recorrente.</li>
+      <li>Você quer construir um dashboard personalizado ou pipeline de análise para conteúdo do Bluesky.</li>
+    </ul>
+
+    <h2>Método 3: ThreadGrab -- Arquivamento Multiplataforma Bluesky + X</h2>
+
+    <div class="method-card">
+      <h3>ThreadGrab</h3>
+      <p>Website: <a href="/pt/">threadgrab.com</a> -- gratuito, sem necessidade de conta.</p>
+      <p class="pros">Pros: Interface única para arquivamento Bluesky E X, API gratuita, sem autenticação necessária, retorna JSON estruturado ou Markdown.</p>
+      <p class="cons">Cons: Requer conforto com linha de comando, não oferece streaming firehose em tempo real (use Jetstream para isso).</p>
+    </div>
+
+    <p>O ThreadGrab foi construído para resolver exatamente este problema: você não deveria precisar de uma ferramenta diferente para cada plataforma social. A API pública do ThreadGrab suporta posts do Bluesky através dos endpoints abertos do AT Protocol, dando a você o mesmo formato de dados estruturados, esteja você arquivando uma thread do X ou um feed do Bluesky.</p>
+
+    <pre><code># Buscar posts recentes de um usuário Bluesky via ThreadGrab
+curl -s "https://threadgrab.com/api/bluesky/profile/bsky.app" \
+  | jq '.[:3] | .[] | {author: .author, text: .text[0:120]}'
+
+# Salvar posts Bluesky como Markdown para input LLM
+curl -s "https://threadgrab.com/api/bluesky/profile/bsky.app" \
+  | jq -r '.[] | "## \\(.author)\\n\\n\\(.text)\\n---"' \
+  > bluesky-archive-$(date +%Y-%m-%d).md
+
+# Pesquisar posts Bluesky por palavra-chave
+curl -s "https://threadgrab.com/api/bluesky/search?q=arquivamento+AT+Protocol&limit=10" \
+  | jq '.posts[] | {author: .author.handle, text: .text}'</code></pre>
+
+    <p>Ao contrário da API bruta do AT Protocol, o ThreadGrab normaliza o formato de resposta para que os dados do Bluesky pareçam iguais aos dados do X. Isso facilita a construção de um único pipeline de arquivamento que extrai de ambas as plataformas. A saída é JSON limpo que você pode converter para Markdown, CSV, ou qualquer outro formato.</p>
+
+    <p>O ThreadGrab também lida com a resolução de AT-URI para você -- você não precisa entender DIDs ou CIDs. Basta fornecer um handle (ex: <code>bsky.app</code>) e o ThreadGrab o resolve para o DID correto e busca os posts.</p>
+
+    <h3>Quando usar o ThreadGrab</h3>
+    <ul>
+      <li>Você arquiva conteúdo tanto do Bluesky quanto do X e quer uma única ferramenta.</li>
+      <li>Você precisa de dados estruturados (JSON) mas não quer aprender o esquema de registros do AT Protocol.</li>
+      <li>Você quer salvar posts do Bluesky como Markdown limpo para treinamento de LLM ou injeção de contexto.</li>
+    </ul>
+
+    <h2>Método 4: Jetstream -- Firehose do Bluesky em Tempo Real</h2>
+
+    <div class="method-card">
+      <h3>Jetstream</h3>
+      <p>Mantido pela Bluesky Social PBC. Endpoint WebSocket para o firehose completo do AT Protocol.</p>
+      <p class="pros">Pros: Tempo real, cobre TODOS os posts públicos, ideal para conjuntos de dados de pesquisa e análise de tendências, sem limites de taxa.</p>
+      <p class="cons">Cons: Requer cliente WebSocket e armazenamento significativo, exagerado para arquivamento pessoal, configuração complexa para filtragem.</p>
+    </div>
+
+    <p>Jetstream é o serviço firehose em tempo real para o AT Protocol. Ele fornece um stream WebSocket de cada evento público na rede Bluesky -- posts, likes, reposts, follows e mais. Se você precisa de um conjunto de dados completo da atividade do Bluesky (para pesquisa, detecção de tendências, ou análise em larga escala), o Jetstream é a ferramenta certa.</p>
+
+    <pre><code># Instalar um cliente WebSocket e conectar ao Jetstream
+pip install websocket-client
+
+# Conectar e exibir novos posts no stdout
+python3 -c "
+import json, websocket
+ws = websocket.create_connection('wss://jetstream.atproto.tools/subscribe')
+for _ in range(20):
+    msg = json.loads(ws.recv())
+    if msg.get('kind') == 'commit' and 'post' in str(msg):
+        print(json.dumps(msg, indent=2)[:300])
+ws.close()
+"</code></pre>
+
+    <p>O Jetstream é mantido pela Bluesky Social PBC e é a maneira mais confiável de obter dados abrangentes. O stream normalmente entrega 50-200 eventos por segundo durante horários de pico, então você precisa de um backend de armazenamento robusto (banco de dados ou pipeline de streaming) para consumi-lo de forma significativa. Para o usuário médio que quer salvar algumas threads interessantes, o Jetstream é exagerado -- mas para pesquisadores e jornalistas de dados, é inestimável.</p>
+
+    <p>O Jetstream também suporta assinaturas filtradas: você pode se inscrever em DIDs ou tipos de registro específicos, reduzindo o volume de dados apenas ao que você se importa.</p>
+
+    <h3>Quando usar o Jetstream</h3>
+    <ul>
+      <li>Você é um pesquisador construindo um conjunto de dados longitudinal de mídia social.</li>
+      <li>Você precisa detectar tendências ou monitorar palavras-chave específicas em tempo real.</li>
+      <li>Você tem a infraestrutura (armazenamento, computação) para consumir um stream de eventos de alto volume.</li>
+    </ul>
+
+    <h2>Método 5: SDK atproto Python -- Scripts de Arquivamento Totalmente Personalizados</h2>
+
+    <div class="method-card">
+      <h3>SDK atproto</h3>
+      <p><code>pip install atproto</code> -- SDK Python oficial mantido pela Bluesky Social PBC.</p>
+      <p class="pros">Pros: Cobertura completa da API (autenticação, busca, postagem, exclusão), type-safe, bem documentado, lida com resolução DID e retries automaticamente.</p>
+      <p class="cons">Cons: Requer Python 3.9+, adiciona uma dependência ao seu projeto, fluxo de autenticação pode ser confuso para iniciantes.</p>
+    </div>
+
+    <p>O SDK Python oficial para o AT Protocol é a maneira mais completa de interagir com o Bluesky programaticamente. Ele suporta desde operações simples de leitura (buscar timelines, pesquisar posts) até operações de escrita (postar, favoritar, seguir) e tarefas de administração (moderação).</p>
+
+    <pre><code>from atproto import Client, models
+
+# Buscar posts sem autenticação (leitura pública apenas)
+client = Client()
+feed = client.get_author_feed(
+    models.AppBskyFeedGetAuthorFeed.Params(
+        actor='bsky.app',
+        limit=10,
+    )
+)
+for post in feed.feed:
+    record = post.post.record
+    print(f"@{post.post.author.handle}: {record.text[:100]}")
+
+# Pesquisar posts por palavra-chave
+results = client.app.bsky.feed.search_posts(
+    models.AppBskyFeedSearchPosts.Params(
+        q='arquivamento Bluesky 2026',
+        limit=20,
+    )
+)
+for post in results.posts:
+    print(f"[{post.author.handle}] {post.record.text[:120]}")</code></pre>
+
+    <p>O SDK lida com resolução AT-URI, mapeamento DID-para-handle, paginação e backoff de limite de taxa automaticamente. Se você está construindo um script de arquivamento personalizado que precisa ser confiável por longos períodos (ex: um cron job diário), o SDK atproto é a escolha certa em vez de chamadas HTTP brutas.</p>
+
+    <p>Para operações autenticadas (como buscar seus próprios favoritos), você precisa de uma senha de aplicativo da página de configurações do Bluesky.</p>
+
+    <h3>Quando usar o SDK atproto</h3>
+    <ul>
+      <li>Você precisa de um script de arquivamento confiável e de longa duração (cron job, daemon em segundo plano).</li>
+      <li>Você está familiarizado com Python e quer acesso type-safe aos dados do AT Protocol.</li>
+      <li>Você precisa de operações autenticadas (favoritos, feeds privados, moderação).</li>
+    </ul>
+
+    <h2>Comparação Lado a Lado</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Funcionalidade</th>
+          <th>Favoritos Bluesky</th>
+          <th>API AT Protocol</th>
+          <th>ThreadGrab</th>
+          <th>Jetstream</th>
+          <th>SDK atproto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Tempo de setup</td>
+          <td>0 segundos</td>
+          <td>2 minutos (curl)</td>
+          <td>2 minutos (curl)</td>
+          <td>10 minutos (websocket)</td>
+          <td>5 minutos (pip install)</td>
+        </tr>
+        <tr>
+          <td>Habilidade técnica</td>
+          <td>Nenhuma</td>
+          <td>Baixa</td>
+          <td>Baixa</td>
+          <td>Média</td>
+          <td>Média</td>
+        </tr>
+        <tr>
+          <td>Autenticação necessária</td>
+          <td>Sim (logado)</td>
+          <td>Não</td>
+          <td>Não</td>
+          <td>Não</td>
+          <td>Opcional</td>
+        </tr>
+        <tr>
+          <td>Exportação de dados</td>
+          <td>Não</td>
+          <td>Sim (JSON)</td>
+          <td>Sim (JSON/MD)</td>
+          <td>Sim (JSON)</td>
+          <td>Sim (qualquer formato)</td>
+        </tr>
+        <tr>
+          <td>Dados em tempo real</td>
+          <td>Não</td>
+          <td>Não</td>
+          <td>Não</td>
+          <td>Sim (firehose)</td>
+          <td>Não</td>
+        </tr>
+        <tr>
+          <td>Suporta X também</td>
+          <td>Não</td>
+          <td>Não</td>
+          <td>Sim</td>
+          <td>Não</td>
+          <td>Não</td>
+        </tr>
+        <tr>
+          <td>Lote / lote</td>
+          <td>Manual apenas</td>
+          <td>Scriptável</td>
+          <td>Scriptável</td>
+          <td>Stream automático</td>
+          <td>Scriptável</td>
+        </tr>
+        <tr>
+          <td>Saída Markdown</td>
+          <td>Não</td>
+          <td>Via jq</td>
+          <td>Suporte nativo</td>
+          <td>Via processamento</td>
+          <td>Via código</td>
+        </tr>
+        <tr>
+          <td>Melhor para</td>
+          <td>Leitores casuais</td>
+          <td>Entusiastas de script</td>
+          <td>Usuários multiplataforma</td>
+          <td>Pesquisadores</td>
+          <td>Desenvolvedores Python</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Construindo um Pipeline de Arquivamento Completo</h2>
+    <p>Aqui está como um jornalista pode combinar esses métodos em um fluxo de trabalho diário de arquivamento do Bluesky:</p>
+
+    <pre><code>#!/bin/bash
+# Pipeline diário de arquivamento Bluesky (executa às 7 AM via cron)
+# Combina API ThreadGrab para arquivamento de perfis + armazenamento em arquivos
+
+SOURCES=("bsky.app" "nytopinion.bsky.social" "techmeme.bsky.social")
+OUTPUT_DIR="$HOME/bluesky-archive/$(date +%Y/%m)"
+mkdir -p "$OUTPUT_DIR"
+
+for handle in "${SOURCES[@]}"; do
+  curl -s "https://threadgrab.com/api/bluesky/profile/$handle" \
+    | jq -r '.[] | "### \\(.author)\\n\\(.text)\\n---"' \
+    > "$OUTPUT_DIR/$handle.md"
+  echo "Salvo $handle: $(wc -l < "$OUTPUT_DIR/$handle.md") linhas"
+done
+
+echo "Arquivamento completo para $(date +%Y-%m-%d)"</code></pre>
+
+    <p>Este pipeline é executado diariamente via cron, salva arquivos Markdown organizados por ano/mês, e usa o ThreadGrab para as chamadas de API porque ele normaliza dados do Bluesky e X no mesmo formato. O jornalista pode então pesquisar, analisar, ou alimentar o arquivo em um LLM para sumarização.</p>
+
+    <div class="callout">
+      <p><strong>Dica profissional.</strong> Para máxima flexibilidade, combine o ThreadGrab para arquivamento em nível de perfil com o SDK atproto para operações autenticadas (como buscar seus favoritos). O ThreadGrab lida com a normalização multiplataforma; o SDK dá a você controle total quando precisar.</p>
+    </div>
+
+    <h2>Como o ThreadGrab se Encaixa no Ecossistema Bluesky</h2>
+    <p>O ThreadGrab foi projetado para preencher a lacuna entre plataformas sociais. Embora o AT Protocol do Bluesky seja maravilhosamente aberto, ele também é diferente da API de todas as outras plataformas. O ThreadGrab abstrai essas diferenças: a mesma chamada de API que busca uma thread do X também busca um feed do Bluesky, retornando o mesmo formato estruturado.</p>
+
+    <p>Isso é importante porque poucas pessoas consomem conteúdo em apenas uma plataforma. Um jornalista típico hoje lê X para notícias de última hora, Bluesky para debates de tecnologia, e LinkedIn para análise do setor. O ThreadGrab oferece um único ponto de entrada de arquivamento para as duas plataformas de conversação pública mais importantes.</p>
+
+    <div class="cta">
+      <p>Arquive threads do Bluesky e artigos do X lado a lado -- sem conta, sem chave de API, sem configuração.</p>
+      <a class="btn" href="/pt/">Experimente ThreadGrab -- Arquivador Social Gratuito</a>
+    </div>
+
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <strong>O Bluesky tem favoritos integrados?</strong>
+      <p>Sim. O Bluesky adicionou favoritos nativos em meados de 2025. Você pode favoritar qualquer post clicando no ícone de favorito. Os favoritos são privados e pesquisáveis dentro da sua conta, mas não podem ser exportados como dados estruturados.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Posso usar a API do AT Protocol para salvar posts do Bluesky gratuitamente?</strong>
+      <p>Sim. O AT Protocol tem uma API aberta com limite de taxa que não requer chave de API. Você pode buscar posts, timelines de usuários e feeds usando requisições HTTP GET simples para endpoints públicos.</p>
+    </div>
+    <div class="faq-item">
+      <strong>O ThreadGrab suporta arquivamento do Bluesky?</strong>
+      <p>Sim. O ThreadGrab suporta posts do Bluesky através da API aberta do AT Protocol. Você pode usar a API do ThreadGrab para buscar threads e perfis do Bluesky junto com conteúdo do X através de uma única interface, sem necessidade de conta ou chave de API.</p>
+    </div>
+    <div class="faq-item">
+      <strong>O que é Jetstream no ecossistema Bluesky?</strong>
+      <p>Jetstream é um serviço firehose em tempo real para o AT Protocol. Ele fornece um stream WebSocket de cada evento público em toda a rede Bluesky, sendo ideal para pesquisadores que precisam de conjuntos de dados abrangentes. Ele entrega 50-200 eventos por segundo durante horários de pico.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Existe um SDK Python para o AT Protocol?</strong>
+      <p>Sim. O SDK Python oficial é atproto (pip install atproto). Ele suporta autenticação, busca de timelines, pesquisa de posts, gerenciamento de favoritos e upload de mídia. Ele lida com resolução DID, paginação e backoff de limite de taxa automaticamente.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Qual método de arquivamento do Bluesky é melhor para preparação de dados LLM?</strong>
+      <p>O ThreadGrab é a melhor opção para fluxos de trabalho LLM porque produz Markdown ou JSON limpo diretamente. A API bruta do AT Protocol e o SDK atproto ambos requerem processamento adicional para converter registros em formatos amigáveis para LLM. O Jetstream fornece volume demais para janelas de contexto LLM sem filtragem significativa.</p>
+    </div>
+
+    <h2>Escolha Seu Método e Comece a Arquivar</h2>
+    <p>A arquitetura aberta do Bluesky o torna a plataforma social mais arquivável em 2026. Seja usando favoritos integrados para leitura casual, a API do AT Protocol para scripts leves, o ThreadGrab para arquivamento multiplataforma, o Jetstream para pesquisa abrangente, ou o SDK atproto para pipelines totalmente personalizados, existe um método que se encaixa no seu fluxo de trabalho.</p>
+
+    <p>A principal conclusão é que você não precisa escolher apenas um. Favorite posts interessantes durante o dia, execute o ThreadGrab à noite para arquivos de perfil, e mantenha o Jetstream rodando em segundo plano se precisar de dados em tempo real. As ferramentas são gratuitas, abertas e projetadas para trabalhar juntas. <a href="/pt/">Comece com o ThreadGrab</a> para o caminho mais rápido até um pipeline de arquivamento funcional.</p>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/pt/">Início</a> &middot; <a href="/pt/blog/">Blog</a> &middot; <a href="/pt/about/">Sobre</a> &middot; <a href="/pt/privacy/">Privacidade</a>
+    <br>Não afiliado ao X Corp., Bluesky Social PBC, ou qualquer plataforma de mídia social.
+  </footer>
+</body>
+</html>

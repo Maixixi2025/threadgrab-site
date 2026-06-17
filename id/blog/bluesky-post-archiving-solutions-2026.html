@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pengarsipan Postingan Bluesky 2026: 5 Cara Menyimpan Postingan, Thread & Feed | ThreadGrab</title>
+  <meta name="description" content="Bandingkan bookmark Bluesky, API AT Protocol, ThreadGrab, Jetstream, dan SDK atproto untuk menyimpan postingan dan feed Bluesky di 2026.">
+  <meta name="keywords" content="arsip Bluesky, simpan posting Bluesky, AT Protocol, backup Bluesky, ThreadGrab Bluesky, bookmark Bluesky, atproto SDK, Jetstream Bluesky, pengarsipan media sosial">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/id/blog/bluesky-post-archiving-solutions-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/bluesky-post-archiving-solutions-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/bluesky-post-archiving-solutions-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/bluesky-post-archiving-solutions-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/bluesky-post-archiving-solutions-2026.html">
+  <meta property="og:title" content="Pengarsipan Postingan Bluesky 2026: 5 Cara Menyimpan Postingan, Thread & Feed | ThreadGrab">
+  <meta property="og:description" content="Bandingkan bookmark Bluesky, API AT Protocol, ThreadGrab, Jetstream, dan SDK atproto untuk menyimpan postingan dan feed Bluesky di 2026.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/id/blog/bluesky-post-archiving-solutions-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pengarsipan Postingan Bluesky 2026: 5 Cara Menyimpan Postingan, Thread & Feed | ThreadGrab">
+  <meta name="twitter:description" content="Bandingkan bookmark Bluesky, API AT Protocol, ThreadGrab, Jetstream, dan SDK atproto untuk menyimpan postingan dan feed Bluesky di 2026.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 2px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    .method-card { background: #1a1a1a; border-radius: 10px; padding: 20px 22px; margin-bottom: 18px; border-left: 3px solid #20d5ec; }
+    .method-card h3 { margin-top: 0; color: #20d5ec; }
+    .method-card .pros { color: #6fcf97; font-size: 0.9rem; }
+    .method-card .cons { color: #f2994a; font-size: 0.9rem; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Pengarsipan Postingan Bluesky 2026: 5 Cara Menyimpan Postingan, Thread dan Feed",
+    "description": "Bandingkan bookmark Bluesky, API AT Protocol, ThreadGrab, Jetstream, dan SDK atproto untuk menyimpan postingan dan feed Bluesky di 2026.",
+    "datePublished": "2026-06-14",
+    "dateModified": "2026-06-14",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/id/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/id/" },
+    "mainEntityOfPage": "https://threadgrab.com/id/blog/bluesky-post-archiving-solutions-2026.html",
+    "inLanguage": "id"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://threadgrab.com/id/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/id/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Pengarsipan Bluesky 2026" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Apakah Bluesky memiliki bookmark bawaan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ya. Bluesky menambahkan bookmark native pada pertengahan 2025. Anda dapat mem-bookmark postingan apa pun dengan mengklik ikon bookmark. Bookmark bersifat pribadi dan dapat dicari di dalam akun Anda, tetapi tidak dapat diekspor sebagai data terstruktur."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bisakah saya menggunakan API AT Protocol untuk menyimpan postingan Bluesky secara gratis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ya. AT Protocol memiliki API terbuka dengan batas rate yang tidak memerlukan kunci API. Anda dapat mengambil postingan, timeline pengguna, dan feed menggunakan permintaan HTTP GET sederhana ke endpoint publik seperti bsky.social/xrpc/com.atproto.repo.getRecord."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah ThreadGrab mendukung pengarsipan Bluesky?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ya. ThreadGrab mendukung postingan Bluesky melalui API terbuka AT Protocol. Anda dapat menggunakan API ThreadGrab untuk mengambil thread dan profil Bluesky bersama dengan konten X melalui satu antarmuka, tanpa memerlukan akun atau kunci API."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apa itu Jetstream dalam ekosistem Bluesky?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Jetstream adalah layanan firehose real-time untuk AT Protocol. Layanan ini menyediakan stream WebSocket dari setiap peristiwa publik di seluruh jaringan Bluesky, menjadikannya ideal bagi peneliti yang membutuhkan kumpulan data yang komprehensif."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah ada SDK Python untuk AT Protocol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ya. SDK Python resmi adalah atproto (pip install atproto). SDK ini mendukung autentikasi, pengambilan timeline, pencarian postingan, pengelolaan bookmark, dan unggah media."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/id/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a href="/en/blog/bluesky-post-archiving-solutions-2026.html">EN</a>
+      <a href="/pt/blog/bluesky-post-archiving-solutions-2026.html">PT</a>
+      <a href="/id/blog/bluesky-post-archiving-solutions-2026.html" class="active">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <p class="breadcrumb"><a href="/id/">Beranda</a> &rsaquo; <a href="/id/blog/">Blog</a> &rsaquo; Pengarsipan Bluesky 2026: 5 Metode</p>
+
+    <h1>Pengarsipan Postingan Bluesky 2026: <span>5 Cara Menyimpan Postingan, Thread &amp; Feed</span></h1>
+    <p class="meta">14 Juni 2026 &middot; 9 menit baca &middot; oleh ThreadGrab</p>
+
+    <p>Bluesky telah tumbuh pesat sepanjang 2025 dan 2026, kini menampung jutaan pengguna aktif dan puluhan juta postingan publik setiap bulan. Baik Anda seorang jurnalis yang melacak berita terbaru, peneliti yang membangun kumpulan data media sosial, atau kreator konten yang menggunakan kembali thread Bluesky Anda sendiri untuk artikel panjang, Anda memerlukan cara yang andal untuk mengarsipkan konten Bluesky.</p>
+
+    <p>AT Protocol, yang mendukung Bluesky, bersifat terbuka dan terdesentralisasi secara desain. Ini berarti ada lebih banyak opsi pengarsipan daripada platform sosial besar lainnya. Panduan ini mencakup lima metode yang terbukti, dari bookmark bawaan hingga scraping firehose real-time, sehingga Anda dapat memilih yang sesuai dengan tingkat kenyamanan teknis dan alur kerja Anda.</p>
+
+    <div class="callout">
+      <p><strong>Ringkasan.</strong> Gunakan <strong>bookmark bawaan Bluesky</strong> untuk penyimpanan kasual. Gunakan <strong>API HTTP AT Protocol</strong> untuk akses programatik tanpa autentikasi. Gunakan <strong>ThreadGrab</strong> untuk pengarsipan lintas platform (Bluesky + X dalam satu antarmuka). Gunakan <strong>Jetstream</strong> untuk data firehose real-time. Gunakan <strong>SDK atproto Python</strong> untuk skrip pengarsipan yang sepenuhnya khusus.</p>
+    </div>
+
+    <h2>Mengapa Pengarsipan Bluesky Penting di 2026</h2>
+    <p>Tiga tren membuat pengarsipan Bluesky sangat relevan tahun ini. Pertama, basis pengguna Bluesky telah melampaui 30 juta, menjadikannya platform percakapan publik terbesar ketiga setelah X dan Threads. Kedua, platform ini telah menjadi sumber utama untuk diskusi teknologi, jurnalisme, dan akademis -- komunitas yang meninggalkan X pada 2024-2025 beralih ke Bluesky dalam jumlah besar. Ketiga, desain terbuka AT Protocol berarti pengarsipan tidak hanya mungkin tetapi didorong: setiap postingan publik dapat diakses melalui API yang terdokumentasi tanpa memerlukan autentikasi untuk akses baca.</p>
+
+    <p>Tidak seperti X, yang membatasi akses API ke tingkat berbayar, AT Protocol Bluesky tetap sepenuhnya terbuka. Anda dapat mengambil timeline pengguna mana pun, thread postingan mana pun, atau konten feed mana pun dengan permintaan HTTP sederhana -- tanpa kunci API, tanpa akun pengembang, tanpa langganan bulanan. Ini menjadikan Bluesky platform sosial paling dapat diarsipkan di 2026.</p>
+
+    <h2>Metode 1: Bookmark Bawaan Bluesky -- Penyimpanan Tanpa Usaha</h2>
+
+    <div class="method-card">
+      <h3>Bookmark Native Bluesky</h3>
+      <p>Tersedia di aplikasi Bluesky (web, iOS, Android) sejak pertengahan 2025.</p>
+      <p class="pros">Kelebihan: Tanpa pengaturan, pribadi, dapat dicari, berfungsi di semua perangkat, tanpa perlu keterampilan teknis.</p>
+      <p class="cons">Kekurangan: Tidak bisa diekspor, tanpa akses programatik, terbatas pada akun Anda sendiri, tanpa operasi batch.</p>
+    </div>
+
+    <p>Bluesky memperkenalkan bookmark native pada 2025, dan mereka bekerja persis seperti yang Anda harapkan. Klik ikon bookmark pada postingan mana pun, dan itu akan disimpan ke koleksi bookmark pribadi yang hanya terlihat oleh Anda. Bookmark dapat dicari di dalam aplikasi, dan Anda dapat mengaturnya ke dalam folder atau menggunakan daftar datar default.</p>
+
+    <p>Bookmark bagus untuk penggunaan kasual -- Anda melihat thread menarik di feed eksplorasi Anda, mem-bookmark-nya, dan kembali membacanya nanti. Tetapi mereka memiliki batasan penting: Anda tidak dapat mengekspor bookmark Anda sebagai data terstruktur. Jika Anda ingin mengkompilasi kumpulan data penelitian, bermigrasi ke platform lain, atau menjalankan analisis pada konten yang disimpan, Anda memerlukan salah satu metode di bawah ini.</p>
+
+    <h3>Kapan menggunakan bookmark bawaan</h3>
+    <ul>
+      <li>Anda menyimpan postingan sesekali dan hanya perlu mengunjunginya kembali di dalam Bluesky.</li>
+      <li>Anda berbagi akun Bluesky dengan tim dan ingin daftar bacaan bersama.</li>
+      <li>Anda tidak membutuhkan konten yang disimpan di luar Bluesky.</li>
+    </ul>
+
+    <h2>Metode 2: API HTTP AT Protocol -- Pendekatan Terbuka Tanpa Autentikasi</h2>
+
+    <div class="method-card">
+      <h3>Endpoint Publik AT Protocol</h3>
+      <p>URL dasar: <code>https://bsky.social/xrpc/</code> -- tidak perlu autentikasi untuk endpoint baca.</p>
+      <p class="pros">Kelebihan: Sepenuhnya gratis, tanpa perlu kunci API, terdokumentasi dengan baik, berfungsi dengan klien HTTP apa pun.</p>
+      <p class="cons">Kekurangan: Dibatasi rate (sekitar 5.000 permintaan per jam per IP), memerlukan keakraban dengan struktur data AT Protocol (CID, strong references).</p>
+    </div>
+
+    <p>AT Protocol menyediakan serangkaian API publik lengkap untuk membaca data. Anda dapat mengambil timeline pengguna mana pun, postingan individu, thread percakapan utuh, dan feed yang dikurasi -- semuanya dengan permintaan HTTP GET sederhana.</p>
+
+    <pre><code># Ambil timeline pengguna (30 postingan terakhir)
+curl -s "https://bsky.social/xrpc/app.bsky.feed.getAuthorFeed?actor=bsky.app" \
+  | jq '.feed[:3] | .[] | {author: .post.author.handle, text: .post.record.text}'
+
+# Ambil postingan tertentu berdasarkan AT-URI
+curl -s "https://bsky.social/xrpc/app.bsky.feed.getPostThread?uri=at://did:plc:.../app.bsky.feed.post/3lmp6q7q2hs2s" \
+  | jq '.thread.post.record.text'
+
+# Cari postingan berdasarkan kata kunci
+curl -s "https://bsky.social/xrpc/app.bsky.feed.searchPosts?q=pengarsipan+Bluesky+2026&limit=25" \
+  | jq '.posts[] | {author: .author.handle, text: .record.text}'</code></pre>
+
+    <p>Konsep kunci dalam AT Protocol adalah AT-URI -- pengidentifikasi terdesentralisasi yang menunjuk ke catatan apa pun di jaringan. Setiap postingan, like, follow, dan feed memiliki AT-URI yang unik. Setelah Anda memiliki AT-URI atau DID (Pengidentifikasi Terdesentralisasi) pengguna, Anda dapat mengambil semua konten publik mereka tanpa autentikasi apa pun.</p>
+
+    <p>Batas rate cukup besar (sekitar 5.000 permintaan per jam per IP), yang cukup untuk pengarsipan pribadi dan proyek penelitian kecil. Untuk koleksi skala besar, Anda memerlukan Jetstream (Metode 4) atau firehose.</p>
+
+    <h3>Kapan menggunakan API AT Protocol</h3>
+    <ul>
+      <li>Anda nyaman dengan curl atau bahasa skrip seperti Python atau Node.js.</li>
+      <li>Anda perlu mengarsipkan pengguna, postingan, atau feed tertentu secara terjadwal.</li>
+      <li>Anda ingin membangun dashboard kustom atau pipeline analisis untuk konten Bluesky.</li>
+    </ul>
+
+    <h2>Metode 3: ThreadGrab -- Pengarsipan Lintas Platform Bluesky + X</h2>
+
+    <div class="method-card">
+      <h3>ThreadGrab</h3>
+      <p>Situs web: <a href="/id/">threadgrab.com</a> -- gratis, tanpa perlu akun.</p>
+      <p class="pros">Kelebihan: Antarmuka tunggal untuk pengarsipan Bluesky DAN X, API gratis, tanpa autentikasi, mengembalikan JSON terstruktur atau Markdown.</p>
+      <p class="cons">Kekurangan: Membutuhkan kenyamanan baris perintah, tidak menawarkan streaming firehose real-time (gunakan Jetstream untuk itu).</p>
+    </div>
+
+    <p>ThreadGrab dibangun untuk memecahkan masalah ini: Anda seharusnya tidak perlu alat yang berbeda untuk setiap platform sosial. API publik ThreadGrab mendukung postingan Bluesky melalui endpoint terbuka AT Protocol, memberikan format data terstruktur yang sama apakah Anda mengarsipkan thread X atau feed Bluesky.</p>
+
+    <pre><code># Ambil postingan terbaru pengguna Bluesky melalui ThreadGrab
+curl -s "https://threadgrab.com/api/bluesky/profile/bsky.app" \
+  | jq '.[:3] | .[] | {author: .author, text: .text[0:120]}'
+
+# Simpan postingan Bluesky sebagai Markdown untuk input LLM
+curl -s "https://threadgrab.com/api/bluesky/profile/bsky.app" \
+  | jq -r '.[] | "## \\(.author)\\n\\n\\(.text)\\n---"' \
+  > bluesky-archive-$(date +%Y-%m-%d).md
+
+# Cari postingan Bluesky berdasarkan kata kunci
+curl -s "https://threadgrab.com/api/bluesky/search?q=pengarsipan+AT+Protocol&limit=10" \
+  | jq '.posts[] | {author: .author.handle, text: .text}'</code></pre>
+
+    <p>Tidak seperti API mentah AT Protocol, ThreadGrab menormalkan format respons sehingga data Bluesky terlihat sama dengan data X. Ini memudahkan pembangunan pipeline pengarsipan tunggal yang menarik dari kedua platform. Outputnya adalah JSON bersih yang dapat Anda konversi ke Markdown, CSV, atau format lainnya.</p>
+
+    <p>ThreadGrab juga menangani resolusi AT-URI untuk Anda -- Anda tidak perlu memahami DID atau CID. Cukup berikan handle (misalnya, <code>bsky.app</code>) dan ThreadGrab meresolusi ke DID yang benar dan mengambil postingan.</p>
+
+    <h3>Kapan menggunakan ThreadGrab</h3>
+    <ul>
+      <li>Anda mengarsipkan konten dari Bluesky dan X dan menginginkan satu alat.</li>
+      <li>Anda membutuhkan data terstruktur (JSON) tetapi tidak ingin mempelajari skema catatan AT Protocol.</li>
+      <li>Anda ingin menyimpan postingan Bluesky sebagai Markdown bersih untuk pelatihan LLM atau injeksi konteks.</li>
+    </ul>
+
+    <h2>Metode 4: Jetstream -- Firehose Bluesky Real-Time</h2>
+
+    <div class="method-card">
+      <h3>Jetstream</h3>
+      <p>Dipelihara oleh Bluesky Social PBC. Endpoint WebSocket untuk firehose lengkap AT Protocol.</p>
+      <p class="pros">Kelebihan: Real-time, mencakup SEMUA postingan publik, ideal untuk kumpulan data penelitian dan analisis tren, tanpa batas rate.</p>
+      <p class="cons">Kekurangan: Membutuhkan klien WebSocket dan penyimpanan signifikan, berlebihan untuk pengarsipan pribadi, pengaturan kompleks untuk pemfilteran.</p>
+    </div>
+
+    <p>Jetstream adalah layanan firehose real-time untuk AT Protocol. Ini menyediakan stream WebSocket dari setiap peristiwa publik di jaringan Bluesky -- postingan, like, repost, follow, dan lainnya. Jika Anda membutuhkan kumpulan data lengkap aktivitas Bluesky (untuk penelitian, deteksi tren, atau analisis skala besar), Jetstream adalah alat yang tepat.</p>
+
+    <pre><code># Instal klien WebSocket dan terhubung ke Jetstream
+pip install websocket-client
+
+# Hubungkan dan tampilkan postingan baru ke stdout
+python3 -c "
+import json, websocket
+ws = websocket.create_connection('wss://jetstream.atproto.tools/subscribe')
+for _ in range(20):
+    msg = json.loads(ws.recv())
+    if msg.get('kind') == 'commit' and 'post' in str(msg):
+        print(json.dumps(msg, indent=2)[:300])
+ws.close()
+"</code></pre>
+
+    <p>Jetstream dipelihara oleh Bluesky Social PBC dan merupakan cara paling andal untuk mendapatkan data komprehensif. Stream biasanya mengirimkan 50-200 peristiwa per detik selama jam sibuk, sehingga Anda memerlukan backend penyimpanan yang kuat (database atau pipeline streaming) untuk mengonsumsinya secara bermakna. Untuk pengguna rata-rata yang ingin menyimpan beberapa thread menarik, Jetstream berlebihan -- tetapi bagi peneliti dan jurnalis data, ini sangat berharga.</p>
+
+    <p>Jetstream juga mendukung langganan terfilter: Anda dapat berlangganan DID atau jenis catatan tertentu, mengurangi volume data hanya pada yang Anda pedulikan.</p>
+
+    <h3>Kapan menggunakan Jetstream</h3>
+    <ul>
+      <li>Anda seorang peneliti yang membangun kumpulan data media sosial longitudinal.</li>
+      <li>Anda perlu mendeteksi tren atau memantau kata kunci tertentu secara real-time.</li>
+      <li>Anda memiliki infrastruktur (penyimpanan, komputasi) untuk mengonsumsi stream peristiwa volume tinggi.</li>
+    </ul>
+
+    <h2>Metode 5: SDK atproto Python -- Skrip Pengarsipan Sepenuhnya Kustom</h2>
+
+    <div class="method-card">
+      <h3>SDK atproto</h3>
+      <p><code>pip install atproto</code> -- SDK Python resmi dipelihara oleh Bluesky Social PBC.</p>
+      <p class="pros">Kelebihan: Cakupan API lengkap (autentikasi, ambil, posting, hapus), type-safe, terdokumentasi dengan baik, menangani resolusi DID dan percobaan ulang secara otomatis.</p>
+      <p class="cons">Kekurangan: Membutuhkan Python 3.9+, menambah dependensi ke proyek Anda, alur autentikasi dapat membingungkan bagi pemula.</p>
+    </div>
+
+    <p>SDK Python resmi untuk AT Protocol adalah cara paling lengkap untuk berinteraksi dengan Bluesky secara programatik. Ini mendukung dari operasi baca sederhana (mengambil timeline, mencari postingan) hingga operasi tulis (memposting, mem-bookmark, mengikuti) dan tugas admin (moderasi).</p>
+
+    <pre><code>from atproto import Client, models
+
+# Ambil postingan tanpa autentikasi (baca publik saja)
+client = Client()
+feed = client.get_author_feed(
+    models.AppBskyFeedGetAuthorFeed.Params(
+        actor='bsky.app',
+        limit=10,
+    )
+)
+for post in feed.feed:
+    record = post.post.record
+    print(f"@{post.post.author.handle}: {record.text[:100]}")
+
+# Cari postingan berdasarkan kata kunci
+results = client.app.bsky.feed.search_posts(
+    models.AppBskyFeedSearchPosts.Params(
+        q='pengarsipan Bluesky 2026',
+        limit=20,
+    )
+)
+for post in results.posts:
+    print(f"[{post.author.handle}] {post.record.text[:120]}")</code></pre>
+
+    <p>SDK menangani resolusi AT-URI, pemetaan DID-ke-handle, paginasi, dan backoff batas rate secara otomatis. Jika Anda membangun skrip pengarsipan kustom yang perlu andal untuk periode panjang (misalnya, cron job harian), SDK atproto adalah pilihan yang tepat dibandingkan panggilan HTTP mentah.</p>
+
+    <p>Untuk operasi terautentikasi (seperti mengambil bookmark Anda sendiri), Anda memerlukan kata sandi aplikasi dari halaman pengaturan Bluesky.</p>
+
+    <h3>Kapan menggunakan SDK atproto</h3>
+    <ul>
+      <li>Anda membutuhkan skrip pengarsipan yang andal dan berjalan lama (cron job, daemon latar belakang).</li>
+      <li>Anda terbiasa dengan Python dan menginginkan akses type-safe ke data AT Protocol.</li>
+      <li>Anda membutuhkan operasi terautentikasi (bookmark, feed pribadi, moderasi).</li>
+    </ul>
+
+    <h2>Perbandingan Berdampingan</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Fitur</th>
+          <th>Bookmark Bluesky</th>
+          <th>API AT Protocol</th>
+          <th>ThreadGrab</th>
+          <th>Jetstream</th>
+          <th>SDK atproto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Waktu setup</td>
+          <td>0 detik</td>
+          <td>2 menit (curl)</td>
+          <td>2 menit (curl)</td>
+          <td>10 menit (websocket)</td>
+          <td>5 menit (pip install)</td>
+        </tr>
+        <tr>
+          <td>Keterampilan teknis</td>
+          <td>Tidak ada</td>
+          <td>Rendah</td>
+          <td>Rendah</td>
+          <td>Sedang</td>
+          <td>Sedang</td>
+        </tr>
+        <tr>
+          <td>Autentikasi diperlukan</td>
+          <td>Ya (login)</td>
+          <td>Tidak</td>
+          <td>Tidak</td>
+          <td>Tidak</td>
+          <td>Opsional</td>
+        </tr>
+        <tr>
+          <td>Ekspor data</td>
+          <td>Tidak</td>
+          <td>Ya (JSON)</td>
+          <td>Ya (JSON/MD)</td>
+          <td>Ya (JSON)</td>
+          <td>Ya (format apa pun)</td>
+        </tr>
+        <tr>
+          <td>Data real-time</td>
+          <td>Tidak</td>
+          <td>Tidak</td>
+          <td>Tidak</td>
+          <td>Ya (firehose)</td>
+          <td>Tidak</td>
+        </tr>
+        <tr>
+          <td>Mendukung X juga</td>
+          <td>Tidak</td>
+          <td>Tidak</td>
+          <td>Ya</td>
+          <td>Tidak</td>
+          <td>Tidak</td>
+        </tr>
+        <tr>
+          <td>Batch / massal</td>
+          <td>Manual saja</td>
+          <td>Dapat diskrip</td>
+          <td>Dapat diskrip</td>
+          <td>Stream otomatis</td>
+          <td>Dapat diskrip</td>
+        </tr>
+        <tr>
+          <td>Output Markdown</td>
+          <td>Tidak</td>
+          <td>Via jq</td>
+          <td>Dukungan native</td>
+          <td>Via pemrosesan</td>
+          <td>Via kode</td>
+        </tr>
+        <tr>
+          <td>Terbaik untuk</td>
+          <td>Pembaca kasual</td>
+          <td>Penggemar skrip</td>
+          <td>Pengguna lintas platform</td>
+          <td>Peneliti</td>
+          <td>Pengembang Python</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Membangun Pipeline Pengarsipan Lengkap</h2>
+    <p>Berikut adalah bagaimana seorang jurnalis dapat menggabungkan metode-metode ini menjadi alur kerja pengarsipan Bluesky harian:</p>
+
+    <pre><code>#!/bin/bash
+# Pipeline pengarsipan Bluesky harian (berjalan jam 7 pagi via cron)
+# Menggabungkan API ThreadGrab untuk pengarsipan profil + penyimpanan file
+
+SOURCES=("bsky.app" "nytopinion.bsky.social" "techmeme.bsky.social")
+OUTPUT_DIR="$HOME/bluesky-archive/$(date +%Y/%m)"
+mkdir -p "$OUTPUT_DIR"
+
+for handle in "${SOURCES[@]}"; do
+  curl -s "https://threadgrab.com/api/bluesky/profile/$handle" \
+    | jq -r '.[] | "### \\(.author)\\n\\(.text)\\n---"' \
+    > "$OUTPUT_DIR/$handle.md"
+  echo "Disimpan $handle: $(wc -l < "$OUTPUT_DIR/$handle.md") baris"
+done
+
+echo "Pengarsipan selesai untuk $(date +%Y-%m-%d)"</code></pre>
+
+    <p>Pipeline ini berjalan setiap hari via cron, menyimpan file Markdown yang diatur berdasarkan tahun/bulan, dan menggunakan ThreadGrab untuk panggilan API karena menormalkan data Bluesky dan X ke dalam format yang sama. Jurnalis kemudian dapat mencari, menganalisis, atau memasukkan arsip ke LLM untuk peringkasan.</p>
+
+    <div class="callout">
+      <p><strong>Tip profesional.</strong> Untuk fleksibilitas maksimal, gabungkan ThreadGrab untuk pengarsipan tingkat profil dengan SDK atproto untuk operasi terautentikasi (seperti mengambil bookmark Anda). ThreadGrab menangani normalisasi lintas platform; SDK memberi Anda kendali penuh saat Anda membutuhkannya.</p>
+    </div>
+
+    <h2>Bagaimana ThreadGrab Cocok dalam Ekosistem Bluesky</h2>
+    <p>ThreadGrab dirancang untuk menjembatani kesenjangan antara platform sosial. Meskipun AT Protocol Bluesky sangat terbuka, ia juga berbeda dari API platform lain. ThreadGrab mengabstraksi perbedaan-perbedaan tersebut: panggilan API yang sama yang mengambil thread X juga mengambil feed Bluesky, mengembalikan format terstruktur yang sama.</p>
+
+    <p>Ini penting karena jarang orang mengonsumsi konten hanya pada satu platform. Seorang jurnalis tipikal saat ini membaca X untuk berita terbaru, Bluesky untuk diskusi teknologi, dan LinkedIn untuk analisis industri. ThreadGrab memberi Anda satu titik masuk pengarsipan untuk dua platform percakapan publik yang paling penting.</p>
+
+    <div class="cta">
+      <p>Arsipkan thread Bluesky dan artikel X berdampingan -- tanpa akun, tanpa kunci API, tanpa pengaturan.</p>
+      <a class="btn" href="/id/">Coba ThreadGrab -- Pengarsip Media Sosial Gratis</a>
+    </div>
+
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <strong>Apakah Bluesky memiliki bookmark bawaan?</strong>
+      <p>Ya. Bluesky menambahkan bookmark native pada pertengahan 2025. Anda dapat mem-bookmark postingan apa pun dengan mengklik ikon bookmark. Bookmark bersifat pribadi dan dapat dicari di dalam akun Anda, tetapi tidak dapat diekspor sebagai data terstruktur.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Bisakah saya menggunakan API AT Protocol untuk menyimpan postingan Bluesky secara gratis?</strong>
+      <p>Ya. AT Protocol memiliki API terbuka dengan batas rate yang tidak memerlukan kunci API. Anda dapat mengambil postingan, timeline pengguna, dan feed menggunakan permintaan HTTP GET sederhana ke endpoint publik.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Apakah ThreadGrab mendukung pengarsipan Bluesky?</strong>
+      <p>Ya. ThreadGrab mendukung postingan Bluesky melalui API terbuka AT Protocol. Anda dapat menggunakan API ThreadGrab untuk mengambil thread dan profil Bluesky bersama dengan konten X melalui satu antarmuka, tanpa memerlukan akun atau kunci API.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Apa itu Jetstream dalam ekosistem Bluesky?</strong>
+      <p>Jetstream adalah layanan firehose real-time untuk AT Protocol. Ini menyediakan stream WebSocket dari setiap peristiwa publik di seluruh jaringan Bluesky, menjadikannya ideal bagi peneliti yang membutuhkan kumpulan data yang komprehensif. Ini mengirimkan 50-200 peristiwa per detik selama jam sibuk.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Apakah ada SDK Python untuk AT Protocol?</strong>
+      <p>Ya. SDK Python resmi adalah atproto (pip install atproto). SDK ini mendukung autentikasi, pengambilan timeline, pencarian postingan, pengelolaan bookmark, dan unggah media. SDK menangani resolusi DID, paginasi, dan backoff batas rate secara otomatis.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Metode pengarsipan Bluesky mana yang terbaik untuk persiapan data LLM?</strong>
+      <p>ThreadGrab adalah opsi terbaik untuk alur kerja LLM karena menghasilkan Markdown atau JSON bersih secara langsung. API mentah AT Protocol dan SDK atproto keduanya memerlukan pemrosesan tambahan untuk mengonversi catatan ke format yang ramah LLM. Jetstream menyediakan volume terlalu banyak untuk jendela konteks LLM tanpa pemfilteran yang signifikan.</p>
+    </div>
+
+    <h2>Pilih Metode Anda dan Mulai Mengarsipkan</h2>
+    <p>Arsitektur terbuka Bluesky menjadikannya platform sosial yang paling dapat diarsipkan di 2026. Baik menggunakan bookmark bawaan untuk bacaan kasual, API AT Protocol untuk skrip ringan, ThreadGrab untuk pengarsipan lintas platform, Jetstream untuk penelitian komprehensif, atau SDK atproto untuk pipeline yang sepenuhnya kustom, ada metode yang sesuai dengan alur kerja Anda.</p>
+
+    <p>Wawasan utamanya adalah Anda tidak harus memilih hanya satu. Bookmark postingan menarik selama hari, jalankan ThreadGrab setiap malam untuk arsip profil, dan biarkan Jetstream berjalan di latar belakang jika Anda membutuhkan data real-time. Alat-alat ini gratis, terbuka, dan dirancang untuk bekerja bersama. <a href="/id/">Mulai dengan ThreadGrab</a> untuk jalur tercepat menuju pipeline pengarsipan yang berfungsi.</p>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/id/">Beranda</a> &middot; <a href="/id/blog/">Blog</a> &middot; <a href="/id/about/">Tentang</a> &middot; <a href="/id/privacy/">Privasi</a>
+    <br>Tidak berafiliasi dengan X Corp., Bluesky Social PBC, atau platform media sosial mana pun.
+  </footer>
+</body>
+</html>

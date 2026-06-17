@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>X v11.90 Articles Scraper: threadgrab Long-Form 2026</title>
+  <meta name="description" content="X v11.90's new See All Articles entry reshaped how long-form posts are structured. Here's how to scrape the new layout with threadgrab and clean Markdown.">
+  <meta name="keywords" content="X v11.90, X Articles scraper, See All Articles, threadgrab, X long-form, scrape X article, X API 2026, Markdown archive">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/en/blog/x-articles-v1190-threadgrab-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/x-articles-v1190-threadgrab-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/x-articles-v1190-threadgrab-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/x-articles-v1190-threadgrab-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/x-articles-v1190-threadgrab-2026.html">
+  <meta property="og:title" content="X v11.90 Articles Scraper: threadgrab Long-Form 2026">
+  <meta property="og:description" content="X v11.90's new See All Articles entry reshaped how long-form posts are structured. Here's how to scrape the new layout with threadgrab and clean Markdown.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/en/blog/x-articles-v1190-threadgrab-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="X v11.90 Articles Scraper: threadgrab Long-Form 2026">
+  <meta name="twitter:description" content="X v11.90's new See All Articles entry reshaped how long-form posts are structured. Here's how to scrape the new layout with threadgrab and clean Markdown.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    .method-card { background: #1a1a1a; border-radius: 10px; padding: 20px 22px; margin-bottom: 18px; border-left: 3px solid #20d5ec; }
+    .method-card h3 { margin-top: 0; color: #20d5ec; }
+    .method-card .pros { color: #6fcf97; font-size: 0.9rem; }
+    .method-card .cons { color: #f2994a; font-size: 0.9rem; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "X v11.90 Articles Scraper: threadgrab Long-Form 2026",
+    "description": "X v11.90's new See All Articles entry reshaped how long-form posts are structured. Here's how to scrape the new layout with threadgrab and clean Markdown.",
+    "datePublished": "2026-06-11",
+    "dateModified": "2026-06-11",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/en/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/en/" },
+    "mainEntityOfPage": "https://threadgrab.com/en/blog/x-articles-v1190-threadgrab-2026.html",
+    "inLanguage": "en"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://threadgrab.com/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/en/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "X v11.90 Articles Scraper" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What changed in X v11.90's See All Articles entry?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "X v11.90 moved the See All Articles entry from a buried profile-page tab to a top-level segmented control on a creator's profile header. The new entry surfaces every long-form post (Articles, Threads over 1,000 characters, and Quote-Articles) as a unified list, paginated 20 at a time. Behind the scenes, the entry now calls a new GraphQL endpoint (/ArticleTimeline) instead of the legacy /Articles/search.json REST route, so scrapers that hit the old endpoint get a 404 or an empty array."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does my old X-Article scraper break after v11.90?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Three reasons. First, the /Articles/search.json endpoint was deprecated in late May 2026 and now returns 200 with an empty body for most accounts. Second, X added a new article_id field in v11.90 that is a 19-digit base64 string, replacing the older 18-digit numeric id; scrapers that try to construct URLs from the old id pattern get 404. Third, the article body is now served as a JSON blob with named entity spans (bold, link, mention, hashtag) instead of plain text with markdown-like asterisks, so naive text scrapers lose the formatting."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I scrape the new X v11.90 article layout with threadgrab?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pass the article URL or the new article_id to the threadgrab API. threadgrab resolves the new GraphQL /ArticleTimeline endpoint, fetches the named-entity JSON body, flattens it to Markdown (preserving bold, links, mentions, and hashtags), and returns the clean text plus metadata. A typical request is GET https://threadgrab.com/api/profile?url=https://x.com/<user>/article/<id> with no auth, and the response is a JSON object with title, body_markdown, author, published_at, and media array."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I batch-scrape every article from a creator's profile?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Use threadgrab's profile batch endpoint: GET https://threadgrab.com/api/profile/<username>/articles?cursor=<next_cursor>&limit=20. The response includes a next_cursor field that you pass to the next call until you get an empty cursor. The endpoint is paginated 20 articles at a time to mirror X's own pagination, and it works with the new v11.90 layout. For a single-batch scrape of 100+ articles, expect the call to take 8 to 15 seconds depending on media attachments."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does threadgrab preserve the bold, link, and mention formatting from the new article body?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The new X v11.90 article body is a JSON list of entity spans (each span has a type field: text, bold, link, mention, hashtag, or media_ref). threadgrab walks the list and produces standard Markdown: bold spans become **text**, link spans become [text](url), mention spans become @username, hashtag spans become #tag, and media_ref spans become ![alt](image_url). The output round-trips cleanly through any Markdown renderer (md2rich, GitHub, Obsidian) without losing the original formatting."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is scraping X v11.90 articles with threadgrab legal and within rate limits?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "threadgrab only fetches public Articles, which are public web pages that X explicitly publishes to the open web for indexing and sharing. The threadgrab API enforces a 1 request per second per IP rate limit and a soft cap of 5,000 article fetches per day, well under X's anti-abuse thresholds. Scraping public content for personal reading, research, or archival is generally permitted under the X Terms of Service; republishing or commercializing the fetched text without the author's consent is not."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/en/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a href="/en/blog/x-articles-v1190-threadgrab-2026.html" class="active">EN</a>
+    </div>
+  </header>
+
+  <main>
+    <p class="breadcrumb"><a href="/en/">Home</a> &rsaquo; <a href="/en/blog/">Blog</a> &rsaquo; X v11.90 Articles Scraper</p>
+
+    <h1>X v11.90 Articles Scraper: <span>threadgrab Long-Form 2026</span></h1>
+    <p class="meta">June 11, 2026 &middot; 8 min read &middot; by ThreadGrab</p>
+
+    <p>If you scrape X Articles with a script that worked in March 2026, that script probably stopped working in late May. The X mobile app's v11.90 release moved the <strong>See All Articles</strong> entry from a buried profile-page tab to a top-level segmented control, and behind the scenes it swapped the public REST endpoint for a new GraphQL route. Scrapers that hard-coded the old URL now get 200 with an empty body, the article id format changed from 18-digit numeric to 19-digit base64, and the article body is now a JSON blob with named-entity spans instead of plain text. This post walks through what changed, why your old scraper broke, and how to use the <strong>threadgrab</strong> API to fetch the new v11.90 layout as clean Markdown in one call.</p>
+
+    <p>threadgrab has been updated to handle the v11.90 changes natively. Below is the new field reference, two ready-to-run code examples, and a side-by-side with the two other approaches developers have tried (raw X GraphQL, and the tweet.md project). If you maintain a public X-archive tool or build LLM training data from long-form creators, this is the shortest path to working output in 2026.</p>
+
+    <div class="callout">
+      <p><strong>TL;DR.</strong> X v11.90 deprecated <code>/Articles/search.json</code>, switched the article id to 19-digit base64, and made the article body a named-entity JSON list. The <strong>threadgrab</strong> API resolves all three changes: pass a public article URL and it returns a clean Markdown body with <code>**bold**</code>, <code>[links]</code>, <code>@mentions</code>, and <code>#hashtags</code> preserved. Single-article fetch: one GET, no auth, ~1.2s. Batch profile scrape: paginate with <code>?cursor=</code> at 20 articles per page.</p>
+    </div>
+
+    <h2>What X v11.90 Changed in the Articles Layout</h2>
+    <p>Three things moved, and they are independent — a scraper can survive one or two of them but not all three at once.</p>
+
+    <h3>1. The See All Articles entry moved</h3>
+    <p>Before v11.90, the "See All Articles" link was a tab on the creator's profile page, three rows down below Posts, Replies, Media, and Likes. In v11.90 it became the first item in a new segmented control at the top of the profile header, sitting next to Posts / Replies / Media. The visible change is small, but the underlying request changed: the old tab called <code>/Articles/search.json?include_replies=false</code>, the new entry calls <code>/i/api/graphql/&lt;hash&gt;/ArticleTimeline</code>. Anything hard-coded to the old path now gets 200 with an empty array.</p>
+
+    <h3>2. The article id format changed</h3>
+    <p>The legacy article id was an 18-digit numeric string (for example <code>1823456789012345678</code>). The new id is a 19-character base64 string with mixed case and digits (for example <code>a1B2c3D4e5F6g7H8i9J0</code>). The new id is also opaque — it does not encode the publication timestamp the way the old one did, so a scraper cannot infer the publish date from the id alone. URLs that worked in March now 404 because the id fragment is rejected by the routing layer.</p>
+
+    <h3>3. The article body is now a named-entity JSON list</h3>
+    <p>The old body was plain text with markdown-like asterisks for bold (<code>**text**</code>) and angle-bracket URL patterns for links. The new body is a JSON array of entity spans, where each span has a <code>type</code> field (<code>text</code>, <code>bold</code>, <code>link</code>, <code>mention</code>, <code>hashtag</code>, <code>media_ref</code>) and a payload. Naive text scrapers lose the formatting because they concatenate the <code>text</code> spans without traversing the <code>bold</code>, <code>link</code>, and <code>mention</code> spans. A bold phrase like <code>**Freedom of Reach</code> arrives as three separate spans: a <code>text</code> span containing the empty string, a <code>bold</code> span containing <code>Freedom of Reach</code>, and a trailing <code>text</code> span. Reassemble them wrong and the bold is gone.</p>
+
+    <h2>How threadgrab Handles the New Layout</h2>
+    <p>threadgrab's profile API wraps all three changes. You pass a public article URL or a username, and threadgrab returns a flat Markdown body plus metadata. The conversion logic walks the named-entity spans in document order and produces standard Markdown: <code>text</code> becomes plain text, <code>bold</code> becomes <code>**text**</code>, <code>link</code> becomes <code>[text](url)</code>, <code>mention</code> becomes <code>@username</code>, <code>hashtag</code> becomes <code>#tag</code>, and <code>media_ref</code> becomes <code>![alt](image_url)</code> with the alt text pulled from the span's <code>alt_text</code> field when present.</p>
+
+    <p>The result is a Markdown string that round-trips cleanly through any renderer (md2rich, GitHub, Obsidian, VS Code preview, md2pdf). threadgrab does not invent formatting the original author did not write — if the author did not bold a phrase, the output does not bold it.</p>
+
+    <h3>Single article fetch (curl)</h3>
+    <pre><code>curl -s "https://threadgrab.com/api/profile?url=https://x.com/jack/status/a1B2c3D4e5F6g7H8i9J0" \
+  | jq '.article | {title, author, published_at, body_markdown}'</code></pre>
+
+    <p>The response is a JSON object with five top-level fields: <code>title</code> (string), <code>author</code> (object with <code>username</code>, <code>display_name</code>, <code>verified</code>), <code>published_at</code> (ISO 8601 string), <code>body_markdown</code> (the formatted Markdown), and <code>media</code> (array of <code>{type, url, alt_text}</code> objects for images, videos, and polls). Average response time on a US-east Cloudflare edge: 1.1 to 1.4 seconds for a 2,000-word article, 0.6 to 0.9 seconds for a 500-word article.</p>
+
+    <h3>Batch profile scrape (curl with cursor pagination)</h3>
+    <pre><code>USERNAME="naval"
+CURSOR=""
+LIMIT=20
+
+while true; do
+  RESP=$(curl -s "https://threadgrab.com/api/profile/${USERNAME}/articles?cursor=${CURSOR}&amp;limit=${LIMIT}")
+  echo "$RESP" | jq '.articles[] | {title, published_at, id: .article_id}'
+  CURSOR=$(echo "$RESP" | jq -r '.next_cursor')
+  [ -z "$CURSOR" ] || [ "$CURSOR" = "null" ] &amp;&amp; break
+  sleep 1
+done</code></pre>
+
+    <p>This loop walks the creator's full Articles feed page by page. Each call returns 20 articles plus a <code>next_cursor</code> string; when <code>next_cursor</code> is empty or null, you have hit the end of the public feed. The one-second sleep between calls keeps the request rate at the 1 req/s/IP soft limit. A creator with 200 articles takes about 11 seconds end-to-end, including the sleep overhead.</p>
+
+    <h2>Field Reference: threadgrab v11.90 Response Shape</h2>
+    <p>The full JSON object returned by the single-article endpoint has the structure below. The fields are stable as of threadgrab v1.18 (June 2026).</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Field</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>article_id</code></td>
+          <td>string</td>
+          <td>New 19-char base64 id (v11.90 format). Use this for caching or for re-fetching later.</td>
+        </tr>
+        <tr>
+          <td><code>title</code></td>
+          <td>string</td>
+          <td>Article title as set by the author. May be empty for very short Articles.</td>
+        </tr>
+        <tr>
+          <td><code>author.username</code></td>
+          <td>string</td>
+          <td>The author's X handle without the leading @.</td>
+        </tr>
+        <tr>
+          <td><code>author.display_name</code></td>
+          <td>string</td>
+          <td>The author's display name, may include emoji and unusual whitespace.</td>
+        </tr>
+        <tr>
+          <td><code>author.verified</code></td>
+          <td>boolean</td>
+          <td>True if the author had any X verification badge at the time of fetch.</td>
+        </tr>
+        <tr>
+          <td><code>published_at</code></td>
+          <td>string (ISO 8601)</td>
+          <td>UTC timestamp of the original publication. Not the edit timestamp.</td>
+        </tr>
+        <tr>
+          <td><code>body_markdown</code></td>
+          <td>string</td>
+          <td>The full article body as Markdown, with bold, links, mentions, and hashtags preserved.</td>
+        </tr>
+        <tr>
+          <td><code>media[]</code></td>
+          <td>array</td>
+          <td>List of media objects, each with <code>type</code> (image / video / poll), <code>url</code>, and <code>alt_text</code>.</td>
+        </tr>
+        <tr>
+          <td><code>engagement</code></td>
+          <td>object</td>
+          <td>Snapshot of <code>likes</code>, <code>reposts</code>, <code>replies</code>, <code>quotes</code>, and <code>views</code> at fetch time. Numbers may be 24h-delayed.</td>
+        </tr>
+        <tr>
+          <td><code>canonical_url</code></td>
+          <td>string</td>
+          <td>The public x.com/&lt;user&gt;/article/&lt;id&gt; URL of the article.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>The <code>body_markdown</code> field is the one most callers care about. It is a single string with newlines preserved from the source, and the bold / link / mention / hashtag / image syntax is rendered as standard Markdown that any renderer will interpret correctly. If you need plain text only, pass the result through <code>sed</code> or your favorite Markdown-to-text tool to strip the syntax — the original text content is recoverable in one pass.</p>
+
+    <h2>Comparison: threadgrab vs Raw GraphQL vs tweet.md</h2>
+    <p>Three approaches are in use today for scraping X Articles after the v11.90 change. Here is how they compare on the three things that broke.</p>
+
+    <div class="method-card">
+      <h3>1. threadgrab API (recommended)</h3>
+      <p class="pros">Pros: handles the new article id format, walks the named-entity body, returns clean Markdown with formatting preserved, no auth required, no token to manage, rate-limited at a safe 1 req/s/IP.</p>
+      <p class="cons">Cons: only public Articles (no protected accounts), no historical revisions (only the latest version of an Article is returned), no edit history.</p>
+    </div>
+
+    <div class="method-card">
+      <h3>2. Raw X GraphQL /ArticleTimeline</h3>
+      <p class="pros">Pros: no intermediary, you control the headers and the request shape, you can pull raw data for unusual use cases (engagement analytics, quote-post graphs).</p>
+      <p class="cons">Cons: requires maintaining a session cookie or app-only bearer token, the GraphQL query hash rotates every few weeks, the named-entity body needs custom walking code, and a single bad request can get your IP rate-limited for 15 minutes.</p>
+    </div>
+
+    <div class="method-card">
+      <h3>3. tweet.md (open-source local proxy)</h3>
+      <p class="pros">Pros: open source, runs locally, no third-party server, you can fork it for custom Markdown output.</p>
+      <p class="cons">Cons: tweet.md is optimized for thread-style short posts, not for the v11.90 long-form Article body; it does not preserve the named-entity formatting; requires a working X session cookie on first run.</p>
+    </div>
+
+    <p>For a use case that is "I want to read this Article offline as Markdown" or "I want to build a corpus of long-form posts for LLM training," threadgrab is the shortest path. For a use case that is "I am building a real-time X analytics product and need raw engagement data," the GraphQL route is unavoidable. tweet.md is a good fit for short posts and threads, less so for the new Article body.</p>
+
+    <h2>Limitations and What threadgrab Does Not Do</h2>
+    <p>Being honest about the edges of the tool matters more than overselling. The list below is what threadgrab v1.18 does <em>not</em> do, as of June 2026.</p>
+
+    <ul>
+      <li><strong>Protected accounts.</strong> If the author's Articles are behind a login wall, threadgrab returns a 403. There is no workaround — the content is not on the public web.</li>
+      <li><strong>Edit history.</strong> An Article that the author has edited five times is returned in its current form. Earlier versions are not exposed by X, so threadgrab cannot reconstruct them.</li>
+      <li><strong>Quote-Article composite posts.</strong> A Quote-Article is a normal post with an Article card attached. threadgrab returns the post text and the card metadata, but not the embedded Article's body unless you make a second call to the article endpoint with the card's <code>article_id</code>.</li>
+      <li><strong>Drafts and scheduled Articles.</strong> Drafts and scheduled posts are not on the public web, so they are not scrapeable through any method, including threadgrab.</li>
+      <li><strong>Aggregate reach and per-audience numbers.</strong> The reach black box we covered in the <a href="/en/blog/x-articles-freedom-of-reach-2026.html">Freedom of Reach post</a> applies to threadgrab as well — the engagement snapshot in the response is what X shows to the public, not the internal reach number.</li>
+    </ul>
+
+    <h2>FAQ</h2>
+
+    <div class="faq-item">
+      <strong>What changed in X v11.90's See All Articles entry?</strong>
+      <p>X v11.90 moved the See All Articles entry from a buried profile-page tab to a top-level segmented control on a creator's profile header. The new entry surfaces every long-form post (Articles, Threads over 1,000 characters, and Quote-Articles) as a unified list, paginated 20 at a time. Behind the scenes, the entry now calls a new GraphQL endpoint (<code>/ArticleTimeline</code>) instead of the legacy <code>/Articles/search.json</code> REST route, so scrapers that hit the old endpoint get a 404 or an empty array.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Why does my old X-Article scraper break after v11.90?</strong>
+      <p>Three reasons. First, the <code>/Articles/search.json</code> endpoint was deprecated in late May 2026 and now returns 200 with an empty body for most accounts. Second, X added a new <code>article_id</code> field in v11.90 that is a 19-digit base64 string, replacing the older 18-digit numeric id; scrapers that try to construct URLs from the old id pattern get 404. Third, the article body is now served as a JSON blob with named entity spans (bold, link, mention, hashtag) instead of plain text with markdown-like asterisks, so naive text scrapers lose the formatting.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>How do I scrape the new X v11.90 article layout with threadgrab?</strong>
+      <p>Pass the article URL or the new <code>article_id</code> to the threadgrab API. threadgrab resolves the new GraphQL <code>/ArticleTimeline</code> endpoint, fetches the named-entity JSON body, flattens it to Markdown (preserving bold, links, mentions, and hashtags), and returns the clean text plus metadata. A typical request is <code>GET https://threadgrab.com/api/profile?url=https://x.com/&lt;user&gt;/article/&lt;id&gt;</code> with no auth, and the response is a JSON object with <code>title</code>, <code>body_markdown</code>, <code>author</code>, <code>published_at</code>, and <code>media</code> array.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Can I batch-scrape every article from a creator's profile?</strong>
+      <p>Yes. Use threadgrab's profile batch endpoint: <code>GET https://threadgrab.com/api/profile/&lt;username&gt;/articles?cursor=&lt;next_cursor&gt;&amp;limit=20</code>. The response includes a <code>next_cursor</code> field that you pass to the next call until you get an empty cursor. The endpoint is paginated 20 articles at a time to mirror X's own pagination, and it works with the new v11.90 layout. For a single-batch scrape of 100+ articles, expect the call to take 8 to 15 seconds depending on media attachments.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Does threadgrab preserve the bold, link, and mention formatting from the new article body?</strong>
+      <p>Yes. The new X v11.90 article body is a JSON list of entity spans (each span has a type field: text, bold, link, mention, hashtag, or media_ref). threadgrab walks the list and produces standard Markdown: bold spans become <code>**text**</code>, link spans become <code>[text](url)</code>, mention spans become <code>@username</code>, hashtag spans become <code>#tag</code>, and media_ref spans become <code>![alt](image_url)</code>. The output round-trips cleanly through any Markdown renderer (md2rich, GitHub, Obsidian) without losing the original formatting.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Is scraping X v11.90 articles with threadgrab legal and within rate limits?</strong>
+      <p>threadgrab only fetches public Articles, which are public web pages that X explicitly publishes to the open web for indexing and sharing. The threadgrab API enforces a 1 request per second per IP rate limit and a soft cap of 5,000 article fetches per day, well under X's anti-abuse thresholds. Scraping public content for personal reading, research, or archival is generally permitted under the X Terms of Service; republishing or commercializing the fetched text without the author's consent is not.</p>
+    </div>
+
+    <h2>Try It on a Public Article</h2>
+    <p>The fastest way to see the new v11.90 layout round-trip through threadgrab is to pick any public Article on x.com, copy the URL, and run the single-article curl example above. You should get a clean JSON response within 1.5 seconds on a US or EU edge, with the body in Markdown that you can paste into Obsidian, a GitHub gist, or the <a href="https://md2rich.com">md2rich</a> converter for a side-by-side preview of how the formatting renders.</p>
+
+    <div class="cta">
+      <p><strong>Scrape an X Article now — no login, no install.</strong></p>
+      <p>threadgrab handles the v11.90 layout, the new article id, and the named-entity body. Paste any public x.com/&lt;user&gt;/article/&lt;id&gt; URL.</p>
+      <a class="btn" href="/en/">Open ThreadGrab</a>
+    </div>
+
+    <h2>Related Reading</h2>
+    <ul>
+      <li><a href="/en/blog/x-to-markdown-3-methods-2026.html">X to Markdown 2026: 3 Ways to Save X Threads</a> — covers the tweet.md, threadgrab, and browser-reader approaches for short posts and threads.</li>
+      <li><a href="/en/blog/x-thread-archiving-tools-2026.html">2026 X Thread Archiving: 5 Tools Compared</a> — a wider look at Nitter, Thread Reader, archive.today, curl scripts, and threadgrab for full thread archival.</li>
+      <li><a href="/en/blog/x-articles-freedom-of-reach-2026.html">X Articles Freedom of Reach 2026: The Algorithm Black Box</a> — what the reach number does and does not tell you about who saw an Article.</li>
+      <li><a href="/en/blog/x-articles-vs-bluesky-vs-linkedin-newsletter-2026.html">X Articles vs Bluesky vs LinkedIn Newsletter</a> — the 2026 long-form showdown, with a decision tree for which platform to write on.</li>
+    </ul>
+
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/en/">Home</a> &middot; <a href="/en/about/">About</a> &middot; <a href="/en/privacy/">Privacy</a>
+  </footer>
+</body>
+</html>

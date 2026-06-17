@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>X para Markdown 2026: 3 Maneiras de Salvar Threads do X | ThreadGrab</title>
+  <meta name="description" content="Compare tweet.md, API ThreadGrab e ferramentas de navegador para converter threads e artigos do X em Markdown limpo em 2026.">
+  <meta name="keywords" content="X para Markdown, tweet.md, Tweet Markdown, salvar thread X, ThreadGrab, arquivo de artigo X, conversor Twitter markdown, preparação de dados LLM">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/pt/blog/x-to-markdown-3-methods-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/x-to-markdown-3-methods-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/x-to-markdown-3-methods-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/x-to-markdown-3-methods-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/x-to-markdown-3-methods-2026.html">
+  <meta property="og:title" content="X para Markdown 2026: 3 Maneiras de Salvar Threads do X | ThreadGrab">
+  <meta property="og:description" content="Compare tweet.md, API ThreadGrab e ferramentas de navegador para converter threads e artigos do X em Markdown limpo em 2026.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/pt/blog/x-to-markdown-3-methods-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="X para Markdown 2026: 3 Maneiras de Salvar Threads do X | ThreadGrab">
+  <meta name="twitter:description" content="Compare tweet.md, API ThreadGrab e ferramentas de navegador para converter threads e artigos do X em Markdown limpo em 2026.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    .method-card { background: #1a1a1a; border-radius: 10px; padding: 20px 22px; margin-bottom: 18px; border-left: 3px solid #20d5ec; }
+    .method-card h3 { margin-top: 0; color: #20d5ec; }
+    .method-card .pros { color: #6fcf97; font-size: 0.9rem; }
+    .method-card .cons { color: #f2994a; font-size: 0.9rem; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "X para Markdown 2026: 3 Maneiras de Salvar Threads e Artigos do X para Leitura, Pesquisa e LLMs",
+    "description": "Compare tweet.md, API ThreadGrab e ferramentas de navegador para converter threads e artigos do X em Markdown limpo em 2026.",
+    "datePublished": "2026-06-08",
+    "dateModified": "2026-06-08",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/" },
+    "mainEntityOfPage": "https://threadgrab.com/pt/blog/x-to-markdown-3-methods-2026.html",
+    "inLanguage": "pt"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://threadgrab.com/pt/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/pt/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "X para Markdown 2026: 3 Métodos" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "O que é tweet.md e como usar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "tweet.md é uma ferramenta gratuita que converte qualquer post ou thread pública do X (Twitter) em Markdown limpo otimizado para LLMs. Basta substituir x.com por tweet.md em qualquer URL."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso salvar threads do X programaticamente sem tweet.md?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. O ThreadGrab oferece uma API pública gratuita que retorna dados de threads do X como JSON estruturado. Use curl para buscar conteúdo de threads e converta para Markdown com jq."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O tweet.md é melhor que o ThreadGrab para salvar threads do X?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Eles servem propósitos diferentes. tweet.md é otimizado para entrada rápida e única em LLMs. O ThreadGrab se destaca em acesso programático, fluxos de trabalho em lote e suporte ao Bluesky."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como salvar Artigos do X (long-form) como Markdown?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O modo leitor do navegador (Ctrl+Shift+R) ou aplicativos de leitura posterior como Pocket fornecem texto limpo de qualquer URL de Artigo do X. O tweet.md também funciona com URLs de Artigos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qual é o melhor método para enviar conteúdo do X para ChatGPT ou Claude?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O tweet.md é construído especificamente para entrada em LLMs: Markdown limpo com mínimo de formatação extra. Copie e cole diretamente em qualquer chat. A API do ThreadGrab lida com ingestão em lote."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/pt/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a href="/en/blog/x-to-markdown-3-methods-2026.html">EN</a>
+      <a href="/pt/blog/x-to-markdown-3-methods-2026.html" class="active">PT</a>
+      <a href="/id/blog/x-to-markdown-3-methods-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <p class="breadcrumb"><a href="/pt/">Início</a> &rsaquo; <a href="/pt/blog/">Blog</a> &rsaquo; X para Markdown 2026: 3 Métodos</p>
+
+    <h1>X para Markdown 2026: <span>3 Maneiras de Salvar Threads &amp; Artigos do X</span></h1>
+    <p class="meta">8 de Junho, 2026 &middot; 8 min de leitura &middot; por ThreadGrab</p>
+
+    <p>O X (antigo Twitter) hospeda dezenas de milhões de threads, artigos e discussões públicas todos os dias. Se você é pesquisador, escritor ou profissional de IA que quer salvar esse conteúdo para leitura offline, análise ou dados de treinamento de LLM, você precisa de uma maneira confiável de converter conteúdo do X em Markdown limpo.</p>
+
+    <p>A boa notícia é que 2026 oferece pelo menos três opções sólidas, cada uma adequada a um fluxo de trabalho diferente. Este guia cobre cada método em detalhes para que você possa escolher o que se encaixa nas suas necessidades — seja pegando um post rápido para o ChatGPT ou executando um script noturno que arquiva toda thread dos seus autores favoritos.</p>
+
+    <div class="callout">
+      <p><strong>Resumo.</strong> Use <strong>tweet.md</strong> para a conversão única mais rápida (substitua <code>x.com</code> por <code>tweet.md</code> em qualquer URL). Use a <strong>API pública do ThreadGrab</strong> para acesso programático gratuito a threads e perfis. Use o <strong>modo leitor do navegador</strong> ou um serviço de leitura posterior para salvamentos rápidos de Artigos individuais do X. Usuários avançados combinam os três.</p>
+    </div>
+
+    <h2>O Que Mudou em 2026 para Arquivamento de Conteúdo do X?</h2>
+    <p>Duas coisas tornaram a conversão de X para Markdown significativamente mais fácil este ano. Primeiro, o <strong><a href="https://tweet.md" rel="noopener" target="_blank">tweet.md</a></strong> lançou um serviço simples: substitua <code>x.com</code> por <code>tweet.md</code> em qualquer URL de post e receba Markdown limpo de volta, otimizado para LLMs. Funciona com posts individuais, threads e até páginas de perfil. Segundo, o ecossistema mais amplo de LLMs — ChatGPT, Claude, Gemini CLI, Hermes Agent, Cursor — tornou o Markdown o formato de intercâmbio padrão para dados de treinamento e janelas de contexto, impulsionando a demanda por extração de texto limpa e eficiente em tokens.</p>
+
+    <h2>Método 1: tweet.md — A Conversão em Uma Linha</h2>
+
+    <div class="method-card">
+      <h3>tweet.md</h3>
+      <p>Website: <a href="https://tweet.md" rel="noopener" target="_blank">tweet.md</a></p>
+      <p class="pros">Prós: Configuração zero, otimizado para LLMs, funciona em qualquer dispositivo com navegador, gratuito para posts individuais.</p>
+      <p class="cons">Contras: Requer internet, não programável sem plano de chave API, plano gratuito pode limitar usuários intensivos.</p>
+    </div>
+
+    <p>O tweet.md é a maneira mais simples de converter um post do X em Markdown. Você não instala nada — apenas edita a URL. Todo post e perfil no X tem uma URL pública; mudar o domínio de <code>x.com</code> para <code>tweet.md</code> fornece uma versão renderizada em Markdown do mesmo conteúdo.</p>
+
+    <pre><code># URL original do post X
+#   https://x.com/paulg/status/1234567890123456789
+#
+# Basta substituir x.com por tweet.md:
+#   https://tweet.md/paulg/status/1234567890123456789
+#
+# A página carrega como Markdown limpo. Copie e cole
+# no ChatGPT, Claude ou qualquer editor Markdown.</code></pre>
+
+    <p>A saída inclui o nome do autor, texto do post, estatísticas de engajamento e, no caso de threads, a thread inteira é concatenada como um único documento Markdown. O tweet.md também oferece um arquivo de skill para agentes de IA (instale via <code>npx skills add tweet-md/skill</code>) para que Claude Code, Cline ou Hermes Agent possam buscar conteúdo do X em tempo real.</p>
+
+    <p>O tweet.md foi recentemente destacado no Product Hunt. É especialmente útil quando você está em um chat de LLM e encontra uma thread do X que quer que o modelo analise — substitua a URL, copie o Markdown e cole.</p>
+
+    <h3>Quando usar tweet.md</h3>
+    <ul>
+      <li>Você lê X no celular ou laptop e quer salvar uma única thread para depois.</li>
+      <li>Você quer alimentar uma thread do X no ChatGPT ou Claude para sumarização ou análise.</li>
+      <li>Você quer compartilhar uma versão limpa e formatada de uma thread do X com um colega sem capturas de tela.</li>
+    </ul>
+
+    <h2>Método 2: API Pública do ThreadGrab — Arquivamento Programático em Lote</h2>
+
+    <div class="method-card">
+      <h3>ThreadGrab</h3>
+      <p>Website: <a href="/pt/">threadgrab.com</a></p>
+      <p class="pros">Prós: Programável, suporta Bluesky também, gratuito e sem necessidade de conta, retorna JSON estruturado que você pode personalizar.</p>
+      <p class="cons">Contras: Requer conforto com linha de comando (curl, jq ou linguagem de script), não é tão instantâneo quanto uma substituição de URL.</p>
+    </div>
+
+    <p>O ThreadGrab expõe uma API pública que retorna conteúdo de threads do X como JSON estruturado. Esta é a escolha certa quando você precisa automatizar: buscar threads em lote de seus autores favoritos, arquivá-los em disco toda noite ou construir um pipeline de pesquisa personalizado.</p>
+
+    <pre><code># Buscar threads recentes de um usuário como JSON
+curl -s https://threadgrab.com/api/profile/paulg \
+  | jq '.[:3] | .[] | {author, text_length: (.text | length)}'
+
+# Salvar a thread completa como Markdown em um arquivo local
+curl -s https://threadgrab.com/api/profile/paulg \
+  | jq -r '.[] | "# \\(.author)\\n\\n\\(.text)\\n---"' &gt; paulg-archive.md</code></pre>
+
+    <p>A API do ThreadGrab retorna dados de thread em um esquema previsível: handle do autor, nome de exibição, texto do post, estatísticas de engajamento e timestamps. Você pode processar isso com qualquer linguagem de script — Python, Bash, Node.js — e converter para Markdown, JSON ou CSV.</p>
+
+    <p>Ao contrário do tweet.md, o ThreadGrab também suporta posts do Bluesky via API aberta do AT Protocol. Se você arquiva conteúdo de múltiplas plataformas sociais, o ThreadGrab é seu ponto de entrada único.</p>
+
+    <h3>Quando usar a API do ThreadGrab</h3>
+    <ul>
+      <li>Você mantém um arquivo de pesquisa de discussões do X e quer atualizações noturnas em lote.</li>
+      <li>Você está construindo um conjunto de dados para treinamento ou fine-tuning de LLM.</li>
+      <li>Você quer arquivar conteúdo do X e do Bluesky através de uma única interface.</li>
+      <li>Você precisa de dados estruturados (temporários, contagens de engajamento) além do texto.</li>
+    </ul>
+
+    <h2>Método 3: Modo Leitor do Navegador e Serviços de Leitura Posterior</h2>
+
+    <div class="method-card">
+      <h3>Pocket, Matter ou Leitor Integrado do Navegador</h3>
+      <p>Todo navegador principal tem um modo leitor. Aplicativos dedicados como Pocket e Matter adicionam sincronização e anotações.</p>
+      <p class="pros">Prós: Funciona para qualquer página web, não apenas X; configuração zero; bom para salvamentos de artigos únicos.</p>
+      <p class="cons">Contras: Sem acesso programático; Artigos do X renderizam bem, mas respostas de thread frequentemente se perdem; formatação é inconsistente.</p>
+    </div>
+
+    <p>Este é o método de menor esforço. Todo navegador principal tem um modo leitor (Ctrl+Shift+R no desktop, ou o ícone de página na barra de endereços no mobile). Quando você abre um Artigo do X ou a visualização HTML de uma thread, o modo leitor remove a barra lateral, posts sugeridos e anúncios, deixando apenas o conteúdo.</p>
+
+    <pre><code># Atalhos de teclado para modo leitor:
+#   Chrome / Edge:   F9 ou Ctrl+Shift+R
+#   Firefox:         F9
+#   Safari:          Cmd+Shift+R (botão Leitor na barra de ferramentas)
+#
+# Uma vez no modo leitor, copie e cole o texto limpo no
+# seu editor Markdown favorito ou aplicativo de notas.</code></pre>
+
+    <p>Serviços de leitura posteriores como Pocket e Matter vão além: salvam o artigo em sua biblioteca, sincronizam entre dispositivos e frequentemente expõem uma camada de destaque/anotação. Tanto Pocket quanto Matter permitem exportar artigos salvos como texto simples ou HTML, que você pode então converter para Markdown com uma ferramenta como <code>pandoc</code>.</p>
+
+    <h3>Quando usar modo leitor / serviços de leitura posterior</h3>
+    <ul>
+      <li>Você só salva conteúdo do X ocasionalmente e não quer aprender uma nova ferramenta.</li>
+      <li>Você já usa Pocket ou Matter para posts de blog e quer uma lista de leitura unificada.</li>
+      <li>Você está lendo Artigos do X (long-form) em vez de posts curtos em thread — o modo leitor lida com long-form muito melhor do que a concatenação de threads curtas.</li>
+    </ul>
+
+    <h2>Comparação Lado a Lado</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Funcionalidade</th>
+          <th>tweet.md</th>
+          <th>API ThreadGrab</th>
+          <th>Modo Leitor / Pocket</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Tempo de configuração</td>
+          <td>0 segundos (substituir URL)</td>
+          <td>5 minutos (curl + jq)</td>
+          <td>0 segundos (integrado)</td>
+        </tr>
+        <tr>
+          <td>Acesso programático</td>
+          <td>Plano de chave API necessário</td>
+          <td>Gratuito, sem autenticação</td>
+          <td>Não (apenas manual)</td>
+        </tr>
+        <tr>
+          <td>Concatenação de threads</td>
+          <td>Thread completa como um doc</td>
+          <td>Thread completa como dados estruturados</td>
+          <td>Parcial (threads quebram)</td>
+        </tr>
+        <tr>
+          <td>Saída otimizada para LLM</td>
+          <td>Sim (construído para isso)</td>
+          <td>Sim (JSON/Markdown limpo)</td>
+          <td>Não (texto web bruto)</td>
+        </tr>
+        <tr>
+          <td>Suporte a Bluesky</td>
+          <td>Não (apenas X)</td>
+          <td>Sim (AT Protocol)</td>
+          <td>Sim (leitor HTML)</td>
+        </tr>
+        <tr>
+          <td>Salvamento em lote</td>
+          <td>Manual por URL</td>
+          <td>Programável (cron, curl)</td>
+          <td>Manual por página</td>
+        </tr>
+        <tr>
+          <td>Acesso offline</td>
+          <td>Copiar-colar ou PDF</td>
+          <td>Salvar arquivos .md no disco</td>
+          <td>Biblioteca sincronizada (Pocket)</td>
+        </tr>
+        <tr>
+          <td>Melhor para</td>
+          <td>Entrada rápida única em LLM</td>
+          <td>Arquivos de pesquisa, automação</td>
+          <td>Leitura casual, artigos únicos</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Construindo um Fluxo de Trabalho Automatizado com os Três</h2>
+    <p>Muitos usuários avançados combinam métodos para um pipeline completo. Aqui está um exemplo real: um pesquisador que segue 20 contas X e quer um arquivo pronto para LLM entregue em seu cofre Obsidian toda manhã.</p>
+
+    <pre><code>#!/bin/bash
+# Arquivo noturno X para Obsidian (executa às 6h via cron)
+
+USERS=("paulg" "kelseyhightower" "swyx" "levelsio")
+OUTPUT_DIR="$HOME/obsidian-vault/inbox/x-threads"
+mkdir -p "$OUTPUT_DIR"
+
+for user in "${USERS[@]}"; do
+  curl -s "https://threadgrab.com/api/profile/$user" \
+    | jq -r '.[] | "# \\(.author)\\n\\(.text)\\n---"' \
+    &gt; "$OUTPUT_DIR/$user-$(date +%Y-%m-%d).md"
+done
+
+echo "Arquivados ${#USERS[@]} perfis em $OUTPUT_DIR"</code></pre>
+
+    <p>Este pipeline usa a API do ThreadGrab para busca em lote, gera Markdown limpo que o Obsidian pode indexar e deixa a porta aberta para o tweet.md quando o pesquisador encontra uma única thread interessante durante o dia e quer tê-la em seu chat de LLM imediatamente.</p>
+
+    <div class="callout">
+      <p><strong>Dica profissional.</strong> Se você usa um agente de codificação de IA como Claude Code, Cline ou Cursor, instale o skill do tweet.md com <code>npx skills add tweet-md/skill</code>. O agente pode então buscar qualquer URL do X como Markdown em tempo real durante sua sessão, sem você sair do chat.</p>
+    </div>
+
+    <h2>Como o ThreadGrab se Encaixa Nestes Fluxos de Trabalho</h2>
+    <p>O ThreadGrab foi construído para dar a você <strong>propriedade do conteúdo que você lê</strong>. Seja usando através da API pública (para automação), da interface web (para capturas únicas) ou como complemento ao tweet.md (para fluxos de trabalho com LLM), o objetivo é o mesmo: converter conteúdo social público em Markdown limpo, portátil e legível por máquina que você possui e controla.</p>
+
+    <p>Ao contrário do tweet.md, o ThreadGrab não requer conta, chave de API ou qualquer pagamento para acesso programático. Ele também funciona com posts do Bluesky, tornando-se a única ferramenta nesta comparação que abrange duas grandes plataformas sociais.</p>
+
+    <div class="cta">
+      <p>Quer salvar uma thread ou artigo do X para leitura posterior — sem instalação, sem conta?</p>
+      <a class="btn" href="/pt/">Experimente ThreadGrab — Downloader Gratuito de Threads do X</a>
+    </div>
+
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <strong>O que é tweet.md e como usar?</strong>
+      <p>tweet.md converte qualquer post ou thread pública do X em Markdown limpo. Basta substituir <code>x.com</code> por <code>tweet.md</code> na URL e você recebe Markdown de volta. É gratuito para posts individuais e oferece um plano de chave API para usuários intensivos.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Posso salvar threads do X programaticamente sem tweet.md?</strong>
+      <p>Sim. O ThreadGrab oferece uma API pública gratuita que retorna dados de thread como JSON estruturado. Use <code>curl</code> para buscar o conteúdo da thread e converta o JSON para Markdown com <code>jq</code> ou um pequeno script Python.</p>
+    </div>
+    <div class="faq-item">
+      <strong>O tweet.md é melhor que o ThreadGrab para salvar threads do X?</strong>
+      <p>Eles servem necessidades diferentes. tweet.md é otimizado para entrada rápida e única em LLMs. O ThreadGrab se destaca em acesso programático, fluxos de trabalho em lote e suporte ao Bluesky. Muitos usuários avançados combinam ambos.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Como salvar Artigos do X (long-form) como Markdown?</strong>
+      <p>O modo leitor do navegador (Ctrl+Shift+R) ou aplicativos de leitura posterior como Pocket e Matter fornecem texto limpo de qualquer URL de Artigo do X. O tweet.md também funciona com URLs de Artigos. A API do ThreadGrab também os suporta.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Qual é o melhor método para enviar conteúdo do X para ChatGPT ou Claude?</strong>
+      <p>O tweet.md é construído especificamente para entrada em LLMs: Markdown limpo com mínimo de formatação extra. Copie e cole diretamente em qualquer chat. Para ingestão em lote, a API do ThreadGrab pode buscar múltiplas threads como blocos Markdown.</p>
+    </div>
+
+    <h2>Escolha Seu Método e Comece a Salvar</h2>
+    <p>O ecossistema de X para Markdown em 2026 está mais saudável do que nunca. O tweet.md oferece uma conversão de um segundo para qualquer post. A API pública do ThreadGrab oferece acesso programático gratuito para pesquisa e automação. O modo leitor do navegador e serviços de leitura posterior cobrem o salvamento casual. Escolha o método que corresponde ao seu fluxo de trabalho, e se você se pegar desejando uma maneira mais simples de salvar threads e artigos para leitura posterior, o <a href="/pt/">ThreadGrab tem tudo para você</a>.</p>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/pt/">Início</a> &middot; <a href="/pt/blog/">Blog</a> &middot; <a href="/pt/about/">Sobre</a> &middot; <a href="/pt/privacy/">Privacidade</a>
+    <br>Não afiliado à X Corp., Bluesky Social PBC ou tweet.md.
+  </footer>
+</body>
+</html>
