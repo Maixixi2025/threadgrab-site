@@ -1,0 +1,548 @@
+{
+  "published": [
+    {
+      "slug": "social-content-repurposing-tools-2026",
+      "date": "2026-06-13",
+      "type": "comparison",
+      "title_en": "Content Repurposing Tools 2026: 5 Best Compared",
+      "title_pt": "Ferramentas de Repropósito de Conteúdo 2026: 5 Melhores",
+      "title_id": "Alat Repurposing Konten 2026: 5 Terbaik Dibandingkan",
+      "path_en": "en/blog/social-content-repurposing-tools-2026.html",
+      "path_pt": "pt/blog/social-content-repurposing-tools-2026.html",
+      "path_id": "id/blog/social-content-repurposing-tools-2026.html",
+      "url_en": "https://threadgrab.com/en/blog/social-content-repurposing-tools-2026.html",
+      "url_pt": "https://threadgrab.com/pt/blog/social-content-repurposing-tools-2026.html",
+      "url_id": "https://threadgrab.com/id/blog/social-content-repurposing-tools-2026.html",
+      "heat_source": "2026-06-13 daily hot topics — ConvertlyAI launch news, content repurposing space validation (social tools section #2)",
+      "tags": [
+        "content repurposing",
+        "ConvertlyAI",
+        "Typefully",
+        "Buffer",
+        "Canva Magic Write",
+        "ThreadGrab",
+        "social content workflow",
+        "content reuse 2026",
+        "X thread to newsletter"
+      ],
+      "word_count": 1755,
+      "file_size_bytes_en": 24992,
+      "file_size_bytes_pt": 26740,
+      "file_size_bytes_id": 25546,
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "status": "published",
+      "created_at": "2026-06-13",
+      "published_at": "2026-06-13",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "deployed": true,
+      "preview_url": "https://b6387e2f.threadgrab.pages.dev",
+      "qa_passed": {
+        "title_chars_en": 47,
+        "title_chars_pt": 55,
+        "title_chars_id": 52,
+        "description_chars_en": 150,
+        "description_chars_pt": 148,
+        "description_chars_id": 147,
+        "hreflang_alternates": 3,
+        "canonical_present": true,
+        "jsonld_blocks": 3,
+        "faq_count": 5,
+        "h2_count": 7,
+        "code_blocks": 5,
+        "raw_lt_in_body": 0
+      }
+    },
+    {
+      "slug": "x-articles-freedom-of-reach-2026",
+      "date": "2026-06-09",
+      "type": "analysis",
+      "title_en": "X Articles Freedom of Reach 2026 | ThreadGrab",
+      "title_zh": "X Articles 触达率 2026：Freedom of Reach 黑箱算法对长文创作者意味着什么",
+      "path": "en/blog/x-articles-freedom-of-reach-2026.html",
+      "url": "https://threadgrab.com/en/blog/x-articles-freedom-of-reach-2026.html",
+      "heat_source": "⭐⭐⭐ 2026-06-09 daily hot topics #1 — HN 46653122 X 'Freedom of Reach' black box discussion",
+      "tags": [
+        "X Articles",
+        "Freedom of Reach",
+        "X algorithm 2026",
+        "long-form creators",
+        "X creator migration",
+        "LinkedIn Newsletter reach",
+        "X Articles vs LinkedIn"
+      ],
+      "word_count": 2201,
+      "file_size_bytes": 26110,
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "status": "published",
+      "created_at": "2026-06-09",
+      "qa_passed": {
+        "title_chars": 45,
+        "description_chars": 130,
+        "hreflang_alternates": 2,
+        "canonical_present": true,
+        "jsonld_blocks": 3,
+        "faq_count": 5,
+        "h2_count": 8,
+        "code_blocks": 2,
+        "raw_lt_in_body": 0
+      },
+      "seo_basics_added": [
+        "sitemap.xml updated (added missing 2026-06-07 and 2026-06-08 entries + new article)",
+        "llms.txt updated (added missing 2026-06-07 + 2026-06-08 entries + new article)",
+        "en/blog/index.html updated (newest-first order)"
+      ],
+      "published_at": "2026-06-09",
+      "deployed_url": "https://threadgrab.com/en/blog/x-articles-freedom-of-reach-2026.html",
+      "preview_url": "https://1dbb6e99.threadgrab.pages.dev",
+      "lang": "en-US"
+    },
+    {
+      "slug": "x-articles-vs-bluesky-vs-linkedin-newsletter-2026",
+      "date": "2026-06-06",
+      "type": "comparison",
+      "title_en": "X Articles vs Bluesky vs LinkedIn Newsletter | ThreadGrab",
+      "title_zh": "X Articles vs Bluesky 长文 vs LinkedIn Newsletter：长内容三足鼎立？",
+      "path": "en/blog/x-articles-vs-bluesky-vs-linkedin-newsletter-2026.html",
+      "url": "https://threadgrab.com/en/blog/x-articles-vs-bluesky-vs-linkedin-newsletter-2026.html",
+      "heat_source": "⭐⭐⭐ 2026-06-06 daily hot topics #1 — TechCrunch 5/28 Bluesky long-form launch",
+      "tags": [
+        "X Articles",
+        "Bluesky",
+        "LinkedIn Newsletter",
+        "long-form",
+        "social publishing",
+        "comparison"
+      ],
+      "word_count": 2615,
+      "file_size_bytes": 23923,
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "status": "published",
+      "published_at": "2026-06-06",
+      "qa_passed": {
+        "title_chars": 57,
+        "description_chars": 143,
+        "hreflang_alternates": 4,
+        "canonical_present": true,
+        "jsonld_blocks": 3
+      },
+      "seo_basics_added": [
+        "llms.txt",
+        "robots.txt",
+        "sitemap.xml",
+        "en/blog/index.html"
+      ],
+      "lang": "en-US"
+    },
+    {
+      "slug": "x-to-markdown-3-methods-2026",
+      "date": "2026-06-08",
+      "type": "guide",
+      "title_en": "X to Markdown 2026: 3 Ways to Save X Threads | ThreadGrab",
+      "title_zh": "",
+      "path": "en/blog/x-to-markdown-3-methods-2026.html",
+      "url": "https://threadgrab.com/en/blog/x-to-markdown-3-methods-2026.html",
+      "heat_source": "⭐⭐⭐ 2026-06-08 daily hot topics #1 — tweet.md launch (tweet.md)",
+      "tags": [
+        "X to Markdown",
+        "tweet.md",
+        "ThreadGrab",
+        "X threads",
+        "Markdown",
+        "LLM data",
+        "social archiving"
+      ],
+      "word_count": 2610,
+      "file_size_bytes": 23168,
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "status": "published",
+      "published_at": "2026-06-08",
+      "qa_passed": {
+        "title_chars": 57,
+        "description_chars": 116,
+        "hreflang_alternates": 2,
+        "canonical_present": true,
+        "jsonld_blocks": 3,
+        "faq_count": 5,
+        "h2_count": 7,
+        "code_blocks": 4,
+        "raw_lt_in_body": 0
+      },
+      "lang": "en-US"
+    },
+    {
+      "slug": "x-thread-archiving-tools-2026",
+      "date": "2026-06-10",
+      "type": "comparison",
+      "title_en": "2026 X Thread Archiving: 5 Tools Compared",
+      "lang": "en-US"
+    },
+    {
+      "slug": "x-articles-v1190-threadgrab-2026",
+      "date": "2026-06-11",
+      "type": "guide",
+      "title_en": "X v11.90 Articles Scraper: threadgrab Long-Form 2026",
+      "title_zh": "X v11.90 长文 See All Articles 入口解析：threadgrab 抓取实战 2026",
+      "path": "en/blog/x-articles-v1190-threadgrab-2026.html",
+      "url": "https://threadgrab.com/en/blog/x-articles-v1190-threadgrab-2026.html",
+      "heat_source": "⭐⭐⭐ 2026-06-11 daily hot topics #1 — X (Twitter) v11.90 long-form 'See all articles' entry improvement",
+      "tags": [
+        "X v11.90",
+        "X Articles scraper",
+        "See All Articles",
+        "threadgrab",
+        "X long-form",
+        "scrape X article",
+        "X API 2026",
+        "Markdown archive"
+      ],
+      "word_count": 3614,
+      "file_size_bytes": 30818,
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "status": "published",
+      "qa_passed": {
+        "title_chars": 52,
+        "description_chars": 154,
+        "hreflang_alternates": 2,
+        "canonical_present": true,
+        "jsonld_blocks": 3,
+        "faq_count": 6,
+        "h2_count": 8,
+        "code_blocks": 2,
+        "raw_lt_in_body": 0
+      },
+      "created_at": "2026-06-11",
+      "published_at": "2026-06-11T12:30:00Z",
+      "lang": "en-US"
+    },
+    {
+      "slug": "twitter-trend-scraping-tools-2026",
+      "date": "2026-06-12",
+      "type": "comparison",
+      "title_en": "Twitter Trend Scraping Tools 2026: 5 Best Compared",
+      "title_zh": "",
+      "path": "en/blog/twitter-trend-scraping-tools-2026.html",
+      "url": "https://threadgrab.com/en/blog/twitter-trend-scraping-tools-2026.html",
+      "heat_source": "⭐⭐ 2026-06-12 daily hot topics — Twitter trend scraping tools comparison, backup topic rotation",
+      "tags": [
+        "Twitter trend scraping",
+        "social media monitoring",
+        "Snscrape",
+        "Apify",
+        "Nitter",
+        "Playwright",
+        "ThreadGrab",
+        "social listening",
+        "tweet archiving"
+      ],
+      "word_count": 2732,
+      "file_size_bytes": 24363,
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "status": "published",
+      "created_at": "2026-06-12",
+      "qa_passed": {
+        "title_chars": 50,
+        "description_chars": 147,
+        "hreflang_alternates": 3,
+        "canonical_present": true,
+        "jsonld_blocks": 3,
+        "faq_count": 5,
+        "h2_count": 9,
+        "code_blocks": 4,
+        "raw_lt_in_body": 0,
+        "description_pt_chars": 154,
+        "description_id_chars": 140,
+        "title_pt_chars": 50,
+        "title_id_chars": 55
+      },
+      "lang": "en-US",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "published_at": "2026-06-12T12:00:00Z"
+    },
+    {
+      "slug": "bluesky-post-archiving-solutions-2026",
+      "date": "2026-06-14",
+      "type": "guide",
+      "lang": "en",
+      "file": "en/blog/bluesky-post-archiving-solutions-2026.html",
+      "url": "/en/blog/bluesky-post-archiving-solutions-2026.html",
+      "title": "Bluesky Post Archiving 2026: 5 Ways to Save Posts, Threads & Feeds | ThreadGrab",
+      "description": "Compare Bluesky bookmarks, the AT Protocol API, ThreadGrab, Jetstream, and the atproto SDK for saving Bluesky posts and feeds in 2026.",
+      "heat_source": "⭐ 选题优先级 #4 (Bluesky 帖子存档方案)",
+      "status": "published",
+      "published_at": "2026-06-14",
+      "providers_featured": [],
+      "primary_cta": "threadgrab"
+    },
+    {
+      "slug": "bluesky-post-archiving-solutions-2026",
+      "date": "2026-06-14",
+      "type": "guia",
+      "lang": "pt",
+      "file": "pt/blog/bluesky-post-archiving-solutions-2026.html",
+      "url": "/pt/blog/bluesky-post-archiving-solutions-2026.html",
+      "title": "Arquivamento de Posts do Bluesky 2026: 5 Maneiras de Salvar Posts, Threads e Feeds | ThreadGrab",
+      "description": "Compare favoritos do Bluesky, a API do AT Protocol, ThreadGrab, Jetstream e o SDK atproto para salvar posts e feeds do Bluesky em 2026.",
+      "heat_source": "⭐ Prioridade #4 (Solução de arquivamento Bluesky)",
+      "status": "published",
+      "published_at": "2026-06-14",
+      "providers_featured": [],
+      "primary_cta": "threadgrab"
+    },
+    {
+      "slug": "bluesky-post-archiving-solutions-2026",
+      "date": "2026-06-14",
+      "type": "panduan",
+      "lang": "id",
+      "file": "id/blog/bluesky-post-archiving-solutions-2026.html",
+      "url": "/id/blog/bluesky-post-archiving-solutions-2026.html",
+      "title": "Pengarsipan Postingan Bluesky 2026: 5 Cara Menyimpan Postingan, Thread & Feed | ThreadGrab",
+      "description": "Bandingkan bookmark Bluesky, API AT Protocol, ThreadGrab, Jetstream, dan SDK atproto untuk menyimpan postingan dan feed Bluesky di 2026.",
+      "heat_source": "⭐ Prioritas #4 (Solusi pengarsipan Bluesky)",
+      "status": "published",
+      "published_at": "2026-06-14",
+      "providers_featured": [],
+      "primary_cta": "threadgrab"
+    },
+    {
+      "slug": "x-articles-bluesky-scraping-frontier-2026",
+      "date": "2026-06-15",
+      "type": "comparison",
+      "lang": "en/pt/id",
+      "files": {
+        "en": "en/blog/x-articles-bluesky-scraping-frontier-2026.html",
+        "pt": "pt/blog/x-articles-bluesky-scraping-frontier-2026.html",
+        "id": "id/blog/x-articles-bluesky-scraping-frontier-2026.html"
+      },
+      "urls": {
+        "en": "https://threadgrab.com/en/blog/x-articles-bluesky-scraping-frontier-2026.html",
+        "pt": "https://threadgrab.com/pt/blog/x-articles-bluesky-scraping-frontier-2026.html",
+        "id": "https://threadgrab.com/id/blog/x-articles-bluesky-scraping-frontier-2026.html"
+      },
+      "titles": {
+        "en": "Bluesky vs X Articles 2026: Scraping Frontier",
+        "pt": "Bluesky vs X Articles 2026: Fronteira da Raspagem",
+        "id": "Bluesky vs X Articles 2026: Perbatasan Scraping"
+      },
+      "descriptions": {
+        "en": "Bluesky launched long-form content to counter X Articles. Compare how both platforms work for content scraping, archiving, and repurposing in 2026.",
+        "pt": "Bluesky lançou conteúdo longo para competir com X Articles. Compare como ambas funcionam para raspagem, arquivamento e reaproveitamento em 2026.",
+        "id": "Bluesky meluncurkan konten panjang untuk melawan X Articles. Bandingkan bagaimana kedua platform bekerja untuk scraping, pengarsipan, dan penggunaan ulang konten di tahun 2026."
+      },
+      "heat_source": "⭐⭐ 2026-06-15 daily report — Bluesky long-form content + tool comparison",
+      "status": "published",
+      "published_at": "2026-06-15",
+      "providers_featured": [],
+      "primary_cta": "threadgrab cross-platform"
+    },
+    {
+      "slug": "social-content-markdown-pipeline-2026",
+      "date": "2026-06-16",
+      "type": "guide",
+      "lang": "en/pt/id",
+      "files": {
+        "en": "en/blog/social-content-markdown-pipeline-2026.html",
+        "pt": "pt/blog/social-content-markdown-pipeline-2026.html",
+        "id": "id/blog/social-content-markdown-pipeline-2026.html"
+      },
+      "urls": {
+        "en": "https://threadgrab.com/en/blog/social-content-markdown-pipeline-2026.html",
+        "pt": "https://threadgrab.com/pt/blog/social-content-markdown-pipeline-2026.html",
+        "id": "https://threadgrab.com/id/blog/social-content-markdown-pipeline-2026.html"
+      },
+      "titles": {
+        "en": "Social Content to Markdown Pipeline 2026",
+        "pt": "Pipeline de Conteúdo Social para Markdown 2026",
+        "id": "Pipeline Konten Sosial ke Markdown 2026"
+      },
+      "descriptions": {
+        "en": "Build an end-to-end pipeline to capture X threads, Bluesky posts, and LinkedIn articles as Markdown for knowledge bases, newsletters, and AI training.",
+        "pt": "Capture threads do X, posts do Bluesky e artigos do LinkedIn como Markdown para bases de conhecimento, newsletters e treino de IA.",
+        "id": "Tangkap thread X, postingan Bluesky, dan artikel LinkedIn sebagai Markdown untuk basis pengetahuan, newsletter, dan pelatihan AI."
+      },
+      "heat_source": "2026-06-16 daily hot topics threadgrab direction — Markdown pipeline/toolchain topic (topic rotation, no new hot topics today)",
+      "status": "published",
+      "published_at": "2026-06-16",
+      "providers_featured": [],
+      "primary_cta": "threadgrab capture layer",
+      "title_en": "Social Content to Markdown Pipeline 2026",
+      "title_pt": "Pipeline de Conteúdo Social para Markdown 2026",
+      "title_id": "Pipeline Konten Sosial ke Markdown 2026",
+      "path_en": "en/blog/social-content-markdown-pipeline-2026.html",
+      "path_pt": "pt/blog/social-content-markdown-pipeline-2026.html",
+      "path_id": "id/blog/social-content-markdown-pipeline-2026.html",
+      "url_en": "https://threadgrab.com/en/blog/social-content-markdown-pipeline-2026.html",
+      "url_pt": "https://threadgrab.com/pt/blog/social-content-markdown-pipeline-2026.html",
+      "url_id": "https://threadgrab.com/id/blog/social-content-markdown-pipeline-2026.html",
+      "word_count": 1182,
+      "file_size_bytes_en": 17557,
+      "file_size_bytes_pt": 18244,
+      "file_size_bytes_id": 17797,
+      "tags": [
+        "social content to markdown",
+        "X to markdown",
+        "Bluesky archive",
+        "LinkedIn newsletter capture",
+        "ThreadGrab",
+        "knowledge base pipeline",
+        "Markdown pipeline 2026"
+      ],
+      "schema_types": [
+        "Article",
+        "BreadcrumbList"
+      ],
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "created_at": "2026-06-16",
+      "deployed": true,
+      "preview_url": "https://b6387e2f.threadgrab.pages.dev",
+      "qa_passed": {
+        "title_chars_en": 40,
+        "title_chars_pt": 46,
+        "title_chars_id": 39,
+        "description_chars_en": 150,
+        "description_chars_pt": 130,
+        "description_chars_id": 129,
+        "hreflang_alternates": 4,
+        "canonical_present": true,
+        "jsonld_blocks": 1,
+        "h2_count": 8,
+        "code_blocks": 6,
+        "word_count_en": 1182,
+        "word_count_pt": 1273,
+        "word_count_id": 1131,
+        "raw_lt_in_body": 0
+      }
+    },
+    {
+      "slug": "linkedin-newsletter-archive-tool-2026",
+      "date": "2026-06-17",
+      "published_at": "2026-06-17",
+      "type": "guide",
+      "lang": "en",
+      "file": "en/blog/linkedin-newsletter-archive-tool-2026.html",
+      "url": "https://threadgrab.com/en/blog/linkedin-newsletter-archive-tool-2026.html",
+      "title_en": "LinkedIn Newsletter Archive Tool 2026: 5 Ways to Save Issues",
+      "title_pt": "Arquivo de Newsletter do LinkedIn 2026: 5 Formas de Salvar",
+      "title_id": "Alat Arsip Newsletter LinkedIn 2026: 5 Cara Menyimpan",
+      "title": "LinkedIn Newsletter Archive Tool 2026: 5 Ways to Save Issues",
+      "description": "Compare 5 LinkedIn newsletter archive tools in 2026 — ThreadGrab, reader mode, RSS-Bridge, Coda, Notion. Save gated issues as Markdown.",
+      "heat_source": "follow-up to 06-16 markdown-pipeline + 06-07 linkedin-strategy",
+      "status": "published",
+      "providers_featured": [
+        "threadgrab"
+      ],
+      "primary_cta": "Try ThreadGrab — Free LinkedIn Archive",
+      "qa_passed": {
+        "title_chars": 60,
+        "description_chars": 137,
+        "hreflang_alternates": 4,
+        "canonical_present": true,
+        "jsonld_blocks": 3
+      }
+    },
+    {
+      "slug": "linkedin-newsletter-archive-tool-2026",
+      "date": "2026-06-17",
+      "published_at": "2026-06-17",
+      "type": "guide",
+      "lang": "pt",
+      "file": "pt/blog/linkedin-newsletter-archive-tool-2026.html",
+      "url": "https://threadgrab.com/pt/blog/linkedin-newsletter-archive-tool-2026.html",
+      "title_en": "LinkedIn Newsletter Archive Tool 2026: 5 Ways to Save Issues",
+      "title_pt": "Arquivo de Newsletter do LinkedIn 2026: 5 Formas de Salvar",
+      "title_id": "Alat Arsip Newsletter LinkedIn 2026: 5 Cara Menyimpan",
+      "title": "Arquivo de Newsletter do LinkedIn 2026: 5 Formas de Salvar",
+      "description": "Compare 5 ferramentas de arquivo de newsletter do LinkedIn em 2026 — ThreadGrab, modo leitor, RSS-Bridge, Coda, Notion. Salve edições como Markdown.",
+      "heat_source": "follow-up to 06-16 markdown-pipeline + 06-07 linkedin-strategy",
+      "status": "published",
+      "providers_featured": [
+        "threadgrab"
+      ],
+      "primary_cta": "Experimente ThreadGrab — Arquivo LinkedIn Grátis",
+      "qa_passed": {
+        "title_chars": 60,
+        "description_chars": 137,
+        "hreflang_alternates": 4,
+        "canonical_present": true,
+        "jsonld_blocks": 3
+      }
+    },
+    {
+      "slug": "linkedin-newsletter-archive-tool-2026",
+      "date": "2026-06-17",
+      "published_at": "2026-06-17",
+      "type": "guide",
+      "lang": "id",
+      "file": "id/blog/linkedin-newsletter-archive-tool-2026.html",
+      "url": "https://threadgrab.com/id/blog/linkedin-newsletter-archive-tool-2026.html",
+      "title_en": "LinkedIn Newsletter Archive Tool 2026: 5 Ways to Save Issues",
+      "title_pt": "Arquivo de Newsletter do LinkedIn 2026: 5 Formas de Salvar",
+      "title_id": "Alat Arsip Newsletter LinkedIn 2026: 5 Cara Menyimpan",
+      "title": "Alat Arsip Newsletter LinkedIn 2026: 5 Cara Menyimpan",
+      "description": "Bandingkan 5 alat arsip newsletter LinkedIn di 2026 — ThreadGrab, mode baca, RSS-Bridge, Coda, Notion. Simpan edisi terbatas sebagai Markdown.",
+      "heat_source": "follow-up to 06-16 markdown-pipeline + 06-07 linkedin-strategy",
+      "status": "published",
+      "providers_featured": [
+        "threadgrab"
+      ],
+      "primary_cta": "Coba ThreadGrab — Arsip LinkedIn Gratis",
+      "qa_passed": {
+        "title_chars": 60,
+        "description_chars": 137,
+        "hreflang_alternates": 4,
+        "canonical_present": true,
+        "jsonld_blocks": 3
+      }
+    }
+  ],
+  "drafts": [],
+  "recent_topics": [
+    "social-content-markdown-pipeline-2026",
+    "social-content-repurposing-tools-2026",
+    "twitter-trend-scraping-tools-2026",
+    "x-articles-freedom-of-reach-2026",
+    "x-articles-vs-bluesky-vs-linkedin-newsletter-2026",
+    "x-to-markdown-3-methods-2026",
+    "x-thread-archiving-tools-2026",
+    "x-articles-v1190-threadgrab-2026"
+  ],
+  "last_run": "publish-confirmed",
+  "last_published_slug": "linkedin-newsletter-archive-tool-2026",
+  "last_draft_slug": "x-articles-v1190-threadgrab-2026",
+  "last_published_at": "2026-06-17T14:01:47.414863+08:00"
+}
