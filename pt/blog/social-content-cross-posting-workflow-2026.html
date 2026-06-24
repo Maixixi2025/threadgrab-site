@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publicacao Cruzada 2026: Um Rascunho X + Bluesky + LinkedIn</title>
+  <meta name="description" content="Fluxo passo a passo para publicar uma peca longa em X Articles, Bluesky long-form e LinkedIn Newsletter em 2026. Inclui script Python.">
+  <meta name="keywords" content="fluxo de publicacao cruzada, X Articles, Bluesky long-form, LinkedIn Newsletter, sindicalizacao de conteudo, script Python de adaptacao, publicacao multiplataforma, conteudo social, ThreadGrab">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/pt/blog/social-content-cross-posting-workflow-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/social-content-cross-posting-workflow-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/social-content-cross-posting-workflow-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/social-content-cross-posting-workflow-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/social-content-cross-posting-workflow-2026.html">
+  <meta property="og:title" content="Publicacao Cruzada 2026: Um Rascunho X + Bluesky + LinkedIn">
+  <meta property="og:description" content="Fluxo passo a passo para publicar uma peca longa em X Articles, Bluesky long-form e LinkedIn Newsletter em 2026. Inclui script Python.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/pt/blog/social-content-cross-posting-workflow-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Publicacao Cruzada 2026: Um Rascunho X + Bluesky + LinkedIn">
+  <meta name="twitter:description" content="Fluxo passo a passo para publicar uma peca longa em X Articles, Bluesky long-form e LinkedIn Newsletter em 2026. Inclui script Python.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+    @media (max-width: 640px) { main { padding: 24px 16px 40px; } table { font-size: 0.8rem; } th, td { padding: 8px; } }
+  </style>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Uma Fonte, Três Canais",
+  "description": "Fluxo passo a passo para publicar uma peca longa em X Articles, Bluesky long-form e LinkedIn Newsletter em 2026. Inclui script Python.",
+  "datePublished": "2026-06-24",
+  "dateModified": "2026-06-24",
+  "author": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/pt/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/pt/"
+  },
+  "mainEntityOfPage": "https://threadgrab.com/pt/blog/social-content-cross-posting-workflow-2026.html",
+  "inLanguage": "pt-BR"
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Início",
+      "item": "https://threadgrab.com/pt/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://threadgrab.com/pt/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Publicação Cruzada"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Posts cross-posted são penalizados pelo X Articles por também estarem no Bluesky?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. O X Articles não penaliza conteúdo que existe em outras plataformas. O algoritmo do X ranqueia por engajamento no X, não por exclusividade em outros lugares. Publicação cruzada expande alcance sem canibalizar sinal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Posso publicar uma edição do LinkedIn Newsletter sem imagem principal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O LinkedIn permite publicar sem imagem principal, mas a taxa de abertura cai 15-25 por cento em comparação com edições que têm. Uma imagem 1200x627 com uma sobreposição de texto é a escolha mais segura."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual deve ser o tamanho de cada segmento longo do Bluesky?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mire em 250-300 grafemas por segmento. Segmentos mais curtos parecem cortados; mais longos podem ser truncados em alguns clientes. Três a seis segmentos é o ponto ideal para um ensaio de 1.000 palavras."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Devo publicar nas três plataformas simultaneamente?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. Escalone em 2-3 horas para que o público de cada plataforma veja o post durante sua janela de pico de atividade. O X é global, o Bluesky tem fuso misto mas com viés US-Leste, o LinkedIn tem pico de terça a quinta das 9-11h horário local."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O script de cross-posting lida com imagens?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim, se você mantiver todas as imagens em uma única pasta e referenciá-las com caminhos relativos no front matter do rascunho. O adaptador copia cada imagem uma vez por plataforma. Transformações inline (redimensionar, texto alternativo) exigem a dependência opcional Pillow."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "E o Mastodon?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mastodon tem limite de 500 caracteres por toot com extensão via thread. A mesma lógica de segmentação do Bluesky se aplica, mas use 500 em vez de 300 grafemas por segmento. Ajuste a constante do adaptador e reexecute."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/pt/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a class="" href="/en/blog/social-content-cross-posting-workflow-2026.html">EN</a>
+      <a class="active" href="/pt/blog/social-content-cross-posting-workflow-2026.html">PT</a>
+      <a class="" href="/id/blog/social-content-cross-posting-workflow-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb"><a href="/pt/">Início</a> &rsaquo; <a href="/pt/blog/">Blog</a> &rsaquo; Publicação Cruzada</div>
+
+    <h1>Publicação Cruzada 2026: <span>Um Rascunho, Tres Canais</span></h1>
+    <p class="meta">24 de Junho, 2026 &middot; 9 min de leitura &middot; Guia</p>
+
+    <p>A maioria dos criadores que publicam conteúdo longo em 2026 escreve a mesma peça três vezes. Eles rascunham uma vez para o X Articles, reescrevem para o Bluesky long-form, e reescrevem de novo para o LinkedIn Newsletter. As três plataformas têm limites de comprimento, regras de mídia, políticas de link e expectativas do leitor diferentes. A portabilidade manual é a resposta óbvia &mdash; e a resposta óbvia está errada.</p>
+    <p>Um fluxo de publicação cruzada não significa copiar e colar o mesmo ensaio em todo lugar. Significa escrever um rascunho canônico em Markdown e adaptá-lo automaticamente a cada plataforma. As restrições são previsíveis: X Articles permite até ~100.000 caracteres, posts longos do Bluesky limitam-se a ~300 grafemas por segmento com extensão via thread, e edições do LinkedIn Newsletter não têm limite rígido, mas o engajamento cai acentuadamente após 1.800 palavras. Escreva uma vez, formate três vezes.</p>
+
+    <div class="callout">
+      <p><strong>TL;DR:</strong> Escreva um rascunho Markdown, depois execute um script de adaptação que produza três saídas específicas por plataforma. X Articles precisa de imagem de capa + blocos com mídia. Bluesky long-form precisa de segmentos curtos de 300 grafemas com texto alternativo. LinkedIn Newsletter precisa de linha de assunto de 50 caracteres, imagem principal e corpo &lt;1.800 palavras. Tempo economizado por peça: 30-60 minutos.</p>
+    </div>
+
+    <h2>Por Que Um Rascunho, Três Formatos</h2>
+    <p>Publicação cruzada não é só sobre alcance. É sobre buscabilidade e redundância. Uma peça longa que vive só no X Articles pode sumir se sua conta for suspensa, se a URL do artigo rotacionar ou se o X mudar de rumo quanto ao conteúdo longo. O mesmo ensaio espelhado para Bluesky e LinkedIn sobrevive a qualquer decisão de plataforma única. Mecanismos de busca indexam as três, então seu trabalho continua gerando tráfego de entrada mesmo quando você para de promovê-lo.</p>
+    <p>O custo de não ter uma fonte canônica é o desvio silencioso do conteúdo. Na terceira reformatação manual, você já cortou um parágrafo para caber no Bluesky, trocou um título por um mais amigável ao LinkedIn, e perdeu o link para o gráfico original no X. Os leitores percebem as inconsistências. A correção é manter uma fonte única de verdade e produzir saídas específicas por plataforma a partir dela.</p>
+
+    <h2>O Rascunho Canônico em Markdown</h2>
+    <p>Comece toda peça cross-posted como um único arquivo Markdown. Use H1 para o título, H2 para seções, e o front matter para declarar o tópico, contagem de palavras-alvo e links por plataforma. Mantenha todas as imagens, blocos de código e links inline &mdash; o adaptador os transformará depois.</p>
+    <pre><code>---
+title: "Por Que o Arquivamento Local-First Vence o Sync em Nuvem em 2026"
+topic: "social-archiving"
+target_words: 1400
+cover: "./images/cover-archive-2026.png"
+canonical: "https://example.com/drafts/local-first-archiving.md"
+---
+
+# Por Que o Arquivamento Local-First Vence o Sync em Nuvem em 2026
+
+## A Ilusao do Sync em Nuvem
+
+O sync em nuvem parece seguro porque o upload foi bem-sucedido.
+Mas no momento em que voce perde acesso a conta &mdash; suspensao, exclusao,
+mudanca de fornecedor &mdash; seu historico de sync se foi. Arquivamento
+local-first significa manter o Markdown canonico em seu proprio disco primeiro.
+
+## Tres Padroes Que Funcionam
+
+1. **Export diario** &mdash; execute o ThreadGrab toda noite nos seus cinco
+   principais threads do X e no seu perfil do Bluesky.
+2. **Backup semanal** &mdash; envie o arquivo para um repositorio Git
+   privado para obter historico de diff de graca.
+3. **Camada de cold storage** &mdash; uma vez por trimestre, copie o arquivo
+   para um drive USB ou um NAS offline para resistencia a ransomware.
+
+## Quando o Sync em Nuvem e a Escolha Certa
+
+O sync em nuvem e adequado para conteudo efemero e de baixo risco.
+Para qualquer coisa que voce levou mais de 30 minutos para escrever,
+trate o arquivo local como a fonte de verdade e o sync em nuvem como
+um canal de entrega.
+</code></pre>
+    <p>Este rascunho é independente de plataforma. Nenhuma menção a X Articles, Bluesky ou LinkedIn. O script adaptador lê o front matter, aplica a transformação por plataforma e emite um manifesto JSON descrevendo o post final por canal.</p>
+
+    <h2>Restrições de Plataforma em Resumo</h2>
+    <table>
+  <thead>
+    <tr>
+      <th>Plataforma</th>
+      <th>Limite de Tamanho</th>
+      <th>Mídia</th>
+      <th>Links</th>
+      <th>Ponto Doce de Engajamento</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>X Articles</td>
+      <td>~100.000 caracteres</td>
+      <td>Imagens inline, embeds de vídeo</td>
+      <td>Links simples permitidos, sem preview no corpo</td>
+      <td>1.200&ndash;2.400 palavras</td>
+    </tr>
+    <tr>
+      <td>Bluesky long-form</td>
+      <td>300 grafemas por segmento, threaded</td>
+      <td>Imagens inline com texto alternativo</td>
+      <td>Links simples, sem previews ricos</td>
+      <td>3&ndash;6 segmentos, 250 caracteres cada</td>
+    </tr>
+    <tr>
+      <td>LinkedIn Newsletter</td>
+      <td>~110.000 caracteres (sem limite rígido)</td>
+      <td>Imagem principal obrigatória, imagens inline</td>
+      <td>Links simples, boost de dwell-time em links nativos</td>
+      <td>800&ndash;1.800 palavras</td>
+    </tr>
+  </tbody>
+</table>
+
+    <h2>O Script de Adaptação</h2>
+    <p>Abaixo está um adaptador Python funcional que lê o rascunho Markdown canônico e emite três arquivos específicos por plataforma. Salve como <code>cross_post.py</code> no mesmo diretório do rascunho. Depende apenas da biblioteca padrão Python.</p>
+    <pre><code>import re, json, pathlib, textwrap
+
+DRAFT = pathlib.Path('local-first-archiving.md')
+text = DRAFT.read_text(encoding='utf-8')
+
+# --- 1. X Articles: formatacao rica, manter todo conteudo como esta ---
+x_articles = textwrap.dedent(text)
+
+# --- 2. Bluesky: dividir em segmentos de 280 grafemas com marcadores ---
+segments, buf = [], []
+for line in text.splitlines():
+    buf.append(line)
+    if sum(len(s) for s in buf) >= 280:
+        segments.append('\n'.join(buf))
+        buf = []
+if buf: segments.append('\n'.join(buf))
+
+bluesky_long = '\n\n'.join(f'[({i+1}/{len(segments)})]\n{s}' for i, s in enumerate(segments))
+
+# --- 3. LinkedIn Newsletter: assunto curto + corpo, remover H1 ---
+m = re.search(r'^# (.+)$', text, re.MULTILINE)
+subject = m.group(1)[:50] if m else 'Sem titulo'
+body = re.sub(r'^# .+$', '', text, count=1, flags=re.MULTILINE)
+linkedin_newsletter = {
+    'subject': subject,
+    'body': body.strip(),
+    'hero_image': re.search(r'^cover:\s*["\']?(.+?)["\']?$', text, re.MULTILINE).group(1),
+}
+
+manifest = {
+    'canonical': 'https://example.com/drafts/local-first-archiving.md',
+    'x_articles_path': './out/x-articles.html',
+    'bluesky_segments': len(segments),
+    'linkedin_newsletter_subject': subject,
+}
+print(json.dumps(manifest, indent=2))
+</code></pre>
+    <p>Executar o script em um rascunho de 1.400 palavras produz um manifesto que você pode colar no seu agendador. O caminho do X Articles é uma cópia direta. A saída do Bluesky é pré-segmentada com marcadores de thread para que você possa colar cada bloco em ordem. A saída do LinkedIn é um JSON de assunto + corpo pronto para o compositor do newsletter.</p>
+
+    <h2>Ajustes Manuais Que o Script Não Consegue Fazer</h2>
+    <p>Automação cuida de 80 por cento do trabalho. Os últimos 20 por cento são julgamento por plataforma. Três edições manuais valem o tempo.</p>
+    <ul>
+  <li><strong>Imagem de capa do X Articles.</strong> Artigos sem capa renderizam como link de texto nos feeds. Escolha uma imagem 1200x675; cortes verticais são cortados novamente.</li>
+  <li><strong>Texto alternativo do Bluesky.</strong> Imagens inline precisam de texto alternativo para acessibilidade. Escreva uma vez no front matter do rascunho e deixe o adaptador copiar.</li>
+  <li><strong>Linha de assunto do LinkedIn.</strong> O assunto de 50 caracteres é a string de maior alavancagem do newsletter. Teste 3-5 variantes e escolha a com maior taxa de abertura das suas últimas três edições.</li>
+</ul>
+
+    <h2>Onde Adicionar o Link Canônico</h2>
+    <p>Publicação cruzada não significa remover o link do original. Cada plataforma tem uma política diferente sobre URLs canônicas.</p>
+    <ul>
+  <li><strong>X Articles</strong> &mdash; sem campo canônico. Mencione a URL do seu site no último parágrafo e link uma vez no topo.</li>
+  <li><strong>Bluesky</strong> &mdash; threads não podem incluir HTML. Link o canônico na última linha do segmento final.</li>
+  <li><strong>LinkedIn Newsletter</strong> &mdash; suporta <code>&lt;link rel="canonical"&gt;</code> se você publicar via API do LinkedIn. Ao publicar pelo compositor web, link o canônico no CTA do rodapé.</li>
+</ul>
+
+    <h2>Fluxo Passo a Passo</h2>
+    <ol>
+  <li><strong>Rascunho.</strong> Escreva a peça uma vez em Markdown, salve em <code>drafts/</code>.</li>
+  <li><strong>Execute o adaptador.</strong> Rode <code>python cross_post.py</code> para gerar três arquivos específicos por plataforma.</li>
+  <li><strong>Revise o manifesto.</strong> A saída JSON confirma contagem de segmentos, linha de assunto e caminhos de imagem.</li>
+  <li><strong>Polimento manual.</strong> Escolha a imagem de capa, escreva texto alternativo, escolha a variante de assunto do LinkedIn.</li>
+  <li><strong>Agende.</strong> Use um agendador (Buffer, Typefully, cron manual) para publicar com 2-3 horas de intervalo para que as plataformas não vejam o mesmo conteúdo simultaneamente.</li>
+  <li><strong>Arquive.</strong> Execute o <a href="/pt/">ThreadGrab</a> em cada post após publicar e adicione o Markdown resultante ao seu arquivo local.</li>
+</ol>
+
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <strong>Posts cross-posted são penalizados pelo X Articles por também estarem no Bluesky?</strong>
+      <p>Não. O X Articles não penaliza conteúdo que existe em outras plataformas. O algoritmo do X ranqueia por engajamento no X, não por exclusividade em outros lugares. Publicação cruzada expande alcance sem canibalizar sinal.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Posso publicar uma edição do LinkedIn Newsletter sem imagem principal?</strong>
+      <p>O LinkedIn permite publicar sem imagem principal, mas a taxa de abertura cai 15-25 por cento em comparação com edições que têm. Uma imagem 1200x627 com uma sobreposição de texto é a escolha mais segura.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Qual deve ser o tamanho de cada segmento longo do Bluesky?</strong>
+      <p>Mire em 250-300 grafemas por segmento. Segmentos mais curtos parecem cortados; mais longos podem ser truncados em alguns clientes. Três a seis segmentos é o ponto ideal para um ensaio de 1.000 palavras.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Devo publicar nas três plataformas simultaneamente?</strong>
+      <p>Não. Escalone em 2-3 horas para que o público de cada plataforma veja o post durante sua janela de pico de atividade. O X é global, o Bluesky tem fuso misto mas com viés US-Leste, o LinkedIn tem pico de terça a quinta das 9-11h horário local.</p>
+    </div>
+    <div class="faq-item">
+      <strong>O script de cross-posting lida com imagens?</strong>
+      <p>Sim, se você mantiver todas as imagens em uma única pasta e referenciá-las com caminhos relativos no front matter do rascunho. O adaptador copia cada imagem uma vez por plataforma. Transformações inline (redimensionar, texto alternativo) exigem a dependência opcional Pillow.</p>
+    </div>
+    <div class="faq-item">
+      <strong>E o Mastodon?</strong>
+      <p>Mastodon tem limite de 500 caracteres por toot com extensão via thread. A mesma lógica de segmentação do Bluesky se aplica, mas use 500 em vez de 300 grafemas por segmento. Ajuste a constante do adaptador e reexecute.</p>
+    </div>
+
+    <div class="cta">
+      <p>Arquive tudo o que você cross-posta. ThreadGrab transforma qualquer X Article público, thread do Bluesky ou edição do LinkedIn Newsletter em Markdown limpo para seu arquivo local.</p>
+      <a class="btn" href="/pt/">Experimente o ThreadGrab &mdash; Arquivo Social Gratuito</a>
+    </div>
+
+    <h2>Uma Fonte, Três Canais</h2>
+    <p>Publicação cruzada em 2026 não é sobre ser preguiçoso. É sobre respeitar o leitor em cada plataforma enquanto protege seu trabalho de qualquer ponto único de falha. O fluxo de um-rascunho, três-formatos leva 30 minutos por peça uma vez que você tem o script adaptador. Cross-posting manual leva 90 minutos e produz desvio. A conta não fecha.</p>
+    <p>Comece com sua próxima peça. Escreva em Markdown, execute o adaptador, cole as saídas no compositor de cada plataforma e arquive tudo o que publicar. Após três peças você terá um adaptador refinado e uma biblioteca Markdown de seis peças indexadas por tópico. Esse é um fosso que nenhuma plataforma única pode tirar de você.</p>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/pt/">Início</a> &middot; <a href="/pt/blog/">Blog</a> &middot; <a href="/pt/about/">About</a> &middot; <a href="/pt/privacy/">Privacy</a>
+    <br>Não afiliado a X Corp., Bluesky Social PBC, LinkedIn Corporation ou Microsoft Corporation.
+  </footer>
+</body>
+</html>

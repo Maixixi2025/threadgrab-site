@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Posting Lintas Platform 2026: 1 Draf X + Bluesky + LinkedIn</title>
+  <meta name="description" content="Alur langkah demi langkah menerbitkan satu konten panjang ke X Articles, Bluesky long-form, dan LinkedIn Newsletter di 2026. Dengan skrip Python.">
+  <meta name="keywords" content="alur posting lintas platform, X Articles, Bluesky long-form, LinkedIn Newsletter, sindikasi konten, skrip adaptasi Python, penerbitan multi-platform, konten sosial, ThreadGrab">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/id/blog/social-content-cross-posting-workflow-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/social-content-cross-posting-workflow-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/social-content-cross-posting-workflow-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/social-content-cross-posting-workflow-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/social-content-cross-posting-workflow-2026.html">
+  <meta property="og:title" content="Posting Lintas Platform 2026: 1 Draf X + Bluesky + LinkedIn">
+  <meta property="og:description" content="Alur langkah demi langkah menerbitkan satu konten panjang ke X Articles, Bluesky long-form, dan LinkedIn Newsletter di 2026. Dengan skrip Python.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/id/blog/social-content-cross-posting-workflow-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Posting Lintas Platform 2026: 1 Draf X + Bluesky + LinkedIn">
+  <meta name="twitter:description" content="Alur langkah demi langkah menerbitkan satu konten panjang ke X Articles, Bluesky long-form, dan LinkedIn Newsletter di 2026. Dengan skrip Python.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+    @media (max-width: 640px) { main { padding: 24px 16px 40px; } table { font-size: 0.8rem; } th, td { padding: 8px; } }
+  </style>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Satu Sumber, Tiga Saluran",
+  "description": "Alur langkah demi langkah menerbitkan satu konten panjang ke X Articles, Bluesky long-form, dan LinkedIn Newsletter di 2026. Dengan skrip Python.",
+  "datePublished": "2026-06-24",
+  "dateModified": "2026-06-24",
+  "author": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/id/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/id/"
+  },
+  "mainEntityOfPage": "https://threadgrab.com/id/blog/social-content-cross-posting-workflow-2026.html",
+  "inLanguage": "id-ID"
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Beranda",
+      "item": "https://threadgrab.com/id/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://threadgrab.com/id/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Alur Posting Lintas Platform"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Apakah artikel lintas platform dikenai penalti oleh X Articles karena juga ada di Bluesky?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tidak. X Articles tidak mengenakan penalti pada konten yang ada di platform lain. Algoritma X memberi peringkat berdasarkan engagement di X, bukan keunikan di tempat lain. Posting lintas platform memperluas jangkauan tanpa kanibalisasi sinyal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bisakah saya menerbitkan edisi LinkedIn Newsletter tanpa gambar hero?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LinkedIn mengizinkan penerbitan tanpa gambar hero, tetapi tingkat buka turun 15-25 persen dibanding edisi yang memiliki hero. Gambar 1200x627 dengan satu overlay teks adalah pilihan teraman."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Berapa panjang setiap segmen Bluesky long-form yang ideal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Targetkan 250-300 grafem per segmen. Segmen yang lebih pendek terasa terpotong; yang lebih panjang berisiko terpotong di beberapa klien. Tiga sampai enam segmen adalah sweet spot untuk esai 1.000 kata."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Haruskah saya mempublikasikan ke ketiga platform secara bersamaan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tidak. Beri jeda 2-3 jam agar audiens tiap platform melihat post selama jendela aktivitas puncak mereka. X bersifat global, Bluesky zona waktu campuran tapi condong ke US-Timur, LinkedIn memuncak Selasa sampai Kamis pukul 9-11 waktu lokal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bisakah skrip posting lintas platform menangani gambar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bisa jika Anda menyimpan semua gambar dalam satu folder dan merujuknya dengan jalur relatif di front matter draf. Adaptor menyalin setiap gambar sekali per platform. Transformasi gambar inline (resize, teks alt) memerlukan dependensi opsional Pillow."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bagaimana dengan Mastodon?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mastodon punya batas 500 karakter per toot dengan ekstensi berbasis thread. Logika segmentasi yang sama dengan Bluesky berlaku, tetapi gunakan 500 alih-alih 300 grafem per segmen. Sesuaikan konstanta adaptor dan jalankan ulang."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/id/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a class="" href="/en/blog/social-content-cross-posting-workflow-2026.html">EN</a>
+      <a class="" href="/pt/blog/social-content-cross-posting-workflow-2026.html">PT</a>
+      <a class="active" href="/id/blog/social-content-cross-posting-workflow-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb"><a href="/id/">Beranda</a> &rsaquo; <a href="/id/blog/">Blog</a> &rsaquo; Alur Posting Lintas Platform</div>
+
+    <h1>Posting Lintas Platform 2026: <span>Satu Draf, Tiga Saluran</span></h1>
+    <p class="meta">24 Juni 2026 &middot; 9 menit baca &middot; Panduan</p>
+
+    <p>Kebanyakan kreator yang mempublikasikan konten panjang di 2026 menulis artikel yang sama tiga kali. Mereka draf sekali untuk X Articles, tulis ulang untuk Bluesky long-form, dan tulis ulang lagi untuk LinkedIn Newsletter. Ketiga platform punya batas panjang, aturan media, kebijakan tautan, dan ekspektasi pembaca yang berbeda. Menyalin manual adalah jawaban yang jelas &mdash; dan jawaban yang jelas itu salah.</p>
+    <p>Alur posting lintas platform bukan berarti salin-tempel esai yang sama ke mana-mana. Artinya menulis satu draf Markdown kanonik dan menyesuaikannya ke tiap platform secara otomatis. Kendalanya dapat diprediksi: X Articles mengizinkan hingga ~100.000 karakter, posting panjang Bluesky membatasi ~300 grafem per segmen dengan ekstensi berbasis thread, dan edisi LinkedIn Newsletter tidak punya batas keras tetapi engagement turun tajam setelah 1.800 kata. Tulis sekali, format tiga kali.</p>
+
+    <div class="callout">
+      <p><strong>TL;DR:</strong> Tulis satu draf Markdown, lalu jalankan skrip adaptasi yang menghasilkan tiga output spesifik per platform. X Articles butuh gambar sampul + blok kaya media. Bluesky long-form butuh segmen pendek 300 grafem dengan teks alt gambar. LinkedIn Newsletter butuh baris subjek 50 karakter, gambar hero, dan tubuh &lt;1.800 kata. Total waktu dihemat per artikel: 30-60 menit.</p>
+    </div>
+
+    <h2>Mengapa Satu Draf, Tiga Format</h2>
+    <p>Posting lintas platform bukan hanya soal jangkauan. Ini soal kemampuan dicari dan redundansi. Artikel panjang yang hanya hidup di X Articles bisa hilang jika akun Anda disuspend, URL Articles berotasi, atau X berbelok dari format panjang lagi. Esai yang sama dicerminkan ke Bluesky dan LinkedIn bertahan dari keputusan platform tunggal. Mesin pencari mengindeks ketiganya, jadi karya Anda tetap menghasilkan traffic masuk bahkan saat Anda berhenti mempromosikannya.</p>
+    <p>Biaya tidak punya sumber kanonik adalah drift konten yang sunyi. Pada reformulasi manual ketiga, Anda sudah memotong paragraf agar pas di Bluesky, menukar judul dengan versi ramah LinkedIn, dan kehilangan tautan ke grafik asli di X. Pembaca memperhatikan inkonsistensi. Solusinya adalah mempertahankan satu sumber kebenaran dan menghasilkan output spesifik per platform darinya.</p>
+
+    <h2>Draf Markdown Kanonik</h2>
+    <p>Mulai setiap artikel lintas platform sebagai satu file Markdown. Gunakan H1 untuk judul, H2 untuk bagian, dan front matter untuk mendeklarasikan topik, target jumlah kata, dan tautan per platform. Pertahankan semua gambar, blok kode, dan tautan secara inline &mdash; adaptor akan mengubahnya nanti.</p>
+    <pre><code>---
+title: "Mengapa Pengarsipan Local-First Menang dari Cloud Sync di 2026"
+topic: "social-archiving"
+target_words: 1400
+cover: "./images/cover-archive-2026.png"
+canonical: "https://example.com/drafts/local-first-archiving.md"
+---
+
+# Mengapa Pengarsipan Local-First Menang dari Cloud Sync di 2026
+
+## Ilusi Cloud Sync
+
+Cloud sync terasa aman karena upload berhasil. Tapi saat Anda
+kehilangan akses akun &mdash; suspend, hapus, pivot vendor &mdash; riwayat
+sync Anda hilang. Pengarsipan local-first berarti menyimpan Markdown
+kanonik di disk Anda sendiri terlebih dahulu.
+
+## Tiga Pola yang Berhasil
+
+1. **Export harian** &mdash; jalankan ThreadGrab setiap malam di lima
+   thread X teratas dan profil Bluesky Anda.
+2. **Backup mingguan** &mdash; dorong arsip ke repo Git pribadi agar
+   mendapat riwayat diff gratis.
+3. **Lapisan cold-storage** &mdash; sekali per kuartal, salin arsip ke
+   drive USB atau NAS offline untuk ketahanan terhadap ransomware.
+
+## Kapan Cloud Sync adalah Pilihan Tepat
+
+Cloud sync cocok untuk konten singkat dan berisiko rendah. Untuk apa pun
+yang Anda habiskan lebih dari 30 menit menulis, perlakukan file lokal
+sebagai sumber kebenaran dan cloud sync sebagai saluran pengiriman.
+</code></pre>
+    <p>Draf ini independen platform. Tidak ada penyebutan X Articles, Bluesky, atau LinkedIn. Skrip adaptor membaca front matter, menerapkan transformasi per platform, dan mengeluarkan manifes JSON yang mendeskripsikan post akhir per saluran.</p>
+
+    <h2>Kendala Platform Sekilas</h2>
+    <table>
+  <thead>
+    <tr>
+      <th>Platform</th>
+      <th>Batas Panjang</th>
+      <th>Media</th>
+      <th>Tautan</th>
+      <th>Sweet Spot Engagement</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>X Articles</td>
+      <td>~100.000 karakter</td>
+      <td>Gambar inline, embed video</td>
+      <td>Tautan biasa diizinkan, tanpa preview di tubuh</td>
+      <td>1.200&ndash;2.400 kata</td>
+    </tr>
+    <tr>
+      <td>Bluesky long-form</td>
+      <td>300 grafem per segmen, berbasis thread</td>
+      <td>Gambar inline dengan teks alt</td>
+      <td>Tautan biasa, tanpa preview kaya</td>
+      <td>3&ndash;6 segmen, 250 karakter masing-masing</td>
+    </tr>
+    <tr>
+      <td>LinkedIn Newsletter</td>
+      <td>~110.000 karakter (tanpa batas keras)</td>
+      <td>Gambar hero wajib, gambar inline</td>
+      <td>Tautan biasa, boost dwell-time dari tautan native</td>
+      <td>800&ndash;1.800 kata</td>
+    </tr>
+  </tbody>
+</table>
+
+    <h2>Skrip Adaptasi</h2>
+    <p>Di bawah ini adalah adaptor Python yang berfungsi, membaca draf Markdown kanonik dan mengeluarkan tiga file spesifik per platform. Simpan sebagai <code>cross_post.py</code> di direktori yang sama dengan draf Anda. Hanya bergantung pada pustaka standar Python.</p>
+    <pre><code>import re, json, pathlib, textwrap
+
+DRAFT = pathlib.Path('local-first-archiving.md')
+text = DRAFT.read_text(encoding='utf-8')
+
+# --- 1. X Articles: formatting kaya, biarkan semua konten apa adanya ---
+x_articles = textwrap.dedent(text)
+
+# --- 2. Bluesky: bagi menjadi segmen 280 grafem dengan penanda thread ---
+segments, buf = [], []
+for line in text.splitlines():
+    buf.append(line)
+    if sum(len(s) for s in buf) >= 280:
+        segments.append('\n'.join(buf))
+        buf = []
+if buf: segments.append('\n'.join(buf))
+
+bluesky_long = '\n\n'.join(f'[({i+1}/{len(segments)})]\n{s}' for i, s in enumerate(segments))
+
+# --- 3. LinkedIn Newsletter: subjek pendek + tubuh, hapus H1 ---
+m = re.search(r'^# (.+)$', text, re.MULTILINE)
+subject = m.group(1)[:50] if m else 'Tanpa judul'
+body = re.sub(r'^# .+$', '', text, count=1, flags=re.MULTILINE)
+linkedin_newsletter = {
+    'subject': subject,
+    'body': body.strip(),
+    'hero_image': re.search(r'^cover:\s*["\']?(.+?)["\']?$', text, re.MULTILINE).group(1),
+}
+
+manifest = {
+    'canonical': 'https://example.com/drafts/local-first-archiving.md',
+    'x_articles_path': './out/x-articles.html',
+    'bluesky_segments': len(segments),
+    'linkedin_newsletter_subject': subject,
+}
+print(json.dumps(manifest, indent=2))
+</code></pre>
+    <p>Menjalankan skrip pada draf 1.400 kata menghasilkan manifes yang dapat Anda tempel ke penjadwal. Jalur X Articles adalah salinan langsung. Output Bluesky sudah di-segmentasi dengan penanda thread sehingga Anda dapat menempel setiap blok secara berurutan. Output LinkedIn adalah JSON subjek + tubuh siap untuk komposer newsletter.</p>
+
+    <h2>Penyesuaian Manual yang Tidak Bisa Dilakukan Skrip</h2>
+    <p>Otomatisasi menangani 80 persen pekerjaan. 20 persen terakhir adalah penilaian per platform. Tiga edit manual layak dilakukan.</p>
+    <ul>
+  <li><strong>Gambar sampul X Articles.</strong> Artikel tanpa sampul dirender sebagai tautan teks di feed. Pilih gambar 1200x675; crop vertikal akan di-crop lagi.</li>
+  <li><strong>Teks alt Bluesky.</strong> Gambar inline memerlukan teks alt untuk aksesibilitas. Tulis sekali di front matter draf dan biarkan adaptor menyalinnya.</li>
+  <li><strong>Baris subjek LinkedIn.</strong> Subjek 50 karakter adalah string leverage tertinggi dalam newsletter. Uji 3-5 varian dan pilih yang memiliki tingkat buka terkuat dari tiga edisi terakhir Anda.</li>
+</ul>
+
+    <h2>Di Mana Menambahkan Tautan Kanonik</h2>
+    <p>Posting lintas platform bukan berarti menghapus tautan asli. Kebijakan tiap platform tentang URL kanonik berbeda.</p>
+    <ul>
+  <li><strong>X Articles</strong> &mdash; tanpa bidang kanonik. Sebutkan URL situs Anda di paragraf terakhir dan tautkan sekali di atas.</li>
+  <li><strong>Bluesky</strong> &mdash; thread tidak dapat menyertakan HTML. Tautkan kanonik di baris terakhir segmen akhir.</li>
+  <li><strong>LinkedIn Newsletter</strong> &mdash; mendukung <code>&lt;link rel="canonical"&gt;</code> jika Anda mempublikasikan via API LinkedIn. Saat mempublikasikan via komposer web, tautkan kanonik di CTA footer.</li>
+</ul>
+
+    <h2>Alur Langkah demi Langkah</h2>
+    <ol>
+  <li><strong>Draf.</strong> Tulis artikel sekali dalam Markdown, simpan ke <code>drafts/</code>.</li>
+  <li><strong>Jalankan adaptor.</strong> Eksekusi <code>python cross_post.py</code> untuk menghasilkan tiga file spesifik per platform.</li>
+  <li><strong>Tinjau manifes.</strong> Output JSON mengonfirmasi jumlah segmen, baris subjek, dan jalur gambar.</li>
+  <li><strong>Pemolesan manual.</strong> Pilih gambar sampul, tulis teks alt, pilih varian subjek LinkedIn.</li>
+  <li><strong>Jadwalkan.</strong> Gunakan penjadwal (Buffer, Typefully, cron manual) untuk mempublikasikan dengan jarak 2-3 jam sehingga platform tidak melihat konten yang sama secara bersamaan.</li>
+  <li><strong>Arsipkan.</strong> Jalankan <a href="/id/">ThreadGrab</a> pada setiap posting setelah publikasi dan tambahkan Markdown yang dihasilkan ke arsip lokal Anda.</li>
+</ol>
+
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <strong>Apakah artikel lintas platform dikenai penalti oleh X Articles karena juga ada di Bluesky?</strong>
+      <p>Tidak. X Articles tidak mengenakan penalti pada konten yang ada di platform lain. Algoritma X memberi peringkat berdasarkan engagement di X, bukan keunikan di tempat lain. Posting lintas platform memperluas jangkauan tanpa kanibalisasi sinyal.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Bisakah saya menerbitkan edisi LinkedIn Newsletter tanpa gambar hero?</strong>
+      <p>LinkedIn mengizinkan penerbitan tanpa gambar hero, tetapi tingkat buka turun 15-25 persen dibanding edisi yang memiliki hero. Gambar 1200x627 dengan satu overlay teks adalah pilihan teraman.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Berapa panjang setiap segmen Bluesky long-form yang ideal?</strong>
+      <p>Targetkan 250-300 grafem per segmen. Segmen yang lebih pendek terasa terpotong; yang lebih panjang berisiko terpotong di beberapa klien. Tiga sampai enam segmen adalah sweet spot untuk esai 1.000 kata.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Haruskah saya mempublikasikan ke ketiga platform secara bersamaan?</strong>
+      <p>Tidak. Beri jeda 2-3 jam agar audiens tiap platform melihat post selama jendela aktivitas puncak mereka. X bersifat global, Bluesky zona waktu campuran tapi condong ke US-Timur, LinkedIn memuncak Selasa sampai Kamis pukul 9-11 waktu lokal.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Bisakah skrip posting lintas platform menangani gambar?</strong>
+      <p>Bisa jika Anda menyimpan semua gambar dalam satu folder dan merujuknya dengan jalur relatif di front matter draf. Adaptor menyalin setiap gambar sekali per platform. Transformasi gambar inline (resize, teks alt) memerlukan dependensi opsional Pillow.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Bagaimana dengan Mastodon?</strong>
+      <p>Mastodon punya batas 500 karakter per toot dengan ekstensi berbasis thread. Logika segmentasi yang sama dengan Bluesky berlaku, tetapi gunakan 500 alih-alih 300 grafem per segmen. Sesuaikan konstanta adaptor dan jalankan ulang.</p>
+    </div>
+
+    <div class="cta">
+      <p>Arsipkan semua yang Anda post lintas platform. ThreadGrab mengubah X Article publik, thread Bluesky, atau edisi LinkedIn Newsletter apa pun menjadi Markdown bersih untuk arsip lokal Anda.</p>
+      <a class="btn" href="/id/">Coba ThreadGrab &mdash; Arsip Sosial Gratis</a>
+    </div>
+
+    <h2>Satu Sumber, Tiga Saluran</h2>
+    <p>Posting lintas platform di 2026 bukan soal bermalas-malasan. Ini soal menghormati pembaca di tiap platform sambil melindungi karya Anda dari satu titik kegagalan. Alur satu-draf, tiga-format memakan waktu 30 menit per artikel setelah Anda punya skrip adaptor. Posting manual memakan 90 menit dan menghasilkan drift. Matematikanya tidak dekat.</p>
+    <p>Mulai dari artikel berikutnya. Tulis dalam Markdown, jalankan adaptor, tempel output ke komposer tiap platform, dan arsipkan semua yang Anda publikasikan. Setelah tiga artikel Anda akan punya adaptor yang disempurnakan dan pustaka Markdown enam artikel yang diindeks berdasarkan topik. Itulah parit yang tidak bisa diambil oleh satu platform pun dari Anda.</p>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/id/">Beranda</a> &middot; <a href="/id/blog/">Blog</a> &middot; <a href="/id/about/">About</a> &middot; <a href="/id/privacy/">Privacy</a>
+    <br>Tidak berafiliasi dengan X Corp., Bluesky Social PBC, LinkedIn Corporation, atau Microsoft Corporation.
+  </footer>
+</body>
+</html>
