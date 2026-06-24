@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Microsoft markitdown: Fluxo de Conteudo Social para Markdown | ThreadGrab</title>
+  <meta name="description" content="Microsoft markitdown converte documentos Office, PDFs e HTML em Markdown. Use com ThreadGrab para pipeline completo de conteudo social para Markdown.">
+  <meta name="keywords" content="Microsoft markitdown, conteudo social para Markdown, ThreadGrab, Office para Markdown, PDF para Markdown, pipeline de conteudo, fluxo Markdown">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/pt/blog/microsoft-markitdown-social-content-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/microsoft-markitdown-social-content-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/microsoft-markitdown-social-content-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/microsoft-markitdown-social-content-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/microsoft-markitdown-social-content-2026.html">
+  <meta property="og:title" content="Microsoft markitdown: Fluxo de Conteudo Social para Markdown | ThreadGrab">
+  <meta property="og:description" content="Microsoft markitdown converte documentos Office, PDFs e HTML em Markdown. Use com ThreadGrab para pipeline completo de conteudo social para Markdown.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/pt/blog/microsoft-markitdown-social-content-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Microsoft markitdown: Fluxo de Conteudo Social para Markdown | ThreadGrab">
+  <meta name="twitter:description" content="Microsoft markitdown converte documentos Office, PDFs e HTML em Markdown. Use com ThreadGrab para pipeline completo de conteudo social para Markdown.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+    @media (max-width: 640px) { main { padding: 24px 16px 40px; } table { font-size: 0.8rem; } th, td { padding: 8px; } }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Microsoft markitdown: Fluxo de Conteudo Social para Markdown",
+  "description": "Microsoft markitdown converte documentos Office, PDFs e HTML em Markdown. Use com ThreadGrab para pipeline completo de conteudo social para Markdown.",
+  "datePublished": "2026-06-19",
+  "dateModified": "2026-06-19",
+  "author": {
+    "@type": "Person",
+    "name": "ThreadGrab"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://threadgrab.com/pt/blog/microsoft-markitdown-social-content-2026.html"
+  }
+}
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/pt/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a href="/en/blog/microsoft-markitdown-social-content-2026.html">EN</a>
+      <a class="active" href="/pt/blog/microsoft-markitdown-social-content-2026.html">PT</a>
+      <a href="/id/blog/microsoft-markitdown-social-content-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb"><a href="/pt/">Inicio</a> / <a href="/pt/blog/">Blog</a> / Microsoft markitdown</div>
+
+    <h1>Microsoft markitdown: Fluxo de Conteudo Social <span>para Markdown</span></h1>
+    <p class="meta">19 de Junho, 2026 &middot; 8 min de leitura &middot; Guia</p>
+
+    <p>Em junho de 2026, a Microsoft disponibilizou como codigo aberto o <strong>markitdown</strong> &mdash; uma biblioteca Python que converte documentos Office (DOCX, PPTX, XLSX), PDFs, paginas HTML e ate imagens em Markdown limpo. Para criadores de conteudo social, esta e a peca que faltava no pipeline de conteudo.</p>
+
+    <p>Voce ja tem o ThreadGrab para capturar threads do X, posts do Bluesky e newsletters do LinkedIn como Markdown. Agora pode converter seu conteudo offline &mdash; apresentacoes, planilhas, relatorios PDF e anotacoes &mdash; no mesmo formato unificado.</p>
+
+    <div class="callout">
+      <p><strong>Em resumo.</strong> ThreadGrab captura conteudo social. Microsoft markitdown converte arquivos Office. Juntos criam um pipeline completo de conteudo para Markdown. Use ThreadGrab para X, Bluesky e LinkedIn. Use markitdown para DOCX, PPTX, XLSX, PDF, HTML e imagens.</p>
+    </div>
+
+    <h2>O Que e o Microsoft markitdown?</h2>
+    <p>Markitdown e uma biblioteca Python lancada no GitHub pela Microsoft sob licenca MIT. Ela recebe um caminho de arquivo ou URL e retorna Markdown.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Formato</th>
+          <th>Mecanismo</th>
+          <th>Qualidade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>DOCX (Word)</td>
+          <td>python-docx</td>
+          <td>Excelente &mdash; preserva titulos, listas</td>
+        </tr>
+        <tr>
+          <td>PPTX (PowerPoint)</td>
+          <td>python-pptx</td>
+          <td>Boa &mdash; extrai notas e texto</td>
+        </tr>
+        <tr>
+          <td>XLSX (Excel)</td>
+          <td>openpyxl</td>
+          <td>Boa &mdash; gera tabelas Markdown</td>
+        </tr>
+        <tr>
+          <td>PDF</td>
+          <td>pypdf</td>
+          <td>Boa &mdash; extrai texto estruturado</td>
+        </tr>
+        <tr>
+          <td>HTML</td>
+          <td>html2text</td>
+          <td>Excelente &mdash; remove estilos</td>
+        </tr>
+        <tr>
+          <td>Imagens</td>
+          <td>OCR</td>
+          <td>Basica &mdash; texto visivel</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <pre><code>pip install markitdown
+
+# Uso basico
+from markitdown import MarkItDown
+md = MarkItDown()
+resultado = md.convert("apresentacao.pptx")
+print(resultado.text_content)</code></pre>
+
+    <h2>Por Que o Markitdown Importa</h2>
+    <p>Seu fluxo de trabalho abrange diversas fontes: threads sociais, newsletters, apresentacoes e anotacoes. Cada uma vive em um formato diferente.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Fonte</th>
+          <th>Ferramenta</th>
+          <th>Uso</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Threads do X</td>
+          <td>ThreadGrab</td>
+          <td>Blog, newsletter</td>
+        </tr>
+        <tr>
+          <td>Posts Bluesky</td>
+          <td>ThreadGrab</td>
+          <td>Base conhecimento, IA</td>
+        </tr>
+        <tr>
+          <td>Newsletter LinkedIn</td>
+          <td>ThreadGrab</td>
+          <td>Arquivo pesquisa</td>
+        </tr>
+        <tr>
+          <td>Apresentacoes PPTX</td>
+          <td>Markitdown</td>
+          <td>Notas Obsidian</td>
+        </tr>
+        <tr>
+          <td>Relatorios PDF</td>
+          <td>Markitdown</td>
+          <td>Contexto LLM</td>
+        </tr>
+        <tr>
+          <td>Planilhas XLSX</td>
+          <td>Markitdown</td>
+          <td>Tabelas artigos</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Pipeline Combinado</h2>
+    <pre><code>#!/usr/bin/env python3
+# pipeline-unificado.py
+import subprocess, os
+from pathlib import Path
+from markitdown import MarkItDown
+
+SAIDA = Path.home() / "arquivos" / "2026-06-19"
+SAIDA.mkdir(parents=True, exist_ok=True)
+conv = MarkItDown()
+
+# Etapa 1: Conteudo social via ThreadGrab
+for usuario in ["paulg", "jack.bsky.social"]:
+    url = f"https://threadgrab.com/api/profile/{usuario}"
+    r = subprocess.run(["curl", "-s", url], capture_output=True, text=True)
+    if r.stdout:
+        (SAIDA / f"social-{usuario}.md").write_text(r.stdout)
+
+# Etapa 2: Arquivos via markitdown
+for arquivo in ["notas.pptx", "relatorio.pdf"]:
+    if os.path.exists(arquivo):
+        r = conv.convert(arquivo)
+        (SAIDA / Path(arquivo).stem + ".md").write_text(r.text_content)
+
+print("Pipeline concluido.")</code></pre>
+
+    <h2>Casos de Uso</h2>
+    <h3>1. Base de Conhecimento</h3>
+    <p>Capture threads do X, converta PDFs com markitdown e armazene tudo em Obsidian. O formato unificado permite pesquisar e vincular fontes sociais e offline.</p>
+
+    <h3>2. Fabrica de Newsletters</h3>
+    <p>Use ThreadGrab para capturar conteudo social e markitdown para documentos internos. Combine tudo em uma newsletter semanal.</p>
+
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <strong>Preciso de conta Microsoft?</strong>
+      <p>Nao. E open-source MIT. Instale com pip, use localmente.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Markitdown lida com imagens?</strong>
+      <p>Extrai texto via OCR, mas nao preserva posicoes.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Funciona com ThreadGrab?</strong>
+      <p>Sim. ThreadGrab captura e markitdown converte. Use lado a lado.</p>
+    </div>
+
+    <div class="cta">
+      <p>Comece hoje.</p>
+      <a class="btn" href="/pt/">Experimente ThreadGrab</a>
+    </div>
+
+    <h2>Tres Ferramentas, Um Pipeline</h2>
+    <p>ThreadGrab para captura social. Microsoft markitdown para conversao de arquivos. Markdown e a linguagem comum.</p>
+    <p>Instale: <code>pip install markitdown</code></p>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/pt/">Inicio</a> &middot; <a href="/pt/blog/">Blog</a> &middot; <a href="/pt/about/">Sobre</a> &middot; <a href="/pt/privacy/">Privacidade</a>
+    <br>Nao afiliado a Microsoft.
+  </footer>
+</body>
+</html>
