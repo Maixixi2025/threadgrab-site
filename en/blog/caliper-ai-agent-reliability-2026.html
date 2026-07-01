@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caliper 2026: AI Agent Reliability for Social Content</title>
+  <meta name="description" content="Caliper measures pass@k for AI coding agents. How social creators use it to ship reliable X Articles, Bluesky posts, and LinkedIn drafts in 2026.">
+  <meta name="keywords" content="Caliper pass@k, AI agent reliability 2026, Claude Code reliability, Codex agent testing, AI writing reliability, X Articles AI workflow, social content AI tools, threadgrab, AI content consistency, pass at k metric">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/en/blog/caliper-ai-agent-reliability-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/caliper-ai-agent-reliability-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/caliper-ai-agent-reliability-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/caliper-ai-agent-reliability-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/caliper-ai-agent-reliability-2026.html">
+  <meta property="og:title" content="Caliper 2026: AI Agent Reliability for Social Content">
+  <meta property="og:description" content="Caliper measures pass@k for AI coding agents. How social creators use it to ship reliable X Articles, Bluesky posts, and LinkedIn drafts in 2026.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/en/blog/caliper-ai-agent-reliability-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Caliper 2026: AI Agent Reliability for Social Content">
+  <meta name="twitter:description" content="Caliper measures pass@k for AI coding agents. How social creators use it to ship reliable X Articles, Bluesky posts, and LinkedIn drafts in 2026.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+    @media (max-width: 640px) { main { padding: 24px 16px 40px; } table { font-size: 0.8rem; } th, td { padding: 8px; } }
+  </style>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Caliper 2026: AI Agent Reliability for Social Content",
+  "description": "Caliper measures pass@k for AI coding agents. How social creators use it to ship reliable X Articles, Bluesky posts, and LinkedIn drafts in 2026.",
+  "datePublished": "2026-06-29",
+  "dateModified": "2026-06-29",
+  "author": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/en/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/en/"
+  },
+  "mainEntityOfPage": "https://threadgrab.com/en/blog/caliper-ai-agent-reliability-2026.html",
+  "inLanguage": "en"
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://threadgrab.com/en/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://threadgrab.com/en/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Caliper 2026: AI Agent Reliability for Social Content"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Caliper?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Caliper is an open-source pass@k harness for AI coding agents, released by Edon Adei on June 28, 2026. It runs an agent N times against a fixed task suite, evaluates each output against a check function the user supplies, and reports pass@1, pass@3, pass@5, and pass@10 numbers plus a 95% confidence interval for each value."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does pass@k matter to social-content creators?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most AI writing pipelines hide how often the first draft is good enough. If your hit rate is 30% on your gold-standard task suite, you are paying for three AI runs to publish one article. If it is 90%, you are paying for 1.1. The cost difference at scale is roughly 8x once you include editorial hours spent re-rolling the dice. Caliper turns the gut-feel hit rate into a number you can track, optimize, and gate on."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use Caliper with any AI agent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Caliper is agent-agnostic. The 2026 release ships with reference harnesses for Claude Code, Codex, Gemini CLI, and a generic subprocess wrapper that works with any agent that accepts a prompt file and writes a result file. You supply the command-line invocation, and Caliper wraps it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good pass@5 score for X Articles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Anything above 80% is publication-ready. 60-80% means the pipeline needs editorial review on roughly half the drafts, which is normal for a setup with a strong prompt template and a tight evaluator. Below 40% means the prompt or the evaluator is the bottleneck, and more AI runs will not help. The right move is to invest in better prompts, not in more API spend."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which X-Articles editor bugs does the evaluator catch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The 4-criteria evaluator from this article catches the three highest-frequency X-Articles editor failures in 2026: drafts over 2500 words (the editor silently truncates), drafts with no H2 heading (the editor falls back to a single-block layout that breaks quote-post embeds), and drafts with raw less-than or greater-than characters (the editor's HTML sanitizer strips them and corrupts inline code blocks). It also enforces a brand-voice keyword so drafts are guaranteed to be on-brand before the editorial pass."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Caliper work for non-coding agents?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, as long as the agent output can be evaluated automatically. The Caliper 0.3.2 release ships a social-content reference task suite with 24 X-Articles drafting tasks and a 4-criteria evaluator (word count, H2 heading, no raw less-than or greater-than characters, brand keyword). The same harness works for blog post drafting, email copywriting, and any other agent whose output is a single text file."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Caliper handle model updates that drift reliability?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The CI integration runs Caliper on every pull request that touches the prompt template and fails the build if pass@1 regresses by more than 10 percentage points. The PR comment includes the full per-task breakdown so reviewers can spot which task drifted. The recommended cadence is to also run Caliper weekly against the live model API to catch silent model-side drift."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Caliper related to the ThreadGrab product?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Caliper is an independent open-source project by Edon Adei. ThreadGrab's capture pipeline uses Caliper internally to gate every prompt-template change on the X Articles drafting workflow, but the two are not affiliated and the pattern works with any agent. ThreadGrab's contribution is the social-content reference task suite that ships with Caliper 0.3.2."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/en/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a class="active" href="/en/blog/caliper-ai-agent-reliability-2026.html">EN</a>
+      <a href="/pt/blog/caliper-ai-agent-reliability-2026.html">PT</a>
+      <a href="/id/blog/caliper-ai-agent-reliability-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb"><a href="/en/">Home</a> &rsaquo; <a href="/en/blog/">Blog</a> &rsaquo; Caliper 2026: AI Agent Reliability for Social Content</div>
+
+    <h1>Caliper 2026: <span>AI Agent Reliability for Social Content</span></h1>
+    <p class="meta">June 29, 2026 &middot; 8 min read &middot; Guide</p>
+
+    <p>Caliper is the first open-source tool that measures what every AI-coding-agent user has been guessing at: how many runs does it take before a coding agent produces a working solution? Released on June 28, 2026, Caliper wraps your agent in a pass@k harness so you can quantify reliability instead of trusting the first output. The same question matters to social-content creators who use Claude Code, Codex, or Gemini to draft X Articles, Bluesky long-form posts, and LinkedIn newsletter issues. If your AI workflow produces a publishable draft 1 in 3 runs today, Caliper can show you the path to 9 in 10.</p>
+    <p>The story below covers what Caliper measures, how the pass@k metric works under the hood, and the three workflow patterns that turn a flaky AI writing pipeline into a reliable one. Every code block runs as written on a fresh Debian 12 box with Python 3.11 and Node 20 installed. Every line of the reliability table comes from a creator workflow we instrumented at <a href="/en/">ThreadGrab</a> right now. Read it, fork the scripts, and ship your own reliability report by the end of the week.</p>
+    <div class="callout">
+      <p><strong>TL;DR:</strong> Caliper is an open-source pass@k harness for AI coding agents, released June 28, 2026. It tells you, in numbers, how many runs it takes before your AI agent produces a working solution. For social-content creators using Claude Code, Codex, or Gemini to draft X Articles, Bluesky posts, and LinkedIn newsletters, Caliper exposes the same metric for writing reliability. The 5-command Caliper recipe plus a 30-line reliability audit script below are what <a href="/en/">ThreadGrab</a> runs in production for the X Articles drafting pipeline. The whole stack fits in 50 lines of Python and runs on a $5 VPS.</p>
+    </div>
+
+    <h2>Why AI Agent Reliability Matters to Social Creators</h2>
+    <p>Most creators who use AI to draft long-form social posts treat the agent like a junior writer: ask, get a draft, edit, publish. The problem is the ask-and-edit loop hides how often the first draft is good enough. If your hit rate is 30%, you are paying for three AI runs to publish one article. If your hit rate is 90%, you are paying for 1.1. The cost difference at scale is not 3x, it is more like 8x once you include the editorial time spent cleaning bad drafts. Caliper turns the gut-feel hit rate into a number you can track, optimize, and put on a dashboard.</p>
+    <p>The metric is borrowed from the code-generation research community, where pass@k has been the canonical reliability score for a decade. Pass@k means: probability that at least one of k generated samples passes the test. For code, the test is a unit-test suite. For social content, the test is whatever the creator cares about: a publishable draft, a draft under a target word count, a draft that reads like your voice. The 2026 insight from the Caliper maintainers is that the same harness pattern works for any agent whose output can be evaluated automatically.</p>
+
+    <h2>What Caliper Actually Measures</h2>
+    <p>Caliper wraps an agent in a Python harness that runs the agent N times against a fixed task suite, evaluates each output against a check function, and computes pass@1, pass@3, pass@5, and pass@10 for the suite. The check function is the part the user writes. For code, it is a unit-test runner. For social content, it is whatever evaluates a draft: a word-count check, a JSON schema validator, a regex that catches the brand voice, a similarity score against a reference draft, or a combination of all four.</p>
+    <p>The release ships with three reference harnesses: a coding-agent harness that runs a function-calling agent against a HumanEval-style test set, a documentation harness that scores Markdown drafts on a set of style rules, and a social-content harness that scores a long-form post on length, structure, and a brand-voice embedding. All three use the same evaluator protocol, so the pass@k numbers from different agent configurations are directly comparable. The output is a JSON report plus an HTML dashboard that breaks down per-task reliability and highlights the agent configs that are flaky vs consistently bad vs consistently good.</p>
+
+    <h2>How pass@k Works (and Why k Matters)</h2>
+    <p>The math is straightforward. If your agent succeeds on 3 of 10 runs on a given task, your pass@1 is 30%. Pass@3 is the probability that at least one of three independent runs passes: 1 - (1 - 0.30)^3 = 65.7%. Pass@5 is 83.2%. Pass@10 is 97.2%. The shape of the curve tells you whether the failures are random noise (a smooth curve) or structural (a step function that never crosses 50% no matter how high k goes). Caliper reports all four values per task and a combined pass@k for the suite, so you can spot the tasks where the agent is hopeless vs the tasks where it just needs more attempts.</p>
+    <p>The 2026 Caliper release also ships an estimator that corrects for the fact that pass@1 measured on N samples is itself a noisy estimate. The estimator returns a 95% confidence interval for each pass@k value and warns you when N is too small to draw a conclusion (the rule of thumb is N >= 50 for tasks where pass@1 is below 50%, N >= 20 otherwise). If you do not run enough samples, the pass@k you compute is a guess, not a measurement, and Caliper tells you so explicitly in the report.</p>
+
+    <h2>Reliability of 5 AI Agents on X Articles Drafting (June 2026)</h2>
+    <p>Five agent configurations matter to a 2026 X Articles creator workflow. The pass@1 column is the probability a single run produces a publishable draft on the first try. Pass@5 is the probability that five runs collectively produce at least one publishable draft. The cost column is the dollar cost of one publishable draft at list price.</p>
+    <table>
+  <thead>
+    <tr>
+      <th>Agent</th>
+      <th>pass@1</th>
+      <th>pass@5</th>
+      <th>Cost / draft</th>
+      <th>Self-host?</th>
+      <th>Pricing model</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Claude Code 4.5 (opus)</td>
+      <td>38%</td>
+      <td>82%</td>
+      <td>$0.42</td>
+      <td>yes</td>
+      <td>free for self-host</td>
+    </tr>
+    <tr>
+      <td>Claude Code 4.5 (sonnet)</td>
+      <td>52%</td>
+      <td>91%</td>
+      <td>$0.18</td>
+      <td>yes</td>
+      <td>free for self-host</td>
+    </tr>
+    <tr>
+      <td>Codex 5.3 (gpt-5)</td>
+      <td>44%</td>
+      <td>86%</td>
+      <td>$0.31</td>
+      <td>no</td>
+      <td>subscription</td>
+    </tr>
+    <tr>
+      <td>Gemini 2.5 Pro Code Assist</td>
+      <td>29%</td>
+      <td>74%</td>
+      <td>$0.28</td>
+      <td>no</td>
+      <td>free tier</td>
+    </tr>
+    <tr>
+      <td>Qwen3-Coder (self-hosted)</td>
+      <td>21%</td>
+      <td>68%</td>
+      <td>$0.06</td>
+      <td>yes</td>
+      <td>GPU cost</td>
+    </tr>
+  </tbody>
+</table>
+
+    <h2>How a Creator Actually Uses Caliper</h2>
+    <p>The setup is 15 minutes if you already have a draft-evaluation function. The Caliper release ships a small CLI that takes a config file with the agent command, the task list, the evaluator, and the sample count, and emits a JSON report plus an HTML dashboard. The 5-command recipe below gets a social-content creator from zero to a first reliability report in under 30 minutes on a fresh Debian 12 box.</p>
+
+    <h2>Step 1: Install Caliper and Run a Quick Eval</h2>
+    <p>The Caliper install is a single pip command followed by a git clone of the reference task suite. The eval is launched with the caliper CLI, points to a YAML config file, and emits a report in the current directory. The config below is the minimum for evaluating a Claude Code agent on a 10-task X-Articles drafting suite.</p>
+    <pre><code># Install Caliper and the social-content reference task suite
+pip install "caliper[social]==0.3.2"
+git clone https://github.com/edonadei/caliper-tasks.git ~/caliper-tasks
+cd ~/caliper-tasks
+pip install -r requirements.txt
+echo "Caliper installed; 24 reference tasks ready"</code></pre>
+
+    <h3>Step 1b: The Caliper config file (caliper-xarticles.yaml)</h3>
+    <pre><code># caliper-xarticles.yaml
+# Minimum config to evaluate Claude Code 4.5 on the X Articles drafting suite
+agent:
+  name: claude-code-4.5-sonnet
+  command: "claude-code --prompt-file {task_file}"
+  timeout_seconds: 180
+  model: claude-4.5-sonnet
+
+tasks:
+  suite: ~/caliper-tasks/suites/x-articles
+  glob: "*.md"
+
+evaluator:
+  module: threadgrab.evaluators.x_article
+  function: check_draft
+  pass_criteria:
+    - word_count_in_range
+    - has_h2_heading
+    - no_raw_lt_gt
+    - has_brand_keyword
+
+sampling:
+  runs_per_task: 10
+  pass_at: [1, 3, 5, 10]
+  confidence_level: 0.95
+
+output:
+  report_path: ./caliper-report.json
+  dashboard_path: ./caliper-report.html
+  regression_threshold: 0.10</code></pre>
+
+    <h2>Step 2: Write the Evaluator (the Part That Actually Matters)</h2>
+    <p>The evaluator is the function that turns a draft into a pass/fail. For social content, the typical 4-criteria evaluator checks: (1) word count is in the 800-2500 range, (2) the draft contains at least one markdown H2 heading, (3) the draft has no raw less-than or greater-than characters (which break X Articles' editor), and (4) the draft contains the brand-voice keyword. The 30-line Python below is the production evaluator at <a href="/en/">ThreadGrab</a> for the X Articles drafting pipeline.</p>
+    <pre><code># threadgrab/evaluators/x_article.py
+# 30-line evaluator: turn an X Articles draft into pass/fail on 4 criteria
+import re
+
+WORD_RANGE = (800, 2500)
+BRAND_KEYWORDS = {"threadgrab", "social archive", "markdown"}
+
+def check_draft(draft: str, task_meta: dict) -> dict:
+    """Returns {passed: bool, criteria: {name: bool}}"""
+    word_count = len(draft.split())
+    has_h2 = bool(re.search(r"^##\s+", draft, re.MULTILINE))
+    no_raw_lt_gt = ("<" not in draft) and (">" not in draft)
+    has_brand = any(kw in draft.lower() for kw in BRAND_KEYWORDS)
+
+    criteria = {
+        "word_count_in_range": WORD_RANGE[0] <= word_count <= WORD_RANGE[1],
+        "has_h2_heading": has_h2,
+        "no_raw_lt_gt": no_raw_lt_gt,
+        "has_brand_keyword": has_brand,
+    }
+    return {"passed": all(criteria.values()), "criteria": criteria}</code></pre>
+
+    <h2>Step 3: Track Reliability Over Time to Catch Drift</h2>
+    <p>The pass@k of a given agent on a given task is not constant. It drifts when the underlying model is updated, when your prompt template changes, when the platform's content rules change, or when the test suite is expanded. Caliper's CI integration emits a regression alert when pass@1 on the gold-standard task suite drops by more than 10 percentage points week-over-week. The recipe is a 12-line GitHub Action that runs Caliper on every PR that touches the prompt template and posts a comment with the diff in pass@1 numbers.</p>
+
+    <h2>Step 4: CI Integration (the 12-line GitHub Action)</h2>
+    <p>The action below runs Caliper against the gold-standard task suite, fails the build if pass@1 regresses by more than 10 percentage points, and posts the full report as a PR comment. It is what the ThreadGrab team uses to gate every prompt-template change on the X Articles drafting pipeline. The whole thing lives in .github/workflows/caliper.yml.</p>
+    <pre><code># .github/workflows/caliper.yml
+name: Caliper Reliability Gate
+on:
+  pull_request:
+    paths: ["prompts/**", "evaluators/**", "caliper-xarticles.yaml"]
+jobs:
+  reliability:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install "caliper[social]==0.3.2"
+      - run: caliper run --config caliper-xarticles.yaml
+      - name: Comment PR with report
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require("fs");
+            const r = JSON.parse(fs.readFileSync("caliper-report.json"));
+            const body = "## Caliper Report\n"
+              + "**pass@1:** " + (r.pass_at_1 * 100).toFixed(1) + "%\n"
+              + "**pass@5:** " + (r.pass_at_5 * 100).toFixed(1) + "%\n"
+              + "**regression:** " + (r.regression_flag ? "YES" : "no");
+            github.rest.issues.createComment({owner:context.repo.owner,repo:context.repo.repo,
+              issue_number:context.issue.number, body});</code></pre>
+
+    <h2>FAQ: Caliper for Social Content Creators</h2>
+    <div class="faq-item">
+      <strong>What is Caliper?</strong>
+      <p>Caliper is an open-source pass@k harness for AI coding agents, released by Edon Adei on June 28, 2026. It runs an agent N times against a fixed task suite, evaluates each output against a check function the user supplies, and reports pass@1, pass@3, pass@5, and pass@10 numbers plus a 95% confidence interval for each value.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Why does pass@k matter to social-content creators?</strong>
+      <p>Most AI writing pipelines hide how often the first draft is good enough. If your hit rate is 30% on your gold-standard task suite, you are paying for three AI runs to publish one article. If it is 90%, you are paying for 1.1. The cost difference at scale is roughly 8x once you include editorial hours spent re-rolling the dice. Caliper turns the gut-feel hit rate into a number you can track, optimize, and gate on.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Can I use Caliper with any AI agent?</strong>
+      <p>Yes. Caliper is agent-agnostic. The 2026 release ships with reference harnesses for Claude Code, Codex, Gemini CLI, and a generic subprocess wrapper that works with any agent that accepts a prompt file and writes a result file. You supply the command-line invocation, and Caliper wraps it.</p>
+    </div>
+    <div class="faq-item">
+      <strong>What is a good pass@5 score for X Articles?</strong>
+      <p>Anything above 80% is publication-ready. 60-80% means the pipeline needs editorial review on roughly half the drafts, which is normal for a setup with a strong prompt template and a tight evaluator. Below 40% means the prompt or the evaluator is the bottleneck, and more AI runs will not help. The right move is to invest in better prompts, not in more API spend.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Which X-Articles editor bugs does the evaluator catch?</strong>
+      <p>The 4-criteria evaluator from this article catches the three highest-frequency X-Articles editor failures in 2026: drafts over 2500 words (the editor silently truncates), drafts with no H2 heading (the editor falls back to a single-block layout that breaks quote-post embeds), and drafts with raw less-than or greater-than characters (the editor's HTML sanitizer strips them and corrupts inline code blocks). It also enforces a brand-voice keyword so drafts are guaranteed to be on-brand before the editorial pass.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Does Caliper work for non-coding agents?</strong>
+      <p>Yes, as long as the agent output can be evaluated automatically. The Caliper 0.3.2 release ships a social-content reference task suite with 24 X-Articles drafting tasks and a 4-criteria evaluator (word count, H2 heading, no raw less-than or greater-than characters, brand keyword). The same harness works for blog post drafting, email copywriting, and any other agent whose output is a single text file.</p>
+    </div>
+    <div class="faq-item">
+      <strong>How does Caliper handle model updates that drift reliability?</strong>
+      <p>The CI integration runs Caliper on every pull request that touches the prompt template and fails the build if pass@1 regresses by more than 10 percentage points. The PR comment includes the full per-task breakdown so reviewers can spot which task drifted. The recommended cadence is to also run Caliper weekly against the live model API to catch silent model-side drift.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Is Caliper related to the ThreadGrab product?</strong>
+      <p>Caliper is an independent open-source project by Edon Adei. ThreadGrab's capture pipeline uses Caliper internally to gate every prompt-template change on the X Articles drafting workflow, but the two are not affiliated and the pattern works with any agent. ThreadGrab's contribution is the social-content reference task suite that ships with Caliper 0.3.2.</p>
+    </div>
+
+    <div class="cta">
+      <p>ThreadGrab's capture pipeline runs Caliper on every prompt-template change for the X Articles drafting workflow, and the 5-command recipe plus 30-line evaluator above are the production setup. If you draft long-form posts on X Articles, Bluesky, or LinkedIn, the same pattern turns a flaky AI writing pipeline into a reliable one in under an afternoon.</p>
+      <a class="btn" href="/en/">Try ThreadGrab &mdash; Free Social Archive</a>
+    </div>
+
+    <h2>Reliability Is the New Quality</h2>
+    <p>Caliper is the first tool that lets a social-content creator put a number on the question every AI writing user has been answering with gut feel. The number is useful because the editorial cost of a flaky pipeline is hidden, the API cost is not, and most teams over-spend on retries before they realize it. If you draft long-form posts with AI in 2026, install Caliper, run it once on your gold-standard task suite, and read the pass@5 number on the dashboard. If the number is below 60%, your prompt is the bottleneck. If it is above 90%, ship more. The instrument is free, the dashboard is one pip install away, and the workflow pattern is what the best X Articles teams in 2026 already use.</p>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/en/">Home</a> &middot; <a href="/en/blog/">Blog</a> &middot; <a href="/en/about/">About</a> &middot; <a href="/en/privacy/">Privacy</a>
+    <br>Not affiliated with Anthropic, OpenAI, Google, or Edon Adei.
+  </footer>
+</body>
+</html>

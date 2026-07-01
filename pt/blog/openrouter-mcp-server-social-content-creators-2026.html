@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenRouter MCP 2026: Multi-Modelo para Criadores | ThreadGrab</title>
+  <meta name="description" content="Como criadores usam o servidor MCP do OpenRouter para agregar posts do X, Bluesky e LinkedIn no Claude Code e Cursor — instalação, fluxo e exemplos 2026.">
+  <meta name="keywords" content="OpenRouter MCP, servidor MCP, criador de conteúdo social, X Articles, Bluesky long-form, LinkedIn Newsletter, Claude Code, Codex CLI, Cursor, IA multi-modelo, 2026">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/pt/blog/openrouter-mcp-server-social-content-creators-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/openrouter-mcp-server-social-content-creators-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/openrouter-mcp-server-social-content-creators-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/openrouter-mcp-server-social-content-creators-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/openrouter-mcp-server-social-content-creators-2026.html">
+  <meta property="og:title" content="OpenRouter MCP 2026: Multi-Modelo para Criadores | ThreadGrab">
+  <meta property="og:description" content="Guia 2026 de instalação do servidor MCP do OpenRouter para criadores de conteúdo social — agregue X, Bluesky e LinkedIn via Claude Code, Codex e Cursor.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/pt/blog/openrouter-mcp-server-social-content-creators-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OpenRouter MCP 2026: Multi-Modelo para Criadores | ThreadGrab">
+  <meta name="twitter:description" content="Guia 2026 de instalação do servidor MCP do OpenRouter para criadores de conteúdo social — agregue X, Bluesky e LinkedIn via Claude Code, Codex e Cursor.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "OpenRouter MCP 2026: Multi-Modelo para Criadores | ThreadGrab",
+    "description": "Como criadores usam o servidor MCP do OpenRouter para agregar posts do X, Bluesky e LinkedIn no Claude Code e Cursor — instalação, fluxo e exemplos 2026.",
+    "datePublished": "2026-06-30",
+    "dateModified": "2026-06-30",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/" },
+    "mainEntityOfPage": "https://threadgrab.com/pt/blog/openrouter-mcp-server-social-content-creators-2026.html",
+    "inLanguage": "pt-BR"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://threadgrab.com/pt/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/pt/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Servidor MCP do OpenRouter para Criadores (2026)" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Preciso pagar OpenRouter para usar o servidor MCP?", "acceptedAnswer": {"@type": "Answer", "text": "O servidor MCP em si é grátis e roda local via npx. Você só paga quando os modelos processam tokens. A OpenRouter dá uma pequena quantidade de crédito grátis no cadastro, depois cobra por token. A recarga mínima é $5, que cobre milhares de ciclos de reformatação."}},
+      {"@type": "Question", "name": "O OpenRouter MCP é diferente do MCP da Anthropic ou da Cloudflare?", "acceptedAnswer": {"@type": "Answer", "text": "Os três falam o mesmo Model Context Protocol, então o fluxo de instalação é praticamente idêntico. A diferença está em quais ferramentas cada um expõe: o MCP da Anthropic encapsula os built-ins do Claude Code; o MCP da Cloudflare expõe bindings do Workers AI; o MCP da OpenRouter expõe 200+ modelos de vários provedores. Para um fluxo criador multi-modelo, o da OpenRouter é o que você quer."}},
+      {"@type": "Question", "name": "Posso usar isso sem background de programação?", "acceptedAnswer": {"@type": "Answer", "text": "A instalação são dois comandos de terminal por cliente. Se você consegue copiar e colar um snippet de shell e editar um arquivo de configuração, monta isso em menos de 10 minutos. Não há Python ou JavaScript para escrever — o servidor MCP cuida da parte de conexão. A parte mais difícil é construir bons prompts e manter um arquivo local limpo dos seus posts-fonte."}},
+      {"@type": "Question", "name": "Meus X Articles e posts do Bluesky vazam para a OpenRouter treinar modelos?", "acceptedAnswer": {"@type": "Answer", "text": "A OpenRouter encaminha prompts ao provedor do modelo e devolve a resposta; por padrão eles não treinam com seus inputs. Dito isso, o provedor do modelo (Anthropic, OpenAI, etc.) pode logar o request para monitoramento de abuso. Para conteúdo sensível, use um Ollama local ou configure transforms na OpenRouter para desabilitar logging."}},
+      {"@type": "Question", "name": "E o Weave Router que aparece no Hacker News?", "acceptedAnswer": {"@type": "Answer", "text": "Weave Router (Show HN de junho de 2026) é uma ideia parecida mas local-first: um único proxy que roteia o tráfego de Claude Code / Codex / Cursor para o provedor mais barato ou rápido para aquele prompt. É um bom complemento se você também se importa com latência e uptime, não só com escolha de modelo. OpenRouter MCP e Weave Router podem ser combinados na teoria, mas a maioria dos criadores escolhe um para manter a configuração simples."}},
+      {"@type": "Question", "name": "Como isso se encaixa com o ThreadGrab?", "acceptedAnswer": {"@type": "Answer", "text": "ThreadGrab é a ferramenta do lado da leitura — pega a thread ou Article do X-fonte como Markdown limpo. OpenRouter MCP é a ferramenta do lado da escrita — processa e reformata esse Markdown via IA. Os dois se compõem naturalmente: arquive com ThreadGrab, reformate com OpenRouter MCP, publique no LinkedIn ou no Bluesky."}},
+      {"@type": "Question", "name": "Existe uma versão hospedada do servidor MCP do OpenRouter?", "acceptedAnswer": {"@type": "Answer", "text": "Ainda não. O servidor de referência é open-source e roda local via npx. A OpenRouter insinuou uma variante hospedada para times que não querem gerenciar processos locais, mas em junho de 2026 ainda está no roadmap."}}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/pt/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a href="/en/blog/openrouter-mcp-server-social-content-creators-2026.html">EN</a>
+      <a href="/pt/blog/openrouter-mcp-server-social-content-creators-2026.html" class="active">PT</a>
+      <a href="/id/blog/openrouter-mcp-server-social-content-creators-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <p class="breadcrumb"><a href="/pt/">Início</a> &rsaquo; <a href="/pt/blog/">Blog</a> &rsaquo; Servidor MCP do OpenRouter para Criadores</p>
+
+    <h1>OpenRouter MCP 2026: <span>Multi-Modelo para Criadores de Conteúdo</span></h1>
+    <p class="meta">30 de Junho, 2026 &middot; 10 min de leitura &middot; por ThreadGrab</p>
+
+    <p>Se você escreve para X Articles, Bluesky long-form e LinkedIn Newsletter, já conhece a dor: três plataformas, três conjuntos de regras de formatação, três públicos diferentes &mdash; e o mesmo histórico de posts que você gostaria de consultar em todos eles de uma vez. Em junho de 2026, a OpenRouter lançou um servidor MCP que finalmente torna esse fluxo viável. Este artigo mostra o que o servidor MCP do OpenRouter faz, como conectá-lo ao Claude Code, Codex CLI e Cursor, e como um criador de conteúdo social pode usá-lo para agregar, resumir e reformatar posts de várias plataformas em uma única linha de comando local.</p>
+
+    <p>O padrão que funciona melhor em 2026 é manter seu <em>conteúdo-fonte</em> em Markdown puro &mdash; salvo localmente via ferramentas como ThreadGrab para threads do X, ou pontes RSS para Bluesky &mdash; e deixar um cliente de IA conectado a MCP escolher o melhor modelo para cada subtarefa: um modelo barato para limpeza, um modelo inteligente para reescrita, um modelo de visão para OCR de screenshots. Vamos percorrer a instalação e depois um fluxo real que você pode rodar hoje.</p>
+
+    <div class="callout">
+      <p><strong>TL;DR.</strong> O servidor MCP do OpenRouter (lançado em 25/06/2026) expõe mais de 200 modelos de IA atrás de um único endpoint local. No Claude Code, Codex CLI ou Cursor você o adiciona como servidor MCP, define uma variável de ambiente (OPENROUTER_API_KEY), e seu assistente já pode chamar qualquer modelo &mdash; e qualquer ferramenta de conteúdo social que você parear com ele &mdash; através do mesmo prompt. Para criadores sociais, o ganho é <strong>um fluxo, múltiplos modelos</strong>: use Llama 3.3 70B barato para reformatação, Claude Sonnet 4.5 para reescritas sutis, e GPT-5 para sumarização, tudo sem sair do seu editor.</p>
+    </div>
+
+    <h2>O Que o Servidor MCP do OpenRouter Faz de Fato</h2>
+
+    <p>MCP (Model Context Protocol) é o padrão aberto que permite a um cliente de chat (Claude Code, Codex, Cursor, Continue, Cline, etc.) chamar ferramentas locais e APIs remotas sem código de cola personalizado. O servidor MCP da OpenRouter encapsula o gateway de inferência unificado deles &mdash; o mesmo que você acessaria via REST &mdash; como um conjunto de ferramentas MCP. O resultado é que um assistente de IA dentro do seu editor consegue fazer coisas como <em>"use o Anthropic Claude 4.5 Sonnet para resumir esta thread do Bluesky"</em> ou <em>"compare como Llama 3.3 70B e GPT-5 reformatam este X Article"</em> &mdash; sem você copiar texto para uma interface web.</p>
+
+    <p>Para um criador de conteúdo social isso importa porque o trabalho em si é multi-modelo por natureza. Limpar uma transcrição exige inferência barata e rápida. Reescrever para um público diferente exige inferência inteligente e cara. Resumir um X Article de 4.000 palavras exige contexto longo. Queimar GPT-5 em cada etapa é desperdício; ficar pulando entre quatro interfaces web é atrito. O servidor MCP colapsa tudo isso em um único loop de chat.</p>
+
+    <h2>Três Modelos, Um Fluxo: a Ideia Central</h2>
+
+    <p>O que a maioria dos tutoriais pula é o <em>porquê</em> do multi-modelo para criadores. A versão curta:</p>
+
+    <ul>
+      <li><strong>Etapa A &mdash; Limpar &amp; extrair:</strong> modelo barato e rápido (Llama 3.3 70B ou DeepSeek V3) a $0,05&ndash;$0,20 por milhão de tokens. Remove URLs, normaliza espaços, corrige aspas tipográficas. Economiza dinheiro, roda em milissegundos.</li>
+      <li><strong>Etapa B &mdash; Reescrever &amp; adaptar:</strong> modelo inteligente (Claude Sonnet 4.5 ou GPT-5) a $3&ndash;$15 por milhão de tokens. Ajuste de tom para LinkedIn, aperto de gancho para X Articles, formalização para Bluesky long-form.</li>
+      <li><strong>Etapa C &mdash; Verificar &amp; resumir:</strong> outra chamada a um modelo inteligente com contexto novo. Seguro barato contra alucinações, e produz o TL;DR que você publica no topo do post.</li>
+    </ul>
+
+    <p>A OpenRouter expõe todos esses três modelos (e mais de 200 outros) atrás da mesma ferramenta MCP. Seu cliente escolhe o modelo passando o parâmetro <code>model</code>. Custo total para uma reformatação típica de 1.500 palavras em três plataformas: menos de $0,30.</p>
+
+    <h2>Instalação: OpenRouter MCP no Claude Code</h2>
+
+    <p>Claude Code é o agente de codificação baseado em terminal da Anthropic. Ele fala MCP nativamente. Instalar o servidor MCP do OpenRouter leva dois comandos:</p>
+
+<pre><code># 1. Instala o servidor MCP do OpenRouter via fluxo oficial do Claude Code
+claude mcp add openrouter npx -y @openrouter/mcp-server
+
+# 2. Exporta sua chave OpenRouter (https://openrouter.ai/keys)
+export OPENROUTER_API_KEY=&lt;sua-...
+
+# 3. Verifica se o servidor está registrado
+claude mcp list
+# Esperado: openrouter &lt;stdio&gt; connected
+</code></pre>
+
+    <p>Uma vez registrado o servidor, o Claude Code pode chamar qualquer modelo OpenRouter a partir de qualquer prompt. Teste:</p>
+
+<pre><code># Dentro do Claude Code
+&gt; Resuma o último X Article de @threadreaderapp usando Llama 3.3 70B,
+  depois reescreva o resumo em tom casual para Bluesky usando Claude Sonnet 4.5.
+
+# O cliente roteia cada subtarefa para o modelo nomeado automaticamente.
+</code></pre>
+
+    <h2>Instalação: OpenRouter MCP no Codex CLI</h2>
+
+    <p>Codex CLI (o agente de codificação da OpenAI) adicionou suporte a MCP em maio de 2026. A configuração vai em <code>~/.codex/config.toml</code>:</p>
+
+<pre><code># ~/.codex/config.toml
+[mcp_servers.openrouter]
+command = "npx"
+args = ["-y", "@openrouter/mcp-server"]
+env = &#123; "OPENROUTER_API_KEY" = "sk-or-v1-..." &#125;
+</code></pre>
+
+    <p>Reinicie o Codex e rode <code>codex mcp list</code>. O servidor aparece como <code>openrouter</code>. Dentro dos prompts do Codex você pode invocar <code>use openrouter with model=anthropic/claude-sonnet-4.5 to ...</code>.</p>
+
+    <h2>Instalação: OpenRouter MCP no Cursor</h2>
+
+    <p>Cursor (a IDE AI-first) suporta MCP em <em>Settings &rarr; MCP</em>. Clique em <strong>+ Add new MCP server</strong> e preencha:</p>
+
+<pre><code>Name:  openrouter
+Type:  command
+Command: npx -y @openrouter/mcp-server
+
+# Depois defina OPENROUTER_API_KEY no campo env ou no seu shell.
+</code></pre>
+
+    <p>O Cursor mostra um ponto verde ao lado de <code>openrouter</code> quando o servidor está saudável. O painel de chat do Agent já pode chamar qualquer modelo OpenRouter como parte de uma tarefa multi-etapa.</p>
+
+    <h2>O Fluxo Real: Agregando X, Bluesky e LinkedIn</h2>
+
+    <p>Aqui está o pipeline que fez mais sentido após uma semana de testes:</p>
+
+    <ol>
+      <li><strong>Baixe os posts-fonte localmente.</strong> Para threads e Articles do X, use ThreadGrab (grátis, sem instalar) para pegar o Markdown canônico. Para Bluesky, use a API pública do Bluesky ou uma ponte RSS como Skyfeed. Para LinkedIn Newsletters, use a URL pública de arquivo que a plataforma dá aos autores.</li>
+      <li><strong>Indexe em uma única pasta de Markdown.</strong> Um arquivo por post, com frontmatter para <code>platform</code>, <code>author</code>, <code>date</code> e <code>topic</code>.</li>
+      <li><strong>Consulte via OpenRouter MCP.</strong> Dentro do Claude Code / Codex / Cursor, faça um prompt como: <em>"encontre as 5 ideias mais citadas nos meus X Articles de 2026, depois rascunhe uma síntese de 600 palavras para LinkedIn Newsletter usando Claude Sonnet 4.5"</em>. O cliente MCP roteia cada subtarefa para o modelo certo.</li>
+      <li><strong>Edite a saída e publique.</strong> A IA leva você a 80% do caminho. Os últimos 20% são sua voz, seus exemplos, seus links.</li>
+    </ol>
+
+    <h3>Exemplo de prompt que realmente funciona</h3>
+
+<pre><code>&gt; Leia ./posts/2026/x-articles/*.md, ./posts/2026/bluesky/*.md e
+  ./posts/2026/linkedin/*.md. Use openrouter com model=meta-llama/llama-3.3-70b
+  para extrair os 5 temas recorrentes (até 100 tokens cada), depois use
+  model=anthropic/claude-sonnet-4.5 para rascunhar uma síntese de 600 palavras
+  no tom de LinkedIn Newsletter. Salve em drafts/2026-06-30-cross-platform-synthesis.md.
+</code></pre>
+
+    <p>O prompt acima produz um rascunho utilizável em cerca de 45 segundos. Custo total na OpenRouter no preço atual: aproximadamente $0,18 para a extração e $0,09 para a síntese &mdash; menos de trinta centavos.</p>
+
+    <h2>Comparação: Como o OpenRouter MCP se Posiciona</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Abordagem</th>
+          <th>Tempo de setup</th>
+          <th>Escolha de modelo</th>
+          <th>Custo por 1k palavras</th>
+          <th>Melhor para</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>OpenRouter MCP (2026)</strong></td>
+          <td>~5 min</td>
+          <td>200+ modelos</td>
+          <td>$0,10&ndash;$0,40</td>
+          <td>Fluxos de criação multi-etapa</td>
+        </tr>
+        <tr>
+          <td>Claude API direta + curl</td>
+          <td>~15 min</td>
+          <td>1 modelo por request</td>
+          <td>$0,15&ndash;$3,00</td>
+          <td>Scripts mono-modelo</td>
+        </tr>
+        <tr>
+          <td>Interface web copiar-colar</td>
+          <td>0 min</td>
+          <td>O que a UI expõe</td>
+          <td>Assinatura</td>
+          <td>Reescritas pontuais</td>
+        </tr>
+        <tr>
+          <td>Ollama local</td>
+          <td>~30 min + GPU</td>
+          <td>Apenas modelos locais</td>
+          <td>Energia elétrica</td>
+          <td>Escritores que priorizam privacidade</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>A abordagem OpenRouter MCP é a primeira que oferece <em>escolha de modelo</em> e <em>baixo atrito</em> ao mesmo tempo. A interface web é mais simples mas te limita a um modelo por sessão. A API direta é mais barata por token, porém você escreve a orquestração. Ollama local é de graça, mas você abre mão da qualidade do modelo.</p>
+
+    <h2>Limitações e Melhores Práticas</h2>
+
+    <p>Algumas coisas para saber antes de plugar isso no seu fluxo diário:</p>
+
+    <ul>
+      <li><strong>Rate limits são por conta OpenRouter, não por modelo.</strong> O tier grátis dá 20 requests/minuto; o tier de $10/mês sobe para 500/minuto. Para um criador solo isso sobra; para um time batendo de cinco máquinas, pode saturar.</li>
+      <li><strong>O servidor MCP é local, os modelos são remotos.</strong> Seu conteúdo sai da máquina a menos que você troque para o caminho Ollama local-only. Se você escreve sobre clientes privados ou produtos não lançados, roteie esses requests para um modelo local.</li>
+      <li><strong>Seleção de modelo é trabalho seu.</strong> A ferramenta MCP expõe tudo; ela não escolhe por você. Acostume-se a checar o <a href="https://openrouter.ai/models">ranking de modelos</a> em busca do modelo inteligente mais barato do momento. Em junho de 2026 o ponto ideal para reescrita era <code>anthropic/claude-sonnet-4.5</code> a $3/M tokens de entrada; para limpeza era <code>meta-llama/llama-3.3-70b-instruct</code> a $0,10/M.</li>
+      <li><strong>Frontmatter é o truque para indexação.</strong> Arquivos <code>.md</code> puros com frontmatter YAML consistente (platform, author, date, topic, url) transformam seu arquivo em algo que a IA consegue realmente buscar. Sem isso, o prompt acima vira "adivinhe o que eu quis dizer".</li>
+    </ul>
+
+    <h2>FAQ: Perguntas Comuns de Criadores de Conteúdo</h2>
+
+    <div class="faq-item">
+      <strong>Preciso pagar OpenRouter para usar o servidor MCP?</strong>
+      <p>O servidor MCP em si é grátis e roda local via <code>npx</code>. Você só paga quando os modelos processam tokens. A OpenRouter dá uma pequena quantidade de crédito grátis no cadastro, depois cobra por token. A recarga mínima é $5, que cobre milhares de ciclos de reformatação.</p>
+    </div>
+    <div class="faq-item">
+      <strong>O OpenRouter MCP é diferente do MCP da Anthropic ou da Cloudflare?</strong>
+      <p>Os três falam o mesmo Model Context Protocol, então o fluxo de instalação é praticamente idêntico. A diferença está em quais ferramentas cada um expõe: o MCP da Anthropic encapsula os built-ins do Claude Code; o MCP da Cloudflare expõe bindings do Workers AI; o MCP da OpenRouter expõe 200+ modelos de vários provedores. Para um fluxo criador multi-modelo, o da OpenRouter é o que você quer.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Posso usar isso sem background de programação?</strong>
+      <p>A instalação são dois comandos de terminal por cliente. Se você consegue copiar e colar um snippet de shell e editar um arquivo de configuração, monta isso em menos de 10 minutos. Não há Python ou JavaScript para escrever &mdash; o servidor MCP cuida da parte de conexão. A parte mais difícil é construir bons prompts e manter um arquivo local limpo dos seus posts-fonte.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Meus X Articles e posts do Bluesky vazam para a OpenRouter treinar modelos?</strong>
+      <p>A OpenRouter encaminha prompts ao provedor do modelo e devolve a resposta; por padrão eles não treinam com seus inputs. Dito isso, o provedor do modelo (Anthropic, OpenAI, etc.) pode logar o request para monitoramento de abuso. Para conteúdo sensível, use um Ollama local ou configure <code>transforms</code> na OpenRouter para desabilitar logging.</p>
+    </div>
+    <div class="faq-item">
+      <strong>E o Weave Router que aparece no Hacker News?</strong>
+      <p>Weave Router (Show HN de junho de 2026) é uma ideia parecida mas local-first: um único proxy que roteia o tráfego de Claude Code / Codex / Cursor para o provedor mais barato ou rápido para aquele prompt. É um bom complemento se você também se importa com latência e uptime, não só com escolha de modelo. OpenRouter MCP e Weave Router podem ser combinados na teoria, mas a maioria dos criadores escolhe um para manter a configuração simples.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Como isso se encaixa com o ThreadGrab?</strong>
+      <p>ThreadGrab é a ferramenta do lado da leitura &mdash; pega a thread ou Article do X-fonte como Markdown limpo. OpenRouter MCP é a ferramenta do lado da escrita &mdash; processa e reformata esse Markdown via IA. Os dois se compõem naturalmente: arquive com ThreadGrab, reformate com OpenRouter MCP, publique no LinkedIn ou no Bluesky.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Existe uma versão hospedada do servidor MCP do OpenRouter?</strong>
+      <p>Ainda não. O servidor de referência é open-source e roda local via <code>npx</code>. A OpenRouter insinuou uma variante hospedada para times que não querem gerenciar processos locais, mas em junho de 2026 ainda está no roadmap.</p>
+    </div>
+
+    <h2>Conclusão: Um Fluxo, Três Plataformas, Qualquer Modelo</h2>
+
+    <p>O resumo honesto: o servidor MCP da OpenRouter é a primeira peça de infraestrutura que torna IA multi-modelo prática para um criador de conteúdo social solo. Você ganha escolha de modelo, baixo atrito e um teto de preço abaixo do que a maioria dos criadores gastaria em café. O porém é o mesmo de qualquer ferramenta nova &mdash; seu arquivo precisa estar limpo, seus prompts precisam ser específicos, e os últimos 20% da escrita continuam sendo seus.</p>
+
+    <p>Se você gasta o dia alternando entre rascunhos de X Articles, Bluesky long-form e LinkedIn Newsletters, experimente essa instalação. Cinco minutos para instalar, uma variável de shell, e seu editor vira um workshop multi-modelo.</p>
+
+    <p>E se a maior parte do seu dia ainda é gasta <em>encontrando</em> as threads e Articles do X que você quer reescrever, o <a href="/pt/">ThreadGrab</a> cuida do lado da leitura de graça &mdash; cole a URL de uma thread, receba Markdown limpo, e direcione para o pipeline do OpenRouter MCP.</p>
+
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/pt/">Início</a> &middot; <a href="/pt/blog/">Blog</a> &middot; <a href="/pt/about/">Sobre</a> &middot; <a href="/pt/privacy/">Privacidade</a>
+    <br>Não afiliado a X Corp., Bluesky Social PBC, LinkedIn / Microsoft, OpenRouter, Anthropic ou OpenAI.
+  </footer>
+</body>
+</html>

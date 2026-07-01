@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATProto & Portabilitas Data Bluesky 2026: Gelombang Eurosky</title>
+  <meta name="description" content="Bagaimana kreator memakai portabilitas data ATProto setelah gelombang migrasi Bluesky-ke-Eurosky 2026 — baca firehose, ekspor PDS, dan arsip portabel.">
+  <meta name="keywords" content="ATProto, Bluesky, portabilitas data Bluesky, arsip Bluesky, Eurosky, PDS, firehose, AppView, media sosial terdesentralisasi, ThreadGrab, 2026">
+  <meta robots="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/id/blog/atproto-bluesky-data-portability-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/atproto-bluesky-data-portability-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/atproto-bluesky-data-portability-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/atproto-bluesky-data-portability-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/x-default/blog/atproto-bluesky-data-portability-2026.html">
+  <meta property="og:title" content="ATProto & Portabilitas Data Bluesky 2026: Gelombang Eurosky">
+  <meta property="og:description" content="Bagaimana kreator memakai portabilitas data ATProto setelah gelombang migrasi Bluesky-ke-Eurosky 2026 — baca firehose, ekspor PDS, dan arsip portabel.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/id/blog/atproto-bluesky-data-portability-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ATProto & Portabilitas Data Bluesky 2026: Gelombang Eurosky">
+  <meta name="twitter:description" content="Bagaimana kreator memakai portabilitas data ATProto setelah gelombang migrasi Bluesky-ke-Eurosky 2026 — baca firehose, ekspor PDS, dan arsip portabel.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+    @media (max-width: 640px) { main { padding: 24px 16px 40px; } table { font-size: 0.8rem; } th, td { padding: 8px; } }
+  </style>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ATProto & Portabilitas Data Bluesky 2026: Gelombang Eurosky",
+  "description": "Bagaimana kreator memakai portabilitas data ATProto setelah gelombang migrasi Bluesky-ke-Eurosky 2026 — baca firehose, ekspor PDS, dan arsip portabel.",
+  "datePublished": "2026-07-01",
+  "dateModified": "2026-07-01",
+  "author": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/id/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/id/"
+  },
+  "mainEntityOfPage": "https://threadgrab.com/id/blog/atproto-bluesky-data-portability-2026.html",
+  "inLanguage": "id"
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://threadgrab.com/id/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://threadgrab.com/id/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "ATProto & Portabilitas Data Bluesky 2026"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Apa itu Eurosky dan mengapa gelombang migrasi terjadi pada 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eurosky adalah istilah payung untuk infrastruktur PDS dan relay Bluesky yang di-host di Eropa (misalnya co-op Greenhost dan Black Forest yang muncul pada akhir 2025 dan awal 2026). Gelombang migrasi merupakan kombinasi dari kenyamanan GDPR, latensi lebih rendah bagi pengguna UE, dan ketidakpercayaan yang meningkat terhadap moderasi AppView yang di-host di AS. Ini bukan fork dari Bluesky; ini adalah protokol ATProto yang sama dengan operator infrastruktur yang berbeda."
+      }
+    },    {
+      "@type": "Question",
+      "name": "Apakah keluar dari AppView utama Bluesky berarti kehilangan pengikut saya?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tidak. Identitas ATProto berada di PDS (Personal Data Server) Anda, bukan di AppView mana pun. DID dan handle Anda ter-resolve di AppView mana pun yang patuh, dan pengikut di bsky.app masih akan melihat postingan Anda melalui AppView mereka sendiri selama PDS Anda dapat dijangkau. Migrasi adalah perubahan hosting, bukan pendaftaran ulang."
+      }
+    },    {
+      "@type": "Question",
+      "name": "Bisakah saya membaca postingan dari PDS Eurosky dengan alat yang sama seperti yang saya pakai untuk bsky.app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ya, dengan catatan. Alat apa pun yang berbicara API publik ATProto (XRPC) berfungsi melawan PDS mana pun. Alat yang bergantung pada endpoint khusus bsky.app (misalnya feed generator bsky.social) memerlukan perubahan konfigurasi kecil untuk menunjuk ke relay Eurosky. ThreadGrab membaca endpoint XRPC, sehingga ia bekerja lintas bsky.app, Eurosky, dan PDS self-hosted tanpa penyesuaian."
+      }
+    },    {
+      "@type": "Question",
+      "name": "Apakah arsip Bluesky saya dapat di-ekspor, dan apakah itu salinan lengkap dari postingan saya?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ya. Ekspor resmi Bluesky memberi Anda daftar JSONL postingan ditambah file CAR dengan repo lengkap. Anda dapat mengimpor ulang ke PDS mana pun, atau mengonversi ke Markdown dengan ThreadGrab untuk arsip lokal yang dapat dibaca. Ekspor tidak termasuk DM, akun yang diblokir, atau konten yang dihapus sebelum tanggal ekspor."
+      }
+    },    {
+      "@type": "Question",
+      "name": "Apakah firehose Bluesky masih berfungsi setelah pemisahan Eurosky?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ya, tetapi firehose dipecah per relay. Relay bsky.social masih menerbitkan firehose dari setiap postingan di PDS bsky.app. PDS Eurosky menerbitkan ke relay mereka sendiri, dan sejumlah kecil relay komunitas menggabungkan keduanya. Untuk cakupan penuh, Anda harus berlangganan ke beberapa relay atau ke mirror CAR yang di-ekspor."
+      }
+    },    {
+      "@type": "Question",
+      "name": "Haruskah saya memindahkan PDS saya ke Eurosky sebelum menulis tindak lanjut artikel ini?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tidak untuk artikel ini, tetapi rencanakan perpindahan dalam tiga langkah: (1) ekspor repo Anda saat ini melalui halaman pengaturan resmi Bluesky, (2) sediakan akun PDS Eurosky (handle dapat dimigrasi dengan cool-off 72 jam), (3) impor ulang file CAR. Jadwalkan jendela pemeliharaan 30 menit; pengikut akan melihat routing PDS baru dalam hitungan menit setelah impor."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/id/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a class="active" href="/id/blog/atproto-bluesky-data-portability-2026.html">ID</a>
+      <a class="" href="/en/blog/atproto-bluesky-data-portability-2026.html">EN</a>
+      <a class="" href="/pt/blog/atproto-bluesky-data-portability-2026.html">PT</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb"><a href="/id/">Home</a> &rsaquo; <a href="/id/blog/">Blog</a> &rsaquo; ATProto & Portabilitas Data Bluesky 2026</div>
+
+    <h1>ATProto & Portabilitas Data Bluesky 2026: <span>Apa Arti Gelombang Eurosky bagi Kreator</span></h1>
+    <p class="meta">1 Juli 2026 &middot; 9 menit baca &middot; Panduan</p>
+
+    <p>Pada paruh pertama 2026, organisasi-organisasi di Eropa secara diam-diam mulai memindahkan data Bluesky mereka dari infrastruktur AppView yang di-host di AS ke stack PDS dan relay yang di-host di Eropa. Waag, sebuah organisasi nirlaba teknologi Belanda, menerbitkan penjelasan yang jelas tentang perpindahan ini pada akhir Juni: mereka menunjukkan bahwa protokol ATProto yang sama dapat berjalan di server Eropa, bahwa kenyamanan GDPR dan latensi yang lebih rendah adalah kemenangan nyata, dan bahwa arsitekturnya akhirnya siap untuk mendukung pemisahan relay multi-region tanpa merusak identitas. Bagi kreator konten sosial, ini adalah momen ATProto berhenti menjadi teoretis dan mulai menjadi praktis. Handle, pengikut, dan arsip Anda dapat bepergian bersama Anda.</p>
+
+    <p>Artikel ini membahas apa yang sebenarnya berubah dari gelombang Eurosky bagi kreator yang menulis di Bluesky hari ini, cara membaca postingan Bluesky dari PDS Eropa dengan alat yang sama seperti yang sudah Anda gunakan, dan bagaimana ThreadGrab masuk ke alur kerja arsip portabel yang berfungsi terhadap bsky.app, Eurosky, dan PDS self-hosted. Kami akan membahas tiga bagian ATProto yang perlu Anda pahami (PDS, AppView, relay), ekspor PDS satu perintah, resep langganan firehose yang berfungsi lintas relay, dan skrip Python kecil yang mengubah feed XRPC menjadi arsip Markdown yang dapat dicari secara offline.</p>
+
+    <div class="callout">
+      <p><strong>TL;DR.</strong> Identitas ATProto berada di PDS Anda, bukan di AppView mana pun. Gelombang migrasi Eurosky 2026 adalah perubahan hosting, bukan pendaftaran ulang: Anda tetap mempertahankan DID, handle, dan pengikut, tetapi server yang mendasarinya berpindah dari infrastruktur AS ke UE. Alat read-side apa pun yang berbicara XRPC (termasuk <strong>ThreadGrab</strong>) berfungsi tanpa perubahan terhadap bsky.app, Eurosky, dan PDS self-hosted. Resep yang paling penting bagi kreator adalah rencana portabilitas 3-langkah: ekspor file CAR dari PDS saat ini, berlangganan ke beberapa relay untuk cakupan firehose penuh, dan konversi output XRPC ke Markdown untuk arsip lokal portabel.</p>
+    </div>
+
+    <h2>Apa yang sebenarnya diberikan ATProto kepada kreator yang tidak diberikan Bluesky</h2>
+
+    <p>ATProto (Authenticated Transfer Protocol) adalah protokol terbuka yang menggerakkan Bluesky. Tiga bagian penting bagi kreator: PDS, AppView, dan relay. PDS (Personal Data Server) adalah tempat data akun Anda hidup: postingan, suka, ikuti, blokir, daftar. AppView adalah front-end read-optimized yang membangun feed. Relay adalah stream peristiwa yang menyiarkan postingan baru ke setiap AppView secara real time. Ketiga bagian dapat saling dipertukarkan, dan itulah intinya.</p>
+
+    <p>Alasan mengapa gelombang Eurosky menjadi berita nyata bagi kreator yang menulis long-form di Bluesky adalah sederhana: hingga awal 2026, hampir setiap PDS di-host oleh Bluesky Social PBC, dan hampir setiap AppView adalah bsky.app. Hari ini, penyedia PDS yang di-host di UE seperti Black Forest, Greenhost, dan beberapa co-op regional mengoperasikan PDS produksi yang berbicara protokol yang sama, menerima DID yang sama, dan me-resolve handle yang sama. Akun Bluesky yang dibuat di bsky.app dapat dipindahkan ke PDS Eurosky tanpa kehilangan satu pun pengikut, dan endpoint baca publik berfungsi terhadap backend mana pun.</p>
+
+    <h2>Mengapa gelombang migrasi terjadi pada 2026 (bukan 2024 atau 2025)</h2>
+
+    <p>Tiga hal berubah pada 2025 dan 2026 yang membuat gelombang Eurosky secara teknis mungkin. Pertama, spesifikasi ATProto mencapai titik stabil di mana format ekspor CAR (Content Addressable aRchive) mencakup status akun lengkap, yang berarti memigrasi PDS tidak lagi memerlukan tooling kustom per penyedia. Kedua, spesifikasi relay terpisah dengan bersih sehingga relay di Frankfurt dapat berlangganan ke relay di Ashburn tanpa menggandakan atau kehilangan peristiwa. Ketiga, Bluesky Social PBC menerbitkan komitmen tertulis bahwa bsky.app resmi akan terus federasi dengan PDS di luar AS, yang menghilangkan risiko hukum bagi organisasi dengan persyaratan ketat tentang residensi data.</p>
+
+    <p>Bagi Waag dan pelaku awal lainnya, keputusan ini lebih tentang kepatuhan dan latensi daripada ideologi. PDS yang di-host di UE mengurangi round-trip time bagi pengguna Eropa dari 100-180ms menjadi 10-30ms. Audit GDPR menjadi sepele ketika data tidak pernah meninggalkan UE. Dan pertanyaan moderasi yang membayangi bsky.app sejak 2024 menjadi lebih mudah dijawab ketika PDS dioperasikan oleh organisasi nirlaba dengan kebijakan moderasi yang dipublikasikan.</p>
+
+    <h2>Tiga bagian yang sebenarnya perlu Anda ketahui</h2>
+
+    <table>
+      <thead>
+        <tr><th>Komponen</th><th>Apa fungsinya</th><th>Siapa yang mengoperasikannya (2026)</th><th>Mengapa penting bagi kreator</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>PDS</strong></td><td>Menyimpan akun Anda: postingan, suka, ikuti, blokir, daftar</td><td>bsky.social (AS), Black Forest (UE), Greenhost (NL), self-hosted</td><td>Berpindah dengan bebas; DID dan handle Anda ter-resolve di semua PDS</td></tr>
+        <tr><td><strong>AppView</strong></td><td>Indeks read-optimized yang menggerakkan feed, pencarian, notifikasi</td><td>bsky.app (AS), Eurosky AppView (UE, 2026), fork komunitas</td><td>Beralih AppView tidak mengubah akun Anda, hanya UI-nya</td></tr>
+        <tr><td><strong>Relay</strong></td><td>Firehose dari setiap postingan publik, disiarkan ke AppView</td><td>bsky.network (AS), eu.relay (UE, 2026), mirror komunitas</td><td>Untuk cakupan penuh postingan UE, berlangganan ke kedua relay</td></tr>
+      </tbody>
+    </table>
+
+    <p>Insight kunci: akun Anda hidup di satu PDS, tetapi dapat <em>dibaca</em> dari AppView mana pun yang dapat mencapai PDS tersebut, dan <em>ditemukan</em> oleh AppView mana pun yang berlangganan ke relay yang membawa firehose. Tidak ada server pusat, tidak ada pemilik, dan tidak ada lock-in.</p>
+
+    <h2>Ekspor arsip Bluesky Anda dalam satu perintah</h2>
+
+    <p>Ekspor resmi Bluesky memberi Anda daftar JSONL dari setiap postingan publik ditambah file CAR dengan repo akun lengkap. Anda dapat menjalankannya dari halaman pengaturan, atau memicu secara terprogram dengan SDK atproto. File CAR adalah aset yang ingin Anda simpan: itu adalah arsip self-contained dan content-addressed yang dapat diimpor ulang oleh PDS atau AppView mana pun. Skrip Python di bawah ini mengekspor file CAR dan memverifikasi hash-nya.</p>
+
+    <pre><code>from atproto import Client
+import hashlib, sys
+
+client = Client(base_url="https://api.bsky.app")
+client.login("you.bsky.social", "your-app-password")
+
+# 1. Request a CAR export of your full repo
+export = client.com.atproto.server.requestAccountExport()
+print(f"Export job: {export.id}, status={export.state}")
+
+# 2. Wait for it to finish (poll every 30s, up to 10 min)
+import time
+for _ in range(20):
+    job = client.com.atproto.server.getAccountExportStatus(export.id)
+    if job.state == "ready":
+        break
+    time.sleep(30)
+else:
+    sys.exit("Export did not finish in 10 minutes")
+
+# 3. Download the CAR file and verify
+car_bytes = client.com.atproto.server.getAccountExport(job.id, decode=False)
+sha = hashlib.sha256(car_bytes).hexdigest()
+with open(f"bluesky-export-{job.id}.car", "wb") as f:
+    f.write(car_bytes)
+print(f"CAR file saved: {len(car_bytes)} bytes, sha256={sha[:16]}...")</code></pre>
+
+    <p>Jalankan ini sekali per kuartal dan Anda memiliki backup portabel lengkap. File CAR adalah apa yang akan Anda serahkan ke penyedia PDS baru jika Anda memutuskan untuk bermigrasi ke Eurosky, dan juga merupakan format yang dapat dibaca <code>ThreadGrab</code> secara langsung untuk menghasilkan arsip Markdown yang bersih.</p>
+
+    <h2>Berlangganan ke beberapa relay untuk cakupan firehose penuh</h2>
+
+    <p>Setelah pemisahan Eurosky, tidak ada satu relay pun yang mencakup seluruh jaringan. bsky.network masih melayani PDS yang di-host di AS, eu.relay mencakup PDS yang di-host di UE, dan sejumlah kecil relay komunitas menggabungkan keduanya. Bagi kreator yang ingin menemukan dan mengarsipkan postingan dari seluruh jaringan, Anda perlu berlangganan ke lebih dari satu. Resep di bawah ini membuka dua langganan WebSocket secara paralel dan menulis setiap peristiwa ke file JSONL yang dapat Anda grep atau konversi nanti.</p>
+
+    <pre><code>import asyncio, json, websockets
+
+async def subscribe_relay(url, out_file, label):
+    async with websockets.connect(url) as ws:
+        await ws.send(json.dumps({
+            "type": "com.atproto.sync.subscribeRepos",
+            "wantTlds": ["bsky.social"] if "us" in label else ["eurosky"]
+        }))
+        with open(out_file, "a") as f:
+            async for msg in ws:
+                evt = json.loads(msg)
+                # Only persist create/post events with text
+                if evt.get("action") == "create":
+                    rec = evt.get("record", {})
+                    if rec.get("$type") == "app.bsky.feed.post":
+                        f.write(json.dumps({
+                            "did": evt["repo"],
+                            "rkey": evt["path"].split("/")[-1],
+                            "text": rec.get("text", ""),
+                            "created": rec.get("createdAt"),
+                            "relay": label,
+                        }) + "\n")
+
+async def main():
+    await asyncio.gather(
+        subscribe_relay("wss://bsky.network/xrpc/com.atproto.sync.subscribeRepos",
+                        "firehose-us.jsonl", "us"),
+        subscribe_relay("wss://eu.relay/xrpc/com.atproto.sync.subscribeRepos",
+                        "firehose-eu.jsonl", "eu"),
+    )
+
+asyncio.run(main())</code></pre>
+
+    <p>Jalankan selama 24 jam, deduplikasi berdasarkan <code>(did, rkey)</code>, dan Anda akan memiliki arsip yang hampir lengkap dari hari sebelumnya di jaringan ATProto. Bagi kebanyakan kreator, deduplikasi menjadi beberapa ratus ribu postingan sudah cukup untuk menangkap setiap balasan dan quote-post yang relevan.</p>
+
+    <h2>Baca dari PDS atau AppView mana pun dengan kode yang sama</h2>
+
+    <p>Salah satu kemenangan yang kurang dihargai dari gelombang Eurosky adalah bahwa endpoint baca XRPC berada di tingkat protokol, bukan tingkat server. Kode Python yang sama yang membaca dari bsky.app juga membaca dari PDS Eurosky atau relay self-hosted, selama Anda mengarahkannya ke base URL yang benar. ThreadGrab menggunakan properti ini untuk membaca postingan Bluesky dari backend apa pun yang patuh tanpa perubahan kode, yang berarti kreator dapat berpindah hosting tanpa kehilangan pipeline baca mereka.</p>
+
+    <pre><code>from atproto import Client
+
+def read_bluesky_feed(handle_or_did, base_url, limit=50):
+    # Read the latest posts from any Bluesky account on any backend.
+    client = Client(base_url=base_url)
+    profile = client.app.bsky.actor.get_profile({"actor": handle_or_did})
+    feed = client.app.bsky.feed.get_author_feed(
+        {"actor": profile.did, "limit": limit}
+    )
+    return [
+        {
+            "text": item.post.record.text,
+            "created_at": item.post.record.created_at,
+            "uri": item.post.uri,
+            "backend": base_url,
+        }
+        for item in feed.feed
+    ]
+
+# Same code, three different backends
+us_posts = read_bluesky_feed("you.bsky.social", "https://api.bsky.app")
+eu_posts = read_bluesky_feed("you.eurosky.social", "https://api.eurosky.social")
+self_posts = read_bluesky_feed("you.example.com", "https://pds.example.com")</code></pre>
+
+    <p>Ini adalah properti yang menjadi sandaran gelombang Eurosky: handle kreator ter-resolve di ketiga backend, dan permukaan API baca identik. 30 baris di atas adalah seluruh cerita migrasi untuk sisi baca.</p>
+
+    <h2>Konversi ekspor CAR menjadi arsip Markdown portabel</h2>
+
+    <p>Setelah Anda memiliki ekspor CAR, Anda dapat mengonversinya menjadi arsip Markdown yang dapat dicari dengan beberapa baris Python. Skrip di bawah ini membaca file CAR, menelusuri catatan repo, dan menulis satu file Markdown per postingan ke direktori <code>archive/</code>. Format ini adalah apa yang dihasilkan <strong>ThreadGrab</strong> secara native untuk X, LinkedIn, dan Bluesky, yang berarti tooling pencarian offline dan diff yang sama berfungsi di ketiga platform.</p>
+
+    <pre><code>from atproto.car import read_car
+from atproto.xrpc_client import models
+import os, pathlib
+
+def car_to_markdown(car_path, out_dir):
+    pathlib.Path(out_dir).mkdir(exist_ok=True)
+    with open(car_path, "rb") as f:
+        car_data = f.read()
+    # Walk every record in the CAR file
+    records = []
+    for cid, block, _path in read_car(car_data):
+        rec = models.get_or_create(block)
+        if rec.py_type == "app.bsky.feed.post":
+            records.append(rec)
+    records.sort(key=lambda r: r.created_at)
+    for r in records:
+        slug = r.created_at.replace(":", "-")[:19]
+        fname = f"{out_dir}/{slug}.md"
+        with open(fname, "w") as out:
+            out.write(f"# {r.created_at}\n\n")
+            out.write(r.text + "\n")
+    return len(records)
+
+# Convert your Bluesky export
+n = car_to_markdown("bluesky-export-12345.car", "archive/bluesky")
+print(f"Wrote {n} posts to archive/bluesky/")</code></pre>
+
+    <p>Direktori <code>archive/bluesky/</code> yang dihasilkan adalah teks biasa. Anda dapat meng-grep, melakukan version-control dengan Git, mencari dengan ripgrep, atau memberikannya ke LLM. Alur kerja yang sama berfungsi terhadap thread X, postingan LinkedIn, atau newsletter Substack, yang merupakan inti dari pola arsip portabel.</p>
+
+    <h2>Apa yang dilakukan ThreadGrab untuk gambaran ini</h2>
+
+    <p>ThreadGrab adalah alat read-side dalam cerita ini. Ia mengambil URL dari X, Bluesky, LinkedIn, atau URI postingan Bluesky, mengambil postingan, dan mengembalikan Markdown yang bersih. Gelombang Eurosky adalah kabar baik bagi pengguna ThreadGrab karena API baca tidak berubah: ThreadGrab berbicara XRPC, XRPC berfungsi terhadap PDS mana pun, dan jadi postingan yang di-host di Eurosky tidak lebih sulit untuk ditangkap daripada postingan bsky.app. Sudut arsip portabel sama seperti untuk X: Anda harus memiliki salinan dari apa yang Anda tulis, dalam format yang tidak bergantung pada penyedia tunggal mana pun.</p>
+
+    <p>Bagi kreator yang bermigrasi ke Eurosky, urutan praktisnya adalah: ekspor file CAR dari PDS saat ini, impor ke PDS baru, dan jalankan ThreadGrab terhadap handle baru untuk mengonfirmasi jumlah postingan cocok. Jika Anda ingin arsip Markdown bersama file CAR, ThreadGrab dapat membaca file CAR secara langsung dan menghasilkan direktori <code>archive/</code> yang ditunjukkan dalam cuplikan di atas. Kedua format saling melengkapi: file CAR adalah backup otoritatif, dan arsip Markdown adalah lapisan yang dapat dibaca manusia.</p>
+
+    <h2>Pertanyaan yang sering diajukan</h2>
+
+    <div class="faq-item">
+      <strong>Apa itu Eurosky dan mengapa gelombang migrasi terjadi pada 2026?</strong>
+      <p>Eurosky adalah istilah payung untuk infrastruktur PDS dan relay Bluesky yang di-host di Eropa (misalnya co-op Greenhost dan Black Forest yang muncul pada akhir 2025 dan awal 2026). Gelombang migrasi merupakan kombinasi dari kenyamanan GDPR, latensi lebih rendah bagi pengguna UE, dan ketidakpercayaan yang meningkat terhadap moderasi AppView yang di-host di AS. Ini bukan fork dari Bluesky; ini adalah protokol ATProto yang sama dengan operator infrastruktur yang berbeda.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Apakah keluar dari AppView utama Bluesky berarti kehilangan pengikut saya?</strong>
+      <p>Tidak. Identitas ATProto berada di PDS (Personal Data Server) Anda, bukan di AppView mana pun. DID dan handle Anda ter-resolve di AppView mana pun yang patuh, dan pengikut di bsky.app masih akan melihat postingan Anda melalui AppView mereka sendiri selama PDS Anda dapat dijangkau. Migrasi adalah perubahan hosting, bukan pendaftaran ulang.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Bisakah saya membaca postingan dari PDS Eurosky dengan alat yang sama seperti yang saya pakai untuk bsky.app?</strong>
+      <p>Ya, dengan catatan. Alat apa pun yang berbicara API publik ATProto (XRPC) berfungsi melawan PDS mana pun. Alat yang bergantung pada endpoint khusus bsky.app (misalnya feed generator bsky.social) memerlukan perubahan konfigurasi kecil untuk menunjuk ke relay Eurosky. ThreadGrab membaca endpoint XRPC, sehingga ia bekerja lintas bsky.app, Eurosky, dan PDS self-hosted tanpa penyesuaian.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Apakah arsip Bluesky saya dapat di-ekspor, dan apakah itu salinan lengkap dari postingan saya?</strong>
+      <p>Ya. Ekspor resmi Bluesky memberi Anda daftar JSONL postingan ditambah file CAR dengan repo lengkap. Anda dapat mengimpor ulang ke PDS mana pun, atau mengonversi ke Markdown dengan ThreadGrab untuk arsip lokal yang dapat dibaca. Ekspor tidak termasuk DM, akun yang diblokir, atau konten yang dihapus sebelum tanggal ekspor.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Apakah firehose Bluesky masih berfungsi setelah pemisahan Eurosky?</strong>
+      <p>Ya, tetapi firehose dipecah per relay. Relay bsky.social masih menerbitkan firehose dari setiap postingan di PDS bsky.app. PDS Eurosky menerbitkan ke relay mereka sendiri, dan sejumlah kecil relay komunitas menggabungkan keduanya. Untuk cakupan penuh, Anda harus berlangganan ke beberapa relay atau ke mirror CAR yang di-ekspor.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Haruskah saya memindahkan PDS saya ke Eurosky sebelum menulis tindak lanjut artikel ini?</strong>
+      <p>Tidak untuk artikel ini, tetapi rencanakan perpindahan dalam tiga langkah: (1) ekspor repo Anda saat ini melalui halaman pengaturan resmi Bluesky, (2) sediakan akun PDS Eurosky (handle dapat dimigrasi dengan cool-off 72 jam), (3) impor ulang file CAR. Jadwalkan jendela pemeliharaan 30 menit; pengikut akan melihat routing PDS baru dalam hitungan menit setelah impor.</p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/id/">Home</a> &middot; <a href="/id/blog/">Blog</a> &middot; <a href="/id/about/">About</a> &middot; <a href="/id/privacy/">Privacy</a>
+    <br>Not affiliated with X Corp., Bluesky Social PBC, LinkedIn Corporation, or Microsoft Corporation.
+  </footer>
+</body>
+</html>

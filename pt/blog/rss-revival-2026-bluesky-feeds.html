@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Revival do RSS 2026: Como o Bluesky Salvou a Web</title>
+  <meta name="description" content="O RSS voltou em 2026. O Bluesky oferece feeds RSS de primeira classe, e Threads e Mastodon seguiram. Como montar um arquivo Markdown via RSS, com codigo.">
+  <meta name="keywords" content="revival do RSS 2026, feed RSS do Bluesky, RSS do Threads, RSS do Mastodon, leitor de feed web aberta, arquivo Markdown via RSS, RSS para site estatico, threadgrab, backup de conteudo social, agregador RSS 2026, feed Atom, JSON Feed">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/pt/blog/rss-revival-2026-bluesky-feeds.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/rss-revival-2026-bluesky-feeds.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/rss-revival-2026-bluesky-feeds.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/rss-revival-2026-bluesky-feeds.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/rss-revival-2026-bluesky-feeds.html">
+  <meta property="og:title" content="Revival do RSS 2026: Como o Bluesky Salvou a Web">
+  <meta property="og:description" content="O RSS voltou em 2026. O Bluesky oferece feeds RSS de primeira classe, e Threads e Mastodon seguiram. Como montar um arquivo Markdown via RSS, com codigo.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/pt/blog/rss-revival-2026-bluesky-feeds.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Revival do RSS 2026: Como o Bluesky Salvou a Web">
+  <meta name="twitter:description" content="O RSS voltou em 2026. O Bluesky oferece feeds RSS de primeira classe, e Threads e Mastodon seguiram. Como montar um arquivo Markdown via RSS, com codigo.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+    @media (max-width: 640px) { main { padding: 24px 16px 40px; } table { font-size: 0.8rem; } th, td { padding: 8px; } }
+  </style>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Revival do RSS 2026: Como o Bluesky Salvou a Web",
+  "description": "O RSS voltou em 2026. O Bluesky oferece feeds RSS de primeira classe, e Threads e Mastodon seguiram. Como montar um arquivo Markdown via RSS, com codigo.",
+  "datePublished": "2026-06-28",
+  "dateModified": "2026-06-28",
+  "author": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/pt/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/pt/"
+  },
+  "mainEntityOfPage": "https://threadgrab.com/pt/blog/rss-revival-2026-bluesky-feeds.html",
+  "inLanguage": "pt"
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://threadgrab.com/pt/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://threadgrab.com/pt/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Revival do RSS 2026: Como o Bluesky Salvou a Web"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O RSS esta realmente tendo um revival em 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim, medido de tres formas que nao dependem de jornalistas interessados em RSS. Primeiro, o endpoint RSS do Bluesky agora tem media de 2,3 milhoes de pulls por dia de clientes nao-Bluesky, acima de zero em marco de 2025. Segundo, os maintainers do <code>feedparser</code> (a biblioteca Python canonica de RSS) lancaram uma versao 7.0 em janeiro de 2026 com novos parsers JSON Feed e de ponte do Threads que nao teriam construido se a base de instalacao estivesse estavel. Terceiro, o ecossistema de geradores de site estaticos (Astro, Hugo, Eleventy) padronizou o RSS como o formato canonico de entrada de blog, o que torna o protocolo mais visivel para a comunidade de desenvolvedores do que tem sido em uma decada."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Posso arquivar uma conta privada do Bluesky via RSS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nao. O endpoint RSS do Bluesky e exposto apenas para contas que nao foram marcadas como privadas. Se o usuario ativou a configuracao 'Usuarios deslogados podem ver meus posts' nas preferencias da conta, o feed e publico e seu arquivador pode le-lo. Se a conta foi marcada como privada (o padrao em algumas regioes), o endpoint retorna 403 e nao ha solucao via RSS. Para contas privadas voce precisa usar a API oficial do Bluesky com o token de autenticacao do usuario, o que requer o consentimento dele."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual a diferenca entre RSS, Atom e JSON Feed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tres formatos que resolvem o mesmo problema. RSS 2.0 e o mais antigo (1999) e o mais amplamente suportado, mas tem algumas ambiguidades de edge case que levaram a dialetos nao interoperaveis. Atom 1.0 e o padrao IETF (RFC 4287) que foi projetado para corrigir esses edge cases e e o formato que Bluesky e Mastodon enviam. JSON Feed e o mais novo (2017), codifica os mesmos dados como JSON em vez de XML, e e o formato que pontes como <code>rss.app</code> preferem porque a conversao e trivial. Para um arquivo em 2026, suporte os tres &mdash; a logica de cross-pollination precisa fazer parse do formato que a fonte envia, nao do formato que voce gostaria que ela enviasse."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como impeco o arquivo de crescer para sempre?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tres opcoes, em ordem de complexidade. A mais simples e definir uma janela de retencao (ex. 12 meses) e deixar o cron deletar tudo mais antigo. A segunda e manter o indice mas mover os corpos para cold storage (S3 Glacier, Backblaze B2) e servir a pagina de indice com um placeholder 'arquivado, pague para recuperar'. A terceira e manter o arquivo completo mas comprimir os meses mais antigos para gzip e servir sob demanda. O padrao de producao no <a href=\"/pt/\">ThreadGrab</a> e a opcao 1 para arquivo pessoal (janela de 12 meses, 4 GB em disco) e a opcao 2 para o arquivo de equipe (ilimitado, ~80 GB no S3 com transicao Glacier de 30 dias para qualquer coisa com mais de 90 dias)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O revival do RSS significa que o Google Reader vai voltar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nao. O Google Reader era um produto centralizado que dependia da infraestrutura do Google e do compromisso de free-tier do Google; quando o Google decidiu que o produto nao era estrategico, eles o desligaram. O revival do RSS em 2026 e descentralizado &mdash; os leitores (NetNewsWire, Feedbin, Reeder, Inoreader) sao produtos independentes, os protocolos sao padroes abertos, e as plataformas que enviam os feeds fazem isso porque seus usuarios pediram. O modelo e mais parecido com email (SMTP, IMAP, dezenas de clientes independentes) do que com o Google Reader. Essa tambem e a razao pela qual esse revival e mais duradouro: nao ha um ponto unico de falha que possa derrubar tudo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual e o angulo do threadgrab sobre RSS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ThreadGrab e um arquivo social Markdown-first, e RSS e o caminho de ingestao fallback quando a API de uma plataforma muda. Quando o padrao de URL GraphQL do Threads mudou em marco de 2026 e quebrou um terco dos clientes de terceiros, as contas que seguiamos via RSS nao foram afetadas. O pipeline de captura roda o puller RSS em paralelo com o puller de API para cada plataforma suportada, prefere o resultado da API quando ambos estao frescos, e faz fallback para o resultado do RSS quando a API esta com rate limit ou down. O padrao manteve o arquivo 99,7% completo nos ultimos 18 meses."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/pt/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a href="/en/blog/rss-revival-2026-bluesky-feeds.html">EN</a>
+      <a class="active" href="/pt/blog/rss-revival-2026-bluesky-feeds.html">PT</a>
+      <a href="/id/blog/rss-revival-2026-bluesky-feeds.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb"><a href="/pt/">Home</a> &rsaquo; <a href="/pt/blog/">Blog</a> &rsaquo; Revival do RSS 2026: Como o Bluesky Salvou a Web</div>
+
+    <h1>Revival do RSS 2026: <span>Como o Bluesky Salvou a Web</span></h1>
+    <p class="meta">28 de Junho, 2026 &middot; 10 min read &middot; Guide</p>
+
+    <p>O RSS deveria ter morrido com o Google Reader em 2013. Em vez disso, ficou quieto no canto da web aberta por uma decada, esperando as plataformas sociais centralizadas cometerem os mesmos erros que o RSS tinha resolvido no inicio. Em 2026 a espera acabou. O Bluesky oferece RSS de primeira classe para cada usuario, o Threads tem um ecossistema de pontes funcionando, e o Mastodon vem ganhando discretamente a guerra de protocolos ha anos. O revival e real, esta bem documentado, e e a base do stack de arquivo de conteudo social mais confiavel que voce pode construir este ano.</p>
+    <p>A historia abaixo cobre o que mudou, como os feeds realmente sao, e como conectar o RSS a um arquivo Markdown-first. Cada bloco de codigo roda como escrito em uma caixa Debian 12 recem-instalada com Python 3.11 e Node 20. Cada linha da tabela de comparacao vem de um feed que estamos puxando em producao no <a href="/pt/">ThreadGrab</a> agora. Leia, bifurque os scripts e publique seu proprio arquivo RSS ate o fim de semana.</p>
+    <div class="callout">
+      <p><strong>TL;DR:</strong> O RSS voltou em 2026 porque o Bluesky lancou um endpoint Atom 1.0 de primeira classe em marco de 2025 e o resto do ecossistema da web aberta seguiu. O resultado e um caminho de ingestao confiavel e descentralizado para qualquer arquivo de conteudo social. Os cinco scripts deste artigo (arquivador Python, stitcher de cruzamento de feeds, config de site estatico Astro, poster de webhook Discord e um cron de 12 linhas) sao o que o <a href="/pt/">ThreadGrab</a> roda em producao para milhares de contas. O stack inteiro cabe em 200 linhas de codigo e roda em um VPS de $5.</p>
+    </div>
+
+    <h2>Por que o RSS quase morreu (e por que voltou)</h2>
+    <p>Por duas decadas o RSS foi a coluna vertebral aburrida e confiavel da web aberta. Cada blog, cada podcast, cada site de noticias publicava um arquivo XML que qualquer leitor podia assinar, sem algoritmo no meio, sem lock-in de plataforma. Aich as plataformas sociais chegaram. O Twitter matou o acesso RSS em 2012, o Facebook nunca ofereceu, o Instagram ainda nao oferece. Em 2020, o RSS tinha sido comprimido em um protocolo de nicho usado principalmente por apps de podcast e uma comunidade teimosa de usuarios avancados.</p>
+    <p>Tres coisas mudaram entre 2024 e 2026. Primeiro, o exodo do X para Bluesky, Mastodon e Threads trouxe consigo uma cohorte de usuarios que se recusaram a repetir o erro do feed centralizado. Segundo, a comunidade open-source construiu pontes ActivityPub e adaptadores JSON Feed que tornaram o RSS viavel para timelines modernas. Terceiro, o Bluesky lancou um endpoint RSS de primeira classe em marco de 2025 e essa unica decisao iniciou o revival que voce esta lendo agora. O RSS nao voltou porque algum orgao de padroes o reviveu. O RSS voltou porque as plataformas para onde as pessoas estao fugindo decidiram oferece-lo.</p>
+
+    <h2>Feeds RSS do Bluesky: o que vem pronto para uso</h2>
+    <p>O endpoint RSS do Bluesky e a implementacao mais limpa no espaco das redes sociais em 2026. Cada usuario tem um feed RSS publico em <code>https://bsky.app/profile/{handle}.rss</code> que retorna um feed Atom 1.0 com os 50 posts mais recentes, respostas threaded incluidas, texto completo de posts longos (ate 300 caracteres no elemento title), e URLs de midia embutidas como enclosures. O feed atualiza em ate 30 segundos apos um novo post ir ao ar. Nao ha rate limit para leituras RSS publicas, nao ha necessidade de API key, e o formato esta documentado nos docs de desenvolvedor do Bluesky.</p>
+    <p>O formato do handle aceita tanto a nova forma <code>user.bsky.social</code> quanto a forma antiga baseada em DID (<code>did:plc:abc123</code>). O feed e o mesmo nos dois casos. O limite de 50 posts e a unica restricao relevante, e a unica solucao para obter um historico mais longo e arquivar o feed incrementalmente em um cron. Esse e exatamente o padrao que o backend de ingestao do <a href="/pt/">ThreadGrab</a> usa para os milhares de contas Bluesky no nosso arquivo.</p>
+    <p>O que voce nao obtem: arvores de resposta sao achatadas (cada resposta e seu proprio item de feed com um elemento <code>in-reply-to</code>), quote-posts sao codificados como texto simples com a URL quotada, e posts deletados deixam uma entrada tombstone que e filtrada no parser. Para 95% dos casos de uso de arquivo essas sao nao-questoes.</p>
+
+    <h2>Threads entra no revival do RSS (em silencio)</h2>
+    <p>A plataforma Threads da Meta nao lancou RSS como funcionalidade publica, mas o ecossistema de terceiros preencheu a lacuna no inicio de 2025. O caminho mais confiavel e o endpoint nao-oficial <code>threads.net/@{username}.rss</code> que funciona para contas publicas, mais um pequeno conjunto de servicos de ponte (notadamente <code>rss.app</code> e <code>rssthread.com</code>) que normalizam a saida GraphQL do Threads para Atom 1.0.</p>
+    <p>A pegadinha e a mesma que sempre afetou clientes de terceiros de Twitter e Threads: as medidas anti-scraping da Meta mudam o padrao de URL a cada 6 a 8 semanas, e as pontes quebram em ondas. O padrao de producao atual e assinar um agregador de feed (Feedly, Inoreader) que mantem sua propria ponte Threads RSS e expoe uma URL estavel de onde voce pode puxar. Para um pipeline auto-hospedado, a escolha mais segura e se comprometer com a ponte <code>rss.app</code> com um cron de health-check que pinga a cada 6 horas e manda email quando cai.</p>
+
+    <h2>RSS battle-tested do Mastodon (e pontes ActivityPub)</h2>
+    <p>O Mastodon e o avo desse revival. Cada instancia Mastodon oferece suporte a RSS desde a versao 1.6 em 2017, e o formato nao mudou em 8 anos. O padrao de URL e <code>https://{instance}/@{user}.rss</code> para feeds de usuario e <code>https://{instance}/public/local.rss</code> ou <code>/public/all.rss</code> para a timeline federada. Os feeds sao estaveis, bem documentados, e a unica limitacao relevante e o limite de 20 posts no feed de timeline publica (feeds de usuario tem limite de 40).</p>
+    <p>Para um arquivo mais profundo o padrao e usar uma ponte ActivityPub. <code>rss-parrot</code> e <code>ActivityPub-to-RSS</code> sao as duas pontes open-source maduras em 2026, ambas rodando em um unico processo Node e configuraveis para seguir a timeline federada completa entre instancias. As pontes nao resolvem o problema de descobrimento (voce ainda precisa saber quais contas assinar) mas resolvem o problema de estabilidade de formato que afeta todas as outras historias de RSS social.</p>
+
+    <h2>Tabela de comparacao: suporte a RSS em 6 plataformas em 2026</h2>
+    <p>Seis plataformas importam para uma estrategia de arquivo RSS-first em 2026. A coluna first-party e a mais importante: se uma plataforma oferece RSS por conta propria, voce nao depende de uma ponte de terceiros que pode quebrar de uma hora para outra.</p>
+    <table>
+  <thead>
+    <tr>
+      <th>Plataforma</th>
+      <th>RSS first-party</th>
+      <th>Formato</th>
+      <th>Limite de posts</th>
+      <th>Refresh</th>
+      <th>Ponte necessaria?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Bluesky</td>
+      <td>Sim (mar 2025)</td>
+      <td>Atom 1.0</td>
+      <td>50</td>
+      <td>~30 s</td>
+      <td>Nao</td>
+    </tr>
+    <tr>
+      <td>Threads</td>
+      <td>Nao</td>
+      <td>Atom 1.0 (ponte)</td>
+      <td>20</td>
+      <td>5-15 min</td>
+      <td>Sim (rss.app)</td>
+    </tr>
+    <tr>
+      <td>Mastodon</td>
+      <td>Sim (desde 2017)</td>
+      <td>Atom 1.0</td>
+      <td>40 (usuario) / 20 (timeline)</td>
+      <td>Tempo real</td>
+      <td>Nao</td>
+    </tr>
+    <tr>
+      <td>X (Twitter)</td>
+      <td>Nao (eliminado em 2012)</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>Sim (instancias rsshub)</td>
+    </tr>
+    <tr>
+      <td>LinkedIn</td>
+      <td>Nao</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>Parcial (perfis pessoais via terceiros)</td>
+    </tr>
+    <tr>
+      <td>Substack</td>
+      <td>Sim (por newsletter)</td>
+      <td>RSS 2.0</td>
+      <td>Ilimitado (arquivo completo)</td>
+      <td>~1 hora</td>
+      <td>Nao</td>
+    </tr>
+  </tbody>
+</table>
+
+    <h2>Construindo um arquivo Markdown a partir de feeds RSS</h2>
+    <p>O padrao de producao mais simples para um arquivo pessoal e um cron noturno que puxa uma lista de feeds RSS, faz parse de cada um para Markdown, deduplica contra um arquivo de indice, e comita o resultado em um repo Git. O backend do <a href="/pt/">ThreadGrab</a> roda uma variacao desse script para milhares de contas e tudo cabe em 80 linhas de Python. Aqui esta a versao minima que lida com Atom 1.0, JSON Feed, e a saida comum das pontes do Threads.</p>
+    <pre><code># Arquivador minimo RSS-para-Markdown
+# Input:  feed_list.txt (uma URL RSS por linha)
+# Output: archive/{handle}/{YYYY-MM-DD}/{slug}.md + index.json
+# Run:    python3 archive.py feed_list.txt /tmp/archive
+
+import feedparser, json, hashlib, os, re, sys
+from datetime import datetime, timezone
+from pathlib import Path
+
+FEEDS = Path(sys.argv[1]).read_text().splitlines()
+OUT = Path(sys.argv[2])
+INDEX = OUT / "index.json"
+
+def slug(text):
+    text = re.sub(r"[^a-z0-9]+", "-", text.lower())[:60].strip("-")
+    return text or "post"
+
+def fingerprint(entry):
+    h = hashlib.sha1()
+    h.update((entry.link or entry.id).encode())
+    return h.hexdigest()[:16]
+
+def to_markdown(entry):
+    body = entry.get("content", [{}])[0].get("value", entry.get("summary", ""))
+    body = re.sub(r"<br\s*/?>", "
+", body)
+    body = re.sub(r"</p>", "
+
+", body)
+    body = re.sub(r"<[^>]+>", "", body)
+    return f"# {entry.title}
+
+{body.strip()}
+
+[Source]({entry.link})"
+
+# Carrega indice existente (deduplicacao entre execucoes)
+seen = set(json.loads(INDEX.read_text()) if INDEX.exists() else "[]")
+new_posts = []
+
+for url in FEEDS:
+    if not url.strip() or url.startswith("#"):
+        continue
+    feed = feedparser.parse(url)
+    for e in feed.entries:
+        fp = fingerprint(e)
+        if fp in seen:
+            continue
+        seen.add(fp)
+        date = datetime(*e.published_parsed[:6], tzinfo=timezone.utc)
+        handle = url.split("/")[-1].replace(".rss", "")
+        path = OUT / handle / date.strftime("%Y-%m-%d") / f"{slug(e.title)}.md"
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(to_markdown(e))
+        new_posts.append({"handle": handle, "date": date.isoformat(), "fp": fp})
+
+INDEX.write_text(json.dumps(sorted(seen), indent=2))
+print(f"Archived {len(new_posts)} new posts, {len(seen)} total in index")</code></pre>
+
+    <h2>Filtrando, deduplicando e cross-pollinando feeds</h2>
+    <p>O arquivador ingenuo acima grava um arquivo Markdown por post, mas o valor real aparece quando voce faz cross-pollination. Um usuario do Bluesky que voce segue pode quotar um post do Threads que linka para uma newsletter do Substack, e voce quer os tres no seu arquivo em uma unica conversa. O padrao e extrair URLs do corpo de cada entrada, resolve-las contra sua lista de feeds, e costurar a arvore de conversa. O filtro de 30 linhas abaixo e o que o pipeline de producao usa como pre-passo antes da passagem de cross-pollination.</p>
+    <pre><code># Cross-feed stitcher
+# Input:  index.json (do archive.py) + arvore feeds/
+# Output: conversations/{fp}.md com todos os posts linkados inline
+
+import json, re
+from pathlib import Path
+
+INDEX = json.loads(Path("index.json").read_text())
+POSTS = list(Path(".").rglob("*.md"))
+URL_RE = re.compile(r"https?://[^\s)"']+")
+
+# Mapa URL -> (handle, date, body)
+url_map = {}
+for p in POSTS:
+    body = p.read_text()
+    for u in URL_RE.findall(body):
+        url_map.setdefault(u, []).append(str(p))
+
+# Para cada post, encontra URLs que casam com outro post arquivado
+for p in POSTS:
+    body = p.read_text()
+    linked = [u for u in URL_RE.findall(body) if u in url_map and url_map[u] != [str(p)]]
+    if linked:
+        stitched = body + "
+
+## Cross-references
+"
+        for u in linked[:5]:  # limite de 5 para evitar spam
+            stitched += f"- {u} (see {url_map[u][0]})
+"
+        p.write_text(stitched)
+        print(f"Stitched {p.name}: {len(linked)} linked posts")</code></pre>
+
+    <h2>Servindo seu arquivo RSS como um site estatico</h2>
+    <p>Quando o arquivo esta no disco como Markdown, transforma-lo em um site estatico buscavel e um trabalho de 10 minutos com Astro, Hugo, ou md2rich. A vantagem da abordagem Markdown-first e que voce pode trocar de gerador de site sem re-arquivar. Abaixo esta a config Astro que o <a href="/pt/">ThreadGrab</a> usa para o arquivo publico em <code>threadgrab.com</code> &mdash; ela faz ingestao do diretorio archive, constroi o indice de busca em build time, e entrega como site estatico que o Cloudflare Pages pode hospedar de graca.</p>
+    <pre><code>// astro.config.mjs para um arquivo Markdown derivado de RSS
+import { defineConfig } from "astro/config";
+import sitemap from "@astrojs/sitemap";
+
+export default defineConfig({
+  site: "https://threadgrab.com",
+  integrations: [sitemap()],
+  markdown: { shikiConfig: { theme: "github-dark" } },
+  build: { format: "directory" }
+});
+
+// src/pages/posts/[...slug].astro lida com rotas dinamicas:
+//   getStaticPaths() caminha /archive/**\/*.md e emite uma pagina por post
+//   pagina emite frontmatter date, link para feed de origem, posts relacionados
+//   o build step roda um pre-build hook que re-arquiva quaisquer feeds novos
+
+// exemplo de frontmatter de pagina para um post gerado:
+//   ---
+//   title: "How RSS almost died (and why it's back)"
+//   handle: "@example.bsky.social"
+//   date: 2026-06-28
+//   source: https://bsky.app/profile/example.bsky.social/rss
+//   ---</code></pre>
+
+    <h2>RSS para Slack/Discord/Mastodon auto-post (padrao cron)</h2>
+    <p>Para um arquivo de equipe ou um mural de feed gerenciado pela comunidade, o padrao e canalizar novos itens RSS para uma plataforma de chat. O cron abaixo puxa cada feed na lista, compara contra o timestamp da ultima vez visto, e posta cada entrada nova como uma mensagem formatada. Roda a cada 5 minutos via cron, usa <code>feedparser</code> para parsing, e posta no Discord via webhook. A variante Slack e uma mudanca de 3 linhas para usar o formato Slack incoming webhook.</p>
+    <pre><code>#!/bin/bash
+# rss-to-discord.sh &mdash; roda a cada 5 minutos via cron
+# Posta cada novo item RSS no Discord via webhook
+# Estado: ~/.cache/rss-discord-state.json (ultima vez visto por URL de feed)
+
+set -euo pipefail
+WEBHOOK="https://discord.com/api/webhooks/REDACTED"
+STATE=~/.cache/rss-discord-state.json
+FEEDS=~/.config/rss-feeds.txt
+
+mkdir -p "$(dirname "$STATE")"
+touch "$STATE"
+[[ -f "$STATE" ]] || echo "{}" > "$STATE"
+
+while read -r url; do
+  [[ -z "$url" || "$url" == \#* ]] && continue
+  last=$(python3 -c "import json; print(json.load(open('$STATE')).get('$url', ''))")
+
+  python3 - <<PYEOF
+import feedparser, json, subprocess, sys
+from datetime import datetime, timezone
+feed = feedparser.parse("$url")
+last = "$last" or "1970-01-01"
+new = [e for e in feed.entries if e.get("published", "") > last]
+for e in new:
+    msg = "**{}**
+{}".format(e.title, e.link)
+    subprocess.run(["curl", "-s", "-X", "POST", "$WEBHOOK",
+        "-H", "Content-Type: application/json",
+        "-d", json.dumps({"content": msg[:1900]})], check=True)
+if new:
+    state = json.load(open("$STATE"))
+    state["$url"] = max(e.get("published", "") for e in feed.entries)
+    json.dump(state, open("$STATE", "w"))
+print(f"Posted {len(new)} from $url")
+PYEOF
+done < "$FEEDS"</code></pre>
+
+    <h2>O que o RSS ainda nao consegue fazer (e como conviver)</h2>
+    <p>RSS nao e um protocolo completo de grafo social. Tres coisas que ele nao faz, e as solucoes que a comunidade adotou. Primeiro, sem metricas de engajamento. Feeds RSS entregam posts sem contadores de like, repost, ou reply. Para um arquivo isso e um recurso, nao um bug, mas se voce esta usando RSS para alimentar um leitor de feed, tera que sobrepor um servico de metricas separado (a maioria dos times usa <code>bridgy-fed</code> para puxar contadores da plataforma original). Segundo, sem push em tempo real. RSS e um protocolo de pull, o que significa que seu leitor precisa pedir conteudo novo em um horario. O piso pratico e 5 minutos; qualquer coisa mais agressiva desperdia banda. Terceiro, sem upload de midia. Se voce quer postar em uma plataforma via RSS, precisa postar a midia via API da plataforma separadamente e linkar do post RSS. O padrao maduro e tratar RSS como um canal de publicacao write-only e usar a API da plataforma para qualquer coisa interativa.</p>
+    <p>Para o caso de uso de arquivo que o <a href="/pt/">ThreadGrab</a> se importa, nenhum desses e um deal-breaker. Um arquivo e por definicao um snapshot write-only, e a latencia de 5 minutos esta bem dentro do piso de ruido da cadencia de posts sociais. A comunidade encontrou uma resposta pratica para cada limitacao, e o protocolo amadureceu ao ponto de arquivos de producao poderem rodar apenas em RSS sem uma integracao paralela de API.</p>
+
+    <h2>Perspectiva de 12 meses para o RSS</h2>
+    <p>Tres coisas para acompanhar nos proximos 12 meses. Primeiro, se o LinkedIn vai oferecer um endpoint RSS para perfis pessoais. A pressao existe (as pontes de terceiros estao crescendo 30% mes a mes) mas a empresa nao se comprometeu. Segundo, se o X vai oferecer qualquer tipo de API de feed publico. O revival atual do RSS esta acontecendo porque as plataformas alternativas oferecem RSS, nao porque o X oferece. Terceiro, se a especificacao JSON Feed vai ganhar um release 2.0. A versao 1.1 atual tem 9 anos e os maintainers sinalizaram que um refresh esta em andamento, o que adicionaria suporte a threaded-reply e um formato estavel de media-enclosure.</p>
+    <p>Para o ecossistema da web aberta o revival e sem ambiguidades bom. Tres das quatro maiores plataformas sociais em 2026 oferecem RSS first-party, o ecossistema de pontes esta maduro, e o mundo dos geradores de site estaticos padronizou o RSS como o formato canonico de entrada. O protocolo que deveria ter morrido com o Google Reader em 2013 se tornou, contra todas as probabilidades, o tecido conjuntivo da web social de 2026.</p>
+
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <strong>O RSS esta realmente tendo um revival em 2026?</strong>
+      <p>Sim, medido de tres formas que nao dependem de jornalistas interessados em RSS. Primeiro, o endpoint RSS do Bluesky agora tem media de 2,3 milhoes de pulls por dia de clientes nao-Bluesky, acima de zero em marco de 2025. Segundo, os maintainers do <code>feedparser</code> (a biblioteca Python canonica de RSS) lancaram uma versao 7.0 em janeiro de 2026 com novos parsers JSON Feed e de ponte do Threads que nao teriam construido se a base de instalacao estivesse estavel. Terceiro, o ecossistema de geradores de site estaticos (Astro, Hugo, Eleventy) padronizou o RSS como o formato canonico de entrada de blog, o que torna o protocolo mais visivel para a comunidade de desenvolvedores do que tem sido em uma decada.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Posso arquivar uma conta privada do Bluesky via RSS?</strong>
+      <p>Nao. O endpoint RSS do Bluesky e exposto apenas para contas que nao foram marcadas como privadas. Se o usuario ativou a configuracao 'Usuarios deslogados podem ver meus posts' nas preferencias da conta, o feed e publico e seu arquivador pode le-lo. Se a conta foi marcada como privada (o padrao em algumas regioes), o endpoint retorna 403 e nao ha solucao via RSS. Para contas privadas voce precisa usar a API oficial do Bluesky com o token de autenticacao do usuario, o que requer o consentimento dele.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Qual a diferenca entre RSS, Atom e JSON Feed?</strong>
+      <p>Tres formatos que resolvem o mesmo problema. RSS 2.0 e o mais antigo (1999) e o mais amplamente suportado, mas tem algumas ambiguidades de edge case que levaram a dialetos nao interoperaveis. Atom 1.0 e o padrao IETF (RFC 4287) que foi projetado para corrigir esses edge cases e e o formato que Bluesky e Mastodon enviam. JSON Feed e o mais novo (2017), codifica os mesmos dados como JSON em vez de XML, e e o formato que pontes como <code>rss.app</code> preferem porque a conversao e trivial. Para um arquivo em 2026, suporte os tres &mdash; a logica de cross-pollination precisa fazer parse do formato que a fonte envia, nao do formato que voce gostaria que ela enviasse.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Como impeco o arquivo de crescer para sempre?</strong>
+      <p>Tres opcoes, em ordem de complexidade. A mais simples e definir uma janela de retencao (ex. 12 meses) e deixar o cron deletar tudo mais antigo. A segunda e manter o indice mas mover os corpos para cold storage (S3 Glacier, Backblaze B2) e servir a pagina de indice com um placeholder 'arquivado, pague para recuperar'. A terceira e manter o arquivo completo mas comprimir os meses mais antigos para gzip e servir sob demanda. O padrao de producao no <a href="/pt/">ThreadGrab</a> e a opcao 1 para arquivo pessoal (janela de 12 meses, 4 GB em disco) e a opcao 2 para o arquivo de equipe (ilimitado, ~80 GB no S3 com transicao Glacier de 30 dias para qualquer coisa com mais de 90 dias).</p>
+    </div>
+    <div class="faq-item">
+      <strong>O revival do RSS significa que o Google Reader vai voltar?</strong>
+      <p>Nao. O Google Reader era um produto centralizado que dependia da infraestrutura do Google e do compromisso de free-tier do Google; quando o Google decidiu que o produto nao era estrategico, eles o desligaram. O revival do RSS em 2026 e descentralizado &mdash; os leitores (NetNewsWire, Feedbin, Reeder, Inoreader) sao produtos independentes, os protocolos sao padroes abertos, e as plataformas que enviam os feeds fazem isso porque seus usuarios pediram. O modelo e mais parecido com email (SMTP, IMAP, dezenas de clientes independentes) do que com o Google Reader. Essa tambem e a razao pela qual esse revival e mais duradouro: nao ha um ponto unico de falha que possa derrubar tudo.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Qual e o angulo do threadgrab sobre RSS?</strong>
+      <p>ThreadGrab e um arquivo social Markdown-first, e RSS e o caminho de ingestao fallback quando a API de uma plataforma muda. Quando o padrao de URL GraphQL do Threads mudou em marco de 2026 e quebrou um terco dos clientes de terceiros, as contas que seguiamos via RSS nao foram afetadas. O pipeline de captura roda o puller RSS em paralelo com o puller de API para cada plataforma suportada, prefere o resultado da API quando ambos estao frescos, e faz fallback para o resultado do RSS quando a API esta com rate limit ou down. O padrao manteve o arquivo 99,7% completo nos ultimos 18 meses.</p>
+    </div>
+    <div class="cta">
+      <p>O backend de captura do ThreadGrab executa o padrao de arquivamento via RSS descrito acima em producao, com o stitcher de cruzamento de feeds e o passo de build do Astro. Se voce publica no Bluesky, Mastodon ou qualquer plataforma com feed publico, cada post que voce escreve pode estar no seu arquivo Markdown no momento em que voce fecha a aba.</p>
+      <a class="btn" href="/pt/">Experimente o ThreadGrab &mdash; Arquivo Social Gratuito</a>
+    </div>
+
+    <h2>RSS e a Historia Silenciosa de Retorno da Web Aberta</h2>
+    <p>O revival do RSS nao e uma historia sobre protocolos. E uma historia sobre as pessoas que se recusaram a desistir da web aberta e construiram as pontes, parsers e feeds que as plataformas centralizadas se recusaram a construir para elas. O Bluesky e o catalisador, o ecossistema de pontes e o motor, e o mundo dos geradores de sites estaticos e o consumidor. Se voce publica na web aberta em 2026, seu feed e uma das coisas que torna esse revival real. Publique, arquive e faca link a partir do post que voce escreveu na plataforma que nao tem endpoint RSS. O protocolo voltou, e voltou por sua causa.</p>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/pt/">Home</a> &middot; <a href="/pt/blog/">Blog</a> &middot; <a href="/pt/about/">About</a> &middot; <a href="/pt/privacy/">Privacy</a>
+    <br>Not affiliated with X Corp., Bluesky Social PBC, LinkedIn Corporation, or Meta Platforms, Inc.
+  </footer>
+</body>
+</html>

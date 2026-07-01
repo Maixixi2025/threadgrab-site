@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notion ke Markdown 2026: Mengapa Kreator Beralih</title>
+  <meta name="description" content="Mengapa kreator konten meninggalkan Notion untuk Markdown di 2026: biaya, kepemilikan, lock-in, dan rencana migrasi 5 langkah.">
+  <meta name="keywords" content="Notion ke Markdown, migrasi Notion 2026, Markdown utama, Obsidian, Pandoc, notion-to-md, markitdown, ThreadGrab, arsip konten sosial, Git, X ke Markdown, arsip Bluesky, arsip LinkedIn, basis pengetahuan Markdown">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/id/blog/notion-to-markdown-migration-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/notion-to-markdown-migration-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/notion-to-markdown-migration-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/notion-to-markdown-migration-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/notion-to-markdown-migration-2026.html">
+  <meta property="og:title" content="Notion ke Markdown 2026: Mengapa Kreator Beralih">
+  <meta property="og:description" content="Mengapa kreator konten meninggalkan Notion untuk Markdown di 2026: biaya, kepemilikan, lock-in, dan rencana migrasi 5 langkah.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/id/blog/notion-to-markdown-migration-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Notion ke Markdown 2026: Mengapa Kreator Beralih">
+  <meta name="twitter:description" content="Mengapa kreator konten meninggalkan Notion untuk Markdown di 2026: biaya, kepemilikan, lock-in, dan rencana migrasi 5 langkah.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+    @media (max-width: 640px) { main { padding: 24px 16px 40px; } table { font-size: 0.8rem; } th, td { padding: 8px; } }
+  </style>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Markdown Adalah Format, Notion Adalah Vendor",
+  "description": "Mengapa kreator konten meninggalkan Notion untuk Markdown di 2026: biaya, kepemilikan, lock-in, dan rencana migrasi 5 langkah.",
+  "datePublished": "2026-06-26",
+  "dateModified": "2026-06-26",
+  "author": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/id/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/id/"
+  },
+  "mainEntityOfPage": "https://threadgrab.com/id/blog/notion-to-markdown-migration-2026.html",
+  "inLanguage": "id"
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://threadgrab.com/id/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://threadgrab.com/id/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Migrasi Notion ke Markdown"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Apakah saya kehilangan formula dan rollup Notion jika mengekspor ke Markdown?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ya. Formula Notion tidak punya padanan Markdown. Solusinya adalah langkah pre-compute: script Python membaca file sumber, menghitung nilai, dan menuliskannya ke front matter saat build time. Kebanyakan kreator发现自己用2 sampai 3 rumus dalam tiga tahun; biaya migrasi sebanding dengan rumus yang benar-benar Anda andalkan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bisakah saya tetap pakai Notion untuk catatan pribadi dan hanya migrasikan arsip yang dipublikasikan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ya, dan ini adalah pola paling umum di 2026. Notion cukup untuk coret-coretan pribadi, dokumen internal, dan workspace apa pun yang tidak perlu Anda bawa pergi. Arsip yang dipublikasikan adalah yang harus pergi, karena itulah yang bisa diambil dari Anda oleh keputusan vendor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah ada risiko kehilangan embed gambar saat migrasi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gambar yang di-host Notion pindah dengan bersih. Embed pihak ketiga (YouTube, Figma, Loom) menjadi tautan polos, yang merupakan perilaku Markdown yang semestinya. Kehilangan utama adalah gambar properti file Notion, yang kadang punya nama file non-kanonik. Script rename massal memperbaiki 95 persen dari ini; 5 persen sisanya butuh tinjauan manual."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bagaimana dengan Notion AI? Apakah workflow AI saya putus kalau saya keluar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Notion AI adalah fitur eksklusif Notion. Kalau Anda mengandalkannya, pengganti 2026 adalah mengarahkan Claude, GPT, atau LLM lokal ke direktori secara langsung. Untuk kebanyakan kasus penggunaan (merangkum, menulis, menulis ulang, menerjemahkan), LLM lokal menghasilkan output setara dengan Notion AI, dengan bonus bahwa riwayat percakapan juga merupakan file Markdown di arsip Anda."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bagaimana cara berbagi arsip Markdown dengan kolaborator yang tidak pakai Git?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dua opsi. Yang pertama adalah static site generator (Astro, Hugo) yang di-deploy ke URL privat -- kolaborator menjelajah, tidak menyunting. Yang kedua adalah wiki ter-host yang membaca dari Git (BookStack, Wiki.js, Outline). Keduanya mempertahankan Markdown kanonik di Git sembari memberi kolaborator non-teknis permukaan view-only atau comment-only."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apa migrasi terkecil yang layak untuk kreator solo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tiga langkah: ekspor arsip kanonik dengan notion-to-md, commit ke repo GitHub privat, batalkan langganan Notion. Total waktu: satu akhir pekan. Biaya berjalan: nol. Tangkap karya baru yang dipublikasikan dengan ThreadGrab di hari yang sama saat Anda mempublikasikannya."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/id/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a class="active" href="/id/blog/notion-to-markdown-migration-2026.html">ID</a>
+      <a class="" href="/en/blog/notion-to-markdown-migration-2026.html">EN</a>
+      <a class="" href="/pt/blog/notion-to-markdown-migration-2026.html">PT</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb"><a href="/id/">Home</a> &rsaquo; <a href="/id/blog/">Blog</a> &rsaquo; Migrasi Notion ke Markdown</div>
+
+    <h1>Notion ke Markdown 2026: <span>Mengapa Kreator Beralih</span></h1>
+    <p class="meta">26 Juni 2026 &middot; 9 menit baca &middot; Panduan</p>
+
+    <p>Pada Juni 2026, tim hosting Jerman forrabbit mempublikasikan post-mortem sepanjang 1.800 kata tentang memindahkan seluruh basis pengetahuan mereka dari Notion ke file Markdown biasa di repo Git. Dalam sepuluh hari, posting tersebut mendapat 800 upvote di Hacker News, memicu tiga thread turunan di r/selfhosted, dan memicu gelombang balasan "kami melakukan hal yang sama". Polanya sudah bukan hal pinggiran: bagian penting dari ekonomi kreator 2026 meninggalkan Notion untuk stack Markdown-first, dan alasannya konkret, bukan ideologis.</p>
+    <p>Jika Anda mempublikasikan di X, Bluesky, atau LinkedIn, alasan untuk meninggalkan Notion bahkan lebih kuat daripada untuk tim SaaS pada umumnya. Konten sosial punya profil lock-in paling buruk untuk workspace berbentuk Notion: pendek, penuh link, disalin-tempel lintas platform, dan hidup atau mati oleh reach yang tidak bisa dibantu Notion untuk Anda bangun. Panduan ini adalah rencana migrasi yang saya harap saya punya saat melakukan perpindahan yang sama, dengan kekhasan kreator sosial yang kebanyakan panduan migrasi lewatkan.</p>
+
+    <div class="callout">
+      <p><strong>TL;DR:</strong> Notion cukup bagus untuk catatan pribadi dan dokumen bersama. Ini adalah alat yang salah untuk arsip kanonik karya kreator yang sudah dipublikasikan. File Markdown di repo Git tidak butuh biaya, selamat dari keputusan vendor mana pun, terindeks bersih di mesin pencari mana pun, dan bisa digabung dengan sisa pipeline publikasi Anda. Migrasi adalah proyek 30 hari, bukan kepanikan 30 jam.</p>
+    </div>
+
+    <h2>Mengapa Kreator Meninggalkan Notion untuk Markdown di 2026</h2>
+    <p>Keluarnya bukan karena satu kenaikan harga Notion atau skandal privasi. Ini adalah akumulasi tiga kekuatan yang akhirnya melewati ambang batas tahun ini.</p>
+    <p><strong>Biaya adalah pemicu yang terlihat.</strong> Paket "free" Notion membatasi 1.000 blok untuk editor tamu. Kreator dengan satu tahun draf sosial tersimpan, edisi newsletter, dan halaman proyek akan menghabiskan itu dalam tiga bulan. Paket Plus adalah $10 per pengguna per bulan ditagih tahunan, dan tim beranggotakan tiga orang yang membayar tahunan adalah $360 per tahun untuk apa yang, secara fungsional, adalah editor teks mewah. Untuk kreator solo atau berdua, itu sama dengan satu tahun VPS yang layak.</p>
+    <p><strong>Lock-in adalah masalah struktural.</strong> Setiap database, toggle, relasi, rollup, formula, dan synced block Notion hanya ada di dalam Notion. Export resmi adalah folder HTML berbentuk Markdown, yang bukan Markdown. Konverter komunitas "Notion to Markdown" lebih baik, tapi tetap kehilangan formula, rollup, dan kolom apa pun yang memakai tipe spesifik Notion. Tiga tahun menulis di dalam Notion adalah tiga tahun pekerjaan yang tidak bisa Anda bawa pergi jika Notion mengikuti nasib setiap app produktivitas yang didanai modal ventura yang akhirnya berputar, diakuisisi, atau dihentikan.</p>
+    <p><strong>Compostability adalah kebutuhan baru.</strong> Kreator di 2026 tidak butuh workspace yang dipoles. Mereka butuh workspace yang bisa di-grep, di-diff, di-backup, diumpankan ke LLM, dan diiris jadi edisi newsletter dengan script Python. File teks biasa di direktori melakukan kelima hal itu. Notion tidak melakukan satu pun secara native. Seluruh pembingkaian "Markdown sebagai database" yang dijual Notion selama satu dekade, di 2026, terbalik: <em>file Markdown adalah database, dan Notion adalah renderer-nya</em>.</p>
+
+    <h2>Biaya Real Workspace Notion "Free"</h2>
+    <p>Untuk kreator dengan volume publikasi moderat &mdash; katakanlah, 5 X Articles, 12 thread Bluesky, 24 edisi LinkedIn Newsletter, dan 40 thread X per tahun &mdash; biaya nyata menyimpan semuanya di dalam Notion menumpuk di tiga tempat.</p>
+    <table>
+  <thead>
+    <tr>
+      <th>Kategori Biaya</th>
+      <th>Notion (per tahun)</th>
+      <th>Markdown + Git (per tahun)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Langganan (kreator solo)</td>
+      <td>$120 (paket Plus)</td>
+      <td>$0</td>
+    </tr>
+    <tr>
+      <td>Langganan (tim 3 orang)</td>
+      <td>$360</td>
+      <td>$0</td>
+    </tr>
+    <tr>
+      <td>Backup / tooling export</td>
+      <td>$0&ndash;$60 (exporter pihak ketiga)</td>
+      <td>$0 (git push adalah backup)</td>
+    </tr>
+    <tr>
+      <td>Pencarian &amp; pengindeksan</td>
+      <td>Notion bawaan (tertutup)</td>
+      <td>$0 (ripgrep, fd, fzf)</td>
+    </tr>
+    <tr>
+      <td>Pelatihan LLM / RAG ingestion</td>
+      <td>$20+/bln (Notion AI atau export manual)</td>
+      <td>$0 (arahkan LLM ke direktori)</td>
+    </tr>
+    <tr>
+      <td>Pipeline publikasi lintas platform</td>
+      <td>Zapier / Make ($20+/bln)</td>
+      <td>Script Python ($0)</td>
+    </tr>
+  </tbody>
+</table>
+    <p>Untuk tim kreator beranggotakan tiga orang, biaya tahunan realistis dari setup Notion "free" adalah $400&ndash;$700 kalau Anda hitung tooling pendukung di sekitarnya. Padanan Markdown-nya adalah biaya VPS $5/bln dan waktu Anda sendiri. Titik impas adalah tahun pertama untuk tim mana pun, tahun kedua untuk kreator solo.</p>
+
+    <h2>Seperti Apa Stack Sosial Markdown-First</h2>
+    <p>Stack referensi untuk kreator yang keluar dari Notion di 2026 punya empat lapisan, semuanya berbahasa teks biasa. Tak satu pun butuh langganan SaaS selain platform tempat Anda mempublikasikan.</p>
+    <ol>
+      <li><strong>Lapisan tangkap</strong> &mdash; ThreadGrab untuk thread X publik, post Bluesky, atau edisi LinkedIn mana pun. Menghasilkan file <code>.md</code> bersih dengan front matter, tautan gambar, dan timestamp.</li>
+      <li><strong>Lapisan edit</strong> &mdash; Obsidian atau VS Code. Keduanya merender Markdown identik, keduanya menyimpan file di disk, keduanya diff bersih dengan Git.</li>
+      <li><strong>Lapisan versi</strong> &mdash; repositori Git privat di GitHub, Codeberg, atau Gitea self-hosted. Setiap perubahan adalah satu commit. Setiap commit adalah backup gratis.</li>
+      <li><strong>Lapisan publikasi</strong> &mdash; script Python atau Node yang membaca Markdown kanonik, menerapkan transformasi per platform, dan mengeluarkan posting. Skrip sama untuk X, Bluesky, LinkedIn, Substack, dan static site generator.</li>
+    </ol>
+    <p>Pola empat-lapis yang sama berfungsi baik untuk kreator solo yang menulis satu thread per minggu maupun tim yang mempublikasikan tiga edisi newsletter per hari. Selisih biayanya adalah secangkir kopi per bulan untuk sebuah VPS. Selisih keandalannya adalah selisih antara "server Notion sedang outage" dan "file saya ada di disk saya, tidak ada yang bisa mengambilnya dari saya."</p>
+
+    <h2>Rencana Migrasi 5 Langkah</h2>
+    <p>Migrasi adalah urutan langkah mekanis, bukan lompatan keyakinan. Urutan penting. Melewati langkah 2 (export) adalah cara orang berakhir dengan Markdown rusak yang kehilangan setengah tabel dan embed-nya.</p>
+    <h3>Langkah 1: Audit apa yang sebenarnya Anda punya</h3>
+    <p>Buka Notion. Pakai pencarian workspace dan hitung halaman yang merupakan <em>karya kanonik yang sudah dipublikasikan</em> &mdash; draf yang benar-benar Anda publikasikan, edisi newsletter yang benar-benar Anda kirim, thread yang benar-benar Anda posting. Sisanya (halaman coret-coretan, catatan rapat, dokumen internal) di luar lingkup. Export hanya perlu mencakup arsip kanonik.</p>
+    <h3>Langkah 2: Export dengan alat berbentuk Markdown</h3>
+    <p>Export resmi Notion adalah HTML di-zip. Jangan pakai itu. Paket Python pihak ketiga <code>notion-to-md</code> atau alat Node <code>notion-export-cleaner</code> menghasilkan direktori file <code>.md</code> sesungguhnya dengan front matter dan gambar yang sudah di-unzip. Jalankan salah satu pada export workspace penuh lebih dulu; periksa sampel 10 file untuk memastikan tabel, blok kode, dan embed selamat.</p>
+    <pre><code># Install the official Notion API exporter (uses an internal integration token)
+pip install notion-to-md notion-client
+
+# Or use the bulk HTML export + converter if you do not have an API token
+# Settings &rarr; Export &rarr; Markdown &amp; CSV (Plus plan only)
+unzip ~/Downloads/notion-export.zip -d notion-raw/
+
+# Convert the HTML-shaped export to clean Markdown
+python3 -c "
+import pathlib, html2text, re
+for f in pathlib.Path('notion-raw').rglob('*.html'):
+    out = f.with_suffix('.md')
+    h = html2text.HTML2Text()
+    h.body_width = 0
+    out.write_text(h.handle(f.read_text(encoding='utf-8')))
+    f.unlink()
+print('done')
+"</code></pre>
+    <h3>Langkah 3: Bersihkan front matter</h3>
+    <p>Export Notion meletakkan judul halaman sebagai H1 tingkat atas, tanggal pembuatan di blok samping, dan tag sebagai hash inline. Tak satu pun portabel. Pembersihan adalah script Python 30 baris yang berjalan di pohon export, mem-parsing metadata spesifik Notion, dan mengeluarkan blok front matter terpadu.</p>
+    <pre><code>import pathlib, re, datetime
+
+ROOT = pathlib.Path('notion-raw')
+for md in ROOT.rglob('*.md'):
+    text = md.read_text(encoding='utf-8')
+    # Extract title (first H1)
+    title = re.search(r'^# (.+)$', text, re.MULTILINE)
+    title = title.group(1).strip() if title else md.stem
+    # Extract created date from Notion metadata block
+    date = re.search(r'created[:\s]+(\d{4}-\d{2}-\d{2})', text)
+    date = date.group(1) if date else datetime.date.today().isoformat()
+    # Strip the Notion metadata block
+    text = re.sub(r'&lt;!-- notion:.*?--&gt;.*?--&gt;', '', text, flags=re.DOTALL)
+    # Prepend clean front matter
+    new = f'---\ntitle: "{title}"\ndate: {date}\ntags: []\n---\n\n{text}'
+    md.write_text(new)
+print('cleaned', len(list(ROOT.rglob('*.md'))), 'files')</code></pre>
+    <h3>Langkah 4: Pindahkan ke repo Git</h3>
+    <p>Buat repo privat baru, salin Markdown yang sudah dibersihkan ke <code>content/</code>, lalu commit. Commit pertama adalah snapshot Anda. Setiap edit berikutnya adalah diff. Branch per topik atau per kuartal &mdash; apa pun yang cocok dengan ritme publikasi Anda.</p>
+    <pre><code>git init md-archive
+cd md-archive
+mkdir -p content/{threads,articles,newsletters,drafts}
+cp -r ../notion-raw-cleaned/* content/
+git add content/
+git commit -m "import: notional archive, 412 files, 2026-06-26"
+git remote add origin git@github.com:you/md-archive.git
+git push -u origin main</code></pre>
+    <h3>Langkah 5: Bangun ulang jalur tangkap</h3>
+    <p>Langkah terakhir adalah yang terpenting. Sekarang Anda punya arsip Markdown-first, arahkan tangkapan publikasi Anda ke sana. Jalankan <a href="/id/">ThreadGrab</a> untuk setiap thread X, post Bluesky, dan edisi LinkedIn yang Anda publikasikan. Tiap panggilan menjatuhkan file <code>.md</code> ke pohon <code>content/</code> yang sama. Arsip berhenti menjadi snapshot karya lama dan menjadi catatan yang hidup.</p>
+
+    <h2>Perbandingan Alat: Export Notion vs Pandoc vs Obsidian vs markitdown vs ThreadGrab</h2>
+    <p>Lima alat muncul di setiap percakapan migrasi. Tak satu pun "terbaik" secara terpisah. Yang tepat bergantung pada apa yang Anda pindahkan dan ke mana tujuannya.</p>
+    <table>
+  <thead>
+    <tr>
+      <th>Alat</th>
+      <th>Input</th>
+      <th>Output</th>
+      <th>Cocok Untuk</th>
+      <th>Biaya</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Export resmi Notion</td>
+      <td>Workspace Notion</td>
+      <td>HTML + CSV zip</td>
+      <td>Dump ad-hoc satu kali</td>
+      <td>Free (paket Plus)</td>
+    </tr>
+    <tr>
+      <td>notion-to-md (Python)</td>
+      <td>Token API Notion</td>
+      <td>.md bersih + gambar</td>
+      <td>Export workspace penuh secara programatis</td>
+      <td>Free, MIT</td>
+    </tr>
+    <tr>
+      <td>Pandoc</td>
+      <td>HTML / DOCX / EPUB</td>
+      <td>Markdown / HTML / PDF</td>
+      <td>Konversi batch format-agnostik</td>
+      <td>Free, GPL</td>
+    </tr>
+    <tr>
+      <td>Microsoft markitdown</td>
+      <td>PDF / DOCX / PPTX / XLSX / gambar</td>
+      <td>Markdown</td>
+      <td>Dokumen Office dan PDF hasil pindai</td>
+      <td>Free, MIT</td>
+    </tr>
+    <tr>
+      <td>ThreadGrab</td>
+      <td>URL publik X / Bluesky / LinkedIn</td>
+      <td>Markdown kanonik + front matter</td>
+      <td>Tangkap konten sosial langsung</td>
+      <td>Free, MIT</td>
+    </tr>
+  </tbody>
+</table>
+    <p>Pembagian yang jujur: <strong>notion-to-md</strong> untuk migrasi historis, <strong>markitdown</strong> untuk file PDF / DOCX yang juga perlu Anda tarik, dan <strong>ThreadGrab</strong> untuk apa pun yang Anda publikasikan ke depan. Pandoc adalah fallback ketika yang lain tidak menangani format input. Export resmi Notion adalah pilihan terakhir, bukan yang pertama.</p>
+
+    <h2>Bagaimana ThreadGrab Masuk di Jalur Migrasi</h2>
+    <p>ThreadGrab memecahkan subset spesifik dari masalah migrasi: konten sosial yang hidup di platform yang tidak Anda kontrol. Kalau Anda pernah kehilangan thread X karena suspend, kehilangan post Bluesky karena perubahan handle, atau punya edisi LinkedIn Newsletter di-delist diam-diam, ThreadGrab adalah polis asuransinya. Jalankan pada setiap URL yang dipublikasikan, dan Markdown kanonik jatuh ke repo Git yang sama dengan tujuan migrasi Anda.</p>
+    <p>Integrasinya adalah satu perintah per konten:</p>
+    <pre><code># Capture one X thread to your local archive
+curl -X POST https://threadgrab.com/api/extract \
+  -H 'Content-Type: application/json' \
+  -d '{"url": "https://x.com/yourhandle/status/1234567890", "format": "markdown"}' \
+  &gt;&gt; content/threads/2026-06-26-thread.md
+
+# Capture a Bluesky post
+curl -X POST https://threadgrab.com/api/extract \
+  -H 'Content-Type: application/json' \
+  -d '{"url": "https://bsky.app/profile/you.bsky.social/post/abc", "format": "markdown"}' \
+  &gt;&gt; content/threads/2026-06-26-bluesky.md
+
+# Batch-capture every URL in a list (your publishing history)
+cat publish-history.txt | xargs -I{} curl -s -X POST https://threadgrab.com/api/extract \
+  -H 'Content-Type: application/json' \
+  -d "{{\"url\": \"{}\", \"format\": \"markdown\"}}" &gt;&gt; content/threads/batch.md</code></pre>
+    <p>Setiap file yang ditangkap punya blok front matter <code>---</code> di atas berisi URL sumber, timestamp tangkap, dan platform. Diff di log Git Anda menunjukkan URL mana yang Anda arsipkan dan kapan. Jika platform menghapus aslinya, Anda masih punya Markdown kanoniknya.</p>
+
+    <h2>Apa yang rusak: 5 hal yang Notion lakukan yang Markdown tidak bisa</h2>
+    <p>Migrasi bukan makan siang gratis. Lima hal yang Notion lakukan dengan baik, file Markdown polos benar-benar tidak bisa melakukan. Anda akan menggantinya dengan alat berbeda atau belajar hidup tanpa mereka.</p>
+    <ol>
+      <li><strong>Database view.</strong> View table / board / gallery / timeline Notion adalah fitur pembunuh. Markdown tidak punya itu. Pengganti 2026 adalah static site generator (Astro, Hugo, 11ty) yang membaca front matter, atau indeks SQLite yang di-rebuild via cron job.</li>
+      <li><strong>Pengeditan kolaboratif real-time.</strong> Dua orang menyunting file Markdown yang sama di Git akan membuat merge conflict. Pengganti 2026 adalah editor berbasis CRDT seperti Hedgedoc atau Etherpad self-hosted, dengan dump harian ke Git untuk catatan kanonik.</li>
+      <li><strong>Relasi database tertaut.</strong> Relasi Notion lintas database sangat kuat. Markdown tidak punya padanannya. Penggantinya adalah sistem tag di front matter plus halaman indeks tag yang dibuat saat build time.</li>
+      <li><strong>Formula dan rollup.</strong> Bahasa formula Notion melakukan matematika pada kolom database. Markdown polos tidak punya model eksekusi. Penggantinya adalah langkah pre-compute: script Python membaca file sumber, menghitung nilai, dan menulisnya kembali sebagai bagian dari build.</li>
+      <li><strong>Izin setingkat halaman.</strong> Notion memungkinkan Anda berbagi satu halaman dengan tamu tanpa membagikan sisanya. Repo Git tidak bisa begitu. Penggantinya adalah repo privat terpisah untuk draf bersama dan repo publik untuk arsip kanonik.</li>
+    </ol>
+    <p>Tak satu pun dari ini deal-breaker. Ini adalah bentuk kerja yang berbeda. Migrasi adalah kesempatan untuk memutuskan fitur Notion mana yang benar-benar Anda pakai dan mana yang hanya Anda kira Anda pakai.</p>
+
+    <h2>Checklist Migrasi 30 Hari</h2>
+    <p>Hari-per-hari yang realistis untuk kreator solo atau tim kecil yang keluar dari Notion di 2026.</p>
+    <ul>
+      <li><strong>Hari 1&ndash;3: Audit.</strong> Daftar halaman kanonik. Tentukan apa yang tinggal di Notion (dokumen internal, coret-coretan berisiko rendah) dan apa yang pindah ke Markdown (arsip publikasi, draf publik, referensi evergreen).</li>
+      <li><strong>Hari 4&ndash;7: Tooling.</strong> Siapkan Obsidian atau VS Code, pasang Pandoc, pasang markitdown, jalankan contoh export 10 halaman dan periksa outputnya.</li>
+      <li><strong>Hari 8&ndash;12: Bulk export.</strong> Jalankan <code>notion-to-md</code> pada set kanonik lengkap. Harapkan 1&ndash;5% file butuh pembersihan manual (tabel rusak, gambar hilang, front matter cacat).</li>
+      <li><strong>Hari 13&ndash;18: Script pembersih.</strong> Tulis script Python 50&ndash;100 baris yang menormalkan front matter, membetulkan path gambar, dan memvalidasi blok kode. Jalankan. Commit hasilnya.</li>
+      <li><strong>Hari 19&ndash;23: Setup Git.</strong> Buat repo privat. Push arsip kanonik. Siapkan cron harian tangkap yang menjalankan ThreadGrab terhadap riwayat publikasi Anda.</li>
+      <li><strong>Hari 24&ndash;27: Bangun ulang view.</strong> Hasilkan halaman indeks statis (per tag, per tanggal, per platform). Pastikan arsip bisa di-browse di Obsidian dan di situs statis.</li>
+      <li><strong>Hari 28&ndash;30: Shutdown Notion.</strong> Batalkan langganan. Arsipkan tarball akhir workspace Notion sebagai cadangan pilihan terakhir. Jangan menoleh ke belakang.</li>
+    </ul>
+
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <strong>Apakah saya kehilangan formula dan rollup Notion jika mengekspor ke Markdown?</strong>
+      <p>Ya. Formula Notion tidak punya padanan Markdown. Solusinya adalah langkah pre-compute: script Python membaca file sumber, menghitung nilai, dan menuliskannya ke front matter saat build time. Kebanyakan kreator发现自己用2&ndash;3 rumus dalam tiga tahun; biaya migrasi sebanding dengan rumus yang benar-benar Anda andalkan.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Bisakah saya tetap pakai Notion untuk catatan pribadi dan hanya migrasikan arsip yang dipublikasikan?</strong>
+      <p>Ya, dan ini adalah pola paling umum di 2026. Notion cukup untuk coret-coretan pribadi, dokumen internal, dan workspace apa pun yang tidak perlu Anda bawa pergi. Arsip yang dipublikasikan adalah yang harus pergi, karena itulah yang bisa diambil dari Anda oleh keputusan vendor.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Apakah ada risiko kehilangan embed gambar saat migrasi?</strong>
+      <p>Gambar yang di-host Notion pindah dengan bersih. Embed pihak ketiga (YouTube, Figma, Loom) menjadi tautan polos, yang merupakan perilaku Markdown yang semestinya. Kehilangan utama adalah gambar properti <code>file</code> Notion, yang kadang punya nama file non-kanonik. Script rename massal memperbaiki 95% dari ini; 5% sisanya butuh tinjauan manual.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Bagaimana dengan Notion AI? Apakah workflow AI saya putus kalau saya keluar?</strong>
+      <p>Notion AI adalah fitur eksklusif Notion. Kalau Anda mengandalkannya, pengganti 2026 adalah mengarahkan Claude, GPT, atau LLM lokal ke direktori secara langsung. Untuk kebanyakan kasus penggunaan (merangkum, menulis, menulis ulang, menerjemahkan), LLM lokal menghasilkan output setara dengan Notion AI, dengan bonus bahwa riwayat percakapan juga merupakan file Markdown di arsip Anda.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Bagaimana cara berbagi arsip Markdown dengan kolaborator yang tidak pakai Git?</strong>
+      <p>Dua opsi. Yang pertama adalah static site generator (Astro, Hugo) yang di-deploy ke URL privat &mdash; kolaborator menjelajah, tidak menyunting. Yang kedua adalah wiki ter-host yang membaca dari Git (BookStack, Wiki.js, Outline). Keduanya mempertahankan Markdown kanonik di Git sembari memberi kolaborator non-teknis permukaan view-only atau comment-only.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Apa migrasi terkecil yang layak untuk kreator solo?</strong>
+      <p>Tiga langkah: (1) ekspor arsip kanonik dengan <code>notion-to-md</code>, (2) commit ke repo GitHub privat, (3) batalkan langganan Notion. Total waktu: satu akhir pekan. Biaya berjalan: nol. Tangkap karya baru yang dipublikasikan dengan ThreadGrab di hari yang sama saat Anda mempublikasikannya.</p>
+    </div>
+
+    <div class="cta">
+      <p>Sudah mempublikasikan di X, Bluesky, atau LinkedIn? Tangkap setiap posting ke arsip Markdown Anda dalam satu panggilan. ThreadGrab mengubah URL sosial publik apa pun menjadi file <code>.md</code> bersih dengan front matter, siap untuk Git.</p>
+      <a class="btn" href="/id/">Coba ThreadGrab &mdash; Arsip Sosial Free</a>
+    </div>
+
+    <h2>Markdown Adalah Format, Notion Adalah Vendor</h2>
+    <p>Stack kreator 2026 adalah tumpukan file teks biasa di direktori, di-versi-kan di Git, bisa dicari dengan ripgrep, bisa di-render dengan Obsidian, dan bisa di-publish dengan script Python 30 baris. Notion adalah vendor yang menjual UI yang dipoles di atas teks. Teks adalah bagian yang bertahan melewati vendor. Setiap kreator yang menghabiskan 2024 dan 2025 melihat app SaaS berputar, diakuisisi, atau ditutup telah mempelajari pelajaran yang sama: pertahankan formatnya, lepas vendornya.</p>
+    <p>Bagi kreator, migrasi ini bahkan lebih jelas benar dibanding untuk tim pada umumnya. Konten sosial pendek, kaya tautan, dan hidup atau mati oleh algoritma platform. Notion tidak membantu hal itu. Arsip Markdown-first membantu semua itu. Mulai dari karya yang sudah dipublikasikan. Pindahkan sisanya belakangan. Rencana 30 hari di atas adalah jalur yang realistis; kebanyakan kreator yang memulai migrasi menyelesaikannya dalam dua akhir pekan dan beberapa malam.</p>
+  </main>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/id/">Home</a> &middot; <a href="/id/blog/">Blog</a> &middot; <a href="/id/about/">About</a> &middot; <a href="/id/privacy/">Privacy</a>
+    <br>Not affiliated with X Corp., Bluesky Social PBC, LinkedIn Corporation, or Microsoft Corporation.
+  </footer>
+</body>
+</html>

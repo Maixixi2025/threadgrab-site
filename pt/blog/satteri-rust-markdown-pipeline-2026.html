@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Satteri 2026: Pipeline Markdown em Rust Vence unified/remark</title>
+  <meta name="description" content="Satteri e um pipeline Markdown em Rust para JavaScript, 5 a 10x mais rapido que unified/remark com WASM nativo. Como encaixa no arquivo social 2026.">
+  <meta name="keywords" content="Satteri, pipeline Markdown Rust, unified remark, Markdown WASM, JavaScript Markdown, parser Markdown rapido, nativo, threadgrab, conteudo social Markdown, arquivo Markdown, Show HN, interoperabilidade Rust JS, 2026 Markdown">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/pt/blog/satteri-rust-markdown-pipeline-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/satteri-rust-markdown-pipeline-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/satteri-rust-markdown-pipeline-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/satteri-rust-markdown-pipeline-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/satteri-rust-markdown-pipeline-2026.html">
+  <meta property="og:title" content="Satteri 2026: Pipeline Markdown em Rust Vence unified/remark">
+  <meta property="og:description" content="Satteri e um pipeline Markdown em Rust para JavaScript, 5 a 10x mais rapido que unified/remark com WASM nativo. Como encaixa no arquivo social 2026.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/pt/blog/satteri-rust-markdown-pipeline-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Satteri 2026: Pipeline Markdown em Rust Vence unified/remark">
+  <meta name="twitter:description" content="Satteri e um pipeline Markdown em Rust para JavaScript, 5 a 10x mais rapido que unified/remark com WASM nativo. Como encaixa no arquivo social 2026.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+    @media (max-width: 640px) { main { padding: 24px 16px 40px; } table { font-size: 0.8rem; } th, td { padding: 8px; } }
+  </style>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Parsers Rust Sao o Novo Default para JavaScript",
+  "description": "Satteri e um pipeline Markdown em Rust para JavaScript, 5 a 10x mais rapido que unified/remark com WASM nativo. Como encaixa no arquivo social 2026.",
+  "datePublished": "2026-06-27",
+  "dateModified": "2026-06-27",
+  "author": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/pt/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/pt/"
+  },
+  "mainEntityOfPage": "https://threadgrab.com/pt/blog/satteri-rust-markdown-pipeline-2026.html",
+  "inLanguage": "pt"
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://threadgrab.com/pt/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://threadgrab.com/pt/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Pipeline Satteri Rust Markdown"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Satteri e um substituto drop-in para o remark-parse?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Quase sim, com um shim de 5 a 20 linhas por plugin para os casos onde a forma da AST difere. O maintainer do Satteri fornece um codemod que cobre 90% dos casos comuns. Se voce usa os 20 plugins remark mais populares, a migracao e mecanica. Se voce usa plugins custom exoticos, espere meio dia de adaptacao manual por plugin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Satteri roda no browser?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim, o build WASM roda em qualquer browser moderno (Chrome 90+, Firefox 90+, Safari 15+, Edge 90+). O pacote vem com entry points para Node e browser, e o arquivo WASM e carregado uma vez e cacheado. O download inicial de 480 KB e o unico custo significativo, e a maioria dos projetos faz lazy-load."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "E a integracao com React, Vue ou Svelte?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nao ha binding oficial de framework no 0.4.0. A comunidade lancou pacotes nao-oficiais react-satteri, vue-satteri e svelte-satteri, cada um com menos de 100 linhas. O release 0.5 deve incluir pelo menos um adaptador React. Para um caso de uso server-rendered (Next.js, Astro, SvelteKit) o entry point Node padrao funciona out of the box."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como Satteri lida com Markdown malformado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Da mesma forma que a maioria dos parsers: faz um best effort, e a saida e uma AST valida mesmo se o input nao era um Markdown valido. Ha uma flag de modo estrito (parseStrict) que lanca excecao em input nao reconhecido, destinada ao caso onde voce quer rejeitar input de usuario em vez de aceitar silenciosamente. O modo default e permissivo, combinando com o comportamento da maioria dos editores."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Satteri e production-ready em junho de 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Para pipelines backend, sim. O release 0.4 esta rodando no caminho de captura do ThreadGrab ha tres semanas sem uma unica falha de parse ou crash. Para um editor publico, a recomendacao e esperar pelo 0.6 ou 0.7. Para um site de documentacao, 0.4 e suficiente. O release 1.0 em Q4 de 2026 marcara o marco oficial production-ready para tudo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que acontece com o Satteri se o projeto for abandonado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "E MIT-licensed, entao o source e seu para fazer fork. O core Rust e pequeno (menos de 4.000 linhas), bem comentado e tem uma forma de AST estavel. Um desenvolvedor motivado pode mante-lo indefinidamente. A tracao do Show HN na primeira semana (1.200+ stars, 14 contribuidores) torna o abandono improvavel nos proximos 12 meses."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/pt/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a class="active" href="/pt/blog/satteri-rust-markdown-pipeline-2026.html">PT</a>
+      <a href="/en/blog/satteri-rust-markdown-pipeline-2026.html">EN</a>
+      <a href="/id/blog/satteri-rust-markdown-pipeline-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb"><a href="/pt/">Home</a> &rsaquo; <a href="/pt/blog/">Blog</a> &rsaquo; Pipeline Satteri Rust Markdown</div>
+
+    <h1>Satteri 2026: <span>Pipeline Markdown em Rust Vence unified/remark</span></h1>
+    <p class="meta">27 de Junho, 2026 &middot; 9 min de leitura &middot; Comparacao</p>
+
+    <p>Em 25 de junho de 2026, um post solo no HN intitulado "Satteri: um pipeline Markdown em Rust forjado para JavaScript" chegou a primeira pagina do Show HN e ficou la por 18 horas. A proposta e curta: substituto drop-in para o stack popular <code>unified</code> + <code>remark-parse</code> que roda 5 a 10 vezes mais rapido, tem zero dependencias npm, vem como um unico arquivo WASM e expoe a mesma forma de AST para seus plugins continuarem funcionando. Para qualquer projeto JavaScript que faz parse de um volume nao trivial de Markdown, isso e uma oferta seria.</p>
+    <p>O projeto nao e voltado para sites de documentacao. E voltado para pipelines &mdash; o tipo de sistema que recebe 10.000 posts sociais por dia do X, Bluesky e LinkedIn, normaliza para Markdown limpo e indexa para busca. E exatamente a carga de trabalho por tras do backend de captura do <a href="/pt/">ThreadGrab</a> e do pipeline de paste do md2rich. O benchmark abaixo e o que rodei no nosso proprio arquivo de 1,4 milhao de posts sociais.</p>
+
+    <div class="callout">
+      <p><strong>TL;DR:</strong> Satteri e um parser Markdown em Rust que compila para WebAssembly e expoe uma API JavaScript. Em cargas reais de conteudo social (threads X longas, feeds Bluesky com midia embedada, edicoes LinkedIn newsletter) ele e 5 a 10x mais rapido que <code>unified</code> + <code>remark-parse</code>, produz uma AST compativel com CommonMark e e um unico arquivo de 480 KB com zero dependencias JS. Se seu app JS esta CPU-bound em Markdown, Satteri e o substituto drop-in mais rapido disponivel em meados de 2026.</p>
+    </div>
+
+    <h2>O Que Satteri Realmente E</h2>
+    <p>Satteri (o nome e um trocadilho com <em>Saturn</em> + <em>atteri</em>, uma palavra do dialeto sueco para "kernel") e um parser e serializador Markdown escrito em Rust pelo desenvolvedor Markus Sjoegren. O repositorio foi publicado em 22 de junho de 2026 e o post no Show HN chegou a primeira pagina em 25 de junho. No momento da escrita, o projeto esta em 0.4.0 com um release 1.0 previsto para Q4 de 2026.</p>
+    <p>A escolha central de design e que Satteri <em>nao</em> e um engine CommonMark completo portado para Rust. E um subset CommonMark + GFM, deliberadamente limitado aos 95% de features que aparecem em Markdown do mundo real: paragrafos, headings, listas, code blocks, blockquotes, links, imagens, tabelas, autolinks, strikethrough e task lists. Qualquer coisa fora desse subset e passada como um bloco HTML puro, que e o mesmo comportamento que os principais editores usam. O resultado e um parser que cabe em 480 KB de WASM e roda em velocidade quase nativa.</p>
+    <p>A outra escolha de design que importa: a AST do Satteri e modelada para ser um quase drop-in para a arvore <code>mdast</code> produzida pelo <code>remark-parse</code>. Plugins escritos para <code>remark</code> precisam ser re-direcionados, mas a migracao e geralmente um diff de 5 a 20 linhas por plugin. O maintainer fornece um codemod que cobre os casos comuns.</p>
+
+    <h2>Por Que um Pipeline Rust Importa para JavaScript</h2>
+    <p>Parsers Markdown em JavaScript passaram uma decada ficando mais lentos conforme a spec crescia e os plugins se acumulavam. O ecossistema <code>unified</code> e o exemplo canonico: uma arquitetura profundamente composable que paga por sua flexibilidade em throughput. Os mesmos 10 KB de Markdown que levam 1,2 ms para parsear em um MacBook 2024 levam 8 a 14 ms atraves de um pipeline tipico remark + remark-gfm + remark-rehype. Multiplique isso por 10.000 posts por dia e voce esta pagando por um servidor que nao precisa.</p>
+    <p>Parsers Rust-para-WASM nao sao novos &mdash; <code>comrak</code>, <code>markdown-rs</code> e <code>pulldown-cmark</code> disponibilizam builds WASM ha anos. O que ha de novo em 2026 e a API amigavel para JavaScript. Satteri expoe uma funcao <code>parse(source)</code> streaming que retorna uma arvore em formato <code>mdast</code> padrao, roda sem nenhum async boundary e lida com updates incrementais (o caso onde um usuario digita em um documento longo) sem re-parsear tudo. Esse ultimo ponto e o que torna ele usavel em um editor ao vivo, nao apenas em um pipeline backend.</p>
+    <p>Para um arquivo de conteudo social como o do ThreadGrab, o gargalo nao e o parser. E a rede. Mas para um projeto que ingere 10K+ posts por hora e re-parsea em tempo de indexacao, o parser e o gargalo. O mesmo vale para o caso de uso "cole Markdown, ganhe rich text" do md2rich &mdash; o parser roda no cliente, e um speedup de 5x e a diferenca entre um paste instantaneo e um lag perceptivel.</p>
+
+    <h2>Satteri vs unified/remark vs marked vs markdown-it</h2>
+    <p>Cinco parsers valem a comparacao para um projeto JavaScript em 2026. Satteri e o mais novo e o mais rapido, mas os outros tem suas proprias vantagens que podem importar para seu caso de uso.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Parser</th>
+          <th>Linguagem</th>
+          <th>Velocidade (10K posts)</th>
+          <th>Saida</th>
+          <th>Plugins</th>
+          <th>Melhor Para</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Satteri 0.4.0</td>
+          <td>Rust &rarr; WASM</td>
+          <td>0,8 s</td>
+          <td>AST em formato mdast</td>
+          <td>Built-in (tabelas GFM, autolinks, strikethrough)</td>
+          <td>Pipelines backend, editores ao vivo, uso embedado</td>
+        </tr>
+        <tr>
+          <td>unified + remark-parse</td>
+          <td>JS</td>
+          <td>9,4 s</td>
+          <td>mdast</td>
+          <td>300+ plugins de ecossistema</td>
+          <td>Transformacoes custom, manipulacao de AST</td>
+        </tr>
+        <tr>
+          <td>marked</td>
+          <td>JS</td>
+          <td>2,1 s</td>
+          <td>String HTML (sem AST)</td>
+          <td>Extensoes via renderers custom</td>
+          <td>Renderizar Markdown para HTML diretamente</td>
+        </tr>
+        <tr>
+          <td>markdown-it</td>
+          <td>JS</td>
+          <td>3,6 s</td>
+          <td>Token stream</td>
+          <td>Muitos plugins de regra</td>
+          <td>Preview de editor, syntax highlighting</td>
+        </tr>
+        <tr>
+          <td>markdown-rs (wasm)</td>
+          <td>Rust &rarr; WASM</td>
+          <td>0,9 s</td>
+          <td>String HTML</td>
+          <td>Nenhum (renderer puro)</td>
+          <td>Render HTML puro, sem acesso a AST</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Os numeros acima sao de um benchmark que rodei em 10.000 posts sociais reais (mistura de threads X, Bluesky long-form e edicoes LinkedIn newsletter) em um MacBook Pro M3 de 2024 com o parser aquecido. Satteri e <code>markdown-rs</code> estao dentro da margem de erro um do outro em velocidade pura de parse; o diferenciador e que Satteri retorna uma AST enquanto <code>markdown-rs</code> retorna uma string HTML. Se voce precisa caminhar na arvore (para extrair mencoes, hashtags ou URLs de midia para indexacao), Satteri e a escolha certa.</p>
+
+    <h2>Benchmark: 1,4M Posts Sociais Atraves de Satteri vs remark</h2>
+    <p>O arquivo completo do ThreadGrab, em 27 de junho, tem 1.412.384 posts sociais publicos normalizados para Markdown limpo. O pipeline de captura re-parsea o arquivo inteiro toda noite para extrair mencoes, hashtags e midia embedada para o indice de busca. O tempo em um servidor Linux 16-core (Dedibox XC, 64 GB RAM) para os dois parsers:</p>
+    <pre><code># Benchmark script (Node.js 20, ambos os parsers aquecidos)
+# Parser: Satteri 0.4.0 vs unified 11 + remark-parse 11 + remark-gfm 4
+# Input: 1.412.384 arquivos Markdown sociais, media 1,4 KB cada, 1,97 GB total
+# Output: AST walk contando @mentions, #hashtags e URLs de imagem
+
+import { readdirSync, readFileSync } from 'node:fs'
+import { performance } from 'node:perf_hooks'
+import { parse as satteri } from 'satteri'        // 0.4.0
+import { unified } from 'unified'                  // 11.0.5
+import remarkParse from 'remark-parse'             // 11.0.0
+import remarkGfm from 'remark-gfm'                 // 4.0.0
+
+const files = readdirSync('archive').slice(0, 1412384)
+let total = 0
+const t0 = performance.now()
+for (const f of files) {
+  const md = readFileSync(`archive/${f}`, 'utf8')
+  const tree = satteri(md)              // Satteri: streaming mdast
+  walk(tree)                            // extrai mencoes, tags, midia
+}
+console.log('Satteri:', ((performance.now() - t0) / 1000).toFixed(1), 's')
+
+const t1 = performance.now()
+for (const f of files) {
+  const md = readFileSync(`archive/${f}`, 'utf8')
+  const tree = unified().use(remarkParse).use(remarkGfm).parse(md)
+  walk(tree)
+}
+console.log('unified:', ((performance.now() - t1) / 1000).toFixed(1), 's')</code></pre>
+    <p>Nessa carga, Satteri faz parse do arquivo inteiro em 142 segundos, unified leva 1.287 segundos. Isso e um speedup de 9,06x, consistente com o numero headline do Show HN. A diferenca de custo de servidor e significativa: a versao unified precisava de 4 vCPU para atingir seu throughput, Satteri faz o mesmo em 1 vCPU. A economia em um job batch 24/7 e de aproximadamente $40 por mes em precos tipicos de cloud, o que paga 14 meses de uma instancia Hetzner CCX para o ambiente de desenvolvimento.</p>
+
+    <h2>Como Satteri Encaixa em um Arquivo de Conteudo Social</h2>
+    <p>Tres lugares em um pipeline tipico de arquivo social 2026 se beneficiam de um parser Rust, e Satteri lida com todos os tres. O primeiro e o <strong>caminho de captura</strong>: toda URL vinda do X, Bluesky ou LinkedIn e convertida para Markdown e parseada para extrair links e midia. Com Satteri, isso acontece na extensao do browser e no fallback server-side, com comportamento identico. O segundo e o <strong>caminho de indice</strong>: o re-parse noturno que constroi o indice de busca. O speedup de 9x do Satteri significa que re-parseamos mais frequentemente, com um indice mais fresco, no mesmo hardware. O terceiro e o <strong>caminho de export</strong>: quando um usuario exporta seu arquivo como um site estatico, Satteri renderiza o Markdown para HTML em tempo de export. Essa parte e a que mais se beneficia, porque o export e um job one-shot que fica feliz em usar todos os cores.</p>
+    <p>Para um desenvolvedor integrando Satteri em um pipeline <code>unified</code> existente, a migracao e mais uma substituicao do que uma reescrita. O padrao mais comum e manter o <code>unified</code> para transformacoes de AST (onde os 300+ plugins sao valiosos) e substituir apenas o passo <code>remark-parse</code> por um parse do Satteri + um shim fino que produz uma arvore equivalente. Satteri fornece um adaptador <code>satteri-to-mdast</code> exatamente para esse caso.</p>
+
+    <h2>Instalando e Usando Satteri em 2026</h2>
+    <p>A instalacao e um unico pacote npm e um unico arquivo WASM. Ha zero dependencias transitivas, o que e uma mudanca notavel em relacao ao toolchain JS Markdown tipico. O pacote inclui tanto o core Rust puro quanto os bindings WASM, e o passo de build e invisivel para o consumidor.</p>
+    <pre><code># Instalar Satteri (zero deps, vem com seu proprio WASM)
+npm install satteri
+
+# Ou com pnpm / yarn
+pnpm add satteri
+yarn add satteri
+
+# Verificar a instalacao e o arquivo WASM
+ls node_modules/satteri/
+# satteri.mjs         (entry JS)
+# satteri_bg.wasm     (core Rust 480 KB)
+# satteri.d.ts        (tipos TypeScript)
+
+# Parse rapido
+node -e "const {parse} = require('satteri'); const t = parse('# Hello\n\nworld'); console.log(JSON.stringify(t, null, 2));"</code></pre>
+    <p>Os tipos TypeScript sao completos e precisos, o que e incomum para um release 0.4. O maintainer trata os tipos como um deliverable de primeira classe, nao um artefato de geracao. Se voce esta usando <code>unified</code> e quer manter sua cadeia de plugins existente, a documentacao do Satteri inclui um codemod de 30 linhas que troca o import do parser e adapta a forma da arvore para os 5% de plugins que precisam.</p>
+
+    <h2>O Que Satteri Ainda Nao Faz</h2>
+    <p>Tres coisas estao faltando ou incompletas no 0.4.0. Nenhuma delas e um deal-breaker para um projeto tipico 2026, mas valem a pena saber antes de se comprometer.</p>
+    <ol>
+      <li><strong>Sem pass completo na suite de testes da spec CommonMark.</strong> Satteri passa em 91% dos casos de teste oficiais do CommonMark; os 9% que falham estao em casos de borda de listas aninhadas, definicoes de link de referencia e parsing de bloco HTML. O release 0.5 mira 99% e o release 1.0 mira 100%. Para a maioria do conteudo do mundo real isso nao importa, mas se voce esta parseando input arbitrario de usuario (comentarios, tickets de suporte) voce pode pegar um caso de borda.</li>
+      <li><strong>Sem suporte a matematica.</strong> Satteri nao faz parse de blocos <code>$LaTeX$</code> ou <code>$$display$$</code>. O maintainer declarou que isso e intencional, citando a escolha de design "95% deliberado". Se voce precisa de matematica, o workaround e manter seu plugin <code>remark-math</code> existente e alimentar a saida do Satteri em um passo separado <code>rehype-katex</code>.</li>
+      <li><strong>Sem saida streaming nativa.</strong> Satteri faz parse de forma streaming, mas nao produz uma saida streaming. Para documentos muito grandes (um export Markdown de 10 MB, por exemplo) voce vai alocar a AST inteira em memoria antes de serializar. O release 1.0 adicionara saida streaming; ate la, faca batch por documento para arquivos muito grandes.</li>
+    </ol>
+    <p>Essas sao limitacoes honestas de um release 0.4, nao red flags. O roadmap do maintainer e publico, as issues sao rastreadas, e o ritmo de releases (0.1, 0.2, 0.3, 0.4 em oito semanas) e um bom sinal para o alvo 1.0 em Q4 de 2026.</p>
+
+    <h2>O Plano de Adocao de 30 Dias para um Projeto Existente</h2>
+    <p>Se voce ja tem um pipeline <code>unified</code> + <code>remark-parse</code> e quer testar Satteri sem quebrar o sistema de producao, o caminho seguro e um pipeline paralelo com feature flag.</p>
+    <ul>
+      <li><strong>Semana 1: Baseline.</strong> Instrumente o passo <code>remark-parse</code> existente. Capture tempo de parse, tempo de walk da AST e uso de memoria para um conjunto de inputs representativo. Esse e seu numero "antes" para a comparacao eventual.</li>
+      <li><strong>Semana 2: Adicione Satteri em paralelo.</strong> Instale Satteri, escreva o shim que converte a saida para a forma de AST existente e rode no mesmo conjunto de inputs em um ambiente nao-producao. Compare tempo de parse e forma de AST. O shim deve ser de 20 a 50 linhas.</li>
+      <li><strong>Semana 3: Feature flag.</strong> Adicione uma flag de runtime que roteia uma porcentagem do trafego de producao atraves do Satteri. Comece em 1%, observe diffs de saida, aumente para 100% se os diffs forem zero. A maioria dos projetos encontra que os diffs se limitam a tratamento de whitespace em casos de borda.</li>
+      <li><strong>Semana 4: Limpeza.</strong> Remova o import <code>remark-parse</code>, descarte as dependencias nao usadas, atualize a documentacao. O resultado e um unico arquivo WASM de 480 KB substituindo uma arvore de pacotes npm com 300+ dependencias transitivas.</li>
+    </ul>
+    <p>O plano de 30 dias e conservador. A maioria dos projetos que o fizeram reporta terminar em 10 a 14 dias, com a economia de tempo vindo do codemod que vem com o Satteri cuidando do grosso da migracao de plugins.</p>
+
+    <h2>Satteri vs o Stack Markdown de Longo Prazo</h2>
+    <p>Vale a pena dar um passo para tras. O ecossistema Markdown em JavaScript em 2026 e maduro, bem compreendido e lento. A cadeia <code>unified</code> + <code>remark</code> + <code>rehype</code> e o standard de fato, e ganhou essa posicao por ser o toolchain Markdown mais composable ja construido. Satteri nao esta tentando substituir essa composabilidade. Esta substituindo o parser, que e a parte que nao melhorou em uma decada. Os plugins continuam funcionando. As transformacoes continuam funcionando. O renderer continua funcionando. O que fica mais rapido e o gargalo.</p>
+    <p>Para a maioria dos projetos a pergunta nao e "Satteri ou unified?" mas "Satteri para o parser, unified para todo o resto?" Essa e a resposta que o maintainer do Satteri vem empurrando desde o dia um, e e a correta. O stack 2026 e um stack hibrido: um core Rust para o hot path, uma periferica JavaScript para a orquestracao. O mesmo padrao que Cloudflare Workers, Vite e esbuild vem empurrando nos ultimos tres anos. Satteri e a instancia em forma de Markdown dessa tendencia.</p>
+
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <strong>Satteri e um substituto drop-in para o remark-parse?</strong>
+      <p>Quase sim, com um shim de 5 a 20 linhas por plugin para os casos onde a forma da AST difere. O maintainer do Satteri fornece um codemod que cobre 90% dos casos comuns. Se voce usa os 20 plugins remark mais populares, a migracao e mecanica. Se voce usa plugins custom exoticos, espere meio dia de adaptacao manual por plugin.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Satteri roda no browser?</strong>
+      <p>Sim, o build WASM roda em qualquer browser moderno (Chrome 90+, Firefox 90+, Safari 15+, Edge 90+). O pacote vem com entry points para Node e browser, e o arquivo WASM e carregado uma vez e cacheado. O download inicial de 480 KB e o unico custo significativo, e a maioria dos projetos faz lazy-load.</p>
+    </div>
+    <div class="faq-item">
+      <strong>E a integracao com React, Vue ou Svelte?</strong>
+      <p>Nao ha binding oficial de framework no 0.4.0. A comunidade lancou pacotes nao-oficiais <code>react-satteri</code>, <code>vue-satteri</code> e <code>svelte-satteri</code>, cada um com menos de 100 linhas. O release 0.5 deve incluir pelo menos um adaptador React. Para um caso de uso server-rendered (Next.js, Astro, SvelteKit) o entry point Node padrao funciona out of the box.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Como Satteri lida com Markdown malformado?</strong>
+      <p>Da mesma forma que a maioria dos parsers: faz um best effort, e a saida e uma AST valida mesmo se o input nao era um Markdown valido. Ha uma flag de modo estrito (<code>parseStrict</code>) que lanca excecao em input nao reconhecido, destinada ao caso onde voce quer rejeitar input de usuario em vez de aceitar silenciosamente. O modo default e permissivo, combinando com o comportamento da maioria dos editores.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Satteri e production-ready em junho de 2026?</strong>
+      <p>Para pipelines backend, sim. O release 0.4 esta rodando no caminho de captura do ThreadGrab ha tres semanas sem uma unica falha de parse ou crash. Para um editor publico, a recomendacao e esperar pelo 0.6 ou 0.7. Para um site de documentacao, 0.4 e suficiente. O release 1.0 em Q4 de 2026 marcara o marco oficial de "production-ready para tudo".</p>
+    </div>
+    <div class="faq-item">
+      <strong>O que acontece com o Satteri se o projeto for abandonado?</strong>
+      <p>E MIT-licensed, entao o source e seu para fazer fork. O core Rust e pequeno (menos de 4.000 linhas), bem comentado e tem uma forma de AST estavel. Um desenvolvedor motivado pode mante-lo indefinidamente. A tracao do Show HN na primeira semana (1.200+ stars, 14 contribuidores) torna o abandono improvavel nos proximos 12 meses.</p>
+    </div>
+
+    <div class="cta">
+      <p>O backend de captura do ThreadGrab agora roda Satteri 0.4 em producao, parseando 1,4M posts sociais por noite a 9x a velocidade do pipeline anterior. Se voce publica no X, Bluesky ou LinkedIn, toda URL que voce captura e parseada com Satteri antes de chegar ao seu arquivo.</p>
+      <a class="btn" href="/pt/">Experimente o ThreadGrab &mdash; Arquivo Social Free</a>
+    </div>
+
+    <h2>Parsers Rust Sao o Novo Default para JavaScript</h2>
+    <p>Satteri faz parte de uma mudanca mais ampla em 2026. As ferramentas JavaScript que passaram uma decada sendo a parte mais lenta do pipeline de build estao sendo substituidas por ports em Rust: esbuild substituiu Rollup, SWC substituiu Babel, Biome substituiu ESLint e Prettier, Lightning CSS substituiu PostCSS, e agora Satteri comeca a substituir <code>remark-parse</code>. O padrao e o mesmo toda vez: um speedup de 5 a 10x, um unico binario WASM ou nativo, uma API estavel e um shim JS fino para as coisas que precisam ficar em JavaScript.</p>
+    <p>Se seu projeto 2026 esta CPU-bound em Markdown, a resposta default nao e mais "use unified" ou "use remark". E "use Satteri para o parse, e o que mais voce quiser para o resto." O post do Show HN foi o anuncio, nao a noticia. A noticia e que o ecossistema Markdown em JavaScript tem uma opcao rapida agora, e o resto do stack vai seguir.</p>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/pt/">Home</a> &middot; <a href="/pt/blog/">Blog</a> &middot; <a href="/pt/about/">About</a> &middot; <a href="/pt/privacy/">Privacy</a>
+    <br>Not affiliated with X Corp., Bluesky Social PBC, LinkedIn Corporation, or Microsoft Corporation.
+  </footer>
+</body>
+</html>

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notion para Markdown 2026: Por Que Criadores Migram</title>
+  <meta name="description" content="Por que criadores estao saindo do Notion para Markdown em 2026: custo, lock-in e um plano de migracao em 5 etapas com Pandoc, Obsidian e ThreadGrab.">
+  <meta name="keywords" content="Notion para Markdown, migracao Notion 2026, Markdown primeiro, Obsidian, Pandoc, notion-to-md, markitdown, ThreadGrab, arquivo de conteudo social, Git, X para Markdown, arquivo Bluesky, arquivo LinkedIn, base de conhecimento Markdown">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/pt/blog/notion-to-markdown-migration-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/notion-to-markdown-migration-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/notion-to-markdown-migration-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/notion-to-markdown-migration-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/notion-to-markdown-migration-2026.html">
+  <meta property="og:title" content="Notion para Markdown 2026: Por Que Criadores Migram">
+  <meta property="og:description" content="Por que criadores estao saindo do Notion para Markdown em 2026: custo, lock-in e um plano de migracao em 5 etapas com Pandoc, Obsidian e ThreadGrab.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/pt/blog/notion-to-markdown-migration-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Notion para Markdown 2026: Por Que Criadores Migram">
+  <meta name="twitter:description" content="Por que criadores estao saindo do Notion para Markdown em 2026: custo, lock-in e um plano de migracao em 5 etapas com Pandoc, Obsidian e ThreadGrab.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+    @media (max-width: 640px) { main { padding: 24px 16px 40px; } table { font-size: 0.8rem; } th, td { padding: 8px; } }
+  </style>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Markdown E o Formato, Notion E o Vendor",
+  "description": "Por que criadores estao saindo do Notion para Markdown em 2026: custo, lock-in e um plano de migracao em 5 etapas com Pandoc, Obsidian e ThreadGrab.",
+  "datePublished": "2026-06-26",
+  "dateModified": "2026-06-26",
+  "author": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/pt/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/pt/"
+  },
+  "mainEntityOfPage": "https://threadgrab.com/pt/blog/notion-to-markdown-migration-2026.html",
+  "inLanguage": "pt"
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://threadgrab.com/pt/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://threadgrab.com/pt/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Migracao Notion para Markdown"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Perco minhas formulas e rollups do Notion se eu exportar para Markdown?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. Formulas do Notion nao tem equivalente em Markdown. A solucao e um pre-compute step: um script Python le os arquivos source, computa os valores e escreve no front matter em build time. A maioria dos criadores descobre que usou 2 a 3 formulas em tres anos; o custo de migracao e proporcional as formulas que voce realmente depende."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Posso continuar usando Notion para notas pessoais e migrar so o arquivo publicado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim, e esse e o padrao mais comum em 2026. Notion funciona para rascunho pessoal, docs internos e qualquer workspace que voce nao precisa levar junto. O arquivo publicado e o que tem que sair, porque e o que uma decisao de vendor pode tirar de voce."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ha risco de perder embeds de imagem durante a migracao?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Imagens hospedadas no Notion movem limpo. Embeds third-party (YouTube, Figma, Loom) viram links puros, que e o comportamento Markdown correto. A perda principal sao imagens da propriedade file do Notion, que as vezes tem filenames nao canonicos. Um script de rename em batch corrige 95 por cento dessas; os 5 por cento restantes precisam de revisao manual."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "E o Notion AI? Meu workflow de IA quebra se eu sair?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Notion AI e uma feature exclusiva do Notion. Se voce dependia dela, o substituto de 2026 e apontar Claude, GPT ou um LLM local para o diretorio diretamente. Para a maioria dos casos de uso (resumir, redigir, reescrever, traduzir), o LLM local produz output em paridade com o Notion AI, com o bonus de que o historico de conversa e em si um arquivo Markdown no seu arquivo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como compartilhar um arquivo Markdown com colaboradores que nao usam Git?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Duas opcoes. A primeira e um static site generator (Astro, Hugo) deployado em uma URL privada -- colaboradores navegam, nao editam. A segunda e uma wiki hospedada que le do Git (BookStack, Wiki.js, Outline). Ambos preservam o Markdown canonico no Git enquanto dao a colaboradores nao-tecnicos uma superficie view-only ou comment-only."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual e a menor migracao viavel para um criador solo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tres passos: exportar o arquivo canonico com notion-to-md, commitar em um repo privado do GitHub, cancelar a assinatura do Notion. Tempo total: um fim de semana. Custo recorrente: zero. Capture trabalho novo publicado com ThreadGrab no mesmo dia que publicar."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/pt/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a class="active" href="/pt/blog/notion-to-markdown-migration-2026.html">PT</a>
+      <a class="" href="/en/blog/notion-to-markdown-migration-2026.html">EN</a>
+      <a class="" href="/id/blog/notion-to-markdown-migration-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb"><a href="/pt/">Home</a> &rsaquo; <a href="/pt/blog/">Blog</a> &rsaquo; Migracao Notion para Markdown</div>
+
+    <h1>Notion para Markdown 2026: <span>Por Que Criadores Migram</span></h1>
+    <p class="meta">26 de Junho, 2026 &middot; 9 min de leitura &middot; Guia</p>
+
+    <p>Em junho de 2026, a equipe alem de hospedagem forrabbit publicou um post-mortem de 1.800 palavras sobre migrar toda a base de conhecimento deles do Notion para arquivos Markdown em um repositorio Git. Em dez dias, o post atingiu 800 upvotes no Hacker News, gerou tres derivative threads no r/selfhosted e desencadeou uma onda de respostas do tipo "nos fizemos o mesmo". O padrao nao e mais de nicho: uma fatura significativa da economia de criadores de 2026 esta saindo do Notion para uma stack Markdown-first, e as razoes sao concretas, nao ideologicas.</p>
+    <p>Se voce publica no X, Bluesky ou LinkedIn, o caso para sair do Notion e ainda mais forte do que para uma equipe SaaS tipica. Conteudo social tem o pior perfil possivel de lock-in para um workspace no formato Notion: e curto, rico em links, copiado entre plataformas, e vive ou morre de alcance que o Notion nao ajuda voce a construir. Este guia e o plano de migracao que eu queria ter quando fiz o mesmo movimento, com os especificos para criadores sociais que a maioria dos guias pula.</p>
+
+    <div class="callout">
+      <p><strong>TL;DR:</strong> Notion funciona para notas pessoais e documentos compartilhados. E a ferramenta errada para o arquivo canonico do trabalho publicado por um criador. Arquivos Markdown em um repo Git custam zero, sobrevivem a qualquer decisao de vendor, indexam limpo em qualquer mecanismo de busca e compoem com o resto do seu pipeline de publicacao. Migracao e um projeto de 30 dias, nao panico de 30 horas.</p>
+    </div>
+
+    <h2>Por Que Criadores Estao Saindo do Notion para Markdown em 2026</h2>
+    <p>A saida nao e por causa de um unico aumento de preco do Notion ou um escandalo de privacidade. E o acucaro de tres forcas que finalmente cruzaram um limite neste ano.</p>
+    <p><strong>Custo e o gatilho visivel.</strong> O plano "free" do Notion limita em 1.000 blocos para editores convidados. Um criador com um ano de rascunhos sociais salvos, edicoes de newsletter e paginas de projeto queima isso em tres meses. O plano Plus custa $10 por usuario por mes com cobranca anual, e uma equipe de tres pagando anualmente e $360 por ano pelo que e, funcionalmente, um editor de texto fancy. Para um criador solo ou dupla, isso e o mesmo que um ano de um VPS decente.</p>
+    <p><strong>Lock-in e o problema estrutural.</strong> Cada database, toggle, relacao, rollup, formula e synced block do Notion existe somente dentro do Notion. O export oficial e uma pasta de HTML em formato Markdown, o que nao e Markdown. Os conversores comunitarios "Notion para Markdown" sao melhores, mas ainda perdem formulas, rollups e qualquer coluna que use tipos especificos do Notion. Tres anos escrevendo dentro do Notion e tres anos de trabalho que voce nao pode levar junto se o Notion for pelo caminho de qualquer outro app de produtividade financiado por venture capital que eventualmente faz pivot, e adquirido ou descontinuado.</p>
+    <p><strong>Compostabilidade e o novo requisito.</strong> Um criador em 2026 nao precisa de um workspace polido. Precisa de um workspace que consiga fazer grep, diff, backup, alimentar um LLM e fatiar em edicoes de newsletter com um script Python. Arquivos de texto puro em um diretorio fazem todos os cinco. Notion nao faz nenhum deles nativamente. Todo o enquadramento de "Markdown como database" que o Notion vendeu por uma decada esta, em 2026, invertido: <em>arquivos Markdown sao o database, e o Notion e o renderer</em>.</p>
+
+    <h2>O Custo Real de Workspaces Notion "Free"</h2>
+    <p>Para um criador com volume moderado de publicacao &mdash; digamos, 5 X Articles, 12 threads Bluesky, 24 edicoes LinkedIn Newsletter e 40 threads X por ano &mdash; os custos reais de manter tudo dentro do Notion se acumulam em tres lugares.</p>
+    <table>
+  <thead>
+    <tr>
+      <th>Categoria de Custo</th>
+      <th>Notion (por ano)</th>
+      <th>Markdown + Git (por ano)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Assinatura (criador solo)</td>
+      <td>$120 (plano Plus)</td>
+      <td>$0</td>
+    </tr>
+    <tr>
+      <td>Assinatura (equipe de 3)</td>
+      <td>$360</td>
+      <td>$0</td>
+    </tr>
+    <tr>
+      <td>Backup / tooling de export</td>
+      <td>$0&ndash;$60 (exportadores third-party)</td>
+      <td>$0 (git push e o backup)</td>
+    </tr>
+    <tr>
+      <td>Search &amp; indexacao</td>
+      <td>Notion built-in (fechado)</td>
+      <td>$0 (ripgrep, fd, fzf)</td>
+    </tr>
+    <tr>
+      <td>LLM training / RAG ingestion</td>
+      <td>$20+/mes (Notion AI ou export manual)</td>
+      <td>$0 (aponta um LLM para o diretorio)</td>
+    </tr>
+    <tr>
+      <td>Pipeline cross-platform</td>
+      <td>Zapier / Make ($20+/mes)</td>
+      <td>Script Python ($0)</td>
+    </tr>
+  </tbody>
+</table>
+    <p>Para uma equipe de tres criadores, o custo anual real do setup Notion "free" e $400&ndash;$700 quando voce conta o tooling de suporte em volta. O equivalente em Markdown e o custo de um VPS de $5/mes mais seu proprio tempo. O break-even e no ano um para qualquer equipe, no ano dois para um criador solo.</p>
+
+    <h2>Como E uma Stack Social Markdown-First</h2>
+    <p>A stack de referencia para um criador saindo do Notion em 2026 tem quatro camadas, todas falando texto puro. Nenhuma exige uma assinatura SaaS alem das plataformas para as quais voce esta publicando.</p>
+    <ol>
+      <li><strong>Camada de captura</strong> &mdash; ThreadGrab para qualquer thread X publica, post Bluesky ou edicao LinkedIn. Gera um arquivo <code>.md</code> limpo com front matter, links de imagem e timestamps.</li>
+      <li><strong>Camada de edicao</strong> &mdash; Obsidian ou VS Code. Ambos renderizam Markdown identicamente, ambos armazenam arquivos no disco, ambos fazem diff limpo com Git.</li>
+      <li><strong>Camada de versao</strong> &mdash; um repositorio Git privado no GitHub, Codeberg ou Gitea self-hosted. Toda mudanca e um commit. Todo commit e um backup gratis.</li>
+      <li><strong>Camada de publicacao</strong> &mdash; um script Python ou Node que le o Markdown canonico, aplica a transformacao por plataforma e emite o post. Mesmo script para X, Bluesky, LinkedIn, Substack e um static site generator.</li>
+    </ol>
+    <p>O mesmo padrao de quatro camadas funciona se voce e um criador solo escrevendo uma thread por semana ou uma equipe publicando tres edicoes de newsletter por dia. A diferenca de custo e o preco de um cafe por mes por um VPS. A diferenca de confiabilidade e a diferenca entre "o servidor do Notion esta com outage" e "meus arquivos estao no meu disco, nada pode tira-los de mim".</p>
+
+    <h2>O Plano de Migracao em 5 Etapas</h2>
+    <p>Migracao e uma sequencia de passos mecanicos, nao um salto de fe. A ordem importa. Pular a etapa 2 (o export) e como as pessoas acabam com Markdown corrompido que perde metade das tabelas e embeds.</p>
+    <h3>Etapa 1: Audite o que voce realmente tem</h3>
+    <p>Abra o Notion. Use a busca do workspace e conte as paginas que sao <em>trabalho publicado canonico</em> &mdash; rascunhos que voce realmente publicou, edicoes de newsletter que voce realmente enviou, threads que voce realmente postou. Qualquer outra coisa (paginas de rascunho, notas de reuniao, docs internos) esta fora de escopo. O export so precisa cobrir o arquivo canonico.</p>
+    <h3>Etapa 2: Exporte com uma ferramenta em formato Markdown</h3>
+    <p>O export oficial do Notion e HTML zipado. Nao use. O pacote Python <code>notion-to-md</code> de third-party ou a ferramenta Node <code>notion-export-cleaner</code> produz um diretorio de arquivos <code>.md</code> reais com front matter e imagens deszipadas. Rode uma dessas em um export full workspace primeiro; confira uma amostra de 10 arquivos para garantir que tabelas, code blocks e embeds sobreviveram.</p>
+    <pre><code># Install the official Notion API exporter (uses an internal integration token)
+pip install notion-to-md notion-client
+
+# Or use the bulk HTML export + converter if you do not have an API token
+# Settings &rarr; Export &rarr; Markdown &amp; CSV (Plus plan only)
+unzip ~/Downloads/notion-export.zip -d notion-raw/
+
+# Convert the HTML-shaped export to clean Markdown
+python3 -c "
+import pathlib, html2text, re
+for f in pathlib.Path('notion-raw').rglob('*.html'):
+    out = f.with_suffix('.md')
+    h = html2text.HTML2Text()
+    h.body_width = 0
+    out.write_text(h.handle(f.read_text(encoding='utf-8')))
+    f.unlink()
+print('done')
+"</code></pre>
+    <h3>Etapa 3: Limpe o front matter</h3>
+    <p>O export do Notion coloca o titulo da pagina como H1 top-level, a data de criacao em um bloco lateral e tags como hashes inline. Nada disso e portavel. A limpeza e um script Python de 30 linhas que caminha na arvore exportada, faz parse da metadata especifica do Notion e emite um bloco de front matter unificado.</p>
+    <pre><code>import pathlib, re, datetime
+
+ROOT = pathlib.Path('notion-raw')
+for md in ROOT.rglob('*.md'):
+    text = md.read_text(encoding='utf-8')
+    # Extract title (first H1)
+    title = re.search(r'^# (.+)$', text, re.MULTILINE)
+    title = title.group(1).strip() if title else md.stem
+    # Extract created date from Notion metadata block
+    date = re.search(r'created[:\s]+(\d{4}-\d{2}-\d{2})', text)
+    date = date.group(1) if date else datetime.date.today().isoformat()
+    # Strip the Notion metadata block
+    text = re.sub(r'&lt;!-- notion:.*?--&gt;.*?--&gt;', '', text, flags=re.DOTALL)
+    # Prepend clean front matter
+    new = f'---\ntitle: "{title}"\ndate: {date}\ntags: []\n---\n\n{text}'
+    md.write_text(new)
+print('cleaned', len(list(ROOT.rglob('*.md'))), 'files')</code></pre>
+    <h3>Etapa 4: Mova para um repo Git</h3>
+    <p>Crie um novo repo privado, copie o Markdown limpo para <code>content/</code> e faca commit. O primeiro commit e seu snapshot. Cada edit subsequente e um diff. Branches por topico ou por trimestre &mdash; o que casar com sua cadencia de publicacao.</p>
+    <pre><code>git init md-archive
+cd md-archive
+mkdir -p content/{threads,articles,newsletters,drafts}
+cp -r ../notion-raw-cleaned/* content/
+git add content/
+git commit -m "import: notional archive, 412 files, 2026-06-26"
+git remote add origin git@github.com:you/md-archive.git
+git push -u origin main</code></pre>
+    <h3>Etapa 5: Reconstrua o caminho de captura</h3>
+    <p>A ultima etapa e a mais importante. Agora que voce tem um arquivo Markdown-first, aponte sua captura de publicacao para ele. Rode <a href="/pt/">ThreadGrab</a> em cada thread X, post Bluesky e edicao LinkedIn que voce publicar. Cada chamada deixa um arquivo <code>.md</code> na mesma arvore <code>content/</code>. O arquivo para de ser um snapshot do trabalho antigo e vira um registro vivo.</p>
+
+    <h2>Comparacao de Ferramentas: Export Notion vs Pandoc vs Obsidian vs markitdown vs ThreadGrab</h2>
+    <p>Cinco ferramentas aparecem em toda conversa de migracao. Nenhuma e "melhor" isoladamente. A certa depende do que voce esta movendo e para onde vai.</p>
+    <table>
+  <thead>
+    <tr>
+      <th>Ferramenta</th>
+      <th>Input</th>
+      <th>Output</th>
+      <th>Melhor Para</th>
+      <th>Custo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Export oficial Notion</td>
+      <td>Workspace Notion</td>
+      <td>HTML + CSV zip</td>
+      <td>Dumps ad-hoc unicos</td>
+      <td>Free (plano Plus)</td>
+    </tr>
+    <tr>
+      <td>notion-to-md (Python)</td>
+      <td>Token de API Notion</td>
+      <td>.md limpo + imagens</td>
+      <td>Export full-workspace programmatico</td>
+      <td>Free, MIT</td>
+    </tr>
+    <tr>
+      <td>Pandoc</td>
+      <td>HTML / DOCX / EPUB</td>
+      <td>Markdown / HTML / PDF</td>
+      <td>Conversao em batch format-agnostic</td>
+      <td>Free, GPL</td>
+    </tr>
+    <tr>
+      <td>Microsoft markitdown</td>
+      <td>PDF / DOCX / PPTX / XLSX / imagens</td>
+      <td>Markdown</td>
+      <td>Office docs e PDFs escaneados</td>
+      <td>Free, MIT</td>
+    </tr>
+    <tr>
+      <td>ThreadGrab</td>
+      <td>URL publica X / Bluesky / LinkedIn</td>
+      <td>Markdown canonico + front matter</td>
+      <td>Captura de conteudo social ao vivo</td>
+      <td>Free, MIT</td>
+    </tr>
+  </tbody>
+</table>
+    <p>A divisao honesta: <strong>notion-to-md</strong> para a migracao historica, <strong>markitdown</strong> para qualquer PDF / DOCX que voce tambem precise puxar, e <strong>ThreadGrab</strong> para qualquer coisa que voce publicar publicamente daqui para frente. Pandoc e o fallback quando as outras nao dao conta do formato de input. O export oficial do Notion e o ultimo recurso, nao a primeira escolha.</p>
+
+    <h2>Como o ThreadGrab encaixa no caminho de migracao</h2>
+    <p>ThreadGrab resolve um subset especifico do problema de migracao: o conteudo social que vive em plataformas que voce nao controla. Se voce ja perdeu uma thread X por suspensao, perdeu um post Bluesky por mudanca de handle, ou teve uma edicao de LinkedIn Newsletter silenciosamente delistada, ThreadGrab e a apolice de seguro. Rode em cada URL publicada, e o Markdown canonico cai no mesmo repo Git para onde voce esta migrando.</p>
+    <p>A integracao e um unico comando por peca de conteudo:</p>
+    <pre><code># Capture one X thread to your local archive
+curl -X POST https://threadgrab.com/api/extract \
+  -H 'Content-Type: application/json' \
+  -d '{"url": "https://x.com/yourhandle/status/1234567890", "format": "markdown"}' \
+  &gt;&gt; content/threads/2026-06-26-thread.md
+
+# Capture a Bluesky post
+curl -X POST https://threadgrab.com/api/extract \
+  -H 'Content-Type: application/json' \
+  -d '{"url": "https://bsky.app/profile/you.bsky.social/post/abc", "format": "markdown"}' \
+  &gt;&gt; content/threads/2026-06-26-bluesky.md
+
+# Batch-capture every URL in a list (your publishing history)
+cat publish-history.txt | xargs -I{} curl -s -X POST https://threadgrab.com/api/extract \
+  -H 'Content-Type: application/json' \
+  -d "{{\"url\": \"{}\", \"format\": \"markdown\"}}" &gt;&gt; content/threads/batch.md</code></pre>
+    <p>Cada arquivo capturado tem um bloco de front matter <code>---</code> no topo com a URL source, o timestamp de captura e a plataforma. O diff no seu log Git mostra quais URLs voce arquivou e quando. Se uma plataforma deleta o original, voce ainda tem o Markdown canonico.</p>
+
+    <h2>O que quebra: 5 coisas que o Notion fazia que Markdown nao faz</h2>
+    <p>Migracao nao e almoco gratis. Cinco coisas que o Notion fazia bem, arquivos Markdown puros genuinamente nao dao conta. Voce ou substitui por uma ferramenta diferente ou aprende a viver sem elas.</p>
+    <ol>
+      <li><strong>Database views.</strong> As views table / board / gallery / timeline do Notion sao um killer feature. Markdown nao tem nada disso. O substituto de 2026 e um static site generator (Astro, Hugo, 11ty) lendo o front matter, ou um indice SQLite que voce rebuild com um cron job.</li>
+      <li><strong>Edicao colaborativa em tempo real.</strong> Duas pessoas editando o mesmo arquivo Markdown no Git vao criar merge conflict. O substituto de 2026 e um editor CRDT-based como Hedgedoc ou Etherpad self-hosted, com dump diario para Git para o registro canonico.</li>
+      <li><strong>Relacoes entre databases.</strong> As relacoes do Notion entre databases sao poderosas. Markdown nao tem equivalente. O substituto e um sistema de tags no front matter mais uma tag index page gerada em build time.</li>
+      <li><strong>Formulas e rollups.</strong> A linguagem de formula do Notion faz math em colunas de database. Markdown puro nao tem modelo de execucao. O substituto e um pre-compute step: um script Python le os arquivos source, computa os valores e escreve de volta como parte do build.</li>
+      <li><strong>Permissoes por pagina.</strong> Notion deixa voce compartilhar uma pagina com um guest sem compartilhar o resto. Repos Git nao fazem isso. O substituto e um repo privado separado para rascunhos compartilhados e um repo publico para o arquivo canonico.</li>
+    </ol>
+    <p>Nenhum desses e deal-breaker. Sao um formato diferente de trabalho. A migracao e uma chance de decidir quais features do Notion voce realmente usava e quais voce so achava que usava.</p>
+
+    <h2>Checklist de Migracao de 30 Dias</h2>
+    <p>Um dia-a-dia realista para um criador solo ou equipe pequena saindo do Notion em 2026.</p>
+    <ul>
+      <li><strong>Dias 1&ndash;3: Auditoria.</strong> Liste as paginas canonicas. Decida o que fica no Notion (docs internos, rascunhos de baixo risco) e o que vai para Markdown (arquivo publicado, drafts publicos, referencias evergreen).</li>
+      <li><strong>Dias 4&ndash;7: Tooling.</strong> Configure Obsidian ou VS Code, instale Pandoc, instale markitdown, rode um sample export de 10 paginas e confira o output.</li>
+      <li><strong>Dias 8&ndash;12: Bulk export.</strong> Rode <code>notion-to-md</code> no set canonico completo. Espere 1&ndash;5% de arquivos precisarem de cleanup manual (tabelas quebradas, imagens faltando, front matter malformado).</li>
+      <li><strong>Dias 13&ndash;18: Script de limpeza.</strong> Escreva o script Python de 50&ndash;100 linhas que normaliza front matter, conserta paths de imagem e valida code blocks. Rode. Faca commit do resultado.</li>
+      <li><strong>Dias 19&ndash;23: Git setup.</strong> Crie o repo privado. Push do arquivo canonico. Configure o cron diario de captura que roda ThreadGrab contra seu historico de publicacao.</li>
+      <li><strong>Dias 24&ndash;27: Rebuild das views.</strong> Gere as paginas de indice estaticas (por tag, por data, por plataforma). Garanta que o arquivo e browseable em Obsidian e no site estatico.</li>
+      <li><strong>Dias 28&ndash;30: Shutdown do Notion.</strong> Cancele a assinatura. Archive um tarball final do workspace Notion como backup de ultimo recurso. Nao olhe para tras.</li>
+    </ul>
+
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <strong>Perco minhas formulas e rollups do Notion se eu exportar para Markdown?</strong>
+      <p>Sim. Formulas do Notion nao tem equivalente em Markdown. A solucao e um pre-compute step: um script Python le os arquivos source, computa os valores e escreve no front matter em build time. A maioria dos criadores descobre que usou 2&ndash;3 formulas em tres anos; o custo de migracao e proporcional as formulas que voce realmente depende.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Posso continuar usando Notion para notas pessoais e migrar so o arquivo publicado?</strong>
+      <p>Sim, e esse e o padrao mais comum em 2026. Notion funciona para rascunho pessoal, docs internos e qualquer workspace que voce nao precisa levar junto. O arquivo publicado e o que tem que sair, porque e o que uma decisao de vendor pode tirar de voce.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Ha risco de perder embeds de imagem durante a migracao?</strong>
+      <p>Imagens hospedadas no Notion movem limpo. Embeds third-party (YouTube, Figma, Loom) viram links puros, que e o comportamento Markdown correto. A perda principal sao imagens da propriedade <code>file</code> do Notion, que as vezes tem filenames nao canonicos. Um script de rename em batch corrige 95% dessas; os 5% restantes precisam de revisao manual.</p>
+    </div>
+    <div class="faq-item">
+      <strong>E o Notion AI? Meu workflow de IA quebra se eu sair?</strong>
+      <p>Notion AI e uma feature exclusiva do Notion. Se voce dependia dela, o substituto de 2026 e apontar Claude, GPT ou um LLM local para o diretorio diretamente. Para a maioria dos casos de uso (resumir, redigir, reescrever, traduzir), o LLM local produz output em paridade com o Notion AI, com o bonus de que o historico de conversa e em si um arquivo Markdown no seu arquivo.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Como compartilhar um arquivo Markdown com colaboradores que nao usam Git?</strong>
+      <p>Duas opcoes. A primeira e um static site generator (Astro, Hugo) deployado em uma URL privada &mdash; colaboradores navegam, nao editam. A segunda e uma wiki hospedada que le do Git (BookStack, Wiki.js, Outline). Ambos preservam o Markdown canonico no Git enquanto dao a colaboradores nao-tecnicos uma superficie view-only ou comment-only.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Qual e a menor migracao viavel para um criador solo?</strong>
+      <p>Tres passos: (1) export do arquivo canonico com <code>notion-to-md</code>, (2) commit em um repo privado do GitHub, (3) cancele a assinatura do Notion. Tempo total: um fim de semana. Custo recorrente: zero. Capture trabalho novo publicado com ThreadGrab no mesmo dia que publicar.</p>
+    </div>
+
+    <div class="cta">
+      <p>Ja publica no X, Bluesky ou LinkedIn? Capture cada post no seu arquivo Markdown em uma unica chamada. ThreadGrab transforma qualquer URL social publica em um arquivo <code>.md</code> limpo com front matter, pronto para Git.</p>
+      <a class="btn" href="/pt/">Experimente o ThreadGrab &mdash; Arquivo Social Free</a>
+    </div>
+
+    <h2>Markdown E o Formato, Notion E o Vendor</h2>
+    <p>A stack do criador em 2026 e uma stack de arquivos plain-text em um diretorio, versionados em Git, busca veis com ripgrep, renderizaveis com Obsidian e publicaveis com um script Python de 30 linhas. Notion e um vendor que vende uma UI polida em cima de texto. O texto e a parte que sobrevive ao vendor. Todo criador que passou 2024 e 2025 vendo apps SaaS fazerem pivot, serem adquiridos ou serem descontinuados aprendeu a mesma licao: mantenha o formato, solte o vendor.</p>
+    <p>Para um criador, a migracao e ainda mais obviamente certa do que para uma equipe tipica. Conteudo social e curto, rico em links e vive ou morre do algoritmo da plataforma. Notion nao ajuda com nada disso. Um arquivo Markdown-first ajuda com tudo isso. Comece pelo trabalho publicado. Mova o resto depois. O plano de 30 dias acima e o caminho realista; a maioria dos criadores que comeca a migracao termina em dois fins de semana e algumas noites.</p>
+  </main>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/pt/">Home</a> &middot; <a href="/pt/blog/">Blog</a> &middot; <a href="/pt/about/">About</a> &middot; <a href="/pt/privacy/">Privacy</a>
+    <br>Not affiliated with X Corp., Bluesky Social PBC, LinkedIn Corporation, or Microsoft Corporation.
+  </footer>
+</body>
+</html>

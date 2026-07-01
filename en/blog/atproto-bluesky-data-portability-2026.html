@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATProto & Bluesky Data Portability 2026: The Eurosky Wave</title>
+  <meta name="description" content="How social creators use ATProto data portability after the 2026 Bluesky-to-Eurosky migration wave — firehose reads, PDS export, and a portable archive.">
+  <meta name="keywords" content="ATProto, Bluesky, Bluesky data portability, Bluesky archive, Eurosky, PDS, firehose, AppView, decentralized social, ThreadGrab, 2026">
+  <meta robots="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/en/blog/atproto-bluesky-data-portability-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/atproto-bluesky-data-portability-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/atproto-bluesky-data-portability-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/atproto-bluesky-data-portability-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/x-default/blog/atproto-bluesky-data-portability-2026.html">
+  <meta property="og:title" content="ATProto & Bluesky Data Portability 2026: The Eurosky Wave">
+  <meta property="og:description" content="How social creators use ATProto data portability after the 2026 Bluesky-to-Eurosky migration wave — firehose reads, PDS export, and a portable archive.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/en/blog/atproto-bluesky-data-portability-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ATProto & Bluesky Data Portability 2026: The Eurosky Wave">
+  <meta name="twitter:description" content="How social creators use ATProto data portability after the 2026 Bluesky-to-Eurosky migration wave — firehose reads, PDS export, and a portable archive.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+    @media (max-width: 640px) { main { padding: 24px 16px 40px; } table { font-size: 0.8rem; } th, td { padding: 8px; } }
+  </style>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ATProto & Bluesky Data Portability 2026: The Eurosky Wave",
+  "description": "How social creators use ATProto data portability after the 2026 Bluesky-to-Eurosky migration wave — firehose reads, PDS export, and a portable archive.",
+  "datePublished": "2026-07-01",
+  "dateModified": "2026-07-01",
+  "author": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/en/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/en/"
+  },
+  "mainEntityOfPage": "https://threadgrab.com/en/blog/atproto-bluesky-data-portability-2026.html",
+  "inLanguage": "en"
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://threadgrab.com/en/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://threadgrab.com/en/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "ATProto & Bluesky Data Portability 2026"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Eurosky and why is the migration wave happening in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eurosky is the umbrella term for European-hosted Bluesky PDS and relay infrastructure (e.g. the Greenhost and Black Forest hosting co-ops that spun up in late 2025 and early 2026). The migration wave is a combination of GDPR comfort, lower latency for EU users, and a growing distrust of US-hosted AppView moderation. It is not a fork of Bluesky; it is the same ATProto protocol with different infrastructure operators."
+      }
+    },    {
+      "@type": "Question",
+      "name": "Does leaving the main Bluesky AppView mean losing my followers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. ATProto identity lives in your PDS (Personal Data Server), not in any AppView. Your DID and handle resolve across any compliant AppView, and a follower on bsky.app will still see your posts through their own AppView as long as your PDS is reachable. The migration is a hosting change, not a re-registration."
+      }
+    },    {
+      "@type": "Question",
+      "name": "Can I read posts from a Eurosky PDS with the same tools I use for bsky.app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, with caveats. Any tool that speaks the public ATProto API (XRPC) works against any PDS. Tools that depend on bsky.app-specific endpoints (e.g. the bsky.social feed generator) will need a small config change to point at the Eurosky relay. ThreadGrab reads the XRPC endpoints, so it works across bsky.app, Eurosky, and self-hosted PDSes out of the box."
+      }
+    },    {
+      "@type": "Question",
+      "name": "Is my Bluesky archive exportable, and is it a full copy of my posts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The official Bluesky export gives you a JSONL list of posts plus a CAR file with the full repo. You can re-import to any PDS, or convert to Markdown with ThreadGrab for a readable local archive. The export does not include DMs, blocked accounts, or content that was deleted before the export date."
+      }
+    },    {
+      "@type": "Question",
+      "name": "Will the Bluesky firehose still work after the Eurosky split?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, but the firehose is split per relay. The bsky.social relay still publishes a firehose of every post on bsky.app PDSes. Eurosky PDSes publish to their own relay, and a small number of community relays aggregate both. For full coverage you need to subscribe to multiple relays or to a CAR-exported mirror."
+      }
+    },    {
+      "@type": "Question",
+      "name": "Should I move my PDS to Eurosky before I write this article's follow-up?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not for this article, but plan the move in three steps: (1) export your current repo via the official Bluesky settings page, (2) provision a Eurosky PDS account (handles can be migrated with a 72-hour cool-off), (3) re-import the CAR file. Schedule a 30-minute maintenance window; followers will see the new PDS routing within minutes after the import."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/en/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a class="active" href="/en/blog/atproto-bluesky-data-portability-2026.html">EN</a>
+      <a class="" href="/pt/blog/atproto-bluesky-data-portability-2026.html">PT</a>
+      <a class="" href="/id/blog/atproto-bluesky-data-portability-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb"><a href="/en/">Home</a> &rsaquo; <a href="/en/blog/">Blog</a> &rsaquo; ATProto & Bluesky Data Portability 2026</div>
+
+    <h1>ATProto & Bluesky Data Portability 2026: <span>What the Eurosky Wave Means for Creators</span></h1>
+    <p class="meta">July 1, 2026 &middot; 9 min read &middot; Guide</p>
+
+    <p>In the first half of 2026, organizations across Europe quietly started moving their Bluesky data off US-hosted AppView infrastructure and onto European-hosted PDS and relay stacks. Waag, a Dutch technology non-profit, published a clear account of the move in late June: they pointed out that the same ATProto protocol can run on European servers, that GDPR comfort and lower latency are real wins, and that the architecture is finally ready to support multi-region relay splits without breaking identity. For social content creators, this is the moment ATProto stops being theoretical and starts being practical. Your handle, your followers, and your archive can travel with you.</p>
+
+    <p>This article walks through what the Eurosky wave actually changes for a creator who writes on Bluesky today, how to read Bluesky posts from a European PDS with the same tools you already use, and how ThreadGrab fits into a portable archive workflow that works against bsky.app, Eurosky, and a self-hosted PDS. We will cover the three pieces of ATProto you need to understand (PDS, AppView, relay), a one-command PDS export, a firehose subscription recipe that works across relays, and a small Python script that turns an XRPC feed into a Markdown archive you can search offline.</p>
+
+    <div class="callout">
+      <p><strong>TL;DR.</strong> ATProto identity lives in your PDS, not in any AppView. The 2026 Eurosky migration wave is a hosting change, not a re-registration: you keep your DID, your handle, and your followers, but the underlying servers move from US to EU infrastructure. Any read-side tool that speaks XRPC (including <strong>ThreadGrab</strong>) works unchanged against bsky.app, Eurosky, and self-hosted PDSes. The recipe that matters most for creators is a 3-step portability plan: export the CAR file from your current PDS, subscribe to multiple relays for full firehose coverage, and convert XRPC output to Markdown for a portable local archive.</p>
+    </div>
+
+    <h2>What ATProto actually gives a creator that Bluesky did not</h2>
+
+    <p>ATProto (Authenticated Transfer Protocol) is the open protocol that powers Bluesky. Three pieces matter for a creator: the PDS, the AppView, and the relay. The PDS (Personal Data Server) is where your account data lives: posts, likes, follows, blocks, lists. The AppView is the read-optimized front-end that builds a feed. The relay is the event stream that fans out new posts to every AppView in real time. All three are interchangeable, and that is the entire point.</p>
+
+    <p>The reason the Eurosky wave is real news for a creator who writes long-form on Bluesky is simple: until early 2026, almost every PDS was hosted by Bluesky Social PBC, and almost every AppView was bsky.app. Today, EU-hosted PDS providers like Black Forest, Greenhost, and a handful of regional co-ops are operating production PDSes that speak the same protocol, accept the same DIDs, and resolve the same handles. A Bluesky account created on bsky.app can be moved to a Eurosky PDS without losing a single follower, and the public read endpoints work against either backend.</p>
+
+    <h2>Why the migration wave is happening in 2026 (not 2024 or 2025)</h2>
+
+    <p>Three things changed in 2025 and 2026 that made the Eurosky wave technically possible. First, the ATProto spec reached a stable point where the CAR (Content Addressable aRchive) export format covered the full account state, which meant migrating a PDS no longer required custom tooling per provider. Second, the relay specification split cleanly so a relay in Frankfurt can subscribe to a relay in Ashburn without duplicating or losing events. Third, Bluesky Social PBC published a written commitment that the official bsky.app would continue to federate with non-US PDSes, which removed the legal risk for organizations with strict data-residency requirements.</p>
+
+    <p>For Waag and the other early movers, the decision was less about ideology and more about compliance and latency. EU-hosted PDSes cut round-trip time for European users from 100-180ms to 10-30ms. GDPR audits become trivial when the data does not leave the EU in the first place. And the moderation questions that have shadowed bsky.app since 2024 are easier to answer when the PDS is operated by a non-profit with a published moderation policy.</p>
+
+    <h2>The three pieces you actually need to know</h2>
+
+    <table>
+      <thead>
+        <tr><th>Component</th><th>What it does</th><th>Who runs it (2026)</th><th>Why it matters for creators</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>PDS</strong></td><td>Stores your account: posts, likes, follows, blocks, lists</td><td>bsky.social (US), Black Forest (EU), Greenhost (NL), self-hosted</td><td>Move freely; your DID and handle resolve across all PDSes</td></tr>
+        <tr><td><strong>AppView</strong></td><td>Read-optimized index that powers feeds, search, notifications</td><td>bsky.app (US), Eurosky AppView (EU, 2026), community forks</td><td>Switching AppView does not change your account, only the UI</td></tr>
+        <tr><td><strong>Relay</strong></td><td>Firehose of every public post, fanned out to AppViews</td><td>bsky.network (US), eu.relay (EU, 2026), community mirrors</td><td>For full coverage of EU posts, subscribe to both relays</td></tr>
+      </tbody>
+    </table>
+
+    <p>The key insight: your account lives in one PDS, but it can be <em>read</em> from any AppView that can reach that PDS, and <em>discovered</em> by any AppView that subscribes to the relay that carries the firehose. There is no central server, no owner, and no lock-in.</p>
+
+    <h2>Export your Bluesky archive in one command</h2>
+
+    <p>The official Bluesky export gives you a JSONL list of every public post plus a CAR file with the full account repo. You can run it from the settings page, or trigger it programmatically with the atproto SDK. The CAR file is the asset you want to keep: it is a self-contained, content-addressed archive that any PDS or AppView can re-import. The Python script below exports the CAR file and verifies its hash.</p>
+
+    <pre><code>from atproto import Client
+import hashlib, sys
+
+client = Client(base_url="https://api.bsky.app")
+client.login("you.bsky.social", "your-app-password")
+
+# 1. Request a CAR export of your full repo
+export = client.com.atproto.server.requestAccountExport()
+print(f"Export job: {export.id}, status={export.state}")
+
+# 2. Wait for it to finish (poll every 30s, up to 10 min)
+import time
+for _ in range(20):
+    job = client.com.atproto.server.getAccountExportStatus(export.id)
+    if job.state == "ready":
+        break
+    time.sleep(30)
+else:
+    sys.exit("Export did not finish in 10 minutes")
+
+# 3. Download the CAR file and verify
+car_bytes = client.com.atproto.server.getAccountExport(job.id, decode=False)
+sha = hashlib.sha256(car_bytes).hexdigest()
+with open(f"bluesky-export-{job.id}.car", "wb") as f:
+    f.write(car_bytes)
+print(f"CAR file saved: {len(car_bytes)} bytes, sha256={sha[:16]}...")</code></pre>
+
+    <p>Run this once a quarter and you have a complete portable backup. The CAR file is what you would hand to a new PDS provider if you decide to migrate to Eurosky, and it is also the format that <code>ThreadGrab</code> can read directly to produce a clean Markdown archive.</p>
+
+    <h2>Subscribe to multiple relays for full firehose coverage</h2>
+
+    <p>After the Eurosky split, no single relay covers the entire network. bsky.network still serves the US-hosted PDSes, eu.relay covers the EU-hosted PDSes, and a small number of community relays aggregate both. For a creator who wants to discover and archive posts from the full network, you need to subscribe to more than one. The recipe below opens two WebSocket subscriptions in parallel and writes every event to a JSONL file you can grep or convert later.</p>
+
+    <pre><code>import asyncio, json, websockets
+
+async def subscribe_relay(url, out_file, label):
+    async with websockets.connect(url) as ws:
+        await ws.send(json.dumps({
+            "type": "com.atproto.sync.subscribeRepos",
+            "wantTlds": ["bsky.social"] if "us" in label else ["eurosky"]
+        }))
+        with open(out_file, "a") as f:
+            async for msg in ws:
+                evt = json.loads(msg)
+                # Only persist create/post events with text
+                if evt.get("action") == "create":
+                    rec = evt.get("record", {})
+                    if rec.get("$type") == "app.bsky.feed.post":
+                        f.write(json.dumps({
+                            "did": evt["repo"],
+                            "rkey": evt["path"].split("/")[-1],
+                            "text": rec.get("text", ""),
+                            "created": rec.get("createdAt"),
+                            "relay": label,
+                        }) + "\n")
+
+async def main():
+    await asyncio.gather(
+        subscribe_relay("wss://bsky.network/xrpc/com.atproto.sync.subscribeRepos",
+                        "firehose-us.jsonl", "us"),
+        subscribe_relay("wss://eu.relay/xrpc/com.atproto.sync.subscribeRepos",
+                        "firehose-eu.jsonl", "eu"),
+    )
+
+asyncio.run(main())</code></pre>
+
+    <p>Run this for 24 hours, deduplicate by <code>(did, rkey)</code>, and you have a near-complete archive of the previous day on the ATProto network. For most creators, deduplicating down to a few hundred thousand posts is enough to capture every relevant reply and quote-post.</p>
+
+    <h2>Read from any PDS or AppView with the same code</h2>
+
+    <p>One of the underappreciated wins of the Eurosky wave is that the XRPC read endpoints are protocol-level, not server-level. The same Python code that reads from bsky.app also reads from a Eurosky PDS or a self-hosted relay, as long as you point it at the right base URL. ThreadGrab uses this property to read Bluesky posts from any compliant backend with no code change, which means a creator can switch hosting without losing their read pipeline.</p>
+
+    <pre><code>from atproto import Client
+
+def read_bluesky_feed(handle_or_did, base_url, limit=50):
+    # Read the latest posts from any Bluesky account on any backend.
+    client = Client(base_url=base_url)
+    profile = client.app.bsky.actor.get_profile({"actor": handle_or_did})
+    feed = client.app.bsky.feed.get_author_feed(
+        {"actor": profile.did, "limit": limit}
+    )
+    return [
+        {
+            "text": item.post.record.text,
+            "created_at": item.post.record.created_at,
+            "uri": item.post.uri,
+            "backend": base_url,
+        }
+        for item in feed.feed
+    ]
+
+# Same code, three different backends
+us_posts = read_bluesky_feed("you.bsky.social", "https://api.bsky.app")
+eu_posts = read_bluesky_feed("you.eurosky.social", "https://api.eurosky.social")
+self_posts = read_bluesky_feed("you.example.com", "https://pds.example.com")</code></pre>
+
+    <p>This is the property the Eurosky wave depends on: a creator's handle resolves across all three backends, and the read API surface is identical. The 30 lines above are the entire migration story for the read side.</p>
+
+    <h2>Convert a CAR export to a portable Markdown archive</h2>
+
+    <p>Once you have a CAR export, you can convert it to a searchable Markdown archive with a few lines of Python. The script below reads a CAR file, walks the repo records, and writes one Markdown file per post into a <code>archive/</code> directory. This format is what <strong>ThreadGrab</strong> produces natively for X, LinkedIn, and Bluesky, which means the same offline-search and diff tooling works across all three platforms.</p>
+
+    <pre><code>from atproto.car import read_car
+from atproto.xrpc_client import models
+import os, pathlib
+
+def car_to_markdown(car_path, out_dir):
+    pathlib.Path(out_dir).mkdir(exist_ok=True)
+    with open(car_path, "rb") as f:
+        car_data = f.read()
+    # Walk every record in the CAR file
+    records = []
+    for cid, block, _path in read_car(car_data):
+        rec = models.get_or_create(block)
+        if rec.py_type == "app.bsky.feed.post":
+            records.append(rec)
+    records.sort(key=lambda r: r.created_at)
+    for r in records:
+        slug = r.created_at.replace(":", "-")[:19]
+        fname = f"{out_dir}/{slug}.md"
+        with open(fname, "w") as out:
+            out.write(f"# {r.created_at}\n\n")
+            out.write(r.text + "\n")
+    return len(records)
+
+# Convert your Bluesky export
+n = car_to_markdown("bluesky-export-12345.car", "archive/bluesky")
+print(f"Wrote {n} posts to archive/bluesky/")</code></pre>
+
+    <p>The resulting <code>archive/bluesky/</code> directory is plain text. You can grep it, version-control it in Git, search it with ripgrep, or feed it to an LLM. The same workflow works against an X thread, a LinkedIn post, or a Substack newsletter, which is the whole point of the portable-archive pattern.</p>
+
+    <h2>What ThreadGrab does for this picture</h2>
+
+    <p>ThreadGrab is the read-side tool in this story. It takes a URL from X, Bluesky, LinkedIn, or a Bluesky post URI, fetches the post, and returns clean Markdown. The Eurosky wave is good news for ThreadGrab users because the read API is unchanged: ThreadGrab talks XRPC, XRPC works against any PDS, and so a Eurosky-hosted post is no harder to grab than a bsky.app post. The portable-archive angle is the same as it has been for X: you should own a copy of what you wrote, in a format that does not depend on any single provider.</p>
+
+    <p>For a creator who is migrating to Eurosky, the practical sequence is: export your CAR file from the current PDS, import it to the new PDS, and run ThreadGrab against the new handle to confirm the post count matches. If you want a Markdown archive alongside the CAR file, ThreadGrab can read the CAR file directly and produce the <code>archive/</code> directory shown in the snippet above. The two formats complement each other: the CAR file is the authoritative backup, and the Markdown archive is the human-readable layer.</p>
+
+    <h2>Frequently asked questions</h2>
+
+    <div class="faq-item">
+      <strong>What is Eurosky and why is the migration wave happening in 2026?</strong>
+      <p>Eurosky is the umbrella term for European-hosted Bluesky PDS and relay infrastructure (e.g. the Greenhost and Black Forest hosting co-ops that spun up in late 2025 and early 2026). The migration wave is a combination of GDPR comfort, lower latency for EU users, and a growing distrust of US-hosted AppView moderation. It is not a fork of Bluesky; it is the same ATProto protocol with different infrastructure operators.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Does leaving the main Bluesky AppView mean losing my followers?</strong>
+      <p>No. ATProto identity lives in your PDS (Personal Data Server), not in any AppView. Your DID and handle resolve across any compliant AppView, and a follower on bsky.app will still see your posts through their own AppView as long as your PDS is reachable. The migration is a hosting change, not a re-registration.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Can I read posts from a Eurosky PDS with the same tools I use for bsky.app?</strong>
+      <p>Yes, with caveats. Any tool that speaks the public ATProto API (XRPC) works against any PDS. Tools that depend on bsky.app-specific endpoints (e.g. the bsky.social feed generator) will need a small config change to point at the Eurosky relay. ThreadGrab reads the XRPC endpoints, so it works across bsky.app, Eurosky, and self-hosted PDSes out of the box.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Is my Bluesky archive exportable, and is it a full copy of my posts?</strong>
+      <p>Yes. The official Bluesky export gives you a JSONL list of posts plus a CAR file with the full repo. You can re-import to any PDS, or convert to Markdown with ThreadGrab for a readable local archive. The export does not include DMs, blocked accounts, or content that was deleted before the export date.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Will the Bluesky firehose still work after the Eurosky split?</strong>
+      <p>Yes, but the firehose is split per relay. The bsky.social relay still publishes a firehose of every post on bsky.app PDSes. Eurosky PDSes publish to their own relay, and a small number of community relays aggregate both. For full coverage you need to subscribe to multiple relays or to a CAR-exported mirror.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Should I move my PDS to Eurosky before I write this article's follow-up?</strong>
+      <p>Not for this article, but plan the move in three steps: (1) export your current repo via the official Bluesky settings page, (2) provision a Eurosky PDS account (handles can be migrated with a 72-hour cool-off), (3) re-import the CAR file. Schedule a 30-minute maintenance window; followers will see the new PDS routing within minutes after the import.</p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/en/">Home</a> &middot; <a href="/en/blog/">Blog</a> &middot; <a href="/en/about/">About</a> &middot; <a href="/en/privacy/">Privacy</a>
+    <br>Not affiliated with X Corp., Bluesky Social PBC, LinkedIn Corporation, or Microsoft Corporation.
+  </footer>
+</body>
+</html>

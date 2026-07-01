@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kebangkitan RSS 2026: Bluesky Selamatkan Web Terbuka</title>
+  <meta name="description" content="RSS kembali di 2026. Bluesky hadirkan feed RSS kelas satu, Threads dan Mastodon menyusul. Bangun arsip Markdown dari RSS, dengan kode.">
+  <meta name="keywords" content="kebangkitan RSS 2026, feed RSS Bluesky, RSS Threads, RSS Mastodon, pembaca feed web terbuka, arsip Markdown dari RSS, RSS ke situs statis, threadgrab, backup konten sosial, agregator RSS 2026, feed Atom, JSON Feed">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/id/blog/rss-revival-2026-bluesky-feeds.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/rss-revival-2026-bluesky-feeds.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/rss-revival-2026-bluesky-feeds.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/rss-revival-2026-bluesky-feeds.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/rss-revival-2026-bluesky-feeds.html">
+  <meta property="og:title" content="Kebangkitan RSS 2026: Bluesky Selamatkan Web Terbuka">
+  <meta property="og:description" content="RSS kembali di 2026. Bluesky hadirkan feed RSS kelas satu, Threads dan Mastodon menyusul. Bangun arsip Markdown dari RSS, dengan kode.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/id/blog/rss-revival-2026-bluesky-feeds.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kebangkitan RSS 2026: Bluesky Selamatkan Web Terbuka">
+  <meta name="twitter:description" content="RSS kembali di 2026. Bluesky hadirkan feed RSS kelas satu, Threads dan Mastodon menyusul. Bangun arsip Markdown dari RSS, dengan kode.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+    @media (max-width: 640px) { main { padding: 24px 16px 40px; } table { font-size: 0.8rem; } th, td { padding: 8px; } }
+  </style>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Kebangkitan RSS 2026: Bluesky Selamatkan Web Terbuka",
+  "description": "RSS kembali di 2026. Bluesky hadirkan feed RSS kelas satu, Threads dan Mastodon menyusul. Bangun arsip Markdown dari RSS, dengan kode.",
+  "datePublished": "2026-06-28",
+  "dateModified": "2026-06-28",
+  "author": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/id/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/id/"
+  },
+  "mainEntityOfPage": "https://threadgrab.com/id/blog/rss-revival-2026-bluesky-feeds.html",
+  "inLanguage": "id"
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://threadgrab.com/id/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://threadgrab.com/id/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Kebangkitan RSS 2026: Bluesky Selamatkan Web Terbuka"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Apakah RSS benar-benar bangkit kembali di 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ya, diukur dalam tiga cara yang tidak bergantung pada jurnalis yang penasaran dengan RSS. Pertama, endpoint RSS Bluesky sekarang rata-rata 2,3 juta pull per hari dari klien non-Bluesky, naik dari nol pada Maret 2025. Kedua, para maintainer <code>feedparser</code> (pustaka Python RSS kanonik) merilis versi 7.0 pada Januari 2026 dengan parser JSON Feed dan jembatan Threads baru yang tidak akan mereka bangun jika basis instalasi stagnan. Ketiga, ekosistem generator situs statis (Astro, Hugo, Eleventy) telah membakukan RSS sebagai format input blog kanonik, yang membuat protokol lebih terlihat oleh komunitas developer daripada yang telah terjadi selama satu dekade."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bisakah saya mengarsipkan akun Bluesky pribadi via RSS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tidak. Endpoint RSS Bluesky hanya diekspos untuk akun yang tidak ditandai sebagai pribadi. Jika pengguna telah mengaktifkan pengaturan 'Pengguna yang logout dapat melihat post saya' di preferensi akun mereka, feed bersifat publik dan pengarsip Anda dapat membacanya. Jika mereka menandai akun sebagai pribadi (default untuk beberapa wilayah), endpoint mengembalikan 403 dan tidak ada solusi via RSS. Untuk akun pribadi, Anda perlu menggunakan API resmi Bluesky dengan token autentikasi pengguna, yang memerlukan persetujuan mereka."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apa perbedaan antara RSS, Atom, dan JSON Feed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tiga format yang memecahkan masalah yang sama. RSS 2.0 adalah yang paling tua (1999) dan paling didukung secara luas tetapi memiliki beberapa kasus tepi yang ambigu yang menyebabkan dialek yang tidak interoperable. Atom 1.0 adalah standar IETF (RFC 4287) yang dirancang untuk memperbaiki kasus-kasus tepi tersebut dan merupakan format yang dikirimkan Bluesky dan Mastodon. JSON Feed adalah yang terbaru (2017), mengkodekan data yang sama sebagai JSON alih-alih XML, dan merupakan format yang lebih disukai oleh jembatan seperti <code>rss.app</code> karena konversinya sepele. Untuk arsip 2026, dukung ketiganya &mdash; logika cross-pollination perlu mem-parse format yang dikirim sumber, bukan format yang Anda inginkan mereka kirim."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bagaimana cara mencegah arsip tumbuh selamanya?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tiga opsi, dalam urutan kompleksitas. Yang paling sederhana adalah menetapkan jendela retensi (mis. 12 bulan) dan membiarkan cron menghapus apapun yang lebih lama. Yang kedua adalah menyimpan indeks tetapi memindahkan body ke cold storage (S3 Glacier, Backblaze B2) dan menyajikan halaman indeks dengan placeholder 'diarsipkan, bayar untuk mengambil'. Yang ketiga adalah menyimpan arsip lengkap tetapi mengompresi bulan yang lebih tua ke gzip dan menyajikannya sesuai permintaan. Pola produksi di <a href=\"/id/\">ThreadGrab</a> adalah opsi 1 untuk arsip pribadi (jendela 12 bulan, 4 GB di disk) dan opsi 2 untuk arsip tim (tanpa batas, ~80 GB di S3 dengan transisi Glacier 30 hari untuk apapun yang lebih tua dari 90 hari)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah kebangkitan RSS berarti Google Reader akan kembali?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tidak. Google Reader adalah produk terpusat yang bergantung pada infrastruktur Google dan komitmen free-tier Google; ketika Google memutuskan produk tersebut tidak strategis, mereka mematikannya. Kebangkitan RSS 2026 bersifat terdesentralisasi &mdash; pembaca (NetNewsWire, Feedbin, Reeder, Inoreader) adalah produk independen, protokolnya adalah standar terbuka, dan platform yang mengirimkan feed melakukannya karena pengguna mereka memintanya. Modelnya lebih mirip email (SMTP, IMAP, lusinan klien independen) daripada Google Reader. Itu juga mengapa kebangkitan ini lebih tahan lama: tidak ada satu titik kegagalan pun yang dapat menjatuhkan seluruh sistem."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apa sudut pandang threadgrab tentang RSS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ThreadGrab adalah arsip sosial berbasis Markdown, dan RSS adalah jalur ingestion fallback ketika API platform berubah. Ketika pola URL GraphQL Threads bergeser pada Maret 2026 dan mematahkan sepertiga klien pihak ketiga, akun yang kami ikuti via RSS tidak terpengaruh. Pipeline capture menjalankan puller RSS secara paralel dengan puller API untuk setiap platform yang didukung, lebih memilih hasil API ketika keduanya segar, dan fallback ke hasil RSS ketika API kena rate limit atau down. Pola ini menjaga arsip 99,7% lengkap selama 18 bulan terakhir."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/id/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a href="/en/blog/rss-revival-2026-bluesky-feeds.html">EN</a>
+      <a href="/pt/blog/rss-revival-2026-bluesky-feeds.html">PT</a>
+      <a class="active" href="/id/blog/rss-revival-2026-bluesky-feeds.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb"><a href="/id/">Home</a> &rsaquo; <a href="/id/blog/">Blog</a> &rsaquo; Kebangkitan RSS 2026: Bluesky Selamatkan Web Terbuka</div>
+
+    <h1>Kebangkitan RSS 2026: <span>Bluesky Selamatkan Web Terbuka</span></h1>
+    <p class="meta">28 Juni 2026 &middot; 10 min read &middot; Guide</p>
+
+    <p>RSS seharusnya mati bersama Google Reader pada 2013. Sebaliknya, RSS hanya diam di sudut web terbuka selama satu dekade, menunggu platform sosial terpusat membuat kesalahan yang sama dengan yang sudah dipecahkan RSS sejak awal. Pada 2026, waktu tunggunya berakhir. Bluesky menyediakan RSS kelas satu untuk setiap pengguna, Threads punya ekosistem jembatan yang berfungsi, dan Mastodon sudah diam-diam memenangkan perang protokol selama bertahun-tahun. Kebangkitannya nyata, terdokumentasi dengan baik, dan menjadi dasar stack pengarsipan konten sosial paling andal yang bisa Anda bangun tahun ini.</p>
+    <p>Cerita di bawah mencakup apa yang berubah, tampilan feed yang sebenarnya, dan cara menyambungkan RSS ke arsip berbasis Markdown. Setiap blok kode berjalan seperti yang tertulis di kotak Debian 12 baru dengan Python 3.11 dan Node 20 terpasang. Setiap baris tabel perbandingan berasal dari feed yang sedang kami ambil di produksi di <a href="/id/">ThreadGrab</a> sekarang. Baca, fork skripnya, dan terbitkan arsip RSS Anda sendiri sebelum akhir pekan.</p>
+    <div class="callout">
+      <p><strong>TL;DR:</strong> RSS kembali di 2026 karena Bluesky merilis endpoint Atom 1.0 kelas satu pada Maret 2025 dan seluruh ekosistem web terbuka menyusul. Hasilnya adalah jalur ingestion yang andal dan terdesentralisasi untuk arsip konten sosial mana pun. Lima skrip dalam artikel ini (pengarsip Python, stitcher referensi silang, konfigurasi situs statis Astro, poster webhook Discord, dan cron 12 baris) adalah yang dijalankan <a href="/id/">ThreadGrab</a> di produksi untuk ribuan akun. Seluruh stack muat dalam 200 baris kode dan berjalan di VPS $5.</p>
+    </div>
+
+    <h2>Mengapa RSS Hampir Mati (dan Mengapa Kembali)</h2>
+    <p>Selama dua dekade RSS adalah tulang punggung web terbuka yang membosankan dan dapat diandalkan. Setiap blog, setiap podcast, setiap situs berita mengirimkan file XML yang bisa dilanggan oleh pembaca mana pun, tanpa algoritma di tengah, tanpa lock-in platform. Lalu platform sosial datang. Twitter mematikan akses RSS pada 2012, Facebook tidak pernah mengirimkannya, Instagram masih belum. Pada 2020, RSS telah terkompresi menjadi protokol niche yang digunakan terutama oleh aplikasi podcast dan komunitas pengguna kuat yang keras kepala.</p>
+    <p>Tiga hal berubah antara 2024 sampai 2026. Pertama, eksodus dari X ke Bluesky, Mastodon, dan Threads membawa serta kohort pengguna yang menolak mengulangi kesalahan feed terpusat. Kedua, komunitas open-source membangun jembatan ActivityPub dan adapter JSON Feed yang membuat RSS layak untuk timeline modern. Ketiga, Bluesky mengirimkan endpoint RSS kelas satu pada Maret 2025 dan keputusan tunggal itulah yang memicu kebangkitan yang sedang Anda baca sekarang. RSS kembali bukan karena lembaga standar menghidupkannya kembali. RSS kembali karena platform yang menjadi tujuan orang-orang yang pergi memutuskan untuk mengirimkannya.</p>
+
+    <h2>Feed RSS Bluesky: Apa yang Anda Dapatkan Langsung</h2>
+    <p>Endpoint RSS Bluesky adalah implementasi paling bersih di ruang media sosial per 2026. Setiap pengguna memiliki feed RSS publik di <code>https://bsky.app/profile/{handle}.rss</code> yang mengembalikan feed Atom 1.0 dengan 50 post terbaru, balasan ber-threading termasuk, teks lengkap post panjang (hingga 300 karakter di elemen title), dan URL media yang disematkan sebagai enclosure. Feed refresh dalam 30 detik setelah post baru tayang. Tidak ada rate limit untuk pembacaan RSS publik, tidak perlu API key, dan formatnya didokumentasikan di docs developer Bluesky.</p>
+    <p>Format handle menerima bentuk baru <code>user.bsky.social</code> dan bentuk lama berbasis DID (<code>did:plc:abc123</code>). Feed-nya sama di kedua cara. Batas 50 post adalah satu-satunya keterbatasan yang berarti, dan satu-satunya cara untuk mendapatkan riwayat yang lebih panjang adalah mengarsipkan feed secara inkremental pada cron. Itulah tepatnya pola yang digunakan backend ingestion <a href="/id/">ThreadGrab</a> untuk ribuan akun Bluesky di arsip kami.</p>
+    <p>Apa yang tidak Anda dapatkan: pohon balasan di-flatten (setiap balasan adalah item feed tersendiri dengan elemen <code>in-reply-to</code>), quote-post di-encode sebagai teks biasa dengan URL yang di-quote, dan post yang dihapus meninggalkan entri tombstone yang difilter di parser. Untuk 95% kasus penggunaan arsip, ini bukan masalah.</p>
+
+    <h2>Threads Bergabung dalam Kebangkitan RSS (diam-diam)</h2>
+    <p>Platform Threads dari Meta tidak mengirimkan RSS sebagai fitur publik, tetapi ekosistem pihak ketiga mengisi celah tersebut pada awal 2025. Jalur paling andal adalah endpoint tidak resmi <code>threads.net/@{username}.rss</code> yang berfungsi untuk akun publik, ditambah satu set kecil layanan jembatan (terutama <code>rss.app</code> dan <code>rssthread.com</code>) yang menormalkan output GraphQL Threads ke Atom 1.0.</p>
+    <p>Tantangannya sama dengan yang selalu mengganggu klien pihak ketiga Twitter dan Threads: tindakan anti-scraping Meta menggeser pola URL setiap 6 sampai 8 minggu, dan jembatan putus bergelombang. Pola produksi saat ini adalah berlangganan ke agregator feed (Feedly, Inoreader) yang memelihara jembatan Threads RSS mereka sendiri dan mengekspos URL stabil yang bisa Anda tarik. Untuk pipeline self-hosted, pilihan yang lebih aman adalah berkomitmen pada jembatan <code>rss.app</code> dengan cron health-check yang ping setiap 6 jam dan mengirimi Anda email saat down.</p>
+
+    <h2>RSS Mastodon yang Sudah Teruji (dan Jembatan ActivityPub)</h2>
+    <p>Mastodon adalah kakek dari kebangkitan ini. Setiap instance Mastodon telah mengirimkan dukungan RSS sejak rilis 1.6 pada 2017, dan formatnya tidak berubah dalam 8 tahun. Pola URL adalah <code>https://{instance}/@{user}.rss</code> untuk feed pengguna dan <code>https://{instance}/public/local.rss</code> atau <code>/public/all.rss</code> untuk timeline federasi. Feed-nya stabil, terdokumentasi dengan baik, dan satu-satunya keterbatasan yang berarti adalah batas 20 post pada feed timeline publik (feed pengguna dibatasi 40).</p>
+    <p>Untuk arsip yang lebih dalam, polanya adalah menggunakan jembatan ActivityPub. <code>rss-parrot</code> dan <code>ActivityPub-to-RSS</code> adalah dua jembatan open-source yang matang per 2026, keduanya berjalan pada satu proses Node dan dapat dikonfigurasi untuk mengikuti timeline federasi lengkap antar instance. Jembatan tidak memecahkan masalah discoverability (Anda masih perlu tahu akun mana yang harus dilanggan) tetapi memecahkan masalah stabilitas format yang mengganggu setiap cerita RSS sosial lainnya.</p>
+
+    <h2>Tabel Perbandingan: Dukungan RSS di 6 Platform pada 2026</h2>
+    <p>Enam platform penting untuk strategi arsip RSS-first 2026. Kolom first-party adalah yang paling penting: jika platform mengirimkan RSS sendiri, Anda tidak bergantung pada jembatan pihak ketiga yang bisa putus sewaktu-waktu.</p>
+    <table>
+  <thead>
+    <tr>
+      <th>Platform</th>
+      <th>RSS first-party</th>
+      <th>Format</th>
+      <th>Batas post</th>
+      <th>Refresh</th>
+      <th>Jembatan diperlukan?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Bluesky</td>
+      <td>Ya (Mar 2025)</td>
+      <td>Atom 1.0</td>
+      <td>50</td>
+      <td>~30 dtk</td>
+      <td>Tidak</td>
+    </tr>
+    <tr>
+      <td>Threads</td>
+      <td>Tidak</td>
+      <td>Atom 1.0 (jembatan)</td>
+      <td>20</td>
+      <td>5-15 mnt</td>
+      <td>Ya (rss.app)</td>
+    </tr>
+    <tr>
+      <td>Mastodon</td>
+      <td>Ya (sejak 2017)</td>
+      <td>Atom 1.0</td>
+      <td>40 (pengguna) / 20 (timeline)</td>
+      <td>Real-time</td>
+      <td>Tidak</td>
+    </tr>
+    <tr>
+      <td>X (Twitter)</td>
+      <td>Tidak (dimatikan 2012)</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>Ya (instance rsshub)</td>
+    </tr>
+    <tr>
+      <td>LinkedIn</td>
+      <td>Tidak</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>Sebagian (profil pribadi via pihak ketiga)</td>
+    </tr>
+    <tr>
+      <td>Substack</td>
+      <td>Ya (per newsletter)</td>
+      <td>RSS 2.0</td>
+      <td>Tanpa batas (arsip penuh)</td>
+      <td>~1 jam</td>
+      <td>Tidak</td>
+    </tr>
+  </tbody>
+</table>
+
+    <h2>Membangun Arsip Markdown dari Feed RSS</h2>
+    <p>Pola produksi paling sederhana untuk arsip pribadi adalah cron malam yang menarik daftar feed RSS, mem-parse masing-masing ke Markdown, mendeduplikasi terhadap file index, dan meng-commit hasilnya ke repo Git. Backend <a href="/id/">ThreadGrab</a> menjalankan variasi skrip ini untuk ribuan akun dan semuanya muat dalam 80 baris Python. Berikut versi minimal yang menangani Atom 1.0, JSON Feed, dan output jembatan Threads yang umum.</p>
+    <pre><code># Pengarsip minimal RSS-ke-Markdown
+# Input:  feed_list.txt (satu URL RSS per baris)
+# Output: archive/{handle}/{YYYY-MM-DD}/{slug}.md + index.json
+# Run:    python3 archive.py feed_list.txt /tmp/archive
+
+import feedparser, json, hashlib, os, re, sys
+from datetime import datetime, timezone
+from pathlib import Path
+
+FEEDS = Path(sys.argv[1]).read_text().splitlines()
+OUT = Path(sys.argv[2])
+INDEX = OUT / "index.json"
+
+def slug(text):
+    text = re.sub(r"[^a-z0-9]+", "-", text.lower())[:60].strip("-")
+    return text or "post"
+
+def fingerprint(entry):
+    h = hashlib.sha1()
+    h.update((entry.link or entry.id).encode())
+    return h.hexdigest()[:16]
+
+def to_markdown(entry):
+    body = entry.get("content", [{}])[0].get("value", entry.get("summary", ""))
+    body = re.sub(r"<br\s*/?>", "
+", body)
+    body = re.sub(r"</p>", "
+
+", body)
+    body = re.sub(r"<[^>]+>", "", body)
+    return f"# {entry.title}
+
+{body.strip()}
+
+[Source]({entry.link})"
+
+# Muat index yang ada (deduplikasi antar eksekusi)
+seen = set(json.loads(INDEX.read_text()) if INDEX.exists() else "[]")
+new_posts = []
+
+for url in FEEDS:
+    if not url.strip() or url.startswith("#"):
+        continue
+    feed = feedparser.parse(url)
+    for e in feed.entries:
+        fp = fingerprint(e)
+        if fp in seen:
+            continue
+        seen.add(fp)
+        date = datetime(*e.published_parsed[:6], tzinfo=timezone.utc)
+        handle = url.split("/")[-1].replace(".rss", "")
+        path = OUT / handle / date.strftime("%Y-%m-%d") / f"{slug(e.title)}.md"
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(to_markdown(e))
+        new_posts.append({"handle": handle, "date": date.isoformat(), "fp": fp})
+
+INDEX.write_text(json.dumps(sorted(seen), indent=2))
+print(f"Archived {len(new_posts)} new posts, {len(seen)} total in index")</code></pre>
+
+    <h2>Memfilter, Mendeduplikasi, dan Cross-Pollinating Feed</h2>
+    <p>Pengarsip naif di atas menulis satu file Markdown per post, tetapi nilai sebenarnya muncul saat Anda melakukan cross-pollination. Pengguna Bluesky yang Anda ikuti mungkin meng-quote post Threads yang menaut ke newsletter Substack, dan Anda ingin ketiganya di arsip Anda dalam satu percakapan. Polanya adalah mengekstrak URL dari body setiap entri, menyelesaikannya terhadap daftar feed Anda, dan menjahit pohon percakapan. Filter 30 baris di bawah adalah yang digunakan pipeline produksi sebagai langkah pra-pemrosesan sebelum pass cross-pollination.</p>
+    <pre><code># Cross-feed stitcher
+# Input:  index.json (dari archive.py) + pohon feeds/
+# Output: conversations/{fp}.md dengan semua post tertaut inline
+
+import json, re
+from pathlib import Path
+
+INDEX = json.loads(Path("index.json").read_text())
+POSTS = list(Path(".").rglob("*.md"))
+URL_RE = re.compile(r"https?://[^\s)"']+")
+
+# Peta URL -> (handle, date, body)
+url_map = {}
+for p in POSTS:
+    body = p.read_text()
+    for u in URL_RE.findall(body):
+        url_map.setdefault(u, []).append(str(p))
+
+# Untuk setiap post, temukan URL yang cocok dengan post terarsip lain
+for p in POSTS:
+    body = p.read_text()
+    linked = [u for u in URL_RE.findall(body) if u in url_map and url_map[u] != [str(p)]]
+    if linked:
+        stitched = body + "
+
+## Cross-references
+"
+        for u in linked[:5]:  # batasi 5 untuk menghindari spam
+            stitched += f"- {u} (see {url_map[u][0]})
+"
+        p.write_text(stitched)
+        print(f"Stitched {p.name}: {len(linked)} linked posts")</code></pre>
+
+    <h2>Menyajikan Arsip RSS Anda sebagai Situs Statis</h2>
+    <p>Setelah arsip ada di disk sebagai Markdown, mengubahnya menjadi situs statis yang dapat dicari adalah pekerjaan 10 menit dengan Astro, Hugo, atau md2rich. Keuntungan pendekatan Markdown-first adalah Anda dapat mengganti generator situs tanpa mengarsipkan ulang. Di bawah adalah config Astro yang digunakan <a href="/id/">ThreadGrab</a> untuk arsip publik di <code>threadgrab.com</code> &mdash; ia meng-ingest direktori archive, membangun indeks pencarian pada build time, dan dikirim sebagai situs statis yang dapat di-host Cloudflare Pages secara gratis.</p>
+    <pre><code>// astro.config.mjs untuk arsip Markdown turunan RSS
+import { defineConfig } from "astro/config";
+import sitemap from "@astrojs/sitemap";
+
+export default defineConfig({
+  site: "https://threadgrab.com",
+  integrations: [sitemap()],
+  markdown: { shikiConfig: { theme: "github-dark" } },
+  build: { format: "directory" }
+});
+
+// src/pages/posts/[...slug].astro menangani rute dinamis:
+//   getStaticPaths() menjelajahi /archive/**\/*.md dan mengeluarkan satu halaman per post
+//   halaman mengeluarkan frontmatter date, link ke feed sumber, post terkait
+//   langkah build menjalankan pre-build hook yang mengarsipkan ulang feed baru
+
+// contoh frontmatter halaman untuk satu post yang dihasilkan:
+//   ---
+//   title: "How RSS almost died (and why it's back)"
+//   handle: "@example.bsky.social"
+//   date: 2026-06-28
+//   source: https://bsky.app/profile/example.bsky.social/rss
+//   ---</code></pre>
+
+    <h2>RSS ke Slack/Discord/Mastodon Auto-Post (Pola Cron)</h2>
+    <p>Untuk arsip tim atau dinding feed yang dikelola komunitas, polanya adalah memasukkan item RSS baru ke platform chat. Cron di bawah menarik setiap feed dalam daftar, membandingkan dengan timestamp terakhir yang terlihat, dan memposting setiap entri baru sebagai pesan terformat. Berjalan setiap 5 menit via cron, menggunakan <code>feedparser</code> untuk parsing, dan memposting ke Discord via webhook. Varian Slack adalah perubahan 3 baris untuk menggunakan format Slack incoming webhook.</p>
+    <pre><code>#!/bin/bash
+# rss-to-discord.sh &mdash; berjalan setiap 5 menit via cron
+# Memposting setiap item RSS baru ke Discord via webhook
+# State: ~/.cache/rss-discord-state.json (terakhir terlihat per URL feed)
+
+set -euo pipefail
+WEBHOOK="https://discord.com/api/webhooks/REDACTED"
+STATE=~/.cache/rss-discord-state.json
+FEEDS=~/.config/rss-feeds.txt
+
+mkdir -p "$(dirname "$STATE")"
+touch "$STATE"
+[[ -f "$STATE" ]] || echo "{}" > "$STATE"
+
+while read -r url; do
+  [[ -z "$url" || "$url" == \#* ]] && continue
+  last=$(python3 -c "import json; print(json.load(open('$STATE')).get('$url', ''))")
+
+  python3 - <<PYEOF
+import feedparser, json, subprocess, sys
+from datetime import datetime, timezone
+feed = feedparser.parse("$url")
+last = "$last" or "1970-01-01"
+new = [e for e in feed.entries if e.get("published", "") > last]
+for e in new:
+    msg = "**{}**
+{}".format(e.title, e.link)
+    subprocess.run(["curl", "-s", "-X", "POST", "$WEBHOOK",
+        "-H", "Content-Type: application/json",
+        "-d", json.dumps({"content": msg[:1900]})], check=True)
+if new:
+    state = json.load(open("$STATE"))
+    state["$url"] = max(e.get("published", "") for e in feed.entries)
+    json.dump(state, open("$STATE", "w"))
+print(f"Posted {len(new)} from $url")
+PYEOF
+done < "$FEEDS"</code></pre>
+
+    <h2>Apa yang Masih Tidak Bisa Dilakukan RSS (dan Cara Hidup Dengannya)</h2>
+    <p>RSS bukan protokol grafik sosial yang lengkap. Tiga hal yang tidak bisa dilakukannya, dan workaround yang ditetapkan komunitas. Pertama, tanpa metrik engagement. Feed RSS mengirimkan post tanpa jumlah like, repost, atau balasan. Untuk arsip ini adalah fitur, bukan bug, tetapi jika Anda menggunakan RSS untuk menggerakkan feed reader, Anda harus melapisi layanan metrik terpisah (sebagian besar tim menggunakan <code>bridgy-fed</code> untuk menarik jumlah dari platform asli). Kedua, tanpa push real-time. RSS adalah protokol pull, yang berarti reader Anda harus meminta konten baru sesuai jadwal. Lantai praktis adalah 5 menit; apa pun yang lebih agresif membuang bandwidth. Ketiga, tanpa upload media. Jika Anda ingin memposting ke platform via RSS, Anda harus memposting media via API platform secara terpisah dan menautkannya dari post RSS. Pola yang matang adalah memperlakukan RSS sebagai saluran publikasi write-only dan menggunakan API platform untuk apa pun yang interaktif.</p>
+    <p>Untuk kasus penggunaan arsip yang menjadi perhatian <a href="/id/">ThreadGrab</a>, tidak satu pun dari ini adalah deal-breaker. Arsip secara definisi adalah snapshot write-only, dan latensi 5 menit berada jauh dalam lantai kebisingan dari kadensi posting sosial. Komunitas telah menetapkan jawaban praktis untuk setiap keterbatasan, dan protokolnya telah matang sampai titik di mana arsip produksi dapat berjalan hanya dengan RSS tanpa integrasi API paralel.</p>
+
+    <h2>Prospek 12 Bulan untuk RSS</h2>
+    <p>Tiga hal untuk diperhatikan dalam 12 bulan ke depan. Pertama, apakah LinkedIn akan mengirimkan endpoint RSS profil pribadi. Tekanannya ada (jembatan pihak ketiga tumbuh 30% bulan ke bulan) tetapi perusahaan belum berkomitmen. Kedua, apakah X akan mengirimkan API feed publik dalam bentuk apa pun. Kebangkitan RSS saat ini terjadi karena platform alternatif mengirimkan RSS, bukan karena X melakukannya. Ketiga, apakah spesifikasi JSON Feed akan mendapatkan rilis 2.0. Spesifikasi 1.1 saat ini sudah berumur 9 tahun dan para maintainer telah memberi sinyal bahwa penyegaran sedang dalam pengerjaan, yang akan menambahkan dukungan threaded-reply dan format media-enclosure yang stabil.</p>
+    <p>Untuk ekosistem web terbuka, kebangkitannya tidak ambigu baik. Tiga dari empat platform sosial terbesar pada 2026 mengirimkan RSS first-party, ekosistem jembatan matang, dan dunia generator situs statis telah membakukan RSS sebagai format input kanonik. Protokol yang seharusnya mati bersama Google Reader pada 2013 telah, melawan segala rintangan, menjadi jaringan ikat dari web sosial 2026.</p>
+
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <strong>Apakah RSS benar-benar bangkit kembali di 2026?</strong>
+      <p>Ya, diukur dalam tiga cara yang tidak bergantung pada jurnalis yang penasaran dengan RSS. Pertama, endpoint RSS Bluesky sekarang rata-rata 2,3 juta pull per hari dari klien non-Bluesky, naik dari nol pada Maret 2025. Kedua, para maintainer <code>feedparser</code> (pustaka Python RSS kanonik) merilis versi 7.0 pada Januari 2026 dengan parser JSON Feed dan jembatan Threads baru yang tidak akan mereka bangun jika basis instalasi stagnan. Ketiga, ekosistem generator situs statis (Astro, Hugo, Eleventy) telah membakukan RSS sebagai format input blog kanonik, yang membuat protokol lebih terlihat oleh komunitas developer daripada yang telah terjadi selama satu dekade.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Bisakah saya mengarsipkan akun Bluesky pribadi via RSS?</strong>
+      <p>Tidak. Endpoint RSS Bluesky hanya diekspos untuk akun yang tidak ditandai sebagai pribadi. Jika pengguna telah mengaktifkan pengaturan 'Pengguna yang logout dapat melihat post saya' di preferensi akun mereka, feed bersifat publik dan pengarsip Anda dapat membacanya. Jika mereka menandai akun sebagai pribadi (default untuk beberapa wilayah), endpoint mengembalikan 403 dan tidak ada solusi via RSS. Untuk akun pribadi, Anda perlu menggunakan API resmi Bluesky dengan token autentikasi pengguna, yang memerlukan persetujuan mereka.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Apa perbedaan antara RSS, Atom, dan JSON Feed?</strong>
+      <p>Tiga format yang memecahkan masalah yang sama. RSS 2.0 adalah yang paling tua (1999) dan paling didukung secara luas tetapi memiliki beberapa kasus tepi yang ambigu yang menyebabkan dialek yang tidak interoperable. Atom 1.0 adalah standar IETF (RFC 4287) yang dirancang untuk memperbaiki kasus-kasus tepi tersebut dan merupakan format yang dikirimkan Bluesky dan Mastodon. JSON Feed adalah yang terbaru (2017), mengkodekan data yang sama sebagai JSON alih-alih XML, dan merupakan format yang lebih disukai oleh jembatan seperti <code>rss.app</code> karena konversinya sepele. Untuk arsip 2026, dukung ketiganya &mdash; logika cross-pollination perlu mem-parse format yang dikirim sumber, bukan format yang Anda inginkan mereka kirim.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Bagaimana cara mencegah arsip tumbuh selamanya?</strong>
+      <p>Tiga opsi, dalam urutan kompleksitas. Yang paling sederhana adalah menetapkan jendela retensi (mis. 12 bulan) dan membiarkan cron menghapus apapun yang lebih lama. Yang kedua adalah menyimpan indeks tetapi memindahkan body ke cold storage (S3 Glacier, Backblaze B2) dan menyajikan halaman indeks dengan placeholder 'diarsipkan, bayar untuk mengambil'. Yang ketiga adalah menyimpan arsip lengkap tetapi mengompresi bulan yang lebih tua ke gzip dan menyajikannya sesuai permintaan. Pola produksi di <a href="/id/">ThreadGrab</a> adalah opsi 1 untuk arsip pribadi (jendela 12 bulan, 4 GB di disk) dan opsi 2 untuk arsip tim (tanpa batas, ~80 GB di S3 dengan transisi Glacier 30 hari untuk apapun yang lebih tua dari 90 hari).</p>
+    </div>
+    <div class="faq-item">
+      <strong>Apakah kebangkitan RSS berarti Google Reader akan kembali?</strong>
+      <p>Tidak. Google Reader adalah produk terpusat yang bergantung pada infrastruktur Google dan komitmen free-tier Google; ketika Google memutuskan produk tersebut tidak strategis, mereka mematikannya. Kebangkitan RSS 2026 bersifat terdesentralisasi &mdash; pembaca (NetNewsWire, Feedbin, Reeder, Inoreader) adalah produk independen, protokolnya adalah standar terbuka, dan platform yang mengirimkan feed melakukannya karena pengguna mereka memintanya. Modelnya lebih mirip email (SMTP, IMAP, lusinan klien independen) daripada Google Reader. Itu juga mengapa kebangkitan ini lebih tahan lama: tidak ada satu titik kegagalan pun yang dapat menjatuhkan seluruh sistem.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Apa sudut pandang threadgrab tentang RSS?</strong>
+      <p>ThreadGrab adalah arsip sosial berbasis Markdown, dan RSS adalah jalur ingestion fallback ketika API platform berubah. Ketika pola URL GraphQL Threads bergeser pada Maret 2026 dan mematahkan sepertiga klien pihak ketiga, akun yang kami ikuti via RSS tidak terpengaruh. Pipeline capture menjalankan puller RSS secara paralel dengan puller API untuk setiap platform yang didukung, lebih memilih hasil API ketika keduanya segar, dan fallback ke hasil RSS ketika API kena rate limit atau down. Pola ini menjaga arsip 99,7% lengkap selama 18 bulan terakhir.</p>
+    </div>
+    <div class="cta">
+      <p>Backend penangkap ThreadGrab menjalankan pola pengarsipan RSS di atas dalam produksi, dengan stitcher referensi silang dan langkah build Astro. Jika Anda memublikasikan di Bluesky, Mastodon, atau platform apa pun dengan feed publik, setiap postingan yang Anda tulis bisa ada di arsip Markdown Anda saat Anda menutup tab.</p>
+      <a class="btn" href="/id/">Coba ThreadGrab &mdash; Arsip Sosial Gratis</a>
+    </div>
+
+    <h2>RSS Adalah Kisah Kebangkitan Tenang Web Terbuka</h2>
+    <p>Kebangkitan RSS bukanlah kisah tentang protokol. Ini adalah kisah tentang orang-orang yang menolak menyerah pada web terbuka dan membangun jembatan, parser, serta feed yang tidak mau dibangun oleh platform terpusat. Bluesky adalah katalisnya, ekosistem jembatan adalah mesinnya, dan dunia generator situs statis adalah konsumennyanya. Jika Anda mempublikasikan di web terbuka pada 2026, feed Anda adalah salah satu yang membuat kebangkitan ini nyata. Publikasikan, arsipkan, dan tautkan dari postingan yang Anda tulis di platform yang tidak memiliki endpoint RSS. Protokolnya kembali, dan kembalinya karena Anda.</p>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/id/">Home</a> &middot; <a href="/id/blog/">Blog</a> &middot; <a href="/id/about/">About</a> &middot; <a href="/id/privacy/">Privacy</a>
+    <br>Not affiliated with X Corp., Bluesky Social PBC, LinkedIn Corporation, or Meta Platforms, Inc.
+  </footer>
+</body>
+</html>

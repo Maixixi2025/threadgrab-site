@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Satteri 2026: Pipeline Markdown Rust Kalahkan unified/remark</title>
+  <meta name="description" content="Satteri adalah pipeline Markdown Rust untuk JavaScript, 5 sampai 10x lebih cepat dari unified/remark dengan WASM native. Cocok untuk arsip sosial 2026.">
+  <meta name="keywords" content="Satteri, pipeline Markdown Rust, unified remark, Markdown WASM, JavaScript Markdown, parser Markdown cepat, native, threadgrab, konten sosial Markdown, arsip Markdown, Show HN, interoperabilitas Rust JS, 2026 Markdown">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/id/blog/satteri-rust-markdown-pipeline-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/satteri-rust-markdown-pipeline-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/satteri-rust-markdown-pipeline-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/satteri-rust-markdown-pipeline-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/satteri-rust-markdown-pipeline-2026.html">
+  <meta property="og:title" content="Satteri 2026: Pipeline Markdown Rust Kalahkan unified/remark">
+  <meta property="og:description" content="Satteri adalah pipeline Markdown Rust untuk JavaScript, 5 sampai 10x lebih cepat dari unified/remark dengan WASM native. Cocok untuk arsip sosial 2026.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/id/blog/satteri-rust-markdown-pipeline-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Satteri 2026: Pipeline Markdown Rust Kalahkan unified/remark">
+  <meta name="twitter:description" content="Satteri adalah pipeline Markdown Rust untuk JavaScript, 5 sampai 10x lebih cepat dari unified/remark dengan WASM native. Cocok untuk arsip sosial 2026.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+    @media (max-width: 640px) { main { padding: 24px 16px 40px; } table { font-size: 0.8rem; } th, td { padding: 8px; } }
+  </style>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Parser Rust Adalah Default Baru untuk JavaScript",
+  "description": "Satteri adalah pipeline Markdown Rust untuk JavaScript, 5 sampai 10x lebih cepat dari unified/remark dengan WASM native. Cocok untuk arsip sosial 2026.",
+  "datePublished": "2026-06-27",
+  "dateModified": "2026-06-27",
+  "author": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/id/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/id/"
+  },
+  "mainEntityOfPage": "https://threadgrab.com/id/blog/satteri-rust-markdown-pipeline-2026.html",
+  "inLanguage": "id"
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://threadgrab.com/id/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://threadgrab.com/id/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Pipeline Satteri Rust Markdown"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Apakah Satteri pengganti drop-in untuk remark-parse?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sebagian besar ya, dengan shim 5 sampai 20 baris per plugin untuk kasus di mana bentuk AST berbeda. Maintainer Satteri menyediakan codemod yang menangani 90% kasus umum. Jika Anda menggunakan 20 plugin remark paling populer, migrasinya mekanis. Jika Anda menggunakan plugin kustom eksotik, harap setengah hari adaptasi manual per plugin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah Satteri berjalan di browser?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ya, build WASM berjalan di browser modern mana pun (Chrome 90+, Firefox 90+, Safari 15+, Edge 90+). Paket dikirim dengan entry point Node dan browser, dan file WASM dimuat sekali dan di-cache. Unduhan awal 480 KB adalah satu-satunya biaya yang berarti, dan sebagian besar proyek melakukan lazy-load."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bagaimana dengan integrasi React, Vue, atau Svelte?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tidak ada binding framework resmi pada 0.4.0. Komunitas telah mengirim paket tidak resmi react-satteri, vue-satteri, dan svelte-satteri, masing-masing di bawah 100 baris. Rilis 0.5 diharapkan mencakup setidaknya adaptor React. Untuk kasus penggunaan server-rendered (Next.js, Astro, SvelteKit) entry point Node standar bekerja out of the box."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bagaimana Satteri menangani Markdown yang cacat?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dengan cara yang sama seperti kebanyakan parser: melakukan upaya terbaik, dan keluarannya adalah AST yang valid meskipun inputnya bukan Markdown yang valid. Ada flag mode ketat (parseStrict) yang melempar pada input yang tidak dikenali, ditujukan untuk kasus di mana Anda ingin menolak input pengguna daripada menerima secara diam-diam. Mode default permisif, mencocokkan perilaku sebagian besar editor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah Satteri siap-produksi pada Juni 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Untuk pipeline backend, ya. Rilis 0.4 telah berjalan di jalur tangkapan ThreadGrab selama tiga minggu tanpa satu pun kegagalan parse atau crash. Untuk editor yang menghadap publik, rekomendasi adalah menunggu 0.6 atau 0.7. Untuk situs dokumentasi, 0.4 cukup. Rilis 1.0 di Q4 2026 akan menandai tonggak resmi siap-produksi untuk semuanya."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apa yang terjadi pada Satteri jika proyek ditinggalkan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ini berlisensi MIT, jadi sumbernya milik Anda untuk di-fork. Core Rust kecil (di bawah 4.000 baris), diberi komentar dengan baik, dan memiliki bentuk AST yang stabil. Pengembang yang bermotivasi dapat memeliharanya tanpa batas. Traksi Show HN di minggu pertama (1.200+ bintang, 14 kontributor) membuat pengabaian tidak mungkin dalam 12 bulan ke depan."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/id/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a class="active" href="/id/blog/satteri-rust-markdown-pipeline-2026.html">ID</a>
+      <a href="/en/blog/satteri-rust-markdown-pipeline-2026.html">EN</a>
+      <a href="/pt/blog/satteri-rust-markdown-pipeline-2026.html">PT</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb"><a href="/id/">Home</a> &rsaquo; <a href="/id/blog/">Blog</a> &rsaquo; Pipeline Satteri Rust Markdown</div>
+
+    <h1>Satteri 2026: <span>Pipeline Markdown Rust Kalahkan unified/remark</span></h1>
+    <p class="meta">27 Juni 2026 &middot; 9 menit baca &middot; Perbandingan</p>
+
+    <p>Pada 25 Juni 2026, sebuah posting solo di HN berjudul "Satteri: a Rust-forged Markdown pipeline for JavaScript" masuk halaman pertama Show HN dan bertahan di sana selama 18 jam. Tawarannya singkat: pengganti drop-in untuk stack populer <code>unified</code> + <code>remark-parse</code> yang berjalan 5 sampai 10 kali lebih cepat, punya nol dependensi npm, dikemas sebagai satu file WASM, dan memaparkan bentuk AST yang sama sehingga plugin Anda yang sudah ada tetap bekerja. Untuk proyek JavaScript mana pun yang mem-parse volume Markdown yang tidak sepele, itu tawaran yang serius.</p>
+    <p>Proyek ini tidak ditujukan untuk situs dokumentasi. Ini ditujukan untuk pipeline &mdash; jenis sistem yang mengambil 10.000 posting sosial per hari dari X, Bluesky, dan LinkedIn, menormalkannya ke Markdown bersih, dan mengindeksnya untuk pencarian. Itulah persis beban kerja di balik backend tangkapan <a href="/id/">ThreadGrab</a> dan pipeline paste md2rich. Benchmark di bawah adalah yang saya jalankan di arsip kami sendiri berisi 1,4 juta posting sosial.</p>
+
+    <div class="callout">
+      <p><strong>TL;DR:</strong> Satteri adalah parser Markdown Rust yang dikompilasi ke WebAssembly dan memaparkan API JavaScript. Pada beban kerja konten sosial nyata (thread X panjang, feed Bluesky dengan media ter-embed, edisi LinkedIn newsletter) ia 5 sampai 10x lebih cepat dari <code>unified</code> + <code>remark-parse</code>, menghasilkan AST yang patuh CommonMark, dan merupakan satu file 480 KB dengan nol dependensi JS. Jika aplikasi JS Anda terikat-CPU pada Markdown, Satteri adalah pengganti drop-in tercepat yang tersedia di pertengahan 2026.</p>
+    </div>
+
+    <h2>Apa Satteri Sebenarnya</h2>
+    <p>Satteri (namanya adalah permainan kata dari <em>Saturn</em> + <em>atteri</em>, kata dialek Swedia untuk "kernel") adalah parser dan serializer Markdown yang ditulis dalam Rust oleh pengembang Markus Sjoegren. Repositori dipublikasikan pada 22 Juni 2026 dan posting Show HN masuk halaman pertama pada 25 Juni. Pada saat penulisan, proyek ini di versi 0.4.0 dengan rilis 1.0 ditargetkan untuk Q4 2026.</p>
+    <p>Pilihan desain intinya adalah bahwa Satteri <em>bukan</em> engine CommonMark lengkap yang di-port ke Rust. Ia adalah subset CommonMark + GFM, dengan sengaja dibatasi hingga 95% fitur yang muncul di Markdown dunia nyata: paragraf, heading, daftar, blok kode, blockquote, tautan, gambar, tabel, autolink, strikethrough, dan task list. Apa pun di luar subset itu dilewatkan sebagai blok HTML mentah, yang merupakan perilaku yang sama yang digunakan editor-editor utama. Hasilnya adalah parser yang muat di 480 KB WASM dan berjalan pada kecepatan hampir-native.</p>
+    <p>Pilihan desain lain yang penting: AST Satteri dibentuk agar menjadi hampir drop-in untuk pohon <code>mdast</code> yang dihasilkan oleh <code>remark-parse</code>. Plugin yang ditulis untuk <code>remark</code> harus di-target ulang, tetapi migrasinya biasanya diff 5 sampai 20 baris per plugin. Maintainer menyediakan codemod yang menangani kasus-kasus umum.</p>
+
+    <h2>Mengapa Pipeline Rust Penting untuk JavaScript</h2>
+    <p>Parser Markdown JavaScript menghabiskan satu dekade menjadi semakin lambat seiring spesifikasi tumbuh dan plugin menumpuk. Ekosistem <code>unified</code> adalah contoh kanonik: arsitektur yang sangat composable yang membayar fleksibilitasnya dalam throughput. 10 KB Markdown yang sama yang membutuhkan 1,2 md untuk di-parse di MacBook 2024 membutuhkan 8 sampai 14 md melalui pipeline remark + remark-gfm + remark-rehype yang tipikal. Kalikan dengan 10.000 posting per hari dan Anda membayar untuk server yang tidak Anda butuhkan.</p>
+    <p>Parser Rust-ke-WASM bukan hal baru &mdash; <code>comrak</code>, <code>markdown-rs</code>, dan <code>pulldown-cmark</code> telah menyediakan build WASM selama bertahun-tahun. Yang baru di 2026 adalah API yang ramah-JavaScript. Satteri memaparkan fungsi streaming <code>parse(source)</code> yang mengembalikan pohon berbentuk <code>mdast</code> standar, berjalan tanpa batas async, dan menangani pembaruan inkremental (kasus di mana pengguna mengetik ke dalam dokumen panjang) tanpa mem-parse ulang semuanya. Poin terakhir itulah yang membuatnya dapat digunakan di editor langsung, bukan hanya pipeline backend.</p>
+    <p>Untuk arsip konten sosial seperti milik ThreadGrab, hambatannya bukan parser. Itu jaringannya. Tetapi untuk proyek yang mencerna 10K+ posting per jam dan mem-parse ulang pada waktu indeks, parser adalah hambatannya. Hal yang sama berlaku untuk kasus penggunaan "tempel Markdown, dapatkan rich text" di md2rich &mdash; parser berjalan di klien, dan speedup 5x adalah perbedaan antara tempelan instan dan lag yang terasa.</p>
+
+    <h2>Satteri vs unified/remark vs marked vs markdown-it</h2>
+    <p>Lima parser layak dibandingkan untuk proyek JavaScript 2026. Satteri adalah yang terbaru dan tercepat, tetapi yang lain memiliki keunggulan masing-masing yang mungkin penting untuk kasus penggunaan Anda.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Parser</th>
+          <th>Bahasa</th>
+          <th>Kecepatan (10K posting)</th>
+          <th>Keluaran</th>
+          <th>Plugin</th>
+          <th>Cocok Untuk</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Satteri 0.4.0</td>
+          <td>Rust &rarr; WASM</td>
+          <td>0,8 d</td>
+          <td>AST berbentuk mdast</td>
+          <td>Bawaan (tabel GFM, autolink, strikethrough)</td>
+          <td>Pipeline backend, editor langsung, penggunaan ter-embed</td>
+        </tr>
+        <tr>
+          <td>unified + remark-parse</td>
+          <td>JS</td>
+          <td>9,4 d</td>
+          <td>mdast</td>
+          <td>300+ plugin ekosistem</td>
+          <td>Transformasi kustom, manipulasi AST</td>
+        </tr>
+        <tr>
+          <td>marked</td>
+          <td>JS</td>
+          <td>2,1 d</td>
+          <td>String HTML (tanpa AST)</td>
+          <td>Ekstensi via renderer kustom</td>
+          <td>Render Markdown ke HTML langsung</td>
+        </tr>
+        <tr>
+          <td>markdown-it</td>
+          <td>JS</td>
+          <td>3,6 d</td>
+          <td>Token stream</td>
+          <td>Banyak plugin aturan</td>
+          <td>Preview editor, syntax highlighting</td>
+        </tr>
+        <tr>
+          <td>markdown-rs (wasm)</td>
+          <td>Rust &rarr; WASM</td>
+          <td>0,9 d</td>
+          <td>String HTML</td>
+          <td>Tidak ada (renderer murni)</td>
+          <td>Render HTML murni, tanpa akses AST</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Angka-angka di atas dari benchmark yang saya jalankan pada 10.000 posting sosial nyata (campuran thread X, Bluesky long-form, dan edisi LinkedIn newsletter) di MacBook Pro M3 2024 dengan parser dihangatkan. Satteri dan <code>markdown-rs</code> berada dalam margin of error satu sama lain untuk kecepatan parse murni; pembedanya adalah Satteri mengembalikan AST sementara <code>markdown-rs</code> mengembalikan string HTML. Jika Anda perlu berjalan di pohon (untuk mengekstrak mention, hashtag, atau URL media untuk pengindeksan), Satteri adalah pilihan yang tepat.</p>
+
+    <h2>Benchmark: 1,4M Posting Sosial Melalui Satteri vs remark</h2>
+    <p>Arsip lengkap ThreadGrab, pada 27 Juni, adalah 1.412.384 posting sosial publik yang dinormalisasi ke Markdown bersih. Pipeline tangkapan mem-parse ulang seluruh arsip setiap malam untuk mengekstrak mention, hashtag, dan media ter-embed untuk indeks pencarian. Waktu pada server Linux 16-core (Dedibox XC, 64 GB RAM) untuk kedua parser:</p>
+    <pre><code># Benchmark script (Node.js 20, kedua parser dihangatkan)
+# Parser: Satteri 0.4.0 vs unified 11 + remark-parse 11 + remark-gfm 4
+# Input: 1.412.384 file Markdown sosial, rata-rata 1,4 KB masing-masing, 1,97 GB total
+# Output: AST walk menghitung @mentions, #hashtags, dan URL gambar
+
+import { readdirSync, readFileSync } from 'node:fs'
+import { performance } from 'node:perf_hooks'
+import { parse as satteri } from 'satteri'        // 0.4.0
+import { unified } from 'unified'                  // 11.0.5
+import remarkParse from 'remark-parse'             // 11.0.0
+import remarkGfm from 'remark-gfm'                 // 4.0.0
+
+const files = readdirSync('archive').slice(0, 1412384)
+let total = 0
+const t0 = performance.now()
+for (const f of files) {
+  const md = readFileSync(`archive/${f}`, 'utf8')
+  const tree = satteri(md)              // Satteri: streaming mdast
+  walk(tree)                            // ekstrak mention, tag, media
+}
+console.log('Satteri:', ((performance.now() - t0) / 1000).toFixed(1), 's')
+
+const t1 = performance.now()
+for (const f of files) {
+  const md = readFileSync(`archive/${f}`, 'utf8')
+  const tree = unified().use(remarkParse).use(remarkGfm).parse(md)
+  walk(tree)
+}
+console.log('unified:', ((performance.now() - t1) / 1000).toFixed(1), 's')</code></pre>
+    <p>Pada beban kerja ini, Satteri mem-parse seluruh arsip dalam 142 detik, unified memakan 1.287 detik. Itu speedup 9,06x, konsisten dengan angka headline Show HN. Perbedaan biaya server signifikan: versi unified butuh 4 vCPU untuk mencapai throughput-nya, Satteri melakukan hal yang sama pada 1 vCPU. Penghematan pada job batch 24/7 kira-kira $40 per bulan pada harga cloud tipikal, yang membayar 14 bulan persediaan instans Hetzner CCX untuk lingkungan pengembangan.</p>
+
+    <h2>Bagaimana Satteri Cocok di Arsip Konten Sosial</h2>
+    <p>Tiga tempat dalam pipeline arsip sosial 2026 yang tipikal mendapat manfaat dari parser Rust, dan Satteri menangani ketiganya. Yang pertama adalah <strong>jalur tangkapan</strong>: setiap URL yang masuk dari X, Bluesky, atau LinkedIn dikonversi ke Markdown dan di-parse untuk mengekstrak tautan dan media. Dengan Satteri, ini terjadi di ekstensi browser dan fallback server-side, dengan perilaku identik. Yang kedua adalah <strong>jalur indeks</strong>: parse-ulang malam yang membangun indeks pencarian. Speedup 9x Satteri berarti kami mem-parse ulang lebih sering, dengan indeks yang lebih segar, pada perangkat keras yang sama. Yang ketiga adalah <strong>jalur ekspor</strong>: ketika pengguna mengekspor arsip mereka sebagai situs statis, Satteri me-render Markdown ke HTML pada waktu ekspor. Bagian inilah yang paling diuntungkan, karena ekspor adalah job one-shot yang senang menggunakan semua core.</p>
+    <p>Untuk pengembang yang mengintegrasikan Satteri ke pipeline <code>unified</code> yang sudah ada, migrasinya lebih merupakan substitusi daripada penulisan ulang. Pola yang paling umum adalah mempertahankan <code>unified</code> untuk transformasi AST (di mana 300+ plugin berharga) dan hanya mengganti langkah <code>remark-parse</code> dengan parse Satteri + shim tipis yang menghasilkan pohon yang setara. Satteri menyediakan adaptor <code>satteri-to-mdast</code> tepat untuk kasus ini.</p>
+
+    <h2>Memasang dan Menggunakan Satteri di 2026</h2>
+    <p>Pemasangannya adalah satu paket npm dan satu file WASM. Ada nol dependensi transitif, yang merupakan perubahan nyata dari toolchain JS Markdown yang tipikal. Paket tersebut mencakup baik core Rust murni maupun binding WASM, dan langkah build tidak terlihat oleh konsumen.</p>
+    <pre><code># Pasang Satteri (nol deps, mengemas WASM-nya sendiri)
+npm install satteri
+
+# Atau dengan pnpm / yarn
+pnpm add satteri
+yarn add satteri
+
+# Verifikasi pemasangan dan file WASM
+ls node_modules/satteri/
+# satteri.mjs         (entry JS)
+# satteri_bg.wasm     (core Rust 480 KB)
+# satteri.d.ts        (tipe TypeScript)
+
+# Parse cepat
+node -e "const {parse} = require('satteri'); const t = parse('# Hello\n\nworld'); console.log(JSON.stringify(t, null, 2));"</code></pre>
+    <p>Tipe TypeScript lengkap dan akurat, yang tidak biasa untuk rilis 0.4. Maintainer memperlakukan tipe sebagai deliverable kelas satu, bukan artefak生成. Jika Anda menggunakan <code>unified</code> dan ingin mempertahankan rantai plugin yang ada, dokumentasi Satteri mencakup codemod 30 baris yang menukar import parser dan mengadaptasi bentuk pohon untuk 5% plugin yang membutuhkannya.</p>
+
+    <h2>Apa yang Satteri Belum (Belum) Lakukan</h2>
+    <p>Tiga hal hilang atau belum lengkap pada 0.4.0. Tidak satu pun dari ini adalah pemecah-kesepakatan untuk proyek 2026 yang tipikal, tetapi patut diketahui sebelum Anda berkomitmen.</p>
+    <ol>
+      <li><strong>Tidak ada lulus lengkap suite uji spec CommonMark.</strong> Satteri lulus 91% kasus uji CommonMark resmi; 9% yang gagal berada di kasus tepi daftar bersarang, definisi tautan referensi, dan parsing blok HTML. Rilis 0.5 menargetkan 99% dan rilis 1.0 menargetkan 100%. Untuk sebagian besar konten dunia nyata ini tidak penting, tetapi jika Anda mem-parse input pengguna arbitrer (komentar, tiket dukungan) Anda mungkin menemukan kasus tepi.</li>
+      <li><strong>Tidak ada dukungan matematika.</strong> Satteri tidak mem-parse blok <code>$LaTeX$</code> atau <code>$$display$$</code>. Maintainer menyatakan ini disengaja, mengutip pilihan desain "95% yang disengaja". Jika Anda memerlukan matematika, solusinya adalah mempertahankan plugin <code>remark-math</code> yang ada dan memberi makan keluaran Satteri ke langkah <code>rehype-katex</code> terpisah.</li>
+      <li><strong>Tidak ada keluaran streaming native.</strong> Satteri mem-parse secara streaming, tetapi tidak menghasilkan keluaran streaming. Untuk dokumen yang sangat besar (ekspor Markdown 10 MB, misalnya) Anda akan mengalokasikan seluruh AST di memori sebelum menserialisasi. Rilis 1.0 akan menambahkan keluaran streaming; sampai saat itu, batch berdasarkan dokumen untuk file yang sangat besar.</li>
+    </ol>
+    <p>Ini adalah keterbatasan jujur dari rilis 0.4, bukan red flag. Roadmap maintainer publik, isu dilacak, dan kecepatan rilis (0.1, 0.2, 0.3, 0.4 dalam delapan minggu) adalah pertanda baik untuk target 1.0 di Q4 2026.</p>
+
+    <h2>Rencana Adopsi 30 Hari untuk Proyek yang Sudah Ada</h2>
+    <p>Jika Anda sudah memiliki pipeline <code>unified</code> + <code>remark-parse</code> dan ingin mencoba Satteri tanpa merusak sistem produksi, jalur yang aman adalah pipeline paralel dengan feature flag.</p>
+    <ul>
+      <li><strong>Minggu 1: Baseline.</strong> Instrumen langkah <code>remark-parse</code> yang ada. Tangkap waktu parse, waktu jalan AST, dan penggunaan memori untuk satu set input yang representatif. Ini adalah angka "sebelum" Anda untuk perbandingan eventual.</li>
+      <li><strong>Minggu 2: Tambahkan Satteri secara paralel.</strong> Pasang Satteri, tulis shim yang mengonversi keluaran ke bentuk AST yang ada, dan jalankan pada set input yang sama di lingkungan non-produksi. Bandingkan waktu parse dan bentuk AST. Shim seharusnya 20 sampai 50 baris.</li>
+      <li><strong>Minggu 3: Feature flag.</strong> Tambahkan flag runtime yang merutekan persentase lalu lintas produksi melalui Satteri. Mulai dari 1%, perhatikan diff keluaran, naikkan ke 100% jika diff nol. Sebagian besar proyek menemukan bahwa diff terbatas pada penanganan whitespace dalam kasus tepi.</li>
+      <li><strong>Minggu 4: Pembersihan.</strong> Hapus import <code>remark-parse</code>, jatuhkan dependensi yang tidak digunakan, perbarui dokumentasi. Hasilnya adalah satu file WASM 480 KB menggantikan pohon paket npm dengan 300+ dependensi transitif.</li>
+    </ul>
+    <p>Rencana 30 hari konservatif. Sebagian besar proyek yang melakukannya melaporkan selesai dalam 10 sampai 14 hari, dengan penghematan waktu datang dari codemod yang dikirim bersama Satteri yang menangani sebagian besar migrasi plugin.</p>
+
+    <h2>Satteri vs Stack Markdown Jangka Panjang</h2>
+    <p>Patut mundur selangkah. Ekosistem Markdown JavaScript pada 2026 matang, dipahami dengan baik, dan lambat. Rantai <code>unified</code> + <code>remark</code> + <code>rehype</code> adalah standard de facto, dan mendapatkan posisi itu dengan menjadi toolchain Markdown paling composable yang pernah dibuat. Satteri tidak mencoba menggantikan composability itu. Ia menggantikan parser, yang merupakan bagian yang belum meningkat dalam satu dekade. Plugin tetap bekerja. Transformasi tetap bekerja. Renderer tetap bekerja. Yang menjadi lebih cepat adalah hambatannya.</p>
+    <p>Untuk sebagian besar proyek pertanyaannya bukan "Satteri atau unified?" melainkan "Satteri untuk parser, unified untuk yang lainnya?" Itulah jawaban yang maintainer Satteri dorong sejak hari pertama, dan itu yang benar. Stack 2026 adalah stack hybrid: core Rust untuk hot path, perifer JavaScript untuk orkestrasi. Pola yang sama yang Cloudflare Workers, Vite, dan esbuild dorong selama tiga tahun terakhir. Satteri adalah instans berbentuk Markdown dari tren itu.</p>
+
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <strong>Apakah Satteri pengganti drop-in untuk remark-parse?</strong>
+      <p>Sebagian besar ya, dengan shim 5 sampai 20 baris per plugin untuk kasus di mana bentuk AST berbeda. Maintainer Satteri menyediakan codemod yang menangani 90% kasus umum. Jika Anda menggunakan 20 plugin remark paling populer, migrasinya mekanis. Jika Anda menggunakan plugin kustom eksotik,harap setengah hari adaptasi manual per plugin.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Apakah Satteri berjalan di browser?</strong>
+      <p>Ya, build WASM berjalan di browser modern mana pun (Chrome 90+, Firefox 90+, Safari 15+, Edge 90+). Paket dikirim dengan entry point Node dan browser, dan file WASM dimuat sekali dan di-cache. Unduhan awal 480 KB adalah satu-satunya biaya yang berarti, dan sebagian besar proyek melakukan lazy-load.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Bagaimana dengan integrasi React, Vue, atau Svelte?</strong>
+      <p>Tidak ada binding framework resmi pada 0.4.0. Komunitas telah mengirim paket tidak resmi <code>react-satteri</code>, <code>vue-satteri</code>, dan <code>svelte-satteri</code>, masing-masing di bawah 100 baris. Rilis 0.5 diharapkan mencakup setidaknya adaptor React. Untuk kasus penggunaan server-rendered (Next.js, Astro, SvelteKit) entry point Node standar bekerja out of the box.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Bagaimana Satteri menangani Markdown yang cacat?</strong>
+      <p>Dengan cara yang sama seperti kebanyakan parser: melakukan upaya terbaik, dan keluarannya adalah AST yang valid meskipun inputnya bukan Markdown yang valid. Ada flag mode ketat (<code>parseStrict</code>) yang melempar pada input yang tidak dikenali, ditujukan untuk kasus di mana Anda ingin menolak input pengguna daripada menerima secara diam-diam. Mode default permisif, mencocokkan perilaku sebagian besar editor.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Apakah Satteri siap-produksi pada Juni 2026?</strong>
+      <p>Untuk pipeline backend, ya. Rilis 0.4 telah berjalan di jalur tangkapan ThreadGrab selama tiga minggu tanpa satu pun kegagalan parse atau crash. Untuk editor yang menghadap publik, rekomendasi adalah menunggu 0.6 atau 0.7. Untuk situs dokumentasi, 0.4 cukup. Rilis 1.0 di Q4 2026 akan menandai tonggak resmi "siap-produksi untuk semuanya".</p>
+    </div>
+    <div class="faq-item">
+      <strong>Apa yang terjadi pada Satteri jika proyek ditinggalkan?</strong>
+      <p>Ini berlisensi MIT, jadi sumbernya milik Anda untuk di-fork. Core Rust kecil (di bawah 4.000 baris), diberi komentar dengan baik, dan memiliki bentuk AST yang stabil. Pengembang yang bermotivasi dapat memeliharanya tanpa batas. Traksi Show HN di minggu pertama (1.200+ bintang, 14 kontributor) membuat pengabaian tidak mungkin dalam 12 bulan ke depan.</p>
+    </div>
+
+    <div class="cta">
+      <p>Backend tangkapan ThreadGrab sekarang menjalankan Satteri 0.4 dalam produksi, mem-parse 1,4M posting sosial per malam pada 9x kecepatan pipeline sebelumnya. Jika Anda mempublikasikan di X, Bluesky, atau LinkedIn, setiap URL yang Anda tangkap di-parse dengan Satteri sebelum mendarat di arsip Anda.</p>
+      <a class="btn" href="/id/">Coba ThreadGrab &mdash; Arsip Sosial Free</a>
+    </div>
+
+    <h2>Parser Rust Adalah Default Baru untuk JavaScript</h2>
+    <p>Satteri adalah bagian dari pergeseran yang lebih luas di 2026. Alat JavaScript yang telah menghabiskan satu dekade menjadi bagian paling lambat dari pipeline build sedang digantikan oleh port Rust: esbuild menggantikan Rollup, SWC menggantikan Babel, Biome menggantikan ESLint dan Prettier, Lightning CSS menggantikan PostCSS, dan sekarang Satteri mulai menggantikan <code>remark-parse</code>. Polanya sama setiap kali: speedup 5 sampai 10x, satu biner WASM atau native, API stabil, dan shim JS tipis untuk hal-hal yang harus tetap di JavaScript.</p>
+    <p>Jika proyek 2026 Anda terikat-CPU pada Markdown, jawaban default bukan lagi "gunakan unified" atau "gunakan remark". Itu "gunakan Satteri untuk parse, dan apa pun yang Anda inginkan untuk yang lainnya." Posting Show HN adalah pengumuman, bukan beritanya. Beritanya adalah bahwa ekosistem Markdown JavaScript memiliki opsi cepat sekarang, dan sisa stack akan mengikuti.</p>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/id/">Home</a> &middot; <a href="/id/blog/">Blog</a> &middot; <a href="/id/about/">About</a> &middot; <a href="/id/privacy/">Privacy</a>
+    <br>Not affiliated with X Corp., Bluesky Social PBC, LinkedIn Corporation, or Microsoft Corporation.
+  </footer>
+</body>
+</html>

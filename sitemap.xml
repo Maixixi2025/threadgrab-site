@@ -213,4 +213,71 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://threadgrab.com/en/blog/x-articles-creator-guide-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/x-articles-creator-guide-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/x-articles-creator-guide-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/x-articles-creator-guide-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/x-articles-creator-guide-2026.html"/>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+    <url>
+        <loc>https://threadgrab.com/en/blog/notion-to-markdown-migration-2026.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/notion-to-markdown-migration-2026.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/notion-to-markdown-migration-2026.html"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/notion-to-markdown-migration-2026.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/notion-to-markdown-migration-2026.html"/>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+  <url>
+    <loc>https://threadgrab.com/en/blog/satteri-rust-markdown-pipeline-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/satteri-rust-markdown-pipeline-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/satteri-rust-markdown-pipeline-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/satteri-rust-markdown-pipeline-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/satteri-rust-markdown-pipeline-2026.html"/>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://threadgrab.com/en/blog/rss-revival-2026-bluesky-feeds.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/rss-revival-2026-bluesky-feeds.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/rss-revival-2026-bluesky-feeds.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/rss-revival-2026-bluesky-feeds.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/rss-revival-2026-bluesky-feeds.html"/>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://threadgrab.com/en/blog/caliper-ai-agent-reliability-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/caliper-ai-agent-reliability-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/caliper-ai-agent-reliability-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/caliper-ai-agent-reliability-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/caliper-ai-agent-reliability-2026.html"/>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://threadgrab.com/en/blog/openrouter-mcp-server-social-content-creators-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/openrouter-mcp-server-social-content-creators-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/openrouter-mcp-server-social-content-creators-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/openrouter-mcp-server-social-content-creators-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/openrouter-mcp-server-social-content-creators-2026.html"/>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+    <url>
+    <loc>https://threadgrab.com/en/blog/atproto-bluesky-data-portability-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/atproto-bluesky-data-portability-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/atproto-bluesky-data-portability-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/atproto-bluesky-data-portability-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/atproto-bluesky-data-portability-2026.html"/>
+  </url>
 </urlset>
