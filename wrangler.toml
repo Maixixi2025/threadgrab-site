@@ -1,3 +1,10 @@
 name = "threadgrab"
 compatibility_date = "2026-05-30"
 pages_build_output_dir = "."
+
+# KV namespace for rate limiting (2026-07-02: migrate from in-memory Map
+# which doesn't work across Pages Functions multi-instance deployment)
+# Created at https://dash.cloudflare.com → Workers & Pages → KV
+[[kv_namespaces]]
+binding = "RATE_LIMIT"
+id = "b974e269f43f4e49b0aaa06fb824477b"
