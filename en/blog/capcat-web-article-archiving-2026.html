@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capcat 2026: CLI Web Article Archiving for Creators</title>
+  <meta name="description" content="Capcat is a FOSS CLI/TUI tool for archiving web articles as Markdown and HTML. Compare with ThreadGrab for a complete social and web archive in 2026.">
+  <meta name="keywords" content="Capcat, Capcat CLI, web article archiving, Markdown archive, CLI content archive, ThreadGrab, web to Markdown, archiving tools 2026, social content archive, FOSS archiving">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/en/blog/capcat-web-article-archiving-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/capcat-web-article-archiving-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/capcat-web-article-archiving-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/capcat-web-article-archiving-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/capcat-web-article-archiving-2026.html">
+  <meta property="og:title" content="Capcat 2026: CLI Web Article Archiving for Creators">
+  <meta property="og:description" content="Capcat is a FOSS CLI/TUI tool for archiving web articles as Markdown and HTML. Compare with ThreadGrab for a complete social and web archive in 2026.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/en/blog/capcat-web-article-archiving-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Capcat 2026: CLI Web Article Archiving for Creators">
+  <meta name="twitter:description" content="Capcat is a FOSS CLI/TUI tool for archiving web articles as Markdown and HTML. Compare with ThreadGrab for a complete social and web archive in 2026.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+    @media (max-width: 640px) { main { padding: 24px 16px 40px; } table { font-size: 0.8rem; } th, td { padding: 8px; } }
+  </style>
+  <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Capcat 2026: CLI Web Article Archiving for Creators", "description": "Capcat is a FOSS CLI/TUI tool for archiving web articles as Markdown and HTML. Compare with ThreadGrab for a complete social and web archive in 2026.", "datePublished": "2026-07-04", "dateModified": "2026-07-04", "author": {"@type": "Person", "name": "ThreadGrab"}, "publisher": {"@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://threadgrab.com/en/blog/capcat-web-article-archiving-2026.html"}}
+  </script>
+  <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://threadgrab.com/en/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/en/blog/"}, {"@type": "ListItem", "position": 3, "name": "Capcat 2026: CLI Web Article Archiving for Creator", "item": "https://threadgrab.com/en/blog/capcat-web-article-archiving-2026.html"}]}
+  </script>
+  <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is Capcat free and open source?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Capcat is fully open-source software available at capcat.org. There is no paid tier, no account, no API limits."}}, {"@type": "Question", "name": "Can Capcat save pages behind login walls or paywalls?", "acceptedAnswer": {"@type": "Answer", "text": "Capcat works with publicly accessible web pages. For pages behind authentication, you would need to save the content manually or use a browser extension."}}, {"@type": "Question", "name": "Does Capcat download images and media?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Capcat extracts inline images from the article and saves them alongside the Markdown file. For video embeds, the Markdown retains the original embed URLs."}}, {"@type": "Question", "name": "How does Capcat compare to md2rich?", "acceptedAnswer": {"@type": "Answer", "text": "md2rich converts Markdown to rich text for web editors (Medium, LinkedIn, Substack). Capcat goes the opposite direction: web articles to Markdown. They are complementary."}}, {"@type": "Question", "name": "Can I use Capcat and ThreadGrab together?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely. ThreadGrab handles social platform content (X, Bluesky, LinkedIn). Capcat handles web articles and reference pages. Together they form a complete local content archive."}}, {"@type": "Question", "name": "Does Capcat have a browser extension?", "acceptedAnswer": {"@type": "Answer", "text": "No. Capcat is a CLI and TUI application. For browser-based capture, use the \"Save as Markdown\" extension or pipe URLs from your bookmark manager into Capcat."}}]}
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/en/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a class="active" href="/en/blog/capcat-web-article-archiving-2026.html">EN</a>
+      <a  href="/pt/blog/capcat-web-article-archiving-2026.html">PT</a>
+      <a  href="/id/blog/capcat-web-article-archiving-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb"><a href="/en/">Home</a> / <a href="/en/blog/">Blog</a> / Capcat 2026</div>
+
+    <h1>Capcat 2026: <span>CLI Web Article Archiving for Creators</span></h1>
+    <p class="meta">July 4, 2026 &middot; 8 min read &middot; Guide</p>
+
+    <p>In July 2026, a new FOSS tool quietly appeared on the social creator landscape: <strong>Capcat</strong> (capcat.org) &mdash; a CLI and TUI application that archives any web article as clean Markdown and HTML. While ThreadGrab focuses on social threads from X, Bluesky, and LinkedIn, Capcat fills the complementary niche of <em>web page archiving</em>: blog posts, newsletters, Substack editions, documentation pages, and reference articles.</p>
+
+    <p>This guide explains what Capcat does, how it compares to the tools threadgrab users already know, and how to combine both tools for a complete 2026 content archiving workflow.</p>
+
+    <div class="callout">
+      <p><strong>TL;DR.</strong> Capcat is a free, open-source CLI/TUI tool that downloads web articles and saves them as local Markdown files. It is a dedicated <em>web page archiver</em>, while ThreadGrab is a dedicated <em>social content grabber</em>. The two tools complement each other: use ThreadGrab for X threads, Bluesky posts, and LinkedIn newsletters; use Capcat for linked articles, reference pages, and any web content worth keeping.</p>
+    </div>
+
+    <h2>What Is Capcat?</h2>
+    <p>Capcat is a command-line and terminal UI application available at <a href="https://capcat.org" target="_blank" rel="noopener">capcat.org</a>. Given a URL, it fetches the page, extracts the main article content (headline, body, metadata), and writes it as a clean Markdown file alongside a faithful HTML copy. It requires no account, no API key, and no subscription &mdash; it is fully open-source software.</p>
+
+    <p>The Markdown output strips ads, navigation chrome, sidebars, and footer noise, giving you the article text and images in a portable format. The HTML output preserves the original page layout for reference.</p>    <table>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Capcat</th>
+          <th>ThreadGrab</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Input type</td><td>Web article URLs</td><td>X threads, Bluesky posts, LinkedIn newsletters</td></tr>
+        <tr><td>Output format</td><td>Markdown + HTML</td><td>Markdown + JSON + frontmatter</td></tr>
+        <tr><td>Platform coverage</td><td>Any public web page</td><td>X, Bluesky, LinkedIn</td></tr>
+        <tr><td>Account required</td><td>No (local CLI/TUI)</td><td>No (local app)</td></tr>
+        <tr><td>Batch mode</td><td>Yes (stdin pipe)</td><td>Yes (profile handle, URL list)</td></tr>
+        <tr><td>Media downloads</td><td>Inline images extracted</td><td>Images + video alongside Markdown</td></tr>
+        <tr><td>Best for</td><td>Web article archiving</td><td>Social thread archiving</td></tr>
+      </tbody>
+    </table>
+    <h2>How Capcat Works: Core Workflow</h2>
+    <p>Capcat operates in two modes: a quick CLI mode for single URLs and an interactive TUI mode for batch work.</p>
+
+    <pre><code># Save a single article as Markdown
+capcat save https://example.com/blog/article --output ~/archive/
+
+# Save with both Markdown and HTML
+capcat save https://example.com/blog/article --format markdown,html
+
+# Interactive TUI mode (browse, batch, search)
+capcat tui</code></pre>
+
+    <p>The TUI mode shows a terminal-based interface where you can paste URLs, browse saved articles, search by keyword, and export selected items as a bundle. For creators who spend their day in the terminal &mdash; writers using Obsidian, developers using VS Code, researchers managing knowledge bases &mdash; the TUI fits naturally into the existing workflow.</p>
+
+    <h2>Capcat vs ThreadGrab: Different Tools, Complementary Roles</h2>
+    <p>The most common question when discovering Capcat is: "How is this different from ThreadGrab?" The answer is straightforward &mdash; they target different content types:</p>
+
+    <ul>
+      <li><strong>ThreadGrab</strong> is optimized for <em>social platform content</em>: X threads, X Articles, Bluesky post threads, and LinkedIn newsletters. It understands the platform-specific structure and preserves it in the Markdown output.</li>
+      <li><strong>Capcat</strong> is optimized for <em>general web articles</em>: blog posts, Substack editions, news articles, documentation pages. It extracts the main article body and strips everything else.</li>
+    </ul>
+
+    <p>Together they form a complete archival stack:</p>
+
+    <pre><code># Save a social thread via ThreadGrab
+threadgrab thread https://x.com/user/status/12345 \
+  --output ~/archive/social/ \
+  --with-media
+
+# Save a linked reference article via Capcat
+capcat save https://example.com/reference-page \
+  --output ~/archive/articles/</code></pre>
+
+    <h2>CLI Archiving for Social Creator Workflows</h2>
+    <p>Why would a social content creator need a dedicated web article archiver? Three common scenarios in 2026:</p>
+
+    <h3>1. Newsletter Research</h3>
+    <p>You read 10-20 articles per week to find material for your LinkedIn newsletter, X Articles, or Bluesky long-form posts. Capcat archives each one as Markdown in a local folder. When you sit down to write, you have a curated pile of source material in a format your editor or AI assistant can read directly.</p>
+
+    <h3>2. Knowledge Base Building</h3>
+    <p>Social platforms are ephemeral. Your X thread from 2024 might disappear tomorrow. The article you linked to in your Bluesky post might go 404. Capcat gives you a local, searchable Markdown vault of everything you have ever cited. Pair it with git for version control and your knowledge base survives platform decay.</p>
+
+    <pre><code># Batch archive a reading list from a file
+cat reading-list.txt | capcat batch --output ~/kb/articles/
+
+# Search your archive
+capcat search --keyword "MCP server" ~/kb/articles/</code></pre>
+
+    <h3>3. AI Training Data Curation</h3>
+    <p>If you are curating high-quality web content for LLM fine-tuning or retrieval-augmented generation (RAG), Markdown is the preferred input format. Capcat produces clean Markdown that can feed directly into embedding pipelines, vector databases, and training sets without HTML cleanup.</p>
+
+    <h2>Practical Example: Archiving a LinkedIn Newsletter Edition</h2>
+    <p>Here is a real scenario: you find a LinkedIn newsletter edition worth saving. Use ThreadGrab to capture the post as Markdown, then use Capcat to archive any external articles the newsletter links to &mdash; creating a complete, self-contained archive of the edition and its sources.</p>
+
+    <pre><code># Step 1: Save the LinkedIn newsletter post via ThreadGrab
+threadgrab thread https://www.linkedin.com/pulse/my-newsletter-edition-123 \
+  --output ~/archive/linkedin/
+
+# Step 2: The newsletter links to 3 external articles.
+# Archive each one with Capcat
+capcat save https://source-1.com/article --output ~/archive/sources/
+capcat save https://source-2.com/blog-post --output ~/archive/sources/
+capcat save https://source-3.com/research --output ~/archive/sources/
+
+# Step 3: Everything is in one date-organized vault
+ls ~/archive/2026-07/</code></pre>
+
+    <h2>Batch Archiving and Pipeline Integration</h2>
+    <p>Capcat shines when integrated into automated pipelines. Because it is a CLI application, it fits naturally into shell scripts, cron jobs, and CI/CD workflows:</p>
+
+    <pre><code># Pipe a URL list from any source (RSS reader, bookmark export, API response)
+curl -s "https://api.example.com/bookmarks" | jq -r '.[].url' | capcat batch
+
+# Archive all open tabs from a browser bookmark export
+cat bookmarks.html | grep -oP 'href="\K[^"]+' | capcat batch --output ~/archive/tabs/</code></pre>
+
+    <p>This pipeline approach is familiar to ThreadGrab users who already automate social content capture. The two CLIs share the same philosophy: local-first, file-based, scriptable.</p>
+
+    <h2>FAQ</h2>    <div class="faq-item">
+      <strong>Is Capcat free and open source?</strong>
+      <p>Yes. Capcat is fully open-source software available at capcat.org. There is no paid tier, no account, no API limits.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Can Capcat save pages behind login walls or paywalls?</strong>
+      <p>Capcat works with publicly accessible web pages. For pages behind authentication, you would need to save the content manually or use a browser extension.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Does Capcat download images and media?</strong>
+      <p>Yes. Capcat extracts inline images from the article and saves them alongside the Markdown file. For video embeds, the Markdown retains the original embed URLs.</p>
+    </div>
+    <div class="faq-item">
+      <strong>How does Capcat compare to md2rich?</strong>
+      <p>md2rich converts Markdown to rich text for web editors (Medium, LinkedIn, Substack). Capcat goes the opposite direction: web articles to Markdown. They are complementary.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Can I use Capcat and ThreadGrab together?</strong>
+      <p>Absolutely. ThreadGrab handles social platform content (X, Bluesky, LinkedIn). Capcat handles web articles and reference pages. Together they form a complete local content archive.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Does Capcat have a browser extension?</strong>
+      <p>No. Capcat is a CLI and TUI application. For browser-based capture, use the "Save as Markdown" extension or pipe URLs from your bookmark manager into Capcat.</p>
+    </div>
+
+    <div class="cta">
+      <p>Need to save X threads, Bluesky posts, and LinkedIn newsletters as Markdown?</p>
+      <a class="btn" href="/en/">Try ThreadGrab &mdash; Free Social Content Archiver</a>
+    </div>
+
+    <h2>Web Articles + Social Threads: The Complete 2026 Archive</h2>
+    <p>Social content creators in 2026 need two archival layers: ThreadGrab for X threads, Bluesky posts, and LinkedIn newsletters, and a dedicated article archiver like Capcat for linked web content. Together they cover the full surface of your daily reading and publishing.</p>
+    <p>Start with ThreadGrab to capture the social layer, extend with Capcat for the web layer, and keep everything in a local Markdown vault.</p>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/en/">Home</a> &middot; <a href="/en/blog/">Blog</a> &middot; <a href="/en/about/">About</a> &middot; <a href="/en/privacy/">Privacy</a>
+    <br>Not affiliated with Capcat. Comparison based on publicly observable features as of July 2026.
+  </footer>
+</body>
+</html>

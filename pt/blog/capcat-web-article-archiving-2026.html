@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capcat 2026: Arquivamento de Artigos Web CLI para Criadores</title>
+  <meta name="description" content="Capcat e uma ferramenta CLI/TUI FOSS que arquiva artigos web como Markdown e HTML. Compare com ThreadGrab para um arquivo completo social e web em 2026.">
+  <meta name="keywords" content="Capcat, Capcat CLI, arquivamento de artigos web, arquivo Markdown, arquivo CLI, ThreadGrab, web para Markdown, ferramentas de arquivamento 2026, arquivo de conteudo social, FOSS">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/pt/blog/capcat-web-article-archiving-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/capcat-web-article-archiving-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/capcat-web-article-archiving-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/capcat-web-article-archiving-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/capcat-web-article-archiving-2026.html">
+  <meta property="og:title" content="Capcat 2026: Arquivamento de Artigos Web CLI para Criadores">
+  <meta property="og:description" content="Capcat e uma ferramenta CLI/TUI FOSS que arquiva artigos web como Markdown e HTML. Compare com ThreadGrab para um arquivo completo social e web em 2026.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/pt/blog/capcat-web-article-archiving-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Capcat 2026: Arquivamento de Artigos Web CLI para Criadores">
+  <meta name="twitter:description" content="Capcat e uma ferramenta CLI/TUI FOSS que arquiva artigos web como Markdown e HTML. Compare com ThreadGrab para um arquivo completo social e web em 2026.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+    @media (max-width: 640px) { main { padding: 24px 16px 40px; } table { font-size: 0.8rem; } th, td { padding: 8px; } }
+  </style>
+  <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Capcat 2026: Arquivamento de Artigos Web CLI para Criadores", "description": "Capcat e uma ferramenta CLI/TUI FOSS que arquiva artigos web como Markdown e HTML. Compare com ThreadGrab para um arquivo completo social e web em 2026.", "datePublished": "2026-07-04", "dateModified": "2026-07-04", "author": {"@type": "Person", "name": "ThreadGrab"}, "publisher": {"@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://threadgrab.com/pt/blog/capcat-web-article-archiving-2026.html"}}
+  </script>
+  <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://threadgrab.com/pt/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/pt/blog/"}, {"@type": "ListItem", "position": 3, "name": "Capcat 2026: Arquivamento de Artigos Web CLI para ", "item": "https://threadgrab.com/pt/blog/capcat-web-article-archiving-2026.html"}]}
+  </script>
+  <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "O Capcat e gratuito e de codigo aberto?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. O Capcat e totalmente codigo aberto disponivel em capcat.org. Nao ha nivel pago, conta ou limites de API."}}, {"@type": "Question", "name": "O Capcat baixa imagens e midia?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. O Capcat extrai imagens inline do artigo e as salva junto ao Markdown. Para video, o Markdown mantem as URLs originais."}}, {"@type": "Question", "name": "Posso usar Capcat e ThreadGrab juntos?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutamente. ThreadGrab lida com conteudo social (X, Bluesky, LinkedIn). Capcat lida com artigos web. Juntos formam um arquivo completo."}}, {"@type": "Question", "name": "O Capcat tem extensao de navegador?", "acceptedAnswer": {"@type": "Answer", "text": "Nao. Capcat e um aplicativo CLI. Para captura pelo navegador, use extensoes \"Save as Markdown\" ou envie URLs via linha de comando."}}]}
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/pt/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a  href="/en/blog/capcat-web-article-archiving-2026.html">EN</a>
+      <a class="active" href="/pt/blog/capcat-web-article-archiving-2026.html">PT</a>
+      <a  href="/id/blog/capcat-web-article-archiving-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb"><a href="/pt/">Home</a> / <a href="/pt/blog/">Blog</a> / Capcat 2026</div>
+
+    <h1>Capcat 2026: <span>Arquivamento de Artigos Web CLI para Criadores</span></h1>
+    <p class="meta">4 de Julho, 2026 &middot; 8 min de leitura &middot; Guia</p>
+
+    <p>Em Julho de 2026, uma nova ferramenta de codigo aberto apareceu no cenario de criadores de conteudo: <strong>Capcat</strong> (capcat.org) &mdash; um aplicativo CLI e TUI que arquiva qualquer artigo web como Markdown e HTML limpos. Enquanto o ThreadGrab foca em threads sociais do X, Bluesky e LinkedIn, o Capcat preenche o nicho complementar de <em>arquivamento de paginas web</em>.</p>
+
+    <p>Este guia explica o que o Capcat faz, como se compara ao ThreadGrab, e como combinar ambos para um fluxo completo de arquivamento em 2026.</p>
+
+    <div class="callout">
+      <p><strong>TL;DR.</strong> Capcat e uma ferramenta CLI/TUI gratuita e de codigo aberto que baixa artigos web e os salva como Markdown. E um <em>arquivador de paginas web</em>, enquanto o ThreadGrab e um <em>coletor de conteudo social</em>. As duas se complementam: use ThreadGrab para threads do X, posts do Bluesky e newsletters do LinkedIn; use Capcat para artigos vinculados e paginas de referencia.</p>
+    </div>
+
+    <h2>O Que e o Capcat?</h2>
+    <p>Capcat e um aplicativo de linha de comando e interface de terminal disponivel em <a href="https://capcat.org" target="_blank" rel="noopener">capcat.org</a>. Dada uma URL, ele busca a pagina, extrai o conteudo principal e o salva como Markdown junto com uma copia HTML. Nao requer conta, chave de API ou assinatura.</p>
+
+    <p>A saida Markdown remove anuncios e navegacao, dando a voce o texto e imagens em formato portatil. O HTML preserva o layout original.</p>    <table>
+      <thead>
+        <tr>
+          <th>Funcionalidade</th>
+          <th>Capcat</th>
+          <th>ThreadGrab</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Tipo de entrada</td><td>URLs de artigos web</td><td>Threads X, posts Bluesky, newsletters LinkedIn</td></tr>
+        <tr><td>Formato de saida</td><td>Markdown + HTML</td><td>Markdown + JSON + frontmatter</td></tr>
+        <tr><td>Cobertura de plataformas</td><td>Qualquer pagina web publica</td><td>X, Bluesky, LinkedIn</td></tr>
+        <tr><td>Conta necessaria</td><td>Nao (CLI/TUI local)</td><td>Nao (app local)</td></tr>
+        <tr><td>Modo lote</td><td>Sim (pipe stdin)</td><td>Sim (handle de perfil, lista de URLs)</td></tr>
+        <tr><td>Download de midia</td><td>Imagens inline extraidas</td><td>Imagens + video junto ao Markdown</td></tr>
+        <tr><td>Melhor para</td><td>Arquivamento de artigos web</td><td>Arquivamento de threads sociais</td></tr>
+      </tbody>
+    </table>
+    <h2>Como o Capcat Funciona: Fluxo Basico</h2>
+    <p>O Capcat opera em dois modos: CLI rapido para URLs unicas e TUI interativo para lote.</p>
+
+    <pre><code># Save a single article as Markdown
+capcat save https://example.com/blog/article --output ~/archive/
+
+# Save with both Markdown and HTML
+capcat save https://example.com/blog/article --format markdown,html
+
+# Interactive TUI mode (browse, batch, search)
+capcat tui</code></pre>
+
+    <p>O modo TUI mostra uma interface onde voce pode colar URLs, navegar por artigos, pesquisar e exportar. Para criadores que usam Obsidian, VS Code ou gerenciam bases de conhecimento, o TUI se encaixa naturalmente.</p>
+
+    <h2>Capcat vs ThreadGrab: Papeis Complementares</h2>
+    <ul>
+      <li><strong>ThreadGrab</strong> e otimizado para <em>conteudo social</em>: threads do X, X Articles, Bluesky e newsletters LinkedIn. Entende a estrutura especifica da plataforma.</li>
+      <li><strong>Capcat</strong> e otimizado para <em>artigos web gerais</em>: blogs, Substack, noticias, documentacao. Extrai o corpo principal e remove o resto.</li>
+    </ul>
+
+    <pre><code># Save a social thread via ThreadGrab
+threadgrab thread https://x.com/user/status/12345 \
+  --output ~/archive/social/ \
+  --with-media
+
+# Save a linked reference article via Capcat
+capcat save https://example.com/reference-page \
+  --output ~/archive/articles/</code></pre>
+
+    <h2>Cenarios para Criadores</h2>
+    <h3>1. Pesquisa para Newsletter</h3>
+    <p>Voce le 10-20 artigos por semana. Capcat arquiva cada um como Markdown. Quando sentar para escrever, tem o material em formato que seu editor ou IA le diretamente.</p>
+
+    <h3>2. Base de Conhecimento</h3>
+    <p>Plataformas sociais sao efemeras. Capcat da um vault Markdown local e pesquisavel de tudo que voce citou. Com git, sua base sobrevive a deterioracao das plataformas.</p>
+
+    <pre><code># Batch archive a reading list from a file
+cat reading-list.txt | capcat batch --output ~/kb/articles/
+
+# Search your archive
+capcat search --keyword "MCP server" ~/kb/articles/</code></pre>
+
+    <h3>3. Dados para Treinamento de IA</h3>
+    <p>Markdown e o formato preferido para fine-tuning e RAG. Capcat produz Markdown limpo sem necessidade de limpeza HTML.</p>
+
+    <h2>Exemplo: Arquivando Newsletter do LinkedIn</h2>
+    <pre><code># Step 1: Save the LinkedIn newsletter post via ThreadGrab
+threadgrab thread https://www.linkedin.com/pulse/my-newsletter-edition-123 \
+  --output ~/archive/linkedin/
+
+# Step 2: The newsletter links to 3 external articles.
+# Archive each one with Capcat
+capcat save https://source-1.com/article --output ~/archive/sources/
+capcat save https://source-2.com/blog-post --output ~/archive/sources/
+capcat save https://source-3.com/research --output ~/archive/sources/
+
+# Step 3: Everything is in one date-organized vault
+ls ~/archive/2026-07/</code></pre>
+
+    <h2>Integracao em Pipeline</h2>
+    <pre><code># Pipe a URL list from any source (RSS reader, bookmark export, API response)
+curl -s "https://api.example.com/bookmarks" | jq -r '.[].url' | capcat batch
+
+# Archive all open tabs from a browser bookmark export
+cat bookmarks.html | grep -oP 'href="\K[^"]+' | capcat batch --output ~/archive/tabs/</code></pre>
+
+    <p>Esta abordagem e familiar para usuarios do ThreadGrab. Os dois CLIs compartilham a filosofia: local primeiro, viavel em scripts.</p>
+
+    <h2>FAQ</h2>    <div class="faq-item">
+      <strong>O Capcat e gratuito e de codigo aberto?</strong>
+      <p>Sim. O Capcat e totalmente codigo aberto disponivel em capcat.org. Nao ha nivel pago, conta ou limites de API.</p>
+    </div>
+    <div class="faq-item">
+      <strong>O Capcat baixa imagens e midia?</strong>
+      <p>Sim. O Capcat extrai imagens inline do artigo e as salva junto ao Markdown. Para video, o Markdown mantem as URLs originais.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Posso usar Capcat e ThreadGrab juntos?</strong>
+      <p>Absolutamente. ThreadGrab lida com conteudo social (X, Bluesky, LinkedIn). Capcat lida com artigos web. Juntos formam um arquivo completo.</p>
+    </div>
+    <div class="faq-item">
+      <strong>O Capcat tem extensao de navegador?</strong>
+      <p>Nao. Capcat e um aplicativo CLI. Para captura pelo navegador, use extensoes "Save as Markdown" ou envie URLs via linha de comando.</p>
+    </div>
+
+    <div class="cta">
+      <p>Precisa salvar threads do X, posts do Bluesky e newsletters do LinkedIn como Markdown?</p>
+      <a class="btn" href="/pt/">Experimente ThreadGrab &mdash; Arquivador Social Gratuito</a>
+    </div>
+
+    <h2>Artigos Web + Threads Sociais: O Arquivo Completo de 2026</h2>
+    <p>Criadores de conteudo em 2026 precisam de duas camadas: ThreadGrab para threads do X, posts do Bluesky e newsletters do LinkedIn, e um arquivador de artigos como Capcat para conteudo web vinculado. Juntos cobrem toda a superficie da sua leitura e publicacao diaria.</p>
+    <p>Comece com ThreadGrab para capturar a camada social, estenda com Capcat para a camada web, e mantenha tudo em um vault local Markdown.</p>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/pt/">Home</a> &middot; <a href="/pt/blog/">Blog</a> &middot; <a href="/pt/about/">About</a> &middot; <a href="/pt/privacy/">Privacy</a>
+    <br>Nao afiliado ao Capcat. Comparacao baseada em recursos publicamente observaveis em Julho de 2026.
+  </footer>
+</body>
+</html>

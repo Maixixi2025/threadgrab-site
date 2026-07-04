@@ -18,6 +18,9 @@
 - [LinkedIn Long-Form 2026: Post-Embarrassing Era | ThreadGrab](https://threadgrab.com/en/blog/linkedin-long-form-post-embarrassing-era-2026.html): A creator strategy guide to LinkedIn 2026: what changed in the algorithm, who benefits from the long-form shift, and how to archive LinkedIn newsletters as Markdown for offline reading.
 - [X Articles vs Bluesky vs LinkedIn Newsletter | ThreadGrab](https://threadgrab.com/en/blog/x-articles-vs-bluesky-vs-linkedin-newsletter-2026.html): A practical 2026 comparison of the three long-form social platforms — X Articles, Bluesky long-form, and LinkedIn Newsletter.
 
+
+- [Caliper 2026: AI Agent Reliability for Social Content](https://threadgrab.com/en/blog/caliper-ai-agent-reliability-2026.html): Caliper measures pass@k for AI coding agents. How social creators use it to ship reliable X Articles, Bluesky posts, and LinkedIn drafts in 2026.
+
 ## What ThreadGrab does
 
 - Fetches public X (Twitter) threads, articles, and posts as readable plain text or Markdown.

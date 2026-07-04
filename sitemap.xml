@@ -280,4 +280,34 @@
     <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/atproto-bluesky-data-portability-2026.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/atproto-bluesky-data-portability-2026.html"/>
   </url>
+    <url>
+        <loc>https://threadgrab.com/en/blog/x-hosted-mcp-creator-workflow-2026.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/x-hosted-mcp-creator-workflow-2026.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/x-hosted-mcp-creator-workflow-2026.html"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/x-hosted-mcp-creator-workflow-2026.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/x-hosted-mcp-creator-workflow-2026.html"/>
+        <lastmod>2026-07-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://threadgrab.com/en/blog/shadowbroker-mcp-osint-social-creators-2026.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/shadowbroker-mcp-osint-social-creators-2026.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/shadowbroker-mcp-osint-social-creators-2026.html"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/shadowbroker-mcp-osint-social-creators-2026.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/shadowbroker-mcp-osint-social-creators-2026.html"/>
+        <lastmod>2026-07-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+  <url>
+    <loc>https://threadgrab.com/en/blog/capcat-web-article-archiving-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/capcat-web-article-archiving-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/capcat-web-article-archiving-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/capcat-web-article-archiving-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/capcat-web-article-archiving-2026.html"/>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

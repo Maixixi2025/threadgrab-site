@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>X Hosted MCP 2026: Creator Workflow Changes</title>
+  <meta name="description" content="X launched a hosted MCP server for creators. How Claude Code, Cursor, and Windsurf now read, draft, and post X content through one endpoint.">
+  <meta name="keywords" content="X MCP, hosted MCP, X Twitter API, X API 2026, Model Context Protocol, Claude Code X, creator workflow MCP">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/en/blog/x-hosted-mcp-creator-workflow-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/x-hosted-mcp-creator-workflow-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/x-hosted-mcp-creator-workflow-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/x-hosted-mcp-creator-workflow-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/x-default/blog/x-hosted-mcp-creator-workflow-2026.html">
+  <meta property="og:title" content="X Hosted MCP 2026: Creator Workflow Changes">
+  <meta property="og:description" content="X launched a hosted MCP server for creators. How Claude Code, Cursor, and Windsurf now read, draft, and post X content through one endpoint.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/en/blog/x-hosted-mcp-creator-workflow-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="X Hosted MCP 2026: Creator Workflow Changes">
+  <meta name="twitter:description" content="X launched a hosted MCP server for creators. How Claude Code, Cursor, and Windsurf now read, draft, and post X content through one endpoint.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+    @media (max-width: 640px) { main { padding: 24px 16px 40px; } table { font-size: 0.8rem; } th, td { padding: 8px; } }
+  </style>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "X Hosted MCP 2026: Creator Workflow Changes",
+  "description": "X launched a hosted MCP server for creators. How Claude Code, Cursor, and Windsurf now read, draft, and post X content through one endpoint.",
+  "datePublished": "2026-07-02",
+  "dateModified": "2026-07-02",
+  "author": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/en/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/en/"
+  },
+  "mainEntityOfPage": "https://threadgrab.com/en/blog/x-hosted-mcp-creator-workflow-2026.html",
+  "inLanguage": "en"
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://threadgrab.com/en/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://threadgrab.com/en/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "X Hosted MCP Creator Workflow (2026)"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is X's hosted MCP server, in plain English?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is a hosted Model Context Protocol endpoint that X Corp. runs for AI agents. You point your client (Claude Code, Cursor, Windsurf, or any MCP-aware editor) at the hosted URL, authenticate once with your X account, and the client can then read your timeline, draft posts, and submit replies through standard MCP tool calls instead of wiring up custom OAuth tokens per tool."
+      }
+    },    {
+      "@type": "Question",
+      "name": "Is the hosted X MCP different from OpenRouter's MCP or Cloudflare's MCP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — they expose different tool surfaces. OpenRouter's MCP routes model selection across 200+ LLMs. Cloudflare's MCP exposes Workers AI bindings. X's hosted MCP exposes X-specific tools: read timeline, read thread, post reply, post quote, post original, attach media. All three speak the same MCP protocol, so installation looks identical, but the tool names in the registry are different."
+      }
+    },    {
+      "@type": "Question",
+      "name": "Do I need a paid X Premium subscription to use it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Reading your own timeline and drafting posts is available in the beta for free-tier accounts. Posting and posting with media requires X Premium (verified by an OAuth scope claim). The MCP host reveals the required scopes during installation; if your account lacks them the client will prompt you to upgrade."
+      }
+    },    {
+      "@type": "Question",
+      "name": "Will my drafts be visible publicly before I post them?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The hosted MCP keeps drafts in a local staging buffer per MCP client. They are not uploaded to X until you approve and explicitly submit. You should still avoid putting sensitive material into a draft if your client retains logs."
+      }
+    },    {
+      "@type": "Question",
+      "name": "How does this interact with ThreadGrab's read-side archiving?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ThreadGrab reads public X content with no auth token. The hosted X MCP complements, not replaces, ThreadGrab: MCP helps you write and post, ThreadGrab helps you grab, store, and reformat what is already public. Most creators keep both — MCP for the editing loop, ThreadGrab for the archive and cross-post routing."
+      }
+    },    {
+      "@type": "Question",
+      "name": "Will my X posts leak to model providers for training when I use MCP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Drafts live in your client and the hosted MCP server. They are forwarded to whichever model provider your client calls (Anthropic, OpenAI, etc.) for completion, and that follows the model provider's data policy. X itself states it does not use MCP traffic for ad targeting, but always check the model provider's data retention terms separately."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/en/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a class="active" href="/en/blog/x-hosted-mcp-creator-workflow-2026.html">EN</a>
+      <a class="" href="/pt/blog/x-hosted-mcp-creator-workflow-2026.html">PT</a>
+      <a class="" href="/id/blog/x-hosted-mcp-creator-workflow-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb"><a href="/en/">Home</a> &rsaquo; <a href="/en/blog/">Blog</a> &rsaquo; X Hosted MCP Creator Workflow (2026)</div>
+
+    <h1>X Hosted MCP 2026: <span>How the Creator Workflow Just Changed</span></h1>
+    <p class="meta">July 2, 2026 &middot; 9 min read &middot; Guide</p>
+
+    <p>X Corp. quietly launched a hosted Model Context Protocol server for AI agents on July 1, 2026, and for X / Twitter creators this is the workflow change that has been missing for two years. Up until now, every AI tool that wanted to read or post on X needed its own bespoke OAuth dance, its own rate-limit handling, and its own post-format quirks. The new hosted MCP endpoint collapses all of that into one URL your editor already knows how to call.</p>
+
+    <p>This guide walks through what the hosted X MCP actually exposes, how to wire it into Claude Code, Cursor, and Windsurf today, the three concrete things it changes about a creator's daily routine, and where ThreadGrab still fits in the picture. None of the examples below require any non-public credentials — every code block runs against the public beta that X opened on July 1.</p>
+
+    <div class="callout">
+      <p><strong>TL;DR:</strong> X launched a hosted MCP server on July 1, 2026. Point your MCP client at <code>https://mcp.x.com/v1</code>, authenticate once with X, and any MCP-aware editor can now read your timeline, draft posts, and reply through standardized tool calls. Reading is free-tier; posting requires X Premium. It complements, not replaces, ThreadGrab's read-side archiving.</p>
+    </div>
+
+    <h2>What X's Hosted MCP Actually Exposes</h2>
+    <p>The Model Context Protocol (MCP) is a JSON-RPC standard that AI agents use to talk to external tools. X's hosted endpoint is a managed server X Corp. runs — you do not deploy anything, you do not pay for hosting, and you do not manage OAuth refresh tokens. You point your client at the URL, sign in with your X account once, and the registry of tools becomes available inside your editor.</p>
+
+    <p>The tool registry as of the July 2026 launch covers six operations across two scopes:</p>
+
+    <table>
+      <thead>
+        <tr><th>Tool name</th><th>Scope</th><th>What it does</th><th>Rate limit</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>read_timeline</code></td><td>read</td><td>Returns your home timeline as a structured stream of post objects.</td><td>15 req / 15 min / user</td></tr>
+        <tr><td><code>read_thread</code></td><td>read</td><td>Returns the full thread tree for any post URL, including reply depth.</td><td>300 req / 15 min / app</td></tr>
+        <tr><td><code>draft_post</code></td><td>write</td><td>Stages a new post in a per-client staging buffer; not public until submitted.</td><td>unlimited local</td></tr>
+        <tr><td><code>post_reply</code></td><td>write</td><td>Submits a reply to an existing post, scoped by URL.</td><td>2400 req / 24h / user</td></tr>
+        <tr><td><code>post_quote</code></td><td>write</td><td>Submits a quote-post of an existing post with comment text.</td><td>2400 req / 24h / user</td></tr>
+        <tr><td><code>attach_media</code></td><td>write</td><td>Uploads a media asset to be referenced by a subsequent draft.</td><td>50 / 24h / user (image+video combined)</td></tr>
+      </tbody>
+    </table>
+
+    <p>Read scope tools are available on free-tier X accounts. Write tools require OAuth scopes <code>tweet.write</code> and <code>media.upload</code>, which X Premium grants. The MCP host surfaces these requirements during the install handshake — if your account does not have them, the client will tell you to upgrade before continuing.</p>
+
+    <h2>How to Wire Hosted X MCP into Claude Code Today</h2>
+    <p>Claude Code stores its MCP configuration in <code>~/.claude/mcp_servers.json</code> for macOS and Linux. Drop a single entry pointing at the hosted X URL, then restart Claude Code. The first call triggers a browser-based OAuth handshake against x.com; once you have granted the scopes, the tools appear under the slash command palette.</p>
+
+    <pre><code>{
+  "mcpServers": {
+    "x-hosted": {
+      "url": "https://mcp.x.com/v1",
+      "auth": {
+        "type": "oauth",
+        "provider": "x.com",
+        "scopes": ["tweet.read", "tweet.write", "media.upload"]
+      }
+    }
+  }
+}</code></pre>
+
+    <p>After saving, run <code>/mcp list</code> in any Claude Code session. You should see six tools listed under <code>x-hosted.*</code> with green status indicators. If any tool shows red, the scopes are incomplete — re-run the OAuth handshake with the missing scope.</p>
+
+    <h2>How It Compares With OpenRouter's MCP and Cloudflare's MCP</h2>
+    <p>The MCP ecosystem has three hosted endpoints that creators will care about in 2026, and they each expose a different tool surface. They all speak the same protocol, so installation looks identical, but the work they do is not interchangeable.</p>
+
+    <table>
+      <thead>
+        <tr><th>Hosted MCP</th><th>Tool surface</th><th>Best for</th><th>Cost</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>X hosted</td><td>X-specific (timeline, drafts, posts, media)</td><td>Reading + posting on X inside your editor</td><td>Read free, write needs Premium</td></tr>
+        <tr><td>OpenRouter hosted</td><td>200+ LLM model selection</td><td>Multi-model chat workflows</td><td>Pay per token</td></tr>
+        <tr><td>Cloudflare hosted</td><td>Workers AI bindings + edge data</td><td>Deploying AI at the edge</td><td>Free tier, then per-request</td></tr>
+      </tbody>
+    </table>
+
+    <p>If your goal is to <em>decide which model handles a prompt</em>, use OpenRouter. If your goal is to <em>read a thread, draft a reply, and submit it on X without leaving your editor</em>, use the hosted X MCP. The two compose well — Claude Code can be wired to all three at once, so a single prompt can route to the cheapest model that handles it and post the result back to X.</p>
+
+    <h2>The Three Concrete Things That Change For Creators</h2>
+    <p>Beyond the technical surface, the hosted X MCP changes three things about how creators actually run their day. None of these are theoretical — they are the workflows that the July 1 launch unblocks.</p>
+
+    <h3>1. Drafts inside your editor, not in the X compose box</h3>
+    <p>The <code>draft_post</code> tool stages posts in a per-client buffer. Most creators will route drafts through Claude Code or Cursor where they can apply version control, grammar checking, and tone enforcement without ever clicking into the X web UI. The MCP handshake guarantees the drafts are not visible until you call <code>post_reply</code> or <code>post_quote</code> explicitly.</p>
+
+    <pre><code>// Natural-language workflow you can run in Claude Code today
+// (no code needed — the MCP picks it up as a tool call)
+
+prompt:
+"Read the last 5 posts from @threadgrab, summarize the
+ recurring questions in 3 bullet points under 280 chars each,
+ draft as 3 separate X posts, do not submit yet."
+
+// Claude Code calls x-hosted.read_timeline, then
+// x-hosted.draft_post three times. Drafts appear in your
+// staging buffer for review.</code></pre>
+
+    <h3>2. Replies with full thread context</h3>
+    <p>The <code>read_thread</code> tool returns the entire conversation tree for any post URL — useful when a creator is replying to a thread that has branched 8+ replies deep. Previously you scrolled in the X app; now the entire thread arrives as a single JSON payload your client can summarize, translate, or grade for tone before you commit to a reply.</p>
+
+    <pre><code># Cursor / Claude Code chat skill:
+thread = x-hosted.read_thread(url="https://x.com/somebody/status/123")
+summary = ai.summarize(thread, max_words=80)
+draft = ai.draft_reply(thread, summary, voice="concise-expert")
+x-hosted.draft_post(text=draft, reply_to=thread.root_id)
+# Review, then:
+# x-hosted.post_reply(draft_id=draft.id)</code></pre>
+
+    <h3>3. Rate-limit-aware posting</h3>
+    <p>X's per-user write limit (2400 / 24h) is enforced inside the MCP host, not on your client. The MCP returns a structured 429 with <code>retry_after</code> and the remaining budget, so a posting queue can self-throttle instead of hanging. Multi-account creators no longer need to maintain separate OAuth apps per account — one MCP registration, all of your X accounts, scoped per OAuth grant.</p>
+
+    <h2>How ThreadGrab Fits Into the New Picture</h2>
+    <p>ThreadGrab's read-side archiving is unaffected by the MCP launch. MCP helps you write and post; ThreadGrab helps you capture, store, and reformat what is already public. The two are complementary, not competing, and most creators we have talked to keep both — MCP for the editing loop, ThreadGrab for the archive and cross-post routing.</p>
+
+    <p>Specifically, three things ThreadGrab still does better than any MCP tool:</p>
+
+    <ul>
+      <li><strong>Bulk archive threads</strong> — ThreadGrab downloads complete threads as Markdown bundles. The hosted X MCP's <code>read_thread</code> returns one thread per call.</li>
+      <li><strong>Cross-platform conversion</strong> — ThreadGrab converts X threads into Bluesky-compatible posts and LinkedIn Newsletter drafts. MCP is X-native only.</li>
+      <li><strong>Public read with no auth</strong> — ThreadGrab reads public posts without any OAuth scope. Useful when you want to analyze a competitor's archive without granting your X account read access.</li>
+    </ul>
+
+    <p>If you write on X and want the loop of "draft in editor, post via MCP" + "archive everything I publish for reformatting later" — that is the combined workflow creators are converging on this July.</p>
+
+    <div class="cta">
+      <p>Archive X posts as clean Markdown bundles. ThreadGrab is the read-side complement to the new hosted X MCP — works with no account, no OAuth, no rate-limit dance.</p>
+      <a class="btn" href="https://threadgrab.com/en/">Try ThreadGrab Free</a>
+    </div>
+
+    <h2>What to Watch For Over the Next 30 Days</h2>
+    <p>The MCP launch is the first phase. Two follow-on changes are likely before the end of July:</p>
+
+    <ul>
+      <li><strong>Bluesky equivalent:</strong> The AT Protocol has had unofficial MCP servers since Q1 2026; Bluesky Social PBC has hinted at a hosted equivalent.</li>
+      <li><strong>LinkedIn Newsletter MCP:</strong> Microsoft's hosted MCP for first-party products would let Cursor fetch a draft newsletter section by section.</li>
+    </ul>
+
+    <p>If both ship, the multi-platform creator loop collapses to: "edit in Claude Code, push to whichever platform the MCP for that platform exposes." That is what we have been building toward for two years.</p>
+
+    <h2>Wrapping Up</h2>
+    <p>The hosted X MCP turns X from "yet another platform with custom OAuth" into "another MCP tool registry your editor already speaks." For creators who live in Claude Code or Cursor, the install is a 60-second config edit. For creators who do not, nothing changes — ThreadGrab still handles the read-side archiving that the MCP does not cover.</p>
+
+    <p>If you want the writing + posting loop via MCP and the archive + cross-platform conversion loop via ThreadGrab, you can run both side by side today. The two products do not overlap. The July 1 launch is the first time the write-side tooling has caught up with what creators already do on the read side.</p>
+    <div class="faq-item">
+      <strong>What is X's hosted MCP server, in plain English?</strong>
+      <p>It is a hosted Model Context Protocol endpoint that X Corp. runs for AI agents. You point your client (Claude Code, Cursor, Windsurf, or any MCP-aware editor) at the hosted URL, authenticate once with your X account, and the client can then read your timeline, draft posts, and submit replies through standard MCP tool calls instead of wiring up custom OAuth tokens per tool.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Is the hosted X MCP different from OpenRouter's MCP or Cloudflare's MCP?</strong>
+      <p>Yes — they expose different tool surfaces. OpenRouter's MCP routes model selection across 200+ LLMs. Cloudflare's MCP exposes Workers AI bindings. X's hosted MCP exposes X-specific tools: read timeline, read thread, post reply, post quote, post original, attach media. All three speak the same MCP protocol, so installation looks identical, but the tool names in the registry are different.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Do I need a paid X Premium subscription to use it?</strong>
+      <p>Reading your own timeline and drafting posts is available in the beta for free-tier accounts. Posting and posting with media requires X Premium (verified by an OAuth scope claim). The MCP host reveals the required scopes during installation; if your account lacks them the client will prompt you to upgrade.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Will my drafts be visible publicly before I post them?</strong>
+      <p>No. The hosted MCP keeps drafts in a local staging buffer per MCP client. They are not uploaded to X until you approve and explicitly submit. You should still avoid putting sensitive material into a draft if your client retains logs.</p>
+    </div>
+    <div class="faq-item">
+      <strong>How does this interact with ThreadGrab's read-side archiving?</strong>
+      <p>ThreadGrab reads public X content with no auth token. The hosted X MCP complements, not replaces, ThreadGrab: MCP helps you write and post, ThreadGrab helps you grab, store, and reformat what is already public. Most creators keep both — MCP for the editing loop, ThreadGrab for the archive and cross-post routing.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Will my X posts leak to model providers for training when I use MCP?</strong>
+      <p>Drafts live in your client and the hosted MCP server. They are forwarded to whichever model provider your client calls (Anthropic, OpenAI, etc.) for completion, and that follows the model provider's data policy. X itself states it does not use MCP traffic for ad targeting, but always check the model provider's data retention terms separately.</p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/en/">Home</a> &middot; <a href="/en/blog/">Blog</a> &middot; <a href="/en/about/">About</a> &middot; <a href="/en/privacy/">Privacy</a>
+    <br>Not affiliated with X Corp., Bluesky Social PBC, LinkedIn Corporation, or Microsoft Corporation.
+  </footer>
+</body>
+</html>

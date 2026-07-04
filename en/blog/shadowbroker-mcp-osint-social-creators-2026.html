@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shadowbroker MCP 2026: <span>OSINT Dashboard for Social Creators</span></title>
+  <meta name="description" content="Build a 2026 MCP-powered OSINT dashboard for X, Bluesky, LinkedIn, RSS, and 15+ sources — the Shadowbroker pattern for social content creators.">
+  <meta name="keywords" content="Shadowbroker, MCP, OSINT, X Articles, Bluesky long-form, LinkedIn Newsletter, social content creator, MCP server 2026, agent workflow, Claude Code, Codex CLI, Cursor">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/en/blog/shadowbroker-mcp-osint-social-creators-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/shadowbroker-mcp-osint-social-creators-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/shadowbroker-mcp-osint-social-creators-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/shadowbroker-mcp-osint-social-creators-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/shadowbroker-mcp-osint-social-creators-2026.html">
+  <meta property="og:title" content="Shadowbroker MCP 2026: OSINT Dashboard for Social Creators">
+  <meta property="og:description" content="Build a 2026 MCP-powered OSINT dashboard for X, Bluesky, LinkedIn, RSS, and 15+ sources — the Shadowbroker pattern for social content creators.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/en/blog/shadowbroker-mcp-osint-social-creators-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Shadowbroker MCP 2026: OSINT Dashboard for Social Creators">
+  <meta name="twitter:description" content="Build a 2026 MCP-powered OSINT dashboard for X, Bluesky, LinkedIn, RSS, and 15+ sources — the Shadowbroker pattern for social content creators.">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Shadowbroker MCP 2026: OSINT Dashboard for Social Creators",
+    "description": "Build a 2026 MCP-powered OSINT dashboard for X, Bluesky, LinkedIn, RSS, and 15+ sources — the Shadowbroker pattern for social content creators.",
+    "datePublished": "2026-07-03",
+    "dateModified": "2026-07-03",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/en/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/en/" },
+    "mainEntityOfPage": "https://threadgrab.com/en/blog/shadowbroker-mcp-osint-social-creators-2026.html",
+    "inLanguage": "en"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://threadgrab.com/en/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://threadgrab.com/en/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Shadowbroker MCP OSINT Dashboard for Social Creators (2026)"
+    }
+  ]
+}
+  </script>
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is Shadowbroker free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The project is MIT-licensed on GitHub. You run it locally; there is no hosted service, no signup, no usage cap. The only cost is whatever API keys you bring yourself (e.g. an X bearer token if you want to go past the public rate limits)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to use Claude Code to benefit from Shadowbroker?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Any MCP-compatible client works. The big three in 2026 are Claude Code, OpenAI Codex CLI, and Cursor. All three can register Shadowbroker as an MCP server. The agent layer is interchangeable."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does Shadowbroker differ from Zapier or IFTTT for social aggregation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Zapier and IFTTT are trigger-based automation: a new post matching a rule causes a downstream action. Shadowbroker is agent-queryable ingestion: the agent asks for a digest on demand, in real time, with structured results. Zapier moves data between apps. Shadowbroker gives an LLM a unified view of the open web."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use Shadowbroker for posting, or is it read-only?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Read-only. Shadowbroker is an ingestion / research tool. For posting, layer in a different MCP server — X Hosted MCP for X, the Bluesky API for Bluesky (write your own thin MCP wrapper), and similar for LinkedIn. We covered the X side in our X Hosted MCP article."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I avoid X rate limits?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Get a bearer token from the X developer portal. Shadowbroker reads it from the X_BEARER_TOKEN env var. The free tier gets 100 reads per 15 minutes; the basic paid tier gets more. For most creator research sessions, that is plenty."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a hosted version of Shadowbroker?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not as of July 2026. The project is explicitly local-first. The maintainer has noted interest in a hosted tier but has not committed. If you need shared-team OSINT, you would deploy Shadowbroker on your own infrastructure (a small VM is enough)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Shadowbroker work on Bluesky custom feeds?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Partially. The Bluesky tool can fetch a public profile feed (e.g. threadgrab.bsky.social) and can search the public firehose. Custom feeds (the algorithmic ones users compose) require their own feed URI and are not yet wrapped. For most creators, the public feed is what you want anyway."
+        }
+      }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/en/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a href="/en/blog/shadowbroker-mcp-osint-social-creators-2026.html" class="active">EN</a>
+      <a href="/pt/blog/shadowbroker-mcp-osint-social-creators-2026.html">PT</a>
+      <a href="/id/blog/shadowbroker-mcp-osint-social-creators-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+
+    <h1>Shadowbroker MCP 2026: <span>OSINT Dashboard for Social Creators</span></h1>
+    <p class="breadcrumb"><a href="/en/">Home</a> &rsaquo; <a href="/en/blog/">Blog</a> &rsaquo; Shadowbroker MCP OSINT Dashboard</p>
+    <p class="meta">July 3, 2026 &middot; 11 min read &middot; by ThreadGrab</p>
+
+    <p>If you write for X Articles, Bluesky long-form, and LinkedIn Newsletter, you already know the pain: the most interesting conversations are scattered across <strong>three platforms, three feeds, and three different discovery surfaces</strong>. Tracking them in a single browser tab means switching contexts all day. Tracking them across three tabs means losing 40% of what you meant to revisit.</p>
+
+    <p>What if a single MCP server could pull X posts, Bluesky threads, LinkedIn updates, RSS feeds, GitHub releases, and 10+ other sources into one real-time dashboard &mdash; and let your AI agent (Claude Code, Codex CLI, Cursor) query it on demand?</p>
+
+    <p>That is exactly what <strong><a href="https://github.com/BigBodyCobain/Shadowbroker" rel="noopener">Shadowbroker</a></strong> does. It is a 2026 MCP-powered OSINT (open-source intelligence) dashboard built by a single developer (BigBodyCobain on GitHub) that wraps <strong>15+ social, code, and news sources</strong> behind a unified MCP interface. For social content creators, it is a working reference implementation of something we have been writing about for months: <em>use MCP to break the platform silos</em>.</p>
+
+    <p>Today we will walk through what Shadowbroker is, why it matters for X / Bluesky / LinkedIn writers, how the MCP integration actually works under the hood, and how to adapt the same pattern for your own creator workflow &mdash; even if you do not want to install Shadowbroker itself.</p>
+
+    <h2>What Shadowbroker Actually Does</h2>
+    <p>Shadowbroker is, at its core, a thin aggregator. Each source it pulls is wrapped as a <strong>Model Context Protocol (MCP) tool</strong> &mdash; the same protocol that powers Claude Code, Codex CLI, and Cursor's tool-use features. Once running, it exposes a uniform interface where your AI agent can call something like:</p>
+
+    <pre><code>search_x(query="AI agents social workflow", limit=20)
+list_bluesky_feed(handle="threadgrab.bsky.social", limit=10)
+fetch_linkedin_post(url="https://linkedin.com/posts/...")
+read_rss(url="https://hnrss.org/newest", limit=15)
+</code></pre>
+
+    <p>Each of those functions is a <em>real MCP tool</em> registered by the Shadowbroker server. The AI agent in your editor does not need a custom API integration per platform &mdash; it just calls the tool and gets a structured response back.</p>
+
+    <p>The 15+ sources Shadowbroker currently wraps (per the project's README as of July 2026) include:</p>
+
+    <ul>
+      <li><strong>X (Twitter)</strong> &mdash; search, user timeline, post fetch</li>
+      <li><strong>Bluesky</strong> &mdash; feed read, post search, profile lookup via the public AT Protocol API</li>
+      <li><strong>LinkedIn</strong> &mdash; limited (relies on public post URLs, not full session auth)</li>
+      <li><strong>RSS / Atom</strong> &mdash; generic feed parser for any URL</li>
+      <li><strong>Hacker News</strong> &mdash; top stories, comments, search via Algolia</li>
+      <li><strong>GitHub Releases</strong> &mdash; per-repo release feed</li>
+      <li><strong>Reddit</strong> &mdash; subreddit + search via the public JSON API</li>
+      <li><strong>Mastodon</strong> &mdash; federated timeline read</li>
+      <li><strong>YouTube</strong> &mdash; public transcript fetch (no auth)</li>
+      <li><strong>arXiv</strong> &mdash; paper search (for academic social-commentary writers)</li>
+      <li><strong>PubMed</strong> &mdash; biomedical paper search</li>
+      <li><strong>Wikipedia</strong> &mdash; article + summary</li>
+      <li><strong>OpenStreetMap</strong> &mdash; geocoding</li>
+      <li><strong>Weather</strong> &mdash; Open-Meteo (no API key)</li>
+      <li><strong>Stock quotes</strong> &mdash; limited public endpoints</li>
+    </ul>
+
+    <p>The list is a deliberate cross-domain mix: social platforms, dev news, academic research, factual reference. That is the OSINT ethos &mdash; treat the entire open web as a queryable surface.</p>
+
+    <h2>Why This Pattern Matters for Social Content Creators</h2>
+    <p>If you write for X Articles, Bluesky long-form, or LinkedIn Newsletter, your <em>real</em> workflow is not "post to platform X." It is:</p>
+
+    <ol>
+      <li>Discover what people are saying right now (the <strong>research</strong> phase)</li>
+      <li>Filter for what is worth a long-form piece (the <strong>curation</strong> phase)</li>
+      <li>Draft a response / angle (the <strong>writing</strong> phase)</li>
+      <li>Cross-post the result to multiple platforms with platform-specific formatting (the <strong>distribution</strong> phase)</li>
+    </ol>
+
+    <p>Step 1 is where Shadowbroker's pattern shines. Today, most creators run that discovery phase in a browser with 12 tabs open. Each tab is a separate UI, a separate auth session, a separate mental context. The same conversation on X, Bluesky, and LinkedIn looks like three different events.</p>
+
+    <p>What Shadowbroker does &mdash; and what the broader MCP ecosystem is starting to do &mdash; is <strong>collapse that discovery into a single interface your AI agent can query</strong>. Instead of switching tabs, you type into Claude Code or Cursor:</p>
+
+    <pre><code>Use the shadowbroker MCP tools to find the 5 most-discussed
+posts about "agent reliability" across X, Bluesky, and LinkedIn
+in the last 48 hours. Group by sentiment and return URLs.
+</code></pre>
+
+    <p>The agent calls the relevant MCP tools, gets a structured response, and gives you back a single digest. You stay in the editor the entire time.</p>
+
+    <h2>Setup: Running Shadowbroker Locally</h2>
+    <p>Shadowbroker is an open-source project. The setup is intentionally light: Python 3.11+, a few packages, and an MCP client (Claude Code, Codex CLI, or Cursor). Per the GitHub README:</p>
+
+    <pre><code>git clone https://github.com/BigBodyCobain/Shadowbroker.git
+cd Shadowbroker
+pip install -r requirements.txt
+
+# Configure your MCP client (Claude Code example)
+# In ~/.claude.json or your project's .mcp.json:
+&#123;
+  "mcpServers": &#123;
+    "shadowbroker": &#123;
+      "command": "python",
+      "args": ["/path/to/Shadowbroker/server.py"]
+    &#125;
+  &#125;
+&#125;
+</code></pre>
+
+    <p>For Claude Code users, that JSON goes in your project's <code>.mcp.json</code>. For Codex CLI, it goes in <code>~/.codex/config.toml</code> under <code>[mcp_servers.shadowbroker]</code>. For Cursor, you configure it in Settings &rsaquo; MCP &rsaquo; Add new global MCP server.</p>
+
+    <p>There is no Docker image, no SaaS signup, no API key exchange for most sources. X is the partial exception: Shadowbroker can use the public search API without auth for limited queries, but heavy usage will need bearer tokens (which the project documents in the README).</p>
+
+    <h2>The Core Idea: Treat the Open Web as One Queryable Surface</h2>
+    <p>What makes Shadowbroker interesting is not the source list &mdash; any developer can wrap 15 HTTP APIs. What is interesting is that the project commits to a <strong>uniform MCP surface</strong>. The agent does not need to know whether it is calling X, Bluesky, Hacker News, or arXiv. The tool name and arguments are normalized.</p>
+
+    <p>This is the same insight that drives a lot of 2026 MCP development: <em>the value of MCP is not the protocol itself, it is the normalization</em>. Without normalization, an agent needs a custom tool per platform. With normalization, the agent can chain cross-platform queries with no additional code.</p>
+
+    <p>For a social content creator, that means the same agent prompt that asks "what is trending on X" can also ask "what is the academic take on this" by switching the tool name. The agent itself does not need to know that one tool hits X and the other hits arXiv. It just calls them and synthesizes.</p>
+
+    <h2>Setup Walkthrough: A Concrete Creator Workflow</h2>
+    <p>Let us walk through what a real creator session looks like with Shadowbroker running. The scenario: <em>you are writing a Bluesky long-form post about AI agent reliability tools and want to anchor it in current cross-platform discussion</em>.</p>
+
+    <p><strong>Step 1: Discovery across platforms.</strong> In your editor, you ask:</p>
+
+    <pre><code>Use the shadowbroker MCP server to gather:
+
+1. The top 5 X posts from the last 72 hours matching
+   "agent reliability" or "agent eval"
+2. The top 5 Bluesky posts from the last 72 hours with the
+   same keywords
+3. The top 3 Hacker News threads from the last 7 days
+4. The 2 most recent arXiv papers on the topic
+
+Return as a single table with platform, URL, summary, and
+engagement count.
+</code></pre>
+
+    <p>Behind the scenes, the agent calls 4 MCP tools, each of which hits a different source. The response is a normalized table. The whole discovery phase takes under a minute, and you never leave your editor.</p>
+
+    <p><strong>Step 2: Cross-reference and quote-pull.</strong> You pick the most interesting sources from the table. Then:</p>
+
+    <pre><code>For each row in the discovery table, fetch the full text of
+the top post / thread / paper. For X and Bluesky, pull the
+post body. For HN, pull the top 3 comments. For arXiv, pull
+the abstract. Save the result to ./research-brief.md.
+</code></pre>
+
+    <p>Now you have a markdown research brief that you can read, annotate, and draft from. The brief is portable: it is just a file. You can commit it, share it, or feed it into a different LLM for the actual draft.</p>
+
+    <p><strong>Step 3: Draft.</strong> This is where you, the human writer, take over. The discovery and quote-pull are mechanical. The synthesis &mdash; picking a hook, finding the angle, choosing the structure &mdash; is the part MCP cannot do for you. But the <em>inputs</em> to that synthesis are now an order of magnitude richer, because you saw 15 sources in 60 seconds instead of 3 sources in 30 minutes.</p>
+
+    <p><strong>Step 4: Cross-post with platform-specific formatting.</strong> Once you have the draft, the distribution phase is its own MCP story (we covered that in our <a href="/en/blog/x-hosted-mcp-creator-workflow-2026.html">X Hosted MCP article</a> and the <a href="/en/blog/openrouter-mcp-server-social-content-creators-2026.html">OpenRouter MCP server article</a>). Shadowbroker handles ingestion; X / OpenRouter MCPs handle routing and posting.</p>
+
+    <h2>How Shadowbroker Compares to Other MCP Servers</h2>
+    <p>Shadowbroker is one of a growing list of MCP servers targeting social content creators. The 2026 landscape has three main archetypes:</p>
+
+    <table>
+      <thead>
+        <tr><th>Server</th><th>Focus</th><th>Sources</th><th>Best For</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Shadowbroker</td>
+          <td>OSINT (ingestion)</td>
+          <td>15+ (X, Bluesky, HN, arXiv, GitHub, RSS, &hellip;)</td>
+          <td>Cross-platform discovery, research, fact-gathering</td>
+        </tr>
+        <tr>
+          <td>OpenRouter MCP</td>
+          <td>LLM routing (writing)</td>
+          <td>100+ models via OpenRouter</td>
+          <td>Multi-model drafts, model-A-vs-B comparisons</td>
+        </tr>
+        <tr>
+          <td>X Hosted MCP</td>
+          <td>Distribution</td>
+          <td>X (Twitter) API only</td>
+          <td>Direct posting to X from the agent</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>These three MCP servers are <strong>complementary, not competing</strong>. Shadowbroker is the upstream ingestion layer. OpenRouter MCP is the middle routing layer (which model writes the draft). X Hosted MCP is the downstream distribution layer (how the post actually reaches the timeline). A serious creator stack in 2026 will likely run all three &mdash; each solves a different problem.</p>
+
+    <p>For our readers who are already using OpenRouter MCP for multi-model drafting, Shadowbroker fills the missing piece on the ingestion side. You no longer have to leave the editor to do discovery.</p>
+
+    <h2>Limitations and Honest Caveats</h2>
+    <p>Shadowbroker is a single-developer project. That has implications:</p>
+
+    <ul>
+      <li><strong>X rate limits:</strong> The public X search API without bearer tokens is heavily rate-limited. Heavy usage will need authentication, which means API keys you have to manage.</li>
+      <li><strong>LinkedIn coverage:</strong> LinkedIn does not expose a clean public API. Shadowbroker's LinkedIn tool works on public post URLs (you paste a URL, it fetches the page), not on arbitrary search. If you need broad LinkedIn monitoring, this is a gap.</li>
+      <li><strong>Source count is shallow, not deep:</strong> 15+ sources sounds like a lot, but the depth per source is limited. You get the top posts / top threads / top papers, not the full firehose. For most creator workflows, that is fine. For newsroom-scale ingestion, you want a different stack.</li>
+      <li><strong>No auth persistence:</strong> Some sources (GitHub, Reddit) work better with auth tokens. Shadowbroker reads them from env vars; if your token expires, the tool silently degrades.</li>
+    </ul>
+
+    <p>None of these are dealbreakers for the target audience. The point of Shadowbroker is not to be a newsroom OSINT platform. The point is to be a <em>creator's research assistant</em> &mdash; small, fast, local, no signup.</p>
+
+    <h2>Building Your Own: The Pattern, Not the Project</h2>
+    <p>The bigger takeaway from Shadowbroker is not the project itself. It is the <strong>pattern</strong>: wrap N HTTP APIs as MCP tools, normalize the surface, expose them to your agent. You can do this with 20 lines of Python and 2 hours of work, even if you do not use Shadowbroker.</p>
+
+    <p>A minimal example for a single source (Bluesky) would look like:</p>
+
+    <pre><code># my_social_mcp.py — a minimal MCP server for one platform
+from mcp.server import Server
+from mcp.types import Tool
+import httpx
+
+app = Server("my-social")
+
+@app.tool()
+async def search_bluesky(query: str, limit: int = 10) -> list:
+    """Search recent Bluesky posts for a query string."""
+    url = "https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts"
+    r = httpx.get(url, params=&#123;"q": query, "limit": limit&#125;, timeout=10)
+    return r.json().get("posts", [])
+</code></pre>
+
+    <p>That 10-line server is a real MCP server. Wire it into Claude Code, and you can call <code>search_bluesky</code> from your agent. The same pattern works for X (with bearer token), Reddit (public JSON), HN (Algolia), and most RSS feeds. You do not need a 15-source mega-server to get 80% of the value.</p>
+
+    <p>Start with the 1-2 sources you actually use for research. Add more when the workflow proves out. The MCP ecosystem is at its best when the tools you build match the work you actually do, not the work some generalist dashboard guesses you do.</p>
+
+    <h2>FAQ: Common Questions From Social Creators</h2>
+
+    <h3>Is Shadowbroker free?</h3>
+    <p>Yes. The project is MIT-licensed on GitHub. You run it locally; there is no hosted service, no signup, no usage cap. The only cost is whatever API keys you bring yourself (e.g. an X bearer token if you want to go past the public rate limits).</p>
+
+    <h3>Do I need to use Claude Code to benefit from Shadowbroker?</h3>
+    <p>No. Any MCP-compatible client works. The big three in 2026 are Claude Code, OpenAI Codex CLI, and Cursor. All three can register Shadowbroker as an MCP server. The agent layer is interchangeable.</p>
+
+    <h3>How does Shadowbroker differ from Zapier or IFTTT for social aggregation?</h3>
+    <p>Zapier and IFTTT are <em>trigger-based automation</em>: a new post matching a rule causes a downstream action. Shadowbroker is <em>agent-queryable ingestion</em>: the agent asks for a digest on demand, in real time, with structured results. The mental model is different. Zapier moves data between apps. Shadowbroker gives an LLM a unified view of the open web.</p>
+
+    <h3>Can I use Shadowbroker for posting, or is it read-only?</h3>
+    <p>Read-only. Shadowbroker is an ingestion / research tool. For posting, layer in a different MCP server &mdash; X Hosted MCP for X, the Bluesky API for Bluesky (write your own thin MCP wrapper), and similar for LinkedIn. We covered the X side in our <a href="/en/blog/x-hosted-mcp-creator-workflow-2026.html">X Hosted MCP article</a>.</p>
+
+    <h3>How do I avoid X rate limits?</h3>
+    <p>Get a bearer token from the X developer portal. Shadowbroker reads it from the <code>X_BEARER_TOKEN</code> env var. The free tier gets 100 reads per 15 minutes; the basic paid tier gets more. For most creator research sessions, that is plenty.</p>
+
+    <h3>Is there a hosted version of Shadowbroker?</h3>
+    <p>Not as of July 2026. The project is explicitly local-first. The maintainer has noted interest in a hosted tier but has not committed. If you need shared-team OSINT, you would deploy Shadowbroker on your own infrastructure (a small VM is enough).</p>
+
+    <h3>Does Shadowbroker work on Bluesky custom feeds?</h3>
+    <p>Partially. The Bluesky tool can fetch a public profile's feed (e.g. <code>threadgrab.bsky.social</code>) and can search the public firehose. Custom feeds (the algorithmic ones users compose) require their own feed URI and are not yet wrapped. For most creators, the public feed is what you want anyway.</p>
+
+    <h2>Wrap-up: One Pattern, Many Sources, Zero Tab-Switching</h2>
+    <p>Shadowbroker is one of the clearest 2026 examples of the MCP pattern paying off for individual creators. The promise of MCP was always: <em>one protocol, many tools, agent-friendly</em>. Shadowbroker is the most concrete realization of that promise for social content creators &mdash; 15+ sources, one normalized surface, no tab-switching.</p>
+
+    <p>You do not have to install Shadowbroker to benefit from the pattern. The takeaway is: <strong>wrap the open web in MCP tools, expose them to your agent, and let the agent do cross-platform discovery in seconds</strong>. Whether you build your own 1-source server or run a 15-source mega-server, the productivity unlock is the same.</p>
+
+    <p>For ThreadGrab readers specifically, the natural pairing is Shadowbroker for ingestion + OpenRouter MCP for multi-model drafting + X Hosted MCP for distribution. That three-layer stack covers the full creator loop from research to publication, all from inside your editor, all without leaving the keyboard for the browser.</p>
+
+    <p>Read the related pieces for the other layers of the stack: <a href="/en/blog/openrouter-mcp-server-social-content-creators-2026.html">OpenRouter MCP for multi-model drafting</a>, <a href="/en/blog/x-hosted-mcp-creator-workflow-2026.html">X Hosted MCP for direct agent posting</a>, and our <a href="/en/blog/caliper-ai-agent-reliability-2026.html">Caliper AI agent reliability article</a> for the eval / drift tracking layer that closes the loop.</p>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/en/">Home</a> &middot; <a href="/en/blog/">Blog</a> &middot; <a href="/en/about/">About</a> &middot; <a href="/en/privacy/">Privacy</a>
+    <br>Not affiliated with X Corp., Bluesky Social PBC, LinkedIn / Microsoft, OpenRouter, Anthropic, or OpenAI.
+  </footer>
+</body>
+</html>

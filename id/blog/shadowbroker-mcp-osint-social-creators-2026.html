@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shadowbroker MCP 2026: <span>Dasbor OSINT untuk Kreator Sosial</span></title>
+  <meta name="description" content="Dasbor OSINT MCP 2026 untuk X, Bluesky, LinkedIn, RSS, dan 15+ sumber — pola Shadowbroker dijelaskan untuk kreator konten sosial.">
+  <meta name="keywords" content="Shadowbroker, MCP, OSINT, X Articles, Bluesky long-form, LinkedIn Newsletter, kreator konten sosial, server MCP 2026, alur kerja agen, Claude Code, Codex CLI, Cursor">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/id/blog/shadowbroker-mcp-osint-social-creators-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/shadowbroker-mcp-osint-social-creators-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/shadowbroker-mcp-osint-social-creators-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/shadowbroker-mcp-osint-social-creators-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/shadowbroker-mcp-osint-social-creators-2026.html">
+  <meta property="og:title" content="Shadowbroker MCP 2026: Dasbor OSINT untuk Kreator Sosial">
+  <meta property="og:description" content="Dasbor OSINT MCP 2026 untuk X, Bluesky, LinkedIn, RSS, dan 15+ sumber — pola Shadowbroker dijelaskan untuk kreator konten sosial.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/id/blog/shadowbroker-mcp-osint-social-creators-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Shadowbroker MCP 2026: Dasbor OSINT untuk Kreator Sosial">
+  <meta name="twitter:description" content="Dasbor OSINT MCP 2026 untuk X, Bluesky, LinkedIn, RSS, dan 15+ sumber — pola Shadowbroker dijelaskan untuk kreator konten sosial.">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Shadowbroker MCP 2026: Dasbor OSINT untuk Kreator Sosial",
+    "description": "Dasbor OSINT MCP 2026 untuk X, Bluesky, LinkedIn, RSS, dan 15+ sumber — pola Shadowbroker dijelaskan untuk kreator konten sosial.",
+    "datePublished": "2026-07-03",
+    "dateModified": "2026-07-03",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/id/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/id/" },
+    "mainEntityOfPage": "https://threadgrab.com/id/blog/shadowbroker-mcp-osint-social-creators-2026.html",
+    "inLanguage": "id-ID"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://threadgrab.com/id/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://threadgrab.com/id/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Shadowbroker MCP OSINT untuk Kreator Sosial (2026)"
+    }
+  ]
+}
+  </script>
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Apakah Shadowbroker gratis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ya. Proyek ini berlisensi MIT di GitHub. Anda menjalankannya secara lokal; tidak ada layanan hosted, tidak ada pendaftaran, tidak ada batas penggunaan. Satu-satunya biaya adalah API key yang Anda bawa sendiri (mis. bearer token X jika ingin melewati rate limit publik)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah saya harus pakai Claude Code untuk mendapat manfaat dari Shadowbroker?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tidak. Klien apapun yang kompatibel dengan MCP bisa dipakai. Tiga besar di 2026 adalah Claude Code, OpenAI Codex CLI, dan Cursor. Ketiganya bisa mendaftarkan Shadowbroker sebagai server MCP. Lapisan agennya bisa saling dipertukarkan."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bagaimana Shadowbroker berbeda dari Zapier atau IFTTT untuk agregasi sosial?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Zapier dan IFTTT adalah otomatisasi berbasis trigger: post baru yang cocok dengan aturan menyebabkan aksi downstream. Shadowbroker adalah ingesti yang bisa dikueri agen: agen meminta digest sesuai permintaan, real-time, dengan hasil terstruktur. Zapier memindahkan data antar app. Shadowbroker memberi LLM pandangan terpadu tentang web terbuka."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bisakah saya menggunakan Shadowbroker untuk posting, atau hanya baca?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hanya baca. Shadowbroker adalah alat ingesti / riset. Untuk posting, lapisi dengan server MCP berbeda — X Hosted MCP untuk X, API Bluesky untuk Bluesky (tulis wrapper MCP tipis Anda sendiri), dan serupa untuk LinkedIn. Kami membahas sisi X di artikel X Hosted MCP kami."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bagaimana cara menghindari rate limit X?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dapatkan bearer token dari portal developer X. Shadowbroker membacanya dari env var X_BEARER_TOKEN. Tier gratis memberi 100 bacaan per 15 menit; tier bayar dasar memberi lebih. Untuk kebanyakan sesi riset kreator, itu sudah lebih dari cukup."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah ada versi hosted dari Shadowbroker?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Belum per Juli 2026. Proyek ini secara eksplisit local-first. Maintainer mencatat minat pada tier hosted tapi belum commit. Jika Anda butuh OSINT tim bersama, Anda akan men-deploy Shadowbroker di infrastruktur sendiri (VM kecil sudah cukup)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah Shadowbroker bekerja dengan feed kustom Bluesky?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sebagian. Alat Bluesky bisa mengambil feed profil publik (mis. threadgrab.bsky.social) dan bisa mencari di firehose publik. Feed kustom (yang algoritmik yang dikomposisi pengguna) membutuhkan URI feed sendiri dan belum dibungkus. Untuk kebanyakan kreator, feed publik adalah yang Anda inginkan pula."
+        }
+      }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/id/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a href="/en/blog/shadowbroker-mcp-osint-social-creators-2026.html">EN</a>
+      <a href="/pt/blog/shadowbroker-mcp-osint-social-creators-2026.html">PT</a>
+      <a href="/id/blog/shadowbroker-mcp-osint-social-creators-2026.html" class="active">ID</a>
+    </div>
+  </header>
+
+  <main>
+
+    <h1>Shadowbroker MCP 2026: <span>Dasbor OSINT untuk Kreator Sosial</span></h1>
+    <p class="breadcrumb"><a href="/id/">Beranda</a> &rsaquo; <a href="/id/blog/">Blog</a> &rsaquo; Dasbor OSINT Shadowbroker MCP</p>
+    <p class="meta">3 Juli 2026 &middot; 11 menit baca &middot; oleh ThreadGrab</p>
+
+    <p>Jika Anda menulis untuk X Articles, Bluesky long-form, dan LinkedIn Newsletter, Anda sudah tahu rasanya: percakapan paling menarik tersebar di <strong>tiga platform, tiga feed, dan tiga permukaan discovery yang berbeda</strong>. Melacaknya di satu tab browser berarti berpindah konteks sepanjang hari. Melacaknya di tiga tab berarti kehilangan 40% dari yang ingin Anda tinjau ulang.</p>
+
+    <p>Bagaimana jika satu server MCP bisa menarik postingan X, thread Bluesky, pembaruan LinkedIn, feed RSS, rilis GitHub, dan 10+ sumber lainnya ke dalam satu dasbor real-time &mdash; dan membiarkan agen AI Anda (Claude Code, Codex CLI, Cursor) mengkuerinya sesuai kebutuhan?</p>
+
+    <p>Itulah yang dilakukan <strong><a href="https://github.com/BigBodyCobain/Shadowbroker" rel="noopener">Shadowbroker</a></strong>. Ini adalah dasbor OSINT (open-source intelligence) bertenaga MCP tahun 2026 yang dibangun oleh satu developer (BigBodyCobain di GitHub) yang membungkus <strong>15+ sumber sosial, kode, dan berita</strong> di balik antarmuka MCP terpadu. Untuk kreator konten sosial, ini adalah implementasi referensi nyata dari sesuatu yang sudah kami bahas selama berbulan-bulan: <em>gunakan MCP untuk memecah silo platform</em>.</p>
+
+    <p>Hari ini kita akan membahas apa itu Shadowbroker, mengapa penting untuk penulis X / Bluesky / LinkedIn, bagaimana integrasi MCP benar-benar bekerja di balik layar, dan bagaimana mengadaptasi pola yang sama untuk alur kerja kreator Anda sendiri &mdash; bahkan jika Anda tidak ingin menginstal Shadowbroker itu sendiri.</p>
+
+    <h2>Apa yang Sebenarnya Dilakukan Shadowbroker</h2>
+    <p>Shadowbroker pada dasarnya adalah agregator tipis. Setiap sumber yang ditariknya dibungkus sebagai <strong>alat Model Context Protocol (MCP)</strong> &mdash; protokol yang sama yang menggerakkan fitur penggunaan alat di Claude Code, Codex CLI, dan Cursor. Setelah berjalan, ia mengekspos antarmuka seragam di mana agen AI Anda bisa memanggil sesuatu seperti:</p>
+
+    <pre><code>search_x(query="AI agents social workflow", limit=20)
+list_bluesky_feed(handle="threadgrab.bsky.social", limit=10)
+fetch_linkedin_post(url="https://linkedin.com/posts/...")
+read_rss(url="https://hnrss.org/newest", limit=15)
+</code></pre>
+
+    <p>Setiap fungsi tersebut adalah <em>alat MCP nyata</em> yang didaftarkan oleh server Shadowbroker. Agen AI di editor Anda tidak butuh integrasi API kustom per platform &mdash; cukup panggil alatnya dan dapatkan respons terstruktur kembali.</p>
+
+    <p>15+ sumber yang saat ini dibungkus Shadowbroker (menurut README proyek per Juli 2026) meliputi:</p>
+
+    <ul>
+      <li><strong>X (Twitter)</strong> &mdash; pencarian, timeline pengguna, ambil postingan</li>
+      <li><strong>Bluesky</strong> &mdash; baca feed, cari postingan, lookup profil via API publik AT Protocol</li>
+      <li><strong>LinkedIn</strong> &mdash; terbatas (bergantung pada URL postingan publik, bukan autentikasi sesi penuh)</li>
+      <li><strong>RSS / Atom</strong> &mdash; parser feed generik untuk URL apa pun</li>
+      <li><strong>Hacker News</strong> &mdash; cerita teratas, komentar, pencarian via Algolia</li>
+      <li><strong>GitHub Releases</strong> &mdash; feed rilis per repositori</li>
+      <li><strong>Reddit</strong> &mdash; subreddit + pencarian via API JSON publik</li>
+      <li><strong>Mastodon</strong> &mdash; baca timeline federasi</li>
+      <li><strong>YouTube</strong> &mdash; ambil transkrip publik (tanpa autentikasi)</li>
+      <li><strong>arXiv</strong> &mdash; pencarian paper (untuk penulis komentar sosial akademis)</li>
+      <li><strong>PubMed</strong> &mdash; pencarian paper biomedis</li>
+      <li><strong>Wikipedia</strong> &mdash; artikel + ringkasan</li>
+      <li><strong>OpenStreetMap</strong> &mdash; geocoding</li>
+      <li><strong>Weather</strong> &mdash; Open-Meteo (tanpa API key)</li>
+      <li><strong>Kutipan saham</strong> &mdash; endpoint publik terbatas</li>
+    </ul>
+
+    <p>Daftarnya adalah campuran lintas domain yang disengaja: platform sosial, berita dev, penelitian akademis, referensi faktual. Itulah ethos OSINT &mdash; memperlakukan seluruh web terbuka sebagai permukaan yang bisa dikueri.</p>
+
+    <h2>Mengapa Pola Ini Penting untuk Kreator Konten Sosial</h2>
+    <p>Jika Anda menulis untuk X Articles, Bluesky long-form, atau LinkedIn Newsletter, alur kerja <em>nyata</em> Anda bukanlah "posting ke platform X". Melainkan:</p>
+
+    <ol>
+      <li>Menemukan apa yang orang bicarakan sekarang (fase <strong>riset</strong>)</li>
+      <li>Menyaring apa yang worth untuk tulisan panjang (fase <strong>kurasi</strong>)</li>
+      <li>Mendraft respons / sudut pandang (fase <strong>penulisan</strong>)</li>
+      <li>Cross-post hasilnya ke beberapa platform dengan format spesifik platform (fase <strong>distribusi</strong>)</li>
+    </ol>
+
+    <p>Langkah 1 adalah tempat pola Shadowbroker bersinar. Saat ini, kebanyakan kreator menjalankan fase discovery di browser dengan 12 tab terbuka. Setiap tab adalah UI terpisah, sesi autentikasi terpisah, konteks mental terpisah. Percakapan yang sama di X, Bluesky, dan LinkedIn terlihat seperti tiga event berbeda.</p>
+
+    <p>Apa yang dilakukan Shadowbroker &mdash; dan apa yang mulai dilakukan ekosistem MCP yang lebih luas &mdash; adalah <strong>mengonsolidasikan discovery itu menjadi satu antarmuka yang bisa dikueri agen AI Anda</strong>. Alih-alih berpindah tab, Anda mengetik di Claude Code atau Cursor:</p>
+
+    <pre><code>Use the shadowbroker MCP tools to find the 5 most-discussed
+posts about "agent reliability" across X, Bluesky, and LinkedIn
+in the last 48 hours. Group by sentiment and return URLs.
+</code></pre>
+
+    <p>Agen memanggil alat MCP yang relevan, mendapatkan respons terstruktur, dan memberi Anda satu ringkasan. Anda tetap di editor sepanjang waktu.</p>
+
+    <h2>Setup: Menjalankan Shadowbroker Secara Lokal</h2>
+    <p>Shadowbroker adalah proyek open-source. Setup-nya sengaja ringan: Python 3.11+, beberapa paket, dan klien MCP (Claude Code, Codex CLI, atau Cursor). Menurut README GitHub:</p>
+
+    <pre><code>git clone https://github.com/BigBodyCobain/Shadowbroker.git
+cd Shadowbroker
+pip install -r requirements.txt
+
+# Configure your MCP client (Claude Code example)
+# In ~/.claude.json or your project's .mcp.json:
+&#123;
+  "mcpServers": &#123;
+    "shadowbroker": &#123;
+      "command": "python",
+      "args": ["/path/to/Shadowbroker/server.py"]
+    &#125;
+  &#125;
+&#125;
+</code></pre>
+
+    <p>Untuk pengguna Claude Code, JSON itu masuk ke <code>.mcp.json</code> proyek Anda. Untuk Codex CLI, masuk ke <code>~/.codex/config.toml</code> di bawah <code>[mcp_servers.shadowbroker]</code>. Untuk Cursor, Anda konfigurasi di Settings &rsaquo; MCP &rsaquo; Add new global MCP server.</p>
+
+    <p>Tidak ada image Docker, tidak ada pendaftaran SaaS, tidak ada pertukaran API key untuk kebanyakan sumber. X adalah pengecualian sebagian: Shadowbroker bisa menggunakan API pencarian publik tanpa autentikasi untuk kueri terbatas, tapi penggunaan berat akan membutuhkan bearer token (yang didokumentasikan proyek di README).</p>
+
+    <h2>Ide Inti: Memperlakukan Web Terbuka Sebagai Satu Permukaan yang Bisa Dikueri</h2>
+    <p>Yang membuat Shadowbroker menarik bukan daftar sumbernya &mdash; developer mana pun bisa membungkus 15 API HTTP. Yang menarik adalah proyek ini berkomitmen pada <strong>permukaan MCP yang seragam</strong>. Agen tidak perlu tahu apakah sedang memanggil X, Bluesky, Hacker News, atau arXiv. Nama alat dan argumennya dinormalisasi.</p>
+
+    <p>Ini adalah insight yang sama yang menggerakkan banyak pengembangan MCP di 2026: <em>nilai MCP bukan protokolnya itu sendiri, melainkan normalisasinya</em>. Tanpa normalisasi, agen butuh alat kustom per platform. Dengan normalisasi, agen bisa merangkai kueri lintas platform tanpa kode tambahan.</p>
+
+    <p>Untuk kreator konten sosial, itu berarti prompt agen yang sama yang bertanya "apa yang trending di X" juga bisa bertanya "bagaimana pandangan akademis tentang ini" dengan mengganti nama alatnya. Agen itu sendiri tidak perlu tahu bahwa satu alat mengenai X dan yang lain mengenai arXiv. Cukup panggil dan sintesiskan.</p>
+
+    <h2>Walkthrough Setup: Alur Kerja Kreator yang Konkret</h2>
+    <p>Mari kita telusuri bagaimana sesi kreator nyata terlihat dengan Shadowbroker berjalan. Skenario: <em>Anda sedang menulis postingan panjang di Bluesky tentang alat keandalan agen AI dan ingin menjadikannya referensi diskusi lintas platform saat ini</em>.</p>
+
+    <p><strong>Langkah 1: Discovery lintas platform.</strong> Di editor Anda, Anda bertanya:</p>
+
+    <pre><code>Use the shadowbroker MCP server to gather:
+
+1. The top 5 X posts from the last 72 hours matching
+   "agent reliability" or "agent eval"
+2. The top 5 Bluesky posts from the last 72 hours with the
+   same keywords
+3. The top 3 Hacker News threads from the last 7 days
+4. The 2 most recent arXiv papers on the topic
+
+Return as a single table with platform, URL, summary, and
+engagement count.
+</code></pre>
+
+    <p>Di balik layar, agen memanggil 4 alat MCP, yang masing-masing mengenai sumber berbeda. Responsnya adalah tabel ternormalisasi. Seluruh fase discovery memakan waktu kurang dari satu menit, dan Anda tidak pernah keluar dari editor.</p>
+
+    <p><strong>Langkah 2: Cross-reference dan pull kutipan.</strong> Anda memilih sumber paling menarik dari tabel. Lalu:</p>
+
+    <pre><code>For each row in the discovery table, fetch the full text of
+the top post / thread / paper. For X and Bluesky, pull the
+post body. For HN, pull the top 3 comments. For arXiv, pull
+the abstract. Save the result to ./research-brief.md.
+</code></pre>
+
+    <p>Sekarang Anda punya brief riset dalam markdown yang bisa dibaca, dianotasi, dan di-draft dari. Brief-nya portabel: itu hanya sebuah file. Anda bisa commit, share, atau feed ke LLM berbeda untuk draf sebenarnya.</p>
+
+    <p><strong>Langkah 3: Draft.</strong> Di sinilah Anda, penulis manusia, mengambil alih. Discovery dan pull kutipan adalah mekanis. Sintesis &mdash; memilih hook, menemukan sudut, memilih struktur &mdash; adalah bagian yang tidak bisa dilakukan MCP untuk Anda. Tapi <em>input</em> untuk sintesis itu sekarang richer satu order of magnitude, karena Anda melihat 15 sumber dalam 60 detik bukan 3 sumber dalam 30 menit.</p>
+
+    <p><strong>Langkah 4: Cross-post dengan format spesifik platform.</strong> Setelah Anda punya drafnya, fase distribusi adalah cerita MCP-nya sendiri (kami membahasnya di <a href="/id/blog/x-hosted-mcp-creator-workflow-2026.html">artikel X Hosted MCP</a> kami dan <a href="/id/blog/openrouter-mcp-server-social-content-creators-2026.html">artikel OpenRouter MCP server</a>). Shadowbroker menangani ingesti; X / OpenRouter MCP menangani routing dan posting.</p>
+
+    <h2>Bagaimana Shadowbroker Dibandingkan dengan Server MCP Lain</h2>
+    <p>Shadowbroker adalah satu dari daftar server MCP yang terus bertambah yang menargetkan kreator konten sosial. Lanskap 2026 punya tiga archetype utama:</p>
+
+    <table>
+      <thead>
+        <tr><th>Server</th><th>Fokus</th><th>Sumber</th><th>Cocok Untuk</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Shadowbroker</td>
+          <td>OSINT (ingesti)</td>
+          <td>15+ (X, Bluesky, HN, arXiv, GitHub, RSS, &hellip;)</td>
+          <td>Discovery lintas platform, riset, pengumpulan fakta</td>
+        </tr>
+        <tr>
+          <td>OpenRouter MCP</td>
+          <td>Routing LLM (penulisan)</td>
+          <td>100+ model via OpenRouter</td>
+          <td>Draf multi-model, perbandingan model-A-vs-B</td>
+        </tr>
+        <tr>
+          <td>X Hosted MCP</td>
+          <td>Distribusi</td>
+          <td>Hanya API X (Twitter)</td>
+          <td>Posting langsung ke X dari agen</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Tiga server MCP ini <strong>komplementer, bukan kompetitif</strong>. Shadowbroker adalah lapisan ingesti upstream. OpenRouter MCP adalah lapisan routing menengah (model mana yang menulis draf). X Hosted MCP adalah lapisan distribusi downstream (bagaimana post benar-benar sampai ke timeline). Stack kreator serius di 2026 kemungkinan akan menjalankan ketiganya &mdash; masing-masing memecahkan masalah berbeda.</p>
+
+    <p>Untuk pembaca kami yang sudah menggunakan OpenRouter MCP untuk draf multi-model, Shadowbroker mengisi bagian yang hilang di sisi ingesti. Anda tidak perlu lagi keluar dari editor untuk melakukan discovery.</p>
+
+    <h2>Keterbatasan dan Peringatan yang Jujur</h2>
+    <p>Shadowbroker adalah proyek satu developer. Itu punya implikasi:</p>
+
+    <ul>
+      <li><strong>Rate limit X:</strong> API pencarian publik X tanpa bearer token sangat rate-limited. Penggunaan berat akan butuh autentikasi, yang berarti API key yang harus Anda kelola.</li>
+      <li><strong>Cakupan LinkedIn:</strong> LinkedIn tidak mengekspos API publik yang bersih. Alat LinkedIn Shadowbroker bekerja pada URL post publik (Anda tempel URL, ia ambil halaman), bukan pada pencarian sembarang. Jika Anda butuh monitoring LinkedIn yang luas, ini adalah gap.</li>
+      <li><strong>Jumlah sumber dangkal, bukan dalam:</strong> 15+ sumber terdengar banyak, tapi kedalaman per sumber terbatas. Anda mendapat top post / top thread / top paper, bukan firehose penuh. Untuk kebanyakan alur kerja kreator, itu cukup. Untuk ingesti skala redaksi, Anda ingin stack berbeda.</li>
+      <li><strong>Tanpa persistensi auth:</strong> Beberapa sumber (GitHub, Reddit) bekerja lebih baik dengan auth token. Shadowbroker membacanya dari env var; jika token Anda kadaluarsa, alatnya menurun secara diam-diam.</li>
+    </ul>
+
+    <p>Tidak ada yang jadi dealbreaker untuk target audiens. Poin Shadowbroker bukanlah menjadi platform OSINT redaksi. Poinnya adalah menjadi <em>asisten riset kreator</em> &mdash; kecil, cepat, lokal, tanpa pendaftaran.</p>
+
+    <h2>Membangun Milik Anda: Polanya, Bukan Proyeknya</h2>
+    <p>Takeaway terbesar dari Shadowbroker bukanlah proyeknya itu sendiri. Melainkan <strong>polanya</strong>: bungkus N API HTTP sebagai alat MCP, normalisasi permukaannya, ekspos ke agen Anda. Anda bisa melakukan ini dengan 20 baris Python dan 2 jam kerja, bahkan jika tidak menggunakan Shadowbroker.</p>
+
+    <p>Contoh minimal untuk satu sumber (Bluesky) akan terlihat seperti:</p>
+
+    <pre><code># my_social_mcp.py — a minimal MCP server for one platform
+from mcp.server import Server
+from mcp.types import Tool
+import httpx
+
+app = Server("my-social")
+
+@app.tool()
+async def search_bluesky(query: str, limit: int = 10) -> list:
+    """Search recent Bluesky posts for a query string."""
+    url = "https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts"
+    r = httpx.get(url, params=&#123;"q": query, "limit": limit&#125;, timeout=10)
+    return r.json().get("posts", [])
+</code></pre>
+
+    <p>Server 10-baris itu adalah server MCP nyata. Wire ke Claude Code, dan Anda bisa memanggil <code>search_bluesky</code> dari agen Anda. Pola yang sama bekerja untuk X (dengan bearer token), Reddit (JSON publik), HN (Algolia), dan kebanyakan feed RSS. Anda tidak butuh mega-server 15-sumber untuk mendapat 80% nilainya.</p>
+
+    <p>Mulai dengan 1-2 sumber yang benar-benar Anda gunakan untuk riset. Tambahkan lebih saat alur kerja terbukti. Ekosistem MCP berada di puncak saat alat yang Anda bangun sesuai dengan pekerjaan yang benar-benar Anda lakukan, bukan pekerjaan yang ditebak oleh dasbor generalis bahwa Anda lakukan.</p>
+
+    <h2>FAQ: Pertanyaan Umum dari Kreator Sosial</h2>
+
+    <h3>Apakah Shadowbroker gratis?</h3>
+    <p>Ya. Proyek ini berlisensi MIT di GitHub. Anda menjalankannya secara lokal; tidak ada layanan hosted, tidak ada pendaftaran, tidak ada batas penggunaan. Satu-satunya biaya adalah API key yang Anda bawa sendiri (mis. bearer token X jika ingin melewati rate limit publik).</p>
+
+    <h3>Apakah saya harus pakai Claude Code untuk mendapat manfaat dari Shadowbroker?</h3>
+    <p>Tidak. Klien apapun yang kompatibel dengan MCP bisa dipakai. Tiga besar di 2026 adalah Claude Code, OpenAI Codex CLI, dan Cursor. Ketiganya bisa mendaftarkan Shadowbroker sebagai server MCP. Lapisan agennya bisa saling dipertukarkan.</p>
+
+    <h3>Bagaimana Shadowbroker berbeda dari Zapier atau IFTTT untuk agregasi sosial?</h3>
+    <p>Zapier dan IFTTT adalah <em>otomatisasi berbasis trigger</em>: post baru yang cocok dengan aturan menyebabkan aksi downstream. Shadowbroker adalah <em>ingesti yang bisa dikueri agen</em>: agen meminta digest sesuai permintaan, real-time, dengan hasil terstruktur. Model mentalnya berbeda. Zapier memindahkan data antar app. Shadowbroker memberi LLM pandangan terpadu tentang web terbuka.</p>
+
+    <h3>Bisakah saya menggunakan Shadowbroker untuk posting, atau hanya baca?</h3>
+    <p>Hanya baca. Shadowbroker adalah alat ingesti / riset. Untuk posting, lapisi dengan server MCP berbeda &mdash; X Hosted MCP untuk X, API Bluesky untuk Bluesky (tulis wrapper MCP tipis Anda sendiri), dan serupa untuk LinkedIn. Kami membahas sisi X di <a href="/id/blog/x-hosted-mcp-creator-workflow-2026.html">artikel X Hosted MCP</a> kami.</p>
+
+    <h3>Bagaimana cara menghindari rate limit X?</h3>
+    <p>Dapatkan bearer token dari portal developer X. Shadowbroker membacanya dari env var <code>X_BEARER_TOKEN</code>. Tier gratis memberi 100 bacaan per 15 menit; tier bayar dasar memberi lebih. Untuk kebanyakan sesi riset kreator, itu sudah lebih dari cukup.</p>
+
+    <h3>Apakah ada versi hosted dari Shadowbroker?</h3>
+    <p>Belum per Juli 2026. Proyek ini secara eksplisit local-first. Maintainer mencatat minat pada tier hosted tapi belum commit. Jika Anda butuh OSINT tim bersama, Anda akan men-deploy Shadowbroker di infrastruktur sendiri (VM kecil sudah cukup).</p>
+
+    <h3>Apakah Shadowbroker bekerja dengan feed kustom Bluesky?</h3>
+    <p>Sebagian. Alat Bluesky bisa mengambil feed profil publik (mis. <code>threadgrab.bsky.social</code>) dan bisa mencari di firehose publik. Feed kustom (yang algoritmik yang dikomposisi pengguna) membutuhkan URI feed sendiri dan belum dibungkus. Untuk kebanyakan kreator, feed publik adalah yang Anda inginkan pula.</p>
+
+    <h2>Penutup: Satu Pola, Banyak Sumber, Nol Perpindahan Tab</h2>
+    <p>Shadowbroker adalah salah satu contoh paling jelas di 2026 dari pola MCP yang membayar untuk kreator individu. Janji MCP selalu: <em>satu protokol, banyak alat, ramah agen</em>. Shadowbroker adalah realisasi paling konkret dari janji itu untuk kreator konten sosial &mdash; 15+ sumber, satu permukaan ternormalisasi, tanpa perpindahan tab.</p>
+
+    <p>Anda tidak harus menginstal Shadowbroker untuk mendapat manfaat dari polanya. Takeaway-nya: <strong>bungkus web terbuka dalam alat MCP, ekspos ke agen Anda, dan biarkan agen melakukan discovery lintas platform dalam hitungan detik</strong>. Apakah Anda membangun server 1-sumber sendiri atau menjalankan mega-server 15-sumber, pembukaan produktivitasnya sama.</p>
+
+    <p>Untuk pembaca ThreadGrab secara spesifik, pasangan alaminya adalah Shadowbroker untuk ingesti + OpenRouter MCP untuk draf multi-model + X Hosted MCP untuk distribusi. Stack tiga-lapisan itu mencakup loop kreator lengkap dari riset ke publikasi, semua dari dalam editor Anda, semua tanpa meninggalkan keyboard untuk browser.</p>
+
+    <p>Baca bagian terkait untuk lapisan stack lainnya: <a href="/id/blog/openrouter-mcp-server-social-content-creators-2026.html">OpenRouter MCP untuk draf multi-model</a>, <a href="/id/blog/x-hosted-mcp-creator-workflow-2026.html">X Hosted MCP untuk posting langsung oleh agen</a>, dan <a href="/id/blog/caliper-ai-agent-reliability-2026.html">artikel Caliper AI agent reliability</a> kami untuk lapisan eval / drift tracking yang menutup loop.</p>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/id/">Beranda</a> &middot; <a href="/id/blog/">Blog</a> &middot; <a href="/id/about/">Tentang</a> &middot; <a href="/id/privacy/">Privasi</a>
+    <br>Tidak berafiliasi dengan X Corp., Bluesky Social PBC, LinkedIn / Microsoft, OpenRouter, Anthropic, atau OpenAI.
+  </footer>
+</body>
+</html>

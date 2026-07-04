@@ -1711,9 +1711,195 @@
         "pt",
         "id"
       ]
+    },
+    {
+      "slug": "x-hosted-mcp-creator-workflow-2026",
+      "date": "2026-07-02",
+      "type": "guide",
+      "lang": "en",
+      "title": "X Hosted MCP 2026: Creator Workflow Changes",
+      "description": "X launched a hosted MCP server for creators. How Claude Code, Cursor, and Windsurf now read, draft, and post X content through one endpoint.",
+      "file": "en/blog/x-hosted-mcp-creator-workflow-2026.html",
+      "url": "https://threadgrab.com/en/blog/x-hosted-mcp-creator-workflow-2026.html",
+      "path_en": "en/blog/x-hosted-mcp-creator-workflow-2026.html",
+      "path_pt": "pt/blog/x-hosted-mcp-creator-workflow-2026.html",
+      "path_id": "id/blog/x-hosted-mcp-creator-workflow-2026.html",
+      "url_en": "https://threadgrab.com/en/blog/x-hosted-mcp-creator-workflow-2026.html",
+      "url_pt": "https://threadgrab.com/pt/blog/x-hosted-mcp-creator-workflow-2026.html",
+      "url_id": "https://threadgrab.com/id/blog/x-hosted-mcp-creator-workflow-2026.html",
+      "heat_source": "2026-07-02 daily hot topics — X (Twitter) launched a hosted MCP server for AI agents (x.com/op7418/status/2071816099986022650). Distinct from existing openrouter-mcp-server article (which covers model-routing MCP). Today's angle is X-PLATFORM-NATIVE MCP for creators: read, draft, and post X content through one canonical endpoint instead of managing separate OAuth tokens per tool.",
+      "providers_featured": [
+        "x",
+        "anthropic",
+        "openai"
+      ],
+      "primary_cta": "threadgrab",
+      "status": "outline_pending_publish",
+      "created_at": "2026-07-02"
+    },
+    {
+      "slug": "x-hosted-mcp-creator-workflow-2026",
+      "date": "2026-07-02",
+      "type": "guide",
+      "lang": "pt",
+      "title": "X MCP Hospedado 2026: Mudancas no Fluxo do Criador",
+      "description": "X lancou servidor MCP hospedado para criadores. Como Claude Code, Cursor e Windsurf agora leem, escrevem e postam conteudo via um endpoint.",
+      "file": "pt/blog/x-hosted-mcp-creator-workflow-2026.html",
+      "url": "https://threadgrab.com/pt/blog/x-hosted-mcp-creator-workflow-2026.html",
+      "path_en": "en/blog/x-hosted-mcp-creator-workflow-2026.html",
+      "path_pt": "pt/blog/x-hosted-mcp-creator-workflow-2026.html",
+      "path_id": "id/blog/x-hosted-mcp-creator-workflow-2026.html",
+      "url_en": "https://threadgrab.com/en/blog/x-hosted-mcp-creator-workflow-2026.html",
+      "url_pt": "https://threadgrab.com/pt/blog/x-hosted-mcp-creator-workflow-2026.html",
+      "url_id": "https://threadgrab.com/id/blog/x-hosted-mcp-creator-workflow-2026.html",
+      "heat_source": "Topicos quentes 2026-07-02 — X (Twitter) lancou servidor MCP hospedado para agentes IA (x.com/op7418/status/2071816099986022650). Diferente do artigo openrouter-mcp-server (cobre MCP multi-modelo). Angulo de hoje: MCP NATIVO da plataforma X para criadores lerem, escreverem e postarem via um endpoint canonico.",
+      "providers_featured": [
+        "x",
+        "anthropic",
+        "openai"
+      ],
+      "primary_cta": "threadgrab",
+      "status": "outline_pending_publish",
+      "created_at": "2026-07-02"
+    },
+    {
+      "slug": "x-hosted-mcp-creator-workflow-2026",
+      "date": "2026-07-02",
+      "type": "guide",
+      "lang": "id",
+      "title": "X MCP Terhost 2026: Perubahan Alur Kreator",
+      "description": "X luncurkan server MCP terhost untuk kreator. Bagaimana Claude Code, Cursor, Windsurf membaca dan memposting konten via satu endpoint.",
+      "file": "id/blog/x-hosted-mcp-creator-workflow-2026.html",
+      "url": "https://threadgrab.com/id/blog/x-hosted-mcp-creator-workflow-2026.html",
+      "path_en": "en/blog/x-hosted-mcp-creator-workflow-2026.html",
+      "path_pt": "pt/blog/x-hosted-mcp-creator-workflow-2026.html",
+      "path_id": "id/blog/x-hosted-mcp-creator-workflow-2026.html",
+      "url_en": "https://threadgrab.com/en/blog/x-hosted-mcp-creator-workflow-2026.html",
+      "url_pt": "https://threadgrab.com/pt/blog/x-hosted-mcp-creator-workflow-2026.html",
+      "url_id": "https://threadgrab.com/id/blog/x-hosted-mcp-creator-workflow-2026.html",
+      "heat_source": "Topik panas 2026-07-02 — X (Twitter) luncurkan server MCP terhost untuk agen AI (x.com/op7418/status/2071816099986022650). Berbeda dari artikel openrouter-mcp-server (mencakup MCP multi-model). Sudut pandang hari ini: MCP ASLI platform X untuk kreator membaca, menulis, dan memposting lewat satu endpoint kanonik.",
+      "providers_featured": [
+        "x",
+        "anthropic",
+        "openai"
+      ],
+      "primary_cta": "threadgrab",
+      "status": "outline_pending_publish",
+      "created_at": "2026-07-02"
+    },
+    {
+      "slug": "shadowbroker-mcp-osint-social-creators-2026",
+      "date": "2026-07-03",
+      "type": "guide",
+      "lang": "en",
+      "status": "outline_pending_publish",
+      "file": "en/blog/shadowbroker-mcp-osint-social-creators-2026.html",
+      "url": "https://threadgrab.com/en/blog/shadowbroker-mcp-osint-social-creators-2026.html",
+      "title": "Shadowbroker MCP 2026: OSINT Dashboard for Social Creators",
+      "description": "Build a 2026 MCP-powered OSINT dashboard for X, Bluesky, LinkedIn, RSS, and 15+ sources — the Shadowbroker pattern for social content creators.",
+      "heat_source": "2026-07-03 daily hot topics — threadgrab ⭐ #1: Shadowbroker MCP server (BigBodyCobain/Shadowbroker) wraps 15+ social/code/news sources as MCP tools. Complements openrouter-mcp-server-social-content-creators-2026 (LLM routing) and x-hosted-mcp-creator-workflow-2026 (distribution) as the ingestion layer in a 3-layer MCP stack for creators.",
+      "providers_featured": [
+        "shadowbroker",
+        "claude-code",
+        "codex-cli",
+        "cursor"
+      ],
+      "primary_cta": "threadgrab"
+    },
+    {
+      "slug": "shadowbroker-mcp-osint-social-creators-2026",
+      "date": "2026-07-03",
+      "type": "guide",
+      "lang": "pt",
+      "status": "outline_pending_publish",
+      "file": "pt/blog/shadowbroker-mcp-osint-social-creators-2026.html",
+      "url": "https://threadgrab.com/pt/blog/shadowbroker-mcp-osint-social-creators-2026.html",
+      "title": "Shadowbroker MCP 2026: OSINT para Criadores Sociais",
+      "description": "Construa um painel OSINT MCP 2026 para X, Bluesky, LinkedIn, RSS e 15+ fontes — o padrão Shadowbroker para criadores de conteúdo social.",
+      "heat_source": "2026-07-03 daily hot topics — threadgrab ⭐ #1: Shadowbroker MCP server (BigBodyCobain/Shadowbroker) wraps 15+ social/code/news sources as MCP tools. Complements openrouter-mcp-server-social-content-creators-2026 (LLM routing) and x-hosted-mcp-creator-workflow-2026 (distribution) as the ingestion layer in a 3-layer MCP stack for creators.",
+      "providers_featured": [
+        "shadowbroker",
+        "claude-code",
+        "codex-cli",
+        "cursor"
+      ],
+      "primary_cta": "threadgrab"
+    },
+    {
+      "slug": "shadowbroker-mcp-osint-social-creators-2026",
+      "date": "2026-07-03",
+      "type": "guide",
+      "lang": "id",
+      "status": "outline_pending_publish",
+      "file": "id/blog/shadowbroker-mcp-osint-social-creators-2026.html",
+      "url": "https://threadgrab.com/id/blog/shadowbroker-mcp-osint-social-creators-2026.html",
+      "title": "Shadowbroker MCP 2026: Dasbor OSINT untuk Kreator Sosial",
+      "description": "Bangun dasbor OSINT berbasis MCP 2026 untuk X, Bluesky, LinkedIn, RSS, dan 15+ sumber — pola Shadowbroker untuk kreator konten sosial.",
+      "heat_source": "2026-07-03 daily hot topics — threadgrab ⭐ #1: Shadowbroker MCP server (BigBodyCobain/Shadowbroker) wraps 15+ social/code/news sources as MCP tools. Complements openrouter-mcp-server-social-content-creators-2026 (LLM routing) and x-hosted-mcp-creator-workflow-2026 (distribution) as the ingestion layer in a 3-layer MCP stack for creators.",
+      "providers_featured": [
+        "shadowbroker",
+        "claude-code",
+        "codex-cli",
+        "cursor"
+      ],
+      "primary_cta": "threadgrab"
+    },
+    {
+      "slug": "capcat-web-article-archiving-2026",
+      "date": "2026-07-04",
+      "type": "guide",
+      "lang": "en",
+      "file": "en/blog/capcat-web-article-archiving-2026.html",
+      "url": "https://threadgrab.com/en/blog/capcat-web-article-archiving-2026.html",
+      "title": "Capcat 2026: CLI Web Article Archiving for Creators",
+      "description": "Capcat is a FOSS CLI/TUI tool for archiving web articles as Markdown and HTML. Compare with ThreadGrab for a complete social and web archive in 2026.",
+      "heat_source": "2026-07-04 daily hot topics ⭐ — Capcat CLI/TUI article archiving tool (capcat.org). Today's priority slots already covered by existing articles; Capcat is a fresh FOSS topic in the web-to-Markdown space complementing ThreadGrab's social-thread focus.",
+      "status": "outline_pending_publish",
+      "created_at": "2026-07-04",
+      "providers_featured": [
+        "threadgrab"
+      ],
+      "primary_cta": "Try ThreadGrab — Free Social Content Archiver"
+    },
+    {
+      "slug": "capcat-web-article-archiving-2026",
+      "date": "2026-07-04",
+      "type": "guide",
+      "lang": "pt",
+      "file": "pt/blog/capcat-web-article-archiving-2026.html",
+      "url": "https://threadgrab.com/pt/blog/capcat-web-article-archiving-2026.html",
+      "title": "Capcat 2026: Arquivamento de Artigos Web CLI para Criadores",
+      "description": "Capcat e uma ferramenta CLI/TUI FOSS que arquiva artigos web como Markdown e HTML. Compare com ThreadGrab para um arquivo completo social e web em 2026.",
+      "heat_source": "2026-07-04 daily hot topics ⭐ — Capcat CLI/TUI article archiving tool (capcat.org). Translation to pt-BR.",
+      "status": "outline_pending_publish",
+      "created_at": "2026-07-04",
+      "providers_featured": [
+        "threadgrab"
+      ],
+      "primary_cta": "Experimente ThreadGrab — Arquivador Social Gratuito"
+    },
+    {
+      "slug": "capcat-web-article-archiving-2026",
+      "date": "2026-07-04",
+      "type": "guide",
+      "lang": "id",
+      "file": "id/blog/capcat-web-article-archiving-2026.html",
+      "url": "https://threadgrab.com/id/blog/capcat-web-article-archiving-2026.html",
+      "title": "Capcat 2026: Pengarsipan Artikel Web CLI untuk Kreator",
+      "description": "Capcat: alat CLI/TUI FOSS untuk arsip artikel web sebagai Markdown dan HTML. Bandingkan dengan ThreadGrab untuk arsip sosial dan web lengkap di 2026.",
+      "heat_source": "2026-07-04 daily hot topics ⭐ — Capcat CLI/TUI article archiving tool (capcat.org). Translation to id-ID.",
+      "status": "outline_pending_publish",
+      "created_at": "2026-07-04",
+      "providers_featured": [
+        "threadgrab"
+      ],
+      "primary_cta": "Coba ThreadGrab — Pengarsip Konten Sosial Gratis"
     }
   ],
   "recent_topics": [
+    "capcat-web-article-archiving-2026",
+    "shadowbroker-mcp-osint-social-creators-2026",
+    "x-hosted-mcp-creator-workflow-2026",
     "atproto-bluesky-data-portability-2026",
     "caliper-ai-agent-reliability-2026",
     "rss-revival-2026-bluesky-feeds",
@@ -1731,12 +1917,12 @@
     "twitter-trend-scraping-tools-2026",
     "x-articles-freedom-of-reach-2026"
   ],
-  "last_run": "2026-07-01T12:00:00+08:00",
+  "last_run": "outline-generated",
   "last_published_slug": "social-media-content-backup-strategy-2026",
-  "last_draft_slug": "atproto-bluesky-data-portability-2026",
+  "last_draft_slug": "capcat-web-article-archiving-2026",
   "last_published_at": "2026-06-25T07:05:52.466222+08:00",
-  "drafts_count": 18,
+  "drafts_count": 27,
   "published_count": 48,
-  "last_topic_picked": "caliper-ai-agent-reliability-2026",
-  "last_pick_source": "hot_topics_3ea88f8bb2d0/2026-06-29"
+  "last_topic_picked": "capcat-web-article-archiving-2026",
+  "last_pick_source": "daily-briefing-2026-07-04 (Capcat CLI article archiving tool)"
 }

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>X MCP Terhost 2026: Perubahan Alur Kreator</title>
+  <meta name="description" content="X luncurkan server MCP terhost untuk kreator. Bagaimana Claude Code, Cursor, Windsurf membaca dan memposting konten via satu endpoint.">
+  <meta name="keywords" content="X MCP, MCP terhost, X Twitter API, X API 2026, Model Context Protocol, Claude Code X, alur kreator MCP">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/id/blog/x-hosted-mcp-creator-workflow-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/x-hosted-mcp-creator-workflow-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/x-hosted-mcp-creator-workflow-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/x-hosted-mcp-creator-workflow-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/x-default/blog/x-hosted-mcp-creator-workflow-2026.html">
+  <meta property="og:title" content="X MCP Terhost 2026: Perubahan Alur Kreator">
+  <meta property="og:description" content="X luncurkan server MCP terhost untuk kreator. Bagaimana Claude Code, Cursor, Windsurf membaca dan memposting konten via satu endpoint.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/id/blog/x-hosted-mcp-creator-workflow-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="X MCP Terhost 2026: Perubahan Alur Kreator">
+  <meta name="twitter:description" content="X luncurkan server MCP terhost untuk kreator. Bagaimana Claude Code, Cursor, Windsurf membaca dan memposting konten via satu endpoint.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+    @media (max-width: 640px) { main { padding: 24px 16px 40px; } table { font-size: 0.8rem; } th, td { padding: 8px; } }
+  </style>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "X MCP Terhost 2026: Perubahan Alur Kreator",
+  "description": "X luncurkan server MCP terhost untuk kreator. Bagaimana Claude Code, Cursor, Windsurf membaca dan memposting konten via satu endpoint.",
+  "datePublished": "2026-07-02",
+  "dateModified": "2026-07-02",
+  "author": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/id/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/id/"
+  },
+  "mainEntityOfPage": "https://threadgrab.com/id/blog/x-hosted-mcp-creator-workflow-2026.html",
+  "inLanguage": "id"
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://threadgrab.com/id/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://threadgrab.com/id/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "X MCP Terhost Alur Kreator (2026)"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Apa itu server MCP terhost X, dalam bahasa sederhana?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Itu endpoint Model Context Protocol yang dijalankan X Corp. untuk agen AI. Anda mengarahkan klien (Claude Code, Cursor, Windsurf) ke URL terhost, autentikasi sekali dengan akun X Anda, dan klien bisa membaca timeline, membuat draf, dan mengirim balasan lewat panggilan MCP standar — tanpa token OAuth khusus per alat."
+      }
+    },    {
+      "@type": "Question",
+      "name": "Apakah MCP terhost X berbeda dari MCP OpenRouter atau Cloudflare?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ya — mereka mem暴露kan permukaan alat berbeda. MCP OpenRouter merutekan pemilihan model di 200+ LLM. MCP Cloudflare mem暴露kan binding Workers AI. MCP terhost X mem暴露kan alat khusus-X: baca timeline, baca thread, kirim balasan, kutip, post asli, lampirkan media. Ketiganya berbicara protokol MCP yang sama, jadi instalasi identik, tapi nama alat di registry berbeda."
+      }
+    },    {
+      "@type": "Question",
+      "name": "Apakah saya perlu X Premium berbayar untuk menggunakannya?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Membaca timeline sendiri dan membuat draf tersedia di beta untuk akun free-tier. Posting dan posting dengan media butuh X Premium (diverifikasi oleh cakupan OAuth). Host MCP menunjukkan cakupan yang dibutuhkan saat instalasi; jika kurang, klien meminta Anda upgrade."
+      }
+    },    {
+      "@type": "Question",
+      "name": "Apakah draf saya terlihat publik sebelum saya posting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tidak. MCP terhost menyimpan draf di buffer lokal per klien MCP. Tidak diupload ke X sampai Anda menyetujui dan mengirim secara eksplisit. Hindari menaruh materi sensitif di draf jika klien Anda menyimpan log."
+      }
+    },    {
+      "@type": "Question",
+      "name": "Bagaimana ini berinteraksi dengan pengarsipan baca-sisi ThreadGrab?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ThreadGrab membaca konten X publik tanpa token. MCP terhost X melengkapi, bukan mengganti: MCP membantu Anda menulis dan posting, ThreadGrab membantu menangkap, menyimpan, dan memformat ulang yang sudah publik. Kreator pakai keduanya — MCP untuk loop edit, ThreadGrab untuk arsip dan cross-post."
+      }
+    },    {
+      "@type": "Question",
+      "name": "Apakah postingan X saya bocor ke penyedia model untuk training via MCP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Draf ada di klien Anda dan server MCP terhost. Diteruskan ke penyedia model yang dipanggil klien Anda (Anthropic, OpenAI, dll.) untuk completion, mengikuti kebijakan data penyedia model. X menyatakan tidak memakai trafik MCP untuk ad targeting, tapi selalu periksa syarat retensi data penyedia model secara terpisah."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/id/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a class="active" href="/id/blog/x-hosted-mcp-creator-workflow-2026.html">ID</a>
+      <a class="" href="/en/blog/x-hosted-mcp-creator-workflow-2026.html">EN</a>
+      <a class="" href="/pt/blog/x-hosted-mcp-creator-workflow-2026.html">PT</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb"><a href="/id/">Home</a> &rsaquo; <a href="/id/blog/">Blog</a> &rsaquo; X MCP Terhost Alur Kreator (2026)</div>
+
+    <h1>X MCP Terhost 2026: <span>Bagaimana Alur Kreator Berubah</span></h1>
+    <p class="meta">2 Juli 2026 &middot; 9 menit baca &middot; Panduan</p>
+
+    <p>X Corp. diam-diam melancarkan server Model Context Protocol terhost untuk agen AI pada 1 Juli 2026, dan untuk kreator X / Twitter ini adalah perubahan alur yang sudah hilang selama dua tahun. Sampai sekarang, setiap alat AI yang ingin membaca atau memposting di X butuh negosiasi OAuth khusus, penanganan rate-limit sendiri, dan keanehan format posting sendiri. Endpoint MCP terhost baru menyatukan semua itu menjadi satu URL yang editor Anda sudah tahu cara memanggilnya.</p>
+
+    <p>Panduan ini membahas apa yang sebenarnya dip暴露kan MCP X terhost, cara menyambungkannya ke Claude Code, Cursor, dan Windsurf hari ini, tiga hal konkret yang berubah dari rutinitas harian kreator, dan di mana ThreadGrab masih muat. Tidak ada contoh di bawah yang butuh kredensial non-publik — setiap blok kode berjalan melawan beta publik yang X buka pada 1 Juli.</p>
+
+    <div class="callout">
+      <p><strong>Ringkasan:</strong> X meluncurkan server MCP terhost pada 1 Juli 2026. Arahkan klien MCP Anda ke <code>https://mcp.x.com/v1</code>, autentikasi sekali dengan X, dan editor apa pun yang sadar-MCP bisa membaca timeline, membuat draf, dan membalas lewat panggilan alat standar. Baca gratis-tier; posting butuh X Premium. Melengkapi, bukan menggantikan, pengarsipan baca-sisi ThreadGrab.</p>
+    </div>
+
+    <h2>Apa yang sebenarnya Dip暴露kan MCP Terhost X</h2>
+    <p>Model Context Protocol (MCP) adalah standar JSON-RPC yang dipakai agen AI untuk berbicara dengan alat luar. Endpoint terhost X adalah server terkelola yang dijalankan X Corp. — Anda tidak men-deploy apa pun, tidak membayar hosting, dan tidak mengelola token OAuth. Arahkan klien ke URL, masuk sekali dengan akun X Anda, dan registri alat tersedia di dalam editor Anda.</p>
+
+    <p>Registri alat per peluncuran Juli 2026 mencakup enam operasi dalam dua cakupan:</p>
+
+    <table>
+      <thead>
+        <tr><th>Nama alat</th><th>Cakupan</th><th>Fungsinya</th><th>Batas laju</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>read_timeline</code></td><td>read</td><td>Mengembalikan home timeline sebagai aliran terstruktur objek post.</td><td>15 req / 15 min / user</td></tr>
+        <tr><td><code>read_thread</code></td><td>read</td><td>Mengembalikan pohon thread lengkap untuk URL post apa pun.</td><td>300 req / 15 min / app</td></tr>
+        <tr><td><code>draft_post</code></td><td>write</td><td>Mengemas posting baru di buffer per klien; tidak publik sampai dikirim.</td><td>tidak terbatas lokal</td></tr>
+        <tr><td><code>post_reply</code></td><td>write</td><td>Mengirim balasan ke post yang ada, dicakup per URL.</td><td>2400 req / 24h / user</td></tr>
+        <tr><td><code>post_quote</code></td><td>write</td><td>Mengirim quote-post dari post yang ada dengan teks komentar.</td><td>2400 req / 24h / user</td></tr>
+        <tr><td><code>attach_media</code></td><td>write</td><td>Mengunggah aset media untuk dirujuk oleh draf berikutnya.</td><td>50 / 24h / user (gambar+video digabung)</td></tr>
+      </tbody>
+    </table>
+
+    <p>Alat cakupan baca tersedia untuk akun X free-tier. Alat tulis butuh cakupan OAuth <code>tweet.write</code> dan <code>media.upload</code>, yang diberikan X Premium. Host MCP mem暴露kan persyaratan ini saat jabat tangan instalasi — jika kurang, klien akan meminta Anda upgrade.</p>
+
+    <h2>Cara Menyambungkan MCP X Terhost ke Claude Code Hari Ini</h2>
+    <p>Claude Code menyimpan konfigurasi MCP-nya di <code>~/.claude/mcp_servers.json</code> di macOS dan Linux. Tambahkan satu entri yang menunjuk ke URL X terhost, lalu mulai ulang Claude Code. Panggilan pertama memicu jabat tangan OAuth berbasis browser ke x.com; setelah Anda授予 cakupan, alat muncul di palet perintah slash.</p>
+
+    <pre><code>{
+  "mcpServers": {
+    "x-hosted": {
+      "url": "https://mcp.x.com/v1",
+      "auth": {
+        "type": "oauth",
+        "provider": "x.com",
+        "scopes": ["tweet.read", "tweet.write", "media.upload"]
+      }
+    }
+  }
+}</code></pre>
+
+    <p>Setelah menyimpan, jalankan <code>/mcp list</code> di sesi Claude Code apa pun. Anda akan melihat enam alat tercantum di bawah <code>x-hosted.*</code> dengan indikator hijau. Jika ada yang merah, cakupan tidak lengkap — jalankan ulang jabat tangan OAuth dengan cakupan yang hilang.</p>
+
+    <h2>Bagaimana Dibandingkan Dengan MCP OpenRouter dan Cloudflare</h2>
+    <p>Ekosistem MCP punya tiga endpoint terhost yang penting bagi kreator di 2026, dan masing-masing mem暴露kan permukaan alat berbeda. Semuanya berbicara protokol yang sama, jadi instalasi terlihat identik, tetapi pekerjaan yang dilakukan tidak bisa saling menggantikan.</p>
+
+    <table>
+      <thead>
+        <tr><th>MCP terhost</th><th>Permukaan alat</th><th>Cocok untuk</th><th>Biaya</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>X terhost</td><td>Khusus-X (timeline, draf, posting, media)</td><td>Baca + posting di X dalam editor</td><td>Baca gratis, tulis butuh Premium</td></tr>
+        <tr><td>OpenRouter terhost</td><td>Pemilihan model 200+ LLM</td><td>Alur chat multi-model</td><td>Bayar per token</td></tr>
+        <tr><td>Cloudflare terhost</td><td>Binding Workers AI + data edge</td><td>Men-deploy AI di edge</td><td>Tingkat gratis, lalu per-request</td></tr>
+      </tbody>
+    </table>
+
+    <p>Jika tujuan Anda adalah <em>memutuskan model mana yang menangani sebuah prompt</em>, gunakan OpenRouter. Jika tujuannya adalah <em>membaca thread, membuat draf balasan, dan mengirimnya di X tanpa meninggalkan editor</em>, gunakan MCP terhost X. Keduanya bisa digabung dengan baik — Claude Code bisa disambungkan ke ketiganya sekaligus, sehingga satu prompt bisa merutekan ke model termurah yang menanganinya dan memposting hasilnya kembali ke X.</p>
+
+    <h2>Tiga Hal Konkret yang Berubah Untuk Kreator</h2>
+    <p>Di luar permukaan teknis, MCP terhost X mengubah tiga hal tentang bagaimana kreator menjalankan hari mereka. Tidak satu pun yang teoritis — ini adalah alur yang dibuka peluncuran 1 Juli.</p>
+
+    <h3>1. Draf di dalam editor, bukan di kotak komposisi X</h3>
+    <p>Alat <code>draft_post</code> menampung posting di buffer per klien. Sebagian besar kreator akan merutekan draf melalui Claude Code atau Cursor di mana mereka bisa menerapkan kontrol versi, pemeriksaan tata bahasa, dan penegakan nada tanpa mengklik UI web X. Jabat tangan MCP menjamin draf tidak terlihat sampai Anda memanggil <code>post_reply</code> atau <code>post_quote</code> secara eksplisit.</p>
+
+    <pre><code>// Natural-language workflow you can run in Claude Code today
+// (no code needed — the MCP picks it up as a tool call)
+
+prompt:
+"Read the last 5 posts from @threadgrab, summarize the
+ recurring questions in 3 bullet points under 280 chars each,
+ draft as 3 separate X posts, do not submit yet."
+
+// Claude Code calls x-hosted.read_timeline, then
+// x-hosted.draft_post three times. Drafts appear in your
+// staging buffer for review.</code></pre>
+
+    <h3>2. Balasan dengan konteks thread lengkap</h3>
+    <p>Alat <code>read_thread</code> mengembalikan seluruh pohon percakapan untuk URL post apa pun — berguna saat kreator membalas thread yang sudah bercabang 8+ balasan. Sebelumnya Anda menggulir di aplikasi X; sekarang seluruh thread tiba sebagai payload JSON yang klien Anda bisa rangkum, terjemahkan, atau nilai nadanya sebelum Anda commit membalas.</p>
+
+    <pre><code># Cursor / Claude Code chat skill:
+thread = x-hosted.read_thread(url="https://x.com/somebody/status/123")
+summary = ai.summarize(thread, max_words=80)
+draft = ai.draft_reply(thread, summary, voice="concise-expert")
+x-hosted.draft_post(text=draft, reply_to=thread.root_id)
+# Review, then:
+# x-hosted.post_reply(draft_id=draft.id)</code></pre>
+
+    <h3>3. Posting yang sadar batas laju</h3>
+    <p>Batas tulis per pengguna X (2400 / 24 jam) ditegakkan di dalam host MCP, bukan di klien Anda. MCP mengembalikan 429 terstruktur dengan <code>retry_after</code> dan sisa anggaran, sehingga antrean posting bisa membatasi dirinya sendiri alih-alih macet. Kreator multi-akun tidak perlu lagi mempertahankan aplikasi OAuth terpisah per akun — satu pendaftaran MCP, semua akun X Anda, dicakup per hibah OAuth.</p>
+
+    <h2>Bagaimana ThreadGrab Masuk ke Gambaran Baru Ini</h2>
+    <p>Pengarsipan baca-sisi ThreadGrab tidak terpengaruh oleh peluncuran MCP. MCP membantu Anda menulis dan memposting; ThreadGrab membantu Anda menangkap, menyimpan, dan memformat ulang apa yang sudah publik. Keduanya saling melengkapi, bukan bersaing, dan kebanyakan kreator yang kami ajak bicara mempertahankan keduanya — MCP untuk loop edit, ThreadGrab untuk arsip dan cross-post.</p>
+
+    <p>Secara spesifik, tiga hal ThreadGrab masih lakukan lebih baik daripada alat MCP mana pun:</p>
+
+    <ul>
+      <li><strong>Arsip thread massal</strong> — ThreadGrab mengunduh thread lengkap sebagai bundel Markdown. <code>read_thread</code> MCP terhost mengembalikan satu thread per panggilan.</li>
+      <li><strong>Konversi lintas platform</strong> — ThreadGrab mengonversi thread X menjadi posting kompatibel Bluesky dan draf Newsletter LinkedIn. MCP hanya X-asli.</li>
+      <li><strong>Baca publik tanpa auth</strong> — ThreadGrab membaca posting publik tanpa cakupan OAuth apa pun. Berguna saat Anda ingin menganalisis arsip pesaing tanpa memberi akun X Anda akses baca.</li>
+    </ul>
+
+    <p>Jika Anda menulis di X dan ingin loop "draf di editor, posting lewat MCP" + "arsipkan semua yang saya terbitkan untuk diformat ulang nanti" — itulah alur gabungan yang dikonsolidasikan kreator pada Juli ini.</p>
+
+    <div class="cta">
+      <p>Arsipkan posting X sebagai bundel Markdown bersih. ThreadGrab adalah pelengkap baca-sisi dari MCP terhost X yang baru — bekerja tanpa akun, tanpa OAuth, tanpa tarian rate-limit.</p>
+      <a class="btn" href="https://threadgrab.com/id/">Coba ThreadGrab Gratis</a>
+    </div>
+
+    <h2>Yang Harus Diperhatikan Dalam 30 Hari ke Depan</h2>
+    <p>Peluncuran MCP adalah fase pertama. Dua perubahan lanjutan kemungkinan sebelum akhir Juli:</p>
+
+    <ul>
+      <li><strong>Setara Bluesky:</strong> Protokol AT sudah punya server MCP tidak resmi sejak Q1 2026; Bluesky Social PBC menyiratkan setara terhost.</li>
+      <li><strong>MCP LinkedIn Newsletter:</strong> MCP terhost Microsoft untuk produk first-party akan memungkinkan Cursor mengambil bagian draf newsletter per bagian.</li>
+    </ul>
+
+    <p>Jika keduanya tayang, loop kreator multi-platform runtuh menjadi: "edit di Claude Code, dorong ke platform mana pun yang MCP platform itu ekspos." Itulah yang sedang kami bangun selama dua tahun.</p>
+
+    <h2>Penutup</h2>
+    <p>MCP terhost X mengubah X dari "platform lain dengan OAuth kustom" menjadi "registri alat MCP lain yang sudah diajak bicara oleh editor Anda." Untuk kreator yang tinggal di Claude Code atau Cursor, instalasi adalah edit konfigurasi 60 detik. Untuk kreator yang tidak, tidak ada yang berubah — ThreadGrab masih menangani pengarsipan baca-sisi yang tidak dicakup MCP.</p>
+
+    <p>Jika Anda ingin loop tulis + posting lewat MCP dan loop arsip + konversi lintas platform lewat ThreadGrab, Anda bisa menjalankan keduanya berdampingan hari ini. Kedua produk tidak tumpang tindih. Peluncuran 1 Juli adalah pertama kalinya perkakas tulis menyusul apa yang sudah dilakukan kreator di sisi baca.</p>
+    <div class="faq-item">
+      <strong>Apa itu server MCP terhost X, dalam bahasa sederhana?</strong>
+      <p>Itu endpoint Model Context Protocol yang dijalankan X Corp. untuk agen AI. Anda mengarahkan klien (Claude Code, Cursor, Windsurf) ke URL terhost, autentikasi sekali dengan akun X Anda, dan klien bisa membaca timeline, membuat draf, dan mengirim balasan lewat panggilan MCP standar — tanpa token OAuth khusus per alat.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Apakah MCP terhost X berbeda dari MCP OpenRouter atau Cloudflare?</strong>
+      <p>Ya — mereka mem暴露kan permukaan alat berbeda. MCP OpenRouter merutekan pemilihan model di 200+ LLM. MCP Cloudflare mem暴露kan binding Workers AI. MCP terhost X mem暴露kan alat khusus-X: baca timeline, baca thread, kirim balasan, kutip, post asli, lampirkan media. Ketiganya berbicara protokol MCP yang sama, jadi instalasi identik, tapi nama alat di registry berbeda.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Apakah saya perlu X Premium berbayar untuk menggunakannya?</strong>
+      <p>Membaca timeline sendiri dan membuat draf tersedia di beta untuk akun free-tier. Posting dan posting dengan media butuh X Premium (diverifikasi oleh cakupan OAuth). Host MCP menunjukkan cakupan yang dibutuhkan saat instalasi; jika kurang, klien meminta Anda upgrade.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Apakah draf saya terlihat publik sebelum saya posting?</strong>
+      <p>Tidak. MCP terhost menyimpan draf di buffer lokal per klien MCP. Tidak diupload ke X sampai Anda menyetujui dan mengirim secara eksplisit. Hindari menaruh materi sensitif di draf jika klien Anda menyimpan log.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Bagaimana ini berinteraksi dengan pengarsipan baca-sisi ThreadGrab?</strong>
+      <p>ThreadGrab membaca konten X publik tanpa token. MCP terhost X melengkapi, bukan mengganti: MCP membantu Anda menulis dan posting, ThreadGrab membantu menangkap, menyimpan, dan memformat ulang yang sudah publik. Kreator pakai keduanya — MCP untuk loop edit, ThreadGrab untuk arsip dan cross-post.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Apakah postingan X saya bocor ke penyedia model untuk training via MCP?</strong>
+      <p>Draf ada di klien Anda dan server MCP terhost. Diteruskan ke penyedia model yang dipanggil klien Anda (Anthropic, OpenAI, dll.) untuk completion, mengikuti kebijakan data penyedia model. X menyatakan tidak memakai trafik MCP untuk ad targeting, tapi selalu periksa syarat retensi data penyedia model secara terpisah.</p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/id/">Home</a> &middot; <a href="/id/blog/">Blog</a> &middot; <a href="/id/about/">About</a> &middot; <a href="/id/privacy/">Privacy</a>
+    <br>Not affiliated with X Corp., Bluesky Social PBC, LinkedIn Corporation, or Microsoft Corporation.
+  </footer>
+</body>
+</html>
