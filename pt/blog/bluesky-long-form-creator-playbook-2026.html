@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Posts Longos do Bluesky 2026: Guia de Leitura para Criadores</title>
+  <meta name="description" content="Bluesky lancou posts longos em maio de 2026. Guia de 4 passos para criadores lerem, arquivarem e cruzarem posts longos do Bluesky e X Articles.">
+  <meta name="keywords" content="Bluesky posts longos, posts longos Bluesky 2026, X Articles, X formato longo, fluxo de leitura, arquivo de conteudo social, AT Protocol posts longos, ThreadGrab, fluxo criador Bluesky X">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/pt/blog/bluesky-long-form-creator-playbook-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/bluesky-long-form-creator-playbook-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/bluesky-long-form-creator-playbook-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/bluesky-long-form-creator-playbook-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/bluesky-long-form-creator-playbook-2026.html">
+  <meta property="og:title" content="Posts Longos do Bluesky 2026: Guia de Leitura para Criadores">
+  <meta property="og:description" content="Bluesky lancou posts longos em maio de 2026. Guia de 4 passos para criadores lerem, arquivarem e cruzarem posts longos do Bluesky e X Articles.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/pt/blog/bluesky-long-form-creator-playbook-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Posts Longos do Bluesky 2026: Guia de Leitura para Criadores">
+  <meta name="twitter:description" content="Bluesky lancou posts longos em maio de 2026. Guia de 4 passos para criadores lerem, arquivarem e cruzarem posts longos do Bluesky e X Articles.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+    @media (max-width: 640px) { main { padding: 24px 16px 40px; } table { font-size: 0.8rem; } th, td { padding: 8px; } }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Posts Longos do Bluesky 2026: Guia de Leitura para Criadores",
+    "description": "Bluesky lancou posts longos em maio de 2026. Guia de 4 passos para criadores lerem, arquivarem e cruzarem posts longos do Bluesky e X Articles.",
+    "datePublished": "2026-07-06",
+    "dateModified": "2026-07-06",
+    "author": {
+      "@type": "Organization",
+      "name": "ThreadGrab",
+      "url": "https://threadgrab.com/pt/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ThreadGrab",
+      "url": "https://threadgrab.com/pt/"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://threadgrab.com/pt/blog/bluesky-long-form-creator-playbook-2026.html"
+    },
+    "inLanguage": "pt"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://threadgrab.com/pt/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://threadgrab.com/pt/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Posts Longos do Bluesky 2026"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Quando exatamente o Bluesky lançou os posts longos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O Bluesky enviou o formato de posts longos para todos os usuários no final de maio de 2026. O recurso está disponível no cliente oficial do Bluesky, Skylight, Graysky e Ozone. Alguns clientes de terceiros ainda não renderizam o cartão longo corretamente; se você lê o Bluesky em um desses clientes, o post aparecerá truncado."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Preciso de uma conta paga do X ou Bluesky para usar este fluxo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não. Os endpoints públicos do AppView do Bluesky são abertos e não requerem autenticação para acesso somente leitura. O endpoint GET /2/tweets/:id do X requer uma conta de desenvolvedor gratuita com um bearer token, mas você não precisa de X Premium nem do tier pago da API do X para acesso somente leitura aos seus próprios Articles."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso usar isso para arquivar posts longos de outras pessoas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim para os públicos. O endpoint público do ThreadGrab aceita qualquer URL longa do Bluesky ou X. Para posts privados ou rascunhos que você não possui, o script acima não funciona -- as plataformas expõem apenas os endpoints do lado do autor para o autor."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O playbook funciona para Threads ou LinkedIn Newsletter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não diretamente. O Threads não tem um recurso longo nativo em 2026; Threads posts longos colapsam em uma única thread. LinkedIn Newsletters tem um feed RSS público que você pode assinar, mas o corpo do artigo não é busca-vel através de uma API pública do mesmo jeito que Bluesky e X expõem. Se você publica em qualquer um, adicione uma quinta etapa para puxar o feed RSS e convertê-lo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "E se meu PDS do Bluesky migrar ou minha conta for desativada?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "É exatamente por isso que o playbook existe. O arquivo Markdown é seu backup portátil. Se seu PDS migrar, a URL canônica no novo PDS ainda aponta para o mesmo rkey, e a cópia do arquivo é independente. Se sua conta for desativada, o cache público do ThreadGrab ainda pode manter o post por algum tempo, mas o arquivo Markdown é a garantia de longo prazo."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/pt/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a class="" href="/en/blog/bluesky-long-form-creator-playbook-2026.html">EN</a>
+      <a class="active" href="/pt/blog/bluesky-long-form-creator-playbook-2026.html">PT</a>
+      <a class="" href="/id/blog/bluesky-long-form-creator-playbook-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb"><a href="/pt/">Home</a> &rsaquo; <a href="/pt/blog/">Blog</a> &rsaquo; Posts Longos do Bluesky 2026</div>
+
+    <h1>Posts Longos do Bluesky 2026: <span>Guia de Leitura para Criadores</span></h1>
+    <p class="meta">6 de Julho de 2026 &middot; 11 min read &middot; Guide</p>
+
+    <p>O Bluesky ativou o formato de posts longos no final de maio de 2026, e o lado da leitura da web social nunca mais foi o mesmo. Durante dois anos, o X Articles foi a &uacute;nica plataforma grande onde era poss&iacute;vel publicar uma pe&ccedil;a de 5.000 palavras de forma nativa e ainda ter a pe&ccedil;a indexada por um mecanismo de busca. Agora o Bluesky igualou essa superf&iacute;cie, e um criador que publica nas duas plataformas est&aacute; lidando com dois esquemas diferentes, dois gr&aacute;ficos de respostas diferentes e zero ferramentas nativas para unificar o que escreveu.</p>
+
+<p>Este guia &eacute; um playbook de leitura para esse mundo. &Eacute; o fluxo que montamos na equipe do ThreadGrab ap&oacute;s o lan&ccedil;amento de maio de 2026, e o mesmo que recomendamos para qualquer criador que agora publica posts longos no Bluesky e no X em paralelo. As quatro etapas abaixo assumem que voc&ecirc; j&aacute; escreve nas duas plataformas. Se n&atilde;o escreve, o playbook ainda funciona como setup de uma plataforma s&oacute;, mas o roteamento multi-plataforma &eacute; onde a economia de tempo realmente se acumula.</p>
+
+<div class="callout">
+  <p><strong>Resumo:</strong> O Bluesky lan&ccedil;ou posts longos em maio de 2026. Um fluxo de leitura tem quatro etapas: detectar posts longos, pux&aacute;-los para uma caixa de entrada &uacute;nica, converter para Markdown e cruzar o que voc&ecirc; escreveu com o que voc&ecirc; respondeu. O plumbing s&atilde;o APIs p&uacute;blicas e um script pequeno, sem vendor lock-in, e o ThreadGrab cuida da convers&atilde;o para Markdown do lado da leitura para a parte p&uacute;blica do seu arquivo.</p>
+</div>
+
+<h2>O que mudou em maio de 2026</h2>
+<p>O recurso de posts longos do Bluesky foi liberado para todos os usu&aacute;rios no final de maio de 2026. A mec&acirc;nica n&atilde;o &eacute; a mesma do X Articles -- ela vive em cima do AT Protocol, o que significa que cada post longo ainda &eacute; um record em um PDS, mas o tipo de record &eacute; <code>app.bsky.feed.post</code> com um novo campo <code>embeds</code> que aponta para uma estrutura <code>app.bsky.embed.recordWithMedia</code> carregando um corpo em Markdown. O cliente oficial do Bluesky renderiza esse corpo em um cart&atilde;o de scroll longo; clientes de terceiros como Skylight, Graysky e Ozone tratam de forma diferente, e alguns ainda removem a formata&ccedil;&atilde;o na leitura.</p>
+
+<p>No lado do X, os Articles continuaram sendo o &uacute;nico formato longo nativo pela mesma janela. O padr&atilde;o de URL do X Articles &eacute; est&aacute;vel: <code>https://x.com/&lt;user&gt;/status/&lt;id&gt;</code> com <code>/article/&lt;id&gt;</code> como alternativo. URLs de posts longos do Bluesky seguem o mesmo formato de qualquer outro post: <code>https://bsky.app/profile/&lt;handle&gt;/post/&lt;rkey&gt;</code>, com o corpo dentro de um <code>record.embed</code> em vez de um campo irm&atilde;o. Se voc&ecirc; faz scraping de um mas n&atilde;o do outro, voc&ecirc; est&aacute; perdendo metade de onde o conte&uacute;do longo vive em 2026.</p>
+
+<h2>Por que um playbook de leitura importa agora</h2>
+<p>Publicar posts longos em duas plataformas &eacute; f&aacute;cil. Ler o que voc&ecirc; escreveu seis meses depois n&atilde;o &eacute;. Cada plataforma tem sua pr&oacute;pria UI, sua pr&oacute;pria busca e suas pr&oacute;prias regras de reten&ccedil;&atilde;o de arquivo. O X mant&eacute;m seus Articles indefinidamente enquanto sua conta estiver ativa; PDSes do Bluesky podem ser migrados, mas uma conta desativada pode te trancar fora dos seus pr&oacute;prios posts longos se voc&ecirc; n&atilde;o os exportou.</p>
+
+<p>O playbook abaixo existe por tr&ecirc;s raz&otilde;es que n&atilde;o s&atilde;o te&oacute;ricas:</p>
+
+<ul>
+  <li><strong>Busca.</strong> Um arquivo Markdown unificado &eacute; busca-vel em qualquer editor de texto. As UIs de busca das plataformas n&atilde;o s&atilde;o.</li>
+  <li><strong>Portabilidade.</strong> Se uma plataforma mudar sua pol&iacute;tica de posts longos amanh&atilde;, voc&ecirc; ainda tem uma c&oacute;pia local de tudo que publicou.</li>
+  <li><strong>Rastreamento de respostas.</strong> Posts longos recebem respostas em ambas as plataformas. Um pipeline de leitura permite ver o gr&aacute;fico completo de conversas em um s&oacute; lugar, o que &eacute; imposs&iacute;vel a partir de qualquer UI nativa sozinha.</li>
+</ul>
+
+<h2>O fluxo de leitura em 4 etapas</h2>
+<p>O fluxo completo tem quatro etapas, cada uma uma &uacute;nica ferramenta ou script. Nenhuma delas requer conta paga, e tudo roda em menos de 200 linhas de Python se voc&ecirc; montar manualmente. A vers&atilde;o hospedada do ThreadGrab colapsa as etapas 2 e 3 em uma chamada, mas a vers&atilde;o manual &eacute; a refer&ecirc;ncia can&ocirc;nica.</p>
+
+<h3>Etapa 1: detectar posts longos em ambas as plataformas</h3>
+<p>A primeira etapa &eacute; identifica&ccedil;&atilde;o. Voc&ecirc; precisa de uma lista de quais dos seus pr&oacute;prios posts (ou quais posts que voc&ecirc; segue) s&atilde;o longos. A forma mais limpa de fazer isso &eacute; uma consulta peri&oacute;dica do seu pr&oacute;prio feed de autoria, filtrada por comprimento de post e tipo de embed.</p>
+
+<pre><code># Pseudo-codigo para "o que conta como post longo em cada plataforma"
+def is_long_form_bluesky(post):
+    embed = post.get("record", {}).get("embed", {})
+    return (
+        embed.get("&#36;type") == "app.bsky.embed.recordWithMedia"
+        and "app.bsky.richtext.facet" in str(embed)
+        and len(embed.get("text", "")) > 1500
+    )
+
+def is_long_form_x(post):
+    text = post.get("text", "") or post.get("note_tweet", {}).get("text", "")
+    has_article = "/article/" in post.get("permalink", "")
+    return has_article or len(text) > 4000</code></pre>
+
+<p>O limite do Bluesky &eacute; de aproximadamente 1.500 grafemas antes do cart&atilde;o longo ser mostrado; X Articles come&ccedil;am em qualquer comprimento, mas a UI da plataforma &eacute; significativamente diferente acima de 4.000 caracteres. A l&oacute;gica de detec&ccedil;&atilde;o n&atilde;o precisa ser perfeita; o objetivo &eacute; um filtro de primeira passagem que voc&ecirc; pode corrigir manualmente.</p>
+
+<h3>Etapa 2: puxar o conte&uacute;do longo para uma caixa de entrada unificada</h3>
+<p>Uma vez que voc&ecirc; tem uma lista, puxe os corpos. O Bluesky expoe isso atrav&eacute;s do endpoint p&uacute;blico <code>getPostThread</code> do AppView; o X ainda requer o endpoint <code>GET /2/tweets/:id</code> com bearer token OAuth para Articles maiores que 4.000 caracteres. O script abaixo mostra um pull paralelo para os dois.</p>
+
+<pre><code>import requests, json, pathlib, datetime
+
+OUT = pathlib.Path("./inbox/longform")
+OUT.mkdir(parents=True, exist_ok=True)
+
+def pull_bluesky(rkey, handle):
+    r = requests.get(
+        f"https://public.api.bsky.app/xrpc/app.bsky.feed.getPostThread",
+        params={"uri": f"at://{handle}/app.bsky.post/{rkey}", "depth": 0},
+        timeout=15,
+    )
+    r.raise_for_status()
+    thread = r.json()["thread"]["post"]
+    embed = thread["record"].get("embed", {})
+    body = embed.get("text", "") or thread["record"].get("text", "")
+    return {"platform": "bluesky", "id": rkey, "body": body, "ts": thread["indexedAt"]}
+
+def pull_x(article_id, token):
+    r = requests.get(
+        f"https://api.x.com/2/tweets/{article_id}",
+        params={"tweet.fields": "text,note_tweet,entities,created_at"},
+        headers={"Authorization": f"Bearer {token}"},
+        timeout=15,
+    )
+    r.raise_for_status()
+    body = r.json()["data"].get("note_tweet", {}).get("text") or r.json()["data"]["text"]
+    return {"platform": "x", "id": article_id, "body": body, "ts": r.json()["data"]["created_at"]}
+
+# Exemplo: arquivar dois posts
+for path in OUT.glob("*.json"):
+    pass
+out1 = pull_bluesky("3l5xabc123", "voce.bsky.social")
+out2 = pull_x("1800000000000000000", "SEU_X_BEARER_TOKEN")
+for entry in (out1, out2):
+    stamp = datetime.datetime.fromisoformat(entry["ts"].replace("Z", "+00:00")).strftime("%Y%m%dT%H%M%SZ")
+    (OUT / f"{stamp}_{entry['platform']}_{entry['id']}.json").write_text(json.dumps(entry, indent=2))</code></pre>
+
+<p>A sa&iacute;da &eacute; um arquivo JSON por post longo em um &uacute;nico diret&oacute;rio <code>./inbox/longform/</code>. O nome do arquivo &eacute; orden&aacute;vel por data, ent&atilde;o o diret&oacute;rio j&aacute; &eacute; um arquivo ordenado cronologicamente sem qualquer banco de dados.</p>
+
+<h3>Etapa 3: converter para Markdown para releitura e busca</h3>
+<p>Os blobs JSON n&atilde;o s&atilde;o o que voc&ecirc; quer ler &agrave;s 2 da manh&atilde; seis meses depois. Converta cada um para um arquivo Markdown com frontmatter, e voc&ecirc; tem um arquivo grep-friendly, editor-friendly, version&aacute;vel. A vers&atilde;o hospedada do ThreadGrab faz isso para a leitura p&uacute;blica; o script abaixo &eacute; o que usamos internamente para o arquivo privado do lado do autor.</p>
+
+<pre><code>def json_to_markdown(entry):
+    fm = [
+        "---",
+        f"platform: {entry['platform']}",
+        f"id: {entry['id']}",
+        f"published: {entry['ts']}",
+        f"url: " + (
+            f"https://bsky.app/profile/voce.bsky.social/post/{entry['id']}"
+            if entry["platform"] == "bluesky"
+            else f"https://x.com/voce/status/{entry['id']}"
+        ),
+        "---",
+    ]
+    body_md = entry["body"]
+    if entry["platform"] == "bluesky":
+        body_md = body_md.replace("&#10;&#10;", "&#10;&#10;")
+    return "&#10;".join(fm) + "&#10;&#10;" + body_md + "&#10;"
+
+import json, pathlib
+for src in pathlib.Path("./inbox/longform").glob("*.json"):
+    entry = json.loads(src.read_text())
+    (pathlib.Path("./archive") / src.with_suffix(".md").name).write_text(json_to_markdown(entry))</code></pre>
+
+<p>Ap&oacute;s rodar, voc&ecirc; tem um diret&oacute;rio de arquivos <code>.md</code> que pode ler em qualquer editor, buscar com ripgrep, commitar no Git, ou alimentar de volta para um LLM futuro como material de corpus. O frontmatter mant&eacute;m a tag de plataforma e a URL can&ocirc;nica para que voc&ecirc; sempre possa voltar para a vers&atilde;o ao vivo.</p>
+
+<h3>Etapa 4: cruzar seus pr&oacute;prios posts com respostas</h3>
+<p>A etapa final &eacute; a que a maioria dos criadores pula: um gr&aacute;fico de conversa unificado. Para cada post longo que voc&ecirc; escreveu, voc&ecirc; quer ver todas as respostas em ambas as plataformas em um s&oacute; lugar. Isso n&atilde;o est&aacute; embutido em nenhuma das UIs; &eacute; um script.</p>
+
+<pre><code>def replies_for(post):
+    if post["platform"] == "bluesky":
+        r = requests.get(
+            "https://public.api.bsky.app/xrpc/app.bsky.feed.getReplies",
+            params={"uri": post["embed_uri"], "limit": 100},
+            timeout=15,
+        )
+        return [r["post"]["record"]["text"] for r in r.json().get("replies", [])]
+    if post["platform"] == "x":
+        r = requests.get(
+            f"https://api.x.com/2/tweets/search/recent",
+            params={"query": f"conversation_id:{post['id']}", "tweet.fields": "text,author_id"},
+            headers={"Authorization": f"Bearer {post['token']}"},
+            timeout=15,
+        )
+        return [t["text"] for t in r.json().get("data", [])]
+    return []</code></pre>
+
+<p>A sa&iacute;da &eacute; um &uacute;nico arquivo de texto por post longo: <code>20260701T090000Z_x_1800000000000000000.md</code> com uma se&ccedil;&atilde;o <code>## Replies</code> listando cada resposta de ambas as plataformas. Se voc&ecirc; publicou uma pe&ccedil;a em maio de 2026 e quer saber o que os leitores disseram sobre ela em julho, voc&ecirc; abre um arquivo, n&atilde;o duas abas do navegador.</p>
+
+<h2>Como o ThreadGrab se encaixa</h2>
+<p>O servi&ccedil;o hospedado do ThreadGrab faz as etapas 2, 3 e 4 para qualquer post longo p&uacute;blico no Bluesky ou X. Se voc&ecirc; tem uma URL longa, o ThreadGrab retorna o corpo Markdown com frontmatter, a URL can&ocirc;nica da plataforma e o gr&aacute;fico de respostas. O servi&ccedil;o hospedado &eacute; gr&aacute;tis para posts p&uacute;blicos, n&atilde;o requer token do X, e n&atilde;o escreve no seu PDS.</p>
+
+<p>Para arquivos privados de autoria (seus pr&oacute;prios posts, antes de serem p&uacute;blicos), voc&ecirc; ainda precisa do script acima. O servi&ccedil;o hospedado complementa, n&atilde;o substitui, o arquivo local. A divis&atilde;o &eacute; intencional: o lado da leitura p&uacute;blica &eacute; o que o ThreadGrab faz de melhor, e o lado do autor privado &eacute; o que voc&ecirc; faz de melhor porque s&oacute; voc&ecirc; sabe quais rascunhos quer manter.</p>
+
+<p>Tr&ecirc;s coisas espec&iacute;ficas que o ThreadGrab faz e que o script acima n&atilde;o faz:</p>
+
+<ul>
+  <li><strong>Descoberta de posts p&uacute;blicos.</strong> O ThreadGrab pode ser apontado para qualquer handle, n&atilde;o apenas o seu, e vai detectar novos posts longos conforme s&atilde;o publicados.</li>
+  <li><strong>Gr&aacute;fico de respostas para posts p&uacute;blicos.</strong> Para qualquer post do Bluesky ou X que voc&ecirc; fornecer, o ThreadGrab retorna a &aacute;rvore completa de respostas como JSON.</li>
+  <li><strong>Normaliza&ccedil;&atilde;o de formato.</strong> O campo <code>embed.text</code> do Bluesky usa uma sintaxe de facet customizada; o <code>note_tweet.text</code> do X usa entidades de URL. O ThreadGrab normaliza ambos para Markdown comum, ent&atilde;o voc&ecirc; n&atilde;o precisa manter um tradutor.</li>
+</ul>
+
+<div class="cta">
+  <p>Aponte o ThreadGrab para qualquer URL de post longo do Bluesky ou X. Voc&ecirc; recebe o corpo Markdown, o link can&ocirc;nico da plataforma e o gr&aacute;fico de respostas em uma &uacute;nica chamada. Sem token do X, sem PDS, sem instala&ccedil;&atilde;o.</p>
+  <a class="btn" href="https://threadgrab.com/pt/">Experimente o ThreadGrab gr&aacute;tis</a>
+</div>
+
+<h2>Quando n&atilde;o construir um playbook de leitura</h2>
+<p>Nem todo criador precisa disso. Se voc&ecirc; publica posts longos em exatamente uma plataforma e l&ecirc; seus pr&oacute;prios posts na UI nativa, o playbook &eacute; exagero. O fluxo de quatro etapas compensa quando pelo menos duas dessas condi&ccedil;&otilde;es s&atilde;o verdadeiras:</p>
+
+<ul>
+  <li>Voc&ecirc; publica tanto no Bluesky quanto no X.</li>
+  <li>Voc&ecirc; j&aacute; publicou mais de 20 pe&ccedil;as longas no total.</li>
+  <li>Voc&ecirc; referencia seus pr&oacute;prios posts anteriores em novos posts ("como escrevi em maio...").</li>
+  <li>Voc&ecirc; quer que seu arquivo sobreviva a qualquer plataforma individual.</li>
+</ul>
+
+<p>Se apenas uma dessas condi&ccedil;&otilde;es se aplica, o setup mais simples &eacute; o ThreadGrab p&uacute;blico para os posts p&uacute;blicos e um &uacute;nico vault do Obsidian para os rascunhos privados. Se duas ou mais se aplicam, o script de quatro etapas acima vale o fim de semana que leva para montar.</p>
+
+<h2>Perguntas frequentes</h2>
+<div class="faq-item">
+  <strong>Quando exatamente o Bluesky lan&ccedil;ou os posts longos?</strong>
+  <p>O Bluesky enviou o formato de posts longos para todos os usu&aacute;rios no final de maio de 2026. O recurso est&aacute; dispon&iacute;vel no cliente oficial do Bluesky, Skylight, Graysky e Ozone. Alguns clientes de terceiros ainda n&atilde;o renderizam o cart&atilde;o longo corretamente; se voc&ecirc; l&ecirc; o Bluesky em um desses clientes, o post aparecer&aacute; truncado.</p>
+</div>
+<div class="faq-item">
+  <strong>Preciso de uma conta paga do X ou Bluesky para usar este fluxo?</strong>
+  <p>N&atilde;o. Os endpoints p&uacute;blicos do AppView do Bluesky s&atilde;o abertos e n&atilde;o requerem autentica&ccedil;&atilde;o para acesso somente leitura. O endpoint <code>GET /2/tweets/:id</code> do X requer uma conta de desenvolvedor gratuita com um bearer token, mas voc&ecirc; n&atilde;o precisa de X Premium nem do tier pago da API do X para acesso somente leitura aos seus pr&oacute;prios Articles.</p>
+</div>
+<div class="faq-item">
+  <strong>Posso usar isso para arquivar posts longos de outras pessoas?</strong>
+  <p>Sim para os p&uacute;blicos. O endpoint p&uacute;blico do ThreadGrab aceita qualquer URL longa do Bluesky ou X. Para posts privados ou rascunhos que voc&ecirc; n&atilde;o possui, o script acima n&atilde;o funciona -- as plataformas exp&otilde;em apenas os endpoints do lado do autor para o autor.</p>
+</div>
+<div class="faq-item">
+  <strong>O playbook funciona para Threads ou LinkedIn Newsletter?</strong>
+  <p>N&atilde;o diretamente. O Threads n&atilde;o tem um recurso longo nativo em 2026; Threads posts longos colapsam em uma &uacute;nica thread. LinkedIn Newsletters tem um feed RSS p&uacute;blico que voc&ecirc; pode assinar, mas o corpo do artigo n&atilde;o &eacute; busca-vel atrav&eacute;s de uma API p&uacute;blica do mesmo jeito que Bluesky e X exp&otilde;em. Se voc&ecirc; publica em qualquer um, adicione uma quinta etapa para puxar o feed RSS e convert&ecirc;-lo.</p>
+</div>
+<div class="faq-item">
+  <strong>E se meu PDS do Bluesky migrar ou minha conta for desativada?</strong>
+  <p>&Eacute; exatamente por isso que o playbook existe. O arquivo Markdown &eacute; seu backup port&aacute;til. Se seu PDS migrar, a URL can&ocirc;nica no novo PDS ainda aponta para o mesmo rkey, e a c&oacute;pia do arquivo &eacute; independente. Se sua conta for desativada, o cache p&uacute;blico do ThreadGrab ainda pode manter o post por algum tempo, mas o arquivo Markdown &eacute; a garantia de longo prazo.</p>
+</div>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/pt/">Home</a> &middot; <a href="/pt/blog/">Blog</a> &middot; <a href="/pt/about/">About</a> &middot; <a href="/pt/privacy/">Privacy</a>
+    <br>Not affiliated with X Corp., Bluesky Social PBC, LinkedIn Corporation, or Microsoft Corporation.
+  </footer>
+</body>
+</html>

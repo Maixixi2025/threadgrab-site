@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post Panjang Bluesky 2026: Panduan Sisi Baca Kreator</title>
+  <meta name="description" content="Bluesky luncurkan post panjang Mei 2026. Panduan 4 langkah kreator untuk membaca, mengarsipkan, dan menghubungkan post panjang Bluesky dan X Articles.">
+  <meta name="keywords" content="Bluesky post panjang, post panjang Bluesky 2026, X Articles, X format panjang, alur kerja sisi baca, arsip konten sosial, AT Protocol post panjang, ThreadGrab, alur kreator Bluesky X">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/id/blog/bluesky-long-form-creator-playbook-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/bluesky-long-form-creator-playbook-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/bluesky-long-form-creator-playbook-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/bluesky-long-form-creator-playbook-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/bluesky-long-form-creator-playbook-2026.html">
+  <meta property="og:title" content="Post Panjang Bluesky 2026: Panduan Sisi Baca Kreator">
+  <meta property="og:description" content="Bluesky luncurkan post panjang Mei 2026. Panduan 4 langkah kreator untuk membaca, mengarsipkan, dan menghubungkan post panjang Bluesky dan X Articles.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/id/blog/bluesky-long-form-creator-playbook-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Post Panjang Bluesky 2026: Panduan Sisi Baca Kreator">
+  <meta name="twitter:description" content="Bluesky luncurkan post panjang Mei 2026. Panduan 4 langkah kreator untuk membaca, mengarsipkan, dan menghubungkan post panjang Bluesky dan X Articles.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+    @media (max-width: 640px) { main { padding: 24px 16px 40px; } table { font-size: 0.8rem; } th, td { padding: 8px; } }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Post Panjang Bluesky 2026: Panduan Sisi Baca Kreator",
+    "description": "Bluesky luncurkan post panjang Mei 2026. Panduan 4 langkah kreator untuk membaca, mengarsipkan, dan menghubungkan post panjang Bluesky dan X Articles.",
+    "datePublished": "2026-07-06",
+    "dateModified": "2026-07-06",
+    "author": {
+      "@type": "Organization",
+      "name": "ThreadGrab",
+      "url": "https://threadgrab.com/id/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ThreadGrab",
+      "url": "https://threadgrab.com/id/"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://threadgrab.com/id/blog/bluesky-long-form-creator-playbook-2026.html"
+    },
+    "inLanguage": "id"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://threadgrab.com/id/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://threadgrab.com/id/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Post Panjang Bluesky 2026"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Kapan tepatnya Bluesky meluncurkan post panjang?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bluesky mengirim format post panjang ke semua pengguna pada akhir Mei 2026. Fitur ini tersedia di klien resmi Bluesky, Skylight, Graysky, dan Ozone. Beberapa klien pihak ketiga masih belum merender kartu panjang dengan benar; jika Anda membaca Bluesky di salah satu klien itu, post akan muncul terpotong."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah saya memerlukan akun berbayar X atau Bluesky untuk menggunakan alur kerja ini?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tidak. Endpoint AppView publik Bluesky terbuka dan tidak memerlukan autentikasi untuk akses baca-saja. Endpoint GET /2/tweets/:id X memerlukan akun developer gratis dengan bearer token, tapi Anda tidak memerlukan X Premium atau tier berbayar API X untuk akses baca-saja ke Articles Anda sendiri."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bisakah saya menggunakan ini untuk mengarsipkan post panjang orang lain?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bisa untuk yang publik. Endpoint publik ThreadGrab menerima URL panjang Bluesky atau X apa pun. Untuk post privat atau draf yang tidak Anda miliki, skrip di atas tidak akan bekerja -- platform mengekspos hanya endpoint sisi penulis kepada penulis."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah playbook ini bekerja untuk Threads atau LinkedIn Newsletter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tidak secara langsung. Threads tidak punya fitur panjang native di 2026; Threads post panjang runtuh ke satu thread. LinkedIn Newsletter punya feed RSS publik yang bisa Anda langgani, tapi body artikel tidak bisa dicari melalui API publik dengan cara yang sama seperti Bluesky dan X mengekspos. Jika Anda menerbitkan di salah satunya, tambahkan langkah kelima untuk menarik feed RSS dan mengonversinya."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bagaimana jika PDS Bluesky saya bermigrasi atau akun saya dinonaktifkan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Itu persis alasan playbook ini ada. Arsip Markdown adalah cadangan portabel Anda. Jika PDS Anda bermigrasi, URL kanonik di PDS baru masih menunjuk ke rkey yang sama, dan salinan arsip bersifat independen. Jika akun Anda dinonaktifkan, cache publik ThreadGrab mungkin masih memegang post untuk beberapa waktu, tapi arsip Markdown adalah jaminan jangka panjang."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/id/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a class="" href="/en/blog/bluesky-long-form-creator-playbook-2026.html">EN</a>
+      <a class="" href="/pt/blog/bluesky-long-form-creator-playbook-2026.html">PT</a>
+      <a class="active" href="/id/blog/bluesky-long-form-creator-playbook-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb"><a href="/id/">Home</a> &rsaquo; <a href="/id/blog/">Blog</a> &rsaquo; Post Panjang Bluesky 2026</div>
+
+    <h1>Post Panjang Bluesky 2026: <span>Panduan Sisi Baca Kreator</span></h1>
+    <p class="meta">6 Juli 2026 &middot; 11 min read &middot; Guide</p>
+
+    <p>Bluesky merilis format post panjang pada akhir Mei 2026, dan sisi baca dari web sosial tidak pernah sama lagi. Selama dua tahun, X Articles adalah satu-satunya platform besar di mana Anda bisa menerbitkan tulisan 5.000 kata secara native dan tetap diindeks oleh mesin pencari. Sekarang Bluesky menyamai permukaan itu, dan kreator yang menerbitkan di kedua platform menghadapi dua skema berbeda, dua graf balasan berbeda, dan nol alat bawaan untuk menyatukan apa yang Anda tulis.</p>
+
+<p>Panduan ini adalah playbook sisi baca untuk dunia tersebut. Ini adalah alur kerja yang kami bangun di tim ThreadGrab setelah peluncuran Mei 2026, dan yang sama yang kami rekomendasikan untuk kreator mana pun yang sekarang menerbitkan post panjang di Bluesky dan X secara paralel. Empat langkah di bawah ini mengasumsikan Anda sudah menulis di kedua platform. Jika belum, playbook tetap bekerja sebagai setup satu platform, tapi routing multi-platform adalah tempat penghematan waktu benar-benar terkumpul.</p>
+
+<div class="callout">
+  <p><strong>Ringkasan:</strong> Bluesky meluncurkan post panjang Mei 2026. Alur kerja sisi baca punya empat langkah: mendeteksi post panjang, menariknya ke satu kotak masuk terpadu, mengonversi ke Markdown, dan menghubungkan apa yang Anda tulis dengan apa yang Anda balas. Pipa-nya adalah API publik dan skrip kecil, tanpa vendor lock-in, dan ThreadGrab menangani konversi Markdown sisi baca untuk bagian publik arsip Anda.</p>
+</div>
+
+<h2>Apa yang berubah di Mei 2026</h2>
+<p>Fitur post panjang Bluesky dikirim ke semua pengguna pada akhir Mei 2026. Mekanikanya bukan X Articles -- fitur ini hidup di atas AT Protocol, yang berarti setiap post panjang tetap sebuah record di PDS, tapi tipe record-nya adalah <code>app.bsky.feed.post</code> dengan field <code>embeds</code> baru yang menunjuk ke struktur <code>app.bsky.embed.recordWithMedia</code> yang membawa body Markdown. Klien resmi Bluesky merender body itu dalam kartu scroll panjang; klien pihak ketiga seperti Skylight, Graysky, dan Ozone menanganinya secara berbeda, dan beberapa masih menghapus format saat dibaca.</p>
+
+<p>Di sisi X, Articles tetap satu-satunya format panjang native sepanjang jendela yang sama. Pola URL X Articles stabil: <code>https://x.com/&lt;user&gt;/status/&lt;id&gt;</code> dengan <code>/article/&lt;id&gt;</code> sebagai alternatif. URL post panjang Bluesky mengikuti bentuk yang sama seperti post lainnya: <code>https://bsky.app/profile/&lt;handle&gt;/post/&lt;rkey&gt;</code>, dengan body di dalam <code>record.embed</code> alih-alih field saudara. Jika Anda scraping salah satu tapi bukan yang lain, Anda kehilangan setengah dari tempat konten panjang berada di 2026.</p>
+
+<h2>Mengapa playbook sisi baca penting sekarang</h2>
+<p>Menerbitkan post panjang di dua platform itu mudah. Membaca apa yang Anda tulis enam bulan kemudian tidak. Tiap platform punya UI sendiri, pencarian sendiri, dan aturan retensi arsip sendiri. X akan menyimpan Articles Anda tanpa batas selama akun Anda aktif; PDS Bluesky bisa dimigrasi, tapi akun yang dinonaktifkan bisa mengunci Anda dari post panjang Anda sendiri jika Anda tidak mengekspornya.</p>
+
+<p>Playbook di bawah ini ada untuk tiga alasan yang tidak teoritis:</p>
+
+<ul>
+  <li><strong>Pencarian.</strong> Arsip Markdown terpadu bisa dicari di editor teks mana pun. UI pencarian platform-platform tidak bisa.</li>
+  <li><strong>Portabilitas.</strong> Jika sebuah platform mengubah kebijakan post panjangnya besok, Anda tetap punya salinan lokal dari semua yang Anda terbitkan.</li>
+  <li><strong>Pelacakan balasan.</strong> Post panjang mendapat balasan di kedua platform. Pipeline sisi baca memungkinkan Anda melihat graf percakapan lengkap di satu tempat, yang mustahil dari UI native mana pun sendirian.</li>
+</ul>
+
+<h2>Alur kerja sisi baca 4 langkah</h2>
+<p>Alur kerja lengkap adalah empat langkah, masing-masing satu alat atau skrip. Tak satu pun memerlukan akun berbayar, dan semuanya berjalan di bawah 200 baris Python jika Anda merakitnya secara manual. Versi hosted ThreadGrab menggabungkan langkah 2 dan 3 menjadi satu panggilan, tapi versi manual adalah referensi kanoniknya.</p>
+
+<h3>Langkah 1: mendeteksi post panjang di kedua platform</h3>
+<p>Langkah pertama adalah identifikasi. Anda butuh daftar post mana (post Anda sendiri atau post yang Anda ikuti) yang panjang. Cara paling bersih untuk melakukan ini adalah polling periodik dari feed authoring Anda sendiri, difilter berdasarkan panjang post dan tipe embed.</p>
+
+<pre><code># Pseudo-code untuk "apa yang dihitung sebagai post panjang di tiap platform"
+def is_long_form_bluesky(post):
+    embed = post.get("record", {}).get("embed", {})
+    return (
+        embed.get("&#36;type") == "app.bsky.embed.recordWithMedia"
+        and "app.bsky.richtext.facet" in str(embed)
+        and len(embed.get("text", "")) > 1500
+    )
+
+def is_long_form_x(post):
+    text = post.get("text", "") or post.get("note_tweet", {}).get("text", "")
+    has_article = "/article/" in post.get("permalink", "")
+    return has_article or len(text) > 4000</code></pre>
+
+<p>Ambang batas Bluesky kira-kira 1.500 grapheme sebelum kartu panjang ditampilkan; X Articles mulai dari panjang berapa pun tapi UI platform berbeda secara signifikan di atas 4.000 karakter. Logika deteksi tidak harus sempurna; tujuannya adalah filter lintasan pertama yang bisa Anda koreksi secara manual.</p>
+
+<h3>Langkah 2: menarik konten panjang ke kotak masuk terpadu</h3>
+<p>Setelah Anda punya daftar, tarik body-nya. Bluesky mengekspos ini melalui endpoint publik AppView <code>getPostThread</code>; X masih memerlukan endpoint <code>GET /2/tweets/:id</code> dengan OAuth bearer token untuk Articles yang lebih panjang dari 4.000 karakter. Skrip di bawah ini menunjukkan penarikan paralel untuk keduanya.</p>
+
+<pre><code>import requests, json, pathlib, datetime
+
+OUT = pathlib.Path("./inbox/longform")
+OUT.mkdir(parents=True, exist_ok=True)
+
+def pull_bluesky(rkey, handle):
+    r = requests.get(
+        f"https://public.api.bsky.app/xrpc/app.bsky.feed.getPostThread",
+        params={"uri": f"at://{handle}/app.bsky.post/{rkey}", "depth": 0},
+        timeout=15,
+    )
+    r.raise_for_status()
+    thread = r.json()["thread"]["post"]
+    embed = thread["record"].get("embed", {})
+    body = embed.get("text", "") or thread["record"].get("text", "")
+    return {"platform": "bluesky", "id": rkey, "body": body, "ts": thread["indexedAt"]}
+
+def pull_x(article_id, token):
+    r = requests.get(
+        f"https://api.x.com/2/tweets/{article_id}",
+        params={"tweet.fields": "text,note_tweet,entities,created_at"},
+        headers={"Authorization": f"Bearer {token}"},
+        timeout=15,
+    )
+    r.raise_for_status()
+    body = r.json()["data"].get("note_tweet", {}).get("text") or r.json()["data"]["text"]
+    return {"platform": "x", "id": article_id, "body": body, "ts": r.json()["data"]["created_at"]}
+
+# Contoh: arsipkan dua post
+for path in OUT.glob("*.json"):
+    pass
+out1 = pull_bluesky("3l5xabc123", "anda.bsky.social")
+out2 = pull_x("1800000000000000000", "X_BEARER_TOKEN_ANDA")
+for entry in (out1, out2):
+    stamp = datetime.datetime.fromisoformat(entry["ts"].replace("Z", "+00:00")).strftime("%Y%m%dT%H%M%SZ")
+    (OUT / f"{stamp}_{entry['platform']}_{entry['id']}.json").write_text(json.dumps(entry, indent=2))</code></pre>
+
+<p>Output-nya adalah satu file JSON per post panjang dalam satu direktori <code>./inbox/longform/</code>. Nama file bisa diurutkan berdasarkan tanggal, jadi direktori sudah menjadi arsip terurut kronologis tanpa basis data apa pun.</p>
+
+<h3>Langkah 3: konversi ke Markdown untuk pembacaan ulang dan pencarian</h3>
+<p>Blob JSON bukan yang ingin Anda baca jam 2 pagi enam bulan dari sekarang. Konversi masing-masing ke file Markdown dengan frontmatter, dan Anda punya arsip yang ramah-grep, ramah-editor, dapat-diversi-kontrol. Versi hosted ThreadGrab melakukan ini untuk bacaan publik; skrip di bawah ini adalah yang kami gunakan secara internal untuk arsip sisi penulis privat.</p>
+
+<pre><code>def json_to_markdown(entry):
+    fm = [
+        "---",
+        f"platform: {entry['platform']}",
+        f"id: {entry['id']}",
+        f"published: {entry['ts']}",
+        f"url: " + (
+            f"https://bsky.app/profile/anda.bsky.social/post/{entry['id']}"
+            if entry["platform"] == "bluesky"
+            else f"https://x.com/anda/status/{entry['id']}"
+        ),
+        "---",
+    ]
+    body_md = entry["body"]
+    if entry["platform"] == "bluesky":
+        body_md = body_md.replace("&#10;&#10;", "&#10;&#10;")
+    return "&#10;".join(fm) + "&#10;&#10;" + body_md + "&#10;"
+
+import json, pathlib
+for src in pathlib.Path("./inbox/longform").glob("*.json"):
+    entry = json.loads(src.read_text())
+    (pathlib.Path("./archive") / src.with_suffix(".md").name).write_text(json_to_markdown(entry))</code></pre>
+
+<p>Setelah dijalankan, Anda punya direktori file <code>.md</code> yang bisa Anda baca di editor mana pun, cari dengan ripgrep, commit ke Git, atau umpan balik ke LLM di masa depan sebagai materi korpus. Frontmatter mempertahankan tag platform dan URL kanonik sehingga Anda selalu bisa menavigasi kembali ke versi live.</p>
+
+<h3>Langkah 4: menghubungkan post Anda sendiri dengan balasan</h3>
+<p>Langkah terakhir adalah yang kebanyakan kreator lewati: graf percakapan terpadu. Untuk setiap post panjang yang Anda tulis, Anda ingin melihat semua balasan di kedua platform di satu tempat. Ini tidak dibangun ke dalam UI mana pun; ini adalah skrip.</p>
+
+<pre><code>def replies_for(post):
+    if post["platform"] == "bluesky":
+        r = requests.get(
+            "https://public.api.bsky.app/xrpc/app.bsky.feed.getReplies",
+            params={"uri": post["embed_uri"], "limit": 100},
+            timeout=15,
+        )
+        return [r["post"]["record"]["text"] for r in r.json().get("replies", [])]
+    if post["platform"] == "x":
+        r = requests.get(
+            f"https://api.x.com/2/tweets/search/recent",
+            params={"query": f"conversation_id:{post['id']}", "tweet.fields": "text,author_id"},
+            headers={"Authorization": f"Bearer {post['token']}"},
+            timeout=15,
+        )
+        return [t["text"] for t in r.json().get("data", [])]
+    return []</code></pre>
+
+<p>Output-nya adalah satu file teks per post panjang: <code>20260701T090000Z_x_1800000000000000000.md</code> dengan bagian <code>## Replies</code> yang mendaftar setiap balasan dari kedua platform. Jika Anda menerbitkan tulisan di Mei 2026 dan ingin tahu apa kata pembaca tentangnya di Juli, Anda membuka satu file, bukan dua tab browser.</p>
+
+<h2>Bagaimana ThreadGrab masuk</h2>
+<p>Layanan hosted ThreadGrab melakukan langkah 2, 3, dan 4 untuk post panjang publik apa pun di Bluesky atau X. Jika Anda punya URL post panjang, ThreadGrab mengembalikan body Markdown dengan frontmatter, URL kanonik platform, dan graf balasan. Layanan hosted gratis untuk post publik, tidak memerlukan token X, dan tidak menulis ke PDS Anda.</p>
+
+<p>Untuk arsip authoring privat (post Anda sendiri, sebelum menjadi publik), Anda masih memerlukan skrip di atas. Layanan hosted melengkapi, bukan menggantikan, arsip lokal. Pemisahan ini disengaja: sisi baca publik adalah apa yang ThreadGrab lakukan terbaik, dan sisi penulis privat adalah apa yang Anda lakukan terbaik karena hanya Anda yang tahu draf mana yang ingin disimpan.</p>
+
+<p>Tiga hal spesifik yang ThreadGrab tangani yang tidak dilakukan skrip di atas:</p>
+
+<ul>
+  <li><strong>Penemuan post publik.</strong> ThreadGrab bisa diarahkan ke handle mana pun, bukan hanya milik Anda, dan akan mendeteksi post panjang baru saat dipublikasikan.</li>
+  <li><strong>Graf balasan untuk post publik.</strong> Untuk post Bluesky atau X apa pun yang Anda berikan, ThreadGrab mengembalikan pohon balasan lengkap sebagai JSON.</li>
+  <li><strong>Normalisasi format.</strong> Field <code>embed.text</code> Bluesky menggunakan sintaks facet kustom; <code>note_tweet.text</code> X menggunakan entitas URL. ThreadGrab meratakan keduanya ke Markdown umum, sehingga Anda tidak perlu mempertahankan penerjemah.</li>
+</ul>
+
+<div class="cta">
+  <p>Arahkan ThreadGrab ke URL post panjang Bluesky atau X mana pun. Anda mendapatkan body Markdown, tautan kanonik platform, dan graf balasan dalam satu panggilan. Tanpa token X, tanpa PDS, tanpa instalasi.</p>
+  <a class="btn" href="https://threadgrab.com/id/">Coba ThreadGrab Gratis</a>
+</div>
+
+<h2>Kapan tidak membangun playbook sisi baca</h2>
+<p>Tidak setiap kreator membutuhkan ini. Jika Anda menerbitkan post panjang di tepat satu platform dan membaca post Anda sendiri di UI native, playbook itu berlebihan. Alur kerja empat langkah terbayar ketika setidaknya dua dari ini benar:</p>
+
+<ul>
+  <li>Anda menerbitkan di Bluesky maupun X.</li>
+  <li>Anda telah menerbitkan lebih dari 20 tulisan panjang secara total.</li>
+  <li>Anda merujuk post Anda sendiri sebelumnya di post baru ("seperti yang saya tulis di Mei...").</li>
+  <li>Anda ingin arsip Anda bertahan melampaui satu platform mana pun.</li>
+</ul>
+
+<p>Jika hanya satu yang berlaku, setup paling sederhana adalah ThreadGrab publik untuk post publik dan satu vault Obsidian untuk draf privat. Jika dua atau lebih berlaku, skrip empat langkah di atas worth akhir pekan yang diperlukan untuk merakitnya.</p>
+
+<h2>Pertanyaan yang sering diajukan</h2>
+<div class="faq-item">
+  <strong>Kapan tepatnya Bluesky meluncurkan post panjang?</strong>
+  <p>Bluesky mengirim format post panjang ke semua pengguna pada akhir Mei 2026. Fitur ini tersedia di klien resmi Bluesky, Skylight, Graysky, dan Ozone. Beberapa klien pihak ketiga masih belum merender kartu panjang dengan benar; jika Anda membaca Bluesky di salah satu klien itu, post akan muncul terpotong.</p>
+</div>
+<div class="faq-item">
+  <strong>Apakah saya memerlukan akun berbayar X atau Bluesky untuk menggunakan alur kerja ini?</strong>
+  <p>Tidak. Endpoint AppView publik Bluesky terbuka dan tidak memerlukan autentikasi untuk akses baca-saja. Endpoint <code>GET /2/tweets/:id</code> X memerlukan akun developer gratis dengan bearer token, tapi Anda tidak memerlukan X Premium atau tier berbayar API X untuk akses baca-saja ke Articles Anda sendiri.</p>
+</div>
+<div class="faq-item">
+  <strong>Bisakah saya menggunakan ini untuk mengarsipkan post panjang orang lain?</strong>
+  <p>Bisa untuk yang publik. Endpoint publik ThreadGrab menerima URL panjang Bluesky atau X apa pun. Untuk post privat atau draf yang tidak Anda miliki, skrip di atas tidak akan bekerja -- platform mengekspos hanya endpoint sisi penulis kepada penulis.</p>
+</div>
+<div class="faq-item">
+  <strong>Apakah playbook ini bekerja untuk Threads atau LinkedIn Newsletter?</strong>
+  <p>Tidak secara langsung. Threads tidak punya fitur panjang native di 2026; Threads post panjang runtuh ke satu thread. LinkedIn Newsletter punya feed RSS publik yang bisa Anda langgani, tapi body artikel tidak bisa dicari melalui API publik dengan cara yang sama seperti Bluesky dan X mengekspos. Jika Anda menerbitkan di salah satunya, tambahkan langkah kelima untuk menarik feed RSS dan mengonversinya.</p>
+</div>
+<div class="faq-item">
+  <strong>Bagaimana jika PDS Bluesky saya bermigrasi atau akun saya dinonaktifkan?</strong>
+  <p>Itu persis alasan playbook ini ada. Arsip Markdown adalah cadangan portabel Anda. Jika PDS Anda bermigrasi, URL kanonik di PDS baru masih menunjuk ke rkey yang sama, dan salinan arsip bersifat independen. Jika akun Anda dinonaktifkan, cache publik ThreadGrab mungkin masih memegang post untuk beberapa waktu, tapi arsip Markdown adalah jaminan jangka panjang.</p>
+</div>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/id/">Home</a> &middot; <a href="/id/blog/">Blog</a> &middot; <a href="/id/about/">About</a> &middot; <a href="/id/privacy/">Privacy</a>
+    <br>Not affiliated with X Corp., Bluesky Social PBC, LinkedIn Corporation, or Microsoft Corporation.
+  </footer>
+</body>
+</html>

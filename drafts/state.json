@@ -1181,721 +1181,309 @@
         "deepseek"
       ],
       "primary_cta": "threadgrab"
-    }
-  ],
-  "drafts": [
+    },
     {
-      "slug": "x-articles-creator-guide-2026",
-      "date": "2026-06-25",
-      "type": "guide",
-      "lang": "en",
       "file": "en/blog/x-articles-creator-guide-2026.html",
-      "url": "https://threadgrab.com/en/blog/x-articles-creator-guide-2026.html",
-      "title_en": "X Articles for Long-Form Creators: Complete 2026 Guide",
-      "title_pt": "X Articles para Criadores Long-Form: Guia 2026",
-      "title_id": "X Articles untuk Kreator Long-Form: Panduan 2026",
+      "slug": "x-articles-creator-guide-2026",
+      "lang": "en",
       "title": "X Articles for Long-Form Creators: Complete 2026 Guide",
-      "description": "A creator's guide to X Articles in 2026: format, length, hook, reach, ranking, growth workflow, and how to archive every piece as Markdown.",
-      "heat_source": "2026-06-25 daily hot topics — threadgrab rotation: X Articles 写作技巧 (creator guide for X long-form, not yet covered). Today's ⭐⭐ Bluesky-vs-X-Articles hot topic is already covered by 3 existing articles (06-06, 06-15, 06-24); 4-way priority list fully consumed so falling back to rotation.",
-      "status": "outline_pending_publish",
-      "created_at": "2026-06-25",
-      "providers_featured": [
-        "X Articles",
-        "Substack",
-        "LinkedIn Newsletter",
-        "Bluesky",
-        "ThreadGrab"
-      ],
-      "primary_cta": "Try ThreadGrab — Free Social Archive",
-      "qa_passed": {
-        "title_chars_en": 54,
-        "title_chars_pt": 46,
-        "title_chars_id": 48,
-        "description_chars_en": 139,
-        "description_chars_pt": 151,
-        "description_chars_id": 148,
-        "hreflang_alternates": 4,
-        "canonical_present": true,
-        "jsonld_blocks": 3,
-        "faq_count": 6,
-        "h2_count": 10,
-        "code_blocks": 2,
-        "word_count_en": 2211,
-        "word_count_pt": 2254,
-        "word_count_id": 1958,
-        "raw_lt_in_body": 0
-      }
+      "url": "https://threadgrab.com/en/blog/x-articles-creator-guide-2026.html",
+      "date": "2026-06-25",
+      "heat_source": "2026-06-25 daily hot topics — threadgrab rotation: X Articles 写作技巧 (creator guide for X long-form, not yet covered). Today's ⭐⭐ Bluesky-vs-X-Articles hot topic is already covered by 3 existing articles (06-06, 06-15, 06-24); 4-way priority list fully consumed so falling back to rotation."
     },
     {
-      "slug": "x-articles-creator-guide-2026",
-      "date": "2026-06-25",
-      "type": "guia",
-      "lang": "pt",
       "file": "pt/blog/x-articles-creator-guide-2026.html",
-      "url": "https://threadgrab.com/pt/blog/x-articles-creator-guide-2026.html",
-      "title_en": "X Articles for Long-Form Creators: Complete 2026 Guide",
-      "title_pt": "X Articles para Criadores Long-Form: Guia 2026",
-      "title_id": "X Articles untuk Kreator Long-Form: Panduan 2026",
-      "title": "X Articles para Criadores Long-Form: Guia 2026",
-      "description": "Guia para criadores sobre X Articles em 2026: formato, tamanho, hook, alcance, rankeamento, fluxo de crescimento e como arquivar cada peça em Markdown.",
-      "heat_source": "2026-06-25 daily hot topics — rotação threadgrab: guia X Articles 写作技巧 (guia do criador para X long-form, ainda não coberto). Tópico Bluesky-vs-X-Articles já coberto por 3 artigos; rotação para tópico de redação.",
-      "status": "outline_pending_publish",
-      "created_at": "2026-06-25",
-      "providers_featured": [
-        "X Articles",
-        "Substack",
-        "LinkedIn Newsletter",
-        "Bluesky",
-        "ThreadGrab"
-      ],
-      "primary_cta": "Experimente o ThreadGrab — Arquivo Social Gratuito"
-    },
-    {
       "slug": "x-articles-creator-guide-2026",
+      "lang": "pt",
+      "title": "X Articles para Criadores Long-Form: Guia 2026",
+      "url": "https://threadgrab.com/pt/blog/x-articles-creator-guide-2026.html",
       "date": "2026-06-25",
-      "type": "panduan",
-      "lang": "id",
-      "file": "id/blog/x-articles-creator-guide-2026.html",
-      "url": "https://threadgrab.com/id/blog/x-articles-creator-guide-2026.html",
-      "title_en": "X Articles for Long-Form Creators: Complete 2026 Guide",
-      "title_pt": "X Articles para Criadores Long-Form: Guia 2026",
-      "title_id": "X Articles untuk Kreator Long-Form: Panduan 2026",
-      "title": "X Articles untuk Kreator Long-Form: Panduan 2026",
-      "description": "Panduan kreator X Articles 2026: format, panjang, hook, jangkauan, peringkat, alur pertumbuhan, dan cara mengarsipkan setiap karya sebagai Markdown.",
-      "heat_source": "2026-06-25 daily hot topics — rotasi threadgrab: panduan X Articles 写作技巧 (panduan kreator X long-form, belum dibahas). Topik Bluesky-vs-X-Articles sudah dibahas 3 artikel; rotasi ke topik penulisan.",
-      "status": "outline_pending_publish",
-      "created_at": "2026-06-25",
-      "providers_featured": [
-        "X Articles",
-        "Substack",
-        "LinkedIn Newsletter",
-        "Bluesky",
-        "ThreadGrab"
-      ],
-      "primary_cta": "Coba ThreadGrab — Arsip Sosial Gratis"
+      "heat_source": "2026-06-25 daily hot topics — rotação threadgrab: guia X Articles 写作技巧 (guia do criador para X long-form, ainda não coberto). Tópico Bluesky-vs-X-Articles já coberto por 3 artigos; rotação para tópico de redação."
     },
     {
+      "file": "id/blog/x-articles-creator-guide-2026.html",
+      "slug": "x-articles-creator-guide-2026",
+      "lang": "id",
+      "title": "X Articles untuk Kreator Long-Form: Panduan 2026",
+      "url": "https://threadgrab.com/id/blog/x-articles-creator-guide-2026.html",
+      "date": "2026-06-25",
+      "heat_source": "2026-06-25 daily hot topics — rotasi threadgrab: panduan X Articles 写作技巧 (panduan kreator X long-form, belum dibahas). Topik Bluesky-vs-X-Articles sudah dibahas 3 artikel; rotasi ke topik penulisan."
+    },
+    {
+      "file": "en/blog/notion-to-markdown-migration-2026.html",
       "slug": "notion-to-markdown-migration-2026",
-      "date": "2026-06-26",
-      "type": "guide",
       "lang": "en",
       "title": "Notion to Markdown 2026: Why Social Creators Migrate",
-      "description": "Why social creators are leaving Notion for Markdown in 2026: cost, ownership, lock-in, and a 5-step migration plan with Pandoc, Obsidian, and ThreadGrab.",
-      "file": "en/blog/notion-to-markdown-migration-2026.html",
       "url": "https://threadgrab.com/en/blog/notion-to-markdown-migration-2026.html",
-      "path_en": "en/blog/notion-to-markdown-migration-2026.html",
-      "path_pt": "pt/blog/notion-to-markdown-migration-2026.html",
-      "path_id": "id/blog/notion-to-markdown-migration-2026.html",
-      "url_en": "https://threadgrab.com/en/blog/notion-to-markdown-migration-2026.html",
-      "url_pt": "https://threadgrab.com/pt/blog/notion-to-markdown-migration-2026.html",
-      "url_id": "https://threadgrab.com/id/blog/notion-to-markdown-migration-2026.html",
-      "heat_source": "2026-06-26 daily hot topics — forrabbit 'moving from Notion to Markdown' postmortem hit HN 800 upvotes; threadgrab rotation: not-yet-covered. Today's ⭐⭐⭐ X-Articles-vs-Bluesky-vs-LinkedIn already covered (2026-06-06), ⭐⭐ Twitter-trend-scraping covered (2026-06-12), ⭐⭐ X-to-MD covered (2026-06-08) + 4 pipeline articles, ⭐ Bluesky-archiving covered (2026-06-14). Priority list fully consumed, fell back to rotation on a fresh news anchor.",
-      "tags": [
-        "Notion to Markdown",
-        "Notion migration 2026",
-        "Markdown first",
-        "Obsidian",
-        "Pandoc",
-        "notion-to-md",
-        "markitdown",
-        "ThreadGrab",
-        "social content archive",
-        "Git",
-        "Markdown knowledge base",
-        "X to Markdown",
-        "Bluesky archive",
-        "LinkedIn archive"
-      ],
-      "word_count": 1950,
-      "file_size_bytes": 32280,
-      "schema_types": [
-        "Article",
-        "BreadcrumbList",
-        "FAQPage"
-      ],
-      "status": "outline_pending_publish",
-      "created_at": "2026-06-26",
-      "lang_versions": [
-        "en",
-        "pt",
-        "id"
-      ]
+      "date": "2026-06-26",
+      "heat_source": "2026-06-26 daily hot topics — forrabbit 'moving from Notion to Markdown' postmortem hit HN 800 upvotes; threadgrab rotation: not-yet-covered. Today's ⭐⭐⭐ X-Articles-vs-Bluesky-vs-LinkedIn already covered (2026-06-06), ⭐⭐ Twitter-trend-scraping covered (2026-06-12), ⭐⭐ X-to-MD covered (2026-06-08) + 4 pipeline articles, ⭐ Bluesky-archiving covered (2026-06-14). Priority list fully consumed, fell back to rotation on a fresh news anchor."
     },
     {
+      "file": "pt/blog/notion-to-markdown-migration-2026.html",
       "slug": "notion-to-markdown-migration-2026",
-      "date": "2026-06-26",
-      "type": "guide",
       "lang": "pt",
       "title": "Notion para Markdown 2026: Por Que Criadores Migram",
-      "description": "Por que criadores estao saindo do Notion para Markdown em 2026: custo, lock-in e um plano de migracao em 5 etapas com Pandoc, Obsidian e ThreadGrab.",
-      "file": "pt/blog/notion-to-markdown-migration-2026.html",
       "url": "https://threadgrab.com/pt/blog/notion-to-markdown-migration-2026.html",
-      "path_en": "en/blog/notion-to-markdown-migration-2026.html",
-      "path_pt": "pt/blog/notion-to-markdown-migration-2026.html",
-      "path_id": "id/blog/notion-to-markdown-migration-2026.html",
-      "url_en": "https://threadgrab.com/en/blog/notion-to-markdown-migration-2026.html",
-      "url_pt": "https://threadgrab.com/pt/blog/notion-to-markdown-migration-2026.html",
-      "url_id": "https://threadgrab.com/id/blog/notion-to-markdown-migration-2026.html",
-      "heat_source": "2026-06-26 daily hot topics — forrabbit 'moving from Notion to Markdown' postmortem hit HN 800 upvotes; threadgrab rotation. PT translation of EN version.",
-      "tags": [
-        "Notion para Markdown",
-        "migracao Notion 2026",
-        "Markdown primeiro",
-        "Obsidian",
-        "Pandoc",
-        "notion-to-md",
-        "markitdown",
-        "ThreadGrab",
-        "arquivo conteudo social",
-        "Git",
-        "base conhecimento Markdown"
-      ],
-      "word_count": 1920,
-      "file_size_bytes": 33013,
-      "schema_types": [
-        "Article",
-        "BreadcrumbList",
-        "FAQPage"
-      ],
-      "status": "outline_pending_publish",
-      "created_at": "2026-06-26",
-      "lang_versions": [
-        "en",
-        "pt",
-        "id"
-      ]
+      "date": "2026-06-26",
+      "heat_source": "2026-06-26 daily hot topics — forrabbit 'moving from Notion to Markdown' postmortem hit HN 800 upvotes; threadgrab rotation. PT translation of EN version."
     },
     {
+      "file": "id/blog/notion-to-markdown-migration-2026.html",
       "slug": "notion-to-markdown-migration-2026",
-      "date": "2026-06-26",
-      "type": "guide",
       "lang": "id",
       "title": "Notion ke Markdown 2026: Mengapa Kreator Beralih",
-      "description": "Mengapa kreator konten meninggalkan Notion untuk Markdown di 2026: biaya, kepemilikan, lock-in, dan rencana migrasi 5 langkah.",
-      "file": "id/blog/notion-to-markdown-migration-2026.html",
       "url": "https://threadgrab.com/id/blog/notion-to-markdown-migration-2026.html",
-      "path_en": "en/blog/notion-to-markdown-migration-2026.html",
-      "path_pt": "pt/blog/notion-to-markdown-migration-2026.html",
-      "path_id": "id/blog/notion-to-markdown-migration-2026.html",
-      "url_en": "https://threadgrab.com/en/blog/notion-to-markdown-migration-2026.html",
-      "url_pt": "https://threadgrab.com/pt/blog/notion-to-markdown-migration-2026.html",
-      "url_id": "https://threadgrab.com/id/blog/notion-to-markdown-migration-2026.html",
-      "heat_source": "2026-06-26 daily hot topics — forrabbit 'moving from Notion to Markdown' postmortem hit HN 800 upvotes; threadgrab rotation. ID translation of EN version.",
-      "tags": [
-        "Notion ke Markdown",
-        "migrasi Notion 2026",
-        "Markdown utama",
-        "Obsidian",
-        "Pandoc",
-        "notion-to-md",
-        "markitdown",
-        "ThreadGrab",
-        "arsip konten sosial",
-        "Git",
-        "basis pengetahuan Markdown"
-      ],
-      "word_count": 1925,
-      "file_size_bytes": 33108,
-      "schema_types": [
-        "Article",
-        "BreadcrumbList",
-        "FAQPage"
-      ],
-      "status": "outline_pending_publish",
-      "created_at": "2026-06-26",
-      "lang_versions": [
-        "en",
-        "pt",
-        "id"
-      ]
+      "date": "2026-06-26",
+      "heat_source": "2026-06-26 daily hot topics — forrabbit 'moving from Notion to Markdown' postmortem hit HN 800 upvotes; threadgrab rotation. ID translation of EN version."
     },
     {
-      "slug": "satteri-rust-markdown-pipeline-2026",
-      "date": "2026-06-27",
-      "type": "comparison",
-      "outline_file": "drafts/build-article-2026-06-27.py",
-      "en_astro": "en/blog/satteri-rust-markdown-pipeline-2026.html",
-      "zh_astro": null,
-      "lang": "en",
       "file": "en/blog/satteri-rust-markdown-pipeline-2026.html",
-      "url": "https://threadgrab.com/en/blog/satteri-rust-markdown-pipeline-2026.html",
+      "slug": "satteri-rust-markdown-pipeline-2026",
+      "lang": "en",
       "title": "Satteri 2026: Rust Markdown Pipeline Beats unified/remark",
-      "description": "Satteri is a Rust Markdown pipeline for JavaScript, 5 to 10x faster than unified/remark with native WASM. How it fits a 2026 social archive.",
-      "heat_source": "2026-06-27 daily hot topics — threadgrab ⭐ #1: Satteri Rust Markdown pipeline (Show HN 6-25, 0 matches in existing slugs).",
-      "status": "outline_pending_publish",
-      "providers_featured": [],
-      "primary_cta": "threadgrab",
-      "published_at": null
+      "url": "https://threadgrab.com/en/blog/satteri-rust-markdown-pipeline-2026.html",
+      "date": "2026-06-27",
+      "heat_source": "2026-06-27 daily hot topics — threadgrab ⭐ #1: Satteri Rust Markdown pipeline (Show HN 6-25, 0 matches in existing slugs)."
     },
     {
-      "slug": "satteri-rust-markdown-pipeline-2026",
-      "date": "2026-06-27",
-      "type": "comparison",
-      "outline_file": "drafts/build-article-2026-06-27.py",
-      "en_astro": "pt/blog/satteri-rust-markdown-pipeline-2026.html",
-      "zh_astro": null,
-      "lang": "pt",
       "file": "pt/blog/satteri-rust-markdown-pipeline-2026.html",
-      "url": "https://threadgrab.com/pt/blog/satteri-rust-markdown-pipeline-2026.html",
-      "title": "Satteri 2026: Pipeline Markdown em Rust Vence unified/remark",
-      "description": "Satteri e um pipeline Markdown em Rust para JavaScript, 5 a 10x mais rapido que unified/remark com WASM nativo. Como encaixa no arquivo social 2026.",
-      "heat_source": "2026-06-27 daily hot topics — threadgrab ⭐ #1: Satteri Rust Markdown pipeline (PT translation).",
-      "status": "outline_pending_publish",
-      "providers_featured": [],
-      "primary_cta": "threadgrab",
-      "published_at": null
-    },
-    {
       "slug": "satteri-rust-markdown-pipeline-2026",
+      "lang": "pt",
+      "title": "Satteri 2026: Pipeline Markdown em Rust Vence unified/remark",
+      "url": "https://threadgrab.com/pt/blog/satteri-rust-markdown-pipeline-2026.html",
       "date": "2026-06-27",
-      "type": "comparison",
-      "outline_file": "drafts/build-article-2026-06-27.py",
-      "en_astro": "id/blog/satteri-rust-markdown-pipeline-2026.html",
-      "zh_astro": null,
-      "lang": "id",
+      "heat_source": "2026-06-27 daily hot topics — threadgrab ⭐ #1: Satteri Rust Markdown pipeline (PT translation)."
+    },
+    {
       "file": "id/blog/satteri-rust-markdown-pipeline-2026.html",
-      "url": "https://threadgrab.com/id/blog/satteri-rust-markdown-pipeline-2026.html",
+      "slug": "satteri-rust-markdown-pipeline-2026",
+      "lang": "id",
       "title": "Satteri 2026: Pipeline Markdown Rust Kalahkan unified/remark",
-      "description": "Satteri adalah pipeline Markdown Rust untuk JavaScript, 5 sampai 10x lebih cepat dari unified/remark dengan WASM native. Cocok untuk arsip sosial 2026.",
-      "heat_source": "2026-06-27 daily hot topics — threadgrab ⭐ #1: Satteri Rust Markdown pipeline (ID translation).",
-      "status": "outline_pending_publish",
-      "providers_featured": [],
-      "primary_cta": "threadgrab",
-      "published_at": null
+      "url": "https://threadgrab.com/id/blog/satteri-rust-markdown-pipeline-2026.html",
+      "date": "2026-06-27",
+      "heat_source": "2026-06-27 daily hot topics — threadgrab ⭐ #1: Satteri Rust Markdown pipeline (ID translation)."
     },
     {
-      "slug": "rss-revival-2026-bluesky-feeds",
-      "date": "2026-06-28",
-      "type": "guide",
-      "lang": "en",
-      "file": "/root/threadgrab-site/en/blog/rss-revival-2026-bluesky-feeds.html",
-      "url": "https://threadgrab.com/en/blog/rss-revival-2026-bluesky-feeds.html",
-      "title": "RSS Revival 2026: How Bluesky Saved the Open Web",
-      "description": "RSS is back in 2026. Bluesky ships first-class RSS feeds, Threads and Mastodon followed. How to build a Markdown archive from RSS, with code.",
-      "heat_source": "2026-06-28 daily hot topics — threadgrab rotation: RSS revival / open-web feeds (not yet covered). All 4 priority slots (X Articles vs Bluesky vs LinkedIn Newsletter, Twitter trends, X-to-MD, Bluesky archiving) already covered by 3+ existing slugs each. Fell back to rotation. Strong 2026 signal: Bluesky shipped first-party RSS in Mar 2025; bridge ecosystem for Threads and Mastodon is mature.",
-      "status": "outline_pending_publish",
-      "providers_featured": [
-        "bluesky",
-        "mastodon",
-        "threads"
-      ],
-      "primary_cta": "threadgrab"
-    },
-    {
-      "slug": "rss-revival-2026-bluesky-feeds",
-      "date": "2026-06-28",
-      "type": "guide",
-      "lang": "pt",
-      "file": "/root/threadgrab-site/pt/blog/rss-revival-2026-bluesky-feeds.html",
-      "url": "https://threadgrab.com/pt/blog/rss-revival-2026-bluesky-feeds.html",
-      "title": "Revival do RSS 2026: Como o Bluesky Salvou a Web",
-      "description": "O RSS voltou em 2026. O Bluesky oferece feeds RSS de primeira classe, e Threads e Mastodon seguiram. Como montar um arquivo Markdown via RSS, com codigo.",
-      "heat_source": "2026-06-28 daily hot topics — threadgrab rotation: RSS revival / open-web feeds (not yet covered). All 4 priority slots (X Articles vs Bluesky vs LinkedIn Newsletter, Twitter trends, X-to-MD, Bluesky archiving) already covered by 3+ existing slugs each. Fell back to rotation. Strong 2026 signal: Bluesky shipped first-party RSS in Mar 2025; bridge ecosystem for Threads and Mastodon is mature.",
-      "status": "outline_pending_publish",
-      "providers_featured": [
-        "bluesky",
-        "mastodon",
-        "threads"
-      ],
-      "primary_cta": "threadgrab"
-    },
-    {
-      "slug": "rss-revival-2026-bluesky-feeds",
-      "date": "2026-06-28",
-      "type": "guide",
-      "lang": "id",
-      "file": "/root/threadgrab-site/id/blog/rss-revival-2026-bluesky-feeds.html",
-      "url": "https://threadgrab.com/id/blog/rss-revival-2026-bluesky-feeds.html",
-      "title": "Kebangkitan RSS 2026: Bluesky Selamatkan Web Terbuka",
-      "description": "RSS kembali di 2026. Bluesky hadirkan feed RSS kelas satu, Threads dan Mastodon menyusul. Bangun arsip Markdown dari RSS, dengan kode.",
-      "heat_source": "2026-06-28 daily hot topics — threadgrab rotation: RSS revival / open-web feeds (not yet covered). All 4 priority slots (X Articles vs Bluesky vs LinkedIn Newsletter, Twitter trends, X-to-MD, Bluesky archiving) already covered by 3+ existing slugs each. Fell back to rotation. Strong 2026 signal: Bluesky shipped first-party RSS in Mar 2025; bridge ecosystem for Threads and Mastodon is mature.",
-      "status": "outline_pending_publish",
-      "providers_featured": [
-        "bluesky",
-        "mastodon",
-        "threads"
-      ],
-      "primary_cta": "threadgrab"
-    },
-    {
-      "slug": "caliper-ai-agent-reliability-2026",
-      "date": "2026-06-29",
-      "type": "guide",
-      "lang": "en",
       "file": "en/blog/caliper-ai-agent-reliability-2026.html",
-      "url": "https://threadgrab.com/en/blog/caliper-ai-agent-reliability-2026.html",
+      "slug": "caliper-ai-agent-reliability-2026",
+      "lang": "en",
       "title": "Caliper 2026: AI Agent Reliability for Social Content",
-      "description": "Caliper measures pass@k for AI coding agents. How social creators use it to ship reliable X Articles, Bluesky posts, and LinkedIn drafts in 2026.",
-      "heat_source": "2026-06-29 daily hot topics — threadgrab ⭐ #1: Caliper pass@k reliability test for AI coding agents (6/28 launch, 0 matches in existing slugs). Today's priority list (X Articles vs Bluesky vs LinkedIn Newsletter, Twitter trends, X-to-MD, Bluesky archiving) already covered by 3+ existing articles each. Fell back to today's hot topic.",
-      "tags": [
-        "Caliper",
-        "pass@k",
-        "AI agent reliability",
-        "Claude Code",
-        "Codex",
-        "X Articles AI workflow",
-        "AI writing reliability",
-        "social content AI",
-        "threadgrab",
-        "agent testing 2026"
-      ],
-      "status": "outline_pending_publish",
-      "providers_featured": [
-        "threadgrab"
-      ],
-      "primary_cta": "threadgrab"
+      "url": "https://threadgrab.com/en/blog/caliper-ai-agent-reliability-2026.html",
+      "date": "2026-06-29",
+      "heat_source": "2026-06-29 daily hot topics — threadgrab ⭐ #1: Caliper pass@k reliability test for AI coding agents (6/28 launch, 0 matches in existing slugs). Today's priority list (X Articles vs Bluesky vs LinkedIn Newsletter, Twitter trends, X-to-MD, Bluesky archiving) already covered by 3+ existing articles each. Fell back to today's hot topic."
     },
     {
-      "slug": "caliper-ai-agent-reliability-2026",
-      "date": "2026-06-29",
-      "type": "guia",
-      "lang": "pt",
       "file": "pt/blog/caliper-ai-agent-reliability-2026.html",
-      "url": "https://threadgrab.com/pt/blog/caliper-ai-agent-reliability-2026.html",
-      "title": "Caliper 2026: Confiabilidade de Agentes de IA para Conteudo",
-      "description": "Caliper mede pass@k para agentes de IA. Como criadores usam para publicar X Articles, posts do Bluesky e rascunhos no LinkedIn em 2026.",
-      "heat_source": "2026-06-29 daily hot topics — threadgrab ⭐ #1: Caliper pass@k reliability test for AI coding agents (6/28 launch, 0 matches in existing slugs). Today's priority list (X Articles vs Bluesky vs LinkedIn Newsletter, Twitter trends, X-to-MD, Bluesky archiving) already covered by 3+ existing articles each. Fell back to today's hot topic.",
-      "tags": [
-        "Caliper",
-        "pass@k",
-        "AI agent reliability",
-        "Claude Code",
-        "Codex",
-        "X Articles AI workflow",
-        "AI writing reliability",
-        "social content AI",
-        "threadgrab",
-        "agent testing 2026"
-      ],
-      "status": "outline_pending_publish",
-      "providers_featured": [
-        "threadgrab"
-      ],
-      "primary_cta": "threadgrab"
-    },
-    {
       "slug": "caliper-ai-agent-reliability-2026",
+      "lang": "pt",
+      "title": "Caliper 2026: Confiabilidade de Agentes de IA para Conteudo",
+      "url": "https://threadgrab.com/pt/blog/caliper-ai-agent-reliability-2026.html",
       "date": "2026-06-29",
-      "type": "panduan",
-      "lang": "id",
-      "file": "id/blog/caliper-ai-agent-reliability-2026.html",
-      "url": "https://threadgrab.com/id/blog/caliper-ai-agent-reliability-2026.html",
-      "title": "Caliper 2026: Keandalan Agen AI untuk Konten Sosial",
-      "description": "Caliper mengukur pass@k untuk agen AI. Bagaimana kreator mengirim X Articles,帖子 Bluesky, dan draf LinkedIn yang andal di 2026.",
-      "heat_source": "2026-06-29 daily hot topics — threadgrab ⭐ #1: Caliper pass@k reliability test for AI coding agents (6/28 launch, 0 matches in existing slugs). Today's priority list (X Articles vs Bluesky vs LinkedIn Newsletter, Twitter trends, X-to-MD, Bluesky archiving) already covered by 3+ existing articles each. Fell back to today's hot topic.",
-      "tags": [
-        "Caliper",
-        "pass@k",
-        "AI agent reliability",
-        "Claude Code",
-        "Codex",
-        "X Articles AI workflow",
-        "AI writing reliability",
-        "social content AI",
-        "threadgrab",
-        "agent testing 2026"
-      ],
-      "status": "outline_pending_publish",
-      "providers_featured": [
-        "threadgrab"
-      ],
-      "primary_cta": "threadgrab"
+      "heat_source": "2026-06-29 daily hot topics — threadgrab ⭐ #1: Caliper pass@k reliability test for AI coding agents (6/28 launch, 0 matches in existing slugs). Today's priority list (X Articles vs Bluesky vs LinkedIn Newsletter, Twitter trends, X-to-MD, Bluesky archiving) already covered by 3+ existing articles each. Fell back to today's hot topic."
     },
     {
+      "file": "id/blog/caliper-ai-agent-reliability-2026.html",
+      "slug": "caliper-ai-agent-reliability-2026",
+      "lang": "id",
+      "title": "Caliper 2026: Keandalan Agen AI untuk Konten Sosial",
+      "url": "https://threadgrab.com/id/blog/caliper-ai-agent-reliability-2026.html",
+      "date": "2026-06-29",
+      "heat_source": "2026-06-29 daily hot topics — threadgrab ⭐ #1: Caliper pass@k reliability test for AI coding agents (6/28 launch, 0 matches in existing slugs). Today's priority list (X Articles vs Bluesky vs LinkedIn Newsletter, Twitter trends, X-to-MD, Bluesky archiving) already covered by 3+ existing articles each. Fell back to today's hot topic."
+    },
+    {
+      "file": "en/blog/atproto-bluesky-data-portability-2026.html",
       "slug": "atproto-bluesky-data-portability-2026",
-      "date": "2026-07-01",
-      "type": "guide",
       "lang": "en",
       "title": "ATProto & Bluesky Data Portability 2026: The Eurosky Wave",
-      "description": "How social creators use ATProto data portability after the 2026 Bluesky-to-Eurosky migration wave — firehose reads, PDS export, and a portable archive.",
-      "file": "en/blog/atproto-bluesky-data-portability-2026.html",
       "url": "https://threadgrab.com/en/blog/atproto-bluesky-data-portability-2026.html",
-      "path_en": "en/blog/atproto-bluesky-data-portability-2026.html",
-      "path_pt": "pt/blog/atproto-bluesky-data-portability-2026.html",
-      "path_id": "id/blog/atproto-bluesky-data-portability-2026.html",
-      "url_en": "https://threadgrab.com/en/blog/atproto-bluesky-data-portability-2026.html",
-      "url_pt": "https://threadgrab.com/pt/blog/atproto-bluesky-data-portability-2026.html",
-      "url_id": "https://threadgrab.com/id/blog/atproto-bluesky-data-portability-2026.html",
-      "heat_source": "2026-07-01 daily hot topics ⭐ — Bluesky data migration wave to Eurosky (HN 141pt, Waag article on ATProto decentralization). ATProto angle is fresh in the threadgrab corpus (0 existing slugs); the other threadgrab-direction ⭐ topics are already covered 3+ times each. Falls into 5th archetype: news hook + tool/workflow angle.",
-      "tags": [
-        "atproto",
-        "bluesky",
-        "eurosky",
-        "pds",
-        "firehose",
-        "ThreadGrab"
-      ],
-      "schema_types": [
-        "Article",
-        "BreadcrumbList",
-        "FAQPage"
-      ],
-      "status": "outline_pending_publish",
-      "created_at": "2026-07-01",
-      "lang_versions": [
-        "en",
-        "pt",
-        "id"
-      ]
+      "date": "2026-07-01",
+      "heat_source": "2026-07-01 daily hot topics ⭐ — Bluesky data migration wave to Eurosky (HN 141pt, Waag article on ATProto decentralization). ATProto angle is fresh in the threadgrab corpus (0 existing slugs); the other threadgrab-direction ⭐ topics are already covered 3+ times each. Falls into 5th archetype: news hook + tool/workflow angle."
     },
     {
+      "file": "pt/blog/atproto-bluesky-data-portability-2026.html",
       "slug": "atproto-bluesky-data-portability-2026",
-      "date": "2026-07-01",
-      "type": "guide",
       "lang": "pt",
       "title": "ATProto e Bluesky 2026: Portabilidade na Onda Eurosky",
-      "description": "Como criadores usam a portabilidade de dados do ATProto apos a onda Eurosky de 2026 — firehose, PDS e arquivo portatil.",
-      "file": "pt/blog/atproto-bluesky-data-portability-2026.html",
       "url": "https://threadgrab.com/pt/blog/atproto-bluesky-data-portability-2026.html",
-      "path_en": "en/blog/atproto-bluesky-data-portability-2026.html",
-      "path_pt": "pt/blog/atproto-bluesky-data-portability-2026.html",
-      "path_id": "id/blog/atproto-bluesky-data-portability-2026.html",
-      "url_en": "https://threadgrab.com/en/blog/atproto-bluesky-data-portability-2026.html",
-      "url_pt": "https://threadgrab.com/pt/blog/atproto-bluesky-data-portability-2026.html",
-      "url_id": "https://threadgrab.com/id/blog/atproto-bluesky-data-portability-2026.html",
-      "heat_source": "Topicos quentes de 2026-07-01 ⭐ — onda de migracao de dados do Bluesky para o Eurosky (HN 141pt). Angulo ATProto novo no corpus threadgrab (0 slugs). Topicos ⭐ ja cobertos 3+ vezes.",
-      "tags": [
-        "atproto",
-        "bluesky",
-        "eurosky",
-        "pds",
-        "firehose",
-        "ThreadGrab"
-      ],
-      "schema_types": [
-        "Article",
-        "BreadcrumbList",
-        "FAQPage"
-      ],
-      "status": "outline_pending_publish",
-      "created_at": "2026-07-01",
-      "lang_versions": [
-        "en",
-        "pt",
-        "id"
-      ]
+      "date": "2026-07-01",
+      "heat_source": "Topicos quentes de 2026-07-01 ⭐ — onda de migracao de dados do Bluesky para o Eurosky (HN 141pt). Angulo ATProto novo no corpus threadgrab (0 slugs). Topicos ⭐ ja cobertos 3+ vezes."
     },
     {
+      "file": "id/blog/atproto-bluesky-data-portability-2026.html",
       "slug": "atproto-bluesky-data-portability-2026",
-      "date": "2026-07-01",
-      "type": "guide",
       "lang": "id",
       "title": "ATProto & Portabilitas Data Bluesky 2026: Gelombang Eurosky",
-      "description": "Bagaimana kreator memakai portabilitas data ATProto setelah gelombang migrasi Bluesky-ke-Eurosky 2026 — baca firehose, ekspor PDS, dan arsip portabel.",
-      "file": "id/blog/atproto-bluesky-data-portability-2026.html",
       "url": "https://threadgrab.com/id/blog/atproto-bluesky-data-portability-2026.html",
-      "path_en": "en/blog/atproto-bluesky-data-portability-2026.html",
-      "path_pt": "pt/blog/atproto-bluesky-data-portability-2026.html",
-      "path_id": "id/blog/atproto-bluesky-data-portability-2026.html",
-      "url_en": "https://threadgrab.com/en/blog/atproto-bluesky-data-portability-2026.html",
-      "url_pt": "https://threadgrab.com/pt/blog/atproto-bluesky-data-portability-2026.html",
-      "url_id": "https://threadgrab.com/id/blog/atproto-bluesky-data-portability-2026.html",
-      "heat_source": "Topik harian 2026-07-01 ⭐ — gelombang migrasi data Bluesky ke Eurosky (HN 141pt). Sudut ATProto baru di korpus threadgrab (0 slug). Topik ⭐ lain sudah dibahas 3+ kali.",
-      "tags": [
-        "atproto",
-        "bluesky",
-        "eurosky",
-        "pds",
-        "firehose",
-        "ThreadGrab"
-      ],
-      "schema_types": [
-        "Article",
-        "BreadcrumbList",
-        "FAQPage"
-      ],
-      "status": "outline_pending_publish",
-      "created_at": "2026-07-01",
-      "lang_versions": [
-        "en",
-        "pt",
-        "id"
-      ]
+      "date": "2026-07-01",
+      "heat_source": "Topik harian 2026-07-01 ⭐ — gelombang migrasi data Bluesky ke Eurosky (HN 141pt). Sudut ATProto baru di korpus threadgrab (0 slug). Topik ⭐ lain sudah dibahas 3+ kali."
     },
     {
+      "file": "en/blog/x-hosted-mcp-creator-workflow-2026.html",
       "slug": "x-hosted-mcp-creator-workflow-2026",
-      "date": "2026-07-02",
-      "type": "guide",
       "lang": "en",
       "title": "X Hosted MCP 2026: Creator Workflow Changes",
-      "description": "X launched a hosted MCP server for creators. How Claude Code, Cursor, and Windsurf now read, draft, and post X content through one endpoint.",
-      "file": "en/blog/x-hosted-mcp-creator-workflow-2026.html",
       "url": "https://threadgrab.com/en/blog/x-hosted-mcp-creator-workflow-2026.html",
-      "path_en": "en/blog/x-hosted-mcp-creator-workflow-2026.html",
-      "path_pt": "pt/blog/x-hosted-mcp-creator-workflow-2026.html",
-      "path_id": "id/blog/x-hosted-mcp-creator-workflow-2026.html",
-      "url_en": "https://threadgrab.com/en/blog/x-hosted-mcp-creator-workflow-2026.html",
-      "url_pt": "https://threadgrab.com/pt/blog/x-hosted-mcp-creator-workflow-2026.html",
-      "url_id": "https://threadgrab.com/id/blog/x-hosted-mcp-creator-workflow-2026.html",
-      "heat_source": "2026-07-02 daily hot topics — X (Twitter) launched a hosted MCP server for AI agents (x.com/op7418/status/2071816099986022650). Distinct from existing openrouter-mcp-server article (which covers model-routing MCP). Today's angle is X-PLATFORM-NATIVE MCP for creators: read, draft, and post X content through one canonical endpoint instead of managing separate OAuth tokens per tool.",
-      "providers_featured": [
-        "x",
-        "anthropic",
-        "openai"
-      ],
-      "primary_cta": "threadgrab",
-      "status": "outline_pending_publish",
-      "created_at": "2026-07-02"
+      "date": "2026-07-02",
+      "heat_source": "2026-07-02 daily hot topics — X (Twitter) launched a hosted MCP server for AI agents (x.com/op7418/status/2071816099986022650). Distinct from existing openrouter-mcp-server article (which covers model-routing MCP). Today's angle is X-PLATFORM-NATIVE MCP for creators: read, draft, and post X content through one canonical endpoint instead of managing separate OAuth tokens per tool."
     },
     {
+      "file": "pt/blog/x-hosted-mcp-creator-workflow-2026.html",
       "slug": "x-hosted-mcp-creator-workflow-2026",
-      "date": "2026-07-02",
-      "type": "guide",
       "lang": "pt",
       "title": "X MCP Hospedado 2026: Mudancas no Fluxo do Criador",
-      "description": "X lancou servidor MCP hospedado para criadores. Como Claude Code, Cursor e Windsurf agora leem, escrevem e postam conteudo via um endpoint.",
-      "file": "pt/blog/x-hosted-mcp-creator-workflow-2026.html",
       "url": "https://threadgrab.com/pt/blog/x-hosted-mcp-creator-workflow-2026.html",
-      "path_en": "en/blog/x-hosted-mcp-creator-workflow-2026.html",
-      "path_pt": "pt/blog/x-hosted-mcp-creator-workflow-2026.html",
-      "path_id": "id/blog/x-hosted-mcp-creator-workflow-2026.html",
-      "url_en": "https://threadgrab.com/en/blog/x-hosted-mcp-creator-workflow-2026.html",
-      "url_pt": "https://threadgrab.com/pt/blog/x-hosted-mcp-creator-workflow-2026.html",
-      "url_id": "https://threadgrab.com/id/blog/x-hosted-mcp-creator-workflow-2026.html",
-      "heat_source": "Topicos quentes 2026-07-02 — X (Twitter) lancou servidor MCP hospedado para agentes IA (x.com/op7418/status/2071816099986022650). Diferente do artigo openrouter-mcp-server (cobre MCP multi-modelo). Angulo de hoje: MCP NATIVO da plataforma X para criadores lerem, escreverem e postarem via um endpoint canonico.",
-      "providers_featured": [
-        "x",
-        "anthropic",
-        "openai"
-      ],
-      "primary_cta": "threadgrab",
-      "status": "outline_pending_publish",
-      "created_at": "2026-07-02"
+      "date": "2026-07-02",
+      "heat_source": "Topicos quentes 2026-07-02 — X (Twitter) lancou servidor MCP hospedado para agentes IA (x.com/op7418/status/2071816099986022650). Diferente do artigo openrouter-mcp-server (cobre MCP multi-modelo). Angulo de hoje: MCP NATIVO da plataforma X para criadores lerem, escreverem e postarem via um endpoint canonico."
     },
     {
+      "file": "id/blog/x-hosted-mcp-creator-workflow-2026.html",
       "slug": "x-hosted-mcp-creator-workflow-2026",
-      "date": "2026-07-02",
-      "type": "guide",
       "lang": "id",
       "title": "X MCP Terhost 2026: Perubahan Alur Kreator",
-      "description": "X luncurkan server MCP terhost untuk kreator. Bagaimana Claude Code, Cursor, Windsurf membaca dan memposting konten via satu endpoint.",
-      "file": "id/blog/x-hosted-mcp-creator-workflow-2026.html",
       "url": "https://threadgrab.com/id/blog/x-hosted-mcp-creator-workflow-2026.html",
-      "path_en": "en/blog/x-hosted-mcp-creator-workflow-2026.html",
-      "path_pt": "pt/blog/x-hosted-mcp-creator-workflow-2026.html",
-      "path_id": "id/blog/x-hosted-mcp-creator-workflow-2026.html",
-      "url_en": "https://threadgrab.com/en/blog/x-hosted-mcp-creator-workflow-2026.html",
-      "url_pt": "https://threadgrab.com/pt/blog/x-hosted-mcp-creator-workflow-2026.html",
-      "url_id": "https://threadgrab.com/id/blog/x-hosted-mcp-creator-workflow-2026.html",
-      "heat_source": "Topik panas 2026-07-02 — X (Twitter) luncurkan server MCP terhost untuk agen AI (x.com/op7418/status/2071816099986022650). Berbeda dari artikel openrouter-mcp-server (mencakup MCP multi-model). Sudut pandang hari ini: MCP ASLI platform X untuk kreator membaca, menulis, dan memposting lewat satu endpoint kanonik.",
-      "providers_featured": [
-        "x",
-        "anthropic",
-        "openai"
-      ],
-      "primary_cta": "threadgrab",
-      "status": "outline_pending_publish",
-      "created_at": "2026-07-02"
+      "date": "2026-07-02",
+      "heat_source": "Topik panas 2026-07-02 — X (Twitter) luncurkan server MCP terhost untuk agen AI (x.com/op7418/status/2071816099986022650). Berbeda dari artikel openrouter-mcp-server (mencakup MCP multi-model). Sudut pandang hari ini: MCP ASLI platform X untuk kreator membaca, menulis, dan memposting lewat satu endpoint kanonik."
     },
     {
-      "slug": "shadowbroker-mcp-osint-social-creators-2026",
-      "date": "2026-07-03",
-      "type": "guide",
-      "lang": "en",
-      "status": "outline_pending_publish",
       "file": "en/blog/shadowbroker-mcp-osint-social-creators-2026.html",
-      "url": "https://threadgrab.com/en/blog/shadowbroker-mcp-osint-social-creators-2026.html",
+      "slug": "shadowbroker-mcp-osint-social-creators-2026",
+      "lang": "en",
       "title": "Shadowbroker MCP 2026: OSINT Dashboard for Social Creators",
-      "description": "Build a 2026 MCP-powered OSINT dashboard for X, Bluesky, LinkedIn, RSS, and 15+ sources — the Shadowbroker pattern for social content creators.",
-      "heat_source": "2026-07-03 daily hot topics — threadgrab ⭐ #1: Shadowbroker MCP server (BigBodyCobain/Shadowbroker) wraps 15+ social/code/news sources as MCP tools. Complements openrouter-mcp-server-social-content-creators-2026 (LLM routing) and x-hosted-mcp-creator-workflow-2026 (distribution) as the ingestion layer in a 3-layer MCP stack for creators.",
-      "providers_featured": [
-        "shadowbroker",
-        "claude-code",
-        "codex-cli",
-        "cursor"
-      ],
-      "primary_cta": "threadgrab"
+      "url": "https://threadgrab.com/en/blog/shadowbroker-mcp-osint-social-creators-2026.html",
+      "date": "2026-07-03",
+      "heat_source": "2026-07-03 daily hot topics — threadgrab ⭐ #1: Shadowbroker MCP server (BigBodyCobain/Shadowbroker) wraps 15+ social/code/news sources as MCP tools. Complements openrouter-mcp-server-social-content-creators-2026 (LLM routing) and x-hosted-mcp-creator-workflow-2026 (distribution) as the ingestion layer in a 3-layer MCP stack for creators."
     },
     {
-      "slug": "shadowbroker-mcp-osint-social-creators-2026",
-      "date": "2026-07-03",
-      "type": "guide",
-      "lang": "pt",
-      "status": "outline_pending_publish",
       "file": "pt/blog/shadowbroker-mcp-osint-social-creators-2026.html",
-      "url": "https://threadgrab.com/pt/blog/shadowbroker-mcp-osint-social-creators-2026.html",
-      "title": "Shadowbroker MCP 2026: OSINT para Criadores Sociais",
-      "description": "Construa um painel OSINT MCP 2026 para X, Bluesky, LinkedIn, RSS e 15+ fontes — o padrão Shadowbroker para criadores de conteúdo social.",
-      "heat_source": "2026-07-03 daily hot topics — threadgrab ⭐ #1: Shadowbroker MCP server (BigBodyCobain/Shadowbroker) wraps 15+ social/code/news sources as MCP tools. Complements openrouter-mcp-server-social-content-creators-2026 (LLM routing) and x-hosted-mcp-creator-workflow-2026 (distribution) as the ingestion layer in a 3-layer MCP stack for creators.",
-      "providers_featured": [
-        "shadowbroker",
-        "claude-code",
-        "codex-cli",
-        "cursor"
-      ],
-      "primary_cta": "threadgrab"
-    },
-    {
       "slug": "shadowbroker-mcp-osint-social-creators-2026",
+      "lang": "pt",
+      "title": "Shadowbroker MCP 2026: OSINT para Criadores Sociais",
+      "url": "https://threadgrab.com/pt/blog/shadowbroker-mcp-osint-social-creators-2026.html",
       "date": "2026-07-03",
-      "type": "guide",
-      "lang": "id",
-      "status": "outline_pending_publish",
-      "file": "id/blog/shadowbroker-mcp-osint-social-creators-2026.html",
-      "url": "https://threadgrab.com/id/blog/shadowbroker-mcp-osint-social-creators-2026.html",
-      "title": "Shadowbroker MCP 2026: Dasbor OSINT untuk Kreator Sosial",
-      "description": "Bangun dasbor OSINT berbasis MCP 2026 untuk X, Bluesky, LinkedIn, RSS, dan 15+ sumber — pola Shadowbroker untuk kreator konten sosial.",
-      "heat_source": "2026-07-03 daily hot topics — threadgrab ⭐ #1: Shadowbroker MCP server (BigBodyCobain/Shadowbroker) wraps 15+ social/code/news sources as MCP tools. Complements openrouter-mcp-server-social-content-creators-2026 (LLM routing) and x-hosted-mcp-creator-workflow-2026 (distribution) as the ingestion layer in a 3-layer MCP stack for creators.",
-      "providers_featured": [
-        "shadowbroker",
-        "claude-code",
-        "codex-cli",
-        "cursor"
-      ],
-      "primary_cta": "threadgrab"
+      "heat_source": "2026-07-03 daily hot topics — threadgrab ⭐ #1: Shadowbroker MCP server (BigBodyCobain/Shadowbroker) wraps 15+ social/code/news sources as MCP tools. Complements openrouter-mcp-server-social-content-creators-2026 (LLM routing) and x-hosted-mcp-creator-workflow-2026 (distribution) as the ingestion layer in a 3-layer MCP stack for creators."
     },
     {
+      "file": "id/blog/shadowbroker-mcp-osint-social-creators-2026.html",
+      "slug": "shadowbroker-mcp-osint-social-creators-2026",
+      "lang": "id",
+      "title": "Shadowbroker MCP 2026: Dasbor OSINT untuk Kreator Sosial",
+      "url": "https://threadgrab.com/id/blog/shadowbroker-mcp-osint-social-creators-2026.html",
+      "date": "2026-07-03",
+      "heat_source": "2026-07-03 daily hot topics — threadgrab ⭐ #1: Shadowbroker MCP server (BigBodyCobain/Shadowbroker) wraps 15+ social/code/news sources as MCP tools. Complements openrouter-mcp-server-social-content-creators-2026 (LLM routing) and x-hosted-mcp-creator-workflow-2026 (distribution) as the ingestion layer in a 3-layer MCP stack for creators."
+    },
+    {
+      "file": "en/blog/capcat-web-article-archiving-2026.html",
       "slug": "capcat-web-article-archiving-2026",
+      "lang": "en",
+      "title": "Capcat 2026: CLI Web Article Archiving for Creators",
+      "url": "https://threadgrab.com/en/blog/capcat-web-article-archiving-2026.html",
       "date": "2026-07-04",
+      "heat_source": "2026-07-04 daily hot topics ⭐ — Capcat CLI/TUI article archiving tool (capcat.org). Today's priority slots already covered by existing articles; Capcat is a fresh FOSS topic in the web-to-Markdown space complementing ThreadGrab's social-thread focus."
+    },
+    {
+      "file": "pt/blog/capcat-web-article-archiving-2026.html",
+      "slug": "capcat-web-article-archiving-2026",
+      "lang": "pt",
+      "title": "Capcat 2026: Arquivamento de Artigos Web CLI para Criadores",
+      "url": "https://threadgrab.com/pt/blog/capcat-web-article-archiving-2026.html",
+      "date": "2026-07-04",
+      "heat_source": "2026-07-04 daily hot topics ⭐ — Capcat CLI/TUI article archiving tool (capcat.org). Translation to pt-BR."
+    },
+    {
+      "file": "id/blog/capcat-web-article-archiving-2026.html",
+      "slug": "capcat-web-article-archiving-2026",
+      "lang": "id",
+      "title": "Capcat 2026: Pengarsipan Artikel Web CLI untuk Kreator",
+      "url": "https://threadgrab.com/id/blog/capcat-web-article-archiving-2026.html",
+      "date": "2026-07-04",
+      "heat_source": "2026-07-04 daily hot topics ⭐ — Capcat CLI/TUI article archiving tool (capcat.org). Translation to id-ID."
+    },
+    {
+      "file": "/root/threadgrab-site/en/blog/rss-revival-2026-bluesky-feeds.html",
+      "slug": "rss-revival-2026-bluesky-feeds",
+      "lang": "en",
+      "title": "RSS Revival 2026: How Bluesky Saved the Open Web",
+      "url": "https://threadgrab.com/en/blog/rss-revival-2026-bluesky-feeds.html",
+      "date": "2026-06-28",
+      "heat_source": "2026-06-28 daily hot topics — threadgrab rotation: RSS revival / open-web feeds (not yet covered). All 4 priority slots (X Articles vs Bluesky vs LinkedIn Newsletter, Twitter trends, X-to-MD, Bluesky archiving) already covered by 3+ existing slugs each. Fell back to rotation. Strong 2026 signal: Bluesky shipped first-party RSS in Mar 2025; bridge ecosystem for Threads and Mastodon is mature."
+    },
+    {
+      "file": "/root/threadgrab-site/pt/blog/rss-revival-2026-bluesky-feeds.html",
+      "slug": "rss-revival-2026-bluesky-feeds",
+      "lang": "pt",
+      "title": "Revival do RSS 2026: Como o Bluesky Salvou a Web",
+      "url": "https://threadgrab.com/pt/blog/rss-revival-2026-bluesky-feeds.html",
+      "date": "2026-06-28",
+      "heat_source": "2026-06-28 daily hot topics — threadgrab rotation: RSS revival / open-web feeds (not yet covered). All 4 priority slots (X Articles vs Bluesky vs LinkedIn Newsletter, Twitter trends, X-to-MD, Bluesky archiving) already covered by 3+ existing slugs each. Fell back to rotation. Strong 2026 signal: Bluesky shipped first-party RSS in Mar 2025; bridge ecosystem for Threads and Mastodon is mature."
+    },
+    {
+      "file": "/root/threadgrab-site/id/blog/rss-revival-2026-bluesky-feeds.html",
+      "slug": "rss-revival-2026-bluesky-feeds",
+      "lang": "id",
+      "title": "Kebangkitan RSS 2026: Bluesky Selamatkan Web Terbuka",
+      "url": "https://threadgrab.com/id/blog/rss-revival-2026-bluesky-feeds.html",
+      "date": "2026-06-28",
+      "heat_source": "2026-06-28 daily hot topics — threadgrab rotation: RSS revival / open-web feeds (not yet covered). All 4 priority slots (X Articles vs Bluesky vs LinkedIn Newsletter, Twitter trends, X-to-MD, Bluesky archiving) already covered by 3+ existing slugs each. Fell back to rotation. Strong 2026 signal: Bluesky shipped first-party RSS in Mar 2025; bridge ecosystem for Threads and Mastodon is mature."
+    },
+    {
+      "slug": "bluesky-long-form-creator-playbook-2026",
+      "date": "2026-07-06",
       "type": "guide",
       "lang": "en",
-      "file": "en/blog/capcat-web-article-archiving-2026.html",
-      "url": "https://threadgrab.com/en/blog/capcat-web-article-archiving-2026.html",
-      "title": "Capcat 2026: CLI Web Article Archiving for Creators",
-      "description": "Capcat is a FOSS CLI/TUI tool for archiving web articles as Markdown and HTML. Compare with ThreadGrab for a complete social and web archive in 2026.",
-      "heat_source": "2026-07-04 daily hot topics ⭐ — Capcat CLI/TUI article archiving tool (capcat.org). Today's priority slots already covered by existing articles; Capcat is a fresh FOSS topic in the web-to-Markdown space complementing ThreadGrab's social-thread focus.",
-      "status": "outline_pending_publish",
-      "created_at": "2026-07-04",
+      "file": "en/blog/bluesky-long-form-creator-playbook-2026.html",
+      "url": "https://threadgrab.com/en/blog/bluesky-long-form-creator-playbook-2026.html",
+      "title": "Bluesky Long-Form Posts 2026: The Read-Side Playbook",
+      "description": "Bluesky launched long-form posts in May 2026. A 4-step creator playbook for reading, archiving, and cross-referencing long-form on Bluesky + X Articles.",
+      "heat_source": "Bluesky推出长文模式反击X Articles (techcrunch 2026-05-28)",
+      "status": "published",
+      "published_at": "2026-07-06T04:08:26.551292Z",
       "providers_featured": [
+        "bluesky",
+        "x-articles",
         "threadgrab"
       ],
-      "primary_cta": "Try ThreadGrab — Free Social Content Archiver"
+      "primary_cta": "Try ThreadGrab Free"
     },
     {
-      "slug": "capcat-web-article-archiving-2026",
-      "date": "2026-07-04",
+      "slug": "bluesky-long-form-creator-playbook-2026",
+      "date": "2026-07-06",
       "type": "guide",
       "lang": "pt",
-      "file": "pt/blog/capcat-web-article-archiving-2026.html",
-      "url": "https://threadgrab.com/pt/blog/capcat-web-article-archiving-2026.html",
-      "title": "Capcat 2026: Arquivamento de Artigos Web CLI para Criadores",
-      "description": "Capcat e uma ferramenta CLI/TUI FOSS que arquiva artigos web como Markdown e HTML. Compare com ThreadGrab para um arquivo completo social e web em 2026.",
-      "heat_source": "2026-07-04 daily hot topics ⭐ — Capcat CLI/TUI article archiving tool (capcat.org). Translation to pt-BR.",
-      "status": "outline_pending_publish",
-      "created_at": "2026-07-04",
+      "file": "pt/blog/bluesky-long-form-creator-playbook-2026.html",
+      "url": "https://threadgrab.com/pt/blog/bluesky-long-form-creator-playbook-2026.html",
+      "title": "Posts Longos do Bluesky 2026: Guia de Leitura para Criadores",
+      "description": "Bluesky lancou posts longos em maio de 2026. Guia de 4 passos para criadores lerem, arquivarem e cruzarem posts longos do Bluesky e X Articles.",
+      "heat_source": "Bluesky推出长文模式反击X Articles (techcrunch 2026-05-28)",
+      "status": "published",
+      "published_at": "2026-07-06T04:08:26.551304Z",
       "providers_featured": [
+        "bluesky",
+        "x-articles",
         "threadgrab"
       ],
-      "primary_cta": "Experimente ThreadGrab — Arquivador Social Gratuito"
+      "primary_cta": "Experimente o ThreadGrab grátis"
     },
     {
-      "slug": "capcat-web-article-archiving-2026",
-      "date": "2026-07-04",
+      "slug": "bluesky-long-form-creator-playbook-2026",
+      "date": "2026-07-06",
       "type": "guide",
       "lang": "id",
-      "file": "id/blog/capcat-web-article-archiving-2026.html",
-      "url": "https://threadgrab.com/id/blog/capcat-web-article-archiving-2026.html",
-      "title": "Capcat 2026: Pengarsipan Artikel Web CLI untuk Kreator",
-      "description": "Capcat: alat CLI/TUI FOSS untuk arsip artikel web sebagai Markdown dan HTML. Bandingkan dengan ThreadGrab untuk arsip sosial dan web lengkap di 2026.",
-      "heat_source": "2026-07-04 daily hot topics ⭐ — Capcat CLI/TUI article archiving tool (capcat.org). Translation to id-ID.",
-      "status": "outline_pending_publish",
-      "created_at": "2026-07-04",
+      "file": "id/blog/bluesky-long-form-creator-playbook-2026.html",
+      "url": "https://threadgrab.com/id/blog/bluesky-long-form-creator-playbook-2026.html",
+      "title": "Post Panjang Bluesky 2026: Panduan Sisi Baca Kreator",
+      "description": "Bluesky luncurkan post panjang Mei 2026. Panduan 4 langkah kreator untuk membaca, mengarsipkan, dan menghubungkan post panjang Bluesky dan X Articles.",
+      "heat_source": "Bluesky推出长文模式反击X Articles (techcrunch 2026-05-28)",
+      "status": "published",
+      "published_at": "2026-07-06T04:08:26.551306Z",
       "providers_featured": [
+        "bluesky",
+        "x-articles",
         "threadgrab"
       ],
-      "primary_cta": "Coba ThreadGrab — Pengarsip Konten Sosial Gratis"
+      "primary_cta": "Coba ThreadGrab Gratis"
     }
   ],
+  "drafts": [],
   "recent_topics": [
     "capcat-web-article-archiving-2026",
     "shadowbroker-mcp-osint-social-creators-2026",
@@ -1921,8 +1509,8 @@
   "last_published_slug": "social-media-content-backup-strategy-2026",
   "last_draft_slug": "capcat-web-article-archiving-2026",
   "last_published_at": "2026-06-25T07:05:52.466222+08:00",
-  "drafts_count": 27,
-  "published_count": 48,
+  "drafts_count": 0,
+  "published_count": 75,
   "last_topic_picked": "capcat-web-article-archiving-2026",
   "last_pick_source": "daily-briefing-2026-07-04 (Capcat CLI article archiving tool)"
 }
