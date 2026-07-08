@@ -1548,12 +1548,13 @@
       "title": "SC-MCP 2026: Claude Reads Your X Post SEO | ThreadGrab",
       "description": "Google Search Console MCP lets Claude pull GSC data directly. A creator's guide to wiring SC-MCP into your X and Bluesky post-publish SEO workflow.",
       "heat_source": "⭐ 2026-07-08 daily report — Search Console MCP (Show HN 2026-07-02) + GSC social/video panel (2026-07-07). 2nd threadgrab priority (tweet.md covered 2026-07-07). 5th archetype: AI-tool-meets-creator-workflow, reframe developer MCP server as creator-SEO tool.",
-      "status": "outline_pending_publish",
+      "status": "published",
       "providers_featured": [
         "sc-mcp",
         "threadgrab"
       ],
-      "primary_cta": "Try ThreadGrab (en)"
+      "primary_cta": "Try ThreadGrab (en)",
+      "updatedAt": "2026-07-08T10:40:33.095Z"
     },
     {
       "slug": "search-console-mcp-seo-2026",
@@ -1565,12 +1566,13 @@
       "title": "SC-MCP 2026: Claude Lê SEO dos Posts X | ThreadGrab",
       "description": "O Google Search Console MCP permite ao Claude buscar dados do GSC. Guia do criador para integrar o SC-MCP ao fluxo SEO pós-publicação no X e Bluesky.",
       "heat_source": "⭐ 2026-07-08 daily report — Search Console MCP (Show HN 2026-07-02) + GSC social/video panel (2026-07-07). 2nd threadgrab priority (tweet.md covered 2026-07-07). 5th archetype: AI-tool-meets-creator-workflow, reframe developer MCP server as creator-SEO tool.",
-      "status": "outline_pending_publish",
+      "status": "published",
       "providers_featured": [
         "sc-mcp",
         "threadgrab"
       ],
-      "primary_cta": "Experimente o ThreadGrab (pt)"
+      "primary_cta": "Experimente o ThreadGrab (pt)",
+      "updatedAt": "2026-07-08T10:40:33.095Z"
     },
     {
       "slug": "search-console-mcp-seo-2026",
@@ -1582,12 +1584,13 @@
       "title": "SC-MCP 2026: Claude Baca SEO Postingan X | ThreadGrab",
       "description": "Google Search Console MCP memungkinkan Claude menarik data GSC langsung. Panduan kreator untuk memasang SC-MCP di alur SEO pasca-publish X dan Bluesky.",
       "heat_source": "⭐ 2026-07-08 daily report — Search Console MCP (Show HN 2026-07-02) + GSC social/video panel (2026-07-07). 2nd threadgrab priority (tweet.md covered 2026-07-07). 5th archetype: AI-tool-meets-creator-workflow, reframe developer MCP server as creator-SEO tool.",
-      "status": "outline_pending_publish",
+      "status": "published",
       "providers_featured": [
         "sc-mcp",
         "threadgrab"
       ],
-      "primary_cta": "Coba ThreadGrab (id)"
+      "primary_cta": "Coba ThreadGrab (id)",
+      "updatedAt": "2026-07-08T10:40:33.095Z"
     }
   ],
   "recent_topics": [
