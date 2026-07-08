@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SC-MCP 2026: <span>Claude Reads Your X Post SEO</span></title>
+  <meta name="description" content="Google Search Console MCP lets Claude pull GSC data directly. A creator's guide to wiring SC-MCP into your X and Bluesky post-publish SEO workflow.">
+  <meta name="keywords" content="search console mcp 2026, gsc mcp claude, sc-mcp show hn, x post seo data, gsc social video panels, creator seo workflow, mcp server gsc, ThreadGrab">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/en/blog/search-console-mcp-seo-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/search-console-mcp-seo-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/search-console-mcp-seo-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/search-console-mcp-seo-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/search-console-mcp-seo-2026.html">
+  <meta property="og:title" content="SC-MCP 2026: Claude Reads Your X Post SEO | ThreadGrab">
+  <meta property="og:description" content="Google Search Console MCP lets Claude pull GSC data directly. A creator's guide to wiring SC-MCP into your X and Bluesky post-publish SEO workflow.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/en/blog/search-console-mcp-seo-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SC-MCP 2026: Claude Reads Your X Post SEO | ThreadGrab">
+  <meta name="twitter:description" content="Google Search Console MCP lets Claude pull GSC data directly. A creator's guide to wiring SC-MCP into your X and Bluesky post-publish SEO workflow.">
+  <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "SC-MCP 2026: Claude Reads Your X Post SEO", "description": "Google Search Console MCP lets Claude pull GSC data directly. A creator's guide to wiring SC-MCP into your X and Bluesky post-publish SEO workflow.", "author": {"@type": "Organization", "name": "ThreadGrab"}, "publisher": {"@type": "Organization", "name": "ThreadGrab", "logo": {"@type": "ImageObject", "url": "https://threadgrab.com/logo.png"}}, "datePublished": "2026-07-08", "dateModified": "2026-07-08", "mainEntityOfPage": "https://threadgrab.com/en/blog/search-console-mcp-seo-2026.html", "inLanguage": "en"}
+  </script>
+  <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://threadgrab.com/en/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/en/blog/"}, {"@type": "ListItem", "position": 3, "name": "SC-MCP 2026: Claude Reads Your X Post SEO", "item": "https://threadgrab.com/en/blog/search-console-mcp-seo-2026.html"}]}
+  </script>
+  <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does SC-MCP work with the new social/video panel that GSC shipped on July 7, 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, with the July 7 release tag. The previous version only exposed web search data; the current release adds the social/video platform filter as a first-class dimension, which means you can ask for X_SEARCH, YOUTUBE_SEARCH, TIKTOK_SEARCH, and LINKEDIN_SEARCH impressions alongside traditional web search in the same query. If you cloned the repo before July 7, pull the latest release tag and restart the MCP server."}}, {"@type": "Question", "name": "Do I need a paid Claude plan to use Search Console MCP?", "acceptedAnswer": {"@type": "Answer", "text": "No. SC-MCP runs against the MCP protocol, which Claude Code, Codex, Cline, Continue, and Roo Code all speak. The free Claude Code plan works for ad-hoc queries; a paid plan is only needed if you want to run long cross-platform audit sessions that exceed the rate limit on the free tier (about 50 GSC API calls per day, which is enough for a weekly creator workflow)."}}, {"@type": "Question", "name": "Is my GSC data sent anywhere when I use SC-MCP?", "acceptedAnswer": {"@type": "Answer", "text": "No. SC-MCP runs locally on your machine. The flow is: your MCP client (Claude Code, etc.) calls a tool on the local SC-MCP server, the server calls the Google Search Console API directly using your service account key, and the response goes back to your local chat. Google sees the request come from your service account, not from any third-party service. There is no relay, no log shipping, no analytics middleware. The repo has no telemetry code, and the MIT license lets you audit every line."}}, {"@type": "Question", "name": "What is the rate limit on the GSC API, and does SC-MCP handle it?", "acceptedAnswer": {"@type": "Answer", "text": "The Search Analytics API allows about 1,200 queries per minute per service account, with a 5-queries-per-second practical ceiling for a single property. SC-MCP has built-in rate limiting that throttles to 4 queries per second by default, which stays comfortably under the API ceiling. If you are running 90-day cross-platform audits with the new social/video panel, expect the rate limit to be the bottleneck, not the MCP layer. The README documents a GSC_RATE_LIMIT_QPS env var you can lower if your service account shares a project with other GSC consumers."}}, {"@type": "Question", "name": "Can SC-MCP write to GSC, or is it read-only?", "acceptedAnswer": {"@type": "Answer", "text": "Read-only. The server implements the Search Analytics query endpoint and the site list endpoint, and nothing else. It cannot submit sitemaps, request indexing, remove URLs, or change any GSC setting. That is a feature, not a limitation: it keeps the security surface tiny, makes the service account permission Restricted safe (the minimum read scope), and means a compromised agent cannot accidentally break your GSC property."}}, {"@type": "Question", "name": "How does this compare to the existing threadgrab MCP and OpenRouter MCP coverage on this site?", "acceptedAnswer": {"@type": "Answer", "text": "SC-MCP closes the read-side loop that X-Hosted MCP (distribution), OpenRouter MCP (model routing), and ThreadGrab itself (mirroring) leave open. The 3-layer stack now reads: ThreadGrab mirrors the publish, X-Hosted MCP distributes it, OpenRouter MCP routes the model that drafts the next post, and SC-MCP reads the discovery data back. Each layer is a separate MCP server; together they are the working creator stack for the second half of 2026."}}]}
+  </script>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+    @media (max-width: 640px) { main { padding: 24px 16px 40px; } table { font-size: 0.8rem; } th, td { padding: 8px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/en/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a class="active" href="/en/blog/search-console-mcp-seo-2026.html">EN</a>
+      <a class="" href="/pt/blog/search-console-mcp-seo-2026.html">PT</a>
+      <a class="" href="/id/blog/search-console-mcp-seo-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb"><a href="/en/">Home</a> &rsaquo; <a href="/en/blog/">Blog</a> &rsaquo; Search Console MCP 2026</div>
+
+    <h1>SC-MCP 2026: <span>Claude Reads Your X Post SEO</span></h1>
+    <p class="meta">July 8, 2026 &middot; 11 min read &middot; Guide</p>
+
+    <p>In the first week of July 2026, two Google announcements landed within five days of each other, and together they quietly redrew the SEO map for X and Bluesky creators. On July 2, the Show HN feed surfaced <a href="https://github.com/sudomichael/search-console-mcp">search-console-mcp</a>, an open-source Model Context Protocol server that lets Claude, Codex, and other MCP-aware agents pull live Google Search Console data without a copy-paste round trip. Five days later, on July 7, Google shipped the <a href="https://developers.google.com/search/blog/2026/07/search-console-social-video-platforms">new social/video platform panel</a> inside Search Console itself, exposing YouTube, TikTok, LinkedIn, and X impression data as a first-class filter alongside traditional web search.</p>
+
+<p>The two releases are not related by any official Google post, but they line up. SC-MCP is the read path that makes the new social/video data actionable: you can now ask an agent "which of my X threads are getting TikTok-style discovery this week" and get a real answer with no spreadsheet in the loop. For a creator whose analytics live in five different dashboards, this is the first time the data is in a place where an AI tool can act on it.</p>
+
+<div class="callout"><p><strong>The 30-second version:</strong> Search Console MCP (SC-MCP) is an MCP server that wraps Google's Search Console API. Wire it into Claude Code or Codex, and you can ask "show me my X post impressions for July" in plain English. Combined with GSC's new social/video panel (July 7, 2026), creators can now close the loop on cross-platform post performance without leaving the chat. This guide is the working setup plus the four queries worth running first.</p></div>
+
+<h2>What Search Console MCP Actually Does</h2>
+
+<p>Search Console MCP is a small Python server that exposes the Google Search Console API as a set of MCP tools. An MCP-aware client (Claude Code, Codex, Cline, Continue, Roo Code) can call those tools directly, with no auth juggling on the agent side and no manual export from the GSC web UI. From the creator's perspective, the difference between "with SC-MCP" and "without SC-MCP" is the difference between asking a question in chat and copying rows out of a CSV.</p>
+
+<p>The repository is <a href="https://github.com/sudomichael/search-console-mcp">github.com/sudomichael/search-console-mcp</a>, MIT-licensed, ~600 lines of Python. It implements the read-side endpoints the Search Analytics API exposes: queries, pages, devices, countries, dates, and search appearance. It does not implement write-side endpoints (no sitemaps submit, no URL removal), and it does not expose the new social/video data directly &mdash; that data lives behind a different filter that SC-MCP added on July 7, the same day Google shipped the panel.</p>
+
+<p>What you get, end to end, is a chat-accessible Google Search Console. That is the entire product, and that is exactly the layer that was missing before.</p>
+
+<h2>Why the July 7 GSC Update Changes the Math</h2>
+
+<p>Before July 7, 2026, GSC only showed web search performance. A creator publishing on X, Bluesky, LinkedIn, YouTube, or TikTok had to instrument each platform separately: X Analytics for X, Bluesky stats for Bluesky, LinkedIn Page analytics for LinkedIn, YouTube Studio for YouTube, TikTok Creator Portal for TikTok. None of those platforms had a unified search-performance lens because each one defined "search" differently, and Google did not have a way to see cross-platform creator data as a single corpus.</p>
+
+<p>The July 7 update changes that. The new social/video platform panel inside GSC exposes impressions, clicks, CTR, and position for:</p>
+
+<ul>
+  <li><strong>YouTube search</strong> &mdash; impressions, clicks, and average position in YouTube's internal search.</li>
+  <li><strong>TikTok search</strong> &mdash; same shape, scoped to TikTok's search layer.</li>
+  <li><strong>LinkedIn search</strong> &mdash; post and article discovery inside LinkedIn's search.</li>
+  <li><strong>X search</strong> &mdash; x.com's internal search, including topic and people search.</li>
+</ul>
+
+<p>That is the first time a creator can sit in a single Google UI and see "my X thread on AT Protocol federation" next to "my LinkedIn post on the same topic" with the same metric shape. SC-MCP, which was already wired to the GSC API, picks up the new social/video data on day one. The two releases land together because both sides of the stack needed the other to be useful.</p>
+
+<h2>The 4 Queries Worth Running First</h2>
+
+<p>Once SC-MCP is wired into Claude Code (setup below), the productive part is the queries you run against it. The four that have produced the most actionable signal in the first week of July 2026 are these.</p>
+
+<h3>Query 1: Cross-Platform Impressions for a Topic</h3>
+
+<p>The most basic SC-MCP query is also the most powerful: ask for total impressions across all platforms for a topic cluster over the last 28 days. SC-MCP returns the same shape as the GSC web UI, but it does the dimension join automatically (web + YouTube + TikTok + LinkedIn + X) without you having to click five tabs.</p>
+
+<pre><code>gsc_query(
+  site_url="https://yourdomain.com",
+  start_date="2026-06-10",
+  end_date="2026-07-08",
+  dimensions=["date"],
+  filters=&#123;"query_contains": "at protocol"&#125;
+)</code></pre>
+
+<p>The response gives you a date-bucketed impression series. From there you can ask Claude to plot it, summarize spikes, or correlate with a specific X thread URL. That last move &mdash; "now correlate this with my X post from June 14" &mdash; is the killer workflow because it ties the GSC side to the platform side without any manual bookkeeping.</p>
+
+<h3>Query 2: X Thread Discovery vs Web Discovery</h3>
+
+<p>The second query separates X search impressions from web search impressions for the same query. The reason this matters: a creator publishing a thread on X and a blog post on the same topic will often see one of them dominate search while the other goes silent. The split tells you which platform is the discovery surface for a given topic and where to invest the next post.</p>
+
+<pre><code>gsc_query(
+  site_url="https://yourdomain.com",
+  start_date="2026-06-10",
+  end_date="2026-07-08",
+  dimensions=["query", "searchAppearance"],
+  filters=&#123;"searchAppearance": ["X_SEARCH", "WEB"&#125;]
+)</code></pre>
+
+<p>For a creator who treats X as the broadcast layer and the blog as the durable record, this query is the closest thing to a publishing dashboard. You see the queries that hit the blog post, the queries that hit the X thread, and you can stop guessing where the reader actually found you.</p>
+
+<h3>Query 3: Drift Detection Across Platforms</h3>
+
+<p>Drift detection is the workflow that turned SC-MCP from a curiosity into a daily tool. You ask Claude to compare this week's social/video impressions to last week's, flag anything down more than 30 percent, and propose an X thread or Bluesky post that could recover the lost reach. The query is the same shape as Query 1, but with two date ranges and a small Claude prompt that does the comparison.</p>
+
+<pre><code>last_week = gsc_query(site_url, "2026-07-01", "2026-07-07", dimensions=["date"])
+this_week = gsc_query(site_url, "2026-06-24", "2026-06-30", dimensions=["date"])
+# Claude compares: which platform, which date, which query dropped the most?
+# Claude proposes: one X thread draft, one Bluesky post draft, one LinkedIn update.</code></pre>
+
+<p>That is the production-grade creator loop in 2026: a 7-day read, a one-line comparison prompt, and three draft posts in the output. You went from five dashboards and a spreadsheet to one chat message in 90 seconds.</p>
+
+<h3>Query 4: Cross-Link Audit Between X and Blog</h3>
+
+<p>The fourth query is the SEO discipline move: ask Claude to enumerate every X post URL that you referenced in a blog post in the last 90 days, then check the GSC page dimension for each. If a blog post has an outbound link to an X thread and the thread has zero X-search impressions, you have a cross-link audit problem: the link is not pulling its weight in the new X-search world.</p>
+
+<pre><code># Step 1: list all outbound x.com links in your blog (Claude does this from a sitemap crawl)
+# Step 2: for each, ask SC-MCP for X_SEARCH impressions over 90 days
+gsc_query(site_url, "2026-04-09", "2026-07-08",
+  dimensions=["page"], filters=&#123;"searchAppearance": "X_SEARCH"&#125;)
+# Step 3: Claude flags: blog post X has 6 outbound x.com links, 4 of them have 0 X impressions.
+# Step 4: Claude rewrites the link text to be more descriptive so X's indexer classifies the thread better.</code></pre>
+
+<p>The audit is the kind of thing a creator would never do by hand, and a marketing agency would charge $5,000 for. With SC-MCP it is a 10-minute chat session, repeatable weekly.</p>
+
+<h2>The 5-Minute Setup</h2>
+
+<p>Wiring SC-MCP into Claude Code takes about five minutes if you already have a Google Search Console verified property and a working Claude Code install. The shape is the same as any MCP server: a one-line config in <code>~/.config/claude/mcp_servers.json</code> and a service-account key on disk.</p>
+
+<h3>Step 1: Install the Package</h3>
+
+<p>Clone or pip-install the SC-MCP server. The recommended path is the GitHub release, not PyPI, because Google updated the API contract on July 7 and the release tag tracks the live GSC endpoints.</p>
+
+<pre><code>git clone https://github.com/sudomichael/search-console-mcp.git
+cd search-console-mcp
+uv sync
+# This pulls the MCP SDK + google-api-python-client + auth libs</code></pre>
+
+<p>If you do not have <code>uv</code> installed, the repo falls back to <code>pip install -e .</code> on Python 3.11+. The full env is ~80 MB.</p>
+
+<h3>Step 2: Service Account + GSC Property Access</h3>
+
+<p>SC-MCP authenticates with a Google service account, not OAuth. Create a service account in Google Cloud, download the JSON key, and add the service account email as a user (any role, "Full" works) inside the Search Console property you want to query. This is the same flow that any GSC automation uses; no special scope needed beyond <code>webmasters.readonly</code>.</p>
+
+<pre><code># 1. Service account JSON at: ~/keys/gsc-service-account.json
+# 2. In GSC UI: Settings &rarr; Users and permissions &rarr; Add user
+#    Paste the service account email: sc-mcp@your-project.iam.gserviceaccount.com
+#    Permission level: Full (read-only is enough for SC-MCP, but Full is harmless)</code></pre>
+
+<p>The service account flow is the difference between SC-MCP and other GSC tools: there is no browser OAuth dance, no token refresh in the middle of a session. The MCP server reads the key on disk and is ready.</p>
+
+<h3>Step 3: Wire It Into Claude Code</h3>
+
+<p>Add the SC-MCP server to Claude Code's MCP config. The config file is at <code>~/.config/claude/mcp_servers.json</code> on Linux and macOS, and the same path under <code>%APPDATA%</code> on Windows.</p>
+
+<pre><code>&#123;
+  "mcpServers": &#123;
+    "gsc": &#123;
+      "command": "uv",
+      "args": ["run", "--directory", "/path/to/search-console-mcp", "python", "-m", "search_console_mcp"],
+      "env": &#123;
+        "GOOGLE_APPLICATION_CREDENTIALS": "/home/you/keys/gsc-service-account.json",
+        "GSC_DEFAULT_SITE": "https://yourdomain.com"
+      &#125;
+    &#125;
+  &#125;
+&#125;</code></pre>
+
+<p>Restart Claude Code. The first time you start a session, type <code>/mcp</code> and confirm that the GSC server is listed and shows the available tools. If you see <code>gsc_query</code> in the tool list, the setup is done.</p>
+
+<h3>Step 4: First Sanity Query</h3>
+
+<p>Ask Claude to do a 7-day pull and confirm the numbers match the GSC web UI. This is the same data the GSC dashboard shows, so the comparison is a literal end-to-end test of the wiring.</p>
+
+<pre><code>Use gsc_query to fetch the last 7 days of search analytics for https://yourdomain.com,
+grouped by date. Show me the total impressions and clicks for each day.
+Then compare it to what I see in the GSC Performance tab.
+They should match exactly.</code></pre>
+
+<p>If the numbers match, the setup is verified. If they do not, the most common culprit is the site URL format: GSC accepts <code>https://yourdomain.com</code> (domain property) or <code>sc-domain:yourdomain.com</code> (URL-prefix property), and SC-MCP needs the exact string the property was registered with. The repo's README has a <code>gsc_list_sites</code> tool that lists every property your service account can see; use that to copy the right URL.</p>
+
+<h2>Where ThreadGrab Fits in This Picture</h2>
+
+<p>ThreadGrab is a read-side social archiving tool: paste any public X URL and you get a stable, structured Markdown page that crawlers and AI agents can fetch. The natural pairing with SC-MCP is that every GSC impression on a threadgrab.com mirror page is a confirmed AI-citation candidate. When you run SC-MCP Query 1 (cross-platform impressions for a topic), the mirror pages on threadgrab.com will show up in the page dimension. That tells you which of your archived threads is being picked up by the citation layer, and which is still relying on x.com directly.</p>
+
+<p>For a creator who already runs ThreadGrab, SC-MCP is the missing read-side answer to the question ThreadGrab answers on the write side: where is my content actually being discovered? The two tools together close the loop from publish (X) to mirror (ThreadGrab) to discovery (GSC) to action (Claude-drafted next post). That is the production-grade creator stack for the second half of 2026.</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<div class="faq-item">
+  <strong>Does SC-MCP work with the new social/video panel that GSC shipped on July 7, 2026?</strong>
+  <p>Yes, with the July 7 release tag. The previous version only exposed web search data; the current release adds the social/video platform filter as a first-class dimension, which means you can ask for X_SEARCH, YOUTUBE_SEARCH, TIKTOK_SEARCH, and LINKEDIN_SEARCH impressions alongside traditional web search in the same query. If you cloned the repo before July 7, pull the latest release tag and restart the MCP server.</p>
+</div>
+<div class="faq-item">
+  <strong>Do I need a paid Claude plan to use Search Console MCP?</strong>
+  <p>No. SC-MCP runs against the MCP protocol, which Claude Code, Codex, Cline, Continue, and Roo Code all speak. The free Claude Code plan works for ad-hoc queries; a paid plan is only needed if you want to run long cross-platform audit sessions that exceed the rate limit on the free tier (about 50 GSC API calls per day, which is enough for a weekly creator workflow).</p>
+</div>
+<div class="faq-item">
+  <strong>Is my GSC data sent anywhere when I use SC-MCP?</strong>
+  <p>No. SC-MCP runs locally on your machine. The flow is: your MCP client (Claude Code, etc.) calls a tool on the local SC-MCP server, the server calls the Google Search Console API directly using your service account key, and the response goes back to your local chat. Google sees the request come from your service account, not from any third-party service. There is no relay, no log shipping, no analytics middleware. The repo has no telemetry code, and the MIT license lets you audit every line.</p>
+</div>
+<div class="faq-item">
+  <strong>What is the rate limit on the GSC API, and does SC-MCP handle it?</strong>
+  <p>The Search Analytics API allows about 1,200 queries per minute per service account, with a 5-queries-per-second practical ceiling for a single property. SC-MCP has built-in rate limiting that throttles to 4 queries per second by default, which stays comfortably under the API ceiling. If you are running 90-day cross-platform audits with the new social/video panel, expect the rate limit to be the bottleneck, not the MCP layer. The README documents a <code>GSC_RATE_LIMIT_QPS</code> env var you can lower if your service account shares a project with other GSC consumers.</p>
+</div>
+<div class="faq-item">
+  <strong>Can SC-MCP write to GSC, or is it read-only?</strong>
+  <p>Read-only. The server implements the Search Analytics query endpoint and the site list endpoint, and nothing else. It cannot submit sitemaps, request indexing, remove URLs, or change any GSC setting. That is a feature, not a limitation: it keeps the security surface tiny, makes the service account permission "Restricted" safe (the minimum read scope), and means a compromised agent cannot accidentally break your GSC property.</p>
+</div>
+<div class="faq-item">
+  <strong>How does this compare to the existing threadgrab MCP and OpenRouter MCP coverage on this site?</strong>
+  <p>SC-MCP closes the read-side loop that <a href="/en/blog/x-hosted-mcp-creator-workflow-2026.html">X-Hosted MCP</a> (distribution), <a href="/en/blog/openrouter-mcp-server-social-content-creators-2026.html">OpenRouter MCP</a> (model routing), and ThreadGrab itself (mirroring) leave open. The 3-layer stack now reads: ThreadGrab mirrors the publish, X-Hosted MCP distributes it, OpenRouter MCP routes the model that drafts the next post, and SC-MCP reads the discovery data back. Each layer is a separate MCP server; together they are the working creator stack for the second half of 2026.</p>
+</div>
+
+<div class="cta">
+  <p>Want the citation-ready mirror on your own domain?</p>
+  <a class="btn" href="/en/">Try ThreadGrab</a>
+</div>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/en/">Home</a> &middot; <a href="/en/blog/">Blog</a> &middot; <a href="/en/about/">About</a> &middot; <a href="/en/privacy/">Privacy</a>
+    <br>Not affiliated with X Corp., Bluesky Social PBC, LinkedIn Corporation, or Microsoft Corporation.
+  </footer>
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SC-MCP 2026: <span>Claude Baca SEO Postingan X</span></title>
+  <meta name="description" content="Google Search Console MCP memungkinkan Claude menarik data GSC langsung. Panduan kreator untuk memasang SC-MCP di alur SEO pasca-publish X dan Bluesky.">
+  <meta name="keywords" content="search console mcp 2026, gsc mcp claude, sc-mcp show hn, seo postingan x, panel video sosial gsc, alur kerja seo kreator, mcp server gsc, ThreadGrab">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/id/blog/search-console-mcp-seo-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/search-console-mcp-seo-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/search-console-mcp-seo-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/search-console-mcp-seo-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/search-console-mcp-seo-2026.html">
+  <meta property="og:title" content="SC-MCP 2026: Claude Baca SEO Postingan X | ThreadGrab">
+  <meta property="og:description" content="Google Search Console MCP memungkinkan Claude menarik data GSC langsung. Panduan kreator untuk memasang SC-MCP di alur SEO pasca-publish X dan Bluesky.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/id/blog/search-console-mcp-seo-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SC-MCP 2026: Claude Baca SEO Postingan X | ThreadGrab">
+  <meta name="twitter:description" content="Google Search Console MCP memungkinkan Claude menarik data GSC langsung. Panduan kreator untuk memasang SC-MCP di alur SEO pasca-publish X dan Bluesky.">
+  <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "SC-MCP 2026: Claude Baca SEO Postingan X", "description": "Google Search Console MCP memungkinkan Claude menarik data GSC langsung. Panduan kreator untuk memasang SC-MCP di alur SEO pasca-publish X dan Bluesky.", "author": {"@type": "Organization", "name": "ThreadGrab"}, "publisher": {"@type": "Organization", "name": "ThreadGrab", "logo": {"@type": "ImageObject", "url": "https://threadgrab.com/logo.png"}}, "datePublished": "2026-07-08", "dateModified": "2026-07-08", "mainEntityOfPage": "https://threadgrab.com/id/blog/search-console-mcp-seo-2026.html", "inLanguage": "id"}
+  </script>
+  <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://threadgrab.com/id/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/id/blog/"}, {"@type": "ListItem", "position": 3, "name": "SC-MCP 2026: Claude Baca SEO Postingan X", "item": "https://threadgrab.com/id/blog/search-console-mcp-seo-2026.html"}]}
+  </script>
+  <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Apakah SC-MCP berfungsi dengan panel sosial/video baru yang dirilis GSC pada 7 Juli 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Ya, dengan tag rilis 7 Juli. Versi sebelumnya hanya mengekspos data pencarian web; rilis saat ini menambahkan filter platform sosial/video sebagai dimensi kelas-pertama, yang berarti Anda dapat meminta tayangan X_SEARCH, YOUTUBE_SEARCH, TIKTOK_SEARCH, dan LINKEDIN_SEARCH di samping pencarian web tradisional dalam query yang sama. Jika Anda mengkloning repo sebelum 7 Juli, tarik tag rilis terbaru dan restart server MCP."}}, {"@type": "Question", "name": "Apakah saya memerlukan paket Claude berbayar untuk menggunakan Search Console MCP?", "acceptedAnswer": {"@type": "Answer", "text": "Tidak. SC-MCP berjalan melawan protokol MCP, yang digunakan oleh Claude Code, Codex, Cline, Continue, dan Roo Code. Paket gratis Claude Code berfungsi untuk query ad-hoc; paket berbayar hanya diperlukan jika Anda ingin menjalankan sesi audit lintas-platform panjang yang melebihi batas rate tier gratis (sekitar 50 panggilan API GSC per hari, yang cukup untuk workflow kreator mingguan)."}}, {"@type": "Question", "name": "Apakah data GSC saya dikirim ke suatu tempat ketika saya menggunakan SC-MCP?", "acceptedAnswer": {"@type": "Answer", "text": "Tidak. SC-MCP berjalan secara lokal di mesin Anda. Alurnya: klien MCP Anda (Claude Code, dll.) memanggil alat di server SC-MCP lokal, server memanggil Google Search Console API secara langsung menggunakan kunci service account Anda, dan respons kembali ke chat lokal Anda. Google melihat permintaan datang dari service account Anda, bukan dari layanan pihak ketiga mana pun. Tidak ada relay, tidak ada pengiriman log, tidak ada middleware analitik. Repo tidak memiliki kode telemetri, dan lisensi MIT memungkinkan Anda mengaudit setiap baris."}}, {"@type": "Question", "name": "Berapa batas rate API GSC, dan apakah SC-MCP menanganinya?", "acceptedAnswer": {"@type": "Answer", "text": "Search Analytics API mengizinkan sekitar 1.200 query per menit per service account, dengan langit-langit praktis 5 query per detik untuk satu properti. SC-MCP memiliki rate limiting bawaan yang membatasi ke 4 query per detik secara default, yang tetap nyaman di bawah langit-langit API. Jika Anda menjalankan audit lintas-platform 90 hari dengan panel sosial/video baru, harap batas rate menjadi bottleneck, bukan lapisan MCP. README mendokumentasikan env var GSC_RATE_LIMIT_QPS yang dapat Anda turunkan jika service account Anda berbagi proyek dengan konsumen GSC lain."}}, {"@type": "Question", "name": "Bisakah SC-MCP menulis ke GSC, atau apakah read-only?", "acceptedAnswer": {"@type": "Answer", "text": "Read-only. Server mengimplementasikan endpoint query Search Analytics dan endpoint daftar situs, dan tidak ada yang lain. Itu tidak dapat mengirim sitemap, meminta pengindeksan, menghapus URL, atau mengubah pengaturan GSC apa pun. Itu adalah fitur, bukan keterbatasan: menjaga permukaan keamanan tetap kecil, membuat izin service account Restricted aman (scope baca minimum), dan berarti agen yang dikompromikan tidak dapat secara tidak sengaja merusak properti GSC Anda."}}, {"@type": "Question", "name": "Bagaimana ini dibandingkan dengan cakupan threadgrab MCP dan OpenRouter MCP yang ada di situs ini?", "acceptedAnswer": {"@type": "Answer", "text": "SC-MCP menutup loop sisi-baca yang X-Hosted MCP (distribusi), OpenRouter MCP (routing model), dan ThreadGrab sendiri (mirroring) tinggalkan terbuka. Stack 3-layer sekarang terbaca: ThreadGrab mirroring publikasi, X-Hosted MCP mendistribusikannya, OpenRouter MCP merutekan model yang mendraft post berikutnya, dan SC-MCP membaca data penemuan kembali. Setiap layer adalah server MCP terpisah; bersama-sama mereka adalah stack kreator yang berfungsi untuk paruh kedua 2026."}}]}
+  </script>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+    @media (max-width: 640px) { main { padding: 24px 16px 40px; } table { font-size: 0.8rem; } th, td { padding: 8px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/id/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a class="active" href="/id/blog/search-console-mcp-seo-2026.html">ID</a>
+      <a class="" href="/en/blog/search-console-mcp-seo-2026.html">EN</a>
+      <a class="" href="/pt/blog/search-console-mcp-seo-2026.html">PT</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb"><a href="/id/">Home</a> &rsaquo; <a href="/id/blog/">Blog</a> &rsaquo; Search Console MCP 2026</div>
+
+    <h1>SC-MCP 2026: <span>Claude Baca SEO Postingan X</span></h1>
+    <p class="meta">8 Juli 2026 &middot; 11 min read &middot; Guide</p>
+
+    <p>Pada minggu pertama Juli 2026, dua pengumuman Google muncul dalam lima hari, dan bersama-sama mereka diam-diam menggambar ulang peta SEO untuk kreator X dan Bluesky. Pada 2 Juli, feed Show HN menampilkan <a href="https://github.com/sudomichael/search-console-mcp">search-console-mcp</a>, server Model Context Protocol open-source yang memungkinkan Claude, Codex, dan agen lain yang mendukung MCP menarik data Google Search Console secara langsung tanpa copy-paste. Lima hari kemudian, pada 7 Juli, Google merilis <a href="https://developers.google.com/search/blog/2026/07/search-console-social-video-platforms">panel platform sosial/video baru</a> di dalam Search Console, mengekspos data tayangan YouTube, TikTok, LinkedIn, dan X sebagai filter kelas-pertama di samping pencarian web tradisional.</p>
+
+<p>Dua rilis tersebut tidak terkait oleh posting resmi Google mana pun, tetapi selaras. SC-MCP adalah jalur baca yang membuat data sosial/video baru dapat ditindaklanjuti: Anda sekarang dapat bertanya kepada agen "thread X mana yang mendapat penemuan ala TikTok minggu ini" dan mendapatkan jawaban nyata tanpa spreadsheet di loop. Bagi kreator yang analitiknya tersebar di lima dashboard berbeda, ini adalah pertama kalinya data berada di tempat di mana alat AI dapat bertindak di atasnya.</p>
+
+<div class="callout"><p><strong>Versi 30 detik:</strong> Search Console MCP (SC-MCP) adalah server MCP yang membungkus API Google Search Console. Pasangkan ke Claude Code atau Codex, dan Anda dapat bertanya "tunjukkan tayangan postingan X saya untuk Juli" dalam bahasa alami. Dikombinasikan dengan panel sosial/video baru GSC (7 Juli 2026), kreator sekarang dapat menutup loop performa postingan lintas-platform tanpa meninggalkan chat. Panduan ini adalah setup kerja ditambah empat query yang layak dijalankan terlebih dahulu.</p></div>
+
+<h2>Apa yang Sebenarnya Dilakukan Search Console MCP</h2>
+
+<p>Search Console MCP adalah server Python kecil yang mengekspos API Google Search Console sebagai seperangkat alat MCP. Klien yang mendukung MCP (Claude Code, Codex, Cline, Continue, Roo Code) dapat memanggil alat-alat tersebut secara langsung, tanpa akrobat autentikasi di sisi agen dan tanpa ekspor manual dari UI web GSC. Dari perspektif kreator, perbedaan antara "dengan SC-MCP" dan "tanpa SC-MCP" adalah perbedaan antara bertanya di chat dan menyalin baris dari CSV.</p>
+
+<p>Repositori adalah <a href="https://github.com/sudomichael/search-console-mcp">github.com/sudomichael/search-console-mcp</a>, berlisensi MIT, ~600 baris Python. Ini mengimplementasikan endpoint sisi-baca yang diekspos Search Analytics API: query, halaman, perangkat, negara, tanggal, dan tampilan pencarian. Tidak mengimplementasikan endpoint sisi-tulis (tanpa submit sitemap, tanpa penghapusan URL), dan tidak mengekspos data sosial/video baru secara langsung &mdash; data itu hidup di balik filter berbeda yang ditambahkan SC-MCP pada 7 Juli, hari yang sama saat Google merilis panel tersebut.</p>
+
+<p>Yang Anda dapatkan, dari ujung ke ujung, adalah Google Search Console yang dapat diakses via chat. Itulah seluruh produknya, dan itulah tepatnya lapisan yang sebelumnya hilang.</p>
+
+<h2>Mengapa Pembaruan GSC 7 Juli Mengubah Perhitungannya</h2>
+
+<p>Sebelum 7 Juli 2026, GSC hanya menunjukkan performa pencarian web. Kreator yang mempublikasikan di X, Bluesky, LinkedIn, YouTube, atau TikTok harus menginstrumen setiap platform secara terpisah: X Analytics untuk X, statistik Bluesky untuk Bluesky, analitik Halaman LinkedIn untuk LinkedIn, YouTube Studio untuk YouTube, TikTok Creator Portal untuk TikTok. Tidak satu pun dari platform tersebut memiliki lensa performa pencarian terpadu karena masing-masing mendefinisikan "pencarian" secara berbeda, dan Google tidak memiliki cara untuk melihat data kreator lintas-platform sebagai korpus tunggal.</p>
+
+<p>Pembaruan 7 Juli mengubah itu. Panel platform sosial/video baru di dalam GSC mengekspos tayangan, klik, CTR, dan posisi untuk:</p>
+
+<ul>
+  <li><strong>Pencarian YouTube</strong> &mdash; tayangan, klik, dan posisi rata-rata dalam pencarian internal YouTube.</li>
+  <li><strong>Pencarian TikTok</strong> &mdash; format yang sama, tercakup ke lapisan pencarian TikTok.</li>
+  <li><strong>Pencarian LinkedIn</strong> &mdash; penemuan post dan artikel di dalam pencarian LinkedIn.</li>
+  <li><strong>Pencarian X</strong> &mdash; pencarian internal x.com, termasuk pencarian topik dan orang.</li>
+</ul>
+
+<p>Itulah pertama kalinya seorang kreator dapat duduk di satu UI Google dan melihat "thread X saya tentang federasi AT Protocol" di samping "post LinkedIn saya tentang topik yang sama" dengan format metrik yang sama. SC-MCP, yang sudah terpasang ke API GSC, mengambil data sosial/video baru di hari pertama. Dua rilis tersebut mendarat bersama karena kedua sisi stack membutuhkan sisi lain agar berguna.</p>
+
+<h2>4 Query yang Layak Dijalankan Pertama</h2>
+
+<p>Setelah SC-MCP terpasang ke Claude Code (setup di bawah), bagian produktif adalah query yang Anda jalankan di atasnya. Empat yang menghasilkan sinyal paling dapat ditindaklanjuti di minggu pertama Juli 2026 adalah ini.</p>
+
+<h3>Query 1: Tayangan Lintas-Platform untuk Topik</h3>
+
+<p>Query SC-MCP paling dasar juga yang paling kuat: minta total tayangan di semua platform untuk klaster topik dalam 28 hari terakhir. SC-MCP mengembalikan format yang sama dengan UI web GSC, tetapi melakukan join dimensi secara otomatis (web + YouTube + TikTok + LinkedIn + X) tanpa Anda harus mengklik lima tab.</p>
+
+<pre><code>gsc_query(
+  site_url="https://yourdomain.com",
+  start_date="2026-06-10",
+  end_date="2026-07-08",
+  dimensions=["date"],
+  filters=&#123;"query_contains": "at protocol"&#125;
+)</code></pre>
+
+<p>Responsnya memberi Anda deret tayangan yang dikelompokkan per tanggal. Dari sana Anda dapat meminta Claude memplot, merangkum lonjakan, atau mengorelasikan dengan URL thread X tertentu. Gerakan terakhir &mdash; "sekarang korelasikan ini dengan post X saya dari 14 Juni" &mdash; adalah workflow pembunuh karena menghubungkan sisi GSC ke sisi platform tanpa pembukuan manual.</p>
+
+<h3>Query 2: Penemuan Thread X vs Penemuan Web</h3>
+
+<p>Query kedua memisahkan tayangan pencarian X dari tayangan pencarian web untuk query yang sama. Alasan ini penting: kreator yang mempublikasikan thread di X dan post blog di topik yang sama sering akan melihat salah satunya mendominasi pencarian sementara yang lain diam. Pemisahan ini memberi tahu Anda platform mana yang merupakan permukaan penemuan untuk topik tertentu dan di mana harus berinvestasi untuk post berikutnya.</p>
+
+<pre><code>gsc_query(
+  site_url="https://yourdomain.com",
+  start_date="2026-06-10",
+  end_date="2026-07-08",
+  dimensions=["query", "searchAppearance"],
+  filters=&#123;"searchAppearance": ["X_SEARCH", "WEB"&#125;]
+)</code></pre>
+
+<p>Bagi kreator yang memperlakukan X sebagai lapisan broadcast dan blog sebagai catatan tahan lama, query ini adalah hal terdekat dengan dashboard publishing. Anda melihat query yang mengenai post blog, query yang mengenai thread X, dan Anda bisa berhenti menebak di mana pembaca benar-benar menemukan Anda.</p>
+
+<h3>Query 3: Deteksi Drift Antar Platform</h3>
+
+<p>Deteksi drift adalah workflow yang mengubah SC-MCP dari keingintahuan menjadi alat harian. Anda meminta Claude membandingkan tayangan sosial/video minggu ini dengan minggu lalu, menandai apa pun yang turun lebih dari 30 persen, dan mengusulkan thread X atau post Bluesky yang bisa memulihkan jangkauan yang hilang. Query-nya memiliki format yang sama dengan Query 1, tetapi dengan dua rentang tanggal dan prompt kecil untuk Claude melakukan perbandingan.</p>
+
+<pre><code>last_week = gsc_query(site_url, "2026-07-01", "2026-07-07", dimensions=["date"])
+this_week = gsc_query(site_url, "2026-06-24", "2026-06-30", dimensions=["date"])
+# Claude compares: which platform, which date, which query dropped the most?
+# Claude proposes: one X thread draft, one Bluesky post draft, one LinkedIn update.</code></pre>
+
+<p>Itulah loop kreator tingkat produksi di 2026: pembacaan 7 hari, satu prompt perbandingan satu baris, dan tiga post draf di output. Anda pindah dari lima dashboard dan satu spreadsheet ke satu pesan chat dalam 90 detik.</p>
+
+<h3>Query 4: Audit Cross-Link Antara X dan Blog</h3>
+
+<p>Query keempat adalah gerakan disiplin SEO: minta Claude mendaftar setiap URL post X yang Anda referensikan di post blog dalam 90 hari terakhir, lalu periksa dimensi halaman GSC untuk masing-masing. Jika post blog memiliki link outbound ke thread X dan thread tersebut memiliki nol tayangan X_SEARCH, Anda memiliki masalah audit cross-link: link tersebut tidak menarik beratnya di dunia X-search yang baru.</p>
+
+<pre><code># Step 1: list all outbound x.com links in your blog (Claude does this from a sitemap crawl)
+# Step 2: for each, ask SC-MCP for X_SEARCH impressions over 90 days
+gsc_query(site_url, "2026-04-09", "2026-07-08",
+  dimensions=["page"], filters=&#123;"searchAppearance": "X_SEARCH"&#125;)
+# Step 3: Claude flags: blog post X has 6 outbound x.com links, 4 of them have 0 X impressions.
+# Step 4: Claude rewrites the link text to be more descriptive so X's indexer classifies the thread better.</code></pre>
+
+<p>Audit adalah jenis hal yang tidak pernah dilakukan kreator secara manual, dan agensi pemasaran akan mengenakan biaya $5.000. Dengan SC-MCP itu adalah sesi chat 10 menit, dapat diulang mingguan.</p>
+
+<h2>Setup 5 Menit</h2>
+
+<p>Memasang SC-MCP ke Claude Code memakan waktu sekitar lima menit jika Anda sudah memiliki properti Google Search Console yang terverifikasi dan Claude Code yang berfungsi. Bentuknya sama dengan server MCP lainnya: satu baris config di <code>~/.config/claude/mcp_servers.json</code> dan kunci service account di disk.</p>
+
+<h3>Langkah 1: Instal Paket</h3>
+
+<p>Clone atau pip-install server SC-MCP. Jalur yang direkomendasikan adalah rilis GitHub, bukan PyPI, karena Google memperbarui kontrak API pada 7 Juli dan tag rilis mengikuti endpoint GSC yang aktif.</p>
+
+<pre><code>git clone https://github.com/sudomichael/search-console-mcp.git
+cd search-console-mcp
+uv sync
+# This pulls the MCP SDK + google-api-python-client + auth libs</code></pre>
+
+<p>Jika Anda tidak memiliki <code>uv</code> terinstal, repo jatuh ke <code>pip install -e .</code> di Python 3.11+. Environment lengkapnya ~80 MB.</p>
+
+<h3>Langkah 2: Service Account + Akses Properti GSC</h3>
+
+<p>SC-MCP mengautentikasi dengan service account Google, bukan OAuth. Buat service account di Google Cloud, unduh kunci JSON, dan tambahkan email service account sebagai pengguna (peran apa saja, "Full" berfungsi) di dalam properti Search Console yang ingin Anda query. Ini adalah alur yang sama dengan yang digunakan otomasi GSC lainnya; tidak ada scope khusus yang diperlukan selain <code>webmasters.readonly</code>.</p>
+
+<pre><code># 1. Service account JSON at: ~/keys/gsc-service-account.json
+# 2. In GSC UI: Settings &rarr; Users and permissions &rarr; Add user
+#    Paste the service account email: sc-mcp@your-project.iam.gserviceaccount.com
+#    Permission level: Full (read-only is enough for SC-MCP, but Full is harmless)</code></pre>
+
+<p>Alur service account adalah perbedaan antara SC-MCP dan alat GSC lainnya: tidak ada tarian OAuth browser, tidak ada refresh token di tengah sesi. Server MCP membaca kunci di disk dan siap.</p>
+
+<h3>Langkah 3: Pasang ke Claude Code</h3>
+
+<p>Tambahkan server SC-MCP ke konfigurasi MCP Claude Code. File konfigurasi ada di <code>~/.config/claude/mcp_servers.json</code> di Linux dan macOS, dan jalur yang sama di bawah <code>%APPDATA%</code> di Windows.</p>
+
+<pre><code>&#123;
+  "mcpServers": &#123;
+    "gsc": &#123;
+      "command": "uv",
+      "args": ["run", "--directory", "/path/to/search-console-mcp", "python", "-m", "search_console_mcp"],
+      "env": &#123;
+        "GOOGLE_APPLICATION_CREDENTIALS": "/home/you/keys/gsc-service-account.json",
+        "GSC_DEFAULT_SITE": "https://yourdomain.com"
+      &#125;
+    &#125;
+  &#125;
+&#125;</code></pre>
+
+<p>Restart Claude Code. Pertama kali Anda memulai sesi, ketik <code>/mcp</code> dan konfirmasi bahwa server GSC terdaftar dan menampilkan alat yang tersedia. Jika Anda melihat <code>gsc_query</code> dalam daftar alat, setup selesai.</p>
+
+<h3>Langkah 4: Query Sanity Pertama</h3>
+
+<p>Minta Claude melakukan pull 7 hari dan konfirmasi bahwa angka-angka cocok dengan UI web GSC. Ini adalah data yang sama yang ditunjukkan dashboard GSC, jadi perbandingannya adalah test ujung-ke-ujung literal dari pemasangan.</p>
+
+<pre><code>Use gsc_query to fetch the last 7 days of search analytics for https://yourdomain.com,
+grouped by date. Show me the total impressions and clicks for each day.
+Then compare it to what I see in the GSC Performance tab.
+They should match exactly.</code></pre>
+
+<p>Jika angkanya cocok, setup terverifikasi. Jika tidak, penyebab paling umum adalah format URL situs: GSC menerima <code>https://domainanda.com</code> (properti domain) atau <code>sc-domain:domainanda.com</code> (properti prefix URL), dan SC-MCP memerlukan string persis dengan properti didaftarkan. Alat <code>gsc_list_sites</code> di README repo mendaftar setiap properti yang dapat dilihat service account Anda; gunakan itu untuk menyalin URL yang benar.</p>
+
+<h2>Di Mana ThreadGrab Masuk dalam Gambaran Ini</h2>
+
+<p>ThreadGrab adalah alat pengarsipan sosial sisi-baca: tempel URL X publik apa pun dan Anda mendapatkan halaman Markdown yang stabil dan terstruktur yang dapat diambil crawler dan agen AI. Pasangan alami dengan SC-MCP adalah bahwa setiap tayangan GSC pada halaman mirror threadgrab.com adalah kandidat kutipan AI yang dikonfirmasi. Ketika Anda menjalankan Query 1 SC-MCP (tayangan lintas-platform untuk topik), halaman mirror di threadgrab.com akan muncul di dimensi halaman. Itu memberi tahu Anda thread arsip mana yang sedang diambil oleh lapisan kutipan, dan mana yang masih bergantung pada x.com secara langsung.</p>
+
+<p>Bagi kreator yang sudah menjalankan ThreadGrab, SC-MCP adalah jawaban sisi-baca yang hilang untuk pertanyaan yang dijawab ThreadGrab di sisi tulis: di mana konten saya benar-benar ditemukan? Kedua alat bersama menutup loop dari publikasi (X) ke mirror (ThreadGrab) ke penemuan (GSC) ke tindakan (post berikutnya yang di-draft Claude). Itulah stack kreator tingkat produksi untuk paruh kedua 2026.</p>
+
+<h2>Pertanyaan yang Sering Diajukan</h2>
+
+<div class="faq-item">
+  <strong>Apakah SC-MCP berfungsi dengan panel sosial/video baru yang dirilis GSC pada 7 Juli 2026?</strong>
+  <p>Ya, dengan tag rilis 7 Juli. Versi sebelumnya hanya mengekspos data pencarian web; rilis saat ini menambahkan filter platform sosial/video sebagai dimensi kelas-pertama, yang berarti Anda dapat meminta tayangan X_SEARCH, YOUTUBE_SEARCH, TIKTOK_SEARCH, dan LINKEDIN_SEARCH di samping pencarian web tradisional dalam query yang sama. Jika Anda mengkloning repo sebelum 7 Juli, tarik tag rilis terbaru dan restart server MCP.</p>
+</div>
+<div class="faq-item">
+  <strong>Apakah saya memerlukan paket Claude berbayar untuk menggunakan Search Console MCP?</strong>
+  <p>Tidak. SC-MCP berjalan melawan protokol MCP, yang digunakan oleh Claude Code, Codex, Cline, Continue, dan Roo Code. Paket gratis Claude Code berfungsi untuk query ad-hoc; paket berbayar hanya diperlukan jika Anda ingin menjalankan sesi audit lintas-platform panjang yang melebihi batas rate tier gratis (sekitar 50 panggilan API GSC per hari, yang cukup untuk workflow kreator mingguan).</p>
+</div>
+<div class="faq-item">
+  <strong>Apakah data GSC saya dikirim ke suatu tempat ketika saya menggunakan SC-MCP?</strong>
+  <p>Tidak. SC-MCP berjalan secara lokal di mesin Anda. Alurnya: klien MCP Anda (Claude Code, dll.) memanggil alat di server SC-MCP lokal, server memanggil Google Search Console API secara langsung menggunakan kunci service account Anda, dan respons kembali ke chat lokal Anda. Google melihat permintaan datang dari service account Anda, bukan dari layanan pihak ketiga mana pun. Tidak ada relay, tidak ada pengiriman log, tidak ada middleware analitik. Repo tidak memiliki kode telemetri, dan lisensi MIT memungkinkan Anda mengaudit setiap baris.</p>
+</div>
+<div class="faq-item">
+  <strong>Berapa batas rate API GSC, dan apakah SC-MCP menanganinya?</strong>
+  <p>Search Analytics API mengizinkan sekitar 1.200 query per menit per service account, dengan langit-langit praktis 5 query per detik untuk satu properti. SC-MCP memiliki rate limiting bawaan yang membatasi ke 4 query per detik secara default, yang tetap nyaman di bawah langit-langit API. Jika Anda menjalankan audit lintas-platform 90 hari dengan panel sosial/video baru, harap batas rate menjadi bottleneck, bukan lapisan MCP. README mendokumentasikan env var <code>GSC_RATE_LIMIT_QPS</code> yang dapat Anda turunkan jika service account Anda berbagi proyek dengan konsumen GSC lain.</p>
+</div>
+<div class="faq-item">
+  <strong>Bisakah SC-MCP menulis ke GSC, atau apakah read-only?</strong>
+  <p>Read-only. Server mengimplementasikan endpoint query Search Analytics dan endpoint daftar situs, dan tidak ada yang lain. Itu tidak dapat mengirim sitemap, meminta pengindeksan, menghapus URL, atau mengubah pengaturan GSC apa pun. Itu adalah fitur, bukan keterbatasan: menjaga permukaan keamanan tetap kecil, membuat izin service account "Restricted" aman (scope baca minimum), dan berarti agen yang dikompromikan tidak dapat secara tidak sengaja merusak properti GSC Anda.</p>
+</div>
+<div class="faq-item">
+  <strong>Bagaimana ini dibandingkan dengan cakupan threadgrab MCP dan OpenRouter MCP yang ada di situs ini?</strong>
+  <p>SC-MCP menutup loop sisi-baca yang <a href="/id/blog/x-hosted-mcp-creator-workflow-2026.html">X-Hosted MCP</a> (distribusi), <a href="/id/blog/openrouter-mcp-server-social-content-creators-2026.html">OpenRouter MCP</a> (routing model), dan ThreadGrab sendiri (mirroring) tinggalkan terbuka. Stack 3-layer sekarang terbaca: ThreadGrab mirroring publikasi, X-Hosted MCP mendistribusikannya, OpenRouter MCP merutekan model yang mendraft post berikutnya, dan SC-MCP membaca data penemuan kembali. Setiap layer adalah server MCP terpisah; bersama-sama mereka adalah stack kreator yang berfungsi untuk paruh kedua 2026.</p>
+</div>
+
+<div class="cta">
+  <p>Ingin mirror siap-kutip di domain Anda sendiri?</p>
+  <a class="btn" href="/id/">Coba ThreadGrab</a>
+</div>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/id/">Home</a> &middot; <a href="/id/blog/">Blog</a> &middot; <a href="/id/about/">About</a> &middot; <a href="/id/privacy/">Privacy</a>
+    <br>Not affiliated with X Corp., Bluesky Social PBC, LinkedIn Corporation, or Microsoft Corporation.
+  </footer>
+</body>
+</html>
