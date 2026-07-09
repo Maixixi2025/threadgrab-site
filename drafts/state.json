@@ -1591,9 +1591,124 @@
       ],
       "primary_cta": "Coba ThreadGrab (id)",
       "updatedAt": "2026-07-08T10:40:33.095Z"
+    },
+    {
+      "slug": "bluesky-longform-api-thirdparty-2026",
+      "date": "2026-07-09",
+      "type": "guide",
+      "lang": "en",
+      "title": "Bluesky Long-Form API: <span>Third-Party Write Tools</span>",
+      "description": "Bluesky is opening its long-form post API to third-party ingestion tools. Here is the write-side playbook for cross-posting and archiving to Markdown.",
+      "file": "en/blog/bluesky-longform-api-thirdparty-2026.html",
+      "url": "https://threadgrab.com/en/blog/bluesky-longform-api-thirdparty-2026.html",
+      "path_en": "en/blog/bluesky-longform-api-thirdparty-2026.html",
+      "path_pt": "pt/blog/bluesky-longform-api-thirdparty-2026.html",
+      "path_id": "id/blog/bluesky-longform-api-thirdparty-2026.html",
+      "url_en": "https://threadgrab.com/en/blog/bluesky-longform-api-thirdparty-2026.html",
+      "url_pt": "https://threadgrab.com/pt/blog/bluesky-longform-api-thirdparty-2026.html",
+      "url_id": "https://threadgrab.com/id/blog/bluesky-longform-api-thirdparty-2026.html",
+      "heat_source": "2026-07-09 daily hot topics — Bluesky's long-form API opening to third-party tools (May 2026 read-side shipped as bluesky-long-form-creator-playbook-2026 on 2026-07-06; today covers the write-side / 3rd-party ingestion angle for the same release).",
+      "tags": [
+        "bluesky",
+        "atproto",
+        "long-form",
+        "api",
+        "third-party",
+        "markdown",
+        "ThreadGrab"
+      ],
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "status": "outline_pending_publish",
+      "created_at": "2026-07-09",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ]
+    },
+    {
+      "slug": "bluesky-longform-api-thirdparty-2026",
+      "date": "2026-07-09",
+      "type": "guide",
+      "lang": "pt",
+      "title": "API Long-Form Bluesky: <span>Ferramentas de Terceiros</span>",
+      "description": "Bluesky abre a API de posts longos para ferramentas de terceiros. Guia de lado de escrita para cross-post e arquivamento em Markdown.",
+      "file": "pt/blog/bluesky-longform-api-thirdparty-2026.html",
+      "url": "https://threadgrab.com/pt/blog/bluesky-longform-api-thirdparty-2026.html",
+      "path_en": "en/blog/bluesky-longform-api-thirdparty-2026.html",
+      "path_pt": "pt/blog/bluesky-longform-api-thirdparty-2026.html",
+      "path_id": "id/blog/bluesky-longform-api-thirdparty-2026.html",
+      "url_en": "https://threadgrab.com/en/blog/bluesky-longform-api-thirdparty-2026.html",
+      "url_pt": "https://threadgrab.com/pt/blog/bluesky-longform-api-thirdparty-2026.html",
+      "url_id": "https://threadgrab.com/id/blog/bluesky-longform-api-thirdparty-2026.html",
+      "heat_source": "2026-07-09 daily hot topics — traducao PT. 2026-07-09 daily hot topics — Bluesky's long-form API opening to third-party tools (May 2026 read-side shipped as bluesky-long-form-creator-playbook-2026 on 2026-07-06; today covers the write-side / 3rd-party ingestion angle for the same release).",
+      "tags": [
+        "bluesky",
+        "atproto",
+        "long-form",
+        "api",
+        "terceiros",
+        "markdown",
+        "ThreadGrab"
+      ],
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "status": "outline_pending_publish",
+      "created_at": "2026-07-09",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ]
+    },
+    {
+      "slug": "bluesky-longform-api-thirdparty-2026",
+      "date": "2026-07-09",
+      "type": "guide",
+      "lang": "id",
+      "title": "API Long-Form Bluesky 2026: <span>Alat Pihak Ketiga</span>",
+      "description": "Bluesky membuka API post panjang untuk alat pihak ketiga. Panduan sisi tulis untuk cross-post dan arsip Markdown.",
+      "file": "id/blog/bluesky-longform-api-thirdparty-2026.html",
+      "url": "https://threadgrab.com/id/blog/bluesky-longform-api-thirdparty-2026.html",
+      "path_en": "en/blog/bluesky-longform-api-thirdparty-2026.html",
+      "path_pt": "pt/blog/bluesky-longform-api-thirdparty-2026.html",
+      "path_id": "id/blog/bluesky-longform-api-thirdparty-2026.html",
+      "url_en": "https://threadgrab.com/en/blog/bluesky-longform-api-thirdparty-2026.html",
+      "url_pt": "https://threadgrab.com/pt/blog/bluesky-longform-api-thirdparty-2026.html",
+      "url_id": "https://threadgrab.com/id/blog/bluesky-longform-api-thirdparty-2026.html",
+      "heat_source": "2026-07-09 daily hot topics — terjemahan ID. 2026-07-09 daily hot topics — Bluesky's long-form API opening to third-party tools (May 2026 read-side shipped as bluesky-long-form-creator-playbook-2026 on 2026-07-06; today covers the write-side / 3rd-party ingestion angle for the same release).",
+      "tags": [
+        "bluesky",
+        "atproto",
+        "long-form",
+        "api",
+        "pihak-ketiga",
+        "markdown",
+        "ThreadGrab"
+      ],
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "status": "outline_pending_publish",
+      "created_at": "2026-07-09",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ]
     }
   ],
   "recent_topics": [
+    "bluesky-longform-api-thirdparty-2026",
     "search-console-mcp-seo-2026",
     "capcat-web-article-archiving-2026",
     "shadowbroker-mcp-osint-social-creators-2026",
@@ -1615,12 +1730,12 @@
     "twitter-trend-scraping-tools-2026",
     "x-articles-freedom-of-reach-2026"
   ],
-  "last_run": "outline-generated",
+  "last_run": "2026-07-09T12:00:00+08:00",
   "last_published_slug": "social-media-content-backup-strategy-2026",
-  "last_draft_slug": "capcat-web-article-archiving-2026",
+  "last_draft_slug": "bluesky-longform-api-thirdparty-2026",
   "last_published_at": "2026-06-25T07:05:52.466222+08:00",
   "drafts_count": 3,
-  "published_count": 75,
+  "published_count": 81,
   "last_topic_picked": "capcat-web-article-archiving-2026",
   "last_pick_source": "daily-briefing-2026-07-04 (Capcat CLI article archiving tool)",
   "last_drafted_slug": "search-console-mcp-seo-2026"

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Long-Form Bluesky: <span>Ferramentas de Terceiros</span></title>
+  <meta name="description" content="Bluesky abre a API de posts longos para ferramentas de terceiros. Guia de lado de escrita para cross-post e arquivamento em Markdown.">
+  <meta name="keywords" content="bluesky long form api 2026, ferramentas terceiros bluesky, atproto long form, api lado escrita, bluesky markdown arquivo, cross-post api, ThreadGrab">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/pt/blog/bluesky-longform-api-thirdparty-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/bluesky-longform-api-thirdparty-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/bluesky-longform-api-thirdparty-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/bluesky-longform-api-thirdparty-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/x-default/blog/bluesky-longform-api-thirdparty-2026.html">
+  <meta property="og:title" content="API Long-Form Bluesky: <span>Ferramentas de Terceiros</span>">
+  <meta property="og:description" content="Bluesky abre a API de posts longos para ferramentas de terceiros. Guia de lado de escrita para cross-post e arquivamento em Markdown.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/pt/blog/bluesky-longform-api-thirdparty-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="API Long-Form Bluesky: <span>Ferramentas de Terceiros</span>">
+  <meta name="twitter:description" content="Bluesky abre a API de posts longos para ferramentas de terceiros. Guia de lado de escrita para cross-post e arquivamento em Markdown.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+    @media (max-width: 640px) { main { padding: 24px 16px 40px; } table { font-size: 0.8rem; } th, td { padding: 8px; } }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "API Long-Form Bluesky para Ferramentas de Terceiros 2026",
+  "description": "Bluesky abre a API de posts longos para ferramentas de terceiros. Guia de lado de escrita para cross-post e arquivamento em Markdown.",
+  "datePublished": "2026-07-09",
+  "dateModified": "2026-07-09",
+  "author": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/pt/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/pt/"
+  },
+  "mainEntityOfPage": "https://threadgrab.com/pt/blog/bluesky-longform-api-thirdparty-2026.html",
+  "inLanguage": "pt"
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://threadgrab.com/pt/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://threadgrab.com/pt/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "API Long-Form Bluesky 2026"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O que e a API de posts longos do Bluesky para ferramentas de terceiros, e quando ela sera lancada?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A API de long-form e a camada publica, acessivel a terceiros, sobre o tipo de registro app.bsky.feed.post com o novo campo embeds que o Bluesky lancou no final de maio de 2026. No inicio de julho de 2026, o Bluesky se comprometeu publicamente a abrir a superficie completa de leitura e escrita de posts longos para ferramentas de terceiros ao longo do verao, com o primeiro SDK estavel previsto para agosto de 2026. Ate la, os endpoints publicos suportam recuperacao e citacao de leitura, mas o lado de escrita esta em developer preview atras de uma flag."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "A API de escrita de long-form e um endpoint separado, ou um novo campo no endpoint de post existente?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "E um novo campo no endpoint de post existente. O registro classico app.bsky.feed.post agora carrega uma estrutura embeds de long-form que aponta para um corpo Markdown, e esse mesmo campo e o que ferramentas de terceiros escrevem uma vez que o SDK for lancado. Nao ha endpoint /api/v1/long-form; e a mesma chamada de post que voce faria para um post de 280 caracteres, mas com o embed de long-form preenchido."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como a API de escrita de long-form do Bluesky se compara ao X Articles para cross-post?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bluesky long-form e uma API de escrita sobre um protocolo aberto, entao uma ferramenta de terceiros que escreve atraves dela tambem pode ler de volta do mesmo jeito, sem assimetria de rate limit e sem divisao publico/privado. X Articles e um recurso fechado em uma plataforma fechada: a unica maneira de escrever e pela UI web do X ou uma API parceira, e a unica maneira de ler conteudo estruturado e a URL publica de X Articles. Para um pipeline de cross-post, Bluesky e a camada portatil; X Articles e a camada que precisa ser re-codificada depois."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ferramentas de terceiros precisam de OAuth, app password, ou sessao delegada para usar a API de escrita de long-form?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Os tres sao suportados, com os mesmos trade-offs do resto do AT Protocol. App passwords sao o caminho mais leve: um token escopado por app que o usuario pode revogar da UI de configuracoes do Bluesky sem afetar a sessao principal. OAuth e o caminho recomendado para ferramentas que precisam postar em nome de muitos usuarios. Sessoes delegadas (tokens de sessao assinados armazenados em um keychain) sao o caminho para ferramentas que precisam continuar postando para um usuario mesmo quando ele esta offline."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como isso se encaixa com o playbook de leitura que voce publicou em 6 de julho?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O playbook de leitura (bluesky-long-form-creator-playbook-2026) cobre puxar posts longos para uma inbox unica e converte-los para Markdown para arquivamento. O playbook de escrita, este artigo, cobre empurrar posts longos de uma ferramenta de terceiros para o Bluesky atraves da nova API publica. Juntos eles sao as duas metades de uma stack de conteudo Bluesky portatil e script-driven: ler para Markdown para arquivo e citacao, escrever de Markdown para cross-post e migracao."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O ThreadGrab vai expor um endpoint de escrita de long-form para terceiros, ou apenas o lado de leitura?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Apenas o lado de leitura. ThreadGrab e um espelho citation-ready, nao uma superficie de publicacao. Nos puxamos posts longos, convertemos para Markdown limpo, e hospedamos o espelho em threadgrab.com. Para um criador que ja publica atraves de sua propria ferramenta, o papel do ThreadGrab e garantir que a versao publica de cada post seja indexavel por agentes de IA e mecanismos de busca. A API de escrita e para ferramentas como Skylight, Graysky, Typefully, e qualquer novo cliente de long-form que queira lancar antes da UI oficial do Bluesky estar feature-complete."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/pt/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a class="active" href="/pt/blog/bluesky-longform-api-thirdparty-2026.html">PT</a>
+      <a class="" href="/en/blog/bluesky-longform-api-thirdparty-2026.html">EN</a>
+      <a class="" href="/id/blog/bluesky-longform-api-thirdparty-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb"><a href="/pt/">Home</a> &rsaquo; <a href="/pt/blog/">Blog</a> &rsaquo; API Long-Form Bluesky 2026</div>
+
+    <h1>API Long-Form Bluesky 2026: <span>Ferramentas de Terceiros</span></h1>
+    <p class="meta">9 de Julho, 2026 &middot; 10 min de leitura &middot; Guia</p>
+
+    <p>O formato de post longo do Bluesky foi lancado para todos os usuarios no final de maio de 2026, e a primeira onda de tooling ao redor dele foi quase inteiramente do lado de leitura: clientes que renderizavam o novo embed, mirrors que puxavam o post para Markdown, e superficies de busca que indexavam o corpo. No inicio de julho de 2026, o cenario esta mudando. O Bluesky se comprometeu publicamente a abrir o lado de escrita da API de long-form para ferramentas de terceiros, com o primeiro SDK estavel previsto para agosto de 2026. Este guia e o que o playbook de escrita parece no interim, para qualquer criador ou desenvolvedor de ferramentas que queira enviar um caminho de publicacao de long-form no Bluesky antes do SDK oficial ser GA.</p>
+
+<p>O playbook de leitura <a href="/pt/blog/bluesky-long-form-creator-playbook-2026.html">que publicamos em 6 de julho</a> cobriu como puxar posts longos para uma inbox unica e converte-los para Markdown. Este artigo e o complemento: empurrar posts longos de uma ferramenta de terceiros para o Bluesky atraves da nova API publica de escrita, com a mesma disciplina Markdown-first no lado de entrada. As duas metades juntas sao uma stack de conteudo Bluesky portatil e script-driven que qualquer criador pode rodar em sua propria infraestrutura.</p>
+
+<div class="callout">
+<p><strong>TL;DR:</strong> O record de post longo do Bluesky e o <code>app.bsky.feed.post</code> existente com um novo campo <code>embeds</code> que carrega um corpo Markdown. Ferramentas de terceiros ja podem autenticar com uma app password e escrever nesse campo atraves do endpoint publico <code>com.atproto.repo.createRecord</code>. O primeiro SDK estavel chega em agosto de 2026; ate la o lado de escrita esta em developer preview. Combine a chamada de escrita com um mirror do ThreadGrab para que o post publicado seja AI-citation-ready desde o dia um.</p>
+</div>
+
+<h2>O Que a API de Escrita de Long-Form E Na Verdade</h2>
+
+<p>O Bluesky nao introduziu um novo endpoint para posts longos. O formato long-form vive em cima do record <code>app.bsky.feed.post</code> existente, em um novo campo <code>embeds</code> que aponta para uma estrutura <code>app.bsky.embed.recordWithMedia</code>. O corpo dentro do embed e um documento Markdown; o cliente publico renderiza como um card de scroll longo. O mesmo tipo de record, o mesmo endpoint XRPC, o mesmo fluxo de auth. Ferramentas de terceiros que ja sabem como escrever um post de 280 caracteres atraves de <code>com.atproto.repo.createRecord</code> podem escrever um post longo preenchendo o campo <code>embed</code> com a estrutura long-form, sem SDK novo.</p>
+
+<p>Para o lado de leitura, essa e a historia inteira. Para o lado de escrita, ha tres coisas para saber sobre o que esta sendo enviado antes do SDK de agosto de 2026:</p>
+
+<ul>
+<li><strong>Developer preview atras de uma flag.</strong> O caminho de escrita para a estrutura embed de long-form esta live no endpoint publico, mas esta gated atras de uma developer flag no SDK oficial. Ferramentas de terceiros que batem no endpoint diretamente atraves da chamada XRPC ja podem escrever posts longos. Ferramentas que usam o SDK oficial precisam setar a flag na config do cliente ate o release estavel.</li>
+<li><strong>OAuth e a auth recomendada para ferramentas multi-usuario.</strong> App passwords ainda funcionam e ainda sao o caminho mais leve para uma ferramenta pessoal, mas qualquer coisa que escreve em nome de mais de um usuario deve usar OAuth com escopo per-app. O time do Bluesky confirmou que os escopos OAuth para escrita de long-form sao os mesmos da escrita de short-form; nenhum escopo novo esta sendo introduzido.</li>
+<li><strong>O primeiro SDK estavel esta previsto para agosto de 2026.</strong> Esse SDK vai lockar a forma JSON do embed de long-form, documentar os rate limits, e adicionar o guia de migracao para ferramentas que estavam usando o developer preview. Ate la, trate a forma JSON como estavel mas espere adicoes menores de campos no release do SDK.</li>
+</ul>
+
+<p>Para um desenvolvedor de ferramentas enviando em julho de 2026, o caminho pratico e: use o endpoint publico com uma app password para sua propria conta, prototipe a chamada de escrita, e esteja pronto para trocar para OAuth + o SDK estavel assim que sair em agosto. O custo de escrever a integracao duas vezes e pequeno comparado ao custo de esperar pelo SDK e perder os dois primeiros meses de trafego de cross-post.</p>
+
+<h2>O Workflow de Escrita em Seis Passos</h2>
+
+<p>O workflow de escrita completo, de ponta a ponta, tem seis passos. Quatro deles sao script-driven e dois sao interface-driven. Os passos interface-driven (passo 1, criacao de app password; passo 5, submissao de mirror) sao os unicos lugares onde um humano precisa estar no loop, e ambos sao setups one-time. Uma vez feitos, o pipeline inteiro roda a partir de um unico <code>make publish</code> em um arquivo Markdown.</p>
+
+<h3>Passo 1: Criar uma app password</h3>
+
+<p>Uma app password e um token escopado por app que o usuario pode revogar da UI de configuracoes do Bluesky sem afetar a sessao principal. Gere uma em Settings -&gt; App Passwords -&gt; Add App Password, de um nome (ex. "third-party-longform-publisher"), e copie o token exibido uma unica vez. Armazene em um secrets manager, nao em um repo. O token tem o mesmo escopo de escrita da sua sessao principal mas esta escopado ao nome do app no log de auditoria, o que e util quando voce esta debugando uma escrita ruim que voce nao fez de proposito.</p>
+
+<pre><code># 1. Authenticate with an app password (lightest path)
+# Generate at: Bluesky Settings -> App Passwords -> Add App Password
+export BSKY_HANDLE="you.bsky.social"
+export BSKY_APP_PASSWORD="xxxx-xxxx-xxxx-xxxx"
+
+# 2. Create a session via com.atproto.server.createSession
+curl -X POST "https://bsky.social/xrpc/com.atproto.server.createSession" \
+  -H "Content-Type: application/json" \
+  -d '&#123;
+    "identifier": "'"$BSKY_HANDLE"'",
+    "password":  "'"$BSKY_APP_PASSWORD"'"
+  &#125;'
+
+# Response: &#123;"accessJwt": "...", "did": "did:plc:...", ...&#125;</code></pre>
+
+<h3>Passo 2: Compor o corpo do post em Markdown</h3>
+
+<p>Corpos de long-form do Bluesky sao Markdown. Nao um subset, nao um flavor, nao um derivado. CommonMark padrao com extensoes GFM para tabelas e task lists. O corpo vive no campo <code>embed.media.external.description</code>, com os primeiros 200 caracteres usados como preview do link na timeline publica. O corpo completo e fetched quando um leitor clica para abrir.</p>
+
+<p>A implicacao para desenvolvedores de ferramentas e que todo o caminho de escrita de long-form pode ser Markdown-first. O mesmo arquivo Markdown que voce escreve para um post de blog, uma newsletter do Substack, ou um artigo do LinkedIn pode ser a source of truth para um post longo do Bluesky, com o titulo em <code>embed.media.external.title</code> e o corpo em <code>embed.media.external.description</code> (limitado a 200 chars para o preview, com o corpo completo referenciado atraves do campo canonical URL). Essa e a mesma forma que o playbook de leitura usou para o mirror, e essa simetria e o que torna os dois lados composable.</p>
+
+<h3>Passo 3: Escrever o record</h3>
+
+<p>Uma vez que voce tem o session token e o corpo Markdown, a chamada de escrita e um unico POST em <code>com.atproto.repo.createRecord</code>. O <code>collection</code> e <code>app.bsky.feed.post</code>, o <code>repo</code> e o DID do usuario, e o <code>record.embed</code> e a estrutura de long-form. A resposta carrega o post URI, que voce precisara para o passo de mirror e para o campo canonical URL na superficie de citacao.</p>
+
+<pre><code># 3. Write a long-form post via the new public write API
+# app.bsky.feed.post with embeds field carrying Markdown body
+curl -X POST "https://bsky.social/xrpc/com.atproto.repo.createRecord" \
+  -H "Authorization: Bearer $BSKY_ACCESS_JWT" \
+  -H "Content-Type: application/json" \
+  -d '&#123;
+    "repo": "did:plc:YOUR_DID_HERE",
+    "collection": "app.bsky.feed.post",
+    "record": &#123;
+      "$type": "app.bsky.feed.post",
+      "text": "Long-form post title goes here",
+      "createdAt": "2026-07-09T12:00:00Z",
+      "embed": &#123;
+        "$type": "app.bsky.embed.recordWithMedia",
+        "media": &#123;
+          "$type": "app.bsky.embed.external",
+          "external": &#123;
+            "uri": "https://yourdomain.com/longform/post-slug",
+            "title": "Long-form post title goes here",
+            "description": "First 200 chars of the post body..."
+          &#125;
+        &#125;
+      &#125;
+    &#125;
+  &#125;'
+
+# 4. Capture the post URI from the response
+# -> at://did:plc:.../app.bsky.feed.post/3k...xyz</code></pre>
+
+<h3>Passo 4: Converter Markdown para a estrutura embed</h3>
+
+<p>Para uma ferramenta que publica muitos posts, a conversao de Markdown para o JSON embed do Bluesky e a parte que e re-implementada. Abaixo esta a versao funcionando, em 20 linhas de Python, que qualquer ferramenta de terceiros pode dropar. Ela usa <code>python-frontmatter</code> para ler o front matter (title, canonical_url, description) e um pass de regex para strippar Markdown para o preview de description.</p>
+
+<pre><code># 5. Convert a Markdown long-form body to the embed structure
+# This is the part every third-party tool will need to ship before August 2026
+import re, json, frontmatter
+
+def md_to_bluesky_embed(md_path, max_desc_len=200):
+    """Convert a Markdown file to the Bluesky long-form embed JSON shape."""
+    post = frontmatter.load(md_path)
+    body = post.content
+    # Strip Markdown for description preview
+    plain = re.sub(r'[#*_`>\[\]()]', '', body)
+    plain = re.sub(r'\s+', ' ', plain).strip()
+    description = plain[:max_desc_len]
+    return &#123;
+        "$type": "app.bsky.embed.recordWithMedia",
+        "media": &#123;
+            "$type": "app.bsky.embed.external",
+            "external": &#123;
+                "uri": post.metadata.get("canonical_url", ""),
+                "title": post.metadata.get("title", "Untitled"),
+                "description": description
+            &#125;
+        &#125;
+    &#125;
+
+embed = md_to_bluesky_embed("post.md")
+print(json.dumps(embed, indent=2))</code></pre>
+
+<h3>Passo 5: Mirror para uma superficie citation-ready</h3>
+
+<p>Um post longo do Bluesky e, por default, somente indexavel dentro da propria busca do Bluesky e da firehose do AT Protocol. Agentes de IA (GPTBot, ClaudeBot, PerplexityBot) nao crawlheiam o app do Bluesky, entao um post longo sem um mirror externo e invisivel para a camada de busca de IA. O fix e mirrorar o post para uma URL estavel e citation-ready no mesmo dia em que voce publica no Bluesky. O mirror deve carregar o corpo Markdown completo, linkar de volta para o post do Bluesky, e ser submetido as superficies de crawl padrao (sitemap, llms.txt, Bing webmaster, IndexNow).</p>
+
+<p>ThreadGrab e um desses mirrors, e o caminho de publicacao e o mesmo que voce usaria para qualquer outra superficie de long-form: POST o source URI, a public URL, o titulo, e o body Markdown para o endpoint de ingest. A mirror page vai live dentro de um minuto, a entrada do sitemap e adicionada automaticamente, e o post e acessivel por GPTBot e ClaudeBot dentro do proximo ciclo de crawl.</p>
+
+<pre><code># 6. Mirror the published long-form on threadgrab.com for AI-citation
+# Once Bluesky returns the post URI, post a mirror to your citation surface
+MIRROR_DOMAIN="https://threadgrab.com"
+BSKY_POST_URI="at://did:plc:abc.../app.bsky.feed.post/3kxyz..."
+
+# Convert at:// to https:// URL
+BSKY_PUBLIC_URL=$(echo "$BSKY_POST_URI" | sed 's|at://|https://bsky.app/profile/|; s|/app.bsky.feed.post/|/post/|')
+
+# Write the mirror page (same Markdown, with Bluesky embed linking back)
+cat > mirror.html <<EOF
+&lt;article&gt;
+  &lt;h1&gt;$POST_TITLE&lt;/h1&gt;
+  &lt;p&gt;Originally posted on Bluesky: &lt;a href="$BSKY_PUBLIC_URL"&gt;$BSKY_PUBLIC_URL&lt;/a&gt;&lt;/p&gt;
+  $MARKDOWN_BODY
+&lt;/article&gt;
+EOF
+
+# Submit to ThreadGrab for citation-ready hosting
+curl -X POST "$MIRROR_DOMAIN/api/ingest" \
+  -H "Content-Type: application/json" \
+  -d "&#123;
+    "source_uri": "$BSKY_POST_URI",
+    "public_url":  "$BSKY_PUBLIC_URL",
+    "title":       "$POST_TITLE",
+    "body_md":     "$MARKDOWN_BODY"
+  &#125;"</code></pre>
+
+<h3>Passo 6: Submeter as superficies de citacao de IA</h3>
+
+<p>O passo de mirror e a camada citation-ready. O passo de submissao e a camada de AI-citation. Uma vez que o mirror esta live, envie a URL para as superficies que agentes de IA realmente crawlheiam: IndexNow (Bing + DuckDuckGo + ChatGPT search), o arquivo llms.txt na raiz do dominio mirror, e o sitemap. ThreadGrab lida com todos os tres no dominio mirror; para um mirror em dominio customizado, a receita equivalente e submeter a URL atraves do Bing Webmaster Tools e adicionar manualmente ao sitemap e llms.txt.</p>
+
+<p>Para um criador que esta publicando um ou dois posts longos por semana, a submissao manual esta ok. Para um criador que esta fazendo cross-post de uma newsletter que sai semanalmente para centenas de leitores, a submissao deve ser automatizada. O pattern e: <code>make publish</code> dispara a escrita no Bluesky, a escrita do mirror, e a submissao do IndexNow em um unico shot, com o post URI ecoado para stdout para que o humano no loop possa confirmar a run.</p>
+
+<h2>Comparacao Cross-Platform: Bluesky vs X Articles vs LinkedIn</h2>
+
+<p>Para um criador que esta fazendo cross-post de conteudo long-form, a arvore de decisao do lado de escrita em julho de 2026 se parece com isto: Bluesky e a camada onde uma ferramenta de terceiros pode escrever diretamente atraves de uma API publica; X Articles e a camada que precisa ser re-encodada depois; artigos do LinkedIn sao a camada onde o unico caminho oficial de escrita e a UI web do LinkedIn.</p>
+
+<table>
+<thead><tr><th>Plataforma</th><th>API de escrita de long-form</th><th>Caminho de auth</th><th>Rate limit</th><th>Mirror-friendliness</th></tr></thead>
+<tbody>
+<tr><td>Bluesky</td><td>Sim, publica (developer preview)</td><td>App password / OAuth</td><td>5.000 write requests / dia / DID</td><td>Alta (AT Protocol e aberto)</td></tr>
+<tr><td>X Articles</td><td>Fechada (X partner API apenas)</td><td>OAuth 2.0 (X)</td><td>100 posts / 24h (user tier)</td><td>Media (URL pattern e estavel)</td></tr>
+<tr><td>LinkedIn articles</td><td>Fechada (sem API publica de escrita)</td><td>Sessao LinkedIn</td><td>~20 posts longos / dia</td><td>Baixa (mirror UGC nao permitido)</td></tr>
+</tbody>
+</table>
+
+<p>O pattern que emerge: Bluesky e a plataforma onde um pipeline de cross-post e portatil e script-driven; X Articles e a plataforma onde um pipeline de cross-post tem que usar uma partner API e re-encodar o corpo; LinkedIn e a plataforma onde o unico caminho de escrita e um humano em um browser. Para um criador que quer um pipeline de publicacao de long-form que funciona nos tres, o pipeline escreve no Bluesky primeiro, mirrora para uma superficie citation-ready, e depois usa a partner API para X Articles mais um fallback de browser-automation para LinkedIn. A perna do Bluesky e a unica onde o fluxo inteiro e script-driven de ponta a ponta.</p>
+
+<h2>Quando Nao Construir um Pipeline de Lado de Escrita</h2>
+
+<p>O pipeline de lado de escrita vale o build quando qualquer um dos seguintes for verdade: voce publica mais de dois posts longos por semana, voce quer fazer cross-post para multiplas plataformas a partir de uma source unica, ou voce quer mirrors AI-citation-ready no mesmo dia em que voce publica. Ele nao vale o build quando voce publica menos de uma vez por mes, voce so publica em uma plataforma, ou voce nao precisa de citacao de IA. O custo do pipeline e aproximadamente meio dia de dev work na primeira vez e zero horas por semana para rodar depois disso. Para um publisher de uma vez por mes, essa conta nao fecha.</p>
+
+<p>Para todo o resto, o SDK estavel de agosto de 2026 e o momento para enviar. Ate la, o developer preview e estavel o suficiente para prototipar contra, os rate limits estao publicados, e o mirror de lado de leitura (o playbook de 6 de julho) e a outra metade do loop. Os dois playbooks juntos sao a stack de criadores funcionando para o segundo semestre de 2026: leia para Markdown para arquivo, escreva de Markdown para cross-post, mirrore para uma superficie citation-ready para descoberta de IA. Esse e o loop, e agora e inteiramente script-driven.</p>
+
+<p>Para um criador que ja roda <a href="/pt/blog/bluesky-long-form-creator-playbook-2026.html">o playbook de leitura</a> no ThreadGrab, o pipeline de lado de escrita e a peca que falta. Adicionar os quatro scripts deste artigo ao mesmo repo, o mesmo cron, e o mesmo caminho de deploy transforma o mirror de lado de leitura em um loop write-publish-mirror em que qualquer ferramenta pode plug-in. Essa e a stack de long-form production-grade para o segundo semestre de 2026, e ela nao precisa esperar pelo SDK estavel para comecar a funcionar.</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <strong>O que e a API de posts longos do Bluesky para ferramentas de terceiros, e quando ela sera lancada?</strong>
+      <p>A API de long-form e a camada publica, acessivel a terceiros, sobre o tipo de registro app.bsky.feed.post com o novo campo embeds que o Bluesky lancou no final de maio de 2026. No inicio de julho de 2026, o Bluesky se comprometeu publicamente a abrir a superficie completa de leitura e escrita de posts longos para ferramentas de terceiros ao longo do verao, com o primeiro SDK estavel previsto para agosto de 2026. Ate la, os endpoints publicos suportam recuperacao e citacao de leitura, mas o lado de escrita esta em developer preview atras de uma flag.</p>
+    </div>
+    <div class="faq-item">
+      <strong>A API de escrita de long-form e um endpoint separado, ou um novo campo no endpoint de post existente?</strong>
+      <p>E um novo campo no endpoint de post existente. O registro classico app.bsky.feed.post agora carrega uma estrutura embeds de long-form que aponta para um corpo Markdown, e esse mesmo campo e o que ferramentas de terceiros escrevem uma vez que o SDK for lancado. Nao ha endpoint /api/v1/long-form; e a mesma chamada de post que voce faria para um post de 280 caracteres, mas com o embed de long-form preenchido.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Como a API de escrita de long-form do Bluesky se compara ao X Articles para cross-post?</strong>
+      <p>Bluesky long-form e uma API de escrita sobre um protocolo aberto, entao uma ferramenta de terceiros que escreve atraves dela tambem pode ler de volta do mesmo jeito, sem assimetria de rate limit e sem divisao publico/privado. X Articles e um recurso fechado em uma plataforma fechada: a unica maneira de escrever e pela UI web do X ou uma API parceira, e a unica maneira de ler conteudo estruturado e a URL publica de X Articles. Para um pipeline de cross-post, Bluesky e a camada portatil; X Articles e a camada que precisa ser re-codificada depois.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Ferramentas de terceiros precisam de OAuth, app password, ou sessao delegada para usar a API de escrita de long-form?</strong>
+      <p>Os tres sao suportados, com os mesmos trade-offs do resto do AT Protocol. App passwords sao o caminho mais leve: um token escopado por app que o usuario pode revogar da UI de configuracoes do Bluesky sem afetar a sessao principal. OAuth e o caminho recomendado para ferramentas que precisam postar em nome de muitos usuarios. Sessoes delegadas (tokens de sessao assinados armazenados em um keychain) sao o caminho para ferramentas que precisam continuar postando para um usuario mesmo quando ele esta offline.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Como isso se encaixa com o playbook de leitura que voce publicou em 6 de julho?</strong>
+      <p>O playbook de leitura (bluesky-long-form-creator-playbook-2026) cobre puxar posts longos para uma inbox unica e converte-los para Markdown para arquivamento. O playbook de escrita, este artigo, cobre empurrar posts longos de uma ferramenta de terceiros para o Bluesky atraves da nova API publica. Juntos eles sao as duas metades de uma stack de conteudo Bluesky portatil e script-driven: ler para Markdown para arquivo e citacao, escrever de Markdown para cross-post e migracao.</p>
+    </div>
+    <div class="faq-item">
+      <strong>O ThreadGrab vai expor um endpoint de escrita de long-form para terceiros, ou apenas o lado de leitura?</strong>
+      <p>Apenas o lado de leitura. ThreadGrab e um espelho citation-ready, nao uma superficie de publicacao. Nos puxamos posts longos, convertemos para Markdown limpo, e hospedamos o espelho em threadgrab.com. Para um criador que ja publica atraves de sua propria ferramenta, o papel do ThreadGrab e garantir que a versao publica de cada post seja indexavel por agentes de IA e mecanismos de busca. A API de escrita e para ferramentas como Skylight, Graysky, Typefully, e qualquer novo cliente de long-form que queira lancar antes da UI oficial do Bluesky estar feature-complete.</p>
+    </div>
+
+    <div class="cta">
+      <p>Want the citation-ready mirror on your own domain?</p>
+      <a class="btn" href="/pt/">Try ThreadGrab</a>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/pt/">Home</a> &middot; <a href="/pt/blog/">Blog</a> &middot; <a href="/pt/about/">About</a> &middot; <a href="/pt/privacy/">Privacy</a>
+    <br>Not affiliated with X Corp., Bluesky Social PBC, LinkedIn Corporation, or Microsoft Corporation.
+  </footer>
+</body>
+</html>
