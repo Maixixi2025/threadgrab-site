@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Correção de Posts do X 2026: Guia ThreadGrab</title>
+  <meta name="description" content="O X envia DM quando posts que você interagiu são corrigidos. ThreadGrab detecta alterações e re-busca a versão corrigida para seu arquivo Markdown preciso.">
+  <meta name="keywords" content="correção de post X, notificação de correção X, ThreadGrab re-busca, detecção de alteração X, arquivo de post X preciso, Elon Musk correções de post, alertas DM X">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/pt/blog/x-post-correcao-notificacao-re-busca-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/x-post-correction-re-fetch-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/x-post-correcao-notificacao-re-busca-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/x-post-koreksi-notifikasi-ambil-ulang-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/x-post-correction-re-fetch-2026.html">
+  <meta property="og:title" content="Correção de Posts do X 2026: Guia ThreadGrab">
+  <meta property="og:description" content="O X envia DM quando posts que você interagiu são corrigidos. ThreadGrab detecta alterações e re-busca a versão corrigida para seu arquivo Markdown preciso.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/pt/blog/x-post-correcao-notificacao-re-busca-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Notificação de Correção de Posts do X 2026: Guia de Re-Busca Automática do ThreadGrab">
+  <meta name="twitter:description" content="O X agora envia DM quando posts que você interagiu são corrigidos. Saiba como o ThreadGrab detecta alterações e re-busca automaticamente conteúdo corrigido para um arquivo Markdown preciso.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; font-size: 0.95rem; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Notificação de Correção de Posts do X 2026: Guia de Re-Busca Automática do ThreadGrab",
+    "description": "O X agora envia DM quando posts que você interagiu são corrigidos. Saiba como o ThreadGrab detecta alterações e re-busca automaticamente conteúdo corrigido para um arquivo Markdown preciso.",
+    "datePublished": "2026-07-11",
+    "dateModified": "2026-07-11",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/en/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/en/" },
+    "mainEntityOfPage": "https://threadgrab.com/pt/blog/x-post-correcao-notificacao-re-busca-2026.html",
+    "inLanguage": "pt"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://threadgrab.com/pt/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/pt/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Notificação de Correção X 2026", "item": "https://threadgrab.com/pt/blog/x-post-correcao-notificacao-re-busca-2026.html" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "O ThreadGrab re-busca automaticamente posts corrigidos do X?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. O ThreadGrab monitora posts arquivados para mudanças de conteúdo usando um sistema de comparação de hash. Quando detecta que um post foi editado, ele re-busca a versão mais recente e sinaliza a atualização no seu arquivo com um timestamp de revisão."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como o ThreadGrab detecta que um post do X foi corrigido?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O ThreadGrab armazena um hash SHA-256 do conteúdo de cada post no momento da captura. Em verificações subsequentes, ele re-busca o HTML renderizado ou a resposta da API do post, calcula um novo hash e compara. Uma diferença aciona o pipeline de re-busca. A nova notificação DM do X é um sinal separado voltado ao consumidor, mas a detecção do ThreadGrab funciona no lado do servidor por comparação de conteúdo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso ver o que mudou entre as versões original e corrigida?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O ThreadGrab mantém um histórico de versões para cada post. Quando uma correção é detectada, a nova versão é adicionada em vez de sobrescrever a original. Você pode executar um diff entre o arquivo Markdown original e o revisado usando qualquer ferramenta padrão de diff ou integrar com git para rastreamento completo de versões."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Preciso da notificação DM do X para saber que um post foi corrigido?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não. A notificação DM do X é um recurso de conveniência para leitores manuais. O sistema automatizado de comparação de hash do ThreadGrab detecta mudanças de forma independente — você verá a versão atualizada no seu arquivo independentemente de o X enviar um DM. Para a maioria dos casos de uso de arquivamento, a abordagem automatizada é mais confiável."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Com que frequência o ThreadGrab verifica posts arquivados em busca de correções?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O ThreadGrab verifica os posts arquivados em um cronograma configurável, com padrão de 24 horas. Você pode aumentar a frequência para cada 6 horas em fluxos de trabalho sensíveis ao tempo. Cada verificação é eficiente — busca apenas cabeçalhos e calcula comparações de hash sem baixar corpos completos a menos que uma alteração seja detectada."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/pt/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a href="/en/blog/x-post-correction-re-fetch-2026.html">EN</a>
+      <a href="/pt/blog/x-post-correcao-notificacao-re-busca-2026.html" class="active">PT</a>
+      <a href="/id/blog/x-post-koreksi-notifikasi-ambil-ulang-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb">
+      <a href="/pt/">Início</a> &raquo; <a href="/pt/blog/">Blog</a> &raquo; <span>Notificação de Correção de Posts do X 2026</span>
+    </div>
+
+    <h1>Notificação de Correção de Posts do X 2026: <span>Guia de Re-Busca Automática do ThreadGrab</span></h1>
+    <div class="meta">11 de Julho, 2026 &middot; 10 min de leitura &middot; Guia</div>
+
+    <p>Em 8 de julho de 2026, Elon Musk anunciou que o X começaria a enviar notificações por mensagem direta aos usuários quando posts com os quais eles interagiram fossem corrigidos. O recurso aborda um problema antigo nas plataformas sociais: uma vez que um post viraliza, edições em seu conteúdo são essencialmente invisíveis para todos que já o viram. Correções de informações importantes — preços, datas, instruções — propagam-se silenciosamente, quando propagam.</p>
+
+    <p>Esta atualização tem implicações imediatas para arquivistas de conteúdo, pesquisadores e qualquer pessoa que salva posts do X como Markdown. Se o post que você salvou na semana passada foi corrigido ontem, qual versão seu arquivo contém? E mais importante: como você <em>sabe</em> que ele foi corrigido?</p>
+
+    <p>A resposta do ThreadGrab é um sistema automatizado de monitoramento de hash e re-busca de conteúdo. Este guia explica o novo recurso de notificação de correção do X, como funciona o pipeline de detecção do ThreadGrab e como manter seu arquivo Markdown preciso na era das correções pós-publicação.</p>
+
+    <div class="callout">
+      <p><strong>Resumo:</strong> A notificação DM do X informa que uma correção aconteceu. O ThreadGrab informa <em>o que</em> mudou e fornece o Markdown corrigido automaticamente. Os dois sistemas são complementares — um é um alerta push, o outro é um arquivo confiável.</p>
+    </div>
+
+    <h2>O que a Notificação de Correção do X Significa para Arquivistas</h2>
+
+    <p>O novo recurso do X, relatado pelo TechCrunch em 8 de julho, envia um DM para qualquer usuário que curtiu, respondeu, repostou ou salvou um post que o autor posteriormente edita. O DM diz algo como: <em>"Um post com o qual você interagiu foi corrigido pelo autor."</em> Não inclui o conteúdo antigo ou um diff — apenas um link para o post.</p>
+
+    <p>Para o usuário comum, isto é uma melhoria de transparência. Para qualquer pessoa construindo um arquivo de conteúdo do X — pesquisadores rastreando declarações de políticas, jornalistas documentando figuras públicas, criadores curando seu próprio portfólio — isso traz à tona uma pergunta que a plataforma nunca respondeu antes: <em>qual versão deste post é a verdadeira?</em></p>
+
+    <p>Antes deste recurso, se você salvasse um thread ou artigo do X na segunda-feira e o autor corrigisse um erro factual na quarta-feira, seu arquivo silenciosamente mantinha a versão desatualizada. Não havia sistema de notificação, nenhum histórico de versão exposto na API e nenhum diff embutido. As correções viviam na lacuna entre o que foi postado e o que foi salvo.</p>
+
+    <p>A notificação DM fecha a lacuna de conscientização. Mas a conscientização sozinha não atualiza seu arquivo — você ainda precisa de uma ferramenta que possa buscar a versão corrigida, compará-la com o que você salvou e sinalizar a diferença.</p>
+
+    <h2>Sistema de Monitoramento de Hash de Conteúdo do ThreadGrab</h2>
+
+    <p>O pipeline de re-busca do ThreadGrab começa no momento em que você salva um post pela primeira vez. Cada thread, artigo ou resposta do X que passa pelo ThreadGrab gera uma impressão digital do conteúdo no momento da captura:</p>
+
+    <pre><code># Hash de conteúdo calculado no momento da captura
+import hashlib, json
+
+def capture_post(post_data):
+    content_string = json.dumps(post_data, sort_keys=True)
+    content_hash = hashlib.sha256(
+        content_string.encode('utf-8')
+    ).hexdigest()
+    
+    return {
+        "hash": content_hash,
+        "captured_at": "2026-07-11T10:00:00Z",
+        "body_markdown": extract_markdown(post_data),
+        "metadata": post_data.get("metadata", {})
+    }</code></pre>
+
+    <p>Este hash se torna a linha de base. Em cada verificação subsequente (padrão: a cada 24 horas), o ThreadGrab re-busca o post através da API do X ou HTML renderizado, calcula um novo hash e compara:</p>
+
+    <pre><code># Comparação de hash na re-busca
+def check_for_corrections(post_id, previous_hash):
+    current_data = fetch_x_post(post_id)
+    current_hash = hashlib.sha256(
+        json.dumps(current_data, sort_keys=True).encode('utf-8')
+    ).hexdigest()
+    
+    if current_hash != previous_hash:
+        print(f"Correção detectada para o post {post_id}")
+        return re_fetch_complete_post(post_id)
+    return None</code></pre>
+
+    <p>O sistema é baseado em hash, não em timestamp. Isto é importante porque os timestamps de edição da API do X podem ser atualizados por razões cosméticas (texto alternativo de imagem, correções de digitação) que não alteram o conteúdo semântico. Uma comparação de hash captura apenas mutações reais de conteúdo — a diferença entre "Disponível até 30 de junho" e "Disponível até 15 de julho."</p>
+
+    <h2>O Pipeline de Re-Busca: Da Detecção ao Arquivo Atualizado</h2>
+
+    <p>Quando uma diferença de hash é detectada, o ThreadGrab executa um pipeline de três estágios antes de atualizar seu arquivo:</p>
+
+    <p><strong>Estágio 1 — Confirmar que a mudança é de conteúdo, não de metadados.</strong> O sistema faz uma segunda busca com um endpoint diferente (API vs HTML renderizado) para descartar diferenças transitórias de renderização ou deriva de API. Apenas mudanças confirmadas de conteúdo prosseguem.</p>
+
+    <p><strong>Estágio 2 — Anexo de versão.</strong> O ThreadGrab não sobrescreve o arquivo Markdown original. Em vez disso, cria um registro de revisão:</p>
+
+    <pre><code># Estrutura do histórico de versões
+{
+  "post_id": "1890567890123456789",
+  "versions": [
+    {
+      "captured_at": "2026-07-07T14:30:00Z",
+      "hash": "a1b2c3d4...",
+      "markdown_file": "pt/archive/2026-07-07_x-post-189056.md"
+    },
+    {
+      "captured_at": "2026-07-11T10:00:00Z",
+      "hash": "e5f6g7h8...",
+      "markdown_file": "pt/archive/2026-07-11_x-post-189056-v2.md",
+      "correction_detected": true
+    }
+  ]
+}</code></pre>
+
+    <p><strong>Estágio 3 — Geração de diff.</strong> Um diff compatível com Markdown é gerado entre as versões original e corrigida. O diff é armazenado junto com o arquivo para que você veja exatamente o que mudou sem procurar em texto bruto.</p>
+
+    <h2>Comparação: Rastreamento Manual vs Automatizado de Correções</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Abordagem</th>
+          <th>Método de detecção</th>
+          <th>Arquivo atualizado?</th>
+          <th>Diff disponível?</th>
+          <th>Confiabilidade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Notificação DM do X</td>
+          <td>Alerta push (DM)</td>
+          <td>Não (manual)</td>
+          <td>Não</td>
+          <td>Condicional (apenas posts interagidos)</td>
+        </tr>
+        <tr>
+          <td>Verificação manual</td>
+          <td>Visitar URL, comparar visualmente</td>
+          <td>Sim (manual)</td>
+          <td>Não</td>
+          <td>Baixa (erro humano, fadiga)</td>
+        </tr>
+        <tr>
+          <td>Favorito do navegador + diff</td>
+          <td>Extensão de navegador</td>
+          <td>Parcial</td>
+          <td>Manual</td>
+          <td>Média (dependente de extensão)</td>
+        </tr>
+        <tr>
+          <td>ThreadGrab re-busca automática</td>
+          <td>Comparação de hash</td>
+          <td>Sim (automatizado)</td>
+          <td>Sim (automatizado)</td>
+          <td>Alta (cobre todos os posts arquivados)</td>
+        </tr>
+        <tr>
+          <td>Script de polling de API</td>
+          <td>Lógica de API personalizada</td>
+          <td>Personalizado</td>
+          <td>Personalizado</td>
+          <td>Variável (carga de manutenção)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Configurando o Cronograma de Monitoramento de Correções do ThreadGrab</h2>
+
+    <p>A frequência de verificação do ThreadGrab é configurável por arquivo. Veja como diferentes cronogramas se adequam a diferentes casos de uso:</p>
+
+    <ul>
+      <li><strong>A cada 24 horas (padrão):</strong> Melhor para a maioria dos arquivistas. Equilibra uso da API com atualidade. Correções são detectadas dentro de um dia útil.</li>
+      <li><strong>A cada 6 horas:</strong> Para arquivos sensíveis ao tempo — jornalistas monitorando declarações oficiais, pesquisadores rastreando orientações de saúde pública em evolução ou equipes de compliance que precisam de trilhas de auditoria.</li>
+      <li><strong>Sob demanda / gatilho manual:</strong> Inicie uma verificação para um post específico ou conjunto de posts. Útil quando você recebe uma notificação DM do X e deseja atualizar imediatamente seu arquivo.</li>
+    </ul>
+
+    <pre><code># Configurar cronograma de verificação via CLI do ThreadGrab
+threadgrab config set recheck_interval 6h
+
+# Ou acionar sob demanda para um post específico
+threadgrab recheck --post-id 1890567890123456789
+
+# Verificar histórico de correções de um arquivo
+threadgrab history --post-id 1890567890123456789</code></pre>
+
+    <h2>Melhores Práticas para um Arquivo Pós-Publicação Preciso</h2>
+
+    <p>O recurso de notificação de correção do X é um passo positivo para a transparência da plataforma, mas também destaca uma verdade mais profunda: o conteúdo social é fluido. Um post não é um documento estático — pode ser editado, corrigido, excluído ou restaurado. Um arquivo que captura apenas a primeira versão está incompleto.</p>
+
+    <p>Aqui estão as melhores práticas que o ThreadGrab recomenda para manter um arquivo preciso na era das correções:</p>
+
+    <p><strong>1. Ative verificações automáticas em cada arquivo.</strong> O intervalo padrão de 24 horas captura a grande maioria das correções antes que elas importem. Defina um intervalo mais curto em arquivos que você consulta diariamente.</p>
+
+    <p><strong>2. Nunca sobrescreva — sempre versione.</strong> A versão original de um post é tão valiosa quanto a corrigida. Um historiador precisa saber o que foi originalmente publicado, não apenas o que a versão final diz. O modelo de anexo de versão do ThreadGrab preserva ambas.</p>
+
+    <p><strong>3. Mantenha diffs em seu fluxo de trabalho git.</strong> Se seu arquivo Markdown vive em um repositório git, commit a captura original e depois commit a versão corrigida como uma entrada separada. O git diff se torna seu registro de alterações.</p>
+
+    <p><strong>4. Cruze referências com as notificações DM do X.</strong> Quando você receber um DM de correção do X, use-o como sinal para acionar uma verificação imediata do ThreadGrab no post referenciado. A combinação de alerta push + re-busca automatizada é o fluxo de trabalho mais confiável.</p>
+
+    <p><strong>5. Monitore a frequência de correções para padrões.</strong> Se um autor específico corrige posts regularmente, pode indicar um problema sistemático de confiabilidade com essa fonte. O histórico de versões do ThreadGrab torna esse padrão visível.</p>
+
+    <h2>FAQ</h2>
+
+    <div class="faq-item">
+      <strong>O ThreadGrab re-busca automaticamente posts corrigidos do X?</strong>
+      <p>Sim. O ThreadGrab monitora posts arquivados para mudanças de conteúdo usando um sistema de comparação de hash. Quando detecta que um post foi editado, ele re-busca a versão mais recente e sinaliza a atualização no seu arquivo com um timestamp de revisão.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Como o ThreadGrab detecta que um post do X foi corrigido?</strong>
+      <p>O ThreadGrab armazena um hash SHA-256 do conteúdo de cada post no momento da captura. Em verificações subsequentes, ele re-busca o HTML renderizado ou a resposta da API do post, calcula um novo hash e compara. Uma diferença aciona o pipeline de re-busca.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Posso ver o que mudou entre as versões original e corrigida?</strong>
+      <p>O ThreadGrab mantém um histórico de versões para cada post. Quando uma correção é detectada, a nova versão é adicionada em vez de sobrescrever a original. Você pode executar um diff entre o arquivo Markdown original e o revisado usando qualquer ferramenta padrão de diff.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Preciso da notificação DM do X para saber que um post foi corrigido?</strong>
+      <p>Não. O sistema automatizado de comparação de hash do ThreadGrab detecta mudanças de forma independente — você verá a versão atualizada no seu arquivo independentemente de o X enviar um DM.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Com que frequência o ThreadGrab verifica posts arquivados em busca de correções?</strong>
+      <p>O ThreadGrab verifica os posts arquivados em um cronograma configurável, com padrão de 24 horas. Você pode aumentar a frequência para cada 6 horas para fluxos de trabalho sensíveis ao tempo.</p>
+    </div>
+
+    <h2>Conclusão — A Era das Correções Exige Arquivos Melhores</h2>
+
+    <p>O recurso de notificação de correção do X é uma melhoria significativa para a transparência da plataforma, mas também expõe uma lacuna que todo arquivista de conteúdo social agora enfrenta: saber que uma correção aconteceu não é o mesmo que ter o conteúdo corrigido.</p>
+
+    <p>O monitoramento de hash de conteúdo e o sistema automático de re-busca do ThreadGrab preenchem essa lacuna. Funciona com ou sem as notificações DM do X, preserva todas as versões de cada post e gera diffs que permitem ver exatamente o que mudou. Na era das correções, um arquivo estático não é um arquivo — é uma captura instantânea que fica desatualizada no momento em que o autor aperta editar.</p>
+
+    <div class="cta">
+      <p><strong>Comece a arquivar com Markdown consciente de correções.</strong> O ThreadGrab captura threads do X, posts do Bluesky e newsletters do LinkedIn — e agora os monitora automaticamente em busca de correções.</p>
+      <a class="btn" href="https://threadgrab.com/pt/">Experimente ThreadGrab Grátis</a>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/pt/">Início</a> &middot; <a href="/pt/about/">Sobre</a> &middot; <a href="/pt/privacy/">Privacidade</a>
+  </footer>
+</body>
+</html>

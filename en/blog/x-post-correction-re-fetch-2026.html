@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>X Post Correction 2026: ThreadGrab Re-Fetch Guide</title>
+  <meta name="description" content="X DMs users when posts you engaged with get corrected. ThreadGrab detects changes and auto-re-fetches the updated version for an accurate Markdown archive.">
+  <meta name="keywords" content="X post correction, X correction notification, ThreadGrab re-fetch, X content change detection, X post archive accuracy, Elon Musk post corrections, X DM correction alerts">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/en/blog/x-post-correction-re-fetch-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/x-post-correction-re-fetch-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/x-post-correcao-notificacao-re-busca-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/x-post-koreksi-notifikasi-ambil-ulang-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/x-post-correction-re-fetch-2026.html">
+  <meta property="og:title" content="X Post Correction 2026: ThreadGrab Re-Fetch Guide">
+  <meta property="og:description" content="X DMs users when posts you engaged with get corrected. ThreadGrab detects changes and auto-re-fetches the updated version for an accurate Markdown archive.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/en/blog/x-post-correction-re-fetch-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="X Post Correction Notifications 2026: ThreadGrab Auto Re-Fetch Guide">
+  <meta name="twitter:description" content="X now DMs users when posts they engaged with are corrected. Learn how ThreadGrab detects changes and auto-re-fetches corrected content for an accurate Markdown archive.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; font-size: 0.95rem; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "X Post Correction Notifications 2026: ThreadGrab Auto Re-Fetch Guide",
+    "description": "X now DMs users when posts they engaged with are corrected. Learn how ThreadGrab detects changes and auto-re-fetches corrected content for an accurate Markdown archive.",
+    "datePublished": "2026-07-11",
+    "dateModified": "2026-07-11",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/en/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/en/" },
+    "mainEntityOfPage": "https://threadgrab.com/en/blog/x-post-correction-re-fetch-2026.html",
+    "inLanguage": "en"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://threadgrab.com/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/en/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "X Post Correction Re-Fetch 2026", "item": "https://threadgrab.com/en/blog/x-post-correction-re-fetch-2026.html" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does ThreadGrab automatically re-fetch corrected X posts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. ThreadGrab monitors archived posts for content changes using a content-hash comparison system. When it detects that a post has been edited, it re-fetches the latest version and flags the update in your archive with a revision timestamp."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does ThreadGrab detect that an X post was corrected?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ThreadGrab stores a SHA-256 content hash of every post at the time of capture. On subsequent checks, it re-fetches the post's rendered HTML or API response, computes a new hash, and compares. A mismatch triggers the re-fetch pipeline. X's new DM notification is a separate consumer-facing signal, but ThreadGrab's detection works server-side through content comparison."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I see what changed between original and corrected versions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ThreadGrab maintains version history for each post. When a correction is detected, the new version is appended rather than overwritten. You can run a diff between the original Markdown file and the revised one using any standard diff tool or integrate with git for full version tracking."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need X's DM notification to know a post was corrected?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. X's DM notification is a convenience feature for manual readers. ThreadGrab's automated hash-comparison system detects changes independently — you will see the updated version in your archive whether or not X sends you a DM. For most archiving use cases, the automated approach is more reliable."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often does ThreadGrab check archived posts for corrections?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ThreadGrab checks archived posts on a configurable schedule, with a default of every 24 hours. You can increase frequency to every 6 hours for time-sensitive archival workflows. Each check is efficient — it only fetches headers and computes hash comparisons without downloading full bodies unless a change is detected."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/en/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a href="/en/blog/x-post-correction-re-fetch-2026.html" class="active">EN</a>
+      <a href="/pt/blog/x-post-correcao-notificacao-re-busca-2026.html">PT</a>
+      <a href="/id/blog/x-post-koreksi-notifikasi-ambil-ulang-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb">
+      <a href="/en/">Home</a> &raquo; <a href="/en/blog/">Blog</a> &raquo; <span>X Post Correction Re-Fetch 2026</span>
+    </div>
+
+    <h1>X Post Correction Notifications 2026: <span>ThreadGrab's Auto Re-Fetch Guide</span></h1>
+    <div class="meta">July 11, 2026 &middot; 10 min read &middot; Guide</div>
+
+    <p>On July 8, 2026, Elon Musk announced that X would begin sending direct message notifications to users when posts they have engaged with are corrected. The feature addresses a long-standing problem on social platforms: once a post goes viral, edits to its content are essentially invisible to everyone who already saw it. Corrections to important information — pricing, dates, instructions — propagate silently, if at all.</p>
+
+    <p>This update has immediate implications for content archivists, researchers, and anyone who saves X posts as Markdown. If the post you saved last week was corrected yesterday, which version does your archive hold? And more importantly: how do you <em>know</em> it was corrected?</p>
+
+    <p>ThreadGrab's answer is an automated content-hash monitoring and re-fetch system. This guide walks through X's new correction notification feature, how ThreadGrab's detection pipeline works, and how to keep your Markdown archive accurate in the age of post-publication corrections.</p>
+
+    <div class="callout">
+      <p><strong>Quick take:</strong> X's DM notification tells you a correction happened. ThreadGrab tells you <em>what</em> changed and gives you the corrected Markdown automatically. The two systems are complementary — one is a push alert, the other is a reliable archive.</p>
+    </div>
+
+    <h2>H2-1: What X's Correction Notification Means for Archivists</h2>
+
+    <p>X's new feature, reported by TechCrunch on July 8, sends a DM to any user who liked, replied to, reposted, or bookmarked a post that the author subsequently edits. The DM says something like: <em>"A post you engaged with has been corrected by the author."</em> It does not include the old content or a diff — just a link to the post.</p>
+
+    <p>For the average user, this is a transparency upgrade. For anyone building an archive of X content — researchers tracking policy statements, journalists documenting public figures, creators curating their own portfolio — it surfaces a question the platform never answered before: <em>which version of this post is the real one?</em></p>
+
+    <p>Before this feature, if you saved an X thread or article on Monday and the author corrected a factual error on Wednesday, your archive silently held the outdated version. There was no notification system, no version history exposed in the API, and no built-in diff. Corrections lived in the gap between what was posted and what was saved.</p>
+
+    <p>The DM notification closes the awareness gap. But awareness alone doesn't update your archive — you still need a tool that can fetch the corrected version, compare it to what you saved, and flag the delta.</p>
+
+    <h2>H2-2: ThreadGrab's Content Hash Monitoring System</h2>
+
+    <p>ThreadGrab's re-fetch pipeline starts at the moment you first save a post. Every X thread, article, or reply that goes through ThreadGrab generates a content fingerprint at capture time:</p>
+
+    <pre><code># Content hash computed at capture time
+import hashlib, json
+
+def capture_post(post_data):
+    # Extract the text body, media URLs, and metadata
+    content_string = json.dumps(post_data, sort_keys=True)
+    content_hash = hashlib.sha256(
+        content_string.encode('utf-8')
+    ).hexdigest()
+    
+    return {
+        "hash": content_hash,
+        "captured_at": "2026-07-11T10:00:00Z",
+        "body_markdown": extract_markdown(post_data),
+        "metadata": post_data.get("metadata", {})
+    }</code></pre>
+
+    <p>This hash becomes the baseline. On each subsequent check (default: every 24 hours), ThreadGrab re-fetches the post through X's API or rendered HTML, computes a fresh hash, and compares:</p>
+
+    <pre><code># Hash comparison on re-fetch
+def check_for_corrections(post_id, previous_hash):
+    current_data = fetch_x_post(post_id)
+    current_hash = hashlib.sha256(
+        json.dumps(current_data, sort_keys=True).encode('utf-8')
+    ).hexdigest()
+    
+    if current_hash != previous_hash:
+        print(f"Correction detected for post {post_id}")
+        # Trigger re-fetch pipeline
+        return re_fetch_complete_post(post_id)
+    return None</code></pre>
+
+    <p>The system is hash-based, not timestamp-based. This matters because X's API edit timestamps can update for cosmetic reasons (image alt-text, typo fixes) that don't change the semantic content. A hash comparison catches only real content mutations — the difference between "Available until June 30" and "Available until July 15."</p>
+
+    <h2>H2-3: The Re-Fetch Pipeline: From Detection to Updated Archive</h2>
+
+    <p>When a hash mismatch is detected, ThreadGrab runs a three-stage pipeline before updating your archive:</p>
+
+    <p><strong>Stage 1 — Confirm the change is content, not metadata.</strong> The system does a second fetch with a different endpoint (API vs rendered HTML) to rule out transient rendering differences or API drift. Only confirmed content changes proceed.</p>
+
+    <p><strong>Stage 2 — Version append.</strong> ThreadGrab does not overwrite the original Markdown file. Instead, it creates a revision record:</p>
+
+    <pre><code># Version history structure
+{
+  "post_id": "1890567890123456789",
+  "versions": [
+    {
+      "captured_at": "2026-07-07T14:30:00Z",
+      "hash": "a1b2c3d4...",
+      "markdown_file": "en/archive/2026-07-07_x-post-189056.md"
+    },
+    {
+      "captured_at": "2026-07-11T10:00:00Z",
+      "hash": "e5f6g7h8...",
+      "markdown_file": "en/archive/2026-07-11_x-post-189056-v2.md",
+      "correction_detected": true
+    }
+  ]
+}</code></pre>
+
+    <p><strong>Stage 3 — Diff generation.</strong> A Markdown-compatible diff is generated between the original and corrected versions. The diff is stored alongside the archive so you can see exactly what changed without hunting through raw text:</p>
+
+    <pre><code># diff between v1 and v2
+--- a/en/archive/2026-07-07_x-post-189056.md
++++ b/en/archive/2026-07-11_x-post-189056-v2.md
+@@ -12,7 +12,7 @@
+ 
+ ## Key Dates
+ 
+-The event runs from **June 1 to June 30, 2026**.
++The event runs from **June 1 to July 15, 2026**.
+ 
+ Full details at the official site.</code></pre>
+
+    <p>This three-stage approach means you never lose the original version, you always know when a correction happened, and you can see the delta with standard tooling.</p>
+
+    <h2>H2-4: Manual vs Automated Correction Tracking: A Comparison</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Approach</th>
+          <th>Detection method</th>
+          <th>Archive updated?</th>
+          <th>Diff available?</th>
+          <th>Reliability</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>X DM notification</td>
+          <td>Push alert (DM)</td>
+          <td>No (manual)</td>
+          <td>No</td>
+          <td>Conditional (only engaged posts)</td>
+        </tr>
+        <tr>
+          <td>Manual re-check</td>
+          <td>Visit URL, compare visually</td>
+          <td>Yes (manual)</td>
+          <td>No</td>
+          <td>Low (human error, fatigue)</td>
+        </tr>
+        <tr>
+          <td>Browser bookmark + diff</td>
+          <td>Browser extension</td>
+          <td>Partial</td>
+          <td>Manual</td>
+          <td>Medium (extension dependent)</td>
+        </tr>
+        <tr>
+          <td>ThreadGrab auto re-fetch</td>
+          <td>Hash comparison</td>
+          <td>Yes (automated)</td>
+          <td>Yes (automated)</td>
+          <td>High (covers all archived posts)</td>
+        </tr>
+        <tr>
+          <td>API polling script</td>
+          <td>Custom API logic</td>
+          <td>Custom</td>
+          <td>Custom</td>
+          <td>Variable (maintenance burden)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>X's DM notification fills the awareness gap well — it's a push alert that requires zero setup. But for anyone running a serious content archive, awareness is only the first step. The pipeline from "I know a correction happened" to "I have the corrected content in my archive with a diff" requires automation.</p>
+
+    <h2>H2-5: Configuring ThreadGrab's Correction Monitoring Schedule</h2>
+
+    <p>ThreadGrab's re-check frequency is configurable per archive. Here is how different schedules fit different use cases:</p>
+
+    <ul>
+      <li><strong>Every 24 hours (default):</strong> Best for most archivists. Balances API usage against timeliness. Corrections are caught within one business day.</li>
+      <li><strong>Every 6 hours:</strong> For time-sensitive archives — journalists monitoring official statements, researchers tracking evolving public health guidance, or compliance teams needing audit trails.</li>
+      <li><strong>On-demand / manual trigger:</strong> Initiate a re-check for a specific post or set of posts. Useful when you receive an X DM notification and want to immediately update your archive.</li>
+    </ul>
+
+    <pre><code># Configure re-check schedule via ThreadGrab CLI
+threadgrab config set recheck_interval 6h
+
+# Or trigger on-demand for a specific post
+threadgrab recheck --post-id 1890567890123456789
+
+# Check correction history for an archive
+threadgrab history --post-id 1890567890123456789</code></pre>
+
+    <p>Each re-check is optimized to minimize API calls: it fetches only lightweight metadata and hash headers from the X API, compares against stored hashes, and only downloads the full post body when a mismatch is detected.</p>
+
+    <h2>H2-6: Best Practices for an Accurate Post-Publication Archive</h2>
+
+    <p>X's correction notification feature is a positive step for platform transparency, but it also highlights a deeper truth: social content is fluid. A post is not a static document — it can be edited, corrected, deleted, or restored. An archive that captures only the first version is incomplete.</p>
+
+    <p>Here are the best practices ThreadGrab recommends for maintaining an accurate archive in the correction era:</p>
+
+    <p><strong>1. Enable auto re-checks on every archive.</strong> The default 24-hour interval catches the vast majority of corrections before they matter. Set a tighter interval on archives you reference daily.</p>
+
+    <p><strong>2. Never overwrite — always version.</strong> The original version of a post is as valuable as the corrected one. A historian needs to know what was originally published, not just what the final version says. ThreadGrab's version-append model preserves both.</p>
+
+    <p><strong>3. Keep diffs in your git workflow.</strong> If your Markdown archive lives in a git repository, commit the original capture, then commit the corrected version as a separate entry. The git diff becomes your change log:</p>
+
+    <pre><code>git add en/archive/2026-07-07_x-post-189056.md
+git commit -m "capture: X post 189056 @ 2026-07-07"
+
+# Later, after correction detected
+git add en/archive/2026-07-11_x-post-189056-v2.md
+git commit -m "correction: X post 189056 updated @ 2026-07-11"
+
+# View the diff
+git diff HEAD~1 -- en/archive/</code></pre>
+
+    <p><strong>4. Cross-reference with X's DM notifications.</strong> When you receive a correction DM from X, use it as a signal to trigger an immediate ThreadGrab re-check on the referenced post. The combination of push alert + automated re-fetch is the most reliable workflow.</p>
+
+    <p><strong>5. Monitor correction frequency for patterns.</strong> If a specific author corrects posts regularly, it may indicate a systematic reliability issue with that source. ThreadGrab's version history makes this pattern visible — you can query correction counts per author or per timeframe.</p>
+
+    <div class="callout">
+      <p><strong>Example:</strong> A political journalist tweeted a candidate's policy deadline. Two hours later, they corrected the date. If you captured the original thread for research, ThreadGrab's hash comparison would catch the change on the next re-check cycle and flag the delta before you cite the outdated date in your analysis.</p>
+    </div>
+
+    <h2>H2-7: FAQ</h2>
+
+    <div class="faq-item">
+      <strong>Does ThreadGrab automatically re-fetch corrected X posts?</strong>
+      <p>Yes. ThreadGrab monitors archived posts for content changes using a content-hash comparison system. When it detects that a post has been edited, it re-fetches the latest version and flags the update in your archive with a revision timestamp.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>How does ThreadGrab detect that an X post was corrected?</strong>
+      <p>ThreadGrab stores a SHA-256 content hash of every post at the time of capture. On subsequent checks, it re-fetches the post's rendered HTML or API response, computes a new hash, and compares. A mismatch triggers the re-fetch pipeline. X's new DM notification is a separate consumer-facing signal, but ThreadGrab's detection works server-side through content comparison.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Can I see what changed between original and corrected versions?</strong>
+      <p>ThreadGrab maintains version history for each post. When a correction is detected, the new version is appended rather than overwritten. You can run a diff between the original Markdown file and the revised one using any standard diff tool or integrate with git for full version tracking.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Do I need X's DM notification to know a post was corrected?</strong>
+      <p>No. X's DM notification is a convenience feature for manual readers. ThreadGrab's automated hash-comparison system detects changes independently — you will see the updated version in your archive whether or not X sends you a DM. For most archiving use cases, the automated approach is more reliable.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>How often does ThreadGrab check archived posts for corrections?</strong>
+      <p>ThreadGrab checks archived posts on a configurable schedule, with a default of every 24 hours. You can increase frequency to every 6 hours for time-sensitive archival workflows. Each check is efficient — it only fetches headers and computes hash comparisons without downloading full bodies unless a change is detected.</p>
+    </div>
+
+    <h2>H2-8: Conclusion — The Correction Era Demands Better Archives</h2>
+
+    <p>X's correction notification feature is a meaningful improvement for platform transparency, but it also exposes a gap that every social content archivist now faces: knowing that a correction happened is not the same as having the corrected content.</p>
+
+    <p>ThreadGrab's content-hash monitoring and auto re-fetch system bridges that gap. It works with or without X's DM notifications, preserves every version of every post, and generates diffs that let you see exactly what changed. In the correction era, a static archive is not an archive at all — it's a snapshot that goes stale the moment the author presses edit.</p>
+
+    <p>Whether you are a researcher tracking policy evolution, a journalist documenting public statements, or a creator curating your own portfolio, ThreadGrab's correction-aware archiving ensures your Markdown library reflects not just what was said, but what was corrected.</p>
+
+    <div class="cta">
+      <p><strong>Start archiving with correction-aware Markdown.</strong> ThreadGrab captures X threads, Bluesky posts, and LinkedIn newsletters — and now monitors them for corrections automatically.</p>
+      <a class="btn" href="https://threadgrab.com/en/">Try ThreadGrab Free</a>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/en/">Home</a> &middot; <a href="/en/about/">About</a> &middot; <a href="/en/privacy/">Privacy</a>
+  </footer>
+</body>
+</html>

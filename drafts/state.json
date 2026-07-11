@@ -1580,6 +1580,81 @@
       "published_at": "2026-07-10T12:00:00Z",
       "providers_featured": [],
       "primary_cta": "cta_id_free_x_thread_downloader"
+    },
+    {
+      "slug": "x-post-correction-re-fetch-2026",
+      "date": "2026-07-11",
+      "published_at": "2026-07-11T04:11:36Z",
+      "type": "guide",
+      "lang": "en",
+      "file": "en/blog/x-post-correction-re-fetch-2026.html",
+      "url": "https://threadgrab.com/en/blog/x-post-correction-re-fetch-2026.html",
+      "title": "X Post Correction 2026: ThreadGrab Re-Fetch Guide",
+      "description": "X DMs users when posts you engaged with get corrected. ThreadGrab detects changes and auto-re-fetches the updated version for an accurate Markdown archive.",
+      "heat_source": "⭐⭐ 2026-07-11 daily hot topics — Elon Musk: X will DM users when posts they engaged with are corrected (TechCrunch 7/8)",
+      "status": "published",
+      "providers_featured": [
+        "threadgrab"
+      ],
+      "primary_cta": "Try ThreadGrab Free",
+      "qa_passed": {
+        "title_chars": 49,
+        "description_chars": 155,
+        "hreflang_alternates": 4,
+        "canonical_present": true,
+        "jsonld_blocks": 3,
+        "faq_count": 5
+      }
+    },
+    {
+      "slug": "x-post-correction-re-fetch-2026",
+      "date": "2026-07-11",
+      "published_at": "2026-07-11T04:11:36Z",
+      "type": "guia",
+      "lang": "pt",
+      "file": "pt/blog/x-post-correcao-notificacao-re-busca-2026.html",
+      "url": "https://threadgrab.com/pt/blog/x-post-correcao-notificacao-re-busca-2026.html",
+      "title": "Correção de Posts do X 2026: Guia ThreadGrab",
+      "description": "O X envia DM quando posts que você interagiu são corrigidos. ThreadGrab detecta alterações e re-busca a versão corrigida para seu arquivo Markdown preciso.",
+      "heat_source": "⭐⭐ 2026-07-11 daily hot topics — Correção de posts do X (TechCrunch 7/8)",
+      "status": "published",
+      "providers_featured": [
+        "threadgrab"
+      ],
+      "primary_cta": "Experimente ThreadGrab Grátis",
+      "qa_passed": {
+        "title_chars": 44,
+        "description_chars": 155,
+        "hreflang_alternates": 4,
+        "canonical_present": true,
+        "jsonld_blocks": 3,
+        "faq_count": 5
+      }
+    },
+    {
+      "slug": "x-post-correction-re-fetch-2026",
+      "date": "2026-07-11",
+      "published_at": "2026-07-11T04:11:36Z",
+      "type": "panduan",
+      "lang": "id",
+      "file": "id/blog/x-post-koreksi-notifikasi-ambil-ulang-2026.html",
+      "url": "https://threadgrab.com/id/blog/x-post-koreksi-notifikasi-ambil-ulang-2026.html",
+      "title": "Koreksi Postingan X 2026: Panduan ThreadGrab",
+      "description": "X mengirim DM saat postingan yang Anda interaksi diperbaiki. ThreadGrab mendeteksi perubahan dan mengambil ulang versi terbaru untuk arsip Markdown akurat.",
+      "heat_source": "⭐⭐ 2026-07-11 daily hot topics — Koreksi postingan X (TechCrunch 7/8)",
+      "status": "published",
+      "providers_featured": [
+        "threadgrab"
+      ],
+      "primary_cta": "Coba ThreadGrab Gratis",
+      "qa_passed": {
+        "title_chars": 44,
+        "description_chars": 131,
+        "hreflang_alternates": 4,
+        "canonical_present": true,
+        "jsonld_blocks": 3,
+        "faq_count": 5
+      }
     }
   ],
   "drafts": [
