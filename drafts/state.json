@@ -1655,6 +1655,82 @@
         "jsonld_blocks": 3,
         "faq_count": 5
       }
+    },
+    {
+      "slug": "ai-writing-tropes-tropes-fyi-2026",
+      "date": "2026-07-12",
+      "published_at": "2026-07-12T12:00:00Z",
+      "type": "guide",
+      "lang": "en",
+      "file": "en/blog/ai-writing-tropes-tropes-fyi-2026.html",
+      "url": "https://threadgrab.com/en/blog/ai-writing-tropes-tropes-fyi-2026.html",
+      "title": "AI Writing Detection 2026: Tropes.fyi for Social Creators",
+      "description": "Tropes.fyi catalogs AI writing patterns that give away AI-generated text. A creator guide to detecting, avoiding, and rewriting AI tropes in 2026.",
+      "heat_source": "⭐ 2026-07-12 daily hot topics — Tropes.fyi AI writing pattern directory (HN 217p). Today's threadgrab direction topics already covered by previous articles; Tropes.fyi is a fresh FOSS topic in AI writing authenticity for social creators.",
+      "status": "published",
+      "providers_featured": [],
+      "primary_cta": "Try ThreadGrab Free",
+      "qa_passed": {
+        "title_chars": 50,
+        "description_chars": 146,
+        "hreflang_alternates": 3,
+        "canonical_present": true,
+        "jsonld_blocks": 3,
+        "faq_count": 5,
+        "h2_count": 6,
+        "code_blocks": 3,
+        "raw_lt_in_body": 0
+      }
+    },
+    {
+      "slug": "ai-writing-tropes-tropes-fyi-2026",
+      "date": "2026-07-12",
+      "published_at": "2026-07-12T12:00:00Z",
+      "type": "guia",
+      "lang": "pt",
+      "file": "pt/blog/ai-writing-tropes-tropes-fyi-2026.html",
+      "url": "https://threadgrab.com/pt/blog/ai-writing-tropes-tropes-fyi-2026.html",
+      "title": "Detecção de Escrita IA 2026: Tropes.fyi para Criadores",
+      "description": "Tropes.fyi cataloga padrões de escrita que revelam texto gerado por IA. Guia para criadores detectarem, evitarem e reescreverem padrões de IA em 2026.",
+      "heat_source": "⭐ 2026-07-12 topicos quentes — Tropes.fyi (tradução PT-BR)",
+      "status": "published",
+      "providers_featured": [],
+      "primary_cta": "Experimente ThreadGrab Grátis",
+      "qa_passed": {
+        "title_chars": 55,
+        "description_chars": 150,
+        "hreflang_alternates": 3,
+        "canonical_present": true,
+        "jsonld_blocks": 3,
+        "faq_count": 4,
+        "h2_count": 6,
+        "raw_lt_in_body": 0
+      }
+    },
+    {
+      "slug": "ai-writing-tropes-tropes-fyi-2026",
+      "date": "2026-07-12",
+      "published_at": "2026-07-12T12:00:00Z",
+      "type": "panduan",
+      "lang": "id",
+      "file": "id/blog/ai-writing-tropes-tropes-fyi-2026.html",
+      "url": "https://threadgrab.com/id/blog/ai-writing-tropes-tropes-fyi-2026.html",
+      "title": "Deteksi Tulisan AI 2026: Tropes.fyi untuk Kreator",
+      "description": "Tropes.fyi mengkatalogkan pola tulisan AI yang mengungkap teks buatan AI. Panduan kreator untuk mendeteksi, menghindari, dan menulis ulang pola AI di 2026.",
+      "heat_source": "⭐ 2026-07-12 topik panas — Tropes.fyi (terjemahan ID)",
+      "status": "published",
+      "providers_featured": [],
+      "primary_cta": "Coba ThreadGrab Gratis",
+      "qa_passed": {
+        "title_chars": 45,
+        "description_chars": 155,
+        "hreflang_alternates": 3,
+        "canonical_present": true,
+        "jsonld_blocks": 3,
+        "faq_count": 4,
+        "h2_count": 6,
+        "raw_lt_in_body": 0
+      }
     }
   ],
   "drafts": [
@@ -1850,13 +1926,13 @@
     "twitter-trend-scraping-tools-2026",
     "x-articles-freedom-of-reach-2026"
   ],
-  "last_run": "2026-07-09T12:00:00+08:00",
-  "last_published_slug": "social-media-content-backup-strategy-2026",
+  "last_run": "2026-07-12T12:00:00+08:00",
+  "last_published_slug": "ai-writing-tropes-tropes-fyi-2026",
   "last_draft_slug": "bluesky-longform-api-thirdparty-2026",
-  "last_published_at": "2026-06-25T07:05:52.466222+08:00",
+  "last_published_at": "2026-07-12T12:00:00Z",
   "drafts_count": 3,
-  "published_count": 81,
-  "last_topic_picked": "capcat-web-article-archiving-2026",
-  "last_pick_source": "daily-briefing-2026-07-04 (Capcat CLI article archiving tool)",
+  "published_count": 90,
+  "last_topic_picked": "ai-writing-tropes-tropes-fyi-2026",
+  "last_pick_source": "daily-briefing-2026-07-12 (Tropes.fyi AI writing pattern detection)",
   "last_drafted_slug": "search-console-mcp-seo-2026"
 }
