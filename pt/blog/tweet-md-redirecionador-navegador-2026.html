@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecionador tweet.md 2026: Substituir Links do x.com</title>
+  <meta name="description" content="tweet.md substitui x.com por previews em Markdown no navegador. Configure em 3 passos e use com ThreadGrab para arquivar threads completas.">
+  <meta name="keywords" content="redirecionador tweet.md, substituir x.com, alternativa x.com, preview Markdown, ThreadGrab, arquivamento de conteudo social, configuracao tweet.md">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/pt/blog/tweet-md-redirecionador-navegador-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/tweet-md-browser-redirect-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/tweet-md-redirecionador-navegador-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/tweet-md-pengalihan-peramban-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/tweet-md-browser-redirect-2026.html">
+  <meta property="og:title" content="Redirecionador tweet.md 2026: Substituir Links do x.com">
+  <meta property="og:description" content="tweet.md substitui x.com por previews em Markdown no navegador. Configure em 3 passos e use com ThreadGrab para arquivar threads completas.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/pt/blog/tweet-md-redirecionador-navegador-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Redirecionador tweet.md 2026: Substituir Links do x.com">
+  <meta name="twitter:description" content="Configure o redirecionador tweet.md no navegador para substituir x.com por previews limpos em Markdown e use com ThreadGrab para arquivar threads completas.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; font-size: 0.95rem; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Redirecionador tweet.md 2026: Substituir Links do x.com",
+    "description": "tweet.md substitui x.com por previews em Markdown no navegador. Configure em 3 passos e use com ThreadGrab para arquivar threads completas.",
+    "datePublished": "2026-07-13",
+    "dateModified": "2026-07-13",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/" },
+    "mainEntityOfPage": "https://threadgrab.com/pt/blog/tweet-md-redirecionador-navegador-2026.html",
+    "inLanguage": "pt"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://threadgrab.com/pt/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/pt/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Redirecionador tweet.md 2026", "item": "https://threadgrab.com/pt/blog/tweet-md-redirecionador-navegador-2026.html" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "O que exatamente o redirecionador tweet.md faz?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "tweet.md executa um serviço de redirecionamento em tweet.md/{usuario}/status/{id} que pega qualquer URL do x.com ou twitter.com e retorna uma renderização limpa em Markdown da postagem ou thread. Com uma extensão de navegador como Redirector ou um userscript personalizado, voc\u00ea pode reescrever automaticamente os links do x.com para tweet.md, de modo que todo link do X que voc\u00EA clicar chegue a uma pr\u00E9via simplificada em Markdown em vez do aplicativo web do X. O redirecionamento \u00E9 stateless: o tweet.md busca a postagem no servidor, renderiza em Markdown e a serve. Voc\u00ea nunca visita o x.com diretamente."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O redirecionamento do tweet.md \u00E9 a mesma coisa que o ThreadGrab?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "N\u00E3o. Eles resolvem problemas diferentes. tweet.md \u00E9 um redirecionamento pontual que transforma qualquer link do x.com em uma pr\u00E9via Markdown que voc\u00EA l\u00EA no navegador. ThreadGrab \u00E9 um pipeline de arquivamento completo que salva threads como arquivos Markdown no disco (ou no seu GitHub, Notion ou pasta local), preserva m\u00EDdia, rastreia corre\u00E7\u00F5es e oferece suporte \u00E0 exporta\u00E7\u00E3o em lote. Use tweet.md para leituras r\u00E1pidas; use ThreadGrab quando precisar manter o conte\u00FAdo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Preciso de uma extens\u00E3o de navegador para configurar o redirecionamento tweet.md?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. O redirecionamento em si \u00E9 um recurso do servidor, mas acion\u00E1-lo em todo link do x.com requer a extens\u00E3o Redirector (Firefox/Chrome), um userscript Tampermonkey ou uma regra de bloqueio de conte\u00FAdo no Safari. Nenhum desses requer acesso de administrador ao seu computador. A configura\u00E7\u00E3o leva cerca de 60 segundos: instale a extens\u00E3o, cole o padr\u00E3o de redirecionamento, salve. A partir de ent\u00E3o, qualquer link do x.com que voc\u00EA clicar em qualquer aplicativo ou e-mail ser\u00E1 reescrito automaticamente."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O tweet.md preserva imagens, v\u00EDdeos e quote tweets?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim para a maioria dos casos. tweet.md renderiza imagens como links Markdown de imagem, incorpora URLs de v\u00EDdeo como links simples (sem reprodu\u00E7\u00E3o inline) e renderiza quote tweets como blocos Markdown aninhados com o handle do autor original. A sa\u00EDda \u00E9 texto puro mais alguns links inline. Isso \u00E9 ideal para leitura e colagem em editores Markdown, mas n\u00E3o para arquivamento: tweet.md n\u00E3o baixa m\u00EDdia para o seu disco, n\u00E3o preserva EXIF ou timestamps originais e n\u00E3o rastreia corre\u00E7\u00F5es ao longo do tempo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso usar tweet.md e ThreadGrab juntos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim, e esta \u00E9 a configura\u00E7\u00E3o recomendada. Use tweet.md para navega\u00E7\u00E3o di\u00E1ria: qualquer link do X que voc\u00EA clicar se torna uma pr\u00E9via Markdown limpa, sem feed algor\u00EDtmico, sem barreira de login. Use ThreadGrab para as threads que voc\u00EA deseja manter: arquivamento completo com m\u00EDdia, rastreamento de corre\u00E7\u00F5es e exporta\u00E7\u00E3o para o armazenamento de sua prefer\u00EAncia. Os dois s\u00E3o complementares: tweet.md cuida do caminho de leitura, ThreadGrab cuida do caminho de arquivamento. Muitos criadores executam ambos lado a lado."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O que acontece se o tweet.md ficar offline ou alterar seu redirecionamento?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Se o servi\u00E7o de redirecionamento do tweet.md estiver indispon\u00EDvel, sua extens\u00E3o de navegador n\u00E3o conseguir\u00E1 reescrever os links do x.com e voc\u00EA cair\u00E1 no x.com como antes (n\u00E3o pior do que hoje). Se o tweet.md alterar seu padr\u00E3o de URL ou encerrar as opera\u00E7\u00F5es, voc\u00EA atualiza a regra de redirecionamento na sua extens\u00E3o para apontar para o novo servi\u00E7o ou remove a regra completamente. N\u00E3o h\u00E1 depend\u00EAncia: a regra de redirecionamento \u00E9 apenas uma correspond\u00EAncia de string no seu navegador, e voc\u00EA pode desativ\u00E1-la a qualquer momento."
+        }
+      }
+    ]
+  }
+</script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/pt/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a href="/en/blog/tweet-md-browser-redirect-2026.html">EN</a>
+      <a href="/pt/blog/tweet-md-redirecionador-navegador-2026.html" class="active">PT</a>
+      <a href="/id/blog/tweet-md-pengalihan-peramban-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb">
+      <a href="/pt/">Início</a> &raquo; <a href="/pt/blog/">Blog</a> &raquo; <span>Redirecionador tweet.md 2026</span>
+    </div>
+
+    <h1>Redirecionador tweet.md 2026: <span>Substituir Links do x.com</span></h1>
+    <div class="meta">13 de Julho, 2026 &middot; 8 min de leitura &middot; Guia</div>
+
+    <p>Em 13 de julho de 2026, o tweet.md chegou à página inicial do Show HN com uma ideia única e direta: substituir cada link <code>x.com</code> na web aberta por uma renderização Markdown daquela postagem. Sem barreira de login. Sem feed algorítmico. Sem pixels de rastreamento. Apenas o texto da postagem, o handle do autor, o timestamp e quaisquer links de mídia — servidos como texto puro que você pode copiar, colar ou ler com olhos que não estão sangrando de uma quarta atualização de feed.</p>
+
+    <p>O mecanismo é um redirecionamento em nível de navegador. Você instala uma extensão, cola um padrão de redirecionamento e, a partir desse momento, todo link que aponta para <code>x.com/&lt;usuario&gt;/status/&lt;id&gt;</code> é reescrito para <code>tweet.md/&lt;usuario&gt;/status/&lt;id&gt;</code>. O destino é uma renderização estática em Markdown da postagem. O tweet.md lida com a busca no lado do servidor, então seu navegador nunca carrega o aplicativo web do X, nunca executa o JavaScript do X e nunca vê um único cookie do X.</p>
+
+    <p>Este não é o mesmo produto que o ThreadGrab, e os dois não competem entre si. tweet.md é uma ferramenta de <em>caminho de leitura</em>. ThreadGrab é uma ferramenta de <em>caminho de arquivamento</em>. Este guia descreve o padrão de redirecionamento do tweet.md, mostra a configuração em 3 passos e explica quando usar cada ferramenta — e quando executar ambas lado a lado.</p>
+
+    <div class="callout">
+      <p><strong>Resumo rápido:</strong> o redirecionamento do tweet.md transforma todo link do X que você clica em uma prévia Markdown limpa. ThreadGrab salva threads como arquivos Markdown no seu disco. Execute ambos: tweet.md para ler, ThreadGrab para guardar.</p>
+    </div>
+
+    <h2>H2-1: O que o redirecionamento do tweet.md faz</h2>
+
+    <p>tweet.md é um serviço de propósito único: dada qualquer URL de postagem do X, retorna uma renderização Markdown daquela postagem. O padrão de URL é <code>https://tweet.md/&lt;usuario&gt;/status/&lt;id-da-postagem&gt;</code> e a resposta é uma página HTML estática que contém o texto da postagem, handle do autor, timestamp, links de mídia e qualquer quote tweet renderizado como Markdown aninhado.</p>
+
+    <p>O redirecionamento do navegador é o que torna isso útil em escala. Sem um redirecionamento, você teria que copiar manualmente cada link do X, substituir <code>x.com</code> por <code>tweet.md</code> e colar o resultado. Com a extensão Redirector (ou um userscript Tampermonkey), a reescrita acontece de forma transparente: qualquer link que você clicar — em e-mail, em uma mensagem no Slack, em um tópico do Reddit, em um Google Docs — é interceptado e enviado ao tweet.md antes que seu navegador carregue o X.</p>
+
+    <p>O redirecionamento é stateless. tweet.md busca a postagem no servidor usando seu próprio acesso à API do X, renderiza em Markdown e a serve. Seu navegador nunca alcança o x.com, nunca executa o pacote JavaScript do X e nunca envia um cabeçalho referrer de volta ao X. Do ponto de vista da privacidade, esta é uma separação limpa: sua leitura é desacoplada da infraestrutura de rastreamento do X.</p>
+
+    <h2>H2-2: Configuração em 3 passos (Extensão Redirector)</h2>
+
+    <p>Configurar o redirecionamento leva cerca de 60 segundos. O exemplo abaixo usa a extensão Redirector, disponível para Firefox e Chrome com sintaxe idêntica.</p>
+
+    <h3>Passo 1: Instale o Redirector</h3>
+    <p>Instale a extensão Redirector na loja de complementos do seu navegador. Usuários do Firefox obtêm em addons.mozilla.org; usuários do Chrome na Chrome Web Store. Ambas as versões são open source, pesam menos de 50KB e não solicitam permissões além de ler URLs.</p>
+
+    <h3>Passo 2: Crie a regra de redirecionamento</h3>
+    <p>Abra a página de opções do Redirector e clique em <em>Create new redirect</em>. Cole o seguinte padrão:</p>
+    <pre><code>Description:  x.com to tweet.md
+Example URL:  https://x.com/threadgrab/status/1234567890
+Include pattern:  ^https://(x\\.com|twitter\\.com)/([^/]+)/status/(\\d+).*
+Redirect to:    https://tweet.md/$2/status/$3
+Pattern type:   Regular Expression
+</code></pre>
+    <p>A regex corresponde tanto ao <code>x.com</code> quanto ao domínio legado <code>twitter.com</code>, captura o nome de usuário e o ID da postagem, e reescreve a URL para o padrão do tweet.md. Salve a regra. A partir deste momento, todo link do X que corresponder será reescrito.</p>
+
+    <h3>Passo 3: Teste e refine</h3>
+    <p>Clique em qualquer link do X — em um resultado de busca, em um e-mail, em qualquer lugar. Seu navegador deve carregar <code>tweet.md</code> em vez de <code>x.com</code>. Se você vir a prévia Markdown, a configuração está correta. Se cair no X como antes, verifique a regex no campo <em>test pattern</em> do Redirector.</p>
+
+    <p>Para usuários que preferem userscripts, o equivalente no Tampermonkey é aproximadamente 15 linhas de JavaScript com a mesma correspondência de regex e chamada <code>window.location.replace()</code>. Ambas as abordagens são igualmente válidas; escolha a que seu navegador já suporta.</p>
+
+    <h2>H2-3: O que o tweet.md renderiza (e o que ele ignora)</h2>
+
+    <p>A saída do tweet.md é intencionalmente mínima. A renderização Markdown inclui:</p>
+
+    <ul>
+      <li><strong>Texto da postagem</strong> — texto completo incluindo quebras de linha, hashtags e @menções renderizados como texto puro.</li>
+      <li><strong>Handle do autor</strong> — o @usuário prefixado à postagem, formatado como um link de volta ao perfil do usuário no tweet.md.</li>
+      <li><strong>Timestamp</strong> — o horário de criação da postagem em ISO 8601, renderizado como uma pequena legenda.</li>
+      <li><strong>Links de mídia</strong> — URLs de imagem como sintaxe de imagem Markdown; URLs de vídeo como links simples (sem reprodução inline).</li>
+      <li><strong>Quote tweets</strong> — blocos Markdown aninhados com o handle do autor citado e texto completo.</li>
+      <li><strong>Continuação de thread</strong> — se a postagem faz parte de uma thread, a cadeia de in_reply_to é seguida e renderizada como um único documento Markdown.</li>
+    </ul>
+
+    <p>O que o tweet.md <em>não</em> inclui é igualmente importante. Não há contagens de curtidas, contagens de retweets, threads de respostas, contagens de seguidores, barra lateral de "postagens relacionadas", conteúdo promovido ou prompts de login. A página é a postagem e nada além da postagem.</p>
+
+    <p>Isso é exatamente o que você deseja para leitura. Também é exatamente o que você <em>não</em> deseja para arquivamento. tweet.md não baixa mídia para o seu disco, não preserva metadados EXIF, não rastreia correções de postagens ao longo do tempo e não fornece um arquivo que você possa armazenar em sua própria pasta. É um serviço de renderização, não uma ferramenta de backup.</p>
+
+    <h2>H2-4: Como o tweet.md difere do ThreadGrab</h2>
+
+    <p>A tabela abaixo resume onde as duas ferramentas se sobrepõem e onde divergem. A versão resumida: tweet.md é para ler, ThreadGrab é para guardar.</p>
+
+    <table>
+      <thead>
+        <tr><th>Capacidade</th><th>Redirecionamento tweet.md</th><th>ThreadGrab</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Ler postagens do X como Markdown</td><td>Sim (renderização no servidor)</td><td>Sim (exporta e depois lê)</td></tr>
+        <tr><td>Sem necessidade de login</td><td>Sim</td><td>Sim</td></tr>
+        <tr><td>Ignorar pixels de rastreamento do X</td><td>Sim</td><td>Sim</td></tr>
+        <tr><td>Salvar em disco local / GitHub</td><td>Não</td><td>Sim</td></tr>
+        <tr><td>Preservar arquivos de mídia (imagens, vídeo)</td><td>Apenas links</td><td>Baixados</td></tr>
+        <tr><td>Rastrear correções de postagens ao longo do tempo</td><td>Não</td><td>Sim (re-busca + diff)</td></tr>
+        <tr><td>Arquivar em lote um perfil ou lista</td><td>Não</td><td>Sim</td></tr>
+        <tr><td>Exportar para Notion / GitHub / S3</td><td>Não</td><td>Sim</td></tr>
+        <tr><td>Leitura livre de algoritmos</td><td>Sim</td><td>Sim</td></tr>
+        <tr><td>Instalação de extensão de navegador necessária</td><td>Sim</td><td>Não (aplicativo web)</td></tr>
+      </tbody>
+    </table>
+
+    <p>Para leitura pura — verificar um link que alguém lhe enviou, escanear uma thread sem perder 20 minutos no "Para Você" — tweet.md é a ferramenta mais rápida. Para salvar conteúdo que você deseja manter — uma thread que você consultará na próxima semana, uma thread de pesquisa que você citará em uma postagem, uma declaração pública que você deseja preservar como evidência — ThreadGrab é a ferramenta certa.</p>
+
+    <h2>H2-5: Combinando tweet.md com ThreadGrab</h2>
+
+    <p>A configuração recomendada para criadores que consomem muito conteúdo do X é executar ambos. Use tweet.md como seu caminho de leitura padrão — todo link do X no seu e-mail, nos seus aplicativos de bate-papo, nos seus resultados de busca se torna uma prévia Markdown automaticamente. Use ThreadGrab quando encontrar uma thread que deseja manter: clique no ícone do ThreadGrab no seu navegador (ou cole a URL no aplicativo web), e a thread completa é arquivada como arquivos Markdown no seu disco com a mídia baixada.</p>
+
+    <p>Esta divisão de trabalho corresponde claramente a como os criadores realmente usam o conteúdo social. A maioria dos links do X é descartável: alguém compartilha uma opinião polêmica, você lê uma vez e segue em frente. Esses links não devem poluir seu arquivo. Mas a cada poucos dias você encontra uma thread que vale a pena guardar — um tutorial, um resumo de pesquisa, uma declaração pública. Essas threads vão para o ThreadGrab, são indexadas pela sua busca local e se tornam parte da sua base de conhecimento de longo prazo.</p>
+
+    <p>As duas ferramentas não interferem uma com a outra. O redirecionamento do tweet.md funciona no nível do navegador e só é acionado em links do X. ThreadGrab funciona como um aplicativo web ou uma ação de um clique no navegador. Você pode manter ambos instalados indefinidamente sem conflitos.</p>
+
+    <h2>H2-6: Quando usar cada ferramenta (Matriz de decisão)</h2>
+
+    <p>Use esta árvore de decisão rápida ao encontrar um link do X:</p>
+
+    <ol>
+      <li><strong>Vou ler isto uma vez e seguir em frente?</strong> → Deixe o tweet.md cuidar disso. O redirecionamento acontece automaticamente.</li>
+      <li><strong>Preciso baixar mídia (imagens, vídeo, capturas de tela)?</strong> → ThreadGrab. tweet.md apenas fornece links para mídia.</li>
+      <li><strong>Vou citar ou referenciar esta thread em trabalhos futuros?</strong> → ThreadGrab. Markdown arquivado é pesquisável e citável; as renderizações do tweet.md são efêmeras.</li>
+      <li><strong>Esta postagem é relevante como evidência de uma declaração pública?</strong> → ThreadGrab com rastreamento de versão. Você quer o registro histórico, incluindo quaisquer correções futuras.</li>
+      <li><strong>Estou pesquisando um tópico e preciso de 50+ threads sobre o mesmo assunto?</strong> → Exportação em lote do ThreadGrab. tweet.md é para links individuais, não para lote.</li>
+      <li><strong>Quero apenas ler uma thread sem rolagem infinita?</strong> → tweet.md. Foi exatamente para isso que ele foi criado.</li>
+    </ol>
+
+    <p>As duas ferramentas cobrem casos de uso complementares. Tentar forçar uma a fazer o trabalho da outra leva à frustração: tweet.md não é um arquivo, ThreadGrab não é um visualizador otimizado para leitura.</p>
+
+    <h2>H2-7: Privacidade e fluxo de dados</h2>
+
+    <p>Ambas as ferramentas melhoram o rastreamento padrão do X, mas de maneiras diferentes. O redirecionamento do tweet.md significa que seu navegador nunca executa o JavaScript do X, nunca define cookies do X e nunca envia um referrer ao X. O próprio tweet.md vê seu IP e as URLs que você solicita, mas não faz login no X em seu nome e não requer uma conta no X.</p>
+
+    <p>O modelo de privacidade do ThreadGrab é diferente: ele busca postagens usando seu próprio acesso à API do X, processa no servidor e retorna arquivos Markdown para você. Sua conta do X nunca é usada e seu histórico de leitura não é exposto ao X. Os arquivos de saída ficam no seu disco ou no backend de armazenamento escolhido (GitHub, Notion, S3), então você controla os dados.</p>
+
+    <p>Se seu modelo de ameaça é "não quero que o X rastreie minha leitura", ambas as ferramentas resolvem o problema no nível do navegador. Se seu modelo de ameaça é "quero minha própria cópia de toda thread importante que encontrar", ThreadGrab é a escolha certa. Os dois não são mutuamente exclusivos.</p>
+
+    <h2>H2-8: Limitações do redirecionamento tweet.md</h2>
+
+    <p>O redirecionamento não é mágico e tem limites reais:</p>
+
+    <ul>
+      <li><strong>Postagens excluídas ou tornadas privadas</strong> não serão renderizadas. tweet.md não pode buscar conteúdo que não existe mais no X.</li>
+      <li><strong>Threads longas (20+ respostas)</strong> podem levar alguns segundos para renderizar porque o tweet.md segue a cadeia de respostas no servidor.</li>
+      <li><strong>Conteúdo premium do X</strong> (postagens exclusivas para assinantes do X Premium) pode não estar acessível ao nível de API do tweet.md.</li>
+      <li><strong>Enquetes</strong> são renderizadas apenas como texto simples — você vê a pergunta e as opções, mas não as contagens de votos ao vivo.</li>
+      <li><strong>Spaces (áudio ao vivo)</strong> estão fora do escopo. Spaces são salas de áudio efêmeras e o tweet.md não as transcreve nem arquiva.</li>
+    </ul>
+
+    <p>Para a maioria dos casos de uso, esses limites não importam. Se você trabalha regularmente com threads longas, conteúdo excluído ou enquetes, a abordagem de arquivamento do ThreadGrab (com re-busca sob demanda) lida com esses casos de forma mais elegante.</p>
+
+    <div class="cta">
+      <p><strong>Salve as threads que importam.</strong> ThreadGrab arquiva threads do X como Markdown com mídia, rastreamento de correções e exportação em lote. Use tweet.md para ler, ThreadGrab para guardar.</p>
+      <a class="btn" href="/pt/">Experimente o ThreadGrab</a>
+    </div>
+
+    <h2>FAQ</h2>
+
+    <div class="faq-item">
+      <strong>O redirecionamento do tweet.md funciona em navegadores móveis?</strong>
+      <p>Sim, com ressalvas. Firefox Android suporta a extensão Redirector nativamente. Chrome Android não suporta extensões da mesma forma, mas você pode usar um gerenciador de userscripts como Tampermonkey para Android, ou configurar uma reescrita em nível de DNS usando um serviço de DNS privado que suporte correspondência de regex. Usuários do iOS Safari podem usar o aplicativo Atalhos para definir uma ação de URL que reescreve x.com para tweet.md antes de abrir.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Posso redirecionar apenas autores ou threads específicos?</strong>
+      <p>Sim. A extensão Redirector suporta padrões de inclusão e exclusão por regra. Você pode limitar o redirecionamento a autores específicos (por exemplo, redirecionar apenas links de contas que você segue), ou excluir threads que deseja ler com todos os recursos do X (enquetes longas, threads de comentários). A regex é totalmente personalizável.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>O tweet.md limita a taxa de buscas anônimas?</strong>
+      <p>tweet.md é um serviço gratuito e, como todos os serviços gratuitos, tem limites de taxa para evitar abuso. Os limites exatos não são publicados, mas na prática você pode redirecionar dezenas de links por hora sem problemas. Para uso de alto volume, considere auto-hospedar o código open-source do tweet.md ou combiná-lo com a exportação em lote do ThreadGrab, que usa acesso autenticado à API.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>E os links do Mastodon, Bluesky ou Threads?</strong>
+      <p>tweet.md é específico para o X. Para Mastodon e Bluesky, existem projetos similares (por exemplo, <em>bird.makeup</em> para redirecionamento de perfil no Mastodon). Para Threads (Meta), nenhum serviço de redirecionamento Markdown equivalente atingiu a mesma maturidade. ThreadGrab atualmente suporta X, com integração com Bluesky e Threads no roadmap.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>O tweet.md é open source?</strong>
+      <p>Sim. O código-fonte está disponível no GitHub, e a auto-hospedagem é suportada. Se você quiser controle total sobre o pipeline de renderização (marcas personalizadas, estilização Markdown personalizada, campos de metadados adicionais), a auto-hospedagem é simples. A instância pública padrão em tweet.md é suficiente para a maioria dos usuários, mas criadores que lidam com conteúdo sensível podem preferir uma implantação privada.</p>
+    </div>
+  </main>
+
+  <footer>
+    <a href="/pt/">Início</a> &middot;
+    <a href="/pt/blog/">Blog</a> &middot;
+    <a href="/pt/blog/tweet-md-vs-threadgrab-2026.html">tweet.md vs ThreadGrab</a>
+    <br>
+    ThreadGrab é uma ferramenta independente. Não afiliado à X Corp., Twitter, tweet.md ou qualquer serviço destacado.
+    <br>
+    &copy; 2026 ThreadGrab
+  </footer>
+</body>
+</html>
