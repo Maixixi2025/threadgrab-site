@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gemini Managed Agents + ThreadGrab MCP 2026</title>
+  <meta name="description" content="Managed Agents do Gemini aceitam MCP remoto. Conecte o ThreadGrab como ferramenta para agentes lerem timelines e criarem rascunhos de posts.">
+  <meta name="keywords" content="Gemini Managed Agents, servidor MCP remoto, ThreadGrab MCP, ferramenta agente Gemini, conteúdo social MCP, Gemini 2026">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/pt/blog/gemini-managed-agents-threadgrab-mcp-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/gemini-managed-agents-threadgrab-mcp-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/gemini-managed-agents-threadgrab-mcp-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/gemini-managed-agents-threadgrab-mcp-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/gemini-managed-agents-threadgrab-mcp-2026.html">
+  <meta property="og:title" content="Gemini Managed Agents + ThreadGrab MCP 2026">
+  <meta property="og:description" content="Managed Agents do Gemini aceitam MCP remoto. Conecte o ThreadGrab como ferramenta para agentes lerem timelines e criarem rascunhos de posts.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/pt/blog/gemini-managed-agents-threadgrab-mcp-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gemini Managed Agents + ThreadGrab MCP 2026">
+  <meta name="twitter:description" content="Managed Agents do Gemini aceitam MCP remoto. Conecte o ThreadGrab como ferramenta para agentes lerem timelines e criarem rascunhos de posts.">
+  <style>
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+    @media (max-width: 640px) { main { padding: 24px 16px 40px; } table { font-size: 0.8rem; } th, td { padding: 8px; } }
+  
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Gemini Managed Agents + ThreadGrab MCP 2026",
+  "description": "Managed Agents do Gemini aceitam MCP remoto. Conecte o ThreadGrab como ferramenta para agentes lerem timelines e criarem rascunhos de posts.",
+  "datePublished": "2026-07-16",
+  "dateModified": "2026-07-16",
+  "author": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/pt/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/pt/"
+  },
+  "mainEntityOfPage": "https://threadgrab.com/pt/blog/gemini-managed-agents-threadgrab-mcp-2026.html",
+  "inLanguage": "pt"
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://threadgrab.com/pt/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://threadgrab.com/pt/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Gemini Managed Agents + ThreadGrab MCP 2026"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O que é o recurso Managed Agents do Gemini, em linguagem simples?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Managed Agents são tarefas de longa duração em segundo plano que rodam dentro da API Gemini do Google. Você define o agente uma vez — modelo, ferramentas, system prompt — e o loop do agente persiste entre turnos. Você pode agendá-lo para acordar a cada poucas horas, e ele mantém o estado da conversa em cada wake. É o primeiro runtime de agente hospedado de um grande laboratório com suporte a MCP remoto de primeira classe."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O servidor MCP do ThreadGrab exige plano pago?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ferramentas somente leitura (read_post, read_thread, search_timeline, archive_thread, archive_post) são gratuitas para qualquer conta logada. Ferramentas de escrita (draft_reply, draft_post) exigem plano Creator ou Pro. As oito ferramentas compartilham o mesmo endpoint MCP e o mesmo modelo de autenticação bearer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Um Managed Agent do Gemini consegue postar no X sem um humano clicar em confirmar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. A ferramenta confirm_post exige um token de confirmação emitido pelo usuário que expira em cinco minutos. O agente pode compor um rascunho a qualquer momento, mas a chamada de publicação real precisa ser disparada por uma ação humana — seja um clique na UI do ThreadGrab, seja um token de confirmação assinado retornado pelo seu próprio aplicativo. Essa é uma regra rígida no servidor, não uma política configurável do agente."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como isso se diferencia do suporte MCP já existente do Claude Code?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O Claude Code roda no seu terminal como uma sessão interativa — termina quando você fecha a janela. Os Managed Agents do Gemini rodam na nuvem do Google e persistem entre sessões, então são desenhados para tarefas de vários dias que acordam em um cronograma. A superfície de ferramentas (as oito ferramentas MCP do ThreadGrab) é idêntica; a diferença é se você quer uma sessão com supervisão ou um worker em segundo plano sem monitoramento."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que acontece com os dados que o agente lê via ThreadGrab?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Toda chamada de leitura e escrita que o agente faz é registrada no seu arquivo privado do ThreadGrab. Você pode puxar um export completo — cada post que o agente viu, cada rascunho que ele compôs, cada token de confirmação que você emitiu — a qualquer momento. O arquivo é escopado de ponta a ponta para a sua conta e nunca é compartilhado com Gemini ou terceiros."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/pt/">Thread<span>Grab</span></a>
+    <div class="lang-bar"><a href="/en/blog/gemini-managed-agents-threadgrab-mcp-2026.html">EN</a><a href="/pt/blog/gemini-managed-agents-threadgrab-mcp-2026.html" class="active">PT</a><a href="/id/blog/gemini-managed-agents-threadgrab-mcp-2026.html">ID</a></div>
+  </header>
+  <main>
+    <div class="breadcrumb"><a href="/pt/">Home</a> &rsaquo; <a href="/pt/blog/">Blog</a> &rsaquo; Gemini Managed Agents + ThreadGrab MCP 2026</div>
+    <article>
+      <h1>Gemini Managed Agents + ThreadGrab MCP 2026</h1>
+      <div class="meta">16 de Julho, 2026 &middot; 11 min read &middot; Guide</div>
+      <h2>O que mudou em 7 de julho de 2026</h2>
+<p>A API Gemini do Google adicionou discretamente dois recursos que importam para criadores de conteúdo social: <strong>Managed Agents</strong> — tarefas de longa duração em segundo plano que sobrevivem entre turnos — e <strong>suporte a MCP remoto</strong>, a capacidade de um agente chamar um servidor Model Context Protocol hospedado que não roda no mesmo processo. Até a semana passada, agentes Gemini só podiam invocar servidores MCP locais ou ferramentas próprias do Google. Agora um agente rodando na nuvem do Gemini pode abrir uma conexão de rede com um endpoint MCP remoto, listar as ferramentas expostas e chamá-las via HTTP como se fossem chamadas locais.</p>
+<p>Soa técnico, mas o efeito prático é curto. Se você roda um servidor MCP público — e o ThreadGrab mantém um desde março — agentes Gemini agora conseguem alcançá-lo. O agente lê sua timeline do X, threads e posts de newsletter do LinkedIn via MCP do ThreadGrab, cria um rascunho de resposta, pede confirmação e publica a resposta. Sem código de cola. Sem dança de OAuth por ferramenta. O mesmo fluxo que funcionava com Claude Code no mês passado agora funciona dentro do loop do agente Gemini.</p>
+<h2>O que o servidor MCP do ThreadGrab de fato expõe</h2>
+<p>O ThreadGrab mantém um servidor MCP hospedado em <code>https://threadgrab.com/api/mcp</code>. Ele expõe oito ferramentas, organizadas em três grupos. Ferramentas de leitura (<code>read_post</code>, <code>read_thread</code>, <code>search_timeline</code>) retornam Markdown, não JSON, para que o agente possa ingerir o conteúdo diretamente sem etapa de parsing. Ferramentas de escrita (<code>draft_reply</code>, <code>draft_post</code>) retornam um objeto de rascunho com token de confirmação — o agente precisa chamar <code>confirm_post</code> antes do rascunho ser publicado, o que mantém um humano no loop em cada post de saída. Ferramentas de arquivo (<code>archive_thread</code>, <code>archive_post</code>) persistem o conteúdo em um arquivo privado do ThreadGrab que o criador pode auditar depois.</p>
+<p>O servidor é protegido por OAuth. Você registra uma conta no ThreadGrab, gera um token MCP e o passa como header bearer. Tokens são escopados — um token somente leitura não pode chamar ferramentas de escrita; um token de plataforma única só funciona no X ou só no Bluesky. Esse é o mesmo modelo de escopo que clientes MCP já aplicam, então Claude Code e Cursor lidam com isso sem ajustes de configuração.</p>
+<h2>Como os novos agentes Gemini se comparam a Claude Code, Cursor e Windsurf</h2>
+<p>Os quatro já consomem um servidor MCP remoto, mas tratam o loop do agente de forma diferente. Claude Code e Windsurf rodam no seu terminal ou editor — você observa cada chamada de ferramenta, aprova as destrutivas e o loop termina quando você fecha a sessão. Managed Agents do Gemini rodam na nuvem do Google e persistem entre turnos: você inicia um agente na segunda-feira, ele executa trabalho em segundo plano e você confere na quarta. Isso muda quais tipos de tarefa fazem sentido.</p>
+
+<table>
+  <thead>
+    <tr><th>Cliente</th><th>Modelo de loop</th><th>MCP remoto</th><th>Humano no loop</th><th>Melhor para</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Claude Code</td><td>Sessão interativa</td><td>Sim (desde v1.0)</td><td>Por chamada destrutiva</td><td>Rascunhos de resposta, debug, pesquisa pontual</td></tr>
+    <tr><td>Cursor</td><td>Incorporado ao editor</td><td>Sim</td><td>Portão de escrita em arquivo</td><td>Código + autoria de conteúdo em uma janela</td></tr>
+    <tr><td>Windsurf</td><td>Incorporado ao editor</td><td>Sim</td><td>Por chamada destrutiva</td><td>Composição longa com acesso a ferramentas MCP</td></tr>
+    <tr><td><strong>Gemini Managed Agents</strong></td><td><strong>Em segundo plano, persistente</strong></td><td><strong>Sim (novo)</strong></td><td><strong>Token escopado + portão confirm_post</strong></td><td><strong>Monitoramento de vários dias, rascunhos agendados, arquivamento assíncrono</strong></td></tr>
+  </tbody>
+</table>
+
+<p>A linha de baixo é a que importa. Os Managed Agents do Gemini são o primeiro loop de agente hospedado com suporte MCP remoto de primeira classe e estado persistente. Se sua tarefa é &ldquo;monitorar uma conversa no Bluesky por 48 horas, resumir os 20 principais posts e rascunhar três variantes de resposta para minha revisão&rdquo;, os Managed Agents do Gemini são o único dos quatro que dá conta disso sem você precisar ficar olhando.</p>
+<h2>Conectando o ThreadGrab a um agente Gemini em cinco passos</h2>
+<p>A configuração leva cerca de dez minutos. Você precisa de uma conta ThreadGrab, uma chave de API Gemini com o beta de Agents habilitado e um <code>gcloud</code> funcional.</p>
+
+<h3>1. Gere um token MCP do ThreadGrab</h3>
+<p>Abra <a href="/pt/">threadgrab.com</a>, faça login, vá em <em>Configurações &rarr; Tokens MCP</em> e clique em <em>Novo token</em>. Escolha o escopo desejado — <code>read+write:x</code> permite ao agente ler timelines e postar respostas no X. Dê um nome reconhecível ao token, como <code>gemini-agent-segunda</code>. Copie o token bearer; o ThreadGrab o exibe uma única vez.</p>
+
+<h3>2. Habilite o beta de Gemini Agents</h3>
+<p>O endpoint de Agents é gated por um header de beta. Envie uma requisição única para <code>POST https://generativelanguage.googleapis.com/v1beta/agents</code> com <code>x-goog-api-key</code> definido e corpo vazio. Uma resposta 200 significa que seu projeto está dentro. Se receber 403, entre na lista de espera em <code>aistudio.google.com</code> &rarr; <em>Agents</em>.</p>
+
+<h3>3. Registre o servidor MCP do ThreadGrab</h3>
+<p>Poste um payload de configuração para a API Gemini Agents:</p>
+
+<pre><code>{
+  "name": "threadgrab",
+  "type": "remote_mcp",
+  "endpoint": "https://threadgrab.com/api/mcp",
+  "auth": {
+    "type": "bearer",
+    "token_env": "THREADGRAB_MCP_TOKEN"
+  },
+  "tools": ["read_post", "read_thread", "search_timeline", "draft_reply", "confirm_post", "archive_thread"]
+}
+</code></pre>
+
+<p>Guarde o <code>server_id</code> retornado — você o referenciará em toda definição de agente.</p>
+
+<h3>4. Defina o agente</h3>
+<p>Crie um agente que saiba quando chamar o ThreadGrab. O system prompt deve dizer ao agente que <code>threadgrab.search_timeline</code> é a principal ferramenta de leitura e que <code>confirm_post</code> é o único caminho para publicação.</p>
+
+<pre><code>{
+  "name": "x-thread-monitor",
+  "model": "gemini-2.5-pro",
+  "servers": ["threadgrab"],
+  "system_prompt": "Você monitora uma thread do X. Use threadgrab.search_timeline para encontrar novos posts, resuma os 3 principais a cada 6 horas e use draft_reply quando algo precisar de resposta. Nunca chame confirm_post sem aprovação explícita do usuário."
+}
+</code></pre>
+
+<h3>5. Inicie o agente e defina o intervalo de polling</h3>
+<p>Poste a definição do agente para iniciá-lo. Managed Agents do Gemini aceitam um campo <code>cron</code> que agenda a frequência com que o loop do agente acorda. Defini-lo como <code>0 */6 * * *</code> acorda o agente a cada seis horas — uma cadência razoável para uma tarefa de monitoramento social de longa duração.</p>
+<h2>Três trabalhos concretos que mudam para criadores</h2>
+
+<h3>1. Monitoramento de longa duração vira um único agente</h3>
+<p>Até agora, &ldquo;ficar de olho nesta thread do X por 48 horas&rdquo; significava um cron job mais uma fila mais uma etapa separada de sumarização. Com um Managed Agent do Gemini, você define a tarefa uma vez. O agente faz polling no ThreadGrab em seu cronograma, mantém o estado da conversa entre turnos e grava seu resumo de volta no seu arquivo ThreadGrab ao fim de cada ciclo. Você consulta o arquivo quando quer uma atualização, não quando o agente decide te notificar.</p>
+
+<h3>2. Rascunhos agendados sem perder a checagem humana</h3>
+<p>O agente pode compor um rascunho toda segunda às 9h, mas <code>confirm_post</code> ainda exige um clique do usuário. Isso mantém a promessa de humano-no-loop. A diferença em relação a um cron job comum é o contexto: o agente lembra do rascunho da semana passada, sabe o que você aprovou e o que rejeitou, e refina o próximo rascunho de acordo.</p>
+
+<h3>3. Arquivamento cross-plataforma como efeito colateral</h3>
+<p>Toda chamada de leitura e escrita que o agente faz é arquivada automaticamente pelo ThreadGrab. Dois meses depois, você pode puxar um export limpo de cada post que o agente leu e de cada resposta que você aprovou. Esse é o ângulo de proveniência em primeiro lugar que mais importa quando agentes de IA estão fazendo trabalho em seu nome — você consegue provar o que o agente viu e o que você aprovou.</p>
+<h2>Como o ThreadGrab se encaixa entre Gemini e as plataformas sociais</h2>
+<p>O ThreadGrab não compete com os Managed Agents do Gemini — ele fica atrás deles. O Gemini cuida do loop do agente, da seleção de modelo, do estado de longa duração e do agendamento. O ThreadGrab cuida do conhecimento específico de plataforma: como ler uma thread do X, como fazer parsing de um post do Bluesky, como buscar uma newsletter do LinkedIn, como escrever de volta sem violar os limites de taxa de cada plataforma. A fronteira MCP é o contrato entre os dois, e as oito ferramentas que o ThreadGrab expõe são o vocabulário.</p>
+<p>Essa divisão importa por duas razões. Primeiro, você pode trocar de agente sem reescrever integração de plataforma — o mesmo MCP do ThreadGrab funciona por trás de Claude Code, Windsurf ou qualquer host futuro estilo Gemini. Segundo, você pode trocar de plataforma sem reescrever o agente — quando o ThreadGrab adicionar suporte a Threads ou Mastodon, as mesmas ferramentas MCP os cobrem, e o agente continua funcionando inalterado.</p>
+<h2>O que observar nos próximos 30 dias</h2>
+<p>Três coisas provavelmente chegarão antes de agosto. A primeira é um marketplace de Gemini Agents — Google já deu pistas, e um botão de &ldquo;instalar ThreadGrab&rdquo; em um clique dentro do Gemini removeria os cinco passos acima. A segunda é relatório de custo por token para chamadas MCP — agora o uso de tokens do loop do agente se acumula no projeto, não na ferramenta. A terceira é uma primitiva de &ldquo;confirmação agendada&rdquo;, em que <code>confirm_post</code> pode ser gated por uma regra de calendário em vez de um clique em tempo real. As três ampliariam quais tipos de tarefa você pode delegar.</p>
+<h2>Concluindo</h2>
+<p>Os Managed Agents do Gemini com suporte a MCP remoto são o primeiro loop de agente hospedado que alcança o ThreadGrab sem código de cola. A conexão são cinco passos e dez minutos. A fronteira que importa — humano-no-loop em cada post de saída — é aplicada pelo <code>confirm_post</code>, não pelo agente. Se você tem uma tarefa de monitoramento social que precisa rodar por mais tempo do que uma única sessão do Claude Code, esta é a maneira mais limpa de delegá-la hoje.</p>
+      <h2>Frequently Asked Questions</h2>
+      <h3>O que é o recurso Managed Agents do Gemini, em linguagem simples?</h3>
+      <p>Managed Agents são tarefas de longa duração em segundo plano que rodam dentro da API Gemini do Google. Você define o agente uma vez — modelo, ferramentas, system prompt — e o loop do agente persiste entre turnos. Você pode agendá-lo para acordar a cada poucas horas, e ele mantém o estado da conversa em cada wake. É o primeiro runtime de agente hospedado de um grande laboratório com suporte a MCP remoto de primeira classe.</p>
+      <h3>O servidor MCP do ThreadGrab exige plano pago?</h3>
+      <p>Ferramentas somente leitura (read_post, read_thread, search_timeline, archive_thread, archive_post) são gratuitas para qualquer conta logada. Ferramentas de escrita (draft_reply, draft_post) exigem plano Creator ou Pro. As oito ferramentas compartilham o mesmo endpoint MCP e o mesmo modelo de autenticação bearer.</p>
+      <h3>Um Managed Agent do Gemini consegue postar no X sem um humano clicar em confirmar?</h3>
+      <p>Não. A ferramenta confirm_post exige um token de confirmação emitido pelo usuário que expira em cinco minutos. O agente pode compor um rascunho a qualquer momento, mas a chamada de publicação real precisa ser disparada por uma ação humana — seja um clique na UI do ThreadGrab, seja um token de confirmação assinado retornado pelo seu próprio aplicativo. Essa é uma regra rígida no servidor, não uma política configurável do agente.</p>
+      <h3>Como isso se diferencia do suporte MCP já existente do Claude Code?</h3>
+      <p>O Claude Code roda no seu terminal como uma sessão interativa — termina quando você fecha a janela. Os Managed Agents do Gemini rodam na nuvem do Google e persistem entre sessões, então são desenhados para tarefas de vários dias que acordam em um cronograma. A superfície de ferramentas (as oito ferramentas MCP do ThreadGrab) é idêntica; a diferença é se você quer uma sessão com supervisão ou um worker em segundo plano sem monitoramento.</p>
+      <h3>O que acontece com os dados que o agente lê via ThreadGrab?</h3>
+      <p>Toda chamada de leitura e escrita que o agente faz é registrada no seu arquivo privado do ThreadGrab. Você pode puxar um export completo — cada post que o agente viu, cada rascunho que ele compôs, cada token de confirmação que você emitiu — a qualquer momento. O arquivo é escopado de ponta a ponta para a sua conta e nunca é compartilhado com Gemini ou terceiros.</p>
+    </article>
+  </main>
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/en/">Home</a> &middot; <a href="/en/blog/">Blog</a> &middot; <a href="/en/about/">About</a> &middot; <a href="/en/privacy/">Privacy</a>
+    <br>Not affiliated with X Corp., Bluesky Social PBC, LinkedIn Corporation, or Microsoft Corporation.
+  </footer>
+</body>
+</html>

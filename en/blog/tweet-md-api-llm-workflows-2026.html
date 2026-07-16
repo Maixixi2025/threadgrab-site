@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tweet.md API for LLMs 2026: 5 Markdown Workflows</title>
+  <meta name="description" content="tweet.md ships a paid API that turns X posts, threads, and profiles into clean Markdown for LLM pipelines. Here are the 5 workflows that actually pay off.">
+  <meta name="keywords" content="tweet.md API, X to Markdown API, LLM markdown workflow, tweet.md authentication, tweet.md credit pricing, tweet.md thread scope, RAG tweet pipeline, ThreadGrab, social content archival">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/en/blog/tweet-md-api-llm-workflows-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/tweet-md-api-llm-workflows-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/tweet-md-api-fluxos-llm-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/tweet-md-api-alur-kerja-llm-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/tweet-md-api-llm-workflows-2026.html">
+  <meta property="og:title" content="tweet.md API for LLMs 2026: 5 Markdown Workflows">
+  <meta property="og:description" content="tweet.md ships a paid API that turns X posts, threads, and profiles into clean Markdown for LLM pipelines. Here are the 5 workflows that actually pay off.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/en/blog/tweet-md-api-llm-workflows-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="tweet.md API for LLMs 2026: 5 Markdown Workflows">
+  <meta name="twitter:description" content="tweet.md's paid API turns X posts, threads, and profiles into clean Markdown. Five LLM workflows that pay for themselves in the first afternoon.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo:hover { color: #1d9bf0; }
+    .tagline { color: #888; font-size: 0.85rem; margin-left: auto; }
+    .lang-bar { display: flex; gap: 12px; padding: 12px 24px; background: #1a1a1a; font-size: 0.85rem; }
+    .lang-bar a { color: #888; text-decoration: none; padding: 4px 10px; border-radius: 4px; }
+    .lang-bar a.active { background: #1d9bf0; color: #fff; }
+    .lang-bar a:hover:not(.active) { background: #2a2a2a; color: #fff; }
+    main { max-width: 780px; margin: 0 auto; padding: 40px 24px; }
+    h1 { font-size: 2rem; margin-bottom: 8px; line-height: 1.2; }
+    h1 span { color: #1d9bf0; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { font-size: 1.5rem; margin-top: 40px; margin-bottom: 16px; color: #1d9bf0; }
+    h3 { font-size: 1.15rem; margin-top: 24px; margin-bottom: 12px; color: #fff; }
+    p { margin-bottom: 16px; color: #d0d0d0; }
+    code { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-family: 'SF Mono', Monaco, Consolas, monospace; font-size: 0.9em; color: #ff7b72; }
+    pre { background: #1a1a1a; padding: 16px; border-radius: 6px; overflow-x: auto; margin-bottom: 16px; border: 1px solid #2a2a2a; }
+    pre code { background: none; padding: 0; color: #e6e6e6; font-size: 0.85rem; line-height: 1.5; }
+    ul, ol { margin-bottom: 16px; padding-left: 24px; color: #d0d0d0; }
+    li { margin-bottom: 8px; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 0.9rem; }
+    th { background: #1a1a1a; padding: 10px 12px; text-align: left; color: #1d9bf0; border-bottom: 2px solid #2a2a2a; }
+    td { padding: 10px 12px; border-bottom: 1px solid #2a2a2a; color: #d0d0d0; }
+    tr:hover td { background: #1a1a1a; }
+    .callout { background: #1a2332; border-left: 4px solid #1d9bf0; padding: 16px 20px; margin: 24px 0; border-radius: 4px; }
+    .callout p { margin: 0; color: #d0d0d0; }
+    .callout strong { color: #1d9bf0; }
+    .cta { background: linear-gradient(135deg, #1d9bf0 0%, #1a6fb8 100%); padding: 24px; border-radius: 8px; margin: 32px 0; text-align: center; }
+    .cta p { color: #fff; margin-bottom: 12px; }
+    .btn { display: inline-block; background: #fff; color: #0f0f0f; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; }
+    .btn:hover { background: #e6e6e6; }
+    .faq-item { background: #1a1a1a; padding: 16px 20px; margin-bottom: 12px; border-radius: 6px; border-left: 3px solid #1d9bf0; }
+    .faq-item strong { color: #fff; display: block; margin-bottom: 8px; }
+    .faq-item p { margin: 0; color: #d0d0d0; }
+    .related { background: #1a1a1a; padding: 20px; border-radius: 6px; margin: 32px 0; }
+    .related h3 { color: #1d9bf0; margin-bottom: 12px; }
+    .related ul { list-style: none; padding: 0; }
+    .related li { padding: 6px 0; border-bottom: 1px solid #2a2a2a; }
+    .related li:last-child { border-bottom: none; }
+    .related a { color: #1d9bf0; text-decoration: none; }
+    .related a:hover { text-decoration: underline; }
+    footer { text-align: center; padding: 32px 24px; color: #888; font-size: 0.85rem; border-top: 1px solid #1a1a1a; margin-top: 64px; }
+    footer a { color: #888; text-decoration: none; }
+    footer a:hover { color: #1d9bf0; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "tweet.md API for LLMs 2026: 5 Markdown Workflows",
+    "description": "tweet.md ships a paid API that turns X posts, threads, and profiles into clean Markdown for LLM pipelines. Here are the 5 workflows that actually pay off.",
+    "datePublished": "2026-07-14",
+    "dateModified": "2026-07-14",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/en/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/en/" },
+    "mainEntityOfPage": "https://threadgrab.com/en/blog/tweet-md-api-llm-workflows-2026.html",
+    "inLanguage": "en"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://threadgrab.com/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/en/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "tweet.md API for LLMs 2026", "item": "https://threadgrab.com/en/blog/tweet-md-api-llm-workflows-2026.html" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is the tweet.md API free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The free tier gives you 5 single-post requests per IP per calendar month with thread=off and userinfo=off forced on. That covers casual testing. Anything more (thread scopes beyond off, userinfo, profiles, X Articles) requires a paid API key. The smallest paid pack is $5 for 500 credits (1 credit per post returned, plus 2 credits per unique author when userinfo is enabled)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use the tweet.md API from a Claude or ChatGPT agent?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. tweet.md publishes a SKILL.md at github.com/tweet-md/skill that Claude Code, Cursor, and other agent runtimes install via `npx skills add tweet-md/skill`. The skill teaches the agent to rewrite x.com and twitter.com URLs to tweet.md before fetching, and to call /i/api/convert when it only has the full X URL. Pair the skill with an API key in your agent's env (TWEETMD_API_KEY) and the agent handles the rest."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the thread scope parameter work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "thread controls how much of the conversation comes back with the post you requested. thread=off returns just the single post (free tier). thread=ancestors returns the post plus its reply chain above it. thread=branch (default for paid: branch-15) returns ancestors first, then replies underneath. thread=all returns the entire conversation including sibling branches. Append -N to cap total posts (2-500, default 20). branch-8 means: fill ancestors up to 8, then replies below, no matter how long the thread actually is."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does tweet.md return, JSON or Markdown?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Markdown, always. tweet.md explicitly rejects format=json. The response body is plain text/markdown with a heading, post metadata, and the post text. With format=obsidian you get YAML frontmatter wrapped around the same Markdown, suitable for direct import into an Obsidian vault. The credit cost and headers (X-Tweetmd-Posts-Returned, X-Tweetmd-Credits-Charged, X-Tweetmd-Thread-Cap, X-Tweetmd-Cap-Hit) are returned in HTTP headers, never appended to the body."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When should I use ThreadGrab instead of the tweet.md API?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use the tweet.md API when you want clean Markdown for an LLM pipeline, a single-shot query, an agent loop, or an Obsidian import. Use ThreadGrab when you want to keep the thread: download the media files (images, video, screenshots) to your own disk, track post corrections over time, archive a full profile or list in bulk, or preserve a public statement as evidence with version history. tweet.md reads the post. ThreadGrab saves the post."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a href="/en/" class="logo">ThreadGrab</a>
+    <span class="tagline">Archive X threads as Markdown</span>
+  </header>
+  <div class="lang-bar">
+    <a href="/en/blog/tweet-md-api-llm-workflows-2026.html" class="active">EN</a>
+    <a href="/pt/blog/tweet-md-api-fluxos-llm-2026.html">PT</a>
+    <a href="/id/blog/tweet-md-api-alur-kerja-llm-2026.html">ID</a>
+  </div>
+
+  <main>
+    <h1>tweet.md API for LLMs 2026: <span>5 Markdown Workflows</span></h1>
+    <div class="meta">July 14, 2026 &middot; 9 min read &middot; Guide</div>
+
+    <p>If you have been treating tweet.md as a URL rewrite trick — the browser trick where you swap <code>x.com</code> with <code>tweet.md</code> and the post renders as clean Markdown — you have been missing the better half. tweet.md also ships a small, well-documented HTTP API that takes the same X posts, threads, and profiles and returns them as plain Markdown your LLM can ingest directly. No JSON, no parsing, no cleanup pass.</p>
+
+    <p>The free tier covers casual testing (5 single-post requests per IP per calendar month, <code>thread=off</code> only). Anything more — ancestor chains, branch context, profile dumps, X Articles — requires a paid API key. This guide walks through the API surface, the four authentication methods, the five LLM workflows that pay for themselves in an afternoon, and when to reach for ThreadGrab instead.</p>
+
+    <div class="callout">
+      <p><strong>Quick take:</strong> tweet.md's API returns <code>text/markdown</code>, not JSON. Free tier is single-post only. Paid tier is $5 for 500 credits. Five workflows actually pay off: RAG ingestion, citation pulling, agent tool-use, Obsidian vault sync, and Apple Shortcuts on iOS.</p>
+    </div>
+
+    <h2>H2-1: What tweet.md's API Actually Returns</h2>
+
+    <p>The API is single-purpose: given an X post URL (or a handle + post ID, or a profile handle), return a Markdown document with the post text, author handle, timestamp, media links, engagement stats, and any quoted tweets or embedded replies rendered as nested Markdown blocks. The output is <code>text/markdown</code>, never JSON. tweet.md explicitly rejects <code>format=json</code>.</p>
+
+    <p>There are three entry points:</p>
+
+    <ul>
+      <li><strong>Browser rewrite:</strong> replace <code>x.com</code> with <code>tweet.md</code> in any post URL. Works without a key in the same browser after checkout (session cookie). The free tier is single-post only.</li>
+      <li><strong>Programmatic post/thread:</strong> <code>GET https://tweet.md/{handle}/status/{tweetId}</code> when you already have the handle and ID. Same response shape as the browser rewrite.</li>
+      <li><strong>Programmatic with full URL:</strong> <code>GET https://tweet.md/i/api/convert?url={encoded_url}</code> when you only have the full x.com URL. This is the endpoint agents and Shortcuts use.</li>
+      <li><strong>Profile:</strong> <code>GET https://tweet.md/{handle}</code> (browser) or <code>GET https://tweet.md/i/api/profile?handle={handle}</code> (programmatic). Requires credits.</li>
+    </ul>
+
+    <p>All four endpoints take the same query parameters: <code>format</code>, <code>thread</code>, <code>userinfo</code>, <code>stats</code>, <code>metadata</code>, and (for profiles) <code>pinnedpost</code>, <code>latest</code>, <code>replies</code>, <code>articles</code>. The defaults differ slightly between free and paid: the free tier forces <code>thread=off</code> and <code>userinfo=off</code>; the paid tier defaults to <code>thread=ancestors-20</code> and <code>userinfo=author</code> when those params are omitted.</p>
+
+    <h2>H2-2: Authentication — Four Methods, One Key</h2>
+
+    <p>tweet.md accepts the same API key in four different ways. Pick the one that fits your runtime.</p>
+
+    <table>
+      <thead>
+        <tr><th>Method</th><th>Header / Param</th><th>When to use</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Bearer</td><td><code>Authorization: Bearer ***</code></td><td>Scripts, agents, and servers (recommended)</td></tr>
+        <tr><td>iOS key</td><td><code>x-ios-apikey: twmd_key_...</code></td><td>Apple Shortcuts — returns text/html with line breaks as &lt;br&gt;</td></tr>
+        <tr><td>URL param</td><td><code>?apikey=twmd_key_...</code></td><td>Quick manual tests (avoid sharing URLs that contain it)</td></tr>
+        <tr><td>Session cookie</td><td>automatic after checkout/login</td><td>Browser rewrites in the same browser after topup</td></tr>
+        <tr><td>Trusted IP</td><td>whitelisted in dashboard</td><td>Public server IPs — fixed-budget agents without sending a key</td></tr>
+      </tbody>
+    </table>
+
+    <p>The key looks like <code>twmd_key_…</code> and is delivered by email after Stripe checkout, or generated from the dashboard. Trusted IPs let you skip the header entirely for fixed server IPs — useful when you run a cron job on a VPS with a stable address. The precedence rule: if a request includes both a Bearer header and a Trusted IP, the Bearer key wins.</p>
+
+    <p>A free tier exists for casual testing but is not what production agents want. The free tier forces <code>thread=off</code> and <code>userinfo=off</code>, which means you get the single post only, no author metadata, no reply context. Five requests per IP per calendar month. Anything beyond smoke-testing needs a paid key.</p>
+
+    <h2>H2-3: The /i/api/convert Endpoint (Programmatic)</h2>
+
+    <p>This is the endpoint your agent will call most often. The contract is simple: pass the full x.com URL as a query parameter, get back a Markdown document. Header carries the bearer key.</p>
+
+    <pre><code>curl -H "Authorization: Bearer twmd_key_..." \
+  "https://tweet.md/i/api/convert?url=https%3A%2F%2Fx.com%2Fjack%2Fstatus%2F20&amp;thread=branch-8"
+</code></pre>
+
+    <p>The response is the full thread rendered as Markdown. The <code>thread=branch-8</code> parameter caps the response at 8 posts total: ancestors first (the chain above your post), then replies below. The actual response headers carry the metadata your agent should bill against:</p>
+
+    <ul>
+      <li><code>X-Tweetmd-Posts-Returned</code> — how many posts came back in the body</li>
+      <li><code>X-Tweetmd-Credits-Charged</code> — credits deducted for this call</li>
+      <li><code>X-Tweetmd-Thread-Cap</code> — the cap you requested (e.g. 8)</li>
+      <li><code>X-Tweetmd-Cap-Hit</code> — whether the cap truncated a longer thread</li>
+    </ul>
+
+    <p>These headers are appended to the HTTP response only, never to the Markdown body. Your agent can read them to log credit usage without polluting the content the LLM ingests.</p>
+
+    <h2>H2-4: The /i/api/profile Endpoint (Profile Scraping)</h2>
+
+    <p>Profiles are billed differently. The base profile costs 2 credits, plus 1 credit per post returned in any enabled section (pinned, latest, replies, articles). The free tier does not include profile access at all.</p>
+
+    <pre><code>curl -H "Authorization: Bearer twmd_key_..." \
+  "https://tweet.md/i/api/profile?handle=jack&amp;latest=10&amp;replies=5"
+</code></pre>
+
+    <p>Defaults are conservative: pinned post on, latest 5 posts, replies off, articles off. The <code>latest</code>, <code>replies</code>, and <code>articles</code> parameters each accept a range (latest 5-50, replies and articles 5-20). Each post returned is +1 credit. For a profile dump with the pinned post, 10 latest, and 5 replies, you are looking at 2 + 1 + 10 + 5 = 18 credits for one profile.</p>
+
+    <p>This is the endpoint you want when building an X researcher or lead-magnet. Pull the profile once, get bio + stats + 10 latest posts as one Markdown document. Your LLM can ingest it as context for a personalized outreach email or a competitive analysis.</p>
+
+    <h2>H2-5: 5 Workflows That Actually Pay Off</h2>
+
+    <p>Five patterns show up repeatedly in real LLM pipelines that touch tweet.md. The list is not exhaustive, but every one of these pays for a $5 credit pack in under an afternoon.</p>
+
+    <h3>Workflow 1: RAG Ingestion From Curated Tweet Lists</h3>
+
+    <p>The most common production use. You maintain a list of X post URLs on a topic (AI agent frameworks, indie hacker advice, industry research). On a cron, your script fetches each URL via <code>/i/api/convert</code> with <code>thread=branch-8</code>, splits on the per-post separators, embeds each post with your embedding model, and pushes them into your vector store. The Markdown output is already clean: no HTML stripping, no entity decoding, no JSON parsing. Your chunking logic can split on the <code># 1/N — Post by …</code> headers tweet.md emits.</p>
+
+    <pre><code># Pseudo-pipeline
+for url in curated_urls:
+    md = requests.get(
+        f"https://tweet.md/i/api/convert",
+        params={"url": url, "thread": "branch-8", "userinfo": "author"},
+        headers={"Authorization": f"Bearer {TWEETMD_API_KEY}"},
+    ).text
+    for chunk in split_on_post_headers(md):
+        embed_and_store(chunk, metadata={"source": url})
+</code></pre>
+
+    <p>Cost: 1 credit per post in the returned thread, plus 2 for the author. For 50 threads averaging 4 posts each, that is 50 + (50 &times; 2) = 150 credits — well inside the $5 pack.</p>
+
+    <h3>Workflow 2: Citation Pulling For Long-Form Posts</h3>
+
+    <p>You are writing a research-heavy Substack or LinkedIn long-form and you want to cite 10 specific X threads. For each cited thread, fetch the post URL with <code>thread=ancestors</code> to get the full reply chain, then quote the relevant excerpts. Because tweet.md returns Markdown with source URLs in the post headers, you have a ready-made citation format:</p>
+
+    <pre><code>&gt; Original post: https://x.com/exampleuser/status/9000000000000000001
+&gt; Captured: 2026-05-17T00:00:00.000Z
+&gt;
+&gt; Shipping notes: what changed in this release and why.
+</code></pre>
+
+    <p>You can paste this block directly into your article with proper attribution. The timestamp is the capture time, not the original post time, but tweet.md also includes the original post time as a separate metadata field when you use <code>userinfo=author</code>.</p>
+
+    <h3>Workflow 3: Agent Tool-Use (Claude Code / Cursor / skills.sh)</h3>
+
+    <p>tweet.md publishes an official SKILL.md at <code>github.com/tweet-md/skill</code> that installs via <code>npx skills add tweet-md/skill</code>. The skill teaches the agent three patterns: (1) rewrite x.com and twitter.com URLs to tweet.md before fetching, (2) call <code>/i/api/convert</code> when it only has the full X URL, (3) call <code>/i/api/profile</code> when it needs bio context. Pair the skill with an API key in your agent's environment:</p>
+
+    <pre><code>export TWEETMD_API_KEY=twmd_key_...
+
+# In Claude Code / Cursor, the agent will now:
+# - rewrite x.com/jack/status/20 → tweet.md/jack/status/20 when fetching
+# - call /i/api/convert when it has the full URL
+# - log credit usage from X-Tweetmd-Credits-Charged headers
+</code></pre>
+
+    <p>Without the skill, an agent that encounters an x.com URL has three bad options: visit X directly (login wall + tracking), try to scrape the post (fragile, blocked by X's bot detection), or call a generic web fetcher (returns HTML, not Markdown, with ads and tracking pixels). With the skill, the agent rewrites the URL and gets a clean Markdown document in one HTTP call.</p>
+
+    <h3>Workflow 4: Obsidian Vault Sync</h3>
+
+    <p>The <code>format=obsidian</code> parameter wraps the same Markdown in YAML frontmatter. The frontmatter includes source, author, author handle, posted timestamp, captured timestamp, bio (for profiles), stats, and tags. The body is the post text and metadata you would get with the default <code>markdown</code> format.</p>
+
+    <pre><code>---
+source: https://x.com/jack/status/20
+author: "jack"
+author_handle: jack
+posted: 2006-03-21T20:50:14.000Z
+captured: 2026-05-17T00:00:00.000Z
+tags: [x-post, tweetmd]
+---
+
+# X Post — jack — 2006-03-21
+Post ID: 20
+Source: https://x.com/jack/status/20
+...
+</code></pre>
+
+    <p>On a daily cron, your sync script walks a folder of saved X URLs, fetches each one with <code>format=obsidian</code>, and writes the result to your vault. Obsidian's Dataview plugin can then index posts by author, by tag, or by date. The frontmatter is the only thing that distinguishes this from a plain Markdown sync — if you want plain Markdown only, omit <code>format</code>.</p>
+
+    <h3>Workflow 5: Apple Shortcuts On iOS</h3>
+
+    <p>The prebuilt Shortcut installs from the tweet.md docs page and runs a single HTTP action. The key here is the <code>x-ios-apikey</code> header — tweet.md detects iOS-key requests and returns <code>text/html</code> with line breaks converted to <code>&lt;br&gt;</code>, which is what Shortcuts can copy into a note cleanly.</p>
+
+    <pre><code>GET https://tweet.md/jack/status/20
+Headers:
+  x-ios-apikey: twmd_key_...
+</code></pre>
+
+    <p>The Shortcut accepts Share Sheet input, falls back to Clipboard if you opened it directly, rewrites <code>x.com</code> to <code>tweet.md</code> in the URL, calls the endpoint with the iOS header, and copies the returned Markdown to your clipboard. From there you paste into Apple Notes, Obsidian Mobile, or any text-accepting app. The Shortcut stores your key locally; do not share a customized copy.</p>
+
+    <div class="cta">
+      <p><strong>Save the threads that matter.</strong> ThreadGrab archives X threads as Markdown with media, correction tracking, and bulk export. tweet.md reads the post — ThreadGrab keeps it.</p>
+      <a class="btn" href="/en/">Try ThreadGrab</a>
+    </div>
+
+    <h2>H2-6: Thread Scope Cheatsheet</h2>
+
+    <p>The <code>thread</code> parameter is the most confusing part of the API. The four values map to four conversation scopes, and the <code>-N</code> suffix caps the response. Pick the smallest scope that gives your LLM the context it needs.</p>
+
+    <table>
+      <thead>
+        <tr><th>Scope</th><th>What comes back</th><th>Default</th><th>Typical use</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>off</code></td><td>The single post only</td><td>Free tier forced</td><td>Single quote, single citation</td></tr>
+        <tr><td><code>ancestors</code></td><td>The post plus the reply chain above it up to the conversation root</td><td>—</td><td>Reading a reply in full context</td></tr>
+        <tr><td><code>branch</code></td><td>Ancestors first, then replies underneath (sibling branches excluded)</td><td>branch-15 (paid)</td><td>RAG ingestion, citation pulling</td></tr>
+        <tr><td><code>all</code></td><td>Entire conversation including sibling branches</td><td>—</td><td>Topic mapping, controversy analysis</td></tr>
+      </tbody>
+    </table>
+
+    <p>The cap syntax is <code>scope-N</code> where N is 2-500 (default 20). <code>branch-8</code> means: spend up to 8 posts on ancestors first, then replies below, no matter how long the thread actually is. If your post has 12 ancestors, branch-8 spends all 8 on the upward chain and ignores replies below. If your post has 3 ancestors, branch-8 spends 3 upward and 5 below. <code>full</code> and <code>conversation</code> are aliases for <code>branch</code> and <code>all</code>.</p>
+
+    <h2>H2-7: format=markdown vs format=obsidian</h2>
+
+    <p>The default <code>markdown</code> format returns the post body with stats, media, quotes, and full X Articles when present. It is what you want when feeding an LLM or saving to a plain-text note.</p>
+
+    <p>The <code>obsidian</code> format adds YAML frontmatter at the top: <code>source</code>, <code>author</code>, <code>author_handle</code>, <code>posted</code>, <code>captured</code>, optional <code>bio</code> for profiles, optional <code>stats</code> block, and <code>tags</code>. The body is identical to the markdown format. Use obsidian when you want Dataview queries on author or date, or when you want Obsidian's graph view to show connections between authors and topics.</p>
+
+    <p>Neither format returns JSON. tweet.md deliberately rejects <code>format=json</code> — the project philosophy is that Markdown is the canonical interchange format for LLM consumers, and JSON wrapping adds parsing overhead without adding value.</p>
+
+    <h2>H2-8: Pricing Math — Which Pack to Buy</h2>
+
+    <p>Three credit packs, $5 / $19 / $49. Cost per credit drops as pack size grows, but the dollar amount is the real decision. Here is the breakeven math.</p>
+
+    <table>
+      <thead>
+        <tr><th>Pack</th><th>Credits</th><th>Per-credit</th><th>Single-post fetch</th><th>Branch-8 thread</th><th>Profile dump</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>$5</td><td>500</td><td>$0.0100</td><td>~500 fetches</td><td>~62 fetches</td><td>~31 dumps</td></tr>
+        <tr><td>$19 (best value)</td><td>2,200</td><td>$0.0086</td><td>~2,200 fetches</td><td>~275 fetches</td><td>~138 dumps</td></tr>
+        <tr><td>$49</td><td>6,000</td><td>$0.0082</td><td>~6,000 fetches</td><td>~750 fetches</td><td>~375 dumps</td></tr>
+      </tbody>
+    </table>
+
+    <p>"Single-post fetch" assumes <code>thread=off</code> and <code>userinfo=off</code>, so 1 credit per call. "Branch-8 thread" assumes 8 posts returned (8 credits) + 2 for author metadata = 10 credits per call. "Profile dump" assumes pinned + 10 latest + 5 replies = 18 credits per call (2 base + 1 pinned + 10 latest + 5 replies).</p>
+
+    <p>The $19 pack is the right starting point for most individual creators: 2,200 credits covers about 138 profile dumps or 275 branch-8 threads. The $49 pack is for teams running multiple daily crons or agents that ingest dozens of threads per day. The $5 pack is for smoke-testing the API before committing.</p>
+
+    <h2>H2-9: When to Pair tweet.md With ThreadGrab</h2>
+
+    <p>tweet.md and ThreadGrab are complementary, not competing. The short version: tweet.md reads the post, ThreadGrab saves the post.</p>
+
+    <table>
+      <thead>
+        <tr><th>Capability</th><th>tweet.md API</th><th>ThreadGrab</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Read X posts as Markdown</td><td>Yes (server-side render)</td><td>Yes (export then read)</td></tr>
+        <tr><td>Single HTTP call per post</td><td>Yes</td><td>No (multi-step)</td></tr>
+        <tr><td>LLM-pipeline ready</td><td>Yes (text/markdown, no JSON)</td><td>No (Markdown output, larger body)</td></tr>
+        <tr><td>Media files downloaded to disk</td><td>No (links only)</td><td>Yes</td></tr>
+        <tr><td>Track post corrections over time</td><td>No</td><td>Yes (re-fetch + diff)</td></tr>
+        <tr><td>Bulk archive a profile or list</td><td>Credits-based, limited</td><td>Yes (full export)</td></tr>
+        <tr><td>Export to Notion / GitHub / S3</td><td>No</td><td>Yes</td></tr>
+        <tr><td>Self-hostable</td><td>No</td><td>No (Cloud-hosted)</td></tr>
+        <tr><td>Pricing model</td><td>Per-credit</td><td>Subscription / one-time</td></tr>
+      </tbody>
+    </table>
+
+    <p>The natural division of labor: tweet.md for the read path and the agent loop (your LLM fetches a post, summarizes it, answers a question about it), ThreadGrab for the keep path (you find a thread worth preserving, you save it to your own storage with media and version history). Most active creators end up using both — tweet.md for the dozens of throwaway reads per day, ThreadGrab for the few threads per week that warrant a permanent copy.</p>
+
+    <div class="related">
+      <h3>Related on ThreadGrab</h3>
+      <ul>
+        <li><a href="/en/blog/tweet-md-browser-redirect-2026.html">Tweet.md Browser Redirect 2026: Replace x.com Links</a></li>
+        <li><a href="/en/blog/tweet-md-vs-threadgrab-2026.html">tweet.md vs ThreadGrab 2026: X Thread to Markdown Tools Compared</a></li>
+        <li><a href="/en/blog/tweet-md-seo-llm-citation-pivot-2026.html">Make X Posts Cite-Ready for AI: tweet.md's 2026 SEO Pivot</a></li>
+        <li><a href="/en/blog/x-post-correction-re-fetch-2026.html">X Post Correction Notifications &amp; ThreadGrab Auto Re-Fetch</a></li>
+      </ul>
+    </div>
+
+    <h2>FAQ</h2>
+
+    <div class="faq-item">
+      <strong>Is the tweet.md API free?</strong>
+      <p>The free tier gives you 5 single-post requests per IP per calendar month with <code>thread=off</code> and <code>userinfo=off</code> forced on. That covers casual testing. Anything more (thread scopes beyond off, userinfo, profiles, X Articles) requires a paid API key. The smallest paid pack is $5 for 500 credits (1 credit per post returned, plus 2 credits per unique author when userinfo is enabled).</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Can I use the tweet.md API from a Claude or ChatGPT agent?</strong>
+      <p>Yes. tweet.md publishes a SKILL.md at <code>github.com/tweet-md/skill</code> that Claude Code, Cursor, and other agent runtimes install via <code>npx skills add tweet-md/skill</code>. The skill teaches the agent to rewrite x.com and twitter.com URLs to tweet.md before fetching, and to call <code>/i/api/convert</code> when it only has the full X URL. Pair the skill with an API key in your agent's env (<code>TWEETMD_API_KEY</code>) and the agent handles the rest.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>How does the thread scope parameter work?</strong>
+      <p><code>thread</code> controls how much of the conversation comes back with the post you requested. <code>thread=off</code> returns just the single post (free tier). <code>thread=ancestors</code> returns the post plus its reply chain above it. <code>thread=branch</code> (default for paid: branch-15) returns ancestors first, then replies underneath. <code>thread=all</code> returns the entire conversation including sibling branches. Append <code>-N</code> to cap total posts (2-500, default 20). branch-8 means: fill ancestors up to 8, then replies below, no matter how long the thread actually is.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>What does tweet.md return, JSON or Markdown?</strong>
+      <p>Markdown, always. tweet.md explicitly rejects <code>format=json</code>. The response body is plain text/markdown with a heading, post metadata, and the post text. With <code>format=obsidian</code> you get YAML frontmatter wrapped around the same Markdown, suitable for direct import into an Obsidian vault. The credit cost and headers (<code>X-Tweetmd-Posts-Returned</code>, <code>X-Tweetmd-Credits-Charged</code>, <code>X-Tweetmd-Thread-Cap</code>, <code>X-Tweetmd-Cap-Hit</code>) are returned in HTTP headers, never appended to the body.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>When should I use ThreadGrab instead of the tweet.md API?</strong>
+      <p>Use the tweet.md API when you want clean Markdown for an LLM pipeline, a single-shot query, an agent loop, or an Obsidian import. Use ThreadGrab when you want to keep the thread: download the media files (images, video, screenshots) to your own disk, track post corrections over time, archive a full profile or list in bulk, or preserve a public statement as evidence with version history. tweet.md reads the post. ThreadGrab saves the post.</p>
+    </div>
+  </main>
+
+  <footer>
+    <a href="/en/">Home</a> &middot;
+    <a href="/en/blog/">Blog</a> &middot;
+    <a href="/en/blog/tweet-md-vs-threadgrab-2026.html">tweet.md vs ThreadGrab</a>
+    <br>
+    ThreadGrab is an independent tool. Not affiliated with X Corp., Twitter, tweet.md, or any featured service.
+    <br>
+    &copy; 2026 ThreadGrab
+  </footer>
+</body>
+</html>

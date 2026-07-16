@@ -1776,6 +1776,93 @@
       "status": "published",
       "providers_featured": [],
       "primary_cta": "Coba ThreadGrab"
+    },
+    {
+      "slug": "gemini-managed-agents-threadgrab-mcp-2026",
+      "date": "2026-07-16",
+      "type": "guide",
+      "lang": "en",
+      "file": "en/blog/gemini-managed-agents-threadgrab-mcp-2026.html",
+      "url": "https://threadgrab.com/en/blog/gemini-managed-agents-threadgrab-mcp-2026.html",
+      "title": "Gemini Managed Agents + ThreadGrab MCP 2026",
+      "description": "Gemini's Managed Agents accept remote MCP servers. Wire ThreadGrab as a tool source so agents read timelines, draft posts, and archive threads in one loop.",
+      "heat_source": "⭐ 2026-07-16 daily hot topics — Google Gemini API added Managed Agents + remote MCP support (July 7, 2026); fresh angle distinct from prior OpenRouter/ShadowBroker/X-hosted MCP articles (2026-06-30 to 2026-07-02).",
+      "status": "preview_pending_publish",
+      "created_at": "2026-07-16",
+      "providers_featured": [
+        "gemini-managed-agents",
+        "threadgrab-mcp"
+      ],
+      "primary_cta": "Try ThreadGrab MCP",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "word_count": 1690
+    },
+    {
+      "slug": "gemini-managed-agents-threadgrab-mcp-2026",
+      "date": "2026-07-16",
+      "type": "guide",
+      "lang": "pt",
+      "file": "pt/blog/gemini-managed-agents-threadgrab-mcp-2026.html",
+      "url": "https://threadgrab.com/pt/blog/gemini-managed-agents-threadgrab-mcp-2026.html",
+      "title": "Gemini Managed Agents + ThreadGrab MCP 2026",
+      "description": "Managed Agents do Gemini aceitam MCP remoto. Conecte o ThreadGrab como ferramenta para agentes lerem timelines e criarem rascunhos de posts.",
+      "heat_source": "⭐ 2026-07-16 daily hot topics — Google Gemini API adicionou Managed Agents + suporte MCP remoto (7 de julho de 2026); novo ângulo distinto dos artigos prévios OpenRouter/ShadowBroker/X-hosted MCP.",
+      "status": "preview_pending_publish",
+      "created_at": "2026-07-16",
+      "providers_featured": [
+        "gemini-managed-agents",
+        "threadgrab-mcp"
+      ],
+      "primary_cta": "Experimente o ThreadGrab MCP",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "word_count": 1828
+    },
+    {
+      "slug": "gemini-managed-agents-threadgrab-mcp-2026",
+      "date": "2026-07-16",
+      "type": "guide",
+      "lang": "id",
+      "file": "id/blog/gemini-managed-agents-threadgrab-mcp-2026.html",
+      "url": "https://threadgrab.com/id/blog/gemini-managed-agents-threadgrab-mcp-2026.html",
+      "title": "Gemini Managed Agents + ThreadGrab MCP 2026",
+      "description": "Managed Agents Gemini sekarang menerima server MCP jarak jauh. Hubungkan ThreadGrab sebagai alat agar agen membaca timeline dan menyusun draf.",
+      "heat_source": "⭐ 2026-07-16 daily hot topics — Google Gemini API menambahkan Managed Agents + dukungan MCP jarak jauh (7 Juli 2026); sudut baru berbeda dari artikel OpenRouter/ShadowBroker/X-hosted MCP sebelumnya.",
+      "status": "preview_pending_publish",
+      "created_at": "2026-07-16",
+      "providers_featured": [
+        "gemini-managed-agents",
+        "threadgrab-mcp"
+      ],
+      "primary_cta": "Coba ThreadGrab MCP",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "word_count": 1551
     }
   ],
   "drafts": [
@@ -1946,6 +2033,84 @@
         "pt",
         "id"
       ]
+    },
+    {
+      "slug": "ai-social-content-provenance-2026",
+      "date": "2026-07-15",
+      "type": "analysis",
+      "lang": "en",
+      "file": "en/blog/ai-social-content-provenance-2026.html",
+      "url": "https://threadgrab.com/en/blog/ai-social-content-provenance-2026.html",
+      "title": "AI Social Content Provenance 2026 | ThreadGrab",
+      "description": "AI-written posts are rising on X and LinkedIn. Build a provenance-first archive with ThreadGrab, detection checks, and clear creator disclosure.",
+      "heat_source": "⭐ 2026-07-15 daily hot topics — The Register/Pangram social AI-writing prevalence report (July 9, 2026); fresh provenance-first angle distinct from prior detector and rewrite guides.",
+      "status": "preview_pending_publish",
+      "created_at": "2026-07-15",
+      "providers_featured": [],
+      "primary_cta": "Try ThreadGrab",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "word_count": 1168
+    },
+    {
+      "slug": "ai-social-content-provenance-2026",
+      "date": "2026-07-15",
+      "type": "analysis",
+      "lang": "pt",
+      "file": "pt/blog/ai-social-content-provenance-2026.html",
+      "url": "https://threadgrab.com/pt/blog/ai-social-content-provenance-2026.html",
+      "title": "Proveniência de Conteúdo IA 2026 | ThreadGrab",
+      "description": "Posts gerados por IA crescem no X e no LinkedIn. Monte um arquivo com proveniência usando ThreadGrab, verificações e transparência.",
+      "heat_source": "⭐ 2026-07-15 daily hot topics — The Register/Pangram social AI-writing prevalence report (July 9, 2026); fresh provenance-first angle distinct from prior detector and rewrite guides.",
+      "status": "preview_pending_publish",
+      "created_at": "2026-07-15",
+      "providers_featured": [],
+      "primary_cta": "Experimente o ThreadGrab",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "word_count": 1034
+    },
+    {
+      "slug": "ai-social-content-provenance-2026",
+      "date": "2026-07-15",
+      "type": "analysis",
+      "lang": "id",
+      "file": "id/blog/ai-social-content-provenance-2026.html",
+      "url": "https://threadgrab.com/id/blog/ai-social-content-provenance-2026.html",
+      "title": "Provenance Konten AI 2026 | ThreadGrab",
+      "description": "Postingan buatan AI meningkat di X dan LinkedIn. Bangun arsip berbasis provenance dengan ThreadGrab, pemeriksaan, dan keterbukaan.",
+      "heat_source": "⭐ 2026-07-15 daily hot topics — The Register/Pangram social AI-writing prevalence report (July 9, 2026); fresh provenance-first angle distinct from prior detector and rewrite guides.",
+      "status": "preview_pending_publish",
+      "created_at": "2026-07-15",
+      "providers_featured": [],
+      "primary_cta": "Coba ThreadGrab",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "word_count": 881
     }
   ],
   "recent_topics": [

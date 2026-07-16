@@ -435,4 +435,59 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <url>
+    <loc>https://threadgrab.com/en/blog/ai-social-content-provenance-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/ai-social-content-provenance-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/ai-social-content-provenance-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/ai-social-content-provenance-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/ai-social-content-provenance-2026.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://threadgrab.com/pt/blog/ai-social-content-provenance-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/ai-social-content-provenance-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/ai-social-content-provenance-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/ai-social-content-provenance-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/ai-social-content-provenance-2026.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://threadgrab.com/id/blog/ai-social-content-provenance-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/ai-social-content-provenance-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/ai-social-content-provenance-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/ai-social-content-provenance-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/ai-social-content-provenance-2026.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://threadgrab.com/en/blog/gemini-managed-agents-threadgrab-mcp-2026.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/gemini-managed-agents-threadgrab-mcp-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/gemini-managed-agents-threadgrab-mcp-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/gemini-managed-agents-threadgrab-mcp-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/gemini-managed-agents-threadgrab-mcp-2026.html"/>
+  </url>
+
+  <url>
+    <loc>https://threadgrab.com/pt/blog/gemini-managed-agents-threadgrab-mcp-2026.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/gemini-managed-agents-threadgrab-mcp-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/gemini-managed-agents-threadgrab-mcp-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/gemini-managed-agents-threadgrab-mcp-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/gemini-managed-agents-threadgrab-mcp-2026.html"/>
+  </url>
+
+  <url>
+    <loc>https://threadgrab.com/id/blog/gemini-managed-agents-threadgrab-mcp-2026.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/gemini-managed-agents-threadgrab-mcp-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/gemini-managed-agents-threadgrab-mcp-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/gemini-managed-agents-threadgrab-mcp-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/gemini-managed-agents-threadgrab-mcp-2026.html"/>
+  </url>
+
 </urlset>
