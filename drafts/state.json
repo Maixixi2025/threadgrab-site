@@ -1863,6 +1863,60 @@
         "FAQPage"
       ],
       "word_count": 1551
+    },
+    {
+      "slug": "bluesky-starter-packs-creator-playbook-2026",
+      "lang": "en",
+      "date": "2026-07-17",
+      "published_at": "2026-07-17",
+      "type": "guide",
+      "file": "en/blog/bluesky-starter-packs-creator-playbook-2026.html",
+      "url": "https://threadgrab.com/en/blog/bluesky-starter-packs-creator-playbook-2026.html",
+      "title": "Bluesky Starter Packs 2026: A Creator Playbook",
+      "description": "Bluesky starter packs are the 2026 growth hack. Build, share, and archive one in five steps, plus five strategies that survive an account swap.",
+      "heat_source": "daily-briefing-2026-07-17-bluesky-longform",
+      "status": "published",
+      "providers_featured": [],
+      "primary_cta": "Open ThreadGrab",
+      "cluster": [
+        "bluesky"
+      ]
+    },
+    {
+      "slug": "bluesky-pacotes-iniciais-guia-criadores-2026",
+      "lang": "pt",
+      "date": "2026-07-17",
+      "published_at": "2026-07-17",
+      "type": "guide",
+      "file": "pt/blog/bluesky-pacotes-iniciais-guia-criadores-2026.html",
+      "url": "https://threadgrab.com/pt/blog/bluesky-pacotes-iniciais-guia-criadores-2026.html",
+      "title": "Pacotes Iniciais do Bluesky 2026: Guia do Criador",
+      "description": "Pacotes iniciais do Bluesky são o truque de crescimento de 2026. Monte, compartilhe e arquive um em cinco passos, mais cinco estratégias de arquivo.",
+      "heat_source": "daily-briefing-2026-07-17-bluesky-longform",
+      "status": "published",
+      "providers_featured": [],
+      "primary_cta": "Abrir o ThreadGrab",
+      "cluster": [
+        "bluesky"
+      ]
+    },
+    {
+      "slug": "bluesky-paket-pemula-panduan-kreator-2026",
+      "lang": "id",
+      "date": "2026-07-17",
+      "published_at": "2026-07-17",
+      "type": "guide",
+      "file": "id/blog/bluesky-paket-pemula-panduan-kreator-2026.html",
+      "url": "https://threadgrab.com/id/blog/bluesky-paket-pemula-panduan-kreator-2026.html",
+      "title": "Paket Pemula Bluesky 2026: Panduan Kreator",
+      "description": "Paket pemula Bluesky adalah trik pertumbuhan 2026. Buat, bagikan, dan arsipkan satu dalam lima langkah, ditambah lima strategi arsip.",
+      "heat_source": "daily-briefing-2026-07-17-bluesky-longform",
+      "status": "published",
+      "providers_featured": [],
+      "primary_cta": "Buka ThreadGrab",
+      "cluster": [
+        "bluesky"
+      ]
     }
   ],
   "drafts": [
