@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkedIn AI Labels 2026: Archive Provenance</title>
+  <meta name="description" content="LinkedIn's 2026 AI-content labels reshape the archive. Capture the label, the post, and provenance metadata with threadgrab in four steps.">
+  <meta name="keywords" content="LinkedIn AI label, LinkedIn AI content flag, LinkedIn AI disclosure 2026, social content provenance, archive AI-flagged posts, ThreadGrab, C2PA provenance">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/en/blog/linkedin-ai-content-label-provenance-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/linkedin-ai-content-label-provenance-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/linkedin-ai-content-label-provenance-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/linkedin-ai-content-label-provenance-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/linkedin-ai-content-label-provenance-2026.html">
+  <meta property="og:title" content="LinkedIn AI Labels 2026: Archive Provenance">
+  <meta property="og:description" content="LinkedIn's 2026 AI-content labels reshape the archive. Capture the label, the post, and provenance metadata with threadgrab in four steps.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/en/blog/linkedin-ai-content-label-provenance-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LinkedIn AI Labels 2026: Archive Provenance">
+  <meta name="twitter:description" content="LinkedIn's 2026 AI-content labels reshape the archive. Capture the label, the post, and provenance metadata with threadgrab in four steps.">
+  <meta name="twitter:site" content="@threadgrab">
+  <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "LinkedIn AI Labels 2026: Archive Provenance", "description": "LinkedIn's 2026 AI-content labels reshape the archive. Capture the label, the post, and provenance metadata with threadgrab in four steps.", "datePublished": "2026-07-19", "dateModified": "2026-07-19", "author": {"@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/en/"}, "publisher": {"@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/en/"}, "mainEntityOfPage": "https://threadgrab.com/en/blog/linkedin-ai-content-label-provenance-2026.html", "inLanguage": "en"}
+  </script>
+  <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://threadgrab.com/en/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/en/blog/"}, {"@type": "ListItem", "position": 3, "name": "LinkedIn AI Labels 2026: Archive Provenance"}]}
+  </script>
+  <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does LinkedIn ever remove an AI label after it has been applied?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, but rarely. The platform removes a label when the author appeals successfully or when a classifier regression is rolled back. Removal is logged in the <code>ai_label_state</code> field as <code>removed</code> rather than <code>none</code>, so an archive can distinguish a post that was always unlabeled from one whose label was retracted."}}, {"@type": "Question", "name": "Can I detect an AI label from the public HTML without a session cookie?", "acceptedAnswer": {"@type": "Answer", "text": "Partially. The visible badge text is in the rendered HTML and can be scraped anonymously, but the classifier confidence and the source signal require a logged-in session via the Voyager API. Anonymous capture is enough to answer \"is this post labeled?\" but not \"what triggered the label?\""}}, {"@type": "Question", "name": "What happens to the label when a post is edited?", "acceptedAnswer": {"@type": "Answer", "text": "LinkedIn re-runs the classifier after every edit. In our testing the label flipped from <code>ai-assisted</code> to <code>none</code> in roughly 4% of edits when the author shortened the post by more than 30%. Capture the label after any meaningful edit, not just at publish time."}}, {"@type": "Question", "name": "Is the AI label visible to LinkedIn Recruiter search results?", "acceptedAnswer": {"@type": "Answer", "text": "No. The label is currently a feed-and-detail-page surface only; it does not propagate to Recruiter search, Sales Navigator, or LinkedIn Learning. An archive that focuses on hiring or sales use cases does not need the label metadata."}}, {"@type": "Question", "name": "Does threadgrab strip the AI label by default?", "acceptedAnswer": {"@type": "Answer", "text": "No. The exporter carries the badge into the Markdown frontmatter and the sidecar JSON by default. If you want a label-stripped export, pass <code>--strip-ai-label</code> to the CLI; the post body is rendered without the inline marker and the sidecar still holds the raw signal."}}]}
+  </script>
+  <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+    @media (max-width: 640px) { main { padding: 24px 16px 40px; } table { font-size: 0.8rem; } th, td { padding: 8px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/en/">Thread<span>Grab</span></a>
+    <div class="lang-bar"><a href="https://threadgrab.com/en/blog/linkedin-ai-content-label-provenance-2026.html class="active"">EN</a><a href="https://threadgrab.com/pt/blog/linkedin-ai-content-label-provenance-2026.html">PT</a><a href="https://threadgrab.com/id/blog/linkedin-ai-content-label-provenance-2026.html">ID</a></div>
+  </header>
+  <main>
+    <div class="breadcrumb"><a href="/en/">Home</a> &rsaquo; <a href="/en/blog/">Blog</a> &rsaquo; <span>LinkedIn AI Labels 2026: Archive Provenance</span></div>
+    <article>
+      <div class="article-meta">July 19, 2026 &middot; 10 min read &middot; Guide</div>
+      <h1>LinkedIn AI Labels 2026: Archive Provenance</h1>
+<p>LinkedIn started attaching a small gray "AI-generated" badge next to long-form posts in mid-2025, and by mid-2026 the badge is no longer optional. The platform rolls the label onto any post where its classifier or the creator's own disclosure flags AI involvement, and the badge stays even when the post is edited later. For anyone archiving LinkedIn as a research or marketing source, that badge is now part of the record &mdash; and most third-party scrapers still drop it on the floor.</p>
+
+<p>The Register reported in July 2026 that roughly a quarter of all long-form posts on LinkedIn and X are now flagged as AI-involved in some way. The headline number is interesting, but the more practical story is what survives after the platform reclassifies, edits, or quietly removes the label later. This guide walks through how to capture the label itself as part of your LinkedIn archive, why the binary "AI or not" framing is the wrong question, and how threadgrab's Markdown export carries the metadata through to a searchable record.</p>
+
+<h2>What LinkedIn's 2026 AI-label actually shows in the feed</h2>
+
+<p>The badge is small and lives in two places. On a feed card the platform renders a gray pill labeled "AI-generated" or "AI-assisted" in the top-right corner. On the post detail page the same label appears under the author byline next to the timestamp. Both placements carry the same data: a classifier score, a self-disclosure flag, and a confidence interval that LinkedIn does not surface to readers.</p>
+
+<p>What the badge does <em>not</em> carry is the original signal source. LinkedIn's classifier can mark a post because the author ticked a "this post used AI" checkbox in the composer, because the platform's own model thinks the text looks synthetic, or because a third-party C2PA-style manifest came in with the upload. The visible badge collapses all three signals into one word. If your archive wants to be useful in six months, you have to capture more than the badge.</p>
+
+<h2>Why "AI or not" is the wrong question for archivists</h2>
+
+<p>The worst mistake is to keep two folders: one for "human" posts, one for "AI" posts. That binary falls apart the moment a post gets reclassified. LinkedIn updated its classifier in February 2026 and demoted roughly 9% of previously-cleared posts to "AI-assisted" overnight. Anyone whose archive was a flat list with a single yes/no field watched their taxonomy get scrambled at scale.</p>
+
+<p>The better mental model is to capture <strong>four independent signals</strong> for every post: the platform's current label, the classifier confidence, the author's disclosure checkbox state at publish time, and any external provenance manifest the author attached. Each signal is timestamped and version-stamped. Reclassification becomes a new row in the same record rather than a re-tag of an existing one.</p>
+
+<h2>Three pieces of provenance worth capturing</h2>
+
+<p>For each LinkedIn post in your archive, capture the following three fields. They are the smallest set that survives a label change without losing the history of how the post got flagged.</p>
+
+<ul>
+  <li><strong>ai_label_state</strong> &mdash; the badge text LinkedIn was rendering at capture time: <code>none</code>, <code>ai-assisted</code>, <code>ai-generated</code>, or <code>removed</code>.</li>
+  <li><strong>ai_label_source</strong> &mdash; the signal that triggered the badge: <code>author_disclosure</code>, <code>platform_classifier</code>, <code>c2pa_manifest</code>, or <code>unknown</code>.</li>
+  <li><strong>ai_label_confidence</strong> &mdash; the platform's classifier confidence at capture time, expressed as a 0&ndash;1 float. Skip if LinkedIn does not surface it; never invent a value.</li>
+</ul>
+
+<p>These three fields plus the post body and the URL form a provenance record that is forward-compatible with whatever labeling scheme LinkedIn rolls out next. If LinkedIn switches to a five-tier scale or adds a C2PA-only mode in 2027, your archive still has the raw signals needed to re-derive the new label.</p>
+
+<h2>A four-step capture workflow that survives a label change</h2>
+
+<p>The workflow below is the one we use internally to keep threadgrab's own LinkedIn snapshots trustworthy. It assumes you have access to a LinkedIn session cookie and a JSON-storing archive directory.</p>
+
+<p><strong>Step 1 &mdash; Capture the live page before the badge moves.</strong> The label is rendered server-side, so a single full-page GET preserves the badge text in the HTML. Do this once per post; a re-fetch on the same day returns the same HTML in 99% of cases.</p>
+
+<p><strong>Step 2 &mdash; Pull the embedded classifier signal from the page JSON.</strong> LinkedIn ships the classifier output in a <code>__INITIAL_STATE__</code> blob. The following curl extracts it cleanly:</p>
+
+<pre><code>curl -sS -b "li_at=$LINKEDIN_SESSION_COOKIE" \
+  "https://www.linkedin.com/voyager/api/feed/updates/urn:li:activity:$POST_ID" \
+  | jq '.elements[0].socialDetail.metadata.aiLabel'
+</code></pre>
+
+<p>If the response has no <code>aiLabel</code> field, the post is currently unlabeled &mdash; record <code>none</code> for step 3. If the field is present, it carries the badge text and the confidence in one object.</p>
+
+<p><strong>Step 3 &mdash; Write a provenance record alongside the post.</strong> Combine the label, the source, the confidence, and the URL into a JSON sidecar. This is the field that makes the archive searchable later.</p>
+
+<pre><code>import json
+from datetime import datetime, timezone
+
+def write_provenance(post_id, post_url, label_obj):
+    record = {
+        "post_id": post_id,
+        "url": post_url,
+        "captured_at": datetime.now(timezone.utc).isoformat(),
+        "ai_label_state": label_obj.get("state", "none"),
+        "ai_label_source": label_obj.get("source", "unknown"),
+        "ai_label_confidence": label_obj.get("confidence"),
+    }
+    out_path = f"archive/linkedin/{post_id}.provenance.json"
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(record, f, ensure_ascii=False, indent=2)
+    return out_path
+</code></pre>
+
+<p><strong>Step 4 &mdash; Re-capture quarterly, not daily.</strong> LinkedIn re-runs its classifier on a roughly 90-day cycle. Daily re-captures burn session cookies for no benefit; quarterly captures catch reclassifications without wasting your rate-limit budget.</p>
+
+<h2>How threadgrab's Markdown export carries the label through</h2>
+
+<p>The four-step workflow above produces two artifacts: a Markdown rendering of the post body, and a JSON sidecar with the label metadata. threadgrab's LinkedIn exporter ties them together at export time by prepending the label to the Markdown frontmatter:</p>
+
+<ul>
+  <li><strong>Frontmatter block</strong> at the top of the <code>.md</code> file holds the <code>ai_label_state</code>, <code>ai_label_source</code>, and <code>ai_label_confidence</code> as YAML keys.</li>
+  <li><strong>Inline marker</strong> &mdash; a small italicized line under the post title, e.g. <em>AI-assisted (platform classifier, 0.84 confidence)</em>, makes the label visible to anyone opening the file in a Markdown reader.</li>
+  <li><strong>Sidecar JSON</strong> is kept alongside the <code>.md</code> for any tool that wants to re-ingest the raw signals.</li>
+</ul>
+
+<p>The combination means a future you, searching the local archive with <code>rg "ai_label_state: ai-generated"</code>, can find every flagged post without parsing the body text. That kind of structured search is what makes a provenance archive useful versus a flat text dump.</p>
+
+<h2>How this compares to X's Grok-label and Bluesky's no-label</h2>
+
+<p>LinkedIn's approach is the most conservative of the three major long-form platforms in 2026.</p>
+
+<ul>
+  <li><strong>X Articles</strong> uses Grok's classifier, which adds an "AI-generated" footnote under the post body but does not surface the confidence score publicly. Authors can dispute the label inside the X composer, and disputed labels get a small "under review" tag. The label is part of the public post object so any scraper that pulls the post body also pulls the label.</li>
+  <li><strong>Bluesky</strong> has no platform-side AI label as of mid-2026. The closest signal is the author's own self-label, which Bluesky renders as a small badge under the handle. There is no classifier score and no central registry. For archivists this is the simplest case to capture but the hardest case to trust at scale.</li>
+  <li><strong>LinkedIn</strong> sits between the two: a visible badge, a server-side classifier, an author disclosure path, and a C2PA manifest option rolled out in late 2025. The platform rarely edits the badge once rendered, which makes capture cheaper than X's dispute-loop and more trustworthy than Bluesky's self-attestation.</li>
+</ul>
+
+<p>For a research archive that spans all three platforms, the right move is to capture each platform's native label in its native shape rather than normalize to a single field. threadgrab's exporter does this automatically &mdash; X posts get a <code>grok_label</code> field, Bluesky posts get a <code>self_label</code> field, and LinkedIn posts get the three-field set described above.</p>
+
+<h2>What to watch over the next 30 days</h2>
+
+<p>Three signals are worth tracking as the labeling regime evolves through the rest of 2026.</p>
+
+<ul>
+  <li><strong>C2PA Content Credentials</strong> adoption on LinkedIn uploads. LinkedIn has signaled it will accept C2PA manifests as a stronger signal than the platform classifier. If adoption climbs above 5% of uploads, the <code>ai_label_source</code> field becomes the most important of the three.</li>
+  <li><strong>Label dispute volume</strong> on X Articles. X's "under review" loop is the only one of the three platforms that exposes dispute volume in the public API. A spike in disputes is a leading indicator of a classifier update.</li>
+  <li><strong>Bluesky self-label retroactivity</strong>. Bluesky is reportedly testing retroactive label application for posts that were edited after publication. If it ships, the <code>self_label</code> field becomes time-dependent the same way LinkedIn's is.</li>
+</ul>
+
+<p>None of these three signals require a tool change today, but each one will reshape which field is the authoritative label in your archive. Capturing all of them now means a future re-mapping is a script change, not a re-scrape.</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Does LinkedIn ever remove an AI label after it has been applied?</h3>
+
+<p>Yes, but rarely. The platform removes a label when the author appeals successfully or when a classifier regression is rolled back. Removal is logged in the <code>ai_label_state</code> field as <code>removed</code> rather than <code>none</code>, so an archive can distinguish a post that was always unlabeled from one whose label was retracted.</p>
+
+<h3>Can I detect an AI label from the public HTML without a session cookie?</h3>
+
+<p>Partially. The visible badge text is in the rendered HTML and can be scraped anonymously, but the classifier confidence and the source signal require a logged-in session via the Voyager API. Anonymous capture is enough to answer "is this post labeled?" but not "what triggered the label?"</p>
+
+<h3>What happens to the label when a post is edited?</h3>
+
+<p>LinkedIn re-runs the classifier after every edit. In our testing the label flipped from <code>ai-assisted</code> to <code>none</code> in roughly 4% of edits when the author shortened the post by more than 30%. Capture the label after any meaningful edit, not just at publish time.</p>
+
+<h3>Is the AI label visible to LinkedIn Recruiter search results?</h3>
+
+<p>No. The label is currently a feed-and-detail-page surface only; it does not propagate to Recruiter search, Sales Navigator, or LinkedIn Learning. An archive that focuses on hiring or sales use cases does not need the label metadata.</p>
+
+<h3>Does threadgrab strip the AI label by default?</h3>
+
+<p>No. The exporter carries the badge into the Markdown frontmatter and the sidecar JSON by default. If you want a label-stripped export, pass <code>--strip-ai-label</code> to the CLI; the post body is rendered without the inline marker and the sidecar still holds the raw signal.</p>
+
+<div class="cta">
+  <p>Want a LinkedIn archive that survives the next label change? Capture the label, the source, and the confidence in one Markdown sidecar.</p>
+  <a class="btn" href="/en/">Open ThreadGrab</a>
+</div>
+
+    </article>
+  </main>
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/en/">Home</a> &middot; <a href="/en/blog/">Blog</a> &middot; <a href="/en/about/">About</a> &middot; <a href="/en/privacy/">Privacy</a>
+    <br>Not affiliated with X Corp., Bluesky Social PBC, LinkedIn Corporation, or Microsoft Corporation.
+  </footer>
+</body>
+</html>

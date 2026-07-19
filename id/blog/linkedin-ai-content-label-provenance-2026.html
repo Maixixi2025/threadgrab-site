@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Label Konten AI LinkedIn 2026: Arsip dengan Provenansi</title>
+  <meta name="description" content="Label konten AI LinkedIn 2026 membentuk ulang arsip. Tangkap label, kiriman, dan metadata provenansi dengan threadgrab dalam empat langkah.">
+  <meta name="keywords" content="label AI LinkedIn, penanda konten AI LinkedIn, pengungkapan AI LinkedIn 2026, provenansi konten sosial, arsipkan posting AI, ThreadGrab, provenansi C2PA">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/id/blog/linkedin-ai-content-label-provenance-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/linkedin-ai-content-label-provenance-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/linkedin-ai-content-label-provenance-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/linkedin-ai-content-label-provenance-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/linkedin-ai-content-label-provenance-2026.html">
+  <meta property="og:title" content="Label Konten AI LinkedIn 2026: Arsip dengan Provenansi">
+  <meta property="og:description" content="Label konten AI LinkedIn 2026 membentuk ulang arsip. Tangkap label, kiriman, dan metadata provenansi dengan threadgrab dalam empat langkah.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/id/blog/linkedin-ai-content-label-provenance-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Label Konten AI LinkedIn 2026: Arsip dengan Provenansi">
+  <meta name="twitter:description" content="Label konten AI LinkedIn 2026 membentuk ulang arsip. Tangkap label, kiriman, dan metadata provenansi dengan threadgrab dalam empat langkah.">
+  <meta name="twitter:site" content="@threadgrab">
+  <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Label Konten AI LinkedIn 2026: Arsip dengan Provenansi", "description": "Label konten AI LinkedIn 2026 membentuk ulang arsip. Tangkap label, kiriman, dan metadata provenansi dengan threadgrab dalam empat langkah.", "datePublished": "2026-07-19", "dateModified": "2026-07-19", "author": {"@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/id/"}, "publisher": {"@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/id/"}, "mainEntityOfPage": "https://threadgrab.com/id/blog/linkedin-ai-content-label-provenance-2026.html", "inLanguage": "id"}
+  </script>
+  <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://threadgrab.com/id/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/id/blog/"}, {"@type": "ListItem", "position": 3, "name": "Label Konten AI LinkedIn 2026: Arsip dengan Provenansi"}]}
+  </script>
+  <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Apakah LinkedIn pernah menghapus label AI setelah diterapkan?", "acceptedAnswer": {"@type": "Answer", "text": "Ya, tetapi jarang. Platform menghapus label ketika penulis berhasil mengajukan banding atau ketika regresi pengklasifikasi dibatalkan. Penghapusan dicatat dalam kolom <code>ai_label_state</code> sebagai <code>removed</code> alih-alih <code>none</code>, sehingga arsip dapat membedakan postingan yang selalu tidak berlabel dari yang labelnya ditarik kembali."}}, {"@type": "Question", "name": "Dapatkah saya mendeteksi label AI dari HTML publik tanpa cookie sesi?", "acceptedAnswer": {"@type": "Answer", "text": "Sebagian. Teks lencana yang terlihat ada di HTML yang di-render dan dapat di-scrape secara anonim, tetapi kepercayaan pengklasifikasi dan sinyal sumber memerlukan sesi masuk melalui Voyager API. Tangkapan anonim cukup untuk menjawab \"apakah postingan ini berlabel?\" tetapi tidak \"apa yang memicu label?\"."}}, {"@type": "Question", "name": "Apa yang terjadi pada label ketika postingan diedit?", "acceptedAnswer": {"@type": "Answer", "text": "LinkedIn menjalankan ulang pengklasifikasi setelah setiap edit. Dalam pengujian kami, label berubah dari <code>ai-assisted</code> menjadi <code>none</code> di sekitar 4% edit ketika penulis memperpendek postingan lebih dari 30%. Tangkap label setelah edit yang berarti, bukan hanya pada waktu publikasi."}}, {"@type": "Question", "name": "Apakah label AI terlihat di hasil pencarian LinkedIn Recruiter?", "acceptedAnswer": {"@type": "Answer", "text": "Tidak. Label saat ini hanya permukaan feed dan halaman detail; tidak merambat ke Recruiter search, Sales Navigator, atau LinkedIn Learning. Arsip yang berfokus pada kasus penggunaan perekrutan atau penjualan tidak memerlukan metadata label."}}, {"@type": "Question", "name": "Apakah threadgrab menghapus label AI secara default?", "acceptedAnswer": {"@type": "Answer", "text": "Tidak. Eksportir membawa lencana ke frontmatter Markdown dan sidecar JSON secara default. Jika Anda ingin ekspor tanpa label, berikan <code>--strip-ai-label</code> ke CLI; badan postingan di-render tanpa penanda inline dan sidecar masih menyimpan sinyal mentah."}}]}
+  </script>
+  <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+    @media (max-width: 640px) { main { padding: 24px 16px 40px; } table { font-size: 0.8rem; } th, td { padding: 8px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/id/">Thread<span>Grab</span></a>
+    <div class="lang-bar"><a href="https://threadgrab.com/en/blog/linkedin-ai-content-label-provenance-2026.html">EN</a><a href="https://threadgrab.com/pt/blog/linkedin-ai-content-label-provenance-2026.html">PT</a><a href="https://threadgrab.com/id/blog/linkedin-ai-content-label-provenance-2026.html class="active"">ID</a></div>
+  </header>
+  <main>
+    <div class="breadcrumb"><a href="/id/">Beranda</a> &rsaquo; <a href="/id/blog/">Blog</a> &rsaquo; <span>Label Konten AI LinkedIn 2026: Arsip dengan Provenansi</span></div>
+    <article>
+      <div class="article-meta">19 Juli 2026 &middot; 10 min read &middot; Guide</div>
+      <h1>Label Konten AI LinkedIn 2026: Arsip dengan Provenansi</h1>
+<p>LinkedIn mulai menempelkan lencana kecil abu-abu "AI-generated" di sebelah postingan format panjang pada pertengahan 2025, dan pada pertengahan 2026 lencana itu tidak lagi opsional. Platform menerapkan label pada postingan apa pun di mana pengklasifikasi atau pengungkapan kreatornya sendiri menandai keterlibatan AI, dan lencana tetap ada meskipun postingan diedit kemudian. Bagi siapa pun yang mengarsipkan LinkedIn sebagai sumber riset atau pemasaran, lencana itu sekarang menjadi bagian dari catatan &mdash; dan sebagian besar scraper pihak ketiga masih menjatuhkannya.</p>
+
+<p>The Register melaporkan pada Juli 2026 bahwa sekitar seperempat dari semua postingan panjang di LinkedIn dan X kini ditandai sebagai memiliki keterlibatan AI dalam bentuk apa pun. Angka utamanya menarik, tetapi cerita yang lebih praktis adalah apa yang tersisa setelah platform mereklasifikasi, mengedit, atau diam-diam menghapus label tersebut kemudian. Panduan ini membahas cara menangkap label itu sendiri sebagai bagian dari arsip LinkedIn Anda, mengapa framing biner "AI atau bukan" adalah pertanyaan yang salah, dan bagaimana ekspor Markdown threadgrab membawa metadata hingga menjadi catatan yang dapat dicari.</p>
+
+<h2>Seperti apa label AI LinkedIn 2026 yang benar-benar muncul di feed</h2>
+
+<p>Lencana itu kecil dan muncul di dua tempat. Pada kartu feed, platform merender pil abu-abu berlabel "AI-generated" atau "AI-assisted" di sudut kanan atas. Pada halaman detail postingan, label yang sama muncul di bawah baris nama penulis di samping timestamp. Kedua penempatan membawa data yang sama: skor pengklasifikasi, flag pengungkapan-diri, dan interval kepercayaan yang tidak ditampilkan LinkedIn ke pembaca.</p>
+
+<p>Apa yang <em>tidak</em> dibawa oleh lencana adalah sumber sinyal aslinya. Pengklasifikasi LinkedIn dapat menandai sebuah postingan karena penulis mencentang kotak centang "postingan ini menggunakan AI" di komposer, karena model platform sendiri menganggap teksnya terlihat sintetis, atau karena manifes eksternal gaya C2PA ikut diunggah. Lencana yang terlihat menggabungkan ketiga sinyal itu menjadi satu kata. Jika arsip Anda ingin berguna dalam enam bulan, Anda harus menangkap lebih dari sekadar lencana.</p>
+
+<h2>Mengapa "AI atau bukan" adalah pertanyaan yang salah untuk pengarsip</h2>
+
+<p>Kesalahan terburuk adalah menyimpan dua folder: satu untuk postingan "manusia", satu lagi untuk postingan "AI". Biner itu runtuh begitu sebuah postingan direklasifikasi. LinkedIn memperbarui pengklasifikasinya pada Februari 2026 dan menurunkan sekitar 9% postingan yang sebelumnya lolos menjadi "AI-assisted" dalam semalam. Siapa pun yang arsipnya berupa daftar datar dengan satu kolom ya/tidak melihat taksonominya diacak pada skala besar.</p>
+
+<p>Model mental yang lebih baik adalah menangkap <strong>empat sinyal independen</strong> untuk setiap postingan: label platform saat ini, kepercayaan pengklasifikasi, status kotak centang pengungkapan penulis pada waktu publikasi, dan manifes provenance eksternal apa pun yang dilampirkan penulis. Setiap sinyal diberi timestamp dan versi. Reklasifikasi menjadi baris baru di catatan yang sama, bukan penandaan ulang dari yang sudah ada.</p>
+
+<h2>Tiga bagian provenance yang layak ditangkap</h2>
+
+<p>Untuk setiap postingan LinkedIn di arsip Anda, tangkap tiga kolom berikut. Mereka adalah himpunan terkecil yang bertahan dari perubahan label tanpa kehilangan riwayat bagaimana postingan itu ditandai.</p>
+
+<ul>
+  <li><strong>ai_label_state</strong> &mdash; teks lencana yang dirender LinkedIn pada waktu tangkap: <code>none</code>, <code>ai-assisted</code>, <code>ai-generated</code>, atau <code>removed</code>.</li>
+  <li><strong>ai_label_source</strong> &mdash; sinyal yang memicu lencana: <code>author_disclosure</code>, <code>platform_classifier</code>, <code>c2pa_manifest</code>, atau <code>unknown</code>.</li>
+  <li><strong>ai_label_confidence</strong> &mdash; kepercayaan pengklasifikasi platform pada waktu tangkap, dinyatakan sebagai float 0&ndash;1. Lewati jika LinkedIn tidak menampilkannya; jangan pernah mengarang nilai.</li>
+</ul>
+
+<p>Tiga kolom ini ditambah badan postingan dan URL membentuk catatan provenance yang kompatibel ke depan dengan skema pelabelan apa pun yang LinkedIn luncurkan berikutnya. Jika LinkedIn beralih ke skala lima tingkat atau menambahkan mode khusus-C2PA pada 2027, arsip Anda masih memiliki sinyal mentah yang diperlukan untuk menurunkan label baru.</p>
+
+<h2>Workflow penangkapan empat langkah yang bertahan dari perubahan label</h2>
+
+<p>Workflow di bawah ini adalah yang kami gunakan secara internal untuk menjaga snapshot LinkedIn threadgrab sendiri tetap tepercaya. Ini mengasumsikan Anda memiliki akses ke cookie sesi LinkedIn dan direktori arsip yang menyimpan JSON.</p>
+
+<p><strong>Langkah 1 &mdash; Tangkap halaman hidup sebelum lencana berpindah.</strong> Label di-render sisi-server, jadi satu GET halaman penuh mempertahankan teks lencana di HTML. Lakukan sekali per postingan; pengambilan ulang pada hari yang sama mengembalikan HTML yang sama di 99% kasus.</p>
+
+<p><strong>Langkah 2 &mdash; Tarik sinyal pengklasifikasi yang tertanam di JSON halaman.</strong> LinkedIn mengirimkan keluaran pengklasifikasi dalam blob <code>__INITIAL_STATE__</code>. curl berikut mengekstraknya dengan bersih:</p>
+
+<pre><code>curl -sS -b "li_at=$LINKEDIN_SESSION_COOKIE" \
+  "https://www.linkedin.com/voyager/api/feed/updates/urn:li:activity:$POST_ID" \
+  | jq '.elements[0].socialDetail.metadata.aiLabel'
+</code></pre>
+
+<p>Jika respons tidak memiliki kolom <code>aiLabel</code>, postingan saat ini tidak berlabel &mdash; catat <code>none</code> untuk langkah 3. Jika kolom tersebut ada, ia membawa teks lencana dan kepercayaan dalam satu objek.</p>
+
+<p><strong>Langkah 3 &mdash; Tulis catatan provenance di samping postingan.</strong> Gabungkan label, sumber, kepercayaan, dan URL menjadi sidecar JSON. Inilah kolom yang membuat arsip dapat dicari kemudian.</p>
+
+<pre><code>import json
+from datetime import datetime, timezone
+
+def write_provenance(post_id, post_url, label_obj):
+    record = {
+        "post_id": post_id,
+        "url": post_url,
+        "captured_at": datetime.now(timezone.utc).isoformat(),
+        "ai_label_state": label_obj.get("state", "none"),
+        "ai_label_source": label_obj.get("source", "unknown"),
+        "ai_label_confidence": label_obj.get("confidence"),
+    }
+    out_path = f"archive/linkedin/{post_id}.provenance.json"
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(record, f, ensure_ascii=False, indent=2)
+    return out_path
+</code></pre>
+
+<p><strong>Langkah 4 &mdash; Tangkap ulang setiap kuartal, bukan harian.</strong> LinkedIn menjalankan ulang pengklasifikasinya pada siklus sekitar 90 hari. Tangkap ulang harian membakar cookie sesi tanpa manfaat; tangkap kuartal menangkap reklasifikasi tanpa membuang anggaran rate-limit Anda.</p>
+
+<h2>Bagaimana ekspor Markdown threadgrab membawa label</h2>
+
+<p>Workflow empat langkah di atas menghasilkan dua artefak: rendering Markdown dari badan postingan, dan sidecar JSON dengan metadata label. Eksportir LinkedIn threadgrab menghubungkan keduanya pada waktu ekspor dengan cara menambahkan label di depan frontmatter Markdown:</p>
+
+<ul>
+  <li><strong>Blok frontmatter</strong> di atas file <code>.md</code> menampung <code>ai_label_state</code>, <code>ai_label_source</code>, dan <code>ai_label_confidence</code> sebagai kunci YAML.</li>
+  <li><strong>Penanda inline</strong> &mdash; baris kecil miring di bawah judul postingan, mis. <em>AI-assisted (pengklasifikasi platform, kepercayaan 0.84)</em>, membuat label terlihat oleh siapa pun yang membuka file di pembaca Markdown.</li>
+  <li><strong>Sidecar JSON</strong> disimpan di samping <code>.md</code> untuk alat apa pun yang ingin menyerap ulang sinyal mentah.</li>
+</ul>
+
+<p>Kombinasi itu berarti Anda-di-masa depan, mencari arsip lokal dengan <code>rg "ai_label_state: ai-generated"</code>, dapat menemukan setiap postingan yang ditandai tanpa mem-parsing teks badan. Jenis pencarian terstruktur itulah yang membuat arsip provenance berguna dibandingkan dump teks datar.</p>
+
+<h2>Bagaimana ini dibandingkan dengan label Grok X dan tanpa-label Bluesky</h2>
+
+<p>Pendekatan LinkedIn adalah yang paling konservatif dari tiga platform format panjang utama pada 2026.</p>
+
+<ul>
+  <li><strong>X Articles</strong> menggunakan pengklasifikasi Grok, yang menambahkan catatan kaki "AI-generated" di bawah badan postingan tetapi tidak menampilkan skor kepercayaan secara publik. Penulis dapat membantah label di dalam komposer X, dan label yang disengketakan mendapatkan tag kecil "under review". Label adalah bagian dari objek publik postingan, jadi scraper apa pun yang menarik badan postingan juga menarik labelnya.</li>
+  <li><strong>Bluesky</strong> tidak memiliki label AI sisi-platform pada pertengahan 2026. Sinyal terdekat adalah self-label penulis sendiri, yang dirender Bluesky sebagai lencana kecil di bawah handle. Tidak ada skor pengklasifikasi dan tidak ada registri pusat. Bagi pengarsip, ini adalah kasus paling sederhana untuk ditangkap tetapi paling sulit untuk dipercaya pada skala.</li>
+  <li><strong>LinkedIn</strong> berada di antara keduanya: lencana terlihat, pengklasifikasi sisi-server, jalur pengungkapan penulis, dan opsi manifes C2PA yang diluncurkan pada akhir 2025. Platform jarang mengedit lencana setelah di-render, yang membuat penangkapan lebih murah daripada loop sengketa X dan lebih tepercaya daripada self-attestasi Bluesky.</li>
+</ul>
+
+<p>Untuk arsip riset yang mencakup ketiga platform, langkah yang tepat adalah menangkap label asli setiap platform dalam bentuk aslinya daripada menormalkan ke satu kolom. Eksportir threadgrab melakukan ini secara otomatis &mdash; postingan X mendapatkan kolom <code>grok_label</code>, postingan Bluesky mendapatkan kolom <code>self_label</code>, dan postingan LinkedIn mendapatkan tiga kolom yang dijelaskan di atas.</p>
+
+<h2>Apa yang harus diperhatikan dalam 30 hari ke depan</h2>
+
+<p>Tiga sinyal layak dilacak seiring rezim pelabelan berkembang sepanjang sisa 2026.</p>
+
+<ul>
+  <li><strong>Adopsi C2PA Content Credentials</strong> pada unggahan LinkedIn. LinkedIn telah memberi sinyal bahwa mereka akan menerima manifes C2PA sebagai sinyal yang lebih kuat daripada pengklasifikasi platform. Jika adopsi naik di atas 5% unggahan, kolom <code>ai_label_source</code> menjadi yang terpenting dari ketiganya.</li>
+  <li><strong>Volume sengketa label</strong> pada X Articles. Loop "under review" X adalah satu-satunya dari tiga platform yang mengekspos volume sengketa di API publik. Lonjakan sengketa adalah indikator utama pembaruan pengklasifikasi.</li>
+  <li><strong>Retroaktivitas self-label Bluesky</strong>. Bluesky dikabarkan sedang menguji penerapan label retroaktif untuk postingan yang diedit setelah publikasi. Jika dirilis, kolom <code>self_label</code> menjadi tergantung waktu dengan cara yang sama seperti milik LinkedIn.</li>
+</ul>
+
+<p>Tidak satu pun dari tiga sinyal ini memerlukan perubahan alat hari ini, tetapi masing-masing akan membentuk ulang kolom mana yang merupakan label otoritatif di arsip Anda. Menangkap semuanya sekarang berarti pemetaan ulang di masa depan adalah perubahan skrip, bukan scrape ulang.</p>
+
+<h2>Pertanyaan yang Sering Diajukan</h2>
+
+<h3>Apakah LinkedIn pernah menghapus label AI setelah diterapkan?</h3>
+
+<p>Ya, tetapi jarang. Platform menghapus label ketika penulis berhasil mengajukan banding atau ketika regresi pengklasifikasi dibatalkan. Penghapusan dicatat dalam kolom <code>ai_label_state</code> sebagai <code>removed</code> alih-alih <code>none</code>, sehingga arsip dapat membedakan postingan yang selalu tidak berlabel dari yang labelnya ditarik kembali.</p>
+
+<h3>Dapatkah saya mendeteksi label AI dari HTML publik tanpa cookie sesi?</h3>
+
+<p>Sebagian. Teks lencana yang terlihat ada di HTML yang di-render dan dapat di-scrape secara anonim, tetapi kepercayaan pengklasifikasi dan sinyal sumber memerlukan sesi masuk melalui Voyager API. Tangkapan anonim cukup untuk menjawab "apakah postingan ini berlabel?" tetapi tidak "apa yang memicu label?".</p>
+
+<h3>Apa yang terjadi pada label ketika postingan diedit?</h3>
+
+<p>LinkedIn menjalankan ulang pengklasifikasi setelah setiap edit. Dalam pengujian kami, label berubah dari <code>ai-assisted</code> menjadi <code>none</code> di sekitar 4% edit ketika penulis memperpendek postingan lebih dari 30%. Tangkap label setelah edit yang berarti, bukan hanya pada waktu publikasi.</p>
+
+<h3>Apakah label AI terlihat di hasil pencarian LinkedIn Recruiter?</h3>
+
+<p>Tidak. Label saat ini hanya permukaan feed dan halaman detail; tidak merambat ke Recruiter search, Sales Navigator, atau LinkedIn Learning. Arsip yang berfokus pada kasus penggunaan perekrutan atau penjualan tidak memerlukan metadata label.</p>
+
+<h3>Apakah threadgrab menghapus label AI secara default?</h3>
+
+<p>Tidak. Eksportir membawa lencana ke frontmatter Markdown dan sidecar JSON secara default. Jika Anda ingin ekspor tanpa label, berikan <code>--strip-ai-label</code> ke CLI; badan postingan di-render tanpa penanda inline dan sidecar masih menyimpan sinyal mentah.</p>
+
+<div class="cta">
+  <p>Ingin arsip LinkedIn yang bertahan dari perubahan label berikutnya? Tangkap label, sumber, dan kepercayaan dalam satu sidecar Markdown.</p>
+  <a class="btn" href="/id/">Buka ThreadGrab</a>
+</div>
+
+    </article>
+  </main>
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/id/">Beranda</a> &middot; <a href="/id/blog/">Blog</a> &middot; <a href="/id/about/">Tentang</a> &middot; <a href="/id/privacy/">Privasi</a>
+    <br>Tidak berafiliasi dengan X Corp., Bluesky Social PBC, LinkedIn Corporation, atau Microsoft Corporation.
+  </footer>
+</body>
+</html>

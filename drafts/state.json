@@ -1917,6 +1917,51 @@
       "cluster": [
         "bluesky"
       ]
+    },
+    {
+      "slug": "linkedin-ai-content-label-provenance-2026",
+      "date": "2026-07-19",
+      "type": "guide",
+      "lang": "en",
+      "file": "en/blog/linkedin-ai-content-label-provenance-2026.html",
+      "url": "https://threadgrab.com/en/blog/linkedin-ai-content-label-provenance-2026.html",
+      "title": "LinkedIn AI Labels 2026: Archive Provenance",
+      "description": "LinkedIn's 2026 AI-content labels reshape the archive. Capture the label, the post, and provenance metadata with threadgrab in four steps.",
+      "heat_source": "briefing-2026-07-19-the-register-ai-slop-writing-x-linkedin",
+      "status": "published",
+      "published_at": "2026-07-19T10:00:00Z",
+      "providers_featured": [],
+      "primary_cta": "href=\"/en/\""
+    },
+    {
+      "slug": "linkedin-ai-content-label-provenance-2026",
+      "date": "2026-07-19",
+      "type": "guide",
+      "lang": "pt",
+      "file": "pt/blog/linkedin-ai-content-label-provenance-2026.html",
+      "url": "https://threadgrab.com/pt/blog/linkedin-ai-content-label-provenance-2026.html",
+      "title": "Rótulos de IA do LinkedIn 2026: Procedência no Arquivo",
+      "description": "Os rótulos de IA do LinkedIn em 2026 redesenham o arquivo. Capture rótulo, post e metadados de procedência com threadgrab em quatro passos.",
+      "heat_source": "briefing-2026-07-19-the-register-ai-slop-writing-x-linkedin",
+      "status": "published",
+      "published_at": "2026-07-19T10:00:00Z",
+      "providers_featured": [],
+      "primary_cta": "href=\"/pt/\""
+    },
+    {
+      "slug": "linkedin-ai-content-label-provenance-2026",
+      "date": "2026-07-19",
+      "type": "guide",
+      "lang": "id",
+      "file": "id/blog/linkedin-ai-content-label-provenance-2026.html",
+      "url": "https://threadgrab.com/id/blog/linkedin-ai-content-label-provenance-2026.html",
+      "title": "Label Konten AI LinkedIn 2026: Arsip dengan Provenansi",
+      "description": "Label konten AI LinkedIn 2026 membentuk ulang arsip. Tangkap label, kiriman, dan metadata provenansi dengan threadgrab dalam empat langkah.",
+      "heat_source": "briefing-2026-07-19-the-register-ai-slop-writing-x-linkedin",
+      "status": "published",
+      "published_at": "2026-07-19T10:00:00Z",
+      "providers_featured": [],
+      "primary_cta": "href=\"/id/\""
     }
   ],
   "drafts": [
@@ -2165,6 +2210,66 @@
         "FAQPage"
       ],
       "word_count": 881
+    },
+    {
+      "slug": "patreon-ai-bot-block-compliance-threadgrab-2026",
+      "lang": "en",
+      "date": "2026-07-18",
+      "type": "news-analysis",
+      "file": "en/blog/patreon-ai-bot-block-compliance-threadgrab-2026.html",
+      "url": "https://threadgrab.com/en/blog/patreon-ai-bot-block-compliance-threadgrab-2026.html",
+      "title": "Patreon AI Bot Block: 5 Compliance Strategies",
+      "description": "Patreon now blocks AI bots via Cloudflare. Five compliance strategies that keep threadgrab scraping creator platforms in 2026.",
+      "heat_source": "daily-briefing 2026-07-18: Patreon stops asking AI bots not to scrape (TechCrunch, 2026-07-17, Sarah Perez)",
+      "heat_source_url": "https://techcrunch.com/2026/07/17/patreon-stops-asking-ai-bots-not-to-scrape-and-starts-blocking-them/",
+      "status": "preview_pending_publish",
+      "providers_featured": [
+        "Patreon",
+        "Cloudflare"
+      ],
+      "primary_cta": "Open ThreadGrab",
+      "created_at": "2026-07-18T18:00:00+00:00",
+      "read_time_min": 11
+    },
+    {
+      "slug": "patreon-bloqueio-bot-ia-conformidade-threadgrab-2026",
+      "lang": "pt",
+      "date": "2026-07-18",
+      "type": "news-analysis",
+      "file": "pt/blog/patreon-bloqueio-bot-ia-conformidade-threadgrab-2026.html",
+      "url": "https://threadgrab.com/pt/blog/patreon-bloqueio-bot-ia-conformidade-threadgrab-2026.html",
+      "title": "Patreon Bloqueia Bots IA: 5 Estratégias de Conformidade",
+      "description": "Patreon agora bloqueia bots de IA via Cloudflare. Cinco estratégias para manter o threadgrab em conformidade em 2026.",
+      "heat_source": "daily-briefing 2026-07-18: Patreon stops asking AI bots not to scrape (TechCrunch, 2026-07-17, Sarah Perez)",
+      "heat_source_url": "https://techcrunch.com/2026/07/17/patreon-stops-asking-ai-bots-not-to-scrape-and-starts-blocking-them/",
+      "status": "preview_pending_publish",
+      "providers_featured": [
+        "Patreon",
+        "Cloudflare"
+      ],
+      "primary_cta": "Abrir o ThreadGrab",
+      "created_at": "2026-07-18T18:00:00+00:00",
+      "read_time_min": 11
+    },
+    {
+      "slug": "patreon-blokir-bot-ai-kepatuhan-threadgrab-2026",
+      "lang": "id",
+      "date": "2026-07-18",
+      "type": "news-analysis",
+      "file": "id/blog/patreon-blokir-bot-ai-kepatuhan-threadgrab-2026.html",
+      "url": "https://threadgrab.com/id/blog/patreon-blokir-bot-ai-kepatuhan-threadgrab-2026.html",
+      "title": "Patreon Blokir Bot AI: 5 Strategi Kepatuhan",
+      "description": "Patreon kini memblokir bot AI lewat Cloudflare. Lima strategi kepatuhan agar threadgrab tetap aman di 2026.",
+      "heat_source": "daily-briefing 2026-07-18: Patreon stops asking AI bots not to scrape (TechCrunch, 2026-07-17, Sarah Perez)",
+      "heat_source_url": "https://techcrunch.com/2026/07/17/patreon-stops-asking-ai-bots-not-to-scrape-and-starts-blocking-them/",
+      "status": "preview_pending_publish",
+      "providers_featured": [
+        "Patreon",
+        "Cloudflare"
+      ],
+      "primary_cta": "Buka ThreadGrab",
+      "created_at": "2026-07-18T18:00:00+00:00",
+      "read_time_min": 11
     }
   ],
   "recent_topics": [
@@ -2191,13 +2296,13 @@
     "twitter-trend-scraping-tools-2026",
     "x-articles-freedom-of-reach-2026"
   ],
-  "last_run": "publish-confirmed",
+  "last_run": "2026-07-18T18:00:00+00:00",
   "last_published_slug": "tweet-md-browser-redirect-2026",
-  "last_draft_slug": "bluesky-longform-api-thirdparty-2026",
+  "last_draft_slug": "patreon-ai-bot-block-compliance-threadgrab-2026",
   "last_published_at": "2026-07-13T09:00:00+08:00",
-  "drafts_count": 3,
-  "published_count": 90,
-  "last_topic_picked": "ai-writing-tropes-tropes-fyi-2026",
-  "last_pick_source": "daily-briefing-2026-07-12 (Tropes.fyi AI writing pattern detection)",
+  "drafts_count": 12,
+  "published_count": 99,
+  "last_topic_picked": "Patreon AI Bot Block: 5 Compliance Strategies (3-lang)",
+  "last_pick_source": "daily-briefing 2026-07-18 (TechCrunch 2026-07-17)",
   "last_drafted_slug": "search-console-mcp-seo-2026"
 }

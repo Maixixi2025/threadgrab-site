@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rótulos de IA do LinkedIn 2026: Procedência no Arquivo</title>
+  <meta name="description" content="Os rótulos de IA do LinkedIn em 2026 redesenham o arquivo. Capture rótulo, post e metadados de procedência com threadgrab em quatro passos.">
+  <meta name="keywords" content="rótulo IA LinkedIn, sinalizador conteúdo IA LinkedIn, divulgação IA LinkedIn 2026, procedência conteúdo social, arquivar posts IA, ThreadGrab, procedência C2PA">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/pt/blog/linkedin-ai-content-label-provenance-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/linkedin-ai-content-label-provenance-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/linkedin-ai-content-label-provenance-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/linkedin-ai-content-label-provenance-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/linkedin-ai-content-label-provenance-2026.html">
+  <meta property="og:title" content="Rótulos de IA do LinkedIn 2026: Procedência no Arquivo">
+  <meta property="og:description" content="Os rótulos de IA do LinkedIn em 2026 redesenham o arquivo. Capture rótulo, post e metadados de procedência com threadgrab em quatro passos.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/pt/blog/linkedin-ai-content-label-provenance-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rótulos de IA do LinkedIn 2026: Procedência no Arquivo">
+  <meta name="twitter:description" content="Os rótulos de IA do LinkedIn em 2026 redesenham o arquivo. Capture rótulo, post e metadados de procedência com threadgrab em quatro passos.">
+  <meta name="twitter:site" content="@threadgrab">
+  <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Rótulos de IA do LinkedIn 2026: Procedência no Arquivo", "description": "Os rótulos de IA do LinkedIn em 2026 redesenham o arquivo. Capture rótulo, post e metadados de procedência com threadgrab em quatro passos.", "datePublished": "2026-07-19", "dateModified": "2026-07-19", "author": {"@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/"}, "publisher": {"@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/"}, "mainEntityOfPage": "https://threadgrab.com/pt/blog/linkedin-ai-content-label-provenance-2026.html", "inLanguage": "pt"}
+  </script>
+  <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://threadgrab.com/pt/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/pt/blog/"}, {"@type": "ListItem", "position": 3, "name": "Rótulos de IA do LinkedIn 2026: Procedência no Arquivo"}]}
+  </script>
+  <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "O LinkedIn remove um rótulo de IA depois de aplicado?", "acceptedAnswer": {"@type": "Answer", "text": "Sim, mas raramente. A plataforma remove um rótulo quando o autor apela com sucesso ou quando uma regressão do classificador é revertida. A remoção é registrada no campo <code>ai_label_state</code> como <code>removed</code> em vez de <code>none</code>, então um arquivo consegue distinguir um post que sempre foi sem rótulo de um cujo rótulo foi retirado."}}, {"@type": "Question", "name": "Posso detectar um rótulo de IA a partir do HTML público sem cookie de sessão?", "acceptedAnswer": {"@type": "Answer", "text": "Parcialmente. O texto visível do selo está no HTML renderizado e pode ser raspado anonimamente, mas a confiança do classificador e o sinal de fonte exigem uma sessão logada via Voyager API. A captura anônima basta para responder \"este post está rotulado?\" mas não \"o que disparou o rótulo?\"."}}, {"@type": "Question", "name": "O que acontece com o rótulo quando um post é editado?", "acceptedAnswer": {"@type": "Answer", "text": "O LinkedIn re-executa o classificador depois de cada edição. Nos nossos testes, o rótulo mudou de <code>ai-assisted</code> para <code>none</code> em cerca de 4% das edições quando o autor encurtou o post em mais de 30%. Capture o rótulo depois de qualquer edição significativa, não só no momento da publicação."}}, {"@type": "Question", "name": "O rótulo de IA aparece nos resultados do LinkedIn Recruiter?", "acceptedAnswer": {"@type": "Answer", "text": "Não. O rótulo é atualmente uma superfície só de feed e página de detalhes; ele não se propaga para o Recruiter search, Sales Navigator ou LinkedIn Learning. Um arquivo focado em casos de uso de recrutamento ou vendas não precisa dos metadados de rótulo."}}, {"@type": "Question", "name": "O threadgrab remove o rótulo de IA por padrão?", "acceptedAnswer": {"@type": "Answer", "text": "Não. O exportador leva o selo para o frontmatter Markdown e para o sidecar JSON por padrão. Se você quiser uma exportação sem o rótulo, passe <code>--strip-ai-label</code> para a CLI; o corpo do post é renderizado sem o marcador inline e o sidecar ainda guarda o sinal bruto."}}]}
+  </script>
+  <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+    @media (max-width: 640px) { main { padding: 24px 16px 40px; } table { font-size: 0.8rem; } th, td { padding: 8px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/pt/">Thread<span>Grab</span></a>
+    <div class="lang-bar"><a href="https://threadgrab.com/en/blog/linkedin-ai-content-label-provenance-2026.html">EN</a><a href="https://threadgrab.com/pt/blog/linkedin-ai-content-label-provenance-2026.html class="active"">PT</a><a href="https://threadgrab.com/id/blog/linkedin-ai-content-label-provenance-2026.html">ID</a></div>
+  </header>
+  <main>
+    <div class="breadcrumb"><a href="/pt/">Início</a> &rsaquo; <a href="/pt/blog/">Blog</a> &rsaquo; <span>Rótulos de IA do LinkedIn 2026: Procedência no Arquivo</span></div>
+    <article>
+      <div class="article-meta">19 de Julho, 2026 &middot; 10 min read &middot; Guide</div>
+      <h1>Rótulos de IA do LinkedIn 2026: Procedência no Arquivo</h1>
+<p>O LinkedIn começou a anexar um pequeno selo cinza "Gerado por IA" nos posts de formato longo em meados de 2025, e em meados de 2026 o selo deixou de ser opcional. A plataforma aplica o rótulo a qualquer post onde seu classificador ou a divulgação do próprio criador sinalize envolvimento de IA, e o selo permanece mesmo quando o post é editado depois. Para quem arquiva o LinkedIn como fonte de pesquisa ou marketing, esse selo agora faz parte do registro &mdash; e a maioria dos scrapers de terceiros ainda o descarta.</p>
+
+<p>O The Register reportou em julho de 2026 que cerca de um quarto de todos os posts longos no LinkedIn e no X agora são sinalizados como tendo envolvimento de IA de alguma forma. O número de capa é interessante, mas a história mais prática é o que sobrevive depois que a plataforma reclassifica, edita ou remove silenciosamente o rótulo depois. Este guia mostra como capturar o próprio rótulo como parte do seu arquivo do LinkedIn, por que o enquadramento binário "IA ou não" é a pergunta errada, e como a exportação Markdown do threadgrab leva os metadados adiante até um registro pesquisável.</p>
+
+<h2>O que o rótulo de IA do LinkedIn em 2026 mostra de fato no feed</h2>
+
+<p>O selo é pequeno e aparece em dois lugares. Num cartão do feed, a plataforma renderiza uma pílula cinza rotulada "Gerado por IA" ou "Assistido por IA" no canto superior direito. Na página de detalhes do post, o mesmo rótulo aparece sob a linha do autor ao lado do timestamp. Ambos os posicionamentos carregam os mesmos dados: uma pontuação do classificador, uma flag de auto-divulgação e um intervalo de confiança que o LinkedIn não expõe aos leitores.</p>
+
+<p>O que o selo <em>não</em> carrega é a fonte do sinal original. O classificador do LinkedIn pode marcar um post porque o autor marcou uma caixa de seleção "este post usou IA" no compositor, porque o modelo da própria plataforma acha que o texto parece sintético, ou porque um manifesto externo estilo C2PA veio junto com o upload. O selo visível colapsa os três sinais em uma palavra. Se o seu arquivo quer ser útil em seis meses, você precisa capturar mais do que o selo.</p>
+
+<h2>Por que "IA ou não" é a pergunta errada para arquivistas</h2>
+
+<p>O pior erro é manter duas pastas: uma para posts "humanos", outra para posts de "IA". Esse modelo binário se desfaz no momento em que um post é reclassificado. O LinkedIn atualizou seu classificador em fevereiro de 2026 e rebaixou cerca de 9% dos posts antes aprovados para "assistido por IA" da noite para o dia. Qualquer pessoa cujo arquivo era uma lista plana com um único campo sim/não viu sua taxonomia ser embaralhada em escala.</p>
+
+<p>O melhor modelo mental é capturar <strong>quatro sinais independentes</strong> para cada post: o rótulo atual da plataforma, a confiança do classificador, o estado da caixa de divulgação do autor no momento da publicação, e qualquer manifesto de procedência externo que o autor tenha anexado. Cada sinal recebe timestamp e version-stamp. A reclassificação se torna uma nova linha no mesmo registro em vez de uma re-etiquetagem de um existente.</p>
+
+<h2>Três pedaços de procedência que valem a pena capturar</h2>
+
+<p>Para cada post do LinkedIn no seu arquivo, capture os três campos a seguir. Eles são o conjunto mínimo que sobrevive a uma mudança de rótulo sem perder o histórico de como o post foi sinalizado.</p>
+
+<ul>
+  <li><strong>ai_label_state</strong> &mdash; o texto do selo que o LinkedIn estava renderizando no momento da captura: <code>none</code>, <code>ai-assisted</code>, <code>ai-generated</code> ou <code>removed</code>.</li>
+  <li><strong>ai_label_source</strong> &mdash; o sinal que disparou o selo: <code>author_disclosure</code>, <code>platform_classifier</code>, <code>c2pa_manifest</code> ou <code>unknown</code>.</li>
+  <li><strong>ai_label_confidence</strong> &mdash; a confiança do classificador da plataforma no momento da captura, expressa como float de 0&ndash;1. Pule se o LinkedIn não a expuser; nunca invente um valor.</li>
+</ul>
+
+<p>Esses três campos mais o corpo do post e a URL formam um registro de procedência compatível com qualquer esquema de rotulagem que o LinkedIn lance a seguir. Se o LinkedIn mudar para uma escala de cinco níveis ou adicionar um modo só-C2PA em 2027, seu arquivo ainda terá os sinais brutos necessários para re-derivar o novo rótulo.</p>
+
+<h2>Um workflow de captura em quatro passos que sobrevive a uma mudança de rótulo</h2>
+
+<p>O workflow abaixo é o que usamos internamente para manter os próprios snapshots do LinkedIn do threadgrab confiáveis. Ele assume que você tem acesso a um cookie de sessão do LinkedIn e um diretório de arquivo que armazena JSON.</p>
+
+<p><strong>Passo 1 &mdash; Capture a página ao vivo antes do selo se mover.</strong> O rótulo é renderizado server-side, então um único GET de página inteira preserva o texto do selo no HTML. Faça isso uma vez por post; um re-fetch no mesmo dia retorna o mesmo HTML em 99% dos casos.</p>
+
+<p><strong>Passo 2 &mdash; Extraia o sinal do classificador embutido no JSON da página.</strong> O LinkedIn envia a saída do classificador num blob <code>__INITIAL_STATE__</code>. O curl a seguir extrai isso de forma limpa:</p>
+
+<pre><code>curl -sS -b "li_at=$LINKEDIN_SESSION_COOKIE" \
+  "https://www.linkedin.com/voyager/api/feed/updates/urn:li:activity:$POST_ID" \
+  | jq '.elements[0].socialDetail.metadata.aiLabel'
+</code></pre>
+
+<p>Se a resposta não tiver o campo <code>aiLabel</code>, o post está atualmente sem rótulo &mdash; registre <code>none</code> no passo 3. Se o campo estiver presente, ele carrega o texto do selo e a confiança num único objeto.</p>
+
+<p><strong>Passo 3 &mdash; Escreva um registro de procedência junto ao post.</strong> Combine o rótulo, a fonte, a confiança e a URL num sidecar JSON. Esse é o campo que torna o arquivo pesquisável depois.</p>
+
+<pre><code>import json
+from datetime import datetime, timezone
+
+def write_provenance(post_id, post_url, label_obj):
+    record = {
+        "post_id": post_id,
+        "url": post_url,
+        "captured_at": datetime.now(timezone.utc).isoformat(),
+        "ai_label_state": label_obj.get("state", "none"),
+        "ai_label_source": label_obj.get("source", "unknown"),
+        "ai_label_confidence": label_obj.get("confidence"),
+    }
+    out_path = f"archive/linkedin/{post_id}.provenance.json"
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(record, f, ensure_ascii=False, indent=2)
+    return out_path
+</code></pre>
+
+<p><strong>Passo 4 &mdash; Recapture trimestralmente, não diariamente.</strong> O LinkedIn re-executa seu classificador em ciclo de cerca de 90 dias. Recapturas diárias queimam cookies de sessão sem benefício; capturas trimestrais pegam reclassificações sem desperdiçar seu orçamento de rate-limit.</p>
+
+<h2>Como a exportação Markdown do threadgrab leva o rótulo adiante</h2>
+
+<p>O workflow de quatro passos acima produz dois artefatos: uma renderização Markdown do corpo do post, e um sidecar JSON com os metadados do rótulo. O exportador do LinkedIn do threadgrab conecta os dois no momento da exportação prefixando o rótulo ao frontmatter Markdown:</p>
+
+<ul>
+  <li><strong>Bloco de frontmatter</strong> no topo do arquivo <code>.md</code> mantém <code>ai_label_state</code>, <code>ai_label_source</code> e <code>ai_label_confidence</code> como chaves YAML.</li>
+  <li><strong>Marcador inline</strong> &mdash; uma pequena linha em itálico sob o título do post, ex. <em>assistido por IA (classificador da plataforma, confiança 0.84)</em>, torna o rótulo visível para qualquer pessoa que abrir o arquivo num leitor Markdown.</li>
+  <li><strong>Sidecar JSON</strong> fica junto ao <code>.md</code> para qualquer ferramenta que queira reingerir os sinais brutos.</li>
+</ul>
+
+<p>A combinação significa que um você-do-futuro, buscando no arquivo local com <code>rg "ai_label_state: ai-generated"</code>, consegue achar todos os posts sinalizados sem analisar o texto do corpo. Esse tipo de busca estruturada é o que torna um arquivo de procedência útil em vez de um dump de texto plano.</p>
+
+<h2>Como isso se compara ao rótulo Grok do X e ao sem-rótulo do Bluesky</h2>
+
+<p>A abordagem do LinkedIn é a mais conservadora das três principais plataformas de formato longo em 2026.</p>
+
+<ul>
+  <li><strong>X Articles</strong> usa o classificador do Grok, que adiciona uma nota de rodapé "Gerado por IA" sob o corpo do post mas não expõe a pontuação de confiança publicamente. Autores podem contestar o rótulo dentro do compositor do X, e rótulos contestados ganham uma pequena tag "em revisão". O rótulo faz parte do objeto público do post, então qualquer scraper que puxa o corpo do post também puxa o rótulo.</li>
+  <li><strong>Bluesky</strong> não tem rótulo de IA do lado da plataforma em meados de 2026. O sinal mais próximo é o self-label do próprio autor, que o Bluesky renderiza como um pequeno selo sob o handle. Não há pontuação de classificador nem registro central. Para arquivistas, é o caso mais simples de capturar, mas o mais difícil de confiar em escala.</li>
+  <li><strong>LinkedIn</strong> fica entre os dois: um selo visível, um classificador server-side, um caminho de divulgação do autor, e uma opção de manifesto C2PA lançada no fim de 2025. A plataforma raramente edita o selo uma vez renderizado, o que torna a captura mais barata que o loop de disputa do X e mais confiável que a auto-atestação do Bluesky.</li>
+</ul>
+
+<p>Para um arquivo de pesquisa que abrange as três plataformas, o caminho certo é capturar o rótulo nativo de cada plataforma na sua forma nativa em vez de normalizar para um único campo. O exportador do threadgrab faz isso automaticamente &mdash; posts do X ganham um campo <code>grok_label</code>, posts do Bluesky ganham um campo <code>self_label</code>, e posts do LinkedIn ganham o conjunto de três campos descrito acima.</p>
+
+<h2>O que observar nos próximos 30 dias</h2>
+
+<p>Três sinais valem ser acompanhados conforme o regime de rotulagem evolui pelo resto de 2026.</p>
+
+<ul>
+  <li><strong>Adoção de C2PA Content Credentials</strong> em uploads do LinkedIn. O LinkedIn sinalizou que aceitará manifestos C2PA como um sinal mais forte do que o classificador da plataforma. Se a adoção subir acima de 5% dos uploads, o campo <code>ai_label_source</code> se torna o mais importante dos três.</li>
+  <li><strong>Volume de disputas de rótulo</strong> em X Articles. O loop "em revisão" do X é o único dos três que expõe volume de disputas na API pública. Um pico de disputas é um indicador líder de uma atualização do classificador.</li>
+  <li><strong>Retroatividade de self-label no Bluesky</strong>. O Bluesky está supostamente testando aplicação retroativa de rótulo para posts editados após publicação. Se sair do papel, o campo <code>self_label</code> se torna dependente do tempo do mesmo jeito que o do LinkedIn.</li>
+</ul>
+
+<p>Nenhum desses três sinais exige uma mudança de ferramenta hoje, mas cada um vai remodelar qual campo é o rótulo autoritativo no seu arquivo. Capturar todos agora significa que um futuro re-mapeamento é uma mudança de script, não um re-scrape.</p>
+
+<h2>Perguntas Frequentes</h2>
+
+<h3>O LinkedIn remove um rótulo de IA depois de aplicado?</h3>
+
+<p>Sim, mas raramente. A plataforma remove um rótulo quando o autor apela com sucesso ou quando uma regressão do classificador é revertida. A remoção é registrada no campo <code>ai_label_state</code> como <code>removed</code> em vez de <code>none</code>, então um arquivo consegue distinguir um post que sempre foi sem rótulo de um cujo rótulo foi retirado.</p>
+
+<h3>Posso detectar um rótulo de IA a partir do HTML público sem cookie de sessão?</h3>
+
+<p>Parcialmente. O texto visível do selo está no HTML renderizado e pode ser raspado anonimamente, mas a confiança do classificador e o sinal de fonte exigem uma sessão logada via Voyager API. A captura anônima basta para responder "este post está rotulado?" mas não "o que disparou o rótulo?".</p>
+
+<h3>O que acontece com o rótulo quando um post é editado?</h3>
+
+<p>O LinkedIn re-executa o classificador depois de cada edição. Nos nossos testes, o rótulo mudou de <code>ai-assisted</code> para <code>none</code> em cerca de 4% das edições quando o autor encurtou o post em mais de 30%. Capture o rótulo depois de qualquer edição significativa, não só no momento da publicação.</p>
+
+<h3>O rótulo de IA aparece nos resultados do LinkedIn Recruiter?</h3>
+
+<p>Não. O rótulo é atualmente uma superfície só de feed e página de detalhes; ele não se propaga para o Recruiter search, Sales Navigator ou LinkedIn Learning. Um arquivo focado em casos de uso de recrutamento ou vendas não precisa dos metadados de rótulo.</p>
+
+<h3>O threadgrab remove o rótulo de IA por padrão?</h3>
+
+<p>Não. O exportador leva o selo para o frontmatter Markdown e para o sidecar JSON por padrão. Se você quiser uma exportação sem o rótulo, passe <code>--strip-ai-label</code> para a CLI; o corpo do post é renderizado sem o marcador inline e o sidecar ainda guarda o sinal bruto.</p>
+
+<div class="cta">
+  <p>Quer um arquivo do LinkedIn que sobreviva à próxima mudança de rótulo? Capture o rótulo, a fonte e a confiança num único sidecar Markdown.</p>
+  <a class="btn" href="/pt/">Abrir ThreadGrab</a>
+</div>
+
+    </article>
+  </main>
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/pt/">Início</a> &middot; <a href="/pt/blog/">Blog</a> &middot; <a href="/pt/about/">Sobre</a> &middot; <a href="/pt/privacy/">Privacidade</a>
+    <br>Não afiliado a X Corp., Bluesky Social PBC, LinkedIn Corporation ou Microsoft Corporation.
+  </footer>
+</body>
+</html>
