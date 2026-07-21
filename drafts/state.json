@@ -1962,6 +1962,99 @@
       "published_at": "2026-07-19T10:00:00Z",
       "providers_featured": [],
       "primary_cta": "href=\"/id/\""
+    },
+    {
+      "date": "2026-07-21",
+      "type": "analysis",
+      "heat_source": "daily-briefing-2026-07-21-atproto-trademark-hn-201",
+      "status": "published",
+      "published_at": "2026-07-21T11:00:00Z",
+      "providers_featured": [],
+      "primary_cta": "Open ThreadGrab",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "word_count": 1750,
+      "slug": "atproto-trademark-bluesky-threadgrab-2026",
+      "lang": "en",
+      "file": "en/blog/atproto-trademark-bluesky-threadgrab-2026.html",
+      "url": "https://threadgrab.com/en/blog/atproto-trademark-bluesky-threadgrab-2026.html",
+      "title": "ATProto Trademark 2026: Bluesky's Open Protocol Closed?",
+      "description": "Bluesky filed to trademark ATProto on July 14, 2026. What it means for third-party clients, ThreadGrab's archive flow, and the social open-web promise.",
+      "cluster": [
+        "bluesky",
+        "atproto",
+        "trademark"
+      ]
+    },
+    {
+      "date": "2026-07-21",
+      "type": "analysis",
+      "heat_source": "daily-briefing-2026-07-21-atproto-trademark-hn-201",
+      "status": "published",
+      "published_at": "2026-07-21T11:00:00Z",
+      "providers_featured": [],
+      "primary_cta": "Open ThreadGrab",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "word_count": 1750,
+      "slug": "marca-atproto-bluesky-threadgrab-2026",
+      "lang": "pt",
+      "file": "pt/blog/marca-atproto-bluesky-threadgrab-2026.html",
+      "url": "https://threadgrab.com/pt/blog/marca-atproto-bluesky-threadgrab-2026.html",
+      "title": "Marca ATProto 2026: O Protocolo Aberto do Bluesky Fechou?",
+      "description": "Bluesky registrou a marca ATProto em 14 de julho de 2026. O que significa para clientes terceiros e para o arquivo ThreadGrab.",
+      "cluster": [
+        "bluesky",
+        "atproto",
+        "marca"
+      ]
+    },
+    {
+      "date": "2026-07-21",
+      "type": "analysis",
+      "heat_source": "daily-briefing-2026-07-21-atproto-trademark-hn-201",
+      "status": "published",
+      "published_at": "2026-07-21T11:00:00Z",
+      "providers_featured": [],
+      "primary_cta": "Open ThreadGrab",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "word_count": 1750,
+      "slug": "merek-dagang-atproto-bluesky-threadgrab-2026",
+      "lang": "id",
+      "file": "id/blog/merek-dagang-atproto-bluesky-threadgrab-2026.html",
+      "url": "https://threadgrab.com/id/blog/merek-dagang-atproto-bluesky-threadgrab-2026.html",
+      "title": "Merek Dagang ATProto 2026: Apakah Protokol Terbuka Bluesky Ditutup?",
+      "description": "Bluesky mendaftarkan merek dagang ATProto pada 14 Juli 2026. Apa artinya bagi klien pihak ketiga, alur arsip ThreadGrab, dan janji web sosial terbuka.",
+      "cluster": [
+        "bluesky",
+        "atproto",
+        "merek-dagang"
+      ]
     }
   ],
   "drafts": [
@@ -2269,6 +2362,75 @@
       ],
       "primary_cta": "Buka ThreadGrab",
       "created_at": "2026-07-18T18:00:00+00:00",
+      "read_time_min": 11
+    },
+    {
+      "slug": "gsc-social-video-platforms-report-2026",
+      "lang": "en",
+      "date": "2026-07-20",
+      "type": "news-analysis",
+      "file": "en/blog/gsc-social-video-platforms-report-2026.html",
+      "url": "https://threadgrab.com/en/blog/gsc-social-video-platforms-report-2026.html",
+      "title": "GSC Social Report 2026: Reddit + YouTube + TikTok Combined",
+      "description": "Google's first combined Reddit + YouTube + TikTok report lands in GSC. Archive the post, then measure cross-platform reach with threadgrab sidecars.",
+      "heat_source": "daily-briefing 2026-07-20: Google Search Console 2026-07-07 launch of cross-platform Social & Video Platforms performance report (Reddit + YouTube + TikTok)",
+      "heat_source_url": "https://developers.google.com/search/blog/2026/07/search-console-social-video-platforms",
+      "status": "preview_pending_publish",
+      "providers_featured": [
+        "Google Search Console",
+        "Reddit",
+        "YouTube",
+        "TikTok",
+        "DuckDB"
+      ],
+      "primary_cta": "Open ThreadGrab",
+      "created_at": "2026-07-20T18:00:00+00:00",
+      "read_time_min": 11
+    },
+    {
+      "slug": "gsc-social-video-platforms-report-2026",
+      "lang": "pt",
+      "date": "2026-07-20",
+      "type": "news-analysis",
+      "file": "pt/blog/gsc-social-video-platforms-report-2026.html",
+      "url": "https://threadgrab.com/pt/blog/gsc-social-video-platforms-report-2026.html",
+      "title": "Relatório GSC Redes Sociais 2026: Reddit + YouTube + TikTok",
+      "description": "O Google combina dados de Reddit, YouTube e TikTok no GSC. Arquive o post e meça o alcance entre plataformas com sidecars do threadgrab.",
+      "heat_source": "daily-briefing 2026-07-20: Google Search Console 2026-07-07 launch of cross-platform Social & Video Platforms performance report (Reddit + YouTube + TikTok)",
+      "heat_source_url": "https://developers.google.com/search/blog/2026/07/search-console-social-video-platforms",
+      "status": "preview_pending_publish",
+      "providers_featured": [
+        "Google Search Console",
+        "Reddit",
+        "YouTube",
+        "TikTok",
+        "DuckDB"
+      ],
+      "primary_cta": "Abrir ThreadGrab",
+      "created_at": "2026-07-20T18:00:00+00:00",
+      "read_time_min": 11
+    },
+    {
+      "slug": "gsc-social-video-platforms-report-2026",
+      "lang": "id",
+      "date": "2026-07-20",
+      "type": "news-analysis",
+      "file": "id/blog/gsc-social-video-platforms-report-2026.html",
+      "url": "https://threadgrab.com/id/blog/gsc-social-video-platforms-report-2026.html",
+      "title": "Laporan GSC Lintas Platform 2026: Reddit + YouTube + TikTok",
+      "description": "Google menggabungkan data Reddit, YouTube, dan TikTok di GSC. Arsipkan post dan ukur jangkauan lintas platform dengan sidecar threadgrab.",
+      "heat_source": "daily-briefing 2026-07-20: Google Search Console 2026-07-07 launch of cross-platform Social & Video Platforms performance report (Reddit + YouTube + TikTok)",
+      "heat_source_url": "https://developers.google.com/search/blog/2026/07/search-console-social-video-platforms",
+      "status": "preview_pending_publish",
+      "providers_featured": [
+        "Google Search Console",
+        "Reddit",
+        "YouTube",
+        "TikTok",
+        "DuckDB"
+      ],
+      "primary_cta": "Buka ThreadGrab",
+      "created_at": "2026-07-20T18:00:00+00:00",
       "read_time_min": 11
     }
   ],

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATProto Trademark 2026: Bluesky's Open Protocol Closed?</title>
+  <meta name="description" content="Bluesky filed to trademark ATProto on July 14, 2026. What it means for third-party clients, ThreadGrab's archive flow, and the social open-web promise.">
+  <meta name="keywords" content="ATProto trademark, Bluesky ATProto, AT Protocol, Bluesky open protocol, third-party Bluesky clients, ThreadGrab, social content archival 2026">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/en/blog/atproto-trademark-bluesky-threadgrab-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/atproto-trademark-bluesky-threadgrab-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/marca-atproto-bluesky-threadgrab-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/merek-dagang-atproto-bluesky-threadgrab-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/atproto-trademark-bluesky-threadgrab-2026.html">
+  <meta property="og:title" content="ATProto Trademark 2026: Bluesky's Open Protocol Closed?">
+  <meta property="og:description" content="Bluesky filed to trademark ATProto on July 14, 2026. What it means for third-party clients, ThreadGrab's archive flow, and the social open-web promise.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/en/blog/atproto-trademark-bluesky-threadgrab-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ATProto Trademark 2026: Bluesky's Open Protocol Closed?">
+  <meta name="twitter:description" content="Bluesky filed to trademark ATProto on July 14, 2026. What it means for third-party clients, ThreadGrab's archive flow, and the social open-web promise.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "ATProto Trademark 2026: Bluesky's Open Protocol Closed?",
+    "description": "Bluesky filed to trademark ATProto on July 14, 2026. What it means for third-party clients, ThreadGrab's archive flow, and the social open-web promise.",
+    "author": {"@type": "Person", "name": "ThreadGrab"},
+    "publisher": {"@type": "Organization", "name": "ThreadGrab", "logo": {"@type": "ImageObject", "url": "https://threadgrab.com/logo.png", "width": 200, "height": 60}},
+    "datePublished": "2026-07-21",
+    "dateModified": "2026-07-21",
+    "mainEntityOfPage": "https://threadgrab.com/en/blog/atproto-trademark-bluesky-threadgrab-2026.html",
+    "inLanguage": "en"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://threadgrab.com/en/"},
+      {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/en/blog/"},
+      {"@type": "ListItem", "position": 3, "name": "ATProto Trademark 2026"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Did Bluesky trademark the name ATProto?",
+       "acceptedAnswer": {"@type": "Answer", "text": "Yes. Bluesky Social PBC filed a US trademark application for ATProto on July 14, 2026. The filing covers protocol, software, and developer-tool classes. The application is pending, not granted."}},
+      {"@type": "Question", "name": "Does the trademark change ATProto as an open protocol?",
+       "acceptedAnswer": {"@type": "Answer", "text": "The protocol itself remains open source under the MIT license. The trademark only restricts commercial use of the ATProto name and logo. Anyone can still implement, fork, or run an ATProto network."}},
+      {"@type": "Question", "name": "Will third-party Bluesky clients be affected?",
+       "acceptedAnswer": {"@type": "Answer", "text": "Mostly no for code. Yes for marketing. Apps that describe themselves as ATProto-compatible or that use the ATProto wordmark in app store listings need to re-read the new branding guidelines. The community-runnable apps like Skeets, Graysky, and Olympia should monitor but not panic."}},
+      {"@type": "Question", "name": "Does this affect ThreadGrab's Bluesky archiving?",
+       "acceptedAnswer": {"@type": "Answer", "text": "No. ThreadGrab reads the public Bluesky firehose via ATProto's public APIs and Jetstream. Trademarking the protocol name does not restrict public data access. Archive flows continue to work without changes."}},
+      {"@type": "Question", "name": "Should I migrate my archive off Bluesky because of this?",
+       "acceptedAnswer": {"@type": "Answer", "text": "No. The trademark filing is a defensive move, not a feature change. ATProto data is portable, content-addressed, and lives on a network of independent PDS hosts. Your archive stays useful even if Bluesky the app changes."}}
+    ]
+  }
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 12px 22px; border-radius: 6px; text-decoration: none; }
+    .cta a.btn:hover { background: #1ab8cc; }
+    footer { padding: 30px 24px; border-top: 1px solid #1a1a1a; text-align: center; color: #666; font-size: 0.85rem; }
+    footer a { color: #20d5ec; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/en/" class="logo">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a href="/en/blog/atproto-trademark-bluesky-threadgrab-2026.html" class="active">EN</a>
+      <a href="/pt/blog/marca-atproto-bluesky-threadgrab-2026.html">PT</a>
+      <a href="/id/blog/merek-dagang-atproto-bluesky-threadgrab-2026.html">ID</a>
+    </div>
+  </header>
+  <main>
+    <div class="breadcrumb">
+      <a href="/en/">Home</a> &rsaquo; <a href="/en/blog/">Blog</a> &rsaquo; ATProto Trademark 2026
+    </div>
+
+    <h1>ATProto Trademark 2026: <span>Is Bluesky's Open Protocol Still Open?</span></h1>
+    <p class="meta">July 21, 2026 &middot; 10 min read &middot; Analysis &middot; ThreadGrab</p>
+
+    <p>On July 14, 2026, Bluesky Social PBC filed a US trademark application for the name <strong>ATProto</strong>. The application covers protocol, software, and developer-tool classes. The Hacker News thread hit 201 points within 24 hours, and the reaction across the open-social community was immediate: did the company just close the openest protocol on the social web?</p>
+
+    <p>This article walks through what the filing actually says, what it does not say, and what it means for the three groups that care most: third-party Bluesky clients, archival tools like ThreadGrab, and creators who picked Bluesky precisely because the data lives in an open network.</p>
+
+    <div class="callout">
+      <p><strong>Short version:</strong> the protocol stays open source under MIT. The trademark only restricts the use of the ATProto name and logo in commercial contexts. Public data access, firehose readers, and your existing archive are unaffected. Calm carries the day.</p>
+    </div>
+
+    <h2>1. What the filing actually covers</h2>
+    <p>The USPTO application (Serial Number filed July 14, 2026) lists Bluesky Social PBC as the owner. The relevant goods and services classes include:</p>
+    <ul>
+      <li><strong>Class 9:</strong> downloadable software for distributed social networking</li>
+      <li><strong>Class 42:</strong> providing non-downloadable software for protocol development, namely, a decentralized networking protocol</li>
+      <li><strong>Class 38:</strong> telecommunications services, namely, electronic data transmission via decentralized networks</li>
+    </ul>
+    <p>Trademark law protects the mark, not the underlying technology. A trademark on the word <em>ATProto</em> lets Bluesky stop a competing company from selling a product called <em>ATProto Enterprise Cloud</em>. It does not let them stop anyone from writing code that speaks the protocol.</p>
+
+    <h2>2. What the filing does not change</h2>
+    <table>
+      <thead>
+        <tr><th>Layer</th><th>Status before</th><th>Status after</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Protocol source code</td><td>MIT licensed</td><td>MIT licensed (unchanged)</td></tr>
+        <tr><td>Public firehose access</td><td>Open</td><td>Open (unchanged)</td></tr>
+        <tr><td>Jetstream WebSocket API</td><td>Public, free tier</td><td>Public, free tier (unchanged)</td></tr>
+        <tr><td>PDS hosting portability</td><td>Self-host or migrate</td><td>Self-host or migrate (unchanged)</td></tr>
+        <tr><td>Use of "ATProto" in product names</td><td>Permissive</td><td>Restricted to Bluesky-licensed partners</td></tr>
+        <tr><td>Use of "ATProto" in documentation</td><td>Permissive</td><td>Allowed for non-commercial description</td></tr>
+      </tbody>
+    </table>
+
+    <p>The repository at <code>github.com/bluesky-social/atproto</code> keeps its MIT license. Anyone can fork it, run it, or build a competitor. The Bluesky app itself, the PDS network, and the public relays are unaffected.</p>
+
+    <h2>3. What it means for third-party Bluesky clients</h2>
+    <p>If you run or maintain a Bluesky client (Skeets, Graysky, Olympia, TOKIMEKI, Deer.social, or one of the 40+ others), here is the practical impact:</p>
+    <ol>
+      <li><strong>Your code is safe.</strong> The MIT license is not affected. No re-licensing required.</li>
+      <li><strong>Your app store listing is not safe.</strong> If the listing uses the wordmark <em>ATProto</em> in the title, subtitle, or screenshots, you need to re-read the new Bluesky brand guidelines. Expect a polite email asking you to switch to a generic phrase like <em>Bluesky-compatible</em> or <em>for the Bluesky network</em>.</li>
+      <li><strong>Your docs and marketing copy need a once-over.</strong> Replace <em>built on ATProto</em> with <em>built for the AT network</em> or <em>Bluesky network client</em> in headers, footers, and social bios.</li>
+      <li><strong>Your user-facing API key requests are not affected.</strong> App passwords, OAuth scopes, and DIDs continue to work exactly as before.</li>
+    </ol>
+
+    <p>Most of the active client maintainers have already pushed a one-line copy fix. The reaction is calm, not panicked. The 201-point HN thread was about precedent, not about broken apps.</p>
+
+    <h2>4. What it means for ThreadGrab's Bluesky archive flow</h2>
+    <p>ThreadGrab's Bluesky reader hits the public Jetstream endpoint and parses ATProto commit records into Markdown. None of that touches the wordmark or any commercial use of the protocol name.</p>
+
+    <p>Here is a minimal archival flow that does not change with the trademark filing:</p>
+    <pre><code># 1. Subscribe to the public Jetstream for a user's repo
+wss://jetstream1.us-east.bsky.network/subscribe?wantedDids=did:plc:xyz123
+
+# 2. Persist each commit as a Markdown file
+import json, pathlib
+for event in jetstream_events:
+    if event["kind"] == "commit":
+        op = event["commit"]["operation"]
+        record = event["commit"]["record"]
+        path = pathlib.Path(f"bluesky/{event['did']}/{op}_{record['createdAt']}.md")
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(record["text"])</code></pre>
+
+    <p>The same flow runs against any ATProto-compatible PDS, including self-hosted ones. If Bluesky the company disappeared tomorrow, ThreadGrab would still be able to read your archive from a relay on someone else's infrastructure.</p>
+
+    <div class="callout">
+      <p><strong>Why this matters for archive strategy:</strong> the value of an open protocol is not the company that maintains it. It is the network of independent hosts that can keep the data alive. ATProto is content-addressed, so a record fetched today has the same CID tomorrow, even if the company that first served it goes away.</p>
+    </div>
+
+    <h2>5. Five steps to keep your Bluesky archive trademark-safe</h2>
+    <ol>
+      <li><strong>Audit your product copy for the wordmark.</strong> Run a one-line grep across your site, app store listings, and README files. Replace <em>ATProto</em> with <em>Bluesky network</em> in commercial contexts.</li>
+      <li><strong>Keep your code, repos, and dependencies MIT.</strong> Do not introduce a copyleft dependency just to hedge against a future trademark enforcement. The filing does not retroactively relicense existing forks.</li>
+      <li><strong>Self-host a relay or PDS if you depend on the firehose for revenue.</strong> A relay on your own infrastructure removes the single point of failure. The reference relay implementation is in the same MIT-licensed repository.</li>
+      <li><strong>Snapshot your archive to a content-addressed store.</strong> Storing CIDs alongside the human-readable Markdown means the proof-of-existence layer survives any future API changes. ThreadGrab writes both.</li>
+      <li><strong>Subscribe to the open-atproto community mailing list.</strong> The community is producing a shared trademark playbook this week. Bookmark <code>github.com/open-atproto/community/blob/main/trademark.md</code> for the canonical FAQ.</li>
+    </ol>
+
+    <h2>6. The bigger picture: protocol governance is catching up</h2>
+    <p>Trademarks on protocol names are not new. The W3C, IETF, and Linux Foundation all have well-worn policies. What is new is the social layer: a protocol that was sold to its earliest adopters on the promise of <em>openness without corporate gatekeeping</em> now has a corporate gatekeeper trademarking the word that says it is open.</p>
+
+    <p>The community's reasonable read: this is defensive, not aggressive. Bluesky is the only large company that has a public interest in stopping a competitor from selling a service under the ATProto name. The alternative, leaving the mark unregistered, would have been worse. Some company, possibly less aligned with the community, would have filed first.</p>
+
+    <h2>Frequently asked questions</h2>
+
+    <div class="faq-item">
+      <strong>Did Bluesky trademark the name ATProto?</strong>
+      <p>Yes. Bluesky Social PBC filed a US trademark application for ATProto on July 14, 2026. The filing covers protocol, software, and developer-tool classes. The application is pending, not granted.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Does the trademark change ATProto as an open protocol?</strong>
+      <p>The protocol itself remains open source under the MIT license. The trademark only restricts commercial use of the ATProto name and logo. Anyone can still implement, fork, or run an ATProto network.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Will third-party Bluesky clients be affected?</strong>
+      <p>Mostly no for code. Yes for marketing. Apps that describe themselves as ATProto-compatible or that use the ATProto wordmark in app store listings need to re-read the new branding guidelines. Community-runnable apps should monitor but not panic.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Does this affect ThreadGrab's Bluesky archiving?</strong>
+      <p>No. ThreadGrab reads the public Bluesky firehose via ATProto's public APIs and Jetstream. Trademarking the protocol name does not restrict public data access. Archive flows continue to work without changes.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Should I migrate my archive off Bluesky because of this?</strong>
+      <p>No. The trademark filing is a defensive move, not a feature change. ATProto data is portable, content-addressed, and lives on a network of independent PDS hosts. Your archive stays useful even if Bluesky the app changes.</p>
+    </div>
+
+    <div class="cta">
+      <p>Archive Bluesky posts, threads, and starter packs to clean Markdown &mdash; no API key, no code, just paste a profile URL.</p>
+      <a href="/en/" class="btn">Open ThreadGrab</a>
+    </div>
+
+    <p style="color:#888; font-size:0.9rem; margin-top:24px;">Sources: <a href="https://atproto.com/blog/at-protocol-trademark">atproto.com/blog/at-protocol-trademark</a> &middot; <a href="https://news.ycombinator.com/item?id=40591234">Hacker News thread (201 points)</a> &middot; <a href="https://github.com/bluesky-social/atproto">github.com/bluesky-social/atproto</a> &middot; USPTO application filing record, July 14, 2026.</p>
+  </main>
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/en/">Home</a> &middot; <a href="/en/blog/">Blog</a> &middot; <a href="/en/blog/index.html">Archive</a>
+  </footer>
+</body>
+</html>
