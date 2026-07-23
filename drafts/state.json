@@ -2055,6 +2055,174 @@
         "atproto",
         "merek-dagang"
       ]
+    },
+    {
+      "slug": "jack-dorsey-buzz-social-collaboration-2026",
+      "date": "2026-07-22",
+      "type": "analysis",
+      "lang": "en",
+      "file": "en/blog/jack-dorsey-buzz-social-collaboration-2026.html",
+      "url": "https://threadgrab.com/en/blog/jack-dorsey-buzz-social-collaboration-2026.html",
+      "title": "Jack Dorsey's Buzz 2026: Team Chat Meets AI Agents & Git",
+      "description": "Jack Dorsey's Block launches Buzz — combining team chat, AI agents, and Git hosting. Compare with X Articles, Bluesky, and LinkedIn for social creators.",
+      "heat_source": "⭐⭐ 2026-07-22 daily briefing #1 — Jack Dorsey's Block launches Buzz (team chat + AI agents + Git hosting, HN 213pts)",
+      "status": "published",
+      "published_at": "2026-07-22",
+      "providers_featured": [],
+      "primary_cta": "threadgrab cross-platform archive",
+      "qa_passed": {
+        "title_chars": 56,
+        "description_chars": 152,
+        "hreflang_alternates": 4,
+        "canonical_present": true,
+        "jsonld_blocks": 3,
+        "faq_count": 5,
+        "h2_count": 7,
+        "code_blocks": 2,
+        "raw_lt_in_body": 0
+      }
+    },
+    {
+      "slug": "buzz-jack-dorsey-colaboracao-social-2026",
+      "date": "2026-07-22",
+      "type": "analise",
+      "lang": "pt",
+      "file": "pt/blog/buzz-jack-dorsey-colaboracao-social-2026.html",
+      "url": "https://threadgrab.com/pt/blog/buzz-jack-dorsey-colaboracao-social-2026.html",
+      "title": "Buzz 2026 Jack Dorsey: Chat em Equipe, Agentes de IA e Git",
+      "description": "Block de Jack Dorsey lança Buzz — combina chat, agentes de IA e Git. Compare com X Articles, Bluesky e LinkedIn para criadores.",
+      "heat_source": "⭐⭐ 2026-07-22 briefing diário — Block de Jack Dorsey lança Buzz (chat + agentes IA + Git, HN 213pts)",
+      "status": "published",
+      "published_at": "2026-07-22",
+      "providers_featured": [],
+      "primary_cta": "threadgrab arquivo multiplataforma",
+      "qa_passed": {
+        "title_chars": 58,
+        "description_chars": 127,
+        "hreflang_alternates": 4,
+        "canonical_present": true,
+        "jsonld_blocks": 3,
+        "faq_count": 5,
+        "h2_count": 7,
+        "code_blocks": 2,
+        "raw_lt_in_body": 0
+      }
+    },
+    {
+      "slug": "buzz-jack-dorsey-kolaborasi-sosial-2026",
+      "date": "2026-07-22",
+      "type": "analisis",
+      "lang": "id",
+      "file": "id/blog/buzz-jack-dorsey-kolaborasi-sosial-2026.html",
+      "url": "https://threadgrab.com/id/blog/buzz-jack-dorsey-kolaborasi-sosial-2026.html",
+      "title": "Buzz 2026 Jack Dorsey: Obrolan Tim, Agen AI, dan Git",
+      "description": "Block milik Jack Dorsey meluncurkan Buzz — gabungkan obrolan tim, agen AI, dan hosting Git. Bandingkan dengan X Articles, Bluesky, dan LinkedIn.",
+      "heat_source": "⭐⭐ 2026-07-22 briefing harian — Block milik Jack Dorsey meluncurkan Buzz (obrolan tim + agen AI + Git, HN 213pts)",
+      "status": "published",
+      "published_at": "2026-07-22",
+      "providers_featured": [],
+      "primary_cta": "threadgrab arsip lintas platform",
+      "qa_passed": {
+        "title_chars": 52,
+        "description_chars": 144,
+        "hreflang_alternates": 4,
+        "canonical_present": true,
+        "jsonld_blocks": 3,
+        "faq_count": 5,
+        "h2_count": 7,
+        "code_blocks": 2,
+        "raw_lt_in_body": 0
+      }
+    },
+    {
+      "slug": "bluesky-long-form-vs-x-articles-linkedin-newsletter-2026",
+      "date": "2026-07-23",
+      "type": "analysis",
+      "lang": "en",
+      "file": "en/blog/bluesky-long-form-vs-x-articles-linkedin-newsletter-2026.html",
+      "url": "https://threadgrab.com/en/blog/bluesky-long-form-vs-x-articles-linkedin-newsletter-2026.html",
+      "title": "Bluesky Long-Form 2026 vs X Articles & LinkedIn Newsletter",
+      "description": "Bluesky pushes long-form to counter X Articles. Compare format, audience, AI tools & cross-posting workflow for creators in 2026.",
+      "heat_source": "⭐ 2026-07-23 daily briefing #1 (social) — Bluesky embraces long-form content to counter X Articles (TechCrunch 2026-05-28)",
+      "status": "published",
+      "published_at": "2026-07-23",
+      "providers_featured": [
+        "bluesky",
+        "x",
+        "linkedin"
+      ],
+      "primary_cta": "threadgrab cross-platform archive",
+      "qa_passed": {
+        "title_chars": 58,
+        "description_chars": 129,
+        "hreflang_alternates": 4,
+        "canonical_present": true,
+        "jsonld_blocks": 3,
+        "faq_count": 6,
+        "h2_count": 9,
+        "code_blocks": 1,
+        "raw_lt_in_body": 0
+      }
+    },
+    {
+      "slug": "bluesky-long-form-vs-x-articles-linkedin-newsletter-2026",
+      "date": "2026-07-23",
+      "type": "analise",
+      "lang": "pt",
+      "file": "pt/blog/bluesky-long-form-vs-x-articles-linkedin-newsletter-2026.html",
+      "url": "https://threadgrab.com/pt/blog/bluesky-long-form-vs-x-articles-linkedin-newsletter-2026.html",
+      "title": "Bluesky Long-Form 2026: X Articles e LinkedIn",
+      "description": "Bluesky investe em conteúdo longo para enfrentar o X Articles. Compare formato, público, ferramentas de IA e fluxo de publicação cruzada em 2026.",
+      "heat_source": "⭐ 2026-07-23 daily briefing #1 (social) — Bluesky embraces long-form content to counter X Articles (TechCrunch 2026-05-28)",
+      "status": "published",
+      "published_at": "2026-07-23",
+      "providers_featured": [
+        "bluesky",
+        "x",
+        "linkedin"
+      ],
+      "primary_cta": "threadgrab arquivo multiplataforma",
+      "qa_passed": {
+        "title_chars": 45,
+        "description_chars": 145,
+        "hreflang_alternates": 4,
+        "canonical_present": true,
+        "jsonld_blocks": 3,
+        "faq_count": 6,
+        "h2_count": 9,
+        "code_blocks": 1,
+        "raw_lt_in_body": 0
+      }
+    },
+    {
+      "slug": "bluesky-bentuk-panjang-vs-x-articles-linkedin-newsletter-2026",
+      "date": "2026-07-23",
+      "type": "analisis",
+      "lang": "id",
+      "file": "id/blog/bluesky-bentuk-panjang-vs-x-articles-linkedin-newsletter-2026.html",
+      "url": "https://threadgrab.com/id/blog/bluesky-bentuk-panjang-vs-x-articles-linkedin-newsletter-2026.html",
+      "title": "Bluesky Long-Form 2026 vs X Articles & LinkedIn Newsletter",
+      "description": "Bluesky mendorong konten panjang untuk menandingi X Articles. Bandingkan format, audiens, alat AI & alur lintas-posting untuk kreator di 2026.",
+      "heat_source": "⭐ 2026-07-23 daily briefing #1 (social) — Bluesky embraces long-form content to counter X Articles (TechCrunch 2026-05-28)",
+      "status": "published",
+      "published_at": "2026-07-23",
+      "providers_featured": [
+        "bluesky",
+        "x",
+        "linkedin"
+      ],
+      "primary_cta": "threadgrab arsip lintas platform",
+      "qa_passed": {
+        "title_chars": 58,
+        "description_chars": 142,
+        "hreflang_alternates": 4,
+        "canonical_present": true,
+        "jsonld_blocks": 3,
+        "faq_count": 6,
+        "h2_count": 9,
+        "code_blocks": 1,
+        "raw_lt_in_body": 0
+      }
     }
   ],
   "drafts": [
