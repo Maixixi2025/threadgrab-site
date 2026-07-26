@@ -31,6 +31,11 @@
     .lang-bar { margin-left: auto; display: flex; gap: 6px; }
     .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; transition: all 0.2s; }
     .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    .site-nav { display: flex; gap: 18px; margin: 0 auto; padding: 0 20px; max-width: 1100px; }
+    .site-nav a { color: #aaa; text-decoration: none; font-size: 0.9rem; padding: 6px 0; border-bottom: 2px solid transparent; transition: color 0.2s, border-color 0.2s; }
+    .site-nav a:hover { color: #20d5ec; border-bottom-color: #20d5ec; }
+    .site-nav a.active { color: #20d5ec; border-bottom-color: #20d5ec; }
+    @media (max-width: 720px) { .site-nav { gap: 12px; padding: 0 16px; overflow-x: auto; } .site-nav a { font-size: 0.85rem; white-space: nowrap; } header { flex-wrap: wrap; } }
     main { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 20px; text-align: center; }
     h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); margin-bottom: 10px; line-height: 1.2; }
     h1 span { color: #20d5ec; }
@@ -143,11 +148,18 @@
   <header>
     <div class="logo">Thread<span>Grab</span></div>
     <div class="lang-bar">
-      <a href="/en/" class="active">EN</a>
-      <a href="/id/">ID</a>
+      <a href="/en/">EN</a>
+      <a href="/id/" class="active">ID</a>
       <a href="/pt/">PT</a>
     </div>
   </header>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/id/" class="active">Beranda</a>
+    <a href="/id/blog/">Blog</a>
+    <a href="/id/about/">Tentang</a>
+    <a href="/id/privacy/">Privasi</a>
+    <a href="/id/#faq">FAQ</a>
+  </nav>
 
   <main>
     <h1>Download <span>Threads</span> Videos Instantly</h1>
