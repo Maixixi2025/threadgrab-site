@@ -21,6 +21,10 @@
 
 - [Caliper 2026: AI Agent Reliability for Social Content](https://threadgrab.com/en/blog/caliper-ai-agent-reliability-2026.html): Caliper measures pass@k for AI coding agents. How social creators use it to ship reliable X Articles, Bluesky posts, and LinkedIn drafts in 2026.
 
+- [AI Social Content 2026: Keep Your Human Voice | ThreadGrab](https://threadgrab.com/en/blog/ai-assisted-social-content-human-voice-2026.html): A four-pass workflow for using AI without flattening your voice across X Articles, Bluesky, and LinkedIn, with a Markdown archive.
+- [Conteúdo Social com Voz Humana em 2026 | ThreadGrab](https://threadgrab.com/pt/blog/conteudo-social-com-voz-humana-2026.html): Fluxo de quatro passes para usar IA sem apagar sua voz em X Articles, Bluesky e LinkedIn, com arquivo Markdown.
+- [Konten Sosial 2026: Pertahankan Suara Manusia | ThreadGrab](https://threadgrab.com/id/blog/konten-sosial-suara-manusia-2026.html): Alur empat tahap memakai AI tanpa menghapus suara Anda di X Articles, Bluesky, dan LinkedIn, dengan arsip Markdown.
+
 ## What ThreadGrab does
 
 - Fetches public X (Twitter) threads, articles, and posts as readable plain text or Markdown.

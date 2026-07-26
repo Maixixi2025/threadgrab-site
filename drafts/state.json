@@ -2223,6 +2223,168 @@
         "code_blocks": 1,
         "raw_lt_in_body": 0
       }
+    },
+    {
+      "slug": "search-traffic-decline-social-archive-2026",
+      "lang": "en",
+      "date": "2026-07-25",
+      "published_at": "2026-07-25",
+      "type": "guide",
+      "file": "en/blog/search-traffic-decline-social-archive-2026.html",
+      "url": "https://threadgrab.com/en/blog/search-traffic-decline-social-archive-2026.html",
+      "title": "Search Decline 2026: Archiving Is Creator Insurance",
+      "description": "Google search traffic is shrinking. Publishers consider opting out. Why social creators must diversify platforms and archive content as Markdown in 2026.",
+      "heat_source": "daily-briefing-2026-07-25: NiemanLab search traffic decline (publishers consider opting out of Google). Social creator angle: platform diversification + Markdown archiving as insurance against search-driven traffic volatility.",
+      "status": "published",
+      "providers_featured": [],
+      "primary_cta": "Try ThreadGrab",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ]
+    },
+    {
+      "slug": "search-traffic-decline-social-archive-2026",
+      "lang": "pt",
+      "date": "2026-07-25",
+      "published_at": "2026-07-25",
+      "type": "guide",
+      "file": "pt/blog/search-traffic-decline-social-archive-2026.html",
+      "url": "https://threadgrab.com/pt/blog/search-traffic-decline-social-archive-2026.html",
+      "title": "Declinio de Busca 2026: Arquivamento como Seguro do Criador",
+      "description": "O trafego de busca do Google encolhe. Publicadoras consideram sair. Por que criadores sociais devem diversificar e arquivar conteudo como Markdown em 2026.",
+      "heat_source": "daily-briefing-2026-07-25: NiemanLab search traffic decline (publishers consider opting out of Google). Social creator angle: platform diversification + Markdown archiving as insurance against search-driven traffic volatility.",
+      "status": "published",
+      "providers_featured": [],
+      "primary_cta": "Try ThreadGrab",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ]
+    },
+    {
+      "slug": "search-traffic-decline-social-archive-2026",
+      "lang": "id",
+      "date": "2026-07-25",
+      "published_at": "2026-07-25",
+      "type": "guide",
+      "file": "id/blog/search-traffic-decline-social-archive-2026.html",
+      "url": "https://threadgrab.com/id/blog/search-traffic-decline-social-archive-2026.html",
+      "title": "Penurunan Pencarian 2026: Pengarsipan sebagai Asuransi",
+      "description": "Lalu lintas pencarian Google menurun. Penerbit keluar dari Google. Kreator harus diversifikasi platform dan arsipkan konten sebagai Markdown.",
+      "heat_source": "daily-briefing-2026-07-25: NiemanLab search traffic decline (publishers consider opting out of Google). Social creator angle: platform diversification + Markdown archiving as insurance against search-driven traffic volatility.",
+      "status": "published",
+      "providers_featured": [],
+      "primary_cta": "Try ThreadGrab",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ]
+    },
+    {
+      "slug": "ai-assisted-social-content-human-voice-2026",
+      "date": "2026-07-26",
+      "type": "guide",
+      "lang": "en",
+      "file": "en/blog/ai-assisted-social-content-human-voice-2026.html",
+      "url": "https://threadgrab.com/en/blog/ai-assisted-social-content-human-voice-2026.html",
+      "title": "AI Social Content 2026: Keep Your Human Voice",
+      "description": "Use AI to draft X, Bluesky, and LinkedIn long-form posts without flattening your voice. Four-pass edits, platform checklist, and Markdown archive workflow.",
+      "heat_source": "daily-briefing-2026-07-26: social long-form AI-generation item; complementary editorial workflow angle for human voice, platform adaptation, and provenance archiving.",
+      "status": "published",
+      "published_at": "2026-07-26",
+      "providers_featured": [
+        "x",
+        "bluesky",
+        "linkedin"
+      ],
+      "primary_cta": "threadgrab",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "source_links": [
+        "https://bsky.social/about/support/community-guidelines",
+        "https://www.linkedin.com/help/linkedin/answer/a507663",
+        "https://help.x.com/en/using-x/x-articles"
+      ]
+    },
+    {
+      "slug": "conteudo-social-com-voz-humana-2026",
+      "date": "2026-07-26",
+      "type": "guide",
+      "lang": "pt",
+      "file": "pt/blog/conteudo-social-com-voz-humana-2026.html",
+      "url": "https://threadgrab.com/pt/blog/conteudo-social-com-voz-humana-2026.html",
+      "title": "Conteúdo Social com Voz Humana em 2026",
+      "description": "Use IA para rascunhar textos longos para X, Bluesky e LinkedIn sem apagar sua voz. Fluxo de quatro passes e arquivo Markdown.",
+      "heat_source": "daily-briefing-2026-07-26: social long-form AI-generation item; complementary editorial workflow angle for human voice, platform adaptation, and provenance archiving.",
+      "status": "published",
+      "published_at": "2026-07-26",
+      "providers_featured": [
+        "x",
+        "bluesky",
+        "linkedin"
+      ],
+      "primary_cta": "threadgrab",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "source_links": [
+        "https://bsky.social/about/support/community-guidelines",
+        "https://www.linkedin.com/help/linkedin/answer/a507663",
+        "https://help.x.com/en/using-x/x-articles"
+      ]
+    },
+    {
+      "slug": "konten-sosial-suara-manusia-2026",
+      "date": "2026-07-26",
+      "type": "guide",
+      "lang": "id",
+      "file": "id/blog/konten-sosial-suara-manusia-2026.html",
+      "url": "https://threadgrab.com/id/blog/konten-sosial-suara-manusia-2026.html",
+      "title": "Konten Sosial 2026: Pertahankan Suara Manusia",
+      "description": "Gunakan AI untuk menyusun konten panjang X, Bluesky, dan LinkedIn tanpa menghapus suara Anda. Alur empat tahap dan arsip Markdown.",
+      "heat_source": "daily-briefing-2026-07-26: social long-form AI-generation item; complementary editorial workflow angle for human voice, platform adaptation, and provenance archiving.",
+      "status": "published",
+      "published_at": "2026-07-26",
+      "providers_featured": [
+        "x",
+        "bluesky",
+        "linkedin"
+      ],
+      "primary_cta": "threadgrab",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "source_links": [
+        "https://bsky.social/about/support/community-guidelines",
+        "https://www.linkedin.com/help/linkedin/answer/a507663",
+        "https://help.x.com/en/using-x/x-articles"
+      ]
     }
   ],
   "drafts": [
@@ -2600,9 +2762,73 @@
       "primary_cta": "Buka ThreadGrab",
       "created_at": "2026-07-20T18:00:00+00:00",
       "read_time_min": 11
+    },
+    {
+      "slug": "x-articles-rich-media-premium-plus-2026",
+      "lang": "en",
+      "date": "2026-07-24",
+      "type": "guide",
+      "file": "en/blog/x-articles-rich-media-premium-plus-2026.html",
+      "url": "https://threadgrab.com/en/blog/x-articles-rich-media-premium-plus-2026.html",
+      "title": "X Articles Rich Media & Paywalls: Guide 2026 | ThreadGrab",
+      "title_en": "X Articles Rich Media & Paywalls: Guide 2026 | ThreadGrab",
+      "title_pt": "X Articles Mídia Rica e Paywalls: Guia 2026 | ThreadGrab",
+      "title_id": "X Articles Media Kaya & Paywall: Panduan 2026 | ThreadGrab",
+      "description": "X Articles adds rich media embedding and regional paywalls for Premium+ in 2026. How creators use long-form content for SEO and monetization.",
+      "description_pt": "X Articles adiciona incorporação de mídia rica e paywalls regionais para Premium+ em 2026. Como criadores usam conteúdo longo para SEO e monetização.",
+      "description_id": "X Articles menambahkan embed media kaya dan paywall regional untuk Premium+ pada 2026. Panduan kreator menggunakan konten panjang untuk SEO dan monetisasi.",
+      "heat_source": "daily-briefing 2026-07-24: X Articles rich media embedding + regional subscription paywalls for Premium+ announced via TechCrunch",
+      "primary_cta": "Try ThreadGrab — Capture X Articles as Markdown",
+      "status": "published",
+      "published_at": "2026-07-24",
+      "providers_featured": [],
+      "qa_passed": {
+        "title_chars": 57,
+        "description_chars": 141,
+        "hreflang_alternates": 4,
+        "canonical_present": true,
+        "jsonld_blocks": 3,
+        "faq_count": 6
+      },
+      "deployed": true,
+      "deployment_id": "846dc90a"
+    },
+    {
+      "slug": "x-articles-rich-media-premium-plus-2026",
+      "lang": "pt",
+      "date": "2026-07-24",
+      "type": "guide",
+      "file": "pt/blog/x-articles-rich-media-premium-plus-2026.html",
+      "url": "https://threadgrab.com/pt/blog/x-articles-rich-media-premium-plus-2026.html",
+      "title": "X Articles Mídia Rica e Paywalls: Guia 2026 | ThreadGrab",
+      "description": "X Articles adiciona incorporação de mídia rica e paywalls regionais para Premium+ em 2026. Como criadores usam conteúdo longo para SEO e monetização.",
+      "heat_source": "daily-briefing 2026-07-24: X Articles rich media embedding + regional subscription paywalls",
+      "primary_cta": "Experimente ThreadGrab",
+      "status": "published",
+      "published_at": "2026-07-24",
+      "providers_featured": []
+    },
+    {
+      "slug": "x-articles-rich-media-premium-plus-2026",
+      "lang": "id",
+      "date": "2026-07-24",
+      "type": "panduan",
+      "file": "id/blog/x-articles-rich-media-premium-plus-2026.html",
+      "url": "https://threadgrab.com/id/blog/x-articles-rich-media-premium-plus-2026.html",
+      "title": "X Articles Media Kaya & Paywall: Panduan 2026 | ThreadGrab",
+      "description": "X Articles menambahkan embed media kaya dan paywall regional untuk Premium+ pada 2026. Panduan kreator menggunakan konten panjang untuk SEO dan monetisasi.",
+      "heat_source": "daily-briefing 2026-07-24: X Articles rich media embedding + regional subscription paywalls",
+      "primary_cta": "Coba ThreadGrab",
+      "status": "published",
+      "published_at": "2026-07-24",
+      "providers_featured": []
     }
   ],
   "recent_topics": [
+    "ai-assisted-social-content-human-voice-2026",
+    "search-traffic-decline-social-archive-2026",
+    "x-articles-rich-media-premium-plus-2026",
+    "bluesky-long-form-vs-x-articles-linkedin-newsletter-2026",
     "tweet-md-browser-redirect-2026",
     "bluesky-longform-api-thirdparty-2026",
     "search-console-mcp-seo-2026",
@@ -2611,8 +2837,6 @@
     "x-hosted-mcp-creator-workflow-2026",
     "atproto-bluesky-data-portability-2026",
     "caliper-ai-agent-reliability-2026",
-    "rss-revival-2026-bluesky-feeds",
-    "satteri-rust-markdown-pipeline-2026",
     "notion-to-markdown-migration-2026",
     "x-articles-creator-guide-2026",
     "social-media-content-backup-strategy-2026",
@@ -2620,19 +2844,16 @@
     "social-content-ownership-local-archiving-2026",
     "tweet-md-vs-threadgrab-2026",
     "crawlie-seo-crawler-tools-2026",
-    "quikdown-markdown-tools-2026",
-    "social-content-markdown-pipeline-2026",
-    "social-content-repurposing-tools-2026",
-    "twitter-trend-scraping-tools-2026",
-    "x-articles-freedom-of-reach-2026"
+    "quikdown-markdown-tools-2026"
   ],
-  "last_run": "2026-07-18T18:00:00+00:00",
-  "last_published_slug": "tweet-md-browser-redirect-2026",
+  "last_run": "2026-07-26",
+  "last_publish": "2026-07-26",
+  "last_published_slug": "ai-assisted-social-content-human-voice-2026",
   "last_draft_slug": "patreon-ai-bot-block-compliance-threadgrab-2026",
-  "last_published_at": "2026-07-13T09:00:00+08:00",
+  "last_published_at": "2026-07-26",
   "drafts_count": 12,
-  "published_count": 99,
-  "last_topic_picked": "Patreon AI Bot Block: 5 Compliance Strategies (3-lang)",
-  "last_pick_source": "daily-briefing 2026-07-18 (TechCrunch 2026-07-17)",
+  "published_count": 117,
+  "last_topic_picked": "AI-assisted social content with human voice and provenance archive",
+  "last_pick_source": "daily briefing 2026-07-26 social ⭐",
   "last_drafted_slug": "search-console-mcp-seo-2026"
 }
