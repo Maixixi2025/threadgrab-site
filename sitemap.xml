@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://threadgrab.com/en/blog/screenpipe-social-content-capture-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/screenpipe-social-content-capture-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/screenpipe-captura-conteudo-social-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/screenpipe-capture-konten-sosial-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/screenpipe-social-content-capture-2026.html"/>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://threadgrab.com/pt/blog/screenpipe-captura-conteudo-social-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/screenpipe-social-content-capture-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/screenpipe-captura-conteudo-social-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/screenpipe-capture-konten-sosial-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/screenpipe-social-content-capture-2026.html"/>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://threadgrab.com/id/blog/screenpipe-capture-konten-sosial-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/screenpipe-social-content-capture-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/screenpipe-captura-conteudo-social-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/screenpipe-capture-konten-sosial-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/screenpipe-social-content-capture-2026.html"/>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <url>
     <loc>https://threadgrab.com/en/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/"/>
@@ -607,6 +639,36 @@
     <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/konten-sosial-suara-manusia-2026.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/ai-assisted-social-content-human-voice-2026.html"/>
     <lastmod>2026-07-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://threadgrab.com/en/blog/writemark-markdown-inline-editor-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/writemark-markdown-inline-editor-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/writemark-editor-markdown-embutido-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/writemark-editor-markdown-sebaris-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/writemark-markdown-inline-editor-2026.html"/>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://threadgrab.com/pt/blog/writemark-editor-markdown-embutido-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/writemark-markdown-inline-editor-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/writemark-editor-markdown-embutido-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/writemark-editor-markdown-sebaris-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/writemark-markdown-inline-editor-2026.html"/>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://threadgrab.com/id/blog/writemark-editor-markdown-sebaris-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/writemark-markdown-inline-editor-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/writemark-editor-markdown-embutido-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/writemark-editor-markdown-sebaris-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/writemark-markdown-inline-editor-2026.html"/>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

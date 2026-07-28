@@ -24,6 +24,9 @@
 - [AI Social Content 2026: Keep Your Human Voice | ThreadGrab](https://threadgrab.com/en/blog/ai-assisted-social-content-human-voice-2026.html): A four-pass workflow for using AI without flattening your voice across X Articles, Bluesky, and LinkedIn, with a Markdown archive.
 - [Conteúdo Social com Voz Humana em 2026 | ThreadGrab](https://threadgrab.com/pt/blog/conteudo-social-com-voz-humana-2026.html): Fluxo de quatro passes para usar IA sem apagar sua voz em X Articles, Bluesky e LinkedIn, com arquivo Markdown.
 - [Konten Sosial 2026: Pertahankan Suara Manusia | ThreadGrab](https://threadgrab.com/id/blog/konten-sosial-suara-manusia-2026.html): Alur empat tahap memakai AI tanpa menghapus suara Anda di X Articles, Bluesky, dan LinkedIn, dengan arsip Markdown.
+- [Writemark 2026: Embed Markdown Editor Anywhere | ThreadGrab](https://threadgrab.com/en/blog/writemark-markdown-inline-editor-2026.html): A zero-dependency web component for inline Markdown editing. A creator guide to embedding Writemark on X, Bluesky, and LinkedIn archive pages.
+- [Writemark 2026: Editor Markdown Embutido | ThreadGrab](https://threadgrab.com/pt/blog/writemark-editor-markdown-embutido-2026.html): Web component sem dependências para edição Markdown embutida. Guia para criadores incorporarem Writemark em páginas de arquivo X, Bluesky e LinkedIn.
+- [Writemark 2026: Editor Markdown Sebaris | ThreadGrab](https://threadgrab.com/id/blog/writemark-editor-markdown-sebaris-2026.html): Komponen web tanpa dependensi untuk penyuntingan Markdown sebaris. Panduan kreator menyematkan Writemark di halaman arsip X, Bluesky, dan LinkedIn.
 
 ## What ThreadGrab does
 
