@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patreon Bloqueia Bots IA: 5 Estratégias de Conformidade</title>
+  <meta name="description" content="Patreon agora bloqueia bots de IA via Cloudflare. Cinco estratégias para manter o threadgrab em conformidade em 2026.">
+  <meta name="keywords" content="Patreon bloqueio bots IA, Cloudflare AI Crawl Control, conformidade Patreon 2026, threadgrab raspagem criadores, robots.txt bots IA, Pay Per Crawl, crawlers uso misto">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/pt/blog/patreon-bloqueio-bot-ia-conformidade-threadgrab-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/patreon-ai-bot-block-compliance-threadgrab-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/patreon-bloqueio-bot-ia-conformidade-threadgrab-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/patreon-blokir-bot-ai-kepatuhan-threadgrab-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/patreon-ai-bot-block-compliance-threadgrab-2026.html">
+  <meta property="og:title" content="Patreon Bloqueia Bots IA: 5 Estratégias de Conformidade">
+  <meta property="og:description" content="Patreon agora bloqueia bots de IA via Cloudflare. Cinco estratégias para manter o threadgrab em conformidade em 2026.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/pt/blog/patreon-bloqueio-bot-ia-conformidade-threadgrab-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Patreon Bloqueia Bots IA: 5 Estratégias de Conformidade">
+  <meta name="twitter:description" content="Patreon agora bloqueia bots de IA via Cloudflare. Cinco estratégias para manter o threadgrab em conformidade em 2026.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+    @media (max-width: 640px) { main { padding: 24px 16px 40px; } table { font-size: 0.8rem; } th, td { padding: 8px; } }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Patreon Bloqueia Bots IA: 5 Estratégias de Conformidade",
+  "description": "Patreon agora bloqueia bots de IA via Cloudflare. Cinco estratégias para manter o threadgrab em conformidade em 2026.",
+  "datePublished": "2026-07-18",
+  "dateModified": "2026-07-18",
+  "author": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/pt/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/pt/"
+  },
+  "mainEntityOfPage": "https://threadgrab.com/pt/blog/patreon-bloqueio-bot-ia-conformidade-threadgrab-2026.html",
+  "inLanguage": "pt"
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Início",
+      "item": "https://threadgrab.com/pt/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://threadgrab.com/pt/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Patreon Bloqueia Bots IA: 5 Estratégias de Conformidade"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O que o Patreon realmente mudou em 17 de julho de 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O Patreon trocou de pedir aos bots de IA para parar de raspar via robots.txt para bloqueá-los ativamente usando o AI Crawl Control da Cloudflare. No próprio teste deles, as tentativas semanais de crawlers de treinamento caíram de milhares para zero. O chefe de produto do Patreon Drew Rowny enquadrou a política como: \"Consentimento não deveria depender de o scraper escolher se comportar.\""
+      }
+    },    {
+      "@type": "Question",
+      "name": "O bloqueio do Patreon afeta mecanismos de busca como Google ou Bing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. O Patreon disse explicitamente que ainda permitirá bots que indexam páginas e enviam usuários de volta à plataforma. O bloqueio mira crawlers de treinamento de IA (classe GPTBot, ClaudeBot, Common Crawl), não indexadores de busca. A política da Cloudflare faz a mesma distinção: indexadores de busca são desbloqueados, rastreadores de treinamento são bloqueados."
+      }
+    },    {
+      "@type": "Question",
+      "name": "O que é o Cloudflare AI Crawl Control?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "É um filtro de impressão digital e comportamento que inspeciona cada requisição e pontua contra um modelo por bot. Rastreadores de treinamento são bloqueados na borda, antes que a requisição chegue ao servidor de origem do publisher. Diferente de allowlists de IP ou filtros de User-Agent, o veredito é difícil de falsificar sem mudar o comportamento real do bot."
+      }
+    },    {
+      "@type": "Question",
+      "name": "Raspar posts do Patreon ainda é legal se eu obedecer o robots.txt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Robots.txt é consultivo, não uma permissão legal. No caso do Patreon, raspar apesar de um disallow no robots.txt já era uma violação dos termos da plataforma. Após a aplicação de 17 de julho, o mesmo comportamento também pode acionar bloqueio ativo na borda. O caminho seguro é classificar a requisição como archive_for_user (permitido) ou training (bloqueado ou pago via Pay Per Crawl) e agir de acordo."
+      }
+    },    {
+      "@type": "Question",
+      "name": "Como o ThreadGrab se mantém em conformidade com a nova política do Patreon?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O ThreadGrab expõe um registro /api/policy que mapeia domínio da plataforma ao seu nível atual de enforcement, classifica por padrão cada fetch como archive_for_user, e escreve um log de auditoria por fetch chaveado por intent. A combinação mantém um agente MCP do ThreadGrab dentro do bucket permitido sem o autor do agente precisar classificar manualmente cada requisição."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/pt/">Thread<span>Grab</span></a>
+    <div class="lang-bar"><a href="https://threadgrab.com/en/blog/patreon-ai-bot-block-compliance-threadgrab-2026.html">EN</a><a href="https://threadgrab.com/pt/blog/patreon-bloqueio-bot-ia-conformidade-threadgrab-2026.html" class="active">PT</a><a href="https://threadgrab.com/id/blog/patreon-blokir-bot-ai-kepatuhan-threadgrab-2026.html">ID</a></div>
+  </header>
+  <main>
+    <div class="breadcrumb"><a href="/pt/">Início</a> &rsaquo; <a href="/pt/blog/">Blog</a> &rsaquo; Patreon Bloqueia Bots IA: 5 Estratégias de Conformidade</div>
+    <article>
+      <h1>Patreon <span>Bloqueia Bots IA</span>: 5 Estratégias de Conformidade</h1>
+      <div class="meta">18 de Julho, 2026 &middot; 11 min read &middot; Compliance</div>
+      <h2>Patreon acabou de trocar de pedir por bloquear bots de IA</h2>
+<p>Em 17 de julho de 2026, Sarah Perez, da TechCrunch, relatou que o <strong>Patreon</strong> não está mais pedindo educadamente que os rastreadores de IA parem de raspar o conteúdo dos criadores. A plataforma agora está bloqueando ativamente. O Patreon estendeu sua parceria com a <strong>Cloudflare</strong> para usar o <em>AI Crawl Control</em> &mdash; um filtro por impressão digital e comportamento que mira rastreadores de treinamento por user-agent e padrão de requisição, não apenas por IP ou respeito ao <code>robots.txt</code>.</p>
+<p>A mudança importa para toda ferramenta de conteúdo social que raspa posts longos. <strong>robots.txt</strong> sempre foi uma dica inicial, não uma cerca rígida. Os próprios dados do Patreon confirmaram: em testes pré-lançamento, as tentativas semanais de rastreadores individuais de treinamento caíram de <em>"milhares de tentativas para zero"</em> assim que o bloqueio entrou no ar. Os rastreadores estavam ignorando o <code>robots.txt</code> e raspando mesmo assim. Drew Rowny, chefe de produto do Patreon, resumiu a nova postura: <em>"Consentimento não deveria depender de o scraper escolher se comportar."</em></p>
+<p>Para uma ferramenta como <strong>ThreadGrab</strong> &mdash; que arquiva X Articles, LinkedIn Newsletters, posts longos do Bluesky e (onde permitido) posts de plataformas de criadores &mdash; a superfície de conformidade ficou mais afiada. Este guia cobre cinco estratégias que mantêm um raspador de conteúdo social dentro das regras em 2026.</p>
+<h2>Por que a atualização de política do Patreon era inevitável</h2>
+<p>O paywall do Patreon há muito escondia a maior parte do conteúdo dos criadores dos rastreadores. O redesenho recente do Home Feed e a introdução dos <em>Quips</em> &mdash; posts curtos do Patreon no estilo tweet &mdash; mudaram isso. Mais conteúdo agora fica em superfícies publicamente indexáveis, o que significa que mais rastreadores começaram a bater. O Patreon precisava de uma defesa que funcionasse mesmo quando o rastreador em questão estava ignorando o <code>robots.txt</code>.</p>
+<p>O <strong>AI Crawl Control</strong> da Cloudflare entregou essa defesa. Ele inspeciona a requisição, pontua contra o modelo de comportamento por bot e bloqueia rastreadores de treinamento na borda &mdash; antes que a requisição chegue à origem do Patreon. Não há lista de IPs permitidos para enganar nem cabeçalho <code>User-Agent</code> para falsificar que inverta o veredito.</p>
+<p>Dois produtos da Cloudflare ancoraram o lançamento. Primeiro, o marketplace <em>Pay Per Crawl</em> permite que publishers cobrem bots de IA por requisição &mdash; um caminho de receita opt-in para sites que querem ser raspados. Segundo, uma atualização de política da Cloudflare em julho de 2026 bloqueia <strong>crawlers de uso misto</strong> (aqueles que indexam para busca e treinam seus próprios modelos) por padrão em qualquer página que hospede anúncios. A aplicação do Patreon se apoia sobre ambos, em camadas com suas próprias regras de impressão digital.</p>
+<h2>Cinco estratégias de conformidade para raspadores de conteúdo social em 2026</h2>
+<p>Esses cinco padrões funcionam se você roda um raspador hospedado, um arquivador self-hosted ou um agente que chama uma API de terceiros como o endpoint MCP do ThreadGrab.</p>
+<h2>Estratégia 1: Trate robots.txt como consultivo, nunca como autorização</h2>
+<p>O próprio resultado de teste do Patreon &mdash; <em>milhares de tentativas para zero</em> &mdash; é a prova. <code>robots.txt</code> é honrado por rastreadores bem-comportados e ignorado pelo resto. Um raspador que executa contra um disallow explícito não está dependendo de consentimento; está dependendo da boa vontade do operador.</p>
+<p>O modelo certo é tratar <code>robots.txt</code> como <em>um sinal</em> entre muitos: classe de user-agent, frequência de requisições, taxa de 404s, variância do tempo de resposta. Se qualquer um desses sinais indicar que o alvo não quer a requisição, o raspador deve recuar &mdash; independentemente do que o arquivo diz.</p>
+<h2>Estratégia 2: Mantenha um registro de opt-out por plataforma</h2>
+<p>O AI Crawl Control da Cloudflare permite que publishers marquem sua política de bots na borda. O Patreon está usando. Substack, Beehiiv e uma lista crescente de plataformas de criadores também. Construa um registro no seu raspador que mapeie domínio da plataforma &rarr; versão da política, e re-verifique antes de cada fetch:</p>
+<pre><code>// config/scraper-policy.json
+{
+  "patreon.com": {
+    "policy": "block_training_bots",
+    "enforced_by": "cloudflare_ai_crawl_control",
+    "fetch_ok_for": ["search_indexers", "user_session_browsers"]
+  },
+  "substack.com": {
+    "policy": "block_training_bots",
+    "enforced_by": "cloudflare_pay_per_crawl"
+  }
+}</code></pre>
+<p>Codificar a política no seu loop de fetch é frágil. A lista de plataformas que a aplicam muda mensalmente, e o nível de enforcement (bloqueio, pay-per-crawl, default de uso misto) varia. O endpoint <code>/api/policy</code> do ThreadGrab expõe o registro atual para que qualquer cliente &mdash; raspador hospedado, agente MCP ou extensão de navegador &mdash; possa buscá-lo uma vez na inicialização e cacheá-lo pela sessão.</p>
+<h2>Estratégia 3: Distinga rastreadores de indexação de busca dos de treinamento</h2>
+<p>O Patreon disse explicitamente que ainda permitirá bots que indexam páginas e enviam usuários de volta à plataforma. A mesma distinção está embutida na política da Cloudflare: <em>indexadores de mecanismos de busca</em> são desbloqueados; <em>rastreadores de treinamento</em> (classe GPTBot, classe ClaudeBot, classe Common Crawl) são bloqueados.</p>
+<p>Seu raspador precisa fazer a mesma distinção. Se você está puxando um post do Patreon para <em>enviar um usuário de volta a ele</em> (por exemplo, feed de curadoria, ferramenta de arquivo, índice de busca), você está no bucket permitido. Se está puxando para <em>treinar um modelo com ele</em>, você está no bucket bloqueado &mdash; e o único caminho legal é Pay Per Crawl, com consentimento explícito da plataforma e cobrança por requisição.</p>
+<pre><code># Classify the request before it goes out
+def classify(intent: str, target: str) -> str:
+    if intent == "archive_for_user":
+        return "allowed"
+    if intent == "training":
+        if platform_supports_ppc(target):
+            return "paid_ppc"
+        return "blocked"
+    if intent == "search_index":
+        return "allowed_with_attribution"
+    raise ValueError(f"unknown intent: {intent}")</code></pre>
+<h2>Estratégia 4: Troque limitação por frequência por limitação por comportamento</h2>
+<p>A etiqueta clássica de raspador &mdash; uma requisição por segundo, user-agent aleatorizado, tratamento educado de <code>Retry-After</code> &mdash; é irrelevante para o novo bloqueador do Patreon. O AI Crawl Control olha para o <em>formato</em> da requisição, não para a <em>taxa</em>. Um raspador educado de 0,5 RPS que se anuncia como GPTBot ainda é bloqueado.</p>
+<p>O controle certo é comportamento. Combine cadência e padrão de uma sessão real de usuário: aqueça com um hit na homepage, siga o grafo natural de links, ocasionalmente clique para o perfil de um criador antes de puxar posts. Um raspador que se comporta como bot é sinalizado independentemente da educação. A camada de session-warming do ThreadGrab faz isso automaticamente &mdash; o agente não se anuncia até ter atingido três páginas indexáveis primeiro.</p>
+<h2>Estratégia 5: Mantenha um rastro de auditoria que sobreviva a um pedido de takedown</h2>
+<p>O bloqueio do Patreon vai gerar avisos de takedown para clientes não conformes. Se seu raspador receber um, você precisa de um rastro de auditoria que prove (a) qual intent você classificou a requisição, (b) qual entrada do registro de política você verificou, e (c) se o <code>robots.txt</code> da plataforma permitia a requisição no momento do fetch. Sem esse rastro, cada takedown vira uma afirmação binária.</p>
+<pre><code># audit/2026-07-17-patreon-fetch.jsonl
+{"ts": "2026-07-17T18:42:01Z",
+ "target": "patreon.com/posts/xyz",
+ "intent": "archive_for_user",
+ "policy_check": {"robots.txt": "allow",
+                   "registry": "patreon=block_training_bots"},
+ "classification": "allowed",
+ "ua_announced": "ThreadGrab/1.4 (+https://threadgrab.com)"}</code></pre>
+<p>JSONL append-only, chaveado por timestamp, é o formato mais simples que sobrevive a uma solicitação legal. ThreadGrab escreve um desses por fetch e expõe um endpoint <code>/api/audit</code> que permite consultar seu próprio tráfego por data e intent.</p>
+<h2>Como isso muda o que o ThreadGrab faz</h2>
+<p>O papel do ThreadGrab em 2026 é mais restrito do que era em 2025, e esse é o ponto. O mandato da ferramenta é arquivar as partes públicas voltadas para o exterior de plataformas de criadores &mdash; X Articles, posts longos do Bluesky, LinkedIn Newsletters, Patreon Quips &mdash; para as pessoas que escolhem seguir esses criadores, não para treinar modelos no trabalho deles.</p>
+<p>Três mudanças de produto foram enviadas no último mês para alinhar com a política do Patreon. Primeiro, o registro de política agora é exposto em <code>/api/policy</code> para que qualquer cliente possa confirmar se um fetch está no bucket permitido, pago ou bloqueado antes de sair. Segundo, cada fetch grava uma linha de log de auditoria chaveada por intent, para que um aviso de takedown tenha uma resposta por requisição anexada. Terceiro, o endpoint MCP do ThreadGrab tem como padrão a classificação <em>archive_for_user</em>, que mantém fetches conduzidos por agente dentro do bucket permitido sem o autor do agente precisar pensar nisso.</p>
+<h2>FAQ</h2>
+<div class="faq-item"><strong>O que o Patreon realmente mudou em 17 de julho de 2026?</strong><p>O Patreon trocou de pedir aos bots de IA para parar de raspar via robots.txt para bloqueá-los ativamente usando o AI Crawl Control da Cloudflare. No próprio teste deles, as tentativas semanais de crawlers de treinamento caíram de milhares para zero. O chefe de produto do Patreon Drew Rowny enquadrou a política como: "Consentimento não deveria depender de o scraper escolher se comportar."</p></div>
+<div class="faq-item"><strong>O bloqueio do Patreon afeta mecanismos de busca como Google ou Bing?</strong><p>Não. O Patreon disse explicitamente que ainda permitirá bots que indexam páginas e enviam usuários de volta à plataforma. O bloqueio mira crawlers de treinamento de IA (classe GPTBot, ClaudeBot, Common Crawl), não indexadores de busca. A política da Cloudflare faz a mesma distinção: indexadores de busca são desbloqueados, rastreadores de treinamento são bloqueados.</p></div>
+<div class="faq-item"><strong>O que é o Cloudflare AI Crawl Control?</strong><p>É um filtro de impressão digital e comportamento que inspeciona cada requisição e pontua contra um modelo por bot. Rastreadores de treinamento são bloqueados na borda, antes que a requisição chegue ao servidor de origem do publisher. Diferente de allowlists de IP ou filtros de User-Agent, o veredito é difícil de falsificar sem mudar o comportamento real do bot.</p></div>
+<div class="faq-item"><strong>Raspar posts do Patreon ainda é legal se eu obedecer o robots.txt?</strong><p>Robots.txt é consultivo, não uma permissão legal. No caso do Patreon, raspar apesar de um disallow no robots.txt já era uma violação dos termos da plataforma. Após a aplicação de 17 de julho, o mesmo comportamento também pode acionar bloqueio ativo na borda. O caminho seguro é classificar a requisição como archive_for_user (permitido) ou training (bloqueado ou pago via Pay Per Crawl) e agir de acordo.</p></div>
+<div class="faq-item"><strong>Como o ThreadGrab se mantém em conformidade com a nova política do Patreon?</strong><p>O ThreadGrab expõe um registro /api/policy que mapeia domínio da plataforma ao seu nível atual de enforcement, classifica por padrão cada fetch como archive_for_user, e escreve um log de auditoria por fetch chaveado por intent. A combinação mantém um agente MCP do ThreadGrab dentro do bucket permitido sem o autor do agente precisar classificar manualmente cada requisição.</p></div>
+
+      <div class="cta">
+        <p>Quer um arquivo de um clique dos posts Patreon-X-LinkedIn de qualquer criador? </p>
+        <a class="btn" href="/pt/">Abrir o ThreadGrab</a>
+      </div>
+    </article>
+  </main>
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/pt/">Início</a> &middot; <a href="/pt/blog/">Blog</a> &middot; <a href="/pt/about/">Sobre</a> &middot; <a href="/pt/privacy/">Privacidade</a>
+    <br>Não afiliado a X Corp., Bluesky Social PBC, LinkedIn Corporation ou Microsoft Corporation.
+  </footer>
+</body>
+</html>

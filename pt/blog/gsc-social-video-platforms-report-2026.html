@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relatório GSC Redes Sociais 2026: Reddit + YouTube + TikTok</title>
+  <meta name="description" content="O Google combina dados de Reddit, YouTube e TikTok no GSC. Arquive o post e meça o alcance entre plataformas com sidecars do threadgrab.">
+  <meta name="keywords" content="relatório GSC redes sociais, GSC Reddit YouTube TikTok, análise multiplataforma 2026, sidecar threadgrab, impressões sociais, novo relatório Search Console">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/pt/blog/gsc-social-video-platforms-report-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/gsc-social-video-platforms-report-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/gsc-social-video-platforms-report-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/gsc-social-video-platforms-report-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/gsc-social-video-platforms-report-2026.html">
+  <meta property="og:title" content="Relatório GSC Redes Sociais 2026: Reddit + YouTube + TikTok">
+  <meta property="og:description" content="O Google combina dados de Reddit, YouTube e TikTok no GSC. Arquive o post e meça o alcance entre plataformas com sidecars do threadgrab.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/pt/blog/gsc-social-video-platforms-report-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Relatório GSC Redes Sociais 2026: Reddit + YouTube + TikTok">
+  <meta name="twitter:description" content="O Google combina dados de Reddit, YouTube e TikTok no GSC. Arquive o post e meça o alcance entre plataformas com sidecars do threadgrab.">
+  <meta name="twitter:site" content="@threadgrab">
+  <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Relatório GSC Redes Sociais 2026: Reddit + YouTube + TikTok", "description": "O Google combina dados de Reddit, YouTube e TikTok no GSC. Arquive o post e meça o alcance entre plataformas com sidecars do threadgrab.", "datePublished": "2026-07-20", "dateModified": "2026-07-20", "author": {"@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/"}, "publisher": {"@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/"}, "mainEntityOfPage": "https://threadgrab.com/pt/blog/gsc-social-video-platforms-report-2026.html", "inLanguage": "pt-BR"}
+  </script>
+  <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://threadgrab.com/pt/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/pt/blog/"}, {"@type": "ListItem", "position": 3, "name": "Relatório GSC Redes Sociais 2026: Reddit + YouTube + TikTok"}]}
+  </script>
+  <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Identifique o post candidato no GSC.</strong> Abra o relatório Social &amp; Video, ordene por impressões e escolha as três primeiras linhas que vieram de uma plataforma para a qual se faz cross-post ativamente.</li> <li><strong>Resolva cada linha até a URL de origem.</strong> Clique na linha do GSC para ver a URL da plataforma que ela referencia. No Reddit, é o permalink canônico do comentário; no YouTube, é a URL do embed; no TikTok, é a URL do post com o parâmetro de query <code>?_t=</code> que fixa um timestamp específico.</li> <li><strong>Capture cada URL de origem com o threadgrab.</strong> Execute a CLI de captura para cada URL com a flag <code>--platform</code> definida explicitamente, para que o sidecar registre qual schema foi usado. O sidecar herdará automaticamente os campos de ID específicos da plataforma.</li> <li><strong>Anote a linha do GSC em um índice local.</strong> Anexe o ID específico da plataforma, o timestamp de captura e o caminho do arquivo sidecar a um CSV local indexado pela URL da linha do GSC. É isso que permite cruzar uma linha do novo relatório com o conteúdo arquivado exato em três cliques em vez de trinta.</li> <li><strong>Reexecute no limite de 90 dias.</strong> O relatório do GSC mantém 90 dias de histórico; se um post gerou um pico relevante na segunda metade dessa janela, capture-o novamente com um sidecar novo, de modo que o arquivo registre o snapshot pós-engajamento em vez do snapshot de pico.</li> </ol>  <h2>Conecte a CLI de captura ao relatório do GSC</h2>  <p>A CLI de captura aceita um arquivo de manifesto, que é a forma mais limpa de preencher retroativamente várias linhas a partir de uma única exportação do GSC. Um manifesto é um arquivo JSON com uma entrada por linha, e o campo URL da entrada é o que é capturado. Veja um exemplo mínimo:</p>  <pre><code>{   \"rows\": [     {       \"gsc_url\": \"https://example.com/blog/data-pipeline-postgres-vs-mongo/\",       \"social_url\": \"https://www.reddit.com/r/dataengineering/comments/1abc23z/why_we_switched/\",       \"platform\": \"reddit\",       \"impressions\": 1843,       \"clicks\": 41,       \"captured_at\": \"2026-07-20T08:12:00Z\"     },     {       \"gsc_url\": \"https://example.com/blog/postgres-tuning-2026/\",       \"social_url\": \"https://www.youtube.com/watch?v=dQw4w9WgXcQ\",       \"platform\": \"youtube\",       \"impressions\": 612,       \"clicks\": 18,       \"captured_at\": \"2026-07-20T08:12:05Z\"     }   ] } </code></pre>  <p>Execute <code>threadgrab capture-manifest manifest.json --output ./archive/</code> e a CLI captura cada URL social, grava um sidecar JSON ao lado de cada exportação em Markdown e devolve um recibo de manifesto com a lista dos caminhos dos arquivos sidecar. Encaminhe o recibo para o seu CSV local do passo 4 e terá um cruzamento completo em uma única passada.</p>  <h2>Mapeie o relatório ao seu arquivo com uma única consulta SQL</h2>  <p>Depois de algumas semanas de exportações do GSC e algumas centenas de sidecars, o cruzamento vira uma única consulta SQL. O exemplo abaixo assume que tanto a exportação do GSC Social &amp; Video quanto o índice de sidecars já foram carregados em uma instância local do DuckDB:</p>  <pre><code>SELECT   gsc.date,   gsc.social_url,   gsc.impressions,   gsc.clicks,   sidecar.platform_id,   sidecar.title_at_capture,   sidecar.sidecar_path FROM gsc_social_video AS gsc LEFT JOIN sidecar_index AS sidecar   ON gsc.social_url = sidecar.canonical_url WHERE gsc.date &gt;= '2026-07-01'   AND gsc.impressions &gt; 50 ORDER BY gsc.date DESC, gsc.impressions DESC;</code></pre>  <p>O <code>LEFT JOIN</code> é o detalhe importante: as linhas em que <code>sidecar.platform_id</code> é NULL são exatamente aquelas em que se falhou na hora de arquivar, e são as linhas em que não é possível reconstruir a citação de volta a um post real. Uma auditoria mensal sobre a contagem de NULL mostra se o arquivo está acompanhando o novo relatório e fornece uma meta de SLA clara para o próximo mês.</p>  <h2>O que ainda não funciona</h2>  <p>O novo relatório do GSC é opt-in por propriedade, e a liberação vem sendo gradual: em 20 de julho, a aba está visível para propriedades que receberam pelo menos uma impressão de Reddit rich result nos últimos 30 dias, mas não para propriedades cujo único tráfego de social-video veio de embeds do YouTube. O Google não publicou uma data para o caminho exclusivo de YouTube; enquanto isso, propriedades que dependem só de embeds do YouTube não verão o relatório mesmo após a adesão. Se a propriedade estiver nesse caso, o contorno é adicionar uma seção amigável ao Reddit (uma thread de comunidade, um AMA, um post de discussão) ao ritmo de publicação, de modo que o relatório tenha pelo menos uma fonte de dados qualificada.</p>  <p>Outra lacuna: o relatório ainda não expõe divisões por país para impressões de social-video. Se a audiência for global e o principal pico de tráfego veio de uma thread do Reddit em alemão, não dá para segmentar no nível de país; só se obtém a contagem combinada de impressões. O Google sinalizou que as divisões por país estão no roadmap, mas não comprometeu uma data. Até lá, o sidecar JSON é o único lugar em que o país de origem fica registrado, porque a CLI de captura geolocaliza cada URL por meio do IP público no momento da captura.</p>  <h2>Cross-link do cluster: cobertura cross-platform do threadgrab</h2>  <p>O novo relatório do GSC se apoia em um conjunto de funcionalidades do threadgrab lançadas nos últimos dois meses. O fluxo de captura específico do Reddit está documentado no guia de <a href=\"/en/blog/social-content-cross-posting-workflow-2026.html\">workflow de cross-posting</a>, que mostra como capturar uma thread do Reddit, uma cadeia de comentários do YouTube e uma newsletter do LinkedIn em uma única sessão de arquivamento. O schema do sidecar é detalhado na referência de <a href=\"/en/blog/social-content-markdown-pipeline-2026.html\">pipeline Markdown</a>, incluindo o detalhamento campo a campo do que é capturado e do que é omitido. E o problema de retenção de longo prazo &mdash; o mesmo que o novo relatório do GSC torna mais visível ao limitar o histórico a 90 dias &mdash; é o assunto do guia de <a href=\"/en/blog/social-media-content-backup-strategy-2026.html\">estratégia de backup</a>.</p>  <h2>Perguntas Frequentes</h2>  <div class=\"faq-item\"> <strong>O novo relatório do GSC conta impressões de usuários não logados?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. O relatório Social &amp; Video usa o mesmo crawl logged-out do Googlebot que move o restante do Search Console, então conta toda thread pública do Reddit, embed do YouTube e post do TikTok que o Googlebot consegue buscar. Posts privados do TikTok, threads restritas de subreddits e vídeos do YouTube com restrição de idade ficam de fora."}},{"@type": "Question", "name": "Quanto tempo leva para um novo post social aparecer no relatório?", "acceptedAnswer": {"@type": "Answer", "text": "De três a cinco dias é o típico para threads do Reddit, em que o gatilho de rich result dispara quando um post recebe seu terceiro upvote. Embeds do YouTube podem levar até 14 dias porque o pipeline de processamento de vídeo do Google é assíncrono. Posts do TikTok geralmente ficam visíveis em 48 horas, mas apenas se o post estiver público e sem restrição de idade."}},{"@type": "Question", "name": "É possível exportar o novo relatório para CSV?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. O botão de exportação no canto superior direito do relatório baixa um CSV com uma linha por par (date, social_url). O CSV inclui impressões, cliques, CTR e posição média, mas não inclui os campos de sidecar que o threadgrab adiciona. Os campos de sidecar vivem no arquivo local; una os dois por <code>social_url</code>."}},{"@type": "Question", "name": "O relatório agrega várias URLs da mesma thread?", "acceptedAnswer": {"@type": "Answer", "text": "Não. Cada permalink do Reddit, vídeo do YouTube e URL de post do TikTok é reportado como uma linha própria, mesmo quando pertencem à mesma thread ou ao mesmo vídeo. Se uma thread do Reddit tem 30 comentários e cada comentário linka para o blog, o relatório mostra 30 linhas. O filtro <code>source_platform</code> agrupa visualmente, mas não agrega as métricas."}},{"@type": "Question", "name": "O novo relatório vai substituir a aba de Resultados da pesquisa existente?", "acceptedAnswer": {"@type": "Answer", "text": "Não. A aba Social &amp; Video é aditiva. A aba tradicional de Resultados da pesquisa continua reportando impressões do Google Search propriamente dito, e as duas abas não contam em duplicidade: uma impressão que aparece em ambas é registrada apenas na aba de Resultados da pesquisa. A aba Social &amp; Video serve para impressões que se originam no Reddit, YouTube ou TikTok e se propagam até a propriedade pela superfície de social rich results do Google."}}]}
+  </script>
+  <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+    @media (max-width: 640px) { main { padding: 24px 16px 40px; } table { font-size: 0.8rem; } th, td { padding: 8px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/pt/">Thread<span>Grab</span></a>
+    <div class="lang-bar"><a href="https://threadgrab.com/en/blog/gsc-social-video-platforms-report-2026.html">EN</a><a href="https://threadgrab.com/pt/blog/gsc-social-video-platforms-report-2026.html" class="active">PT</a><a href="https://threadgrab.com/id/blog/gsc-social-video-platforms-report-2026.html">ID</a></div>
+  </header>
+  <main>
+    <div class="breadcrumb"><a href="/pt/">Home</a> &rsaquo; <a href="/pt/blog/">Blog</a> &rsaquo; <span>Relatório GSC 2026</span></div>
+    <article>
+      <div class="article-meta">20 de Julho de 2026 &middot; 11 min de leitura &middot; Guia</div>
+      <h1>Relatório GSC Redes Sociais 2026: Reddit + YouTube + TikTok</h1>
+<p>O Google disponibilizou discretamente um novo relatório de desempenho "Social &amp; Video Platforms" no Google Search Console em 7 de julho de 2026. A nova visão combina impressões, cliques e métricas de rich results do Reddit, YouTube e TikTok em uma única aba &mdash; a primeira vez que o GSC consolida sinais sociais cross-platform em uma única visualização. Para criadores que dividem suas publicações entre um canal no YouTube, um pipeline de vídeos curtos no TikTok e uma presença em comunidades no Reddit, a visão combinada responde à pergunta que três dashboards separados não conseguiam responder: qual plataforma está realmente movendo a audiência, e qual post vale arquivar para o playbook do próximo trimestre?</p>
+
+<p>O relatório é opt-in por propriedade e limitado a propriedades que já recebem impressões de social rich results. Uma vez ativado, retorna até 90 dias de dados e agrupa posts por domínio, não por URL &mdash; uma escolha deliberada que espelha como o GSC já trata agregações de fóruns e páginas de discussão. Esse agrupamento tem um efeito colateral que impacta toda estratégia de arquivamento: a URL que se arquiva hoje pode não ser a URL que o GSC reportará amanhã. Para atribuir um pico de tráfego de cauda longa a uma thread específica do TikTok ou do Reddit, é preciso capturar a URL <em>e</em> o timestamp <em>e</em> o snapshot de engajamento em uma única ação de arquivamento. Essa é exatamente a lacuna que o sidecar JSON do threadgrab foi construído para fechar.</p>
+
+<h2>O que entra no novo relatório Social &amp; Video do GSC</h2>
+
+<p>O lançamento de 7 de julho traz três integrações de plataforma prontas para uso &mdash; discussões do Reddit, vídeos do YouTube e posts públicos do TikTok &mdash; e o modelo de API subjacente é genérico o suficiente para que o Google possa estendê-lo a newsletters do LinkedIn, Reels do Instagram e feeds do Bluesky sem alterar a interface. Cada linha do novo relatório representa uma unidade de conteúdo de nível superior (uma thread do Reddit, um vídeo do YouTube, um post do TikTok), e as colunas expõem impressões, cliques, CTR e posição média da mesma forma que a aba tradicional de Resultados da pesquisa.</p>
+
+<p>O campo mais interessante, porém, é o novo filtro <code>source_platform</code>. Sem ele, é possível ver que o site recebeu 2.800 impressões de social-video ontem; com ele, é possível dividir esse número em 1.900 de threads do Reddit, 700 de embeds do YouTube e 200 de embeds do TikTok. Criadores que publicam um resumo semanal em seu próprio domínio, mas que é citado no Reddit, que mantêm uma série no YouTube com embed em seu blog e que fazem cross-post de conteúdo curto no TikTok finalmente têm um único lugar para comparar os três.</p>
+
+<h2>Por que a visão combinada importa para os criadores</h2>
+
+<p>Até agora, a atribuição cross-platform para criadores de conteúdo vivia em três dashboards separados, dois dos quais (Reddit, TikTok) nem sequer expunham dados de impressões. O YouTube Studio já oferece impressões há anos, mas somente para superfícies de busca e sugeridos &mdash; não para os embeds que aparecem em blogs de terceiros. O Reddit Ads Manager expõe apenas impressões promovidas. A superfície de analytics do TikTok mostra apenas visualizações dentro da própria plataforma. Nenhuma delas conversa com as outras, e nenhuma mapeia de forma limpa de volta ao blog post ou à newsletter que originalmente produziu o conteúdo.</p>
+
+<p>O novo relatório do GSC não resolve todas as lacunas &mdash; ele ainda mede o que acontece na <em>sua</em> propriedade no índice do Google, não o que acontece nas próprias plataformas. Mas é o primeiro lugar onde um criador consegue ver a pegada combinada de descoberta social de uma única peça de conteúdo, e isso basta para tornar significativo o relatório de fim de trimestre. Se um artigo sobre um padrão de nicho de engenharia de dados for citado em uma thread do Reddit, embedado em um tutorial do YouTube e costurado em um recap do TikTok, o novo relatório mostra essa pegada combinada; os dashboards por plataforma mostram três histórias parciais.</p>
+
+<h2>Três plataformas, três regras de retenção</h2>
+
+<p>O novo relatório herda semânticas de retenção muito diferentes de cada fonte subjacente, e a forma como o GSC as normaliza importa para a construção do seu arquivo:</p>
+
+<table>
+<thead>
+<tr><th>Plataforma</th><th>Tempo de vida da URL</th><th>Retenção no GSC</th><th>Gatilho de arquivamento</th></tr>
+</thead>
+<tbody>
+<tr><td>Threads do Reddit</td><td>Remoção suave após 7 dias de inatividade</td><td>Até 90 dias</td><td>Capturar em até 48 horas do pico de engajamento</td></tr>
+<tr><td>Vídeos do YouTube</td><td>Permanente, salvo se removido</td><td>Até 90 dias</td><td>Capturar no primeiro marco de 10 mil visualizações</td></tr>
+<tr><td>Posts do TikTok</td><td>Permanente, salvo se removido</td><td>Até 90 dias</td><td>Capturar no pico de 24 horas (geralmente T+18 horas)</td></tr>
+</tbody>
+</table>
+
+<p>O limite de 90 dias do GSC é a restrição dominante: se esperar mais de três meses para capturar um post que gerou tráfego em março, o relatório ainda mostrará a linha, mas não será possível atribuí-la à URL de origem porque a fonte pode ter sido deletada, editada ou soterrada. Combine a linha do GSC com o sidecar JSON do dia em que o post atingiu o pico, e terá uma trilha de auditoria pronta para citação que sobrevive às políticas de exclusão de qualquer uma das três plataformas.</p>
+
+<h2>O problema do desvio de URL</h2>
+
+<p>O Reddit edita os slugs das URLs a cada renomeação promovida por moderadores. O YouTube mantém o mesmo ID de vídeo, mas atualiza título, descrição e capítulos in loco, de modo que uma linha do GSC indexada por um ID de vídeo de 12 caracteres pode apontar para um vídeo com três títulos diferentes na hora em que se consulta. Os nomes de usuário do TikTok podem mudar a qualquer momento sem invalidar a URL, mas o próprio post pode ser marcado como privado, deletado ou substituído por um repost com um novo ID. Nenhuma dessas situações aparece como 404 no GSC &mdash; a linha simplesmente continua reportando impressões em uma URL que já não corresponde ao conteúdo.</p>
+
+<p>A solução é capturar a tríplice identidade do post no momento do arquivamento: o ID da plataforma (ID da thread do Reddit, ID do vídeo do YouTube, ID do post do TikTok), a URL canônica no momento da captura e o título. O sidecar JSON que o threadgrab emite já faz isso para Reddit e YouTube; para TikTok, captura a URL do post mais o handle do criador no momento da captura, de modo que é possível resolver a URL de volta a uma pessoa mesmo após uma mudança de handle.</p>
+
+<h2>Construa o sidecar em cinco passos</h2>
+
+<p>Este é o fluxo de trabalho que combina o novo relatório do GSC com um sidecar do threadgrab em cinco passos repetíveis:</p>
+
+<ol>
+<li><strong>Identifique o post candidato no GSC.</strong> Abra o relatório Social &amp; Video, ordene por impressões e escolha as três primeiras linhas que vieram de uma plataforma para a qual se faz cross-post ativamente.</li>
+<li><strong>Resolva cada linha até a URL de origem.</strong> Clique na linha do GSC para ver a URL da plataforma que ela referencia. No Reddit, é o permalink canônico do comentário; no YouTube, é a URL do embed; no TikTok, é a URL do post com o parâmetro de query <code>?_t=</code> que fixa um timestamp específico.</li>
+<li><strong>Capture cada URL de origem com o threadgrab.</strong> Execute a CLI de captura para cada URL com a flag <code>--platform</code> definida explicitamente, para que o sidecar registre qual schema foi usado. O sidecar herdará automaticamente os campos de ID específicos da plataforma.</li>
+<li><strong>Anote a linha do GSC em um índice local.</strong> Anexe o ID específico da plataforma, o timestamp de captura e o caminho do arquivo sidecar a um CSV local indexado pela URL da linha do GSC. É isso que permite cruzar uma linha do novo relatório com o conteúdo arquivado exato em três cliques em vez de trinta.</li>
+<li><strong>Reexecute no limite de 90 dias.</strong> O relatório do GSC mantém 90 dias de histórico; se um post gerou um pico relevante na segunda metade dessa janela, capture-o novamente com um sidecar novo, de modo que o arquivo registre o snapshot pós-engajamento em vez do snapshot de pico.</li>
+</ol>
+
+<h2>Conecte a CLI de captura ao relatório do GSC</h2>
+
+<p>A CLI de captura aceita um arquivo de manifesto, que é a forma mais limpa de preencher retroativamente várias linhas a partir de uma única exportação do GSC. Um manifesto é um arquivo JSON com uma entrada por linha, e o campo URL da entrada é o que é capturado. Veja um exemplo mínimo:</p>
+
+<pre><code>{
+  "rows": [
+    {
+      "gsc_url": "https://example.com/blog/data-pipeline-postgres-vs-mongo/",
+      "social_url": "https://www.reddit.com/r/dataengineering/comments/1abc23z/why_we_switched/",
+      "platform": "reddit",
+      "impressions": 1843,
+      "clicks": 41,
+      "captured_at": "2026-07-20T08:12:00Z"
+    },
+    {
+      "gsc_url": "https://example.com/blog/postgres-tuning-2026/",
+      "social_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "platform": "youtube",
+      "impressions": 612,
+      "clicks": 18,
+      "captured_at": "2026-07-20T08:12:05Z"
+    }
+  ]
+}
+</code></pre>
+
+<p>Execute <code>threadgrab capture-manifest manifest.json --output ./archive/</code> e a CLI captura cada URL social, grava um sidecar JSON ao lado de cada exportação em Markdown e devolve um recibo de manifesto com a lista dos caminhos dos arquivos sidecar. Encaminhe o recibo para o seu CSV local do passo 4 e terá um cruzamento completo em uma única passada.</p>
+
+<h2>Mapeie o relatório ao seu arquivo com uma única consulta SQL</h2>
+
+<p>Depois de algumas semanas de exportações do GSC e algumas centenas de sidecars, o cruzamento vira uma única consulta SQL. O exemplo abaixo assume que tanto a exportação do GSC Social &amp; Video quanto o índice de sidecars já foram carregados em uma instância local do DuckDB:</p>
+
+<pre><code>SELECT
+  gsc.date,
+  gsc.social_url,
+  gsc.impressions,
+  gsc.clicks,
+  sidecar.platform_id,
+  sidecar.title_at_capture,
+  sidecar.sidecar_path
+FROM gsc_social_video AS gsc
+LEFT JOIN sidecar_index AS sidecar
+  ON gsc.social_url = sidecar.canonical_url
+WHERE gsc.date &gt;= '2026-07-01'
+  AND gsc.impressions &gt; 50
+ORDER BY gsc.date DESC, gsc.impressions DESC;</code></pre>
+
+<p>O <code>LEFT JOIN</code> é o detalhe importante: as linhas em que <code>sidecar.platform_id</code> é NULL são exatamente aquelas em que se falhou na hora de arquivar, e são as linhas em que não é possível reconstruir a citação de volta a um post real. Uma auditoria mensal sobre a contagem de NULL mostra se o arquivo está acompanhando o novo relatório e fornece uma meta de SLA clara para o próximo mês.</p>
+
+<h2>O que ainda não funciona</h2>
+
+<p>O novo relatório do GSC é opt-in por propriedade, e a liberação vem sendo gradual: em 20 de julho, a aba está visível para propriedades que receberam pelo menos uma impressão de Reddit rich result nos últimos 30 dias, mas não para propriedades cujo único tráfego de social-video veio de embeds do YouTube. O Google não publicou uma data para o caminho exclusivo de YouTube; enquanto isso, propriedades que dependem só de embeds do YouTube não verão o relatório mesmo após a adesão. Se a propriedade estiver nesse caso, o contorno é adicionar uma seção amigável ao Reddit (uma thread de comunidade, um AMA, um post de discussão) ao ritmo de publicação, de modo que o relatório tenha pelo menos uma fonte de dados qualificada.</p>
+
+<p>Outra lacuna: o relatório ainda não expõe divisões por país para impressões de social-video. Se a audiência for global e o principal pico de tráfego veio de uma thread do Reddit em alemão, não dá para segmentar no nível de país; só se obtém a contagem combinada de impressões. O Google sinalizou que as divisões por país estão no roadmap, mas não comprometeu uma data. Até lá, o sidecar JSON é o único lugar em que o país de origem fica registrado, porque a CLI de captura geolocaliza cada URL por meio do IP público no momento da captura.</p>
+
+<h2>Cross-link do cluster: cobertura cross-platform do threadgrab</h2>
+
+<p>O novo relatório do GSC se apoia em um conjunto de funcionalidades do threadgrab lançadas nos últimos dois meses. O fluxo de captura específico do Reddit está documentado no guia de <a href="/en/blog/social-content-cross-posting-workflow-2026.html">workflow de cross-posting</a>, que mostra como capturar uma thread do Reddit, uma cadeia de comentários do YouTube e uma newsletter do LinkedIn em uma única sessão de arquivamento. O schema do sidecar é detalhado na referência de <a href="/en/blog/social-content-markdown-pipeline-2026.html">pipeline Markdown</a>, incluindo o detalhamento campo a campo do que é capturado e do que é omitido. E o problema de retenção de longo prazo &mdash; o mesmo que o novo relatório do GSC torna mais visível ao limitar o histórico a 90 dias &mdash; é o assunto do guia de <a href="/en/blog/social-media-content-backup-strategy-2026.html">estratégia de backup</a>.</p>
+
+<h2>Perguntas Frequentes</h2>
+
+<div class="faq-item">
+<strong>O novo relatório do GSC conta impressões de usuários não logados?</strong>
+<p>Sim. O relatório Social &amp; Video usa o mesmo crawl logged-out do Googlebot que move o restante do Search Console, então conta toda thread pública do Reddit, embed do YouTube e post do TikTok que o Googlebot consegue buscar. Posts privados do TikTok, threads restritas de subreddits e vídeos do YouTube com restrição de idade ficam de fora.</p>
+</div>
+
+<div class="faq-item">
+<strong>Quanto tempo leva para um novo post social aparecer no relatório?</strong>
+<p>De três a cinco dias é o típico para threads do Reddit, em que o gatilho de rich result dispara quando um post recebe seu terceiro upvote. Embeds do YouTube podem levar até 14 dias porque o pipeline de processamento de vídeo do Google é assíncrono. Posts do TikTok geralmente ficam visíveis em 48 horas, mas apenas se o post estiver público e sem restrição de idade.</p>
+</div>
+
+<div class="faq-item">
+<strong>É possível exportar o novo relatório para CSV?</strong>
+<p>Sim. O botão de exportação no canto superior direito do relatório baixa um CSV com uma linha por par (date, social_url). O CSV inclui impressões, cliques, CTR e posição média, mas não inclui os campos de sidecar que o threadgrab adiciona. Os campos de sidecar vivem no arquivo local; una os dois por <code>social_url</code>.</p>
+</div>
+
+<div class="faq-item">
+<strong>O relatório agrega várias URLs da mesma thread?</strong>
+<p>Não. Cada permalink do Reddit, vídeo do YouTube e URL de post do TikTok é reportado como uma linha própria, mesmo quando pertencem à mesma thread ou ao mesmo vídeo. Se uma thread do Reddit tem 30 comentários e cada comentário linka para o blog, o relatório mostra 30 linhas. O filtro <code>source_platform</code> agrupa visualmente, mas não agrega as métricas.</p>
+</div>
+
+<div class="faq-item">
+<strong>O novo relatório vai substituir a aba de Resultados da pesquisa existente?</strong>
+<p>Não. A aba Social &amp; Video é aditiva. A aba tradicional de Resultados da pesquisa continua reportando impressões do Google Search propriamente dito, e as duas abas não contam em duplicidade: uma impressão que aparece em ambas é registrada apenas na aba de Resultados da pesquisa. A aba Social &amp; Video serve para impressões que se originam no Reddit, YouTube ou TikTok e se propagam até a propriedade pela superfície de social rich results do Google.</p>
+</div>
+
+<div class="cta">
+<p>Quer um sidecar do threadgrab que sobreviva à próxima janela de 90 dias? Capture o post, o ID da plataforma e a linha do GSC em uma única passada de arquivamento.</p>
+<a class="btn" href="/en/">Abrir ThreadGrab</a>
+</div>
+    </article>
+  </main>
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/pt/">Início</a> &middot; <a href="/pt/blog/">Blog</a> &middot; <a href="/pt/about/">Sobre</a> &middot; <a href="/pt/privacy/">Privacidade</a>
+    <br>Não afiliado a X Corp., Bluesky Social PBC, LinkedIn Corporation ou Microsoft Corporation.
+  </footer>
+</body>
+</html>

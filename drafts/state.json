@@ -2652,6 +2652,141 @@
         "word_count": 1190,
         "file_size_bytes": 20482
       }
+    },
+    {
+      "slug": "privatemarkdown-135-formats-local-conversion-2026",
+      "date": "2026-07-29",
+      "type": "guide",
+      "lang": "en",
+      "file": "en/blog/privatemarkdown-135-formats-local-conversion-2026.html",
+      "url": "https://threadgrab.com/en/blog/privatemarkdown-135-formats-local-conversion-2026.html",
+      "title": "PrivateMarkdown 2026: 135+ Local Format Conversion",
+      "description": "PrivateMarkdown converts 135+ formats to Markdown in-browser with zero uploads. A guide for social creators building a privacy-first content archive.",
+      "heat_source": "⭐ 2026-07-29 daily briefing social — PrivateMarkdown 135+ format local browser conversion launch, applies to threadgrab social creator + markdown archive privacy-first use case",
+      "tags": [
+        "PrivateMarkdown",
+        "Markdown conversion",
+        "browser-based converter",
+        "content archiving",
+        "privacy-first",
+        "X archive",
+        "Bluesky archive",
+        "LinkedIn archive",
+        "ThreadGrab"
+      ],
+      "status": "published",
+      "created_at": "2026-07-29",
+      "published_at": "2026-07-29",
+      "providers_featured": [
+        "PrivateMarkdown",
+        "ThreadGrab"
+      ],
+      "primary_cta": "Try ThreadGrab (en)",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "qa_passed": {
+        "title_chars": 50,
+        "description_chars": 149,
+        "hreflang_alternates": 4,
+        "canonical_present": true,
+        "jsonld_blocks": 3,
+        "faq_count": 5,
+        "h2_count": 9,
+        "code_blocks": 3,
+        "word_count": 2090,
+        "file_size_bytes": 21050
+      }
+    },
+    {
+      "slug": "privatemarkdown-135-formatos-conversao-local-2026",
+      "date": "2026-07-29",
+      "type": "guia",
+      "lang": "pt",
+      "file": "pt/blog/privatemarkdown-135-formatos-conversao-local-2026.html",
+      "url": "https://threadgrab.com/pt/blog/privatemarkdown-135-formatos-conversao-local-2026.html",
+      "title": "PrivateMarkdown 2026: 135+ Formatos de Conversão Local",
+      "description": "PrivateMarkdown converte 135+ formatos para Markdown no navegador sem uploads. Guia prático para criadores com foco em privacidade.",
+      "heat_source": "⭐ 2026-07-29 daily briefing social — PrivateMarkdown 135+ formatos conversão local no navegador",
+      "tags": [
+        "PrivateMarkdown",
+        "conversão Markdown",
+        "conversor navegador",
+        "arquivamento",
+        "privacidade",
+        "ThreadGrab"
+      ],
+      "status": "published",
+      "created_at": "2026-07-29",
+      "published_at": "2026-07-29",
+      "providers_featured": [
+        "PrivateMarkdown",
+        "ThreadGrab"
+      ],
+      "primary_cta": "Experimente o ThreadGrab (pt)",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "qa_passed": {
+        "title_chars": 54,
+        "description_chars": 131,
+        "hreflang_alternates": 4,
+        "canonical_present": true,
+        "jsonld_blocks": 3,
+        "faq_count": 5,
+        "h2_count": 9,
+        "code_blocks": 3,
+        "word_count": 2272,
+        "file_size_bytes": 22562
+      }
+    },
+    {
+      "slug": "privatemarkdown-135-format-konversi-lokal-2026",
+      "date": "2026-07-29",
+      "type": "panduan",
+      "lang": "id",
+      "file": "id/blog/privatemarkdown-135-format-konversi-lokal-2026.html",
+      "url": "https://threadgrab.com/id/blog/privatemarkdown-135-format-konversi-lokal-2026.html",
+      "title": "PrivateMarkdown 2026: 135+ Format Konversi Lokal",
+      "description": "PrivateMarkdown mengonversi 135+ format file ke Markdown di peramban tanpa unggahan. Panduan praktis untuk kreator membangun arsip konten dengan privasi.",
+      "heat_source": "⭐ 2026-07-29 daily briefing social — PrivateMarkdown 135+ format konversi lokal di peramban",
+      "tags": [
+        "PrivateMarkdown",
+        "konversi Markdown",
+        "konverter peramban",
+        "pengarsipan",
+        "privasi",
+        "ThreadGrab"
+      ],
+      "status": "published",
+      "created_at": "2026-07-29",
+      "published_at": "2026-07-29",
+      "providers_featured": [
+        "PrivateMarkdown",
+        "ThreadGrab"
+      ],
+      "primary_cta": "Coba ThreadGrab (id)",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "qa_passed": {
+        "title_chars": 48,
+        "description_chars": 153,
+        "hreflang_alternates": 4,
+        "canonical_present": true,
+        "jsonld_blocks": 3,
+        "faq_count": 5,
+        "h2_count": 9,
+        "code_blocks": 3,
+        "word_count": 2030,
+        "file_size_bytes": 22121
+      }
     }
   ],
   "drafts": [

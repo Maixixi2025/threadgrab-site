@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laporan GSC Lintas Platform 2026: Reddit + YouTube + TikTok</title>
+  <meta name="description" content="Google menggabungkan data Reddit, YouTube, dan TikTok di GSC. Arsipkan post dan ukur jangkauan lintas platform dengan sidecar threadgrab.">
+  <meta name="keywords" content="laporan GSC media sosial, GSC Reddit YouTube TikTok, analitik lintas platform 2026, sidecar threadgrab, impresi platform sosial, laporan Search Console baru">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/id/blog/gsc-social-video-platforms-report-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/gsc-social-video-platforms-report-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/gsc-social-video-platforms-report-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/gsc-social-video-platforms-report-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/gsc-social-video-platforms-report-2026.html">
+  <meta property="og:title" content="Laporan GSC Lintas Platform 2026: Reddit + YouTube + TikTok">
+  <meta property="og:description" content="Google menggabungkan data Reddit, YouTube, dan TikTok di GSC. Arsipkan post dan ukur jangkauan lintas platform dengan sidecar threadgrab.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/id/blog/gsc-social-video-platforms-report-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Laporan GSC Lintas Platform 2026: Reddit + YouTube + TikTok">
+  <meta name="twitter:description" content="Google menggabungkan data Reddit, YouTube, dan TikTok di GSC. Arsipkan post dan ukur jangkauan lintas platform dengan sidecar threadgrab.">
+  <meta name="twitter:site" content="@threadgrab">
+  <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Laporan GSC Lintas Platform 2026: Reddit + YouTube + TikTok", "description": "Google menggabungkan data Reddit, YouTube, dan TikTok di GSC. Arsipkan post dan ukur jangkauan lintas platform dengan sidecar threadgrab.", "datePublished": "2026-07-20", "dateModified": "2026-07-20", "author": {"@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/id/"}, "publisher": {"@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/id/"}, "mainEntityOfPage": "https://threadgrab.com/id/blog/gsc-social-video-platforms-report-2026.html", "inLanguage": "id"}
+  </script>
+  <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://threadgrab.com/id/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/id/blog/"}, {"@type": "ListItem", "position": 3, "name": "Laporan GSC Lintas Platform 2026: Reddit + YouTube + TikTok"}]}
+  </script>
+  <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Identifikasi postingan kandidat di GSC.</strong> Buka laporan Social &amp; Video, urutkan berdasarkan impression, pilih tiga baris teratas yang berasal dari platform yang aktif Anda gunakan untuk cross-post.</li> <li><strong>Petakan setiap baris ke URL sumber.</strong> Klik baris GSC untuk melihat URL platform yang dirujuknya. Untuk Reddit, ini adalah permalink komentar kanonik; untuk YouTube, ini adalah URL embed; untuk TikTok, ini adalah URL postingan dengan parameter query <code>?_t=</code> yang mengunci pada timestamp tertentu.</li> <li><strong>Tangkap setiap URL sumber dengan threadgrab.</strong> Jalankan capture CLI terhadap setiap URL dengan flag <code>--platform</code> yang diatur secara eksplisit agar sidecar mencatat schema mana yang digunakan. Sidecar akan mewarisi bidang ID spesifik platform secara otomatis.</li> <li><strong>Anotasikan baris GSC dalam indeks lokal.</strong> Tambahkan ID spesifik platform, timestamp penangkapan, dan path file sidecar ke CSV lokal yang di-key pada URL baris GSC. Inilah yang memungkinkan Anda melakukan cross-reference baris dari laporan baru kembali ke konten arsip yang tepat dalam tiga klik, bukan tiga puluh.</li> <li><strong>Jalankan ulang pada batas 90 hari.</strong> Laporan GSC menyimpan 90 hari riwayat; jika sebuah postingan mendorong lonjakan berarti di paruh kedua jendela tersebut, tangkap ulang dengan sidecar baru agar arsip mencatat snapshot pasca-engagement, bukan snapshot puncak.</li> </ol>  <h2>Hubungkan capture CLI ke laporan GSC</h2>  <p>Capture CLI menerima file manifest, yang merupakan cara paling bersih untuk back-fill banyak baris dari satu ekspor GSC. Manifest adalah file JSON dengan satu entri per baris, dan bidang URL pada entri itulah yang ditangkap. Berikut contoh minimal:</p>  <pre><code>{   \"rows\": [     {       \"gsc_url\": \"https://example.com/blog/data-pipeline-postgres-vs-mongo/\",       \"social_url\": \"https://www.reddit.com/r/dataengineering/comments/1abc23z/why_we_switched/\",       \"platform\": \"reddit\",       \"impressions\": 1843,       \"clicks\": 41,       \"captured_at\": \"2026-07-20T08:12:00Z\"     },     {       \"gsc_url\": \"https://example.com/blog/postgres-tuning-2026/\",       \"social_url\": \"https://www.youtube.com/watch?v=dQw4w9WgXcQ\",       \"platform\": \"youtube\",       \"impressions\": 612,       \"clicks\": 18,       \"captured_at\": \"2026-07-20T08:12:05Z\"     }   ] } </code></pre>  <p>Jalankan <code>threadgrab capture-manifest manifest.json --output ./archive/</code> dan CLI akan menangkap setiap URL sosial, menulis sidecar JSON di samping setiap ekspor Markdown, serta mengembalikan tanda terima manifest yang mencantumkan path file sidecar. Pipe tanda terima tersebut ke CSV lokal dari langkah 4 dan Anda memiliki cross-reference lengkap dalam satu lintasan.</p>  <h2>Petakan laporan ke arsip dengan satu query SQL</h2>  <p>Setelah memiliki beberapa minggu ekspor GSC dan beberapa ratus sidecar, cross-reference menjadi satu query SQL. Contoh di bawah mengasumsikan Anda sudah memuat ekspor GSC Social &amp; Video dan indeks sidecar ke dalam instance DuckDB lokal:</p>  <pre><code>SELECT   gsc.date,   gsc.social_url,   gsc.impressions,   gsc.clicks,   sidecar.platform_id,   sidecar.title_at_capture,   sidecar.sidecar_path FROM gsc_social_video AS gsc LEFT JOIN sidecar_index AS sidecar   ON gsc.social_url = sidecar.canonical_url WHERE gsc.date &gt;= '2026-07-01'   AND gsc.impressions &gt; 50 ORDER BY gsc.date DESC, gsc.impressions DESC;</code></pre>  <p><code>LEFT JOIN</code> adalah detail yang penting: baris di mana <code>sidecar.platform_id</code> bernilai NULL adalah baris yang terlewat pada saat pengarsipan, dan baris-baris tersebut adalah baris di mana Anda tidak bisa merekonstruksi sitasi kembali ke postingan nyata. Audit bulanan terhadap jumlah NULL memberi tahu apakah arsip Anda mampu mengimbangi laporan baru, dan memberi Anda target SLA yang jelas untuk bulan depan.</p>  <h2>Apa yang masih belum berfungsi</h2>  <p>Laporan GSC baru bersifat opt-in per properti, dan rollout-nya bertahap: per 20 Juli, tab terlihat untuk properti yang menerima setidaknya satu impression rich-result Reddit dalam 30 hari sebelumnya, tetapi tidak untuk properti yang satu-satunya traffic social-video datang dari embed YouTube. Google belum mempublikasikan tanggal untuk jalur khusus YouTube; sementara itu, properti yang hanya mengandalkan embed YouTube tidak akan melihat laporan tersebut bahkan setelah pendaftaran. Jika properti Anda termasuk dalam kategori tersebut, solusinya adalah menambahkan bagian yang ramah Reddit (thread komunitas, AMA, postingan diskusi) ke cadence penerbitan Anda agar laporan memiliki setidaknya satu sumber data yang memenuhi syarat.</p>  <p>Celah lain: laporan ini belum menampilkan pemisahan per negara untuk impression social-video. Jika audiens Anda bersifat global dan lonjakan traffic teratas Anda datang dari thread Reddit berbahasa Jerman, Anda tidak bisa menyegmentasinya di tingkat negara; Anda hanya mendapatkan jumlah impression gabungan. Google telah memberi sinyal bahwa pemisahan per negara ada di roadmap tetapi belum commit pada tanggal. Sampai saat itu tiba, sidecar JSON adalah satu-satunya tempat di mana negara asal dicatat, karena capture CLI melakukan geolokasi setiap URL melalui IP publik pada saat penangkapan.</p>  <h2>Cross-link cluster: cakupan lintas platform threadgrab</h2>  <p>Laporan GSC baru dibangun di atas tumpukan fitur threadgrab yang telah dirilis selama dua bulan terakhir. Jalur penangkapan khusus Reddit didokumentasikan dalam panduan <a href=\"/en/blog/social-content-cross-posting-workflow-2026.html\">alur kerja cross-posting</a>, yang memandu cara menangkap thread Reddit, rantai komentar YouTube, dan newsletter LinkedIn dalam satu sesi arsip. Skema sidecar dirinci dalam referensi <a href=\"/en/blog/social-content-markdown-pipeline-2026.html\">pipeline Markdown</a>, termasuk rincian bidang per bidang tentang apa yang ditangkap dan apa yang dilewati. Dan masalah retensi jangka panjang &mdash; masalah yang sama yang menjadi lebih terlihat oleh laporan GSC baru karena membatasi riwayat pada 90 hari &mdash; adalah subjek panduan <a href=\"/en/blog/social-media-content-backup-strategy-2026.html\">strategi backup</a>.</p>  <h2>FAQ</h2>  <div class=\"faq-item\"> <strong>Apakah laporan GSC baru menghitung impression dari pengguna yang logged-out?", "acceptedAnswer": {"@type": "Answer", "text": "Ya. Laporan Social &amp; Video menggunakan crawl Googlebot logged-out yang sama dengan yang menggerakkan seluruh Search Console, sehingga laporan ini menghitung setiap thread Reddit publik, embed YouTube, dan postingan TikTok yang bisa diambil Googlebot. Postingan TikTok privat, thread yang dibatasi subreddit, dan video YouTube yang diberi batasan usia dikecualikan."}},{"@type": "Question", "name": "Berapa lama waktu yang dibutuhkan agar postingan sosial baru muncul di laporan?", "acceptedAnswer": {"@type": "Answer", "text": "Tiga hingga lima hari adalah tipikal untuk thread Reddit, di mana pemicu rich-result aktif ketika sebuah postingan menerima upvote ketiga. Embed YouTube bisa memakan waktu hingga 14 hari karena pipeline pemrosesan video Google bersifat asinkron. Postingan TikTok biasanya terlihat dalam 48 jam, tetapi hanya jika postingan disetel ke publik dan tidak diberi batasan usia."}},{"@type": "Question", "name": "Bisakah saya mengekspor laporan baru ke CSV?", "acceptedAnswer": {"@type": "Answer", "text": "Ya. Tombol ekspor di kanan atas laporan mengunduh CSV dengan satu baris per pasangan (date, social_url). CSV tersebut mencakup impression, klik, CTR, dan posisi rata-rata, tetapi tidak mencakup bidang sidecar yang ditambahkan threadgrab. Bidang sidecar tersebut berada di arsip lokal Anda; gabungkan keduanya berdasarkan <code>social_url</code>."}},{"@type": "Question", "name": "Apakah laporan menggabungkan beberapa URL dari thread yang sama?", "acceptedAnswer": {"@type": "Answer", "text": "Tidak. Setiap permalink Reddit, video YouTube, dan URL postingan TikTok dilaporkan sebagai barisnya sendiri, meskipun berasal dari thread atau video yang sama. Jika sebuah thread Reddit memiliki 30 komentar dan setiap komentar menaut ke blog Anda, laporan menampilkan 30 baris. Filter <code>source_platform</code> mengelompokkannya secara visual tetapi tidak menggabungkan metriknya."}},{"@type": "Question", "name": "Apakah laporan baru akan menggantikan tab Search Results yang sudah ada?", "acceptedAnswer": {"@type": "Answer", "text": "Tidak. Tab Social &amp; Video bersifat aditif. Tab Search Results tradisional tetap melaporkan impression dari Google Search itu sendiri, dan kedua tab tidak melakukan double-count: impression yang muncul di keduanya hanya dicatat di tab Search Results. Tab Social &amp; Video adalah untuk impression yang berasal dari Reddit, YouTube, atau TikTok dan menyebar ke properti Anda melalui permukaan social-rich-results Google."}}]}
+  </script>
+  <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+    @media (max-width: 640px) { main { padding: 24px 16px 40px; } table { font-size: 0.8rem; } th, td { padding: 8px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/id/">Thread<span>Grab</span></a>
+    <div class="lang-bar"><a href="https://threadgrab.com/en/blog/gsc-social-video-platforms-report-2026.html">EN</a><a href="https://threadgrab.com/pt/blog/gsc-social-video-platforms-report-2026.html">PT</a><a href="https://threadgrab.com/id/blog/gsc-social-video-platforms-report-2026.html" class="active">ID</a></div>
+  </header>
+  <main>
+    <div class="breadcrumb"><a href="/id/">Home</a> &rsaquo; <a href="/id/blog/">Blog</a> &rsaquo; <span>Laporan GSC 2026</span></div>
+    <article>
+      <div class="article-meta">20 Juli 2026 &middot; 11 menit baca &middot; Panduan</div>
+      <h1>Laporan GSC Lintas Platform 2026: Reddit + YouTube + TikTok</h1>
+<p>Google secara diam-diam meluncurkan laporan performa baru "Social &amp; Video Platforms" di Google Search Console pada 7 Juli 2026. Tampilan baru ini menggabungkan impression, klik, dan metrik rich-result dari Reddit, YouTube, dan TikTok ke dalam satu tab &mdash; kali pertama GSC menampilkan sinyal sosial lintas platform secara bersamaan. Bagi kreator yang membagi penerbitan antara channel YouTube, pipeline short-form TikTok, dan kehadiran komunitas Reddit, tampilan gabungan ini menjawab pertanyaan yang tidak bisa dijawab oleh tiga dasbor terpisah: platform mana yang benar-benar menggerakkan audiens, dan postingan mana yang layak diarsipkan untuk playbook kuartal berikutnya?</p>
+
+<p>Laporan ini bersifat opt-in per properti dan terbatas pada properti yang sudah menerima impression social-rich-result. Setelah diaktifkan, laporan ini mengembalikan hingga 90 hari data dan mengelompokkan postingan berdasarkan domain, bukan berdasarkan URL &mdash; pilihan yang disengaja dan mencerminkan cara GSC menangani agregasi forum serta halaman diskusi. Pengelompokan tersebut memiliki efek samping yang memengaruhi setiap strategi arsip: URL yang Anda arsipkan hari ini belum tentu menjadi URL yang dilaporkan GSC besok. Jika ingin mengaitkan lonjakan traffic long-tail kembali ke thread TikTok atau Reddit tertentu, Anda harus menangkap URL <em>dan</em> timestamp <em>dan</em> snapshot engagement dalam satu tindakan arsip. Itulah persis celah yang coba ditutup oleh sidecar JSON milik threadgrab.</p>
+
+<h2>Apa yang masuk dalam laporan GSC Social &amp; Video baru</h2>
+
+<p>Peluncuran 7 Juli hadir dengan tiga integrasi platform siap pakai &mdash; diskusi Reddit, video YouTube, dan postingan publik TikTok &mdash; dan model API yang mendasarinya cukup generik sehingga Google dapat memperluas ke newsletter LinkedIn, Instagram Reels, dan feed Bluesky tanpa perubahan antarmuka. Setiap baris pada laporan baru mewakili satu unit konten tingkat atas (satu thread Reddit, satu video YouTube, satu postingan TikTok), dan kolom-kolomnya menampilkan impression, klik, CTR, serta posisi rata-rata dengan cara yang sama seperti tab Search Results tradisional.</p>
+
+<p>Namun, bidang yang paling menarik adalah filter <code>source_platform</code> yang baru. Tanpanya, Anda hanya bisa melihat bahwa situs menerima 2.800 impression social-video kemarin; dengan filter tersebut, Anda bisa memecahnya menjadi 1.900 dari thread Reddit, 700 dari embed YouTube, dan 200 dari embed TikTok. Kreator yang menerbitkan rekap mingguan yang hidup di domain mereka sendiri tetapi dikutip di Reddit, yang menjalankan serial YouTube yang di-embed di blog, dan yang cross-post short-form ke TikTok akhirnya memiliki satu tempat untuk membandingkan ketiganya.</p>
+
+<h2>Mengapa tampilan gabungan penting bagi kreator</h2>
+
+<p>Selama ini, atribusi lintas platform bagi kreator konten hidup di tiga dasbor terpisah, dua di antaranya (Reddit, TikTok) bahkan tidak menampilkan data impression. YouTube Studio sudah memiliki data impression bertahun-tahun, tetapi hanya untuk permukaan search dan suggested &mdash; bukan untuk embed yang muncul di blog pihak ketiga. Reddit Ads Manager hanya menampilkan impression berbayar. Permukaan analitik TikTok hanya menampilkan view di dalam platform. Tidak satu pun dari ketiganya saling terhubung, dan tidak satu pun yang bisa dipetakan kembali secara bersih ke postingan blog atau newsletter yang awalnya menghasilkan konten tersebut.</p>
+
+<p>Laporan GSC baru tidak menyelesaikan setiap celah &mdash; laporan ini tetap mengukur apa yang terjadi di properti <em>Anda</em> pada indeks Google, bukan apa yang terjadi di platform itu sendiri. Tetapi ini adalah tempat pertama di mana kreator dapat melihat jejak social-discovery gabungan dari satu konten, dan itu sudah cukup untuk membuat pelaporan akhir kuartal menjadi bermakna. Jika artikel Anda tentang pola data-engineering yang niche dikutip di sebuah thread Reddit, di-embed dalam tutorial YouTube, dan dijahit menjadi rekap TikTok, laporan baru menunjukkan satu jejak gabungan tersebut; dasbor per platform menampilkan tiga cerita yang parsial.</p>
+
+<h2>Tiga platform, tiga aturan retensi</h2>
+
+<p>Laporan baru mewarisi semantik retensi yang sangat berbeda dari setiap sumber yang mendasarinya, dan cara GSC menormalisasikannya penting untuk cara Anda membangun arsip:</p>
+
+<table>
+<thead>
+<tr><th>Platform</th><th>Masa aktif URL</th><th>Retensi GSC</th><th>Pemicu arsip</th></tr>
+</thead>
+<tbody>
+<tr><td>Thread Reddit</td><td>Soft-deleted setelah 7 hari tidak aktif</td><td>Hingga 90 hari</td><td>Tangkap dalam 48 jam setelah puncak engagement</td></tr>
+<tr><td>Video YouTube</td><td>Permanen kecuali dihapus</td><td>Hingga 90 hari</td><td>Tangkap pada tonggak 10k-view pertama</td></tr>
+<tr><td>Postingan TikTok</td><td>Permanen kecuali dihapus</td><td>Hingga 90 hari</td><td>Tangkap pada puncak 24 jam (biasanya T+18 jam)</td></tr>
+</tbody>
+</table>
+
+<p>Batas 90 hari dari GSC adalah kendala yang mengikat: jika Anda menunggu lebih dari tiga bulan untuk menangkap postingan yang menggerakkan traffic pada bulan Maret, laporan masih akan menampilkan baris tersebut tetapi Anda tidak akan bisa mengaitkannya ke URL sumber karena sumber tersebut mungkin sudah dihapus, diedit, atau dikubur. Padukan baris GSC dengan sidecar JSON dari hari ketika postingan mencapai puncak, dan Anda memiliki jejak audit tingkat sitasi yang bertahan dari kebijakan penghapusan salah satu dari ketiga platform.</p>
+
+<h2>Masalah URL drift</h2>
+
+<p>Reddit mengubah slug URL pada setiap rename yang dilakukan moderator. YouTube mempertahankan video ID yang sama tetapi memperbarui judul, deskripsi, dan chapter secara langsung, sehingga baris GSC yang di-key pada video ID 12 karakter bisa mengarah ke video dengan tiga judul berbeda pada saat Anda melihatnya. Username TikTok dapat berubah kapan saja tanpa memengaruhi URL, tetapi postingan itu sendiri bisa diatur ke privat, dihapus, atau diganti dengan repost yang memiliki ID baru. Tidak satu pun dari perubahan ini muncul sebagai 404 di GSC &mdash; baris tersebut tetap melaporkan impression pada URL yang tidak lagi cocok dengan kontennya.</p>
+
+<p>Solusinya adalah menangkap triple identitas postingan pada saat pengarsipan: platform ID (Reddit thread ID, YouTube video ID, TikTok post ID), URL kanonik pada saat penangkapan, dan judul. Sidecar JSON yang dikeluarkan threadgrab sudah melakukan ini untuk Reddit dan YouTube; untuk TikTok, sidecar menangkap URL postingan ditambah handle kreator pada saat penangkapan, sehingga Anda bisa menghubungkan URL kembali ke seseorang bahkan setelah handle diganti.</p>
+
+<h2>Bangun sidecar dalam lima langkah</h2>
+
+<p>Berikut alur kerja yang memasangkan laporan GSC baru dengan sidecar threadgrab dalam lima langkah yang repeatable:</p>
+
+<ol>
+<li><strong>Identifikasi postingan kandidat di GSC.</strong> Buka laporan Social &amp; Video, urutkan berdasarkan impression, pilih tiga baris teratas yang berasal dari platform yang aktif Anda gunakan untuk cross-post.</li>
+<li><strong>Petakan setiap baris ke URL sumber.</strong> Klik baris GSC untuk melihat URL platform yang dirujuknya. Untuk Reddit, ini adalah permalink komentar kanonik; untuk YouTube, ini adalah URL embed; untuk TikTok, ini adalah URL postingan dengan parameter query <code>?_t=</code> yang mengunci pada timestamp tertentu.</li>
+<li><strong>Tangkap setiap URL sumber dengan threadgrab.</strong> Jalankan capture CLI terhadap setiap URL dengan flag <code>--platform</code> yang diatur secara eksplisit agar sidecar mencatat schema mana yang digunakan. Sidecar akan mewarisi bidang ID spesifik platform secara otomatis.</li>
+<li><strong>Anotasikan baris GSC dalam indeks lokal.</strong> Tambahkan ID spesifik platform, timestamp penangkapan, dan path file sidecar ke CSV lokal yang di-key pada URL baris GSC. Inilah yang memungkinkan Anda melakukan cross-reference baris dari laporan baru kembali ke konten arsip yang tepat dalam tiga klik, bukan tiga puluh.</li>
+<li><strong>Jalankan ulang pada batas 90 hari.</strong> Laporan GSC menyimpan 90 hari riwayat; jika sebuah postingan mendorong lonjakan berarti di paruh kedua jendela tersebut, tangkap ulang dengan sidecar baru agar arsip mencatat snapshot pasca-engagement, bukan snapshot puncak.</li>
+</ol>
+
+<h2>Hubungkan capture CLI ke laporan GSC</h2>
+
+<p>Capture CLI menerima file manifest, yang merupakan cara paling bersih untuk back-fill banyak baris dari satu ekspor GSC. Manifest adalah file JSON dengan satu entri per baris, dan bidang URL pada entri itulah yang ditangkap. Berikut contoh minimal:</p>
+
+<pre><code>{
+  "rows": [
+    {
+      "gsc_url": "https://example.com/blog/data-pipeline-postgres-vs-mongo/",
+      "social_url": "https://www.reddit.com/r/dataengineering/comments/1abc23z/why_we_switched/",
+      "platform": "reddit",
+      "impressions": 1843,
+      "clicks": 41,
+      "captured_at": "2026-07-20T08:12:00Z"
+    },
+    {
+      "gsc_url": "https://example.com/blog/postgres-tuning-2026/",
+      "social_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "platform": "youtube",
+      "impressions": 612,
+      "clicks": 18,
+      "captured_at": "2026-07-20T08:12:05Z"
+    }
+  ]
+}
+</code></pre>
+
+<p>Jalankan <code>threadgrab capture-manifest manifest.json --output ./archive/</code> dan CLI akan menangkap setiap URL sosial, menulis sidecar JSON di samping setiap ekspor Markdown, serta mengembalikan tanda terima manifest yang mencantumkan path file sidecar. Pipe tanda terima tersebut ke CSV lokal dari langkah 4 dan Anda memiliki cross-reference lengkap dalam satu lintasan.</p>
+
+<h2>Petakan laporan ke arsip dengan satu query SQL</h2>
+
+<p>Setelah memiliki beberapa minggu ekspor GSC dan beberapa ratus sidecar, cross-reference menjadi satu query SQL. Contoh di bawah mengasumsikan Anda sudah memuat ekspor GSC Social &amp; Video dan indeks sidecar ke dalam instance DuckDB lokal:</p>
+
+<pre><code>SELECT
+  gsc.date,
+  gsc.social_url,
+  gsc.impressions,
+  gsc.clicks,
+  sidecar.platform_id,
+  sidecar.title_at_capture,
+  sidecar.sidecar_path
+FROM gsc_social_video AS gsc
+LEFT JOIN sidecar_index AS sidecar
+  ON gsc.social_url = sidecar.canonical_url
+WHERE gsc.date &gt;= '2026-07-01'
+  AND gsc.impressions &gt; 50
+ORDER BY gsc.date DESC, gsc.impressions DESC;</code></pre>
+
+<p><code>LEFT JOIN</code> adalah detail yang penting: baris di mana <code>sidecar.platform_id</code> bernilai NULL adalah baris yang terlewat pada saat pengarsipan, dan baris-baris tersebut adalah baris di mana Anda tidak bisa merekonstruksi sitasi kembali ke postingan nyata. Audit bulanan terhadap jumlah NULL memberi tahu apakah arsip Anda mampu mengimbangi laporan baru, dan memberi Anda target SLA yang jelas untuk bulan depan.</p>
+
+<h2>Apa yang masih belum berfungsi</h2>
+
+<p>Laporan GSC baru bersifat opt-in per properti, dan rollout-nya bertahap: per 20 Juli, tab terlihat untuk properti yang menerima setidaknya satu impression rich-result Reddit dalam 30 hari sebelumnya, tetapi tidak untuk properti yang satu-satunya traffic social-video datang dari embed YouTube. Google belum mempublikasikan tanggal untuk jalur khusus YouTube; sementara itu, properti yang hanya mengandalkan embed YouTube tidak akan melihat laporan tersebut bahkan setelah pendaftaran. Jika properti Anda termasuk dalam kategori tersebut, solusinya adalah menambahkan bagian yang ramah Reddit (thread komunitas, AMA, postingan diskusi) ke cadence penerbitan Anda agar laporan memiliki setidaknya satu sumber data yang memenuhi syarat.</p>
+
+<p>Celah lain: laporan ini belum menampilkan pemisahan per negara untuk impression social-video. Jika audiens Anda bersifat global dan lonjakan traffic teratas Anda datang dari thread Reddit berbahasa Jerman, Anda tidak bisa menyegmentasinya di tingkat negara; Anda hanya mendapatkan jumlah impression gabungan. Google telah memberi sinyal bahwa pemisahan per negara ada di roadmap tetapi belum commit pada tanggal. Sampai saat itu tiba, sidecar JSON adalah satu-satunya tempat di mana negara asal dicatat, karena capture CLI melakukan geolokasi setiap URL melalui IP publik pada saat penangkapan.</p>
+
+<h2>Cross-link cluster: cakupan lintas platform threadgrab</h2>
+
+<p>Laporan GSC baru dibangun di atas tumpukan fitur threadgrab yang telah dirilis selama dua bulan terakhir. Jalur penangkapan khusus Reddit didokumentasikan dalam panduan <a href="/en/blog/social-content-cross-posting-workflow-2026.html">alur kerja cross-posting</a>, yang memandu cara menangkap thread Reddit, rantai komentar YouTube, dan newsletter LinkedIn dalam satu sesi arsip. Skema sidecar dirinci dalam referensi <a href="/en/blog/social-content-markdown-pipeline-2026.html">pipeline Markdown</a>, termasuk rincian bidang per bidang tentang apa yang ditangkap dan apa yang dilewati. Dan masalah retensi jangka panjang &mdash; masalah yang sama yang menjadi lebih terlihat oleh laporan GSC baru karena membatasi riwayat pada 90 hari &mdash; adalah subjek panduan <a href="/en/blog/social-media-content-backup-strategy-2026.html">strategi backup</a>.</p>
+
+<h2>FAQ</h2>
+
+<div class="faq-item">
+<strong>Apakah laporan GSC baru menghitung impression dari pengguna yang logged-out?</strong>
+<p>Ya. Laporan Social &amp; Video menggunakan crawl Googlebot logged-out yang sama dengan yang menggerakkan seluruh Search Console, sehingga laporan ini menghitung setiap thread Reddit publik, embed YouTube, dan postingan TikTok yang bisa diambil Googlebot. Postingan TikTok privat, thread yang dibatasi subreddit, dan video YouTube yang diberi batasan usia dikecualikan.</p>
+</div>
+
+<div class="faq-item">
+<strong>Berapa lama waktu yang dibutuhkan agar postingan sosial baru muncul di laporan?</strong>
+<p>Tiga hingga lima hari adalah tipikal untuk thread Reddit, di mana pemicu rich-result aktif ketika sebuah postingan menerima upvote ketiga. Embed YouTube bisa memakan waktu hingga 14 hari karena pipeline pemrosesan video Google bersifat asinkron. Postingan TikTok biasanya terlihat dalam 48 jam, tetapi hanya jika postingan disetel ke publik dan tidak diberi batasan usia.</p>
+</div>
+
+<div class="faq-item">
+<strong>Bisakah saya mengekspor laporan baru ke CSV?</strong>
+<p>Ya. Tombol ekspor di kanan atas laporan mengunduh CSV dengan satu baris per pasangan (date, social_url). CSV tersebut mencakup impression, klik, CTR, dan posisi rata-rata, tetapi tidak mencakup bidang sidecar yang ditambahkan threadgrab. Bidang sidecar tersebut berada di arsip lokal Anda; gabungkan keduanya berdasarkan <code>social_url</code>.</p>
+</div>
+
+<div class="faq-item">
+<strong>Apakah laporan menggabungkan beberapa URL dari thread yang sama?</strong>
+<p>Tidak. Setiap permalink Reddit, video YouTube, dan URL postingan TikTok dilaporkan sebagai barisnya sendiri, meskipun berasal dari thread atau video yang sama. Jika sebuah thread Reddit memiliki 30 komentar dan setiap komentar menaut ke blog Anda, laporan menampilkan 30 baris. Filter <code>source_platform</code> mengelompokkannya secara visual tetapi tidak menggabungkan metriknya.</p>
+</div>
+
+<div class="faq-item">
+<strong>Apakah laporan baru akan menggantikan tab Search Results yang sudah ada?</strong>
+<p>Tidak. Tab Social &amp; Video bersifat aditif. Tab Search Results tradisional tetap melaporkan impression dari Google Search itu sendiri, dan kedua tab tidak melakukan double-count: impression yang muncul di keduanya hanya dicatat di tab Search Results. Tab Social &amp; Video adalah untuk impression yang berasal dari Reddit, YouTube, atau TikTok dan menyebar ke properti Anda melalui permukaan social-rich-results Google.</p>
+</div>
+
+<div class="cta">
+<p>Ingin sidecar threadgrab yang bertahan melewati jendela 90 hari berikutnya? Tangkap postingan, platform ID, dan baris GSC dalam satu lintasan arsip.</p>
+<a class="btn" href="/en/">Buka ThreadGrab</a>
+</div>
+    </article>
+  </main>
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/id/">Beranda</a> &middot; <a href="/id/blog/">Blog</a> &middot; <a href="/id/about/">Tentang</a> &middot; <a href="/id/privacy/">Privasi</a>
+    <br>Tidak berafiliasi dengan X Corp., Bluesky Social PBC, LinkedIn Corporation, atau Microsoft Corporation.
+  </footer>
+</body>
+</html>

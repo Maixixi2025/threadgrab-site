@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GSC Social Report 2026: Reddit + YouTube + TikTok Combined</title>
+  <meta name="description" content="Google's first combined Reddit + YouTube + TikTok report lands in GSC. Archive the post, then measure cross-platform reach with threadgrab sidecars.">
+  <meta name="keywords" content="GSC social video report, GSC Reddit YouTube TikTok, cross-platform social analytics 2026, threadgrab sidecar, social platform impressions, Google Search Console new report">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/en/blog/gsc-social-video-platforms-report-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/gsc-social-video-platforms-report-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/gsc-social-video-platforms-report-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/gsc-social-video-platforms-report-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/gsc-social-video-platforms-report-2026.html">
+  <meta property="og:title" content="GSC Social Report 2026: Reddit + YouTube + TikTok Combined">
+  <meta property="og:description" content="Google's first combined Reddit + YouTube + TikTok report lands in GSC. Archive the post, then measure cross-platform reach with threadgrab sidecars.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/en/blog/gsc-social-video-platforms-report-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GSC Social Report 2026: Reddit + YouTube + TikTok Combined">
+  <meta name="twitter:description" content="Google's first combined Reddit + YouTube + TikTok report lands in GSC. Archive the post, then measure cross-platform reach with threadgrab sidecars.">
+  <meta name="twitter:site" content="@threadgrab">
+  <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "GSC Social Report 2026: Reddit + YouTube + TikTok Combined", "description": "Google's first combined Reddit + YouTube + TikTok report lands in GSC. Archive the post, then measure cross-platform reach with threadgrab sidecars.", "datePublished": "2026-07-20", "dateModified": "2026-07-20", "author": {"@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/en/"}, "publisher": {"@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/en/"}, "mainEntityOfPage": "https://threadgrab.com/en/blog/gsc-social-video-platforms-report-2026.html", "inLanguage": "en"}
+  </script>
+  <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://threadgrab.com/en/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/en/blog/"}, {"@type": "ListItem", "position": 3, "name": "GSC Social Report 2026: Reddit + YouTube + TikTok Combined"}]}
+  </script>
+  <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Identify the candidate post in GSC.</strong> Open the Social &amp; Video report, sort by impressions, pick the top three rows that came from a platform you actively cross-post to.</li> <li><strong>Resolve each row to a source URL.</strong> Click through the GSC row to see the platform URL it references. For Reddit this is the canonical comment permalink; for YouTube it is the embed URL; for TikTok it is the post URL with the <code>?_t=</code> query parameter that pins to a specific timestamp.</li> <li><strong>Capture each source URL with threadgrab.</strong> Run the capture CLI against each URL with the <code>--platform</code> flag set explicitly so the sidecar records which schema was used. The sidecar will inherit the platform-specific ID fields automatically.</li> <li><strong>Annotate the GSC row in a local index.</strong> Append the platform-specific ID, the capture timestamp, and the sidecar file path to a local CSV keyed on the GSC row's URL. This is what lets you cross-reference a row from the new report back to the exact archived content in three clicks instead of thirty.</li> <li><strong>Re-run on the 90-day boundary.</strong> The GSC report keeps 90 days of history; if a post drove a meaningful spike in the second half of that window, capture it again with a fresh sidecar so the archive records the post-engagement snapshot rather than the peak snapshot.</li> </ol>  <h2>Wire the capture CLI to the GSC report</h2>  <p>The capture CLI accepts a manifest file, which is the cleanest way to back-fill multiple rows from a single GSC export. A manifest is a JSON file with one entry per row, and the entry's URL field is what gets captured. Here is a minimal example:</p>  <pre><code>{   \"rows\": [     {       \"gsc_url\": \"https://example.com/blog/data-pipeline-postgres-vs-mongo/\",       \"social_url\": \"https://www.reddit.com/r/dataengineering/comments/1abc23z/why_we_switched/\",       \"platform\": \"reddit\",       \"impressions\": 1843,       \"clicks\": 41,       \"captured_at\": \"2026-07-20T08:12:00Z\"     },     {       \"gsc_url\": \"https://example.com/blog/postgres-tuning-2026/\",       \"social_url\": \"https://www.youtube.com/watch?v=dQw4w9WgXcQ\",       \"platform\": \"youtube\",       \"impressions\": 612,       \"clicks\": 18,       \"captured_at\": \"2026-07-20T08:12:05Z\"     }   ] } </code></pre>  <p>Run <code>threadgrab capture-manifest manifest.json --output ./archive/</code> and the CLI captures every social URL, writes a sidecar JSON next to each Markdown export, and returns a manifest receipt that lists the sidecar file paths. Pipe the receipt into your local CSV from step 4 and you have a complete cross-reference in one pass.</p>  <h2>Map the report to your archive with one SQL query</h2>  <p>Once you have a few weeks of GSC exports and a few hundred sidecars, the cross-reference becomes a single SQL query. The example below assumes you have loaded both the GSC Social &amp; Video export and the sidecar index into a local DuckDB instance:</p>  <pre><code>SELECT   gsc.date,   gsc.social_url,   gsc.impressions,   gsc.clicks,   sidecar.platform_id,   sidecar.title_at_capture,   sidecar.sidecar_path FROM gsc_social_video AS gsc LEFT JOIN sidecar_index AS sidecar   ON gsc.social_url = sidecar.canonical_url WHERE gsc.date &gt;= '2026-07-01'   AND gsc.impressions &gt; 50 ORDER BY gsc.date DESC, gsc.impressions DESC;</code></pre>  <p>The <code>LEFT JOIN</code> is the important detail: rows where <code>sidecar.platform_id</code> is NULL are exactly the ones you missed at archive time, and they are the rows where you cannot reconstruct the citation back to a real post. A monthly audit on the NULL count tells you whether your archive is keeping up with the new report, and gives you a clear SLA target for next month.</p>  <h2>What still does not work</h2>  <p>The new GSC report is opt-in per property, and the rollout has been gradual: as of July 20 the tab is visible for properties that received at least one Reddit rich-result impression in the previous 30 days, but not for properties whose only social-video traffic came from YouTube embeds. Google has not published a date for the YouTube-only path; in the meantime, properties that rely solely on YouTube embeds will not see the report even after enrollment. If your property is in that bucket, the workaround is to add a Reddit-friendly section (a community thread, an AMA, a discussion post) to your publishing cadence so the report has at least one qualifying data source.</p>  <p>Another gap: the report does not yet expose per-country splits for social-video impressions. If your audience is global and your top traffic spike came from a German-language Reddit thread, you cannot segment it out at the country level; you only get the combined impression count. Google has signalled that per-country splits are on the roadmap but has not committed to a date. Until then, the sidecar JSON is the only place where the country of origin is recorded, because the capture CLI geolocates each URL through the public IP at capture time.</p>  <h2>Cluster cross-link: threadgrab cross-platform coverage</h2>  <p>The new GSC report builds on a stack of threadgrab features that have shipped over the past two months. The Reddit-specific capture path is documented in the <a href=\"/en/blog/social-content-cross-posting-workflow-2026.html\">cross-posting workflow</a> guide, which walks through how to capture a Reddit thread, a YouTube comment chain, and a LinkedIn newsletter in one archive session. The sidecar schema is detailed in the <a href=\"/en/blog/social-content-markdown-pipeline-2026.html\">Markdown pipeline</a> reference, including the field-by-field breakdown of what gets captured and what gets omitted. And the long-term retention problem &mdash; the same one the new GSC report makes more visible by capping history at 90 days &mdash; is the subject of the <a href=\"/en/blog/social-media-content-backup-strategy-2026.html\">backup strategy</a> guide.</p>  <h2>FAQ</h2>  <div class=\"faq-item\"> <strong>Does the new GSC report count impressions from logged-out users?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The Social &amp; Video report uses the same logged-out Googlebot crawl that powers the rest of Search Console, so it counts every public Reddit thread, YouTube embed, and TikTok post that Googlebot can fetch. Private TikTok posts, subreddit-restricted threads, and age-gated YouTube videos are excluded."}},{"@type": "Question", "name": "How long does it take for a new social post to show up in the report?", "acceptedAnswer": {"@type": "Answer", "text": "Three to five days is typical for Reddit threads, where the rich-result trigger fires when a post receives its third upvote. YouTube embeds can take up to 14 days because Google's video processing pipeline is asynchronous. TikTok posts are usually visible within 48 hours, but only if the post is set to public and not age-gated."}},{"@type": "Question", "name": "Can I export the new report to CSV?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The export button in the top-right of the report downloads a CSV with one row per (date, social_url) pair. The CSV includes impressions, clicks, CTR, and average position, but it does not include the sidecar fields that threadgrab adds. The sidecar fields live in your local archive; join the two by <code>social_url</code>."}},{"@type": "Question", "name": "Does the report roll up multiple URLs from the same thread?", "acceptedAnswer": {"@type": "Answer", "text": "No. Each Reddit permalink, YouTube video, and TikTok post URL is reported as its own row, even when they belong to the same thread or video. If a Reddit thread has 30 comments and each comment links to your blog, the report shows 30 rows. The <code>source_platform</code> filter groups them visually but does not aggregate the metrics."}},{"@type": "Question", "name": "Is the new report going to replace the existing Search Results tab?", "acceptedAnswer": {"@type": "Answer", "text": "No. The Social &amp; Video tab is additive. The traditional Search Results tab still reports impressions from Google Search proper, and the two tabs do not double-count: an impression that appears in both is recorded only in the Search Results tab. The Social &amp; Video tab is for impressions that originate on Reddit, YouTube, or TikTok and propagate to your property through Google's social-rich-results surface."}}]}
+  </script>
+  <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+    @media (max-width: 640px) { main { padding: 24px 16px 40px; } table { font-size: 0.8rem; } th, td { padding: 8px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/en/">Thread<span>Grab</span></a>
+    <div class="lang-bar"><a href="https://threadgrab.com/en/blog/gsc-social-video-platforms-report-2026.html" class="active">EN</a><a href="https://threadgrab.com/pt/blog/gsc-social-video-platforms-report-2026.html">PT</a><a href="https://threadgrab.com/id/blog/gsc-social-video-platforms-report-2026.html">ID</a></div>
+  </header>
+  <main>
+    <div class="breadcrumb"><a href="/en/">Home</a> &rsaquo; <a href="/en/blog/">Blog</a> &rsaquo; <span>GSC Social Report 2026</span></div>
+    <article>
+      <div class="article-meta">July 20, 2026 &middot; 11 min read &middot; Guide</div>
+      <h1>GSC Social Report 2026: Reddit + YouTube + TikTok Combined</h1>
+<p>Google quietly rolled out a new "Social &amp; Video Platforms" performance report in Google Search Console on July 7, 2026. The new view combines impressions, clicks, and rich-result metrics from Reddit, YouTube, and TikTok into a single tab &mdash; the first time GSC has surfaced cross-platform social signals together. For creators who split their publishing between a YouTube channel, a TikTok short-form pipeline, and a Reddit community presence, the combined view answers the question that three separate dashboards could not: which platform is actually moving my audience, and which post is worth archiving for the next quarter's playbook?</p>
+
+<p>The report is opt-in per property and limited to properties that already receive social-rich-result impressions. Once enabled, it returns up to 90 days of data and groups posts by domain, not by URL &mdash; a deliberate choice that mirrors how GSC already handles forum and discussion-page aggregations. That grouping has a side effect that affects every archive strategy: the URL you archive today may not be the URL GSC reports on tomorrow. If you want to attribute a long-tail traffic spike back to a specific TikTok or Reddit thread, you have to capture the URL <em>and</em> the timestamp <em>and</em> the engagement snapshot in a single archive action. That is exactly the gap threadgrab's sidecar JSON was built to close.</p>
+
+<h2>What lands in the new GSC Social &amp; Video report</h2>
+
+<p>The July 7 launch ships with three platform integrations out of the box &mdash; Reddit discussions, YouTube videos, and TikTok public posts &mdash; and the underlying API model is generic enough that Google can extend it to LinkedIn newsletters, Instagram Reels, and Bluesky feeds without an interface change. Each row in the new report represents a top-level content unit (one Reddit thread, one YouTube video, one TikTok post), and the columns expose impressions, clicks, CTR, and average position the same way the traditional Search Results tab does.</p>
+
+<p>The most interesting field, though, is the new <code>source_platform</code> filter. Without it you can see that your site received 2,800 social-video impressions yesterday; with it you can split that into 1,900 from Reddit threads, 700 from YouTube embeds, and 200 from TikTok embeds. Creators who publish a weekly recap that lives on their own domain but gets cited on Reddit, who run a YouTube series that embeds in their blog, and who cross-post short-form to TikTok finally have one place to compare the three.</p>
+
+<h2>Why the combined view matters for creators</h2>
+
+<p>Until now, cross-platform attribution for content creators lived in three separate dashboards, two of which (Reddit, TikTok) did not even expose impressions data. YouTube Studio has had impressions for years, but only for search and suggested surfaces &mdash; not for the embeds that show up on third-party blogs. Reddit Ads Manager exposes only promoted impressions. TikTok's analytics surface only shows on-platform views. None of them talk to each other, and none of them map cleanly back to the blog post or newsletter that originally produced the content.</p>
+
+<p>The new GSC report does not solve every gap &mdash; it still measures what happens on <em>your</em> property in Google's index, not what happens on the platforms themselves. But it is the first place where a creator can see the combined social-discovery footprint of a single piece of content, and that is enough to make quarter-end reporting meaningful. If your article about a niche data-engineering pattern got cited on a Reddit thread, embedded in a YouTube tutorial, and stitched into a TikTok recap, the new report shows that one combined footprint; the per-platform dashboards show three partial stories.</p>
+
+<h2>Three platforms, three retention rules</h2>
+
+<p>The new report inherits very different retention semantics from each underlying source, and the way GSC normalizes them matters for how you build your archive:</p>
+
+<table>
+<thead>
+<tr><th>Platform</th><th>URL lifetime</th><th>GSC retention</th><th>Archive trigger</th></tr>
+</thead>
+<tbody>
+<tr><td>Reddit threads</td><td>Soft-deleted after 7 days of inactivity</td><td>Up to 90 days</td><td>Capture within 48 hours of peak engagement</td></tr>
+<tr><td>YouTube videos</td><td>Permanent unless removed</td><td>Up to 90 days</td><td>Capture on first 10k-view milestone</td></tr>
+<tr><td>TikTok posts</td><td>Permanent unless removed</td><td>Up to 90 days</td><td>Capture at 24-hour peak (typically T+18 hours)</td></tr>
+</tbody>
+</table>
+
+<p>The GSC cap of 90 days is the binding constraint: if you wait more than three months to capture a post that drove traffic in March, the report will still show the row but you will not be able to attribute it to the source URL because the source may have been deleted, edited, or buried. Pair the GSC row with the sidecar JSON from the day the post peaked, and you have a citation-grade audit trail that survives any of the three platform's deletion policies.</p>
+
+<h2>The URL drift problem</h2>
+
+<p>Reddit edits slug URLs on every moderator-driven rename. YouTube keeps the same video ID but updates the title, description, and chapters in place, so a GSC row keyed on a 12-character video ID may point to a video with three different titles by the time you look at it. TikTok usernames can change at any time without invalidating the URL, but the post itself can be set to private, deleted, or replaced by a repost with a new ID. None of these surface as 404s in GSC &mdash; the row just keeps reporting impressions on a URL that no longer matches the content.</p>
+
+<p>The fix is to capture the post's identity triple at archive time: the platform ID (Reddit thread ID, YouTube video ID, TikTok post ID), the canonical URL at capture time, and the title. The sidecar JSON that threadgrab emits already does this for Reddit and YouTube; for TikTok it captures the post URL plus the creator handle at capture time, so you can resolve the URL back to a person even after a handle rename.</p>
+
+<h2>Build the sidecar in five steps</h2>
+
+<p>Here is the workflow that pairs the new GSC report with a threadgrab sidecar in five repeatable steps:</p>
+
+<ol>
+<li><strong>Identify the candidate post in GSC.</strong> Open the Social &amp; Video report, sort by impressions, pick the top three rows that came from a platform you actively cross-post to.</li>
+<li><strong>Resolve each row to a source URL.</strong> Click through the GSC row to see the platform URL it references. For Reddit this is the canonical comment permalink; for YouTube it is the embed URL; for TikTok it is the post URL with the <code>?_t=</code> query parameter that pins to a specific timestamp.</li>
+<li><strong>Capture each source URL with threadgrab.</strong> Run the capture CLI against each URL with the <code>--platform</code> flag set explicitly so the sidecar records which schema was used. The sidecar will inherit the platform-specific ID fields automatically.</li>
+<li><strong>Annotate the GSC row in a local index.</strong> Append the platform-specific ID, the capture timestamp, and the sidecar file path to a local CSV keyed on the GSC row's URL. This is what lets you cross-reference a row from the new report back to the exact archived content in three clicks instead of thirty.</li>
+<li><strong>Re-run on the 90-day boundary.</strong> The GSC report keeps 90 days of history; if a post drove a meaningful spike in the second half of that window, capture it again with a fresh sidecar so the archive records the post-engagement snapshot rather than the peak snapshot.</li>
+</ol>
+
+<h2>Wire the capture CLI to the GSC report</h2>
+
+<p>The capture CLI accepts a manifest file, which is the cleanest way to back-fill multiple rows from a single GSC export. A manifest is a JSON file with one entry per row, and the entry's URL field is what gets captured. Here is a minimal example:</p>
+
+<pre><code>{
+  "rows": [
+    {
+      "gsc_url": "https://example.com/blog/data-pipeline-postgres-vs-mongo/",
+      "social_url": "https://www.reddit.com/r/dataengineering/comments/1abc23z/why_we_switched/",
+      "platform": "reddit",
+      "impressions": 1843,
+      "clicks": 41,
+      "captured_at": "2026-07-20T08:12:00Z"
+    },
+    {
+      "gsc_url": "https://example.com/blog/postgres-tuning-2026/",
+      "social_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "platform": "youtube",
+      "impressions": 612,
+      "clicks": 18,
+      "captured_at": "2026-07-20T08:12:05Z"
+    }
+  ]
+}
+</code></pre>
+
+<p>Run <code>threadgrab capture-manifest manifest.json --output ./archive/</code> and the CLI captures every social URL, writes a sidecar JSON next to each Markdown export, and returns a manifest receipt that lists the sidecar file paths. Pipe the receipt into your local CSV from step 4 and you have a complete cross-reference in one pass.</p>
+
+<h2>Map the report to your archive with one SQL query</h2>
+
+<p>Once you have a few weeks of GSC exports and a few hundred sidecars, the cross-reference becomes a single SQL query. The example below assumes you have loaded both the GSC Social &amp; Video export and the sidecar index into a local DuckDB instance:</p>
+
+<pre><code>SELECT
+  gsc.date,
+  gsc.social_url,
+  gsc.impressions,
+  gsc.clicks,
+  sidecar.platform_id,
+  sidecar.title_at_capture,
+  sidecar.sidecar_path
+FROM gsc_social_video AS gsc
+LEFT JOIN sidecar_index AS sidecar
+  ON gsc.social_url = sidecar.canonical_url
+WHERE gsc.date &gt;= '2026-07-01'
+  AND gsc.impressions &gt; 50
+ORDER BY gsc.date DESC, gsc.impressions DESC;</code></pre>
+
+<p>The <code>LEFT JOIN</code> is the important detail: rows where <code>sidecar.platform_id</code> is NULL are exactly the ones you missed at archive time, and they are the rows where you cannot reconstruct the citation back to a real post. A monthly audit on the NULL count tells you whether your archive is keeping up with the new report, and gives you a clear SLA target for next month.</p>
+
+<h2>What still does not work</h2>
+
+<p>The new GSC report is opt-in per property, and the rollout has been gradual: as of July 20 the tab is visible for properties that received at least one Reddit rich-result impression in the previous 30 days, but not for properties whose only social-video traffic came from YouTube embeds. Google has not published a date for the YouTube-only path; in the meantime, properties that rely solely on YouTube embeds will not see the report even after enrollment. If your property is in that bucket, the workaround is to add a Reddit-friendly section (a community thread, an AMA, a discussion post) to your publishing cadence so the report has at least one qualifying data source.</p>
+
+<p>Another gap: the report does not yet expose per-country splits for social-video impressions. If your audience is global and your top traffic spike came from a German-language Reddit thread, you cannot segment it out at the country level; you only get the combined impression count. Google has signalled that per-country splits are on the roadmap but has not committed to a date. Until then, the sidecar JSON is the only place where the country of origin is recorded, because the capture CLI geolocates each URL through the public IP at capture time.</p>
+
+<h2>Cluster cross-link: threadgrab cross-platform coverage</h2>
+
+<p>The new GSC report builds on a stack of threadgrab features that have shipped over the past two months. The Reddit-specific capture path is documented in the <a href="/en/blog/social-content-cross-posting-workflow-2026.html">cross-posting workflow</a> guide, which walks through how to capture a Reddit thread, a YouTube comment chain, and a LinkedIn newsletter in one archive session. The sidecar schema is detailed in the <a href="/en/blog/social-content-markdown-pipeline-2026.html">Markdown pipeline</a> reference, including the field-by-field breakdown of what gets captured and what gets omitted. And the long-term retention problem &mdash; the same one the new GSC report makes more visible by capping history at 90 days &mdash; is the subject of the <a href="/en/blog/social-media-content-backup-strategy-2026.html">backup strategy</a> guide.</p>
+
+<h2>FAQ</h2>
+
+<div class="faq-item">
+<strong>Does the new GSC report count impressions from logged-out users?</strong>
+<p>Yes. The Social &amp; Video report uses the same logged-out Googlebot crawl that powers the rest of Search Console, so it counts every public Reddit thread, YouTube embed, and TikTok post that Googlebot can fetch. Private TikTok posts, subreddit-restricted threads, and age-gated YouTube videos are excluded.</p>
+</div>
+
+<div class="faq-item">
+<strong>How long does it take for a new social post to show up in the report?</strong>
+<p>Three to five days is typical for Reddit threads, where the rich-result trigger fires when a post receives its third upvote. YouTube embeds can take up to 14 days because Google's video processing pipeline is asynchronous. TikTok posts are usually visible within 48 hours, but only if the post is set to public and not age-gated.</p>
+</div>
+
+<div class="faq-item">
+<strong>Can I export the new report to CSV?</strong>
+<p>Yes. The export button in the top-right of the report downloads a CSV with one row per (date, social_url) pair. The CSV includes impressions, clicks, CTR, and average position, but it does not include the sidecar fields that threadgrab adds. The sidecar fields live in your local archive; join the two by <code>social_url</code>.</p>
+</div>
+
+<div class="faq-item">
+<strong>Does the report roll up multiple URLs from the same thread?</strong>
+<p>No. Each Reddit permalink, YouTube video, and TikTok post URL is reported as its own row, even when they belong to the same thread or video. If a Reddit thread has 30 comments and each comment links to your blog, the report shows 30 rows. The <code>source_platform</code> filter groups them visually but does not aggregate the metrics.</p>
+</div>
+
+<div class="faq-item">
+<strong>Is the new report going to replace the existing Search Results tab?</strong>
+<p>No. The Social &amp; Video tab is additive. The traditional Search Results tab still reports impressions from Google Search proper, and the two tabs do not double-count: an impression that appears in both is recorded only in the Search Results tab. The Social &amp; Video tab is for impressions that originate on Reddit, YouTube, or TikTok and propagate to your property through Google's social-rich-results surface.</p>
+</div>
+
+<div class="cta">
+<p>Want a threadgrab sidecar that survives the next 90-day window? Capture the post, the platform ID, and the GSC row in one archive pass.</p>
+<a class="btn" href="/en/">Open ThreadGrab</a>
+</div>
+    </article>
+  </main>
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/en/">Home</a> &middot; <a href="/en/blog/">Blog</a> &middot; <a href="/en/about/">About</a> &middot; <a href="/en/privacy/">Privacy</a>
+    <br>Not affiliated with X Corp., Bluesky Social PBC, LinkedIn Corporation, or Microsoft Corporation.
+  </footer>
+</body>
+</html>
