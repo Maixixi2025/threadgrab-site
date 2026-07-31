@@ -10,13 +10,30 @@
       "title": "Marvelous 2026: Git Markdown Editor for Creators",
       "description": "Marvelous commits every Markdown save as a Git snapshot. A guide for social creators managing X Articles, Bluesky posts, and LinkedIn Newsletter versions.",
       "heat_source": "⭐ 2026-07-30 daily briefing social #1 — Marvelous (github.com/stevenjjobson/marvelous) Git-backed Markdown editor, applies to threadgrab social creator + version control workflow",
-      "tags": ["Marvelous", "Markdown editor", "Git backup", "version control", "X archive", "Bluesky archive", "LinkedIn archive", "ThreadGrab", "creator tools 2026"],
+      "tags": [
+        "Marvelous",
+        "Markdown editor",
+        "Git backup",
+        "version control",
+        "X archive",
+        "Bluesky archive",
+        "LinkedIn archive",
+        "ThreadGrab",
+        "creator tools 2026"
+      ],
       "status": "draft",
       "created_at": "2026-07-30",
       "published_at": "2026-07-30",
-      "providers_featured": ["Marvelous", "ThreadGrab"],
+      "providers_featured": [
+        "Marvelous",
+        "ThreadGrab"
+      ],
       "primary_cta": "Try ThreadGrab (en)",
-      "lang_versions": ["en", "pt", "id"],
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
       "qa_passed": {
         "title_chars": 48,
         "description_chars": 154,
@@ -41,13 +58,26 @@
       "title": "Marvelous 2026: Editor Markdown com Git para Criadores",
       "description": "Marvelous faz commit de cada salvamento Markdown como snapshot Git. Guia para criadores gerenciarem versões de X Articles, Bluesky e LinkedIn Newsletter.",
       "heat_source": "⭐ 2026-07-30 daily briefing social #1 — Marvelous (github.com/stevenjjobson/marvelous) editor Markdown com Git",
-      "tags": ["Marvelous", "editor Markdown", "backup Git", "controle de versão", "ThreadGrab"],
+      "tags": [
+        "Marvelous",
+        "editor Markdown",
+        "backup Git",
+        "controle de versão",
+        "ThreadGrab"
+      ],
       "status": "draft",
       "created_at": "2026-07-30",
       "published_at": "2026-07-30",
-      "providers_featured": ["Marvelous", "ThreadGrab"],
+      "providers_featured": [
+        "Marvelous",
+        "ThreadGrab"
+      ],
       "primary_cta": "Experimente o ThreadGrab (pt)",
-      "lang_versions": ["en", "pt", "id"],
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
       "qa_passed": {
         "title_chars": 54,
         "description_chars": 153,
@@ -72,13 +102,26 @@
       "title": "Marvelous 2026: Editor Markdown dengan Git untuk Kreator",
       "description": "Marvelous melakukan commit setiap penyimpanan Markdown sebagai snapshot Git. Panduan kreator mengelola versi X Articles, Bluesky, dan LinkedIn Newsletter.",
       "heat_source": "⭐ 2026-07-30 daily briefing social #1 — Marvelous (github.com/stevenjjobson/marvelous) editor Markdown dengan Git",
-      "tags": ["Marvelous", "editor Markdown", "cadangan Git", "kontrol versi", "ThreadGrab"],
+      "tags": [
+        "Marvelous",
+        "editor Markdown",
+        "cadangan Git",
+        "kontrol versi",
+        "ThreadGrab"
+      ],
       "status": "draft",
       "created_at": "2026-07-30",
       "published_at": "2026-07-30",
-      "providers_featured": ["Marvelous", "ThreadGrab"],
+      "providers_featured": [
+        "Marvelous",
+        "ThreadGrab"
+      ],
       "primary_cta": "Coba ThreadGrab (id)",
-      "lang_versions": ["en", "pt", "id"],
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
       "qa_passed": {
         "title_chars": 56,
         "description_chars": 154,
@@ -2879,6 +2922,144 @@
         "code_blocks": 3,
         "word_count": 2030,
         "file_size_bytes": 22121
+      }
+    },
+    {
+      "slug": "long-form-social-platforms-archive-2026",
+      "date": "2026-07-31",
+      "type": "guide",
+      "lang": "en",
+      "file": "en/blog/long-form-social-platforms-archive-2026.html",
+      "url": "https://threadgrab.com/en/blog/long-form-social-platforms-archive-2026.html",
+      "title": "Long-Form Social 2026: Archive X, Bluesky, LinkedIn, Buzz",
+      "description": "Long-form content spreads across X Articles, Bluesky, LinkedIn, Buzz. A 2026 archive workflow for social creators using Markdown and ThreadGrab.",
+      "heat_source": "⭐ 2026-07-31 daily briefing social — Buzz (Jack Dorsey) + Bluesky long-form + X Articles rich media + LinkedIn Newsletter all converging; 5-platform archive playbook",
+      "tags": [
+        "long-form",
+        "X Articles",
+        "Bluesky long-form",
+        "LinkedIn Newsletter",
+        "Buzz",
+        "ThreadGrab",
+        "markdown archive",
+        "social content"
+      ],
+      "status": "published",
+      "created_at": "2026-07-31",
+      "published_at": "2026-07-31",
+      "providers_featured": [
+        "ThreadGrab",
+        "Buzz"
+      ],
+      "primary_cta": "Try ThreadGrab (en)",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "qa_passed": {
+        "title_chars": 57,
+        "description_chars": 144,
+        "hreflang_alternates": 4,
+        "canonical_present": true,
+        "jsonld_blocks": 3,
+        "faq_count": 5,
+        "h2_count": 8,
+        "code_blocks": 2,
+        "word_count": 1475,
+        "file_size_bytes": 20323
+      }
+    },
+    {
+      "slug": "plataformas-redes-sociais-conteudo-longo-arquivo-2026",
+      "date": "2026-07-31",
+      "type": "guia",
+      "lang": "pt",
+      "file": "pt/blog/plataformas-redes-sociais-conteudo-longo-arquivo-2026.html",
+      "url": "https://threadgrab.com/pt/blog/plataformas-redes-sociais-conteudo-longo-arquivo-2026.html",
+      "title": "Redes Sociais Long-Form 2026: Archive X, Bluesky, LinkedIn, Buzz",
+      "description": "Conteudo longo se espalha por X Articles, Bluesky, LinkedIn, Buzz. Um fluxo de arquivamento 2026 para criadores usando Markdown e ThreadGrab.",
+      "heat_source": "⭐ 2026-07-31 daily briefing social — Buzz (Jack Dorsey) + Bluesky long-form + X Articles rich media + LinkedIn Newsletter convergindo; playbook de arquivo 5 plataformas",
+      "tags": [
+        "conteudo longo",
+        "X Articles",
+        "Bluesky long-form",
+        "LinkedIn Newsletter",
+        "Buzz",
+        "ThreadGrab",
+        "arquivo markdown",
+        "conteudo social"
+      ],
+      "status": "published",
+      "created_at": "2026-07-31",
+      "published_at": "2026-07-31",
+      "providers_featured": [
+        "ThreadGrab",
+        "Buzz"
+      ],
+      "primary_cta": "Experimente o ThreadGrab (pt)",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "qa_passed": {
+        "title_chars": 64,
+        "description_chars": 141,
+        "hreflang_alternates": 4,
+        "canonical_present": true,
+        "jsonld_blocks": 3,
+        "faq_count": 5,
+        "h2_count": 8,
+        "code_blocks": 2,
+        "word_count": 1557,
+        "file_size_bytes": 21183
+      }
+    },
+    {
+      "slug": "platform-konten-sosial-bentuk-panjang-arsip-2026",
+      "date": "2026-07-31",
+      "type": "panduan",
+      "lang": "id",
+      "file": "id/blog/platform-konten-sosial-bentuk-panjang-arsip-2026.html",
+      "url": "https://threadgrab.com/id/blog/platform-konten-sosial-bentuk-panjang-arsip-2026.html",
+      "title": "Konten Panjang Sosial 2026: Arsipkan X, Bluesky, LinkedIn, Buzz",
+      "description": "Konten panjang menyebar ke X Articles, Bluesky, LinkedIn, Buzz. Alur arsip 2026 untuk kreator sosial dengan Markdown dan ThreadGrab.",
+      "heat_source": "⭐ 2026-07-31 daily briefing social — Buzz (Jack Dorsey) + Bluesky long-form + X Articles rich media + LinkedIn Newsletter konvergen; playbook arsip 5 platform",
+      "tags": [
+        "konten panjang",
+        "X Articles",
+        "Bluesky long-form",
+        "LinkedIn Newsletter",
+        "Buzz",
+        "ThreadGrab",
+        "arsip markdown",
+        "konten sosial"
+      ],
+      "status": "published",
+      "created_at": "2026-07-31",
+      "published_at": "2026-07-31",
+      "providers_featured": [
+        "ThreadGrab",
+        "Buzz"
+      ],
+      "primary_cta": "Coba ThreadGrab (id)",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "qa_passed": {
+        "title_chars": 63,
+        "description_chars": 132,
+        "hreflang_alternates": 4,
+        "canonical_present": true,
+        "jsonld_blocks": 3,
+        "faq_count": 5,
+        "h2_count": 8,
+        "code_blocks": 2,
+        "word_count": 1347,
+        "file_size_bytes": 20755
       }
     }
   ],
