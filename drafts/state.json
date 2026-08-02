@@ -3061,6 +3061,57 @@
         "word_count": 1347,
         "file_size_bytes": 20755
       }
+    },
+    {
+      "slug": "linkedin-ai-slop-report-button-archive-2026",
+      "date": "2026-08-02",
+      "type": "guide",
+      "lang": "en",
+      "file": "en/blog/linkedin-ai-slop-report-button-archive-2026.html",
+      "url": "https://threadgrab.com/en/blog/linkedin-ai-slop-report-button-archive-2026.html",
+      "title": "LinkedIn AI Slop Button 2026: Archive User Reports",
+      "description": "LinkedIn's 2026 \"Seems like AI slop\" report button adds a user-driven signal to the archive. Capture all four AI signals with threadgrab in 4 steps.",
+      "heat_source": "briefing: 2026-08-02 / LinkedIn AI slop button / The Register 7/30",
+      "status": "published",
+      "published_at": "2026-08-02T12:11:02.405588+08:00",
+      "providers_featured": [
+        "threadgrab"
+      ],
+      "primary_cta": "/en/"
+    },
+    {
+      "slug": "botao-ai-slop-linkedin-arquivo-2026",
+      "date": "2026-08-02",
+      "type": "guia",
+      "lang": "pt",
+      "file": "pt/blog/botao-ai-slop-linkedin-arquivo-2026.html",
+      "url": "https://threadgrab.com/pt/blog/botao-ai-slop-linkedin-arquivo-2026.html",
+      "title": "Botão AI Slop do LinkedIn 2026: Arquivar Denúncias",
+      "description": "O botão \"Parece AI slop\" do LinkedIn 2026 adiciona um sinal de usuário ao arquivo. Capture os quatro sinais de IA em 4 passos com threadgrab.",
+      "heat_source": "briefing: 2026-08-02 / LinkedIn AI slop button / The Register 7/30",
+      "status": "published",
+      "published_at": "2026-08-02T12:11:02.405588+08:00",
+      "providers_featured": [
+        "threadgrab"
+      ],
+      "primary_cta": "/pt/"
+    },
+    {
+      "slug": "tombol-ai-slop-linkedin-arsip-2026",
+      "date": "2026-08-02",
+      "type": "panduan",
+      "lang": "id",
+      "file": "id/blog/tombol-ai-slop-linkedin-arsip-2026.html",
+      "url": "https://threadgrab.com/id/blog/tombol-ai-slop-linkedin-arsip-2026.html",
+      "title": "Tombol AI Slop LinkedIn 2026: Arsipkan Laporan Pengguna",
+      "description": "Tombol \"Seems like AI slop\" LinkedIn 2026 menambah sinyal pengguna ke arsip. Tangkap keempat sinyal AI dalam 4 langkah dengan threadgrab.",
+      "heat_source": "briefing: 2026-08-02 / LinkedIn AI slop button / The Register 7/30",
+      "status": "published",
+      "published_at": "2026-08-02T12:11:02.405588+08:00",
+      "providers_featured": [
+        "threadgrab"
+      ],
+      "primary_cta": "/id/"
     }
   ],
   "drafts": [
@@ -3498,6 +3549,78 @@
       "status": "published",
       "published_at": "2026-07-24",
       "providers_featured": []
+    },
+    {
+      "slug": "mastodon-fediverse-archive-2026",
+      "lang": "en",
+      "date": "2026-08-01",
+      "type": "guide",
+      "file": "en/blog/mastodon-fediverse-archive-2026.html",
+      "url": "https://threadgrab.com/en/blog/mastodon-fediverse-archive-2026.html",
+      "title": "Mastodon Fediverse Archive 2026: 5 Ways to Save Posts, Media & Instance Feeds",
+      "description": "Compare 5 methods to archive Mastodon posts and Fediverse content in 2026: bookmarks, ActivityPub API, ThreadGrab, Mastodon-CLI, and toot CLI.",
+      "heat_source": "threadgap detection 2026-08-01: Mastodon/Fediverse angle — zero coverage across 41 published EN articles despite mastodon.social 3.35M MAU + 183M statuses live-verified via /api/v1/instance 2026-08-01. ActivityPub-based platform addresses the \"open social archive\" niche where X (locked API), Instagram/TikTok (gated) underperform.",
+      "heat_source_url": "https://joinmastodon.org/",
+      "status": "preview_pending_publish",
+      "providers_featured": [
+        "Mastodon",
+        "ActivityPub",
+        "Fediverse",
+        "ThreadGrab",
+        "toot CLI",
+        "Mastodon-CLI"
+      ],
+      "primary_cta": "Try ThreadGrab",
+      "created_at": "2026-08-01T12:00:00+00:00",
+      "read_time_min": 11
+    },
+    {
+      "slug": "mastodon-fediverse-arquivamento-fediverse-2026",
+      "lang": "pt",
+      "date": "2026-08-01",
+      "type": "guide",
+      "file": "pt/blog/mastodon-fediverse-arquivamento-fediverse-2026.html",
+      "url": "https://threadgrab.com/pt/blog/mastodon-fediverse-arquivamento-fediverse-2026.html",
+      "title": "Arquivamento Mastodon Fediverse 2026: 5 Formas de Salvar Posts, Mídias e Feeds",
+      "description": "Compare 5 métodos para arquivar posts Mastodon e conteúdo Fediverse em 2026: bookmarks, API ActivityPub, ThreadGrab, Mastodon-CLI e toot CLI.",
+      "heat_source": "PT translation of the Mastodon/Fediverse coverage gap detected on 2026-08-01.",
+      "heat_source_url": "https://threadgrab.com/en/blog/mastodon-fediverse-archive-2026.html",
+      "status": "preview_pending_publish",
+      "providers_featured": [
+        "Mastodon",
+        "ActivityPub",
+        "Fediverse",
+        "ThreadGrab",
+        "toot CLI",
+        "Mastodon-CLI"
+      ],
+      "primary_cta": "Experimente ThreadGrab",
+      "created_at": "2026-08-01T12:00:00+00:00",
+      "read_time_min": 11
+    },
+    {
+      "slug": "mastodon-arsip-fediverse-2026",
+      "lang": "id",
+      "date": "2026-08-01",
+      "type": "guide",
+      "file": "id/blog/mastodon-arsip-fediverse-2026.html",
+      "url": "https://threadgrab.com/id/blog/mastodon-arsip-fediverse-2026.html",
+      "title": "Arsip Mastodon Fediverse 2026: 5 Cara Simpan Post, Media & Feed Instance",
+      "description": "Bandingkan 5 metode untuk mengarsipkan post Mastodon dan konten Fediverse di 2026: bookmark, API ActivityPub, ThreadGrab, Mastodon-CLI dan toot CLI.",
+      "heat_source": "ID translation of the Mastodon/Fediverse coverage gap detected on 2026-08-01.",
+      "heat_source_url": "https://threadgrab.com/en/blog/mastodon-fediverse-archive-2026.html",
+      "status": "preview_pending_publish",
+      "providers_featured": [
+        "Mastodon",
+        "ActivityPub",
+        "Fediverse",
+        "ThreadGrab",
+        "toot CLI",
+        "Mastodon-CLI"
+      ],
+      "primary_cta": "Coba ThreadGrab",
+      "created_at": "2026-08-01T12:00:00+00:00",
+      "read_time_min": 11
     }
   ],
   "recent_topics": [
