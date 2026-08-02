@@ -81,18 +81,32 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "ThreadGrab",
-    "description": "Free online tool to download Threads (Meta) videos and photos. No install, no watermark.",
-    "url": "https://threadgrab.com/en/",
-    "applicationCategory": "MultimediaApplication",
-    "operatingSystem": "Any",
-    "browserRequirements": "Requires JavaScript",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    }
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "ThreadGrab",
+        "url": "https://threadgrab.com/"
+      },
+      {
+        "@type": "Organization",
+        "name": "ThreadGrab",
+        "url": "https://threadgrab.com/"
+      },
+      {
+        "@type": "WebApplication",
+        "name": "ThreadGrab",
+        "description": "Free online tool to download Threads (Meta) videos and photos. No install, no watermark.",
+        "url": "https://threadgrab.com/id/",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    ]
   }
   </script>
   <script type="application/ld+json">
