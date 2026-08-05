@@ -27,6 +27,9 @@
 - [Marvelous 2026: Git Markdown Editor for Creators | ThreadGrab](https://threadgrab.com/en/blog/marvelous-git-markdown-creator-2026.html): A Git-backed Markdown editor for social creators. Every Ctrl+S commits a snapshot. Pair with ThreadGrab for versioned content archives.
 - [Marvelous 2026: Editor Markdown com Git para Criadores | ThreadGrab](https://threadgrab.com/pt/blog/marvelous-git-markdown-criador-2026.html): Editor Markdown com Git para criadores sociais. Cada Ctrl+S cria um commit.
 - [Marvelous 2026: Editor Markdown dengan Git untuk Kreator | ThreadGrab](https://threadgrab.com/id/blog/marvelous-git-markdown-kreator-2026.html): Editor Markdown dengan Git untuk kreator sosial. Setiap Ctrl+S membuat commit.
+- [Cloudflare Computer 2026: Agent Runtime for Social Archives | ThreadGrab](https://threadgrab.com/en/blog/cloudflare-computer-social-archive-2026.html): Cloudflare's early-preview agent runtime gives agents a durable workspace filesystem plus isolate and container runtimes. How to use it for archiving X Articles, Bluesky posts, and LinkedIn newsletters.
+- [Cloudflare Computer 2026: Runtime para Arquivos Sociais | ThreadGrab](https://threadgrab.com/pt/blog/cloudflare-computer-arquivo-social-2026.html): Runtime de agente em pré-visualização da Cloudflare com filesystem durável e runtimes isolate e container para arquivar X Articles, Bluesky e LinkedIn.
+- [Cloudflare Computer 2026: Runtime Agen untuk Arsip Sosial | ThreadGrab](https://threadgrab.com/id/blog/cloudflare-computer-arsip-sosial-2026.html): Runtime agen pratinjau Cloudflare dengan filesystem tahan lama serta runtime isolate dan container untuk mengarsip X Articles, Bluesky, dan LinkedIn.
 
 ## What ThreadGrab does
 

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arquivamento Mastodon Fediverse 2026: 5 Formas de Salvar Posts, M&iacute;dias e Feeds | ThreadGrab</title>
+  <meta name="description" content="Compare 5 m&eacute;todos para arquivar posts Mastodon e conte&uacute;do Fediverse em 2026: bookmarks, API ActivityPub, ThreadGrab, Mastodon-CLI e toot CLI.">
+  <meta name="keywords" content="arquivar Mastodon, salvar posts Mastodon, ActivityPub, backup Fediverso, scraper Mastodon, ThreadGrab Mastodon, bookmark Mastodon, toot CLI, Mastodon-CLI, arquivamento redes sociais">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/pt/blog/mastodon-fediverse-arquivamento-fediverse-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/mastodon-fediverse-archive-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/mastodon-fediverse-arquivamento-fediverse-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/mastodon-arsip-fediverse-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/mastodon-fediverse-archive-2026.html">
+  <meta property="og:title" content="Arquivamento Mastodon Fediverse 2026: 5 Formas de Salvar Posts, M&iacute;dias e Feeds | ThreadGrab">
+  <meta property="og:description" content="Compare bookmarks do Mastodon, API ActivityPub, ThreadGrab, Mastodon-CLI e toot CLI para arquivar posts Mastodon e conte&uacute;do Fediverse em 2026.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/pt/blog/mastodon-fediverse-arquivamento-fediverse-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Arquivamento Mastodon Fediverse 2026: 5 Formas de Salvar Posts, M&iacute;dias e Feeds | ThreadGrab">
+  <meta name="twitter:description" content="Cinco m&eacute;todos para arquivar posts Mastodon e conte&uacute;do Fediverse em 2026 -- de bookmarks a API ActivityPub e pipelines ThreadGrab.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 2px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    .method-card { background: #1a1a1a; border-radius: 10px; padding: 20px 22px; margin-bottom: 18px; border-left: 3px solid #20d5ec; }
+    .method-card h3 { margin-top: 0; color: #20d5ec; }
+    .method-card .pros { color: #6fcf97; font-size: 0.9rem; }
+    .method-card .cons { color: #f2994a; font-size: 0.9rem; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Arquivamento Mastodon Fediverse 2026: 5 Formas de Salvar Posts, Midias e Feeds de Instancia",
+    "description": "Compare bookmarks do Mastodon, API ActivityPub, ThreadGrab, Mastodon-CLI e toot CLI para arquivar posts Mastodon, midias e feeds inteiros de instancia em 2026.",
+    "datePublished": "2026-08-01",
+    "dateModified": "2026-08-01",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/" },
+    "mainEntityOfPage": "https://threadgrab.com/pt/blog/mastodon-fediverse-arquivamento-fediverse-2026.html",
+    "inLanguage": "pt"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://threadgrab.com/pt/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/pt/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Arquivamento Mastodon Fediverse 2026" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Mastodon tem bookmarking nativo como Bluesky?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. Mastodon tem bookmarks nativos desde a versao 4.0 (final de 2023). Sao privados e pesquisaveis dentro da sua conta, mas diferentemente do Bluesky voce nao pode exporta-los pela UI web -- precisa de uma chamada API (Metodo 2) ou ferramenta de terceiros (Metodos 3-5) para recupera-los como dados estruturados."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso usar a API ActivityPub para salvar posts do Mastodon gratuitamente?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. A API REST do Mastodon e aberta e nao autenticada para todas leituras publicas. Voce pode buscar timelines, statuses individuais e resultados de busca com simples HTTP GET requests para endpoints como https://mastodon.social/api/v1/timelines/public ou https://mastodon.social/api/v2/search. Rate limits sao cerca de 300 requests por janela de 5 minutos por IP."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "ThreadGrab suporta arquivamento do Mastodon?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. ThreadGrab roteia requests Mastodon pela mesma API REST aberta que toda instancia Mastodon implementa, entao voce pode arquivar posts de mastodon.social, fosstodon.org, hachyderm.io ou qualquer outra instancia atraves de um unico endpoint, retornando JSON ou Markdown normalizados."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O que e o toot CLI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "toot e o cliente de linha de comando Mastodon de terceiros mais popular, escrito em Python e instalavel com pip install toot. Suporta postar, ler, buscar, marcar e seguir do terminal. Seus comandos toot bookmark e toot search tornam-no um companheiro poderoso para arquivamento scriptado em shell."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso arquivar uma instancia inteira do Mastodon localmente?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim, mas somente se voce for o admin da instancia. Mastodon envia tarefas rake (tootctl media backfill, tootctl backup) que fazem dump de todo status, arquivo de midia e linhas de banco em um tar. Para nao-admins, ThreadGrab mais uma lista de usuarios por instancia permite raspar conteudo publico em escala usando o mesmo endpoint ActivityPub que todo servidor Mastodon expoe."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/pt/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a href="/en/blog/mastodon-fediverse-archive-2026.html">EN</a>
+      <a href="/pt/blog/mastodon-fediverse-arquivamento-fediverse-2026.html" class="active">PT</a>
+      <a href="/id/blog/mastodon-arsip-fediverse-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <p class="breadcrumb"><a href="/pt/">In&iacute;cio</a> &rsaquo; <a href="/pt/blog/">Blog</a> &rsaquo; Arquivamento Mastodon Fediverse 2026: 5 M&eacute;todos</p>
+
+    <h1>Arquivamento Mastodon Fediverse 2026: <span>5 Formas de Salvar Posts, M&iacute;dias e Feeds</span></h1>
+    <p class="meta">1 de Agosto de 2026 &middot; 11 min de leitura &middot; por ThreadGrab</p>
+
+    <p>Mastodon e o restante do Fediverso cruzaram um ponto de virada em 2026. Apenas o mastodon.social atende mais de 3,3 milh&otilde;es de usu&aacute;rios ativos mensais com 183 milh&otilde;es de statuses publicados; inst&acirc;ncias especializadas como fosstodon.org, hachyderm.io e mastodon.online adicionam mais de 300 mil usu&aacute;rios entre elas. Seja voc&ecirc; um jornalista rastreando uma not&iacute;cia urgente, um pesquisador construindo um conjunto de dados longitudinal, ou um criador de conte&uacute;do reaproveitando seus pr&oacute;prios posts para um artigo longo, voc&ecirc; precisa de uma forma confi&aacute;vel de arquivar conte&uacute;do do Mastodon antes que uma inst&acirc;ncia desligue ou um moderador apague um fio.</p>
+
+    <p>O Fediverso roda em ActivityPub -- o mesmo protocolo que alimenta Mastodon, Misskey, Pleroma, Akkoma, Ghost, PeerTube e Pixelfed. Essa base compartilhada torna o arquivamento baseado em ActivityPub mais f&aacute;cil do que raspar qualquer plataforma propriet&aacute;ria, porque cada n&oacute; exp&otilde;e APIs p&uacute;blicas compat&iacute;veis. Este guia cobre cinco m&eacute;todos comprovados para arquivar posts, m&iacute;dias e feeds inteiros de inst&acirc;ncias do Mastodon em 2026, dos bookmarks ao scraping completo de federa&ccedil;&atilde;o.</p>
+
+    <div class="callout">
+      <p><strong>Resumo.</strong> Use <strong>bookmarks nativos do Mastodon</strong> para salvamentos casuais. Use a <strong>API REST do Mastodon</strong> para acesso program&aacute;tico sem autentica&ccedil;&atilde;o. Use o <strong>ThreadGrab</strong> para arquivamento multiplataforma (Mastodon + X + Bluesky em uma &uacute;nica interface). Use o <strong>toot CLI</strong> para fluxos de trabalho em terminal. Use o <strong>Mastodon-CLI</strong> para exports pesados e backups em n&iacute;vel de inst&acirc;ncia.</p>
+    </div>
+
+    <h2>Por que o Arquivamento do Mastodon Importa em 2026</h2>
+    <p>Tr&ecirc;s tend&ecirc;ncias tornam o arquivamento do Mastodon especialmente urgente este ano. Primeiro, a popula&ccedil;&atilde;o do Fediverso quase triplicou desde o &eacute;xodo do Twitter em 2022, com inst&acirc;ncias individuais hospedando regularmente 60k-300k usu&aacute;rios e milh&otilde;es de posts p&uacute;blicos. Segundo, inst&acirc;ncias podem desaparecer da noite para o dia: um moderador volunt&aacute;rio se esgota, contas de hospedagem n&atilde;o s&atilde;o pagas, ou uma &uacute;nica queixa DMCA aciona o desligamento do servidor, levando cada post p&uacute;blico junto. Terceiro, o design aberto do ActivityPub significa que n&atilde;o h&aacute; chave de API, paywall ou registro de desenvolvedor necess&aacute;rio para acesso de leitura em conte&uacute;do p&uacute;blico -- qualquer ferramenta que fale HTTP pode arquivar o Fediverso.</p>
+
+    <p>Diferentemente do X, que restringe acesso &agrave; API em n&iacute;veis pagos, e do Instagram ou TikTok, que bloqueiam endpoints de leitura por gating de apps aprovados, servidores ActivityPub publicam toda sua timeline p&uacute;blica por HTTP livre. Voc&ecirc; n&atilde;o precisa registrar um app, n&atilde;o precisa se inscrever, e n&atilde;o precisa pagar ningu&eacute;m. Isso torna o Fediverso a rede de conversa p&uacute;blica mais arquiv&aacute;vel em 2026.</p>
+
+    <h2>M&eacute;todo 1: Bookmarks Nativos do Mastodon -- O Salvamento Sem Esfor&ccedil;o</h2>
+
+    <div class="method-card">
+      <h3>Bookmarks Nativos do Mastodon</h3>
+      <p>Dispon&iacute;vel em todo app oficial do Mastodon (web, iOS, Android, clientes terceiros) desde Mastodon 4.0 (2023).</p>
+      <p class="pros">Pr&oacute;s: Configura&ccedil;&atilde;o zero, privado, pesquis&aacute;vel dentro da sua conta, funciona em qualquer app oficial.</p>
+      <p class="cons">Contras: Sem export pela UI web, bookmarks vivem e morrem com sua conta, sem opera&ccedil;&otilde;es em lote, sem m&iacute;dia anexada.</p>
+    </div>
+
+    <p>Mastodon introduziu bookmarks na vers&atilde;o 4.0 (novembro de 2023), e funcionam como qualquer outro bookmark social que voc&ecirc; j&aacute; usou. Clique no &iacute;cone de bookmark em qualquer post, e ele &eacute; salvo em uma lista privada vis&iacute;vel apenas para voc&ecirc;. Bookmarks s&atilde;o pesquis&aacute;veis na UI web e nos apps m&oacute;veis oficiais, e sincronizam entre dispositivos se voc&ecirc; fizer login na mesma conta.</p>
+
+    <p>Bookmarks s&atilde;o perfeitos para uso casual -- voc&ecirc; v&ecirc; um fio interessante no seu feed principal, marca, e volta mais tarde para reler. Mas t&ecirc;m um teto m&aacute;ximo: n&atilde;o h&aacute; bot&atilde;o de export. Se voc&ecirc; quer migrar, compartilhar ou analisar sua cole&ccedil;&atilde;o de bookmarks, precisa ou da API (M&eacute;todo 2) ou de uma ferramenta de terceiros (M&eacute;todos 3-5).</p>
+
+    <h3>Quando usar bookmarks nativos</h3>
+    <ul>
+      <li>Voc&ecirc; salva posts ocasionalmente e apenas os rel&ecirc; dentro do Mastodon.</li>
+      <li>Voc&ecirc; usa Mastodon em v&aacute;rios dispositivos e quer listas de leitura sincronizadas.</li>
+      <li>Voc&ecirc; n&atilde;o precisa do conte&uacute;do salvo fora do Mastodon, e confia na confiabilidade de longo prazo da sua inst&acirc;ncia.</li>
+    </ul>
+
+    <h2>M&eacute;todo 2: API REST do Mastodon -- A Abordagem Aberta, Sem Auth</h2>
+
+    <div class="method-card">
+      <h3>API P&uacute;blica do Mastodon (v1 + v2)</h3>
+      <p>URL base: <code>https://&lt;inst&acirc;ncia&gt;/api/v1/</code> e <code>.../api/v2/</code> -- endpoints de leitura n&atilde;o exigem autentica&ccedil;&atilde;o.</p>
+      <p class="pros">Pr&oacute;s: Completamente gr&aacute;tis, sem registro de app, bem documentado em docs.joinmastodon.org, funciona com qualquer cliente HTTP.</p>
+      <p class="cons">Contras: Rate-limit por IP (300 requests por 5 minutos na maioria das inst&acirc;ncias), exige familiaridade com vocabul&aacute;rio ActivityPub, bin&aacute;rios de m&iacute;dia precisam de fetches separados.</p>
+    </div>
+
+    <p>Toda inst&acirc;ncia Mastodon exp&otilde;e uma API REST que espelha de perto a UI web do Mastodon. Voc&ecirc; pode buscar timelines p&uacute;blicas, statuses individuais, feeds de hashtag, resultados de busca, e listagens de diret&oacute;rio de inst&acirc;ncia -- tudo com simples HTTP GET requests e sem login. A superf&iacute;cie da API &eacute; est&aacute;vel entre inst&acirc;ncias porque todo servidor implementa o mesmo c&oacute;digo Mastodon.</p>
+
+    <pre><code># Buscar a timeline local de qualquer inst&acirc;ncia Mastodon
+curl -s "https://fosstodon.org/api/v1/timelines/public?limit=3" \
+  | jq '[.[] | {user: .account.username, content: .content[0:120]}]'
+
+# Buscar um status espec&iacute;fico pelo ID num&eacute;rico
+curl -s "https://mastodon.social/api/v1/statuses/113305367338692164" \
+  | jq '{id: .id, user: .account.username, content: .content[0:200]}'
+
+# Buscar atrav&eacute;s do &iacute;ndice local de qualquer inst&acirc;ncia
+curl -s "https://mastodon.social/api/v2/search?q=ActivityPub+archiving&limit=10" \
+  | jq '.statuses[] | {user: .username, content: .content[0:120]}'</code></pre>
+
+    <p>O conceito chave no modelo de dados do Mastodon &eacute; o ID num&eacute;rico (um inteiro de 64 bits, frequentemente renderizado como Snowflake). Todo status, conta e anexo de m&iacute;dia tem um ID est&aacute;vel. Uma vez que voc&ecirc; tem uma URL de status, pode extrair a inst&acirc;ncia e o ID e buscar o mesmo post de qualquer ferramenta que fala a API REST. Diferentemente das atividades assinadas ActivityPub, a API REST &eacute; uma superf&iacute;cie JSON-only mais simples feita para apps cliente.</p>
+
+    <p>Rate limits s&atilde;o aplicados por IP e por token de acesso, com a maioria das inst&acirc;ncias padronizando em 300 requests por janela de 5 minutos para tr&aacute;fego n&atilde;o autenticado. Para arquivamento pessoal, um cron job di&aacute;rio fica bem dentro do limite. Para coleta em larga escala, voc&ecirc; precisa de um token de acesso (fa&ccedil;a login uma vez, salve o token) ou de uma ferramenta de crawling de federa&ccedil;&atilde;o.</p>
+
+    <h3>Quando usar a API REST do Mastodon</h3>
+    <ul>
+      <li>Voc&ecirc; est&aacute; confort&aacute;vel com curl ou uma linguagem de script como Python ou Node.js.</li>
+      <li>Voc&ecirc; quer puxar JSON para an&aacute;lise downstream (ingest&atilde;o LLM, constru&ccedil;&atilde;o de dataset, migra&ccedil;&atilde;o de conte&uacute;do).</li>
+      <li>Voc&ecirc; s&oacute; precisa de conte&uacute;do p&uacute;blico, e n&atilde;o se importa de pular m&iacute;dia ou posts com login.</li>
+    </ul>
+
+    <h2>M&eacute;todo 3: ThreadGrab -- Arquivamento Multiplataforma Mastodon + X + Bluesky</h2>
+
+    <div class="method-card">
+      <h3>ThreadGrab</h3>
+      <p>Site: <a href="/pt/">threadgrab.com</a> -- gr&aacute;tis, sem necessidade de conta, sem registro de app.</p>
+      <p class="pros">Pr&oacute;s: Interface &uacute;nica para arquivamento Mastodon E X E Bluesky, API p&uacute;blica gr&aacute;tis, sem autentica&ccedil;&atilde;o para chamadas de leitura, retorna JSON ou Markdown normalizado.</p>
+      <p class="cons">Contras: Requer conforto b&aacute;sico de linha de comando, n&atilde;o faz scraping de firehose de federa&ccedil;&atilde;o completo (use Mastodon-CLI para isso).</p>
+    </div>
+
+    <p>ThreadGrab foi constru&iacute;do para resolver um problema persistente em conte&uacute;do social: cada plataforma tem sua pr&oacute;pria API, seu pr&oacute;prio modelo de autentica&ccedil;&atilde;o, seus pr&oacute;prios rate limits e seu pr&oacute;prio vocabul&aacute;rio de dados. A API REST do Mastodon &eacute; JSON, a API do X &eacute; JSON, mas os nomes de campo, conven&ccedil;&otilde;es de pagina&ccedil;&atilde;o, e formatos de entidade s&atilde;o todos diferentes. ThreadGrab normaliza tudo em um &uacute;nico formato de resposta, ent&atilde;o o mesmo script que arquiva um fio do X pode arquivar um toot do Mastodon sem modifica&ccedil;&atilde;o.</p>
+
+    <pre><code># Arquivar qualquer conta Mastodon via ThreadGrab (sem login)
+curl -s "https://threadgrab.com/api/mastodon/account/mastodon.social/mastodon" \
+  | jq '.[:3] | .[] | {user: .user, text: .text[0:120], url: .url}'
+
+# Salvar posts do Mastodon como Markdown para um arquivo LLM-friendly
+curl -s "https://threadgrab.com/api/mastodon/account/mastodon.social/mastodon" \
+  | jq -r '.[] | "## @\(.user)\n\(.text)\n---\n"' \
+  > mastodon-arquivo-$(date +%Y-%m-%d).md
+
+# Buscar posts no Fediverso por palavra-chave
+curl -s "https://threadgrab.com/api/mastodon/search?q=ActivityPub&instance=fosstodon.org&limit=10" \
+  | jq '.posts[] | {user: .user, text: .text[0:100]}'</code></pre>
+
+    <p>Como todo servidor Mastodon implementa os mesmos endpoints REST, ThreadGrab pode perguntar qual inst&acirc;ncia voc&ecirc; quer consultar e rotear a request automaticamente. Voc&ecirc; n&atilde;o precisa aprender a diferen&ccedil;a entre o deploy de mastodon.social e o de fosstodon.org -- eles exp&otilde;em a mesma superf&iacute;cie de API, ent&atilde;o ThreadGrab os trata identicamente.</p>
+
+    <p>O output &eacute; JSON limpo que voc&ecirc; pode transformar em qualquer formato: Markdown para posts de blog e contexto LLM, CSV para an&aacute;lise em planilha, texto simples para indexa&ccedil;&atilde;o em busca. Posts Mastodon incluem a URL original, o handle do autor (com sua inst&acirc;ncia, ex. <code>@user@fosstodon.org</code>), e um timestamp normalizado que voc&ecirc; pode ordenar contra conte&uacute;do de outras plataformas.</p>
+
+    <h3>Quando usar ThreadGrab</h3>
+    <ul>
+      <li>Voc&ecirc; arquiva conte&uacute;do de Mastodon, X, e Bluesky e quer uma ferramenta que fale os tr&ecirc;s.</li>
+      <li>Voc&ecirc; precisa de output Markdown limpo para treinamento LLM, pipelines RAG, ou bases pessoais de conhecimento.</li>
+      <li>Voc&ecirc; n&atilde;o quer gerenciar tokens de autentica&ccedil;&atilde;o por inst&acirc;ncia.</li>
+    </ul>
+
+    <h2>M&eacute;todo 4: toot CLI -- O Kit de Ferramentas do Usu&aacute;rio Avan&ccedil;ado de Terminal</h2>
+
+    <div class="method-card">
+      <h3>toot (CLI para Mastodon)</h3>
+      <p><code>pip install toot</code> -- o CLI Mastodon de terceiros mais popular, escrito em Python.</p>
+      <p class="pros">Pr&oacute;s: Paridade total de features com a UI web, login &eacute; um comando, feito para script, funciona com qualquer inst&acirc;ncia.</p>
+      <p class="cons">Contras: Requer registrar um app Mastodon (um clique em configura&ccedil;&otilde;es), adiciona depend&ecirc;ncia Python, menos ergon&ocirc;mico para exports em massa.</p>
+    </div>
+
+    <p><code>toot</code> &eacute; o CLI de facto para Mastodon. Exp&otilde;e a API completa de leitura e escrita em um shell amig&aacute;vel: <code>toot post</code> publica um status, <code>toot timeline</code> imprime sua timeline, <code>toot search</code> executa uma busca por palavra-chave. Para arquivadores, os comandos <code>toot bookmark</code>, <code>toot whois</code>, e <code>toot search</code> s&atilde;o particularmente &uacute;teis porque permitem triagem e captura de conte&uacute;do sem sair do terminal.</p>
+
+    <pre><code># Instalar e fazer login (execute uma vez)
+pip install toot
+toot login --instance fosstodon.org
+# Uma janela do navegador abre; copie o c&oacute;digo de auth de volta; toot armazena localmente
+
+# Buscar e salvar os primeiros 5 resultados
+toot search "ActivityPub arquivo 2026" --limit 5 \
+  | tee mastodon-busca-2026-08-01.txt
+
+# Listar seus bookmarks programaticamente (&oacute;timo para preencher um arquivo)
+toot bookmarks --limit 20 | tee meus-bookmarks.txt
+
+# Inspecionar qualquer usu&aacute;rio -- seguidores, bio, contagem de posts
+toot whois --user @Gargron@mas.to | head -40</code></pre>
+
+    <p><code>toot</code> gerencia o armazenamento do token de login para voc&ecirc;, ent&atilde;o s&oacute; precisa autenticar uma vez por inst&acirc;ncia por dispositivo. &Eacute; um companheiro brilhante para um pipeline de shell: direcione <code>toot search</code> para <code>jq</code>, depois para <code>tee</code>, e voc&ecirc; tem um script de arquivo di&aacute;rio em 4 linhas.</p>
+
+    <h3>Quando usar o toot CLI</h3>
+    <ul>
+      <li>Voc&ecirc; vive em um terminal e quer acesso Mastodon sem uma aba de navegador.</li>
+      <li>Voc&ecirc; quer autenticar uma vez e usar o mesmo token para postar, marcar e ler.</li>
+      <li>Voc&ecirc; est&aacute; construindo um pipeline de arquivo baseado em shell (cron, bash, fish, zsh).</li>
+    </ul>
+
+    <h2>M&eacute;todo 5: Mastodon-CLI -- Exporta&ccedil;&otilde;es em Massa e Backups em N&iacute;vel de Inst&acirc;ncia</h2>
+
+    <div class="method-card">
+      <h3>Mastodon-CLI + tarefas rake (ferramentas admin)</h3>
+      <p><code>npm install -g mastodon-cli</code> para n&atilde;o-admins, ou <code>RAILS_ENV=production tootctl media backfill</code> para admins.</p>
+      <p class="pros">Pr&oacute;s: Opera&ccedil;&otilde;es em massa, suporta centenas de milhares de posts por sess&atilde;o, captura bin&aacute;rios de m&iacute;dia, inclui backup admin para inst&acirc;ncias inteiras.</p>
+      <p class="cons">Contras: Setup mais pesado que outros m&eacute;todos, Mastodon-CLI &eacute; menos mantido ativamente que toot, backups em n&iacute;vel de inst&acirc;ncia exigem acesso admin.</p>
+    </div>
+
+    <p>Quando voc&ecirc; precisa arquivar milhares de posts -- ou o conte&uacute;do inteiro de uma inst&acirc;ncia -- voc&ecirc; pega o Mastodon-CLI ou as tarefas rake oficiais <code>tootctl</code>. Mastodon-CLI &eacute; uma ferramenta Node.js que fornece variantes batch-friendly dos endpoints REST comuns, com l&oacute;gica de retry e suporte a resume para exports longos.</p>
+
+    <pre><code># Instalar Mastodon-CLI globalmente
+npm install -g mastodon-cli
+
+# Login uma vez (baseado em env, seguro para cron)
+export MASTODON_TOKEN="&lt;seu...export MASTODON_INSTANCE="https://fosstodon.org"
+
+# Arquivar uma conta inteira como JSON
+mastodon-cli archive @Gargron@mas.to --format json \
+  --output gargron-arquivo.json
+
+# Salvar todo post que menciona uma hashtag como Markdown
+mastodon-cli hashtag "ActivityPub" --format markdown --limit 200 \
+  > fediverse-activitypub-arquivo-md.txt
+
+# Para admins de inst&acirc;ncia: dump completo (statuses + m&iacute;dia + DB)
+tootctl media backfill --concurrency 20
+tootctl backup --path /var/backups/mastodon/</code></pre>
+
+    <p>Para usu&aacute;rios n&atilde;o-admin, o ponto doce do Mastodon-CLI s&atilde;o capturas em massa em n&iacute;vel de hashtag e conta -- ele pode puxar milhares de posts em uma &uacute;nica sess&atilde;o, com retry embutido em rate limits e relat&oacute;rio de progresso. Para admins, as tarefas rake <code>tootctl</code> inclu&iacute;das s&atilde;o a forma can&ocirc;nica de fazer backup de uma inst&acirc;ncia antes de uma migra&ccedil;&atilde;o ou desligamento de servidor.</p>
+
+    <h3>Quando usar Mastodon-CLI / tootctl</h3>
+    <ul>
+      <li>Voc&ecirc; precisa arquivar mais que um dia de posts de um usu&aacute;rio ou hashtag.</li>
+      <li>Voc&ecirc; est&aacute; fazendo migra&ccedil;&atilde;o de inst&acirc;ncia e precisa de backup amplo do servidor.</li>
+      <li>Voc&ecirc; quer baixar bin&aacute;rios de m&iacute;dia, n&atilde;o apenas conte&uacute;do de texto.</li>
+    </ul>
+
+    <h2>Compara&ccedil;&atilde;o Lado a Lado</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Caracter&iacute;stica</th>
+          <th>Bookmarks Mastodon</th>
+          <th>API REST Mastodon</th>
+          <th>ThreadGrab</th>
+          <th>toot CLI</th>
+          <th>Mastodon-CLI</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Tempo de configura&ccedil;&atilde;o</td>
+          <td>0 segundos</td>
+          <td>2 minutos (curl)</td>
+          <td>2 minutos (curl)</td>
+          <td>5 minutos (pip install + login)</td>
+          <td>5 minutos (npm install + token)</td>
+        </tr>
+        <tr>
+          <td>Habilidade t&eacute;cnica</td>
+          <td>Nenhuma</td>
+          <td>Baixa</td>
+          <td>Baixa</td>
+          <td>M&eacute;dia</td>
+          <td>M&eacute;dia</td>
+        </tr>
+        <tr>
+          <td>Auth necess&aacute;ria</td>
+          <td>Sim (logado)</td>
+          <td>N&atilde;o</td>
+          <td>N&atilde;o</td>
+          <td>Sim (um registro de app)</td>
+          <td>Sim (token de acesso)</td>
+        </tr>
+        <tr>
+          <td>Capacidade de export</td>
+          <td>N&atilde;o</td>
+          <td>Sim (JSON)</td>
+          <td>Sim (JSON / MD)</td>
+          <td>Sim (texto simples)</td>
+          <td>Sim (JSON / MD / DB dump)</td>
+        </tr>
+        <tr>
+          <td>Streaming tempo real</td>
+          <td>N&atilde;o</td>
+          <td>Sim (WebSocket, v4.3+)</td>
+          <td>N&atilde;o</td>
+          <td>Sim (toot stream)</td>
+          <td>N&atilde;o</td>
+        </tr>
+        <tr>
+          <td>Suporta X / Bluesky tamb&eacute;m</td>
+          <td>N&atilde;o</td>
+          <td>N&atilde;o</td>
+          <td>Sim</td>
+          <td>N&atilde;o</td>
+          <td>N&atilde;o</td>
+        </tr>
+        <tr>
+          <td>Lote / batch</td>
+          <td>Manual apenas</td>
+          <td>Script&aacute;vel</td>
+          <td>Script&aacute;vel</td>
+          <td>Script&aacute;vel</td>
+          <td>Script&aacute;vel com resume</td>
+        </tr>
+        <tr>
+          <td>Output Markdown</td>
+          <td>N&atilde;o</td>
+          <td>Via convers&atilde;o jq</td>
+          <td>Suporte nativo</td>
+          <td>Via piping</td>
+          <td>Suporte nativo</td>
+        </tr>
+        <tr>
+          <td>Captura bin&aacute;rios de m&iacute;dia</td>
+          <td>S&oacute; refer&ecirc;ncia</td>
+          <td>Sim (URLs separadas)</td>
+          <td>Sim (URLs inclu&iacute;das)</td>
+          <td>Sim (URLs de download)</td>
+          <td>Sim (escreve arquivos)</td>
+        </tr>
+        <tr>
+          <td>Melhor para</td>
+          <td>Leitores casuais</td>
+          <td>Entusiastas de script</td>
+          <td>Usu&aacute;rios multiplataforma</td>
+          <td>Usu&aacute;rios de terminal</td>
+          <td>Arquivistas em massa &amp; admins</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Construindo um Pipeline Completo de Arquivamento Mastodon</h2>
+    <p>Aqui est&aacute; como um criador de conte&uacute;do pode combinar esses m&eacute;todos em um workflow di&aacute;rio de arquivamento Mastodon que tamb&eacute;m captura X e Bluesky:</p>
+
+    <pre><code>#!/bin/bash
+# Pipeline di&aacute;rio de arquivamento Fediverse + X + Bluesky (cron &agrave;s 7h)
+# Combina ThreadGrab API para pulls multiplataforma + armazenamento em arquivo
+
+MASTODON_INSTANCE="fosstodon.org"
+ACCOUNTS=("Gargron@mas.to" "mcpheywood@mastodon.social" "fosstodon@fosstodon.org")
+OUTPUT_DIR="$HOME/fediverse-arquivo/$(date +%Y/%m)"
+mkdir -p "$OUTPUT_DIR"
+
+for acct in "${ACCOUNTS[@]}"; do
+  HANDLE="${acct%@*}"
+  curl -s "https://threadgrab.com/api/mastodon/account/${MASTODON_INSTANCE}/${HANDLE}" \
+    | jq -r '.[] | "### @\(.user)\n\(.text)\n---\n"' \
+    > "$OUTPUT_DIR/mastodon-$HANDLE.md"
+  echo "Salvo Mastodon $acct: $(wc -l &lt; "$OUTPUT_DIR/mastodon-$HANDLE.md") linhas"
+done
+
+echo "Arquivo Fediverse completo para $(date +%Y-%m-%d)"</code></pre>
+
+    <p>Este pipeline roda diariamente via cron, organiza arquivos por ano e m&ecirc;s, e usa ThreadGrab porque o mesmo script tamb&eacute;m pode arquivar handles do Bluesky e perfis do X sem modifica&ccedil;&atilde;o -- apenas a URL muda. O jornalista pode ent&atilde;o alimentar o arquivo Markdown em um LLM para sumariza&ccedil;&atilde;o, busca ou detec&ccedil;&atilde;o de tend&ecirc;ncias atrav&eacute;s do Fediverso.</p>
+
+    <div class="callout">
+      <p><strong>Dica pro.</strong> Para m&aacute;xima flexibilidade, combine <strong>ThreadGrab</strong> para leituras multiplataforma, a <strong>API REST do Mastodon</strong> para investiga&ccedil;&atilde;o pontual, e <strong>toot</strong> para bookmarking no terminal durante eventos ao vivo. ThreadGrab gerencia a normaliza&ccedil;&atilde;o Fediverse + X + Bluesky; a API nativa e o CLI d&atilde;o controle total quando voc&ecirc; precisa.</p>
+    </div>
+
+    <h2>Como o ThreadGrab se Encaixa no Ecossistema do Fediverso</h2>
+    <p>ThreadGrab foi desenhado para fazer a ponte entre plataformas sociais, e o Fediverso &eacute; onde essa ponte mais importa. A API REST do Mastodon &eacute; bem documentada, a do Misskey &eacute; similar mas n&atilde;o id&ecirc;ntica, a do Pleroma &eacute; mais antiga e usa nomes de campos diferentes. Sem normaliza&ccedil;&atilde;o, um pesquisador que quer arquivar posts dos tr&ecirc;s precisa manter tr&ecirc;s conjuntos de c&oacute;digo.</p>
+
+    <p>ThreadGrab abstrai essas diferen&ccedil;as. O mesmo endpoint que busca um toot do Mastodon em fosstodon.org pode buscar um post do Misskey em uma inst&acirc;ncia japonesa ou um post do Bluesky de um usu&aacute;rio AT Protocol -- tudo porque ThreadGrab normaliza o formato de resposta na sa&iacute;da. Para o criador m&eacute;dio que l&ecirc; X para not&iacute;cias urgentes, Bluesky para discurso tech, e Fediverso para discuss&atilde;o de comunidade, ThreadGrab &eacute; o &uacute;nico ponto de entrada de arquivamento que mant&eacute;m tudo consistente.</p>
+
+    <div class="cta">
+      <p>Arquive toots do Mastodon, fios do X, e posts do Bluesky lado a lado -- sem conta, sem chave de API, sem configura&ccedil;&atilde;o.</p>
+      <a class="btn" href="/pt/">Experimente ThreadGrab -- Arquivador de M&iacute;dia Social Gr&aacute;tis</a>
+    </div>
+
+    <h2>Perguntas Frequentes</h2>
+    <div class="faq-item">
+      <strong>Mastodon tem bookmarking nativo como Bluesky?</strong>
+      <p>Sim. Mastodon tem bookmarks nativos desde a vers&atilde;o 4.0 (final de 2023). S&atilde;o privados e pesquis&aacute;veis dentro da sua conta, mas diferentemente do Bluesky voc&ecirc; n&atilde;o pode export&aacute;-los pela UI web -- precisa de uma chamada API (M&eacute;todo 2) ou ferramenta de terceiros (M&eacute;todos 3-5) para recuper&aacute;-los como dados estruturados.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Posso usar a API ActivityPub para salvar posts do Mastodon gratuitamente?</strong>
+      <p>Sim. A API REST do Mastodon &eacute; aberta e n&atilde;o autenticada para todas leituras p&uacute;blicas. Voc&ecirc; pode buscar timelines, statuses individuais, e resultados de busca com simples HTTP GET requests para endpoints como <code>https://mastodon.social/api/v1/timelines/public</code> ou <code>https://mastodon.social/api/v2/search</code>. Rate limits s&atilde;o cerca de 300 requests por janela de 5 minutos por IP.</p>
+    </div>
+    <div class="faq-item">
+      <strong>ThreadGrab suporta arquivamento do Mastodon?</strong>
+      <p>Sim. ThreadGrab roteia requests Mastodon pela mesma API REST aberta que toda inst&acirc;ncia Mastodon implementa, ent&atilde;o voc&ecirc; pode arquivar posts de mastodon.social, fosstodon.org, hachyderm.io, ou qualquer outra inst&acirc;ncia atrav&eacute;s de um endpoint. O output &eacute; JSON normalizado ou Markdown que combina com o que ThreadGrab retorna para X e Bluesky.</p>
+    </div>
+    <div class="faq-item">
+      <strong>O que &eacute; o toot CLI?</strong>
+      <p>toot &eacute; o cliente de linha de comando Mastodon de terceiros mais popular, instal&aacute;vel com <code>pip install toot</code>. Suporta postar, ler, buscar, marcar e seguir de qualquer terminal. Seus comandos <code>toot search</code> e <code>toot bookmarks</code> s&atilde;o particularmente &uacute;teis para arquivamento scriptado do Fediverso.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Posso arquivar uma inst&acirc;ncia inteira do Mastodon localmente?</strong>
+      <p>S&oacute; se voc&ecirc; for o admin da inst&acirc;ncia: Mastodon envia tarefas rake oficiais (<code>tootctl media backfill</code>, <code>tootctl backup</code>) que fazem dump de todo status, arquivo de m&iacute;dia, e linha de banco de dados em um arquivo tar. N&atilde;o-admins podem usar Mastodon-CLI mais a API REST p&uacute;blica para raspar conte&uacute;do p&uacute;blico em escala, mas posts privados e DMs n&atilde;o podem ser arquivados sem acesso admin.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Qual m&eacute;todo de arquivamento Mastodon &eacute; melhor para prepara&ccedil;&atilde;o de dados LLM?</strong>
+      <p>ThreadGrab &eacute; o mais ergon&ocirc;mico para workflows LLM porque produz Markdown limpo ou JSON normalizado diretamente. A API REST Mastodon bruta e o SDK atproto ambos exigem processamento adicional para converter registros em formatos LLM-friendly. toot CLI &eacute; &oacute;timo se voc&ecirc; quer leituras autenticadas (seus bookmarks, seus DMs); Mastodon-CLI &eacute; a escolha certa para exports de alto volume.</p>
+    </div>
+
+    <h2>Escolha Seu M&eacute;todo e Comece a Arquivar</h2>
+    <p>A arquitetura aberta do Fediverso o torna a rede social mais arquiv&aacute;vel em 2026. Seja voc&ecirc; use bookmarks nativos para leitura casual, a API REST para script leve, ThreadGrab para arquivamento multiplataforma, toot CLI para workflows nativos de terminal, ou Mastodon-CLI para exports em massa e backups de inst&acirc;ncia, h&aacute; um m&eacute;todo que cabe no seu workflow.</p>
+
+    <p>O insight chave &eacute; que voc&ecirc; n&atilde;o precisa escolher apenas um. Marque posts interessantes durante o dia, rode ThreadGrab &agrave; noite para arquivos de perfil pelo Fediverso e X, use toot CLI para leituras autenticadas durante eventos de not&iacute;cias, e mantenha Mastodon-CLI pronto para o dia em que voc&ecirc; decida fazer backup de uma inst&acirc;ncia inteira. As ferramentas s&atilde;o gratuitas, abertas, e feitas para trabalhar juntas. <a href="/pt/">Comece com ThreadGrab</a> para o caminho mais r&aacute;pido para um pipeline de arquivamento multiplataforma funcionando.</p>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/pt/">In&iacute;cio</a> &middot; <a href="/pt/blog/">Blog</a> &middot; <a href="/pt/about/">Sobre</a> &middot; <a href="/pt/privacy/">Privacidade</a>
+    <br>N&atilde;o afiliado ao Mastodon gGmbH, Fediverso, ou qualquer plataforma de m&iacute;dia social.
+  </footer>
+</body>
+</html>

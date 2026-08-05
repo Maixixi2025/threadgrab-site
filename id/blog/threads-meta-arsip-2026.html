@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arsip Threads Meta 2026: 5 Metode Simpan Post, Balasan &amp; Media | ThreadGrab</title>
+  <meta name="description" content="Bandingkan 5 metode untuk mengarsipkan post Threads (Meta) di 2026: bookmark, embed publik, ThreadGrab, pipeline yt-dlp, dan ekspor atproto.">
+  <meta name="keywords" content="arsip Threads, simpan post Threads, download Threads, scraper Meta Threads, bookmark Threads, embed Threads, ThreadGrab Threads, yt-dlp Threads, pengarsipan media sosial">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/id/blog/threads-meta-arsip-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/threads-meta-archive-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/threads-meta-arquivar-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/threads-meta-arsip-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/threads-meta-archive-2026.html">
+  <meta property="og:title" content="Arsip Threads Meta 2026: 5 Metode Simpan Post, Balasan &amp; Media | ThreadGrab">
+  <meta property="og:description" content="Lima metode untuk mengarsipkan post Threads (Meta) di 2026 -- bookmark, embed publik, ThreadGrab, pipeline yt-dlp, dan ekspor atproto.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/id/blog/threads-meta-arsip-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Arsip Threads Meta 2026: 5 Metode Simpan Post, Balasan &amp; Media | ThreadGrab">
+  <meta name="twitter:description" content="Lima metode untuk mengarsipkan post Threads (Meta) di 2026 -- bookmark, embed publik, ThreadGrab, pipeline yt-dlp, dan ekspor atproto.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Arsip Threads Meta 2026: 5 Metode Simpan Post, Balasan dan Media",
+    "description": "Bandingkan bookmark Threads, embed publik, ThreadGrab, yt-dlp, dan atproto untuk mengarsipkan post, balasan, dan media Threads (Meta) di 2026.",
+    "datePublished": "2026-08-03",
+    "dateModified": "2026-08-03",
+    "author": {
+      "@type": "Organization",
+      "name": "ThreadGrab",
+      "url": "https://threadgrab.com/id/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ThreadGrab",
+      "url": "https://threadgrab.com/id/"
+    },
+    "mainEntityOfPage": "https://threadgrab.com/id/blog/threads-meta-arsip-2026.html",
+    "inLanguage": "id-ID"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Beranda",
+        "item": "https://threadgrab.com/id/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://threadgrab.com/id/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Arsip Threads Meta 2026"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Apakah Threads punya bookmark bawaan seperti Bluesky atau X?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ya. Threads menambahkan bookmark bawaan (Saves) di awal 2024, tersedia di web, iOS, dan Android. Tandai post dengan mengetuk ikon pita, lalu akses lagi dari daftar Saves pribadi. Berbeda dengan bookmark X, namun, Saves Threads terikat akun dan tidak punya endpoint ekspor resmi, jadi Anda masih butuh salah satu metode di bawah untuk migrasi ke arsip portabel."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bisakah saya mengunduh post publik Threads tanpa akun atau kunci API?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ya. Setiap post publik Threads punya URL embed di threads.net/<user>/post/<id> yang bisa diambil klien HTTP tanpa autentikasi. yt-dlp sudah mendukung Threads sejak akhir 2024 dan bisa mengunduh caption post, file media, dan pohon balasan publik tanpa login. Catatannya adalah akun privat, post yang dihapus, dan balasan yang dilindungi tidak bisa diakses tanpa cookie sesi terautentikasi."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah ThreadGrab mendukung pengarsipan Threads?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ya. ThreadGrab memperlakukan Threads sebagai sumber kelas satu bersama X dan Bluesky. Tempel URL threads.net atau @username publik apa pun dan ThreadGrab mengembalikan Markdown atau JSON ternormalisasi berisi body post, URL media terbenam, pohon balasan publik, dan timestamp. Karena output dinormalisasi dengan cara yang sama untuk semua platform, Anda bisa mengarsipkan post Threads, X, dan Bluesky ke satu korpus Markdown rapi untuk riset atau backup."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apa perbedaan yt-dlp dan ThreadGrab untuk Threads?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "yt-dlp adalah CLI yang sangat baik untuk mengunduh file media mentah ditambah dump JSON metadata satu URL pada satu waktu. ThreadGrab adalah pipeline pengarsipan level lebih tinggi yang menangani normalisasi URL, rekonstruksi pohon balasan, dan operasi lintas platform batch. Gunakan yt-dlp saat Anda ingin MP4 asli plus caption untuk kumpulan kecil post yang diketahui; gunakan ThreadGrab saat Anda ingin arsip yang dapat dicari dari ratusan post Threads, X, dan Bluesky dalam satu skema."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bisakah saya mengarsipkan seluruh akun Threads atau feed hashtag?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hanya yang diekspos publik oleh Threads. Threads tidak punya feed RSS publik dan tidak menyediakan dump akun server-side seperti Mastodon lewat mastodon:backup. Yang bisa Anda lakukan adalah mengiterasi ID post publik dari @username target, melipat pohon balasan publik tiap post, dan menggabungkan semuanya di Markdown lokal. Itulah konvensi de facto 2026 untuk mengarsipkan platform milik Meta mana pun yang tidak menawarkan ekspor resmi."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah post Threads yang diarsipkan bisa dijadikan bukti dalam jurnalisme atau riset?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ya, selama arsip memuat URL asli, timestamp pasti saat penangkapan, dan kumpulan media yang dapat diverifikasi. ThreadGrab mencatat ketiganya di setiap dokumen yang diekspor, dan Wayback Machine secara rutin mengarsipkan URL post Threads untuk tujuan yang sama. Kombinasikan ekspor Markdown dengan snapshot Wayback publik dan Anda punya paket bukti standar 2026 untuk jurnalisme, riset akademik, dan discovery hukum."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 2px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    .method-card { background: #1a1a1a; border-radius: 10px; padding: 20px 22px; margin-bottom: 18px; border-left: 3px solid #20d5ec; }
+    .method-card h3 { margin-top: 0; color: #20d5ec; }
+    .method-card .pros { color: #6fcf97; font-size: 0.9rem; }
+    .method-card .cons { color: #f2994a; font-size: 0.9rem; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/id/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a href="/en/blog/threads-meta-archive-2026.html">EN</a>
+      <a href="/pt/blog/threads-meta-arquivar-2026.html">PT</a>
+      <a class="active" href="/id/blog/threads-meta-arsip-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb"><a href="/id/">Beranda</a> &rsaquo; <a href="/id/blog/">Blog</a> &rsaquo; Arsip Threads Meta 2026</div>
+
+    <h1>Arsip Threads Meta 2026: <span>5 Metode Simpan Post, Balasan &amp; Media</span></h1>
+    <p class="meta">3 Agustus 2026 &middot; 12 menit baca &middot; oleh ThreadGrab</p>
+
+    <p>Threads kini menjadi jejaring sosial berbasis teks terbesar ketiga di web publik. Menurut retrospektif Meta sendiri di pertengahan 2026, turnamen Musim Panas Sepak Bola 2026 menghasilkan 1,5 miliar impresi pada post yang ditandai Threads, dengan komunitas sepak bola Threads menjangkau sekitar 15 juta orang per hari dan mencapai puncak 25 juta pada 6 Juli 2026. Tambahkan peluncuran pengawasan orang tua pada 21 Juli 2026, kemenangan regulasi yang mengembalikan Threads ke Turkiye pada 17 Juni 2026, dan perpindahan konstan jurnalis serta kreator dari X, dan Anda punya platform yang post-nya rutin dikutip di berita, paper akademik, dan dokumen hukum.</p>
+
+    <p>Volume kutipan itu menciptakan kebutuhan pengarsipan yang tegas: kalau post Threads akan dikutip dalam cerita enam bulan dari sekarang, seseorang harus menangkapnya sekarang. Berbeda dengan Fediverse (yang berjalan di protokol terbuka ActivityPub) dan berbeda dengan Bluesky (yang berjalan di atproto), Threads tinggal di backend privat Meta, tanpa REST API terbuka dan tanpa feed RSS publik. Itu membuat pengarsipan sedikit lebih terlibat dibanding menandai bookmark, tetapi masih sepenuhnya bisa dilakukan dengan lima metode yang sudah terbukti. Panduan ini membahas setiap opsi, dari bookmark tanpa usaha sampai pipeline ekspor bergaya atproto.</p>
+
+    <div class="callout">
+      <p><strong>Ringkasan.</strong> Gunakan <strong>bookmark bawaan Threads</strong> untuk simpan kasual. Gunakan <strong>URL embed publik Threads</strong> untuk simpan satu-satu tanpa akun. Gunakan <strong>ThreadGrab</strong> untuk pengarsipan lintas platform (Threads + X + Bluesky dalam satu antarmuka). Gunakan <strong>yt-dlp</strong> untuk unduhan media lewat terminal. Gunakan <strong>pipeline ekspor lokal bergaya atproto</strong> untuk pekerjaan massal besar dan persiapan data LLM.</p>
+    </div>
+
+    <h2>Mengapa pengarsipan Threads penting di 2026</h2>
+    <p>Threads unik di antara platform sosial utama 2026 dalam tiga hal yang semuanya mendorong untuk menjaga arsip pribadi. Pertama, platform ini sepenuhnya berbasis teks: post adalah caption pendek ditambah media, dan pohon balasan publik cenderung berkembang menjadi percakapan panjang sebelum dirangkum menjadi artikel berita. Kedua, kebijakan moderasi konten Meta menghasilkan gelombang penegakan yang terlihat terhadap teks buatan AI dan akun bot di 2026, yang artinya post yang sepenuhnya wajar hari ini bisa dihapus diam-diam bulan depan -- dan satu-satunya cara menjaga teks aslinya adalah menangkapnya secara eksternal. Ketiga, karena platform ini bagian dari backend Instagram, post Threads yang sama bisa menggerakkan URL Threads dan juga bagikan Instagram -- kehilangan salinan Threads kanonik memutus kedua permukaan.</p>
+
+    <p>Tidak satu pun dari ini akan penting kalau Threads punya API ekspor publik yang berizin seperti yang Mastodon sediakan lewat <code>mastodon:backup</code>. Threads tidak punya. Yang Anda dapatkan adalah URL publik untuk setiap post (URL yang sama yang dipakai Meta untuk membuat embed), URL publik untuk setiap @username publik, dan beberapa alat open source terpelihara baik yang tahu bagaimana menarik URL-URL itu ke arsip portabel. Lima metode di bawah adalah yang bekerja andal per Agustus 2026, diuji terhadap akun publik Threads tanpa login.</p>
+
+    <h2>Metode 1: Bookmark bawaan Threads -- Penyimpanan tanpa usaha</h2>
+
+    <div class="method-card">
+      <h3>Bookmark bawaan Threads (Saves)</h3>
+      <p>Tersedia di app web Threads, iOS, dan Android sejak awal 2024.</p>
+      <p class="pros">Pro: Tanpa pengaturan, pribadi, dapat dicari di akun Anda, sinkron antar perangkat, bekerja di setiap klien resmi.</p>
+      <p class="cons">Kontra: Tanpa ekspor lewat UI web, bookmark hidup dan mati bersama akun Anda, tanpa operasi batch, tanpa lampiran media.</p>
+    </div>
+
+    <p>Bookmark Threads (berganti nama menjadi Saves pada redesain mobile 2024) bekerja persis seperti setiap bookmark sosial lain yang pernah Anda gunakan. Ketuk ikon pita pada post mana pun, dan itu masuk ke daftar Saves pribadi Anda. Dari situ Anda bisa mencari berdasarkan kata kunci, memfilter berdasarkan penulis, dan mengunjungi kembali post yang sama di perangkat mana pun yang masuk ke akun Threads Anda.</p>
+
+    <p>Saves sempurna untuk penggunaan kasual -- Anda melihat thread kuat di timeline, simpan, dan kembali untuk membacanya di jalan. Tetapi punya langit-langit keras yang sama dengan sistem bookmark pribadi lainnya: tidak ada tombol ekspor, dan begitu Meta menghapus Saves Anda (secara sukarela, melalui tindakan moderasi, atau karena akun Anda dikunci) satu-satunya cara mendapatkannya kembali adalah mengikis URL publik satu per satu. Itulah gunanya Metode 2-5.</p>
+
+    <h3>Kapan menggunakan bookmark bawaan</h3>
+    <ul>
+      <li>Anda ingin menangkap post secara personal dan tidak berniat meninggalkan Threads.</li>
+      <li>Post masih terlihat saat Anda pergi membukanya.</li>
+      <li>Anda tidak memerlukan body post, URL media, dan pohon balasan dalam format terstruktur.</li>
+    </ul>
+
+    <h2>Metode 2: URL embed publik Threads -- Simpan satu-satu tanpa akun</h2>
+
+    <div class="method-card">
+      <h3>URL publik post Threads (threads.net/&#64;user/post/&lt;id&gt;)</h3>
+      <p>Setiap post publik Threads mengekspos URL web yang bisa diambil klien HTTP mana pun (tanpa akun, tanpa kunci API).</p>
+      <p class="pros">Pro: Tanpa autentikasi, bekerja di setiap post publik, mengembalikan DOM yang sama yang dipakai iframe embed, mendukung cookie untuk mengikuti pohon balasan.</p>
+      <p class="cons">Kontra: Dirender sisi server, butuh scraper HTML kecil, tanpa skema JSON terdokumentasi, rate-limit per IP.</p>
+    </div>
+
+    <p>Setiap post publik Threads punya URL web permanen dengan bentuk <code>https://www.threads.net/@&lt;user&gt;/post/&lt;id&gt;</code>. URL itulah yang Meta render di dalam iframe embed yang dipakai situs berita dan blog untuk mengutip post Threads. Itu juga URL yang jadi sandaran setiap metode di bawah -- termasuk ThreadGrab, yt-dlp, dan pipeline bergaya atproto.</p>
+
+    <p>Mengambil URL dengan klien HTTP normal mengembalikan halaman HTML yang dirender server dengan body post, timestamp, handle penulis, dan blob JSON-LD berisi metadata terstruktur. HTML-nya berat (CSS, JS, dan nama kelas Tailwind termasuk), tetapi strukturnya cukup stabil untuk skrip Python 30-baris mengekstrak bidang yang relevan. Catatannya adalah JSON-LD tidak selalu dikirim dengan nama bidang yang sama, jadi Anda harus menulis parser defensif.</p>
+
+    <h3>Resep ambil cepat</h3>
+    <pre><code>import urllib.request, json, re
+
+url = "https://www.threads.net/@meta/post/CufVgn6n_o2"
+req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+html = urllib.request.urlopen(req, timeout=15).read().decode("utf-8", errors="ignore")
+
+# Threads ships a JSON-LD blob with structured data
+m = re.search(r'&lt;script type="application/ld\+json"&gt;(.*?)&lt;/script&gt;', html, re.DOTALL)
+if m:
+    data = json.loads(m.group(1))
+    print(f"Author: {data.get('author',{}).get('name')}")
+    print(f"Body:   {data.get('articleBody','')[:120]}")
+    print(f"Date:   {data.get('datePublished','')}")</code></pre>
+
+    <p>Resep ini bukan pipeline pengarsipan selesai; ini benih yang Anda sambungkan ke loop yang mengikuti pohon balasan publik, menormalisasi timestamp, dan menulis post + balasan ke disk. Sebagian besar pekerjaan berat (penanganan cookie, varian JSON-LD, paginasi balasan) persis seperti yang ThreadGrab selesaikan di Metode 3.</p>
+
+    <h3>Kapan menggunakan URL embed publik</h3>
+    <ul>
+      <li>Anda hanya butuh satu atau dua post dan tidak ingin menginstal apa pun.</li>
+      <li>Anda ingin memverifikasi satu post Threads dengan cepat (jurnalisme, pengecekan kutipan).</li>
+      <li>Anda membangun prototipe cepat dan ingin menguji ambil sebelum berkomitmen ke pipeline penuh.</li>
+    </ul>
+
+    <h2>Metode 3: ThreadGrab -- Pengarsipan lintas platform Threads + X + Bluesky</h2>
+
+    <div class="method-card">
+      <h3>ThreadGrab</h3>
+      <p>Alat pengarsipan berbasis web yang memperlakukan Threads, X, dan Bluesky sebagai sumber kelas satu lewat satu output Markdown/JSON ternormalisasi.</p>
+      <p class="pros">Pro: Tanpa instalasi (app web), output Markdown/JSON ternormalisasi di tiga platform, tangani rekonstruksi pohon balasan, output ramah LLM.</p>
+      <p class="cons">Kontra: Butuh URL post atau @username (bukan firehose), output dinormalisasi bukan DOM Threads mentah, tier berbayar untuk batch sangat berat.</p>
+    </div>
+
+    <p>ThreadGrab dibangun khusus untuk masalah arsip lintas platform yang Threads, X, dan Bluesky selesaikan secara berbeda. Tempel URL threads.net, URL x.com, atau URL bsky.app dan ThreadGrab mengembalikan dokumen Markdown yang sama -- metadata yang sama, struktur balasan yang sama, format URL media yang sama -- tidak peduli platform aslinya. Skema lintas platform itulah perbedaan antara korpus yang bisa Anda cari nanti dan folder penuh dump HTML per-platform yang strukturnya aneh.</p>
+
+    <p>Jalur Threads di dalam ThreadGrab memakai URL post publik dari Metode 2 dan menjahit blob JSON-LD kanonik bersama endpoint balasan publik. Karena setiap post Threads punya pola URL yang dikenal dan blob JSON-LD yang dikenal, parsing tetap stabil di sepanjang revisi platform 2026. (Metadata pengawasan orang tua yang dikirim 21 Juli 2026 hidup di luar JSON-LD post, dan ThreadGrab mengabaikannya dengan benar.) Outputnya diteteskan ke dokumen Markdown dengan URL asli, body post, URL media terbenam, pohon balasan, dan timestamp Unix-ms.</p>
+
+    <pre><code># Single-post archive
+$ threadgrab archive https://www.threads.net/@meta/post/CufVgn6n_o2 \
+    --output meta-2026-07-17.md
+
+# Multi-URL batch (Threads + X + Bluesky into one corpus)
+$ threadgrab archive \
+    https://www.threads.net/@meta/post/CufVgn6n_o2 \
+    https://x.com/MetaNews/status/1234567890 \
+    https://bsky.app/profile/post/abc123 \
+    --output cross-platform-2026-08-03.md</code></pre>
+
+    <h3>Kapan menggunakan ThreadGrab</h3>
+    <ul>
+      <li>Anda ingin arsip ternormalisasi yang dapat dicari dari post berbagai platform sekaligus.</li>
+      <li>Anda sedang menyiapkan konten untuk LLM (korpus RAG, dataset fine-tuning, briefing jurnalisme).</li>
+      <li>Anda tidak ingin memelihara scraper HTML sendiri setiap kali Threads memperbarui DOM-nya.</li>
+    </ul>
+
+    <h2>Metode 4: yt-dlp -- Unduhan media oleh pengguna terminal</h2>
+
+    <div class="method-card">
+      <h3>yt-dlp (ekstraktor Threads)</h3>
+      <p>Penerus youtube-dl yang dipelihara komunitas. Dukungan Threads dikirim pada akhir 2024 dan mengikuti pembaruan platform secara otomatis.</p>
+      <p class="pros">Pro: Instal satu perintah di macOS/Linux/Windows, sempurna untuk media mentah + metadata, pembaruan berkala, mendukung 1500+ situs selain Threads.</p>
+      <p class="cons">Kontra: Hanya CLI, tanpa unifikasi lintas platform, tanpa rekonstruksi pohon balasan, rusak saat Meta memblokir string user-agent (dimitigasi dengan cookie).</p>
+    </div>
+
+    <p>yt-dlp adalah alat yang tepat ketika tujuan utama Anda adalah <em>mengunduh file media yang sebenarnya</em> (gambar, video, atau carousel) ditambah dump JSON metadata post. Ekstraktor Threads di-merge pada akhir 2024 dan diperbarui sepanjang 2025 untuk menangani transisi Meta ke backend bersama Instagram. Per rilis Agustus 2026, <code>yt-dlp --version</code> di setiap platform yang didukung mengenali URL threads.net dan menarik media kanonik plus metadata caption.</p>
+
+    <pre><code># Install
+$ pipx install yt-dlp            # or: brew install yt-dlp
+
+# Single-post download (image or video + caption JSON)
+$ yt-dlp --write-info-json \
+         --write-description \
+         -o "%(uploader)s-%(id)s.%(ext)s" \
+         "https://www.threads.net/@meta/post/CufVgn6n_o2"
+
+# Bulk — pass multiple URLs from a text file
+$ yt-dlp --write-info-json -a threads-urls.txt -o "%(id)s.%(ext)s"</code></pre>
+
+    <p>Bendera <code>--write-info-json</code> adalah kuncinya: itu membuang metadata kanonik (penulis, tanggal, body post, URL media) ke file saudara <code>.info.json</code> di sebelah media yang diunduh. JSON itu persis seperti yang pipeline LLM ingin serap. Kelemahannya adalah yt-dlp berhenti di batas URL yang Anda berikan -- kalau Anda memberi URL satu post Threads, Anda dapat post itu plus caption dan medianya, bukan pohon balasan publik.</p>
+
+    <h3>Kapan menggunakan yt-dlp</h3>
+    <ul>
+      <li>Anda butuh file media asli resolusi tinggi untuk bukti atau penerbitan ulang.</li>
+      <li>Anda mengotomatisasi alur terminal dan lebih suka CLI yang bisa diinstal lewat Python.</li>
+      <li>Anda nyaman memasangkan yt-dlp dengan alat kedua untuk menangkap pohon balasan.</li>
+    </ul>
+
+    <h2>Metode 5: Ekspor lokal kompatibel atproto -- Pengarsipan massal untuk riset</h2>
+
+    <div class="method-card">
+      <h3>Pipeline ekspor kompatibel atproto</h3>
+      <p>Pipeline yang bisa dijalankan secara lokal yang mencerminkan bentuk record atproto (dipakai Bluesky) sehingga output jatuh bersih ke alur persiapan data LLM mana pun.</p>
+      <p class="pros">Pro: Skala massal, skema output stabil, cocok dengan pipeline pelatihan LLM, kontrol 100% lokal.</p>
+      <p class="cons">Kontra: Butuh keterampilan scripting Python atau Node, harus mengikuti perubahan DOM Threads, tanpa UI hosted.</p>
+    </div>
+
+    <p>Untuk tim riset yang menyiapkan korpus post Threads bersama data Bluesky (atproto) mereka yang sudah ada, pola paling praktis di 2026 adalah membangun pipeline lokal kecil yang menelusuri @username target, mengambil setiap URL post publik (Metode 2), dan menulis record dalam envelope JSON bergaya atproto. Envelope itu adalah skema yang sama dengan yang dipakai SDK atproto untuk record <code>app.bsky.feed.post</code>, dengan bidang <code>text</code>, <code>createdAt</code>, <code>embed</code>, dan referensi balasan diisi dari metadata Threads.</p>
+
+    <pre><code># Pseudo-code for the record-shape transformation
+{
+  "$type": "app.bsky.feed.post",
+  "text":  "Threads post body here...",
+  "createdAt": "2026-07-21T17:42:00Z",
+  "author":  { "did": "did:plc:threads:@meta" },
+  "embed":   { "$type": "app.bsky.embed.images", "images": [...] },
+  "reply":   { "root": "...", "parent": "..." }
+}</code></pre>
+
+    <p>Triknya adalah atproto adalah protokol nyata dengan skema record yang stabil, dan Threads adalah backend privat dengan DOM yang cukup stabil untuk memetakan satu ke yang lain. Setelah Anda punya record dalam bentuk atproto, mereka jatuh ke pipeline persiapan data LLM yang sama dengan konten Bluesky Anda -- itulah yang justru membuat argumen korpus lintas platform jadi praktis. Metodologinya adalah sama dengan yang dirujuk diskusi portabilitas atproto 2026 untuk "bagaimana kalau saya ingin data saya dalam bentuk portabel" dan merupakan hal terdekat dengan ekspor portabel yang Threads tawarkan tanpa akun.</p>
+
+    <h3>Kapan menggunakan pipeline atproto</h3>
+    <ul>
+      <li>Anda membangun korpus pelatihan LLM lintas platform berbasis teks.</li>
+      <li>Anda sudah memelihara pipeline data atproto/Bluesky dan ingin satu skema untuk semuanya.</li>
+      <li>Anda punya kapasitas engineering untuk memelihara scraper DOM terhadap revisi Threads.</li>
+    </ul>
+
+    <h2>Perbandingan berdampingan</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Metode</th>
+          <th>Setup</th>
+          <th>Output</th>
+          <th>Pohon balasan</th>
+          <th>Lintas platform</th>
+          <th>Cocok untuk</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Threads Saves (Metode 1)</td>
+          <td>Tidak ada</td>
+          <td>Daftar pribadi</td>
+          <td>Tidak</td>
+          <td>Tidak</td>
+          <td>Bacaan kasual, tanpa ekspor</td>
+        </tr>
+        <tr>
+          <td>URL embed publik (Metode 2)</td>
+          <td>Tidak ada</td>
+          <td>HTML / JSON-LD</td>
+          <td>Lewat URL terpisah</td>
+          <td>Tidak</td>
+          <td>Verifikasi satu-satu</td>
+        </tr>
+        <tr>
+          <td>ThreadGrab (Metode 3)</td>
+          <td>App web</td>
+          <td>Markdown / JSON</td>
+          <td>Ya (otomatis)</td>
+          <td>Ya (X, Bluesky)</td>
+          <td>Arsip lintas platform, prep LLM</td>
+        </tr>
+        <tr>
+          <td>yt-dlp (Metode 4)</td>
+          <td>Instalasi CLI</td>
+          <td>Media + .info.json</td>
+          <td>Tidak</td>
+          <td>Tidak</td>
+          <td>Unduhan media asli</td>
+        </tr>
+        <tr>
+          <td>Pipeline atproto (Metode 5)</td>
+          <td>Python / Node</td>
+          <td>Record JSON</td>
+          <td>Manual</td>
+          <td>Lewat skema bersama</td>
+          <td>Prep data LLM massal</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Membangun pipeline pengarsipan Threads lengkap</h2>
+    <p>Jawaban praktis untuk kebanyakan kreator dan peneliti di 2026 adalah menggabungkan dua dari lima. Setup kerja yang umum terlihat seperti ini: bookmark post menarik sepanjang hari (Metode 1); jalankan ThreadGrab malamnya pada URL publik @username yang Anda perhatikan, menghasilkan korpus Markdown ternormalisasi yang sekaligus jadi sumber data LLM Anda (Metode 3); pakai yt-dlp seminggu sekali untuk menarik media asli dari post yang penting (Metode 4); dan cadangkan pipeline bergaya atproto (Metode 5) untuk proyek riset di mana Anda butuh skema JSON stabil lintas platform.</p>
+
+    <p>Lima alat itu tidak saling bertentangan. Unduhan media yt-dlp masuk ke korpus Markdown ThreadGrab sebagai referensi media inline; Markdown ternormalisasi ThreadGrab jatuh bersih ke record JSON pipeline atproto; dan URL embed publik dari Metode 2 adalah yang jadi sandaran setiap alat lain. Satu-satunya yang tidak bisa Anda otomatisasi sepenuhnya adalah saat Meta menghapus post publik -- pada titik itulah snapshot Wayback Machine menjadi fallback terakhir Anda, dan itulah persis mengapa pengarsipan eksternal adalah non-opsional untuk setiap jurnalisme berbasis Threads.</p>
+
+    <h2>Bagaimana ThreadGrab masuk ke ekosistem Threads</h2>
+    <p>Untuk kreator rata-rata yang membaca X untuk berita terkini, mengikuti Bluesky untuk wacana teknologi, dan melacak Threads untuk diskusi komunitas (terutama setelah peluncuran pengawasan orang tua 21 Juli 2026 dan kembalinya Turkiye 17 Juni 2026), ThreadGrab adalah titik masuk pengarsipan tunggal yang menjaga semuanya konsisten. Jalur Threads melewati output Markdown ternormalisasi yang sama dengan X dan Bluesky, yang artinya satu korpus arsip mencakup ketiga platform tanpa logika scraping per platform.</p>
+
+    <p>ThreadGrab juga satu-satunya metode dari lima yang menangani metadata khusus Threads 2026 dengan benar. Ketika Meta mengirim fitur seperti opt-in pengawasan orang tua (21 Juli 2026) atau meluncurkan ulang pasar regional (Turkiye, 17 Juni 2026), URL post publik dan blob JSON-LD yang menyertainya tetap stabil -- hanya UI di sekitarnya yang berubah -- jadi arsip lintas platform tetap usable melewati pembaruan platform Meta.</p>
+
+    <div class="cta">
+      <p>Arsipkan post Threads, thread X, dan post Bluesky berdampingan -- tanpa akun, tanpa kunci API, tanpa instalasi.</p>
+      <a class="btn" href="/id/">Coba ThreadGrab -- Pengarsip Media Sosial Gratis</a>
+    </div>
+
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <strong>Apakah Threads punya bookmark bawaan seperti Bluesky atau X?</strong>
+      <p>Ya. Threads menambahkan bookmark bawaan (Saves) di awal 2024, tersedia di web, iOS, dan Android. Tandai post mana pun dengan mengetuk ikon pita, lalu akses lagi dari daftar Saves pribadi. Berbeda dengan bookmark X, namun, Saves Threads terikat akun dan tidak punya endpoint ekspor resmi, jadi Anda masih butuh salah satu metode di atas untuk migrasi ke arsip portabel.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Bisakah saya mengunduh post publik Threads tanpa akun atau kunci API?</strong>
+      <p>Ya. Setiap post publik Threads punya URL embed di threads.net/&lt;user&gt;/post/&lt;id&gt; yang bisa diambil klien HTTP tanpa autentikasi. yt-dlp sudah mendukung Threads sejak akhir 2024 dan bisa mengunduh caption post, file media, dan pohon balasan publik tanpa login. Catatannya adalah akun privat, post yang dihapus, dan balasan yang dilindungi tidak bisa diakses tanpa cookie sesi terautentikasi.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Apakah ThreadGrab mendukung pengarsipan Threads?</strong>
+      <p>Ya. ThreadGrab memperlakukan Threads sebagai sumber kelas satu bersama X dan Bluesky. Tempel URL threads.net atau @username publik apa pun dan ThreadGrab mengembalikan Markdown atau JSON ternormalisasi berisi body post, URL media terbenam, pohon balasan publik, dan timestamp. Karena output dinormalisasi dengan cara yang sama untuk semua platform, Anda bisa mengarsipkan post Threads, X, dan Bluesky ke satu korpus Markdown rapi untuk riset atau backup.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Apa perbedaan yt-dlp dan ThreadGrab untuk Threads?</strong>
+      <p>yt-dlp adalah CLI yang sangat baik untuk mengunduh file media mentah ditambah dump JSON metadata satu URL pada satu waktu. ThreadGrab adalah pipeline pengarsipan level lebih tinggi yang menangani normalisasi URL, rekonstruksi pohon balasan, dan operasi lintas platform batch. Gunakan yt-dlp saat Anda ingin MP4 asli plus caption untuk kumpulan kecil post yang diketahui; gunakan ThreadGrab saat Anda ingin arsip yang dapat dicari dari ratusan post Threads, X, dan Bluesky dalam satu skema.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Bisakah saya mengarsipkan seluruh akun Threads atau feed hashtag?</strong>
+      <p>Hanya yang diekspos publik oleh Threads. Threads tidak punya feed RSS publik dan tidak menyediakan dump akun server-side seperti Mastodon lewat mastodon:backup. Yang bisa Anda lakukan adalah mengiterasi ID post publik dari @username target, melipat pohon balasan publik tiap post, dan menggabungkan semuanya di Markdown lokal. Itulah konvensi de facto 2026 untuk mengarsipkan platform milik Meta mana pun yang tidak menawarkan ekspor resmi.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Apakah post Threads yang diarsipkan bisa dijadikan bukti dalam jurnalisme atau riset?</strong>
+      <p>Ya, selama arsip memuat URL asli, timestamp pasti saat penangkapan, dan kumpulan media yang dapat diverifikasi. ThreadGrab mencatat ketiganya di setiap dokumen yang diekspor, dan Wayback Machine secara rutin mengarsipkan URL post Threads untuk tujuan yang sama. Kombinasikan ekspor Markdown dengan snapshot Wayback publik dan Anda punya paket bukti standar 2026 untuk jurnalisme, riset akademik, dan discovery hukum.</p>
+    </div>
+
+    <h2>Pilih metode Anda dan mulai mengarsipkan</h2>
+    <p>Threads unik di antara platform sosial utama 2026: punya volume engagement platform top-tier (1,5 miliar impresi post bertanda turnamen di pertengahan 2026, 25 juta engagement harian di hari puncak turnamen) tetapi tinggal di backend privat Meta tanpa REST API terbuka. Kombinasi itu membuat pengarsipan eksternal non-opsional kalau Anda mengutip post Threads di jurnalisme, riset, atau dokumen hukum.</p>
+
+    <p>Mulai dengan Saves bawaan untuk bacaan kasual, bersandar pada ThreadGrab untuk arsip lintas platform apa pun yang butuh X dan Bluesky dalam korpus yang sama, pindah ke yt-dlp saat butuh file media asli, dan cadangkan pipeline atproto untuk proyek riset di mana Anda butuh skema JSON stabil. Alat-alatnya gratis, terbuka, dan dirancang untuk bekerja bersama. <a href="/id/">Mulai dengan ThreadGrab</a> untuk jalur tercepat ke pipeline arsip Threads fungsional yang menskala ke seluruh graph sosial Anda.</p>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/id/">Beranda</a> &middot; <a href="/id/blog/">Blog</a> &middot; <a href="/id/about/">Tentang</a> &middot; <a href="/id/privacy/">Privasi</a>
+    <br>Tidak berafiliasi dengan Meta, Threads, atau platform media sosial mana pun. Threads adalah merek dagang Meta Platforms, Inc.
+  </footer>
+</body>
+</html>

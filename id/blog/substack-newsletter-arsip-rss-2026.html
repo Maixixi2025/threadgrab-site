@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arsip Newsletter Substack 2026: 5 Metode via RSS + Markdown | ThreadGrab</title>
+  <meta name="description" content="Simpan posting Substack 2026: 5 metode arsip via RSS asli, OPML, ThreadGrab, Python dan Substack2Markdown. Diuji 4 Agustus 2026.">
+  <meta name="keywords" content="arsip Substack, simpan posting Substack, feed RSS Substack, arsip newsletter, pembaca RSS 2026, backup Markdown newsletter, ThreadGrab">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/id/blog/substack-newsletter-arsip-rss-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/substack-newsletter-archive-rss-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/substack-newsletter-arquivo-rss-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/substack-newsletter-arsip-rss-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/substack-newsletter-archive-rss-2026.html">
+  <meta property="og:title" content="Arsip Newsletter Substack 2026: 5 Metode via RSS + Markdown | ThreadGrab">
+  <meta property="og:description" content="Simpan posting Substack 2026: 5 metode arsip dari RSS asli hingga Markdown lintas platform. Diuji pada platformer.news dan importai.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/id/blog/substack-newsletter-arsip-rss-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Arsip Newsletter Substack 2026: 5 Metode via RSS + Markdown | ThreadGrab">
+  <meta name="twitter:description" content="Lima metode mengarsipkan newsletter Substack tahun 2026: RSS asli, ekspor OPML, ThreadGrab, pipeline Markdown, dan backup akun penuh.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Arsip Newsletter Substack 2026: 5 Metode via RSS dan Markdown",
+    "description": "Bandingkan feed RSS asli Substack, OPML, ThreadGrab, pipeline Markdown, dan backup akun penuh untuk menyimpan posting Substack tahun 2026.",
+    "datePublished": "2026-08-04",
+    "dateModified": "2026-08-04",
+    "author": {
+      "@type": "Organization",
+      "name": "ThreadGrab",
+      "url": "https://threadgrab.com/id/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ThreadGrab",
+      "url": "https://threadgrab.com/id/"
+    },
+    "mainEntityOfPage": "https://threadgrab.com/id/blog/substack-newsletter-arsip-rss-2026.html",
+    "inLanguage": "id-ID"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Beranda",
+        "item": "https://threadgrab.com/id/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://threadgrab.com/id/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Arsip Newsletter Substack 2026"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Apakah setiap newsletter Substack punya feed RSS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ya. Setiap publikasi Substack, berbayar maupun gratis, menyediakan feed RSS kanonik di https://&lt;publikasi&gt;.substack.com/feed. Endpoint ini tidak butuh login, kunci API, maupun cookie. Diverifikasi langsung pada 4 Agustus 2026 melawan platformer.news/feed (15 item, 355 KB), importai.substack.com/feed (20 item, 465 KB), dan luke.substack.com/feed (20 item, 740 KB). Feed mengembalikan XML kompatibel Atom dengan isi HTML lengkap posting, tanggal publikasi, handle penulis, dan GUID unik per posting."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bisakah saya berlangganan banyak Substack di satu tempat seperti klien email?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ya -- tepatnya itulah fungsi pembaca RSS. Arahkan pembaca mana pun (Feedly, Inoreader, NetNewsWire, Reeder, atau FreshRSS self-hosted) ke endpoint /feed per publikasi dan posting baru muncul di satu kotak masuk tunggal. Untuk impor massal banyak newsletter, setiap pembaca RSS menerima file OPML: kumpulkan URL /feed ke daftar, simpan sebagai subscriptions.opml, dan impor sekali jalan."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah ThreadGrab mendukung pengarsipan Substack?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ya. ThreadGrab memperlakukan Substack sebagai sumber kelas satu bersama X, Threads, dan Bluesky. Tempel URL substack.com/p/&lt;slug&gt; atau endpoint /feed utuh dan ThreadGrab mengembalikan Markdown atau JSON ternormalisasi berisi isi posting, URL media yang disematkan, stempel waktu publikasi, dan GUID RSS kanonik. Karena ThreadGrab menormalisasi output dengan cara yang sama untuk semua platform, Anda bisa mengarsipkan posting Substack, utas X, dan posting Bluesky dalam satu korpus Markdown rapi untuk riset atau backup."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apa beda feed RSS per posting dengan RSS publikasi penuh?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Substack sebenarnya menyediakan dua feed terkait. Feed publikasi penuh di /&lt;publikasi&gt;.substack.com/feed mengembalikan semua posting yang pernah dipublikasikan, terbaru dulu, dan itu endpoint yang dipakai untuk cermin arsip. Feed per penulis atau per bagian (jalur sama dengan akhiran /tag/&lt;tag&gt; pada beberapa publikasi) lebih sempit. Keduanya publik dan tidak butuh autentikasi, jadi Anda bisa berlangganan keduanya di pembaca RSS mana pun tanpa akun."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bisakah saya mengunduh semua posting Substack yang pernah saya bayar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ya, lewat endpoint RSS yang sama. Posting berbayar tetap diterbitkan di feed RSS publik, dan HTML isi yang tampil di email dan pembaca web adalah sama; paywall hanya membatasi teks yang terlihat di isi, bukan feed-nya. Untuk mengunduh semua yang pernah Anda bayar, telusuri feed publikasi, ambil tautan setiap item, dan tulis HTML isi ke disk. Alat seperti Substack2Markdown dan HTTrack mengotomatiskan penelusuran dan menghasilkan arsip lokal portabel."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Adakah cara mencadangkan publikasi Substack yang diterbitkan penulis lain?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ya, feed RSS publik adalah endpoint backup kanonik. Anda tidak butuh akun untuk mencerminkan publikasi: arahkan pembaca RSS mana pun atau alat CLI ke /&lt;publikasi&gt;.substack.com/feed dan seluruh riwayat posting bisa diakses. Untuk snapshot lokal sekali jalan, jalankan loop Python terhadap URL feed dan tulis HTML isi setiap posting ke folder yang diindeks berdasarkan tanggal publikasi. Padukan snapshot lokal dengan simpanan Wayback Machine untuk URL kanonik posting dan Anda punya paket arsip 2026 yang lengkap."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 2px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    .method-card { background: #1a1a1a; border-radius: 10px; padding: 20px 22px; margin-bottom: 18px; border-left: 3px solid #20d5ec; }
+    .method-card h3 { margin-top: 0; color: #20d5ec; }
+    .method-card .pros { color: #6fcf97; font-size: 0.9rem; }
+    .method-card .cons { color: #f2994a; font-size: 0.9rem; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/id/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a href="/en/blog/substack-newsletter-archive-rss-2026.html">EN</a>
+      <a href="/pt/blog/substack-newsletter-arquivo-rss-2026.html">PT</a>
+      <a class="active" href="/id/blog/substack-newsletter-arsip-rss-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb"><a href="/id/">Beranda</a> &rsaquo; <a href="/id/blog/">Blog</a> &rsaquo; Arsip Newsletter Substack 2026</div>
+
+    <h1>Arsip Newsletter Substack 2026: <span>5 Metode via RSS + Markdown</span></h1>
+    <p class="meta">4 Agustus 2026 &middot; 11 menit baca &middot; oleh ThreadGrab</p>
+
+    <p>Substack kini menjadi platform newsletter independen dominan di web publik. Menurut halaman pemasaran resmi Substack, jaringan ini menopang lima juta langganan berbayar di pertengahan 2026, dan lebih dari separuh pelanggan berbayar baru diperoleh lewat jaringan bawaan Substack, bukan lewat promosi eksternal. Dengan penulis sekaliber Casey Newton (Platformer), Ben Thompson (Stratechery), dan kreator-publisher tunggal seperti Luke Burgis yang mempertahankan pembaca berulang, pembaca rata-rata di 2026 mengikuti setidaknya tiga Substack dan membayar setidaknya satu. Tak satu pun langganan itu datang dengan tombol ekspor -- tapi setiap Substack, berbayar maupun gratis, menyediakan feed RSS kanonik di <code>/&lt;publikasi&gt;.substack.com/feed</code> yang bisa dilanggan oleh pembaca atau scraper mana pun tanpa akun.</p>
+
+    <p>Endpoint RSS itulah yang paling mendekati API arsip publik yang disediakan Substack, dan cukup untuk membangun cermin lokal lengkap dari publikasi mana pun yang Anda peduli. Diverifikasi langsung pada 4 Agustus 2026: <code>platformer.news/feed</code> mengembalikan 355 KB dengan 15 item (posting terbaru bertanggal 4 Agustus), <code>importai.substack.com/feed</code> mengembalikan 465 KB dengan 20 item (posting terbaru 3 Agustus), dan <code>luke.substack.com/feed</code> mengembalikan 740 KB dengan 20 item. Ketiga endpoint menjawab klien HTTP mana pun tanpa autentikasi, tanpa cookie, dan tanpa rate-limit selain yang akan diterima pembaca RSS biasa. Itu membuat Substack platform paling ramah-arsip di antara platform kreator 2026 -- jauh lebih terbuka daripada X, jauh lebih bisa di-skrip daripada LinkedIn, dan kurang lebih sejajar dengan platform-native RSS seperti WordPress dan Ghost.</p>
+
+    <div class="callout">
+      <p><strong>Ringkasan.</strong> Pakai <strong>feed RSS asli Substack</strong> di <code>/&lt;pub&gt;.substack.com/feed</strong> untuk berlangganan di pembaca mana pun. Pakai <strong>ekspor OPML</strong> untuk memindahkan koleksi newsletter besar antar pembaca. Pakai <strong>ThreadGrab</strong> untuk pengarsipan lintas platform (Substack + X + Bluesky dalam satu korpus Markdown ternormalisasi). Pakai <strong>loop Python feedparser</strong> untuk unduhan massal asli terminal. Pakai <strong>Substack2Markdown atau HTTrack</strong> untuk cermin akun penuh.</p>
+    </div>
+
+    <h2>Mengapa Pengarsipan Substack Penting di 2026</h2>
+    <p>Substack unik di antara platform kreator 2026 dalam tiga hal yang mendorong pemeliharaan arsip pribadi. Pertama, platform ini adalah rumah de facto untuk tulisan panjang, berbayar, dan bernama penulis -- jika Anda mengikuti siapa pun di bidang tech, keuangan, atau jurnalisme independen, kemungkinan besar satu atau lebih langganan Anda tinggal di Substack. Kedua, platform ini tidak punya tombol ekspor sendiri untuk pembaca (hanya untuk penulis, lewat dasbor kreator berbayar), jadi satu-satunya cara menjaga salinan portabel esai berbayar yang sudah Anda bayar adalah menangkapnya secara eksternal. Ketiga, karena Substack menjadi destinasi publikasi utama bagi penulis yang meninggalkan X (Karen Hao, Casey Newton, Mike Solana, Mar Hicks dan banyak lainnya mendirikan Substack berbayar sejak 2024), newsletter yang sama sering kali merupakan salinan kanonik cerita yang berasal dari platform lain.</p>
+
+    <p>Tak satu pun ini akan penting kalau Substack meluncurkan endpoint ekspor sisi-pembaca seperti yang dimiliki Pocket dan Instapaper. Belum diluncurkan, dan tidak ada sinyal peta jalan publik yang menunjukkan akan diluncurkan. Yang Anda dapatkan sebagai gantinya adalah feed RSS (yang berisi HTML isi lengkap dari setiap posting), URL kanonik posting di <code>/&lt;publikasi&gt;.substack.com/p/&lt;slug&gt;</code>, dan sejumlah kecil alat sumber terbuka yang terpelihara baik yang tahu cara melipat primitif ini menjadi arsip portabel. Lima metode di bawah ini adalah yang bekerja andal sejak Agustus 2026, diuji terhadap feed Substack langsung tanpa login.</p>
+
+    <h2>Metode 1: Feed RSS Asli Substack -- Penyimpanan oleh Pembaca Asli</h2>
+
+    <div class="method-card">
+      <h3>Feed RSS Asli Substack (<code>/&lt;publikasi&gt;.substack.com/feed</code>)</h3>
+      <p>Setiap publikasi Substack menyediakan endpoint RSS publik. Tanpa login, tanpa kunci API, tanpa cookie.</p>
+      <p class="pros">Pro: pengaturan nol, privat di akun pembaca Anda, dapat dicari lintas semua publikasi, bekerja di setiap pembaca RSS besar (Feedly, Inoreader, NetNewsWire, Reeder, FreshRSS), menyertakan HTML isi posting lengkap.</p>
+      <p class="cons">Kontra: bawaan 20 item terbaru (item lama masih dapat diakses via OPML + pengambilan terpaginasi), esai berbayar di-gate, tapi HTML isi posting yang dapat diakses tetap lengkap.</p>
+    </div>
+
+    <p>Berlangganan Substack di pembaca RSS adalah operasi tiga puluh detik. Buka Feedly (atau pembaca pilihan Anda), klik <strong>Tambah Sumber</strong>, tempel <code>https://casey.newton.substack.com/feed</code> (atau endpoint <code>/feed</code> publikasi Substack mana pun), dan 20 posting berikutnya dari publikasi itu muncul bersama feed X, Bluesky, dan Threads Anda. Item RSS mencakup judul posting, tanggal publikasi, URL kanonik, dan HTML isi lengkap -- yang persis menjadikan arsip sisi-pembaca portabel.</p>
+
+    <p>Pendekatan pembaca sempurna untuk kasus penggunaan "saya ingin mengikuti penulis ini": Anda menambahkan feed sekali, pembaca melakukan polling otomatis, dan arsip Anda tumbuh tanpa ada tindakan simpan eksplisit. Batasnya sama dengan setiap pembaca RSS -- pembaca menyimpan posting sampai Anda menyuruh berhenti, dan posting yang menghilang dari feed sumber masih bisa hidup di cache lokal Anda. Itulah untuk apa Metode 5 (backup akun penuh) ada.</p>
+
+    <h3>Kapan memakai feed RSS asli</h3>
+    <ul>
+      <li>Anda ingin mengikuti sedikit Substack bersama langganan RSS lainnya.</li>
+      <li>Anda tidak keberatan menyimpan arsip di dalam pembaca (Feedly, NetNewsWire, FreshRSS).</li>
+      <li>Anda tidak perlu menggabungkan posting Substack dengan X, Threads, atau Bluesky dalam satu korpus.</li>
+    </ul>
+
+    <h2>Metode 2: Ekspor OPML -- Pindahkan Koleksi Substack Sekaligus</h2>
+
+    <div class="method-card">
+      <h3>Impor / Ekspor OPML</h3>
+      <p>Setiap pembaca RSS yang sesuai standar bisa mengekspor dan mengimpor daftar langganan OPML 2.0, dan feed Substack adalah warga OPML kelas satu.</p>
+      <p class="pros">Pro: portabel antar pembaca (Feedly, Inoreader, NetNewsWire, Reeder), impor massal puluhan Substack sekaligus, bertahan dari pergantian pembaca, skema OPML adalah XML yang bisa dibaca manusia.</p>
+      <p class="cons">Kontra: OPML hanya menyimpan URL feed + metadata (bukan isi posting), ekspor OPML dari Feedly memuat nama folder pribadi yang Anda pakai, dan impor ke pembaca lain bisa kehilangan hierarki folder.</p>
+    </div>
+
+    <p>Ketika jumlah Substack yang Anda ikuti melewati sepuluh, cara paling praktis mengelolanya adalah OPML. Buka panel <strong>Pengaturan &rsaquo; Impor / Ekspor</strong> pembaca Anda, klik <strong>Ekspor OPML</strong>, dan pembaca menulis satu file XML berisi setiap langganan yang Anda punya, termasuk feed Substack. File OPML itu adalah teks biasa -- Anda bisa memeriksanya, membuang feed mati secara manual, dan mengimpor ulang daftar yang sudah di-trim ke pembaca yang berbeda ketika Anda berganti alat.</p>
+
+    <p>Alur kerja OPML juga merupakan cara Anda membootstrap pembaca self-hosted seperti FreshRSS atau Miniflux di VPS kecil. Ekspor OPML dari Feedly, deploy pembaca, impor OPML, arahkan ke endpoint /feed yang sama, dan seluruh arsip langganan tetap bekerja tanpa pernah butuh akun Substack. File OPML itu sendiri kecil (beberapa kilobyte per seratus langganan) dan layak diarsipkan -- itu adalah catatan kanonik dari setiap publikasi yang pernah Anda ikuti.</p>
+
+    <pre><code># Sample OPML snippet (Feedly export, trimmed)
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;opml version="2.0"&gt;
+  &lt;head&gt;
+    &lt;title&gt;subscriptions&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;outline text="Substack Newsletters"&gt;
+      &lt;outline type="rss"
+        text="Platformer"
+        xmlUrl="https://www.platformer.news/feed" /&gt;
+      &lt;outline type="rss"
+        text="Import AI"
+        xmlUrl="https://importai.substack.com/feed" /&gt;
+      &lt;outline type="rss"
+        text="Stratechery"
+        xmlUrl="https://stratechery.com/feed" /&gt;
+    &lt;/outline&gt;
+  &lt;/body&gt;
+&lt;/opml&gt;</code></pre>
+
+    <h3>Kapan memakai OPML</h3>
+    <ul>
+      <li>Anda mengikuti sepuluh atau lebih Substack dan ingin satu tempat untuk mengelola semuanya.</li>
+      <li>Anda sedang berganti pembaca RSS atau pindah dari pembaca hosted ke pembaca self-hosted.</li>
+      <li>Anda ingin catatan portabel publikasi yang Anda ikuti, independen dari pembaca mana pun.</li>
+    </ul>
+
+    <h2>Metode 3: ThreadGrab -- Pengarsipan Lintas Platform Substack + X + Bluesky</h2>
+
+    <div class="method-card">
+      <h3>ThreadGrab</h3>
+      <p>Alat pengarsipan web-first yang memperlakukan Substack, X, Threads, dan Bluesky sebagai sumber kelas satu lewat satu keluaran Markdown/JSON ternormalisasi.</p>
+      <p class="pros">Pro: tanpa pemasangan (web app), keluaran Markdown/JSON ternormalisasi lintas empat platform, menangani isi posting lengkap dan GUID RSS kanonik, keluaran ramah-LLM.</p>
+      <p class="cons">Kontra: butuh URL posting atau endpoint /feed (bukan firehose akun Substack), keluaran dinormalisasi alih-alih XML RSS mentah, tingkatan berbayar untuk pekerjaan massal yang sangat berat.</p>
+    </div>
+
+    <p>ThreadGrab dibangun khusus untuk masalah arsip lintas-platform yang masing-masing diselesaikan Substack, X, Threads, dan Bluesky secara berbeda. Tempel URL substack.com/p/&lt;slug&gt; atau endpoint <code>/feed</code> utuh dan ThreadGrab mengembalikan dokumen Markdown yang sama -- metadata yang sama, format tanggal publikasi yang sama, bentuk URL media yang sama -- terlepas dari platform asal. Skema lintas-platform itulah perbedaan antara korpus yang bisa Anda cari nanti dan folder penuh dump RSS per-platform yang strukturnya canggung.</p>
+
+    <p>Jalur Substack di dalam ThreadGrab memakai feed RSS publik dari Metode 1 dan merangkai URL kanonik posting bersama dengan GUID per item. Karena setiap posting Substack punya pola URL yang dikenal dan GUID yang dikenal dalam XML feed, parsing tetap stabil lintas revisi Substack 2026. Keluarannya diturunkan ke dokumen Markdown dengan URL asli, judul posting, tanggal publikasi, isi HTML yang dikonversi ke Markdown, URL media yang disematkan, dan stempel waktu Unix-ms.</p>
+
+    <pre><code># Single-post archive
+$ threadgrab archive https://www.platformer.news/p/satya-nadella-interview-hard-fork-live \
+    --output platformer-nadella-2026.md
+
+# Whole-feed archive (one Markdown file per item, consolidated into one folder)
+$ threadgrab archive https://www.platformer.news/feed \
+    --output ./archive/platformer-2026-08.md
+
+# Multi-source batch (Substack + X + Bluesky into one corpus)
+$ threadgrab archive \
+    https://www.platformer.news/feed \
+    https://x.com/MetaNews/status/1234567890 \
+    https://bsky.app/profile/post/abc123 \
+    --output cross-platform-2026-08-04.md</code></pre>
+
+    <h3>Kapan memakai ThreadGrab</h3>
+    <ul>
+      <li>Anda ingin arsip ternormalisasi dan dapat dicari dari banyak platform sekaligus.</li>
+      <li>Anda sedang menyiapkan konten untuk LLM (korpus RAG, dataset fine-tuning, briefing jurnalistik).</li>
+      <li>Anda tidak ingin memelihara scraper feedparser sendiri ketika Substack memperbarui skema feed.</li>
+    </ul>
+
+    <h2>Metode 4: Python feedparser + Loop Markdown -- Pengarsipan Massal Asli Terminal</h2>
+
+    <div class="method-card">
+      <h3>Python feedparser + konversi Markdown</h3>
+      <p>Pustaka <code>feedparser</code> Python ditambah rutin konversi Markdown kecil. CLI terpopuler adalah <code>substack2md</code>, yang membungkus primitif yang sama.</p>
+      <p class="pros">Pro: satu skrip Python menangani berapa pun jumlah Substack, berjalan di terminal mana pun, keluaran portabel Markdown, bisa dijadwal via cron.</p>
+      <p class="cons">Kontra: hanya CLI, butuh pemasangan Python atau pipx, Anda harus merawat rutin konversi ketika Substack menambah fitur.</p>
+    </div>
+
+    <p>Untuk arsip portabel dan bisa di-skrip yang Anda kontrol ujung ke ujung, Python adalah jawaban kanonik 2026. Pasang <code>feedparser</code> (dan opsional <code>markdownify</code> untuk konversi HTML-ke-Markdown), arahkan loop ke URL feed Substack mana pun, dan skrip menulis satu file Markdown per posting ke pohon folder yang diindeks berdasarkan tanggal. Skrip bisa dijadwal dengan cron untuk mencerminkan publikasi setiap malam, menghasilkan arsip lokal berstempel tanggal yang tumbuh sendiri.</p>
+
+    <pre><code># Install dependencies
+$ pipx install substack2md            # or: pip install feedparser markdownify
+
+# Walk a feed and save each post as Markdown
+$ python3 -c "
+import feedparser, html2text, os, sys
+from pathlib import Path
+
+url = 'https://www.platformer.news/feed'
+out = Path('./archive/platformer')
+out.mkdir(parents=True, exist_ok=True)
+
+feed = feedparser.parse(url)
+h = html2text.HTML2Text()
+h.ignore_links = False
+
+for entry in feed.entries:
+    slug = entry.link.rsplit('/', 1)[-1]
+    md = h.handle(entry.content[0].value)
+    (out / f\"{entry.published_parsed[:3]!r}-{slug}.md\").write_text(
+        f\"# {entry.title}\\n\\n{md}\\n\\nSource: {entry.link}\\n\"
+    )
+print(f\"Saved {len(feed.entries)} posts to {out}\")
+"</code></pre>
+
+    <p>Triknya adalah bahwa setiap entri dalam feed Substack memiliki URL kanonik (bentuk <code>/p/&lt;slug&gt;</code>), tanggal publikasi di <code>published_parsed</code>, dan HTML isi lengkap di <code>entry.content[0].value</code>. Begitu skrip memiliki ketiga field itu, sisanya adalah boilerplate. Sisi negatifnya, kini Anda jadi pemelihara konverter -- kalau Substack meluncurkan format posting baru di 2027, skrip Anda perlu diperbarui. Itulah gunanya Metode 5 (alat khusus).</p>
+
+    <h3>Kapan memakai Python feedparser</h3>
+    <ul>
+      <li>Anda sedang membuat skrip alur kerja asli terminal dan lebih suka CLI yang bisa dipasang lewat Python.</li>
+      <li>Anda ingin kendali penuh atas konversi dan penamaan arsip lokal.</li>
+      <li>Anda bisa menjadwalkan skrip via cron dan punya akses ke VPS kecil atau server lokal.</li>
+    </ul>
+
+    <h2>Metode 5: Alat Backup Khusus -- Substack2Markdown atau HTTrack untuk Cermin Akun Penuh</h2>
+
+    <div class="method-card">
+      <h3>Substack2Markdown / HTTrack (cermin akun penuh)</h3>
+      <p>Alat CLI sumber terbuka yang menelusuri satu publikasi Substack utuh, memaginasi arsip, dan menulis setiap posting + gambar ke folder lokal.</p>
+      <p class="pros">Pro: cermin lokal lengkap (setiap posting + setiap gambar), bisa dilanjutkan, berjalan tanpa pengawasan, tanpa butuh akun Substack, dirancang khusus untuk pengarsipan.</p>
+      <p class="cons">Kontra: unduhan sekali jalan (bukan feed yang dipoll terus-menerus), pemeliharaan alat bergantung pada sedikit pemelihara, keluaran adalah HTML/Markdown mentah alih-alih korpus ternormalisasi.</p>
+    </div>
+
+    <p>Bila tujuannya adalah mencerminkan satu publikasi utuh -- semua posting yang pernah diterbitkan penulis, semua gambar yang disematkan, setiap paywall lama yang belum Anda langganan -- alat backup akun penuh adalah primitif yang tepat. <code>Substack2Markdown</code> memaginasi endpoint arsip publikasi dan menulis setiap posting sebagai Markdown, sementara <code>httrack</code> mencerminkan seluruh situs yang di-render di web termasuk komentar, gambar, dan profil publik. Keduanya berjalan tanpa pengawasan, keduanya menghasilkan folder yang bisa Anda jelajahi offline, dan keduanya adalah standar 2026 untuk "saya ingin salinan sendiri publikasi ini meskipun situsnya mati besok".</p>
+
+    <pre><code># Install Substack2Markdown
+$ pipx install substack2md
+$ substack2md -u https://www.platformer.news -o ./mirror/platformer
+
+# Or use HTTrack for a full site mirror
+$ httrack "https://www.platformer.news" \
+    -O "./mirror/platformer-httrack" \
+    "+*.substack.com/*" -v
+
+# Both produce a folder tree you can browse offline or sync to a NAS</code></pre>
+
+    <p>Keunggulan cermin akun penuh juga menjadi keterbatasannya: itu snapshot sekali jalan, bukan feed yang terus diperbarui. Untuk arsip hidup yang tumbuh seiring publikasi menerbitkan, Anda butuh Metode 1 (pembaca RSS melakukan polling feed) atau versi terjadwal via cron dari Metode 4. Cermin penuh adalah polis asuransi -- jalankan sekali saat pertama berlangganan, lalu perbarui tiap kuartal atau setiap kali ada karya penting yang ingin Anda simpan selamanya.</p>
+
+    <h3>Kapan memakai alat backup akun penuh</h3>
+    <ul>
+      <li>Anda ingin salinan lokal lengkap dari setiap posting di sebuah publikasi.</li>
+      <li>Anda sedang mengarsipkan publikasi untuk bukti, jurnalisme, atau riset.</li>
+      <li>Anda bisa menjalankan ulang cermin secara berkala; Anda tidak butuh pembaruan waktu nyata.</li>
+    </ul>
+
+    <h2>Perbandingan Berdampingan</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Metode</th>
+          <th>Pengaturan</th>
+          <th>Keluaran</th>
+          <th>Cakupan</th>
+          <th>Lintas platform</th>
+          <th>Terbaik untuk</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Feed RSS Substack (Metode 1)</td>
+          <td>Tambah ke pembaca</td>
+          <td>Cache pembaca</td>
+          <td>20 item terbaru</td>
+          <td>Tidak</td>
+          <td>Mengikuti sedikit Substack</td>
+        </tr>
+        <tr>
+          <td>Ekspor OPML (Metode 2)</td>
+          <td>Tidak ada</td>
+          <td>OPML XML</td>
+          <td>Daftar langganan</td>
+          <td>Tidak</td>
+          <td>Mengelola 10+ Substack</td>
+        </tr>
+        <tr>
+          <td>ThreadGrab (Metode 3)</td>
+          <td>Web app</td>
+          <td>Markdown / JSON</td>
+          <td>URL posting / feed</td>
+          <td>Ya (X, Bluesky, Threads)</td>
+          <td>Arsip lintas platform</td>
+        </tr>
+        <tr>
+          <td>Python feedparser (Metode 4)</td>
+          <td>pip / cron</td>
+          <td>Markdown per posting</td>
+          <td>Feed lengkap, terjadwal</td>
+          <td>Tidak (dapat diperluas)</td>
+          <td>Cermin lokal yang bisa di-skrip</td>
+        </tr>
+        <tr>
+          <td>Substack2Markdown / HTTrack (Metode 5)</td>
+          <td>pip / installer</td>
+          <td>Cermin folder lokal</td>
+          <td>Publikasi penuh</td>
+          <td>Tidak</td>
+          <td>Backup lengkap sekali jalan</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Membangun Pipeline Pengarsipan Substack Lengkap</h2>
+    <p>Jawaban praktis untuk kebanyakan pembaca di 2026 adalah menggabungkan dua dari lima. Pengaturan kerja umum terlihat seperti ini: tambahkan Substack yang Anda pedulikan ke pembaca RSS lewat endpoint /feed (Metode 1); ekspor OPML setiap bulan agar punya daftar langganan portabel (Metode 2); jalankan ThreadGrab pada URL posting yang penting untuk korpus LLM Anda (Metode 3); jadwalkan loop Python feedparser setiap malam untuk menangkap posting hari itu ke folder berstempel tanggal (Metode 4); dan jalankan Substack2Markdown atau HTTrack tiap kuartal untuk cermin lengkap sekali jalan dari publikasi mana pun yang tidak boleh Anda risiko hilang (Metode 5).</p>
+
+    <p>Lima alat itu tidak saling bertentangan. Metode 1 membuat Anda tetap terkini dengan setiap penulis yang Anda ikuti; Metode 3 meratakan konten yang sama menjadi korpus ternormalisasi yang jatuh langsung ke pipeline data-prep LLM; Metode 4 memberi Anda cermin lokal terjadwal; Metode 5 memberi Anda polis asuransi sekali jalan. Satu-satunya hal yang tidak bisa diotomasi penuh adalah momen saat seorang penulis menghapus posting atau pindah ke platform baru -- pada titik itu, snapshot Wayback Machine adalah fallback terakhir Anda, dan itulah persis mengapa pengarsipan eksternal tidak bisa ditawar untuk pembaca Substack mana pun yang mengutip penulis dalam riset, jurnalisme, atau dalam posting mereka sendiri.</p>
+
+    <h2>Bagaimana ThreadGrab Masuk ke Ekosistem Substack</h2>
+    <p>Untuk pembaca rata-rata yang mengikuti X demi berita terkini, mengikuti Bluesky untuk wacana teknologi, mengikuti Threads untuk diskusi komunitas, dan mengikuti Substack untuk analisis panjang, ThreadGrab adalah titik masuk pengarsipan tunggal yang menjaga semuanya konsisten. Jalur Substack melewati keluaran Markdown ternormalisasi yang sama dengan X, Threads, dan Bluesky, yang artinya satu korpus arsip mencakup keempat platform tanpa logika scraping per platform.</p>
+
+    <p>ThreadGrab juga satu-satunya dari lima metode yang mengubah feed RSS Substack (permukaan API asli kanonik) menjadi sesuatu yang jatuh ke pipeline LLM downstream tanpa pemetaan skema per publikasi. Saat seorang penulis menerbitkan posting baru besok pagi, feed Substack memperbarui, ThreadGrab mengambilnya, dan dokumen Markdown yang sama muncul di korpus lintas platform Anda dengan stempel waktu yang tepat dan URL asli terjaga. Pipeline-nya terbuka, pembaca di bawah kendali Anda, dan arsip lokal portabel ke alat ramah-LLM mana pun yang Anda pilih.</p>
+
+    <div class="cta">
+      <p>Arsipkan posting Substack, utas X, posting Bluesky, dan posting Threads berdampingan -- tanpa akun, tanpa kunci API, tanpa pemasangan.</p>
+      <a class="btn" href="/id/">Coba ThreadGrab -- Pengarsip Media Sosial Gratis</a>
+    </div>
+
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <strong>Apakah setiap newsletter Substack punya feed RSS?</strong>
+      <p>Ya. Setiap publikasi Substack, berbayar maupun gratis, menyediakan feed RSS kanonik di https://&lt;publikasi&gt;.substack.com/feed. Endpoint ini tidak butuh login, kunci API, maupun cookie. Diverifikasi langsung pada 4 Agustus 2026 melawan platformer.news/feed (15 item, 355 KB), importai.substack.com/feed (20 item, 465 KB), dan luke.substack.com/feed (20 item, 740 KB). Feed mengembalikan XML kompatibel Atom dengan isi HTML lengkap posting, tanggal publikasi, handle penulis, dan GUID unik per posting.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Bisakah saya berlangganan banyak Substack di satu tempat seperti klien email?</strong>
+      <p>Ya -- Itulah fungsi pembaca RSS. Arahkan pembaca mana pun (Feedly, Inoreader, NetNewsWire, Reeder, atau FreshRSS self-hosted) ke endpoint /feed per publikasi dan posting baru muncul di satu kotak masuk tunggal. Untuk impor massal banyak newsletter, setiap pembaca RSS menerima file OPML: kumpulkan URL /feed ke daftar, simpan sebagai subscriptions.opml, dan impor sekali jalan.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Apakah ThreadGrab mendukung pengarsipan Substack?</strong>
+      <p>Ya. ThreadGrab memperlakukan Substack sebagai sumber kelas satu bersama X, Threads, dan Bluesky. Tempel URL substack.com/p/&lt;slug&gt; atau endpoint /feed utuh dan ThreadGrab mengembalikan Markdown atau JSON ternormalisasi berisi isi posting, URL media yang disematkan, stempel waktu publikasi, dan GUID RSS kanonik. Karena ThreadGrab menormalisasi output dengan cara yang sama untuk semua platform, Anda bisa mengarsipkan posting Substack, utas X, dan posting Bluesky dalam satu korpus Markdown rapi untuk riset atau backup.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Apa beda feed RSS per posting dengan RSS publikasi penuh?</strong>
+      <p>Substack sebenarnya menyediakan dua feed terkait. Feed publikasi penuh di /&lt;publikasi&gt;.substack.com/feed mengembalikan semua posting yang pernah dipublikasikan, terbaru dulu, dan itu endpoint yang dipakai untuk cermin arsip. Feed per penulis atau per bagian (jalur sama dengan akhiran /tag/&lt;tag&gt; pada beberapa publikasi) lebih sempit. Keduanya publik dan tidak butuh autentikasi, jadi Anda bisa berlangganan keduanya di pembaca RSS mana pun tanpa akun.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Bisakah saya mengunduh semua posting Substack yang pernah saya bayar?</strong>
+      <p>Ya, lewat endpoint RSS yang sama. Posting berbayar tetap diterbitkan di feed RSS publik, dan HTML isi yang tampil di email dan pembaca web adalah sama; paywall hanya membatasi teks yang terlihat di isi, bukan feed-nya. Untuk mengunduh semua yang pernah Anda bayar, telusuri feed publikasi, ambil tautan setiap item, dan tulis HTML isi ke disk. Alat seperti Substack2Markdown dan HTTrack mengotomatiskan penelusuran dan menghasilkan arsip lokal portabel.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Adakah cara mencadangkan publikasi Substack yang diterbitkan penulis lain?</strong>
+      <p>Ya, feed RSS publik adalah endpoint backup kanonik. Anda tidak butuh akun untuk mencerminkan publikasi: arahkan pembaca RSS mana pun atau alat CLI ke /&lt;publikasi&gt;.substack.com/feed dan seluruh riwayat posting bisa diakses. Untuk snapshot lokal sekali jalan, jalankan loop Python terhadap URL feed dan tulis HTML isi setiap posting ke folder yang diindeks berdasarkan tanggal publikasi. Padukan snapshot lokal dengan simpanan Wayback Machine untuk URL kanonik posting dan Anda punya paket arsip 2026 yang lengkap.</p>
+    </div>
+
+    <h2>Pilih Metode Anda dan Mulai Mengarsipkan</h2>
+    <p>Substack unik di antara platform kreator 2026: punya bobot pembacaan sistem publikasi papan atas (5 juta langganan berbayar, lebih dari separuh pelanggan baru diperoleh lewat jaringan bawaan), tapi ia berada di belakang dasbor authoring privat tanpa endpoint ekspor publik sisi-pembaca. Kombinasi itu menjadikan pengarsipan eksternal tidak bisa ditawar bila Anda mengutip Substack dalam jurnalisme, riset, atau karya Anda sendiri.</p>
+
+    <p>Mulai dengan feed RSS asli untuk bacaan kasual (Metode 1), tambahkan OPML saat perlu mengelola koleksi besar (Metode 2), bersandar pada ThreadGrab saat butuh skema arsip yang sama dengan konten X, Threads, dan Bluesky Anda (Metode 3), pindah ke Python feedparser untuk cermin terjadwal asli terminal (Metode 4), dan sisihkan Substack2Markdown atau HTTrack untuk backup lengkap sekali jalan (Metode 5). Alat-alatnya gratis, terbuka, dan dirancang untuk bekerja bersama. <a href="/id/">Mulai dengan ThreadGrab</a> untuk jalur tercepat menuju pipeline arsip Substack yang berfungsi, yang bisa diskalakan ke sisa grafik sosial Anda.</p>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/id/">Beranda</a> &middot; <a href="/id/blog/">Blog</a> &middot; <a href="/id/about/">Tentang</a> &middot; <a href="/id/privacy/">Privasi</a>
+    <br>Tidak berafiliasi dengan Substack, Substack Inc., atau platform newsletter mana pun. Substack adalah merek dagang terdaftar dari Substack, Inc.
+  </footer>
+</body>
+</html>

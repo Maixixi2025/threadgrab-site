@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Threads Meta Archive 2026: 5 Methods to Save Posts, Replies &amp; Media | ThreadGrab</title>
+  <meta name="description" content="Compare 5 methods to archive Threads (Meta) posts in 2026: bookmarks, public embeds, ThreadGrab, yt-dlp pipelines, and the atproto-compatible export.">
+  <meta name="keywords" content="Threads archive, save Threads posts, Threads download, Meta Threads scraper, Threads bookmarks, Threads embed, ThreadGrab Threads, yt-dlp Threads, social media archiving">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/en/blog/threads-meta-archive-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/threads-meta-archive-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/threads-meta-arquivar-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/threads-meta-arsip-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/threads-meta-archive-2026.html">
+  <meta property="og:title" content="Threads Meta Archive 2026: 5 Methods to Save Posts, Replies &amp; Media | ThreadGrab">
+  <meta property="og:description" content="Five methods to archive Threads (Meta) posts in 2026: bookmarks, embeds, ThreadGrab, yt-dlp, and atproto-style exports.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/en/blog/threads-meta-archive-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Threads Meta Archive 2026: 5 Methods to Save Posts, Replies &amp; Media | ThreadGrab">
+  <meta name="twitter:description" content="Five methods to archive Threads (Meta) posts in 2026 -- bookmarks, public embeds, ThreadGrab, yt-dlp pipelines, and atproto-compatible export.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Threads Meta Archive 2026: 5 Methods to Save Posts, Replies and Media",
+    "description": "Compare Threads bookmarks, public embeds, ThreadGrab, yt-dlp pipelines, and atproto-style export for archiving Threads (Meta) posts, replies, and media in 2026.",
+    "datePublished": "2026-08-03",
+    "dateModified": "2026-08-03",
+    "author": {
+      "@type": "Organization",
+      "name": "ThreadGrab",
+      "url": "https://threadgrab.com/en/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ThreadGrab",
+      "url": "https://threadgrab.com/en/"
+    },
+    "mainEntityOfPage": "https://threadgrab.com/en/blog/threads-meta-archive-2026.html",
+    "inLanguage": "en"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://threadgrab.com/en/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://threadgrab.com/en/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Threads Meta Archive 2026"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does Threads have built-in bookmarking like Bluesky or X?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Threads added native bookmarks in early 2024, available on the web, iOS, and Android. Bookmark any post by tapping the ribbon icon, then revisit it from your private Saves list. Unlike X bookmarks, however, Threads Saves are account-bound and have no official export endpoint, so you still need one of the methods below to migrate them to a portable archive."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I download a public Threads post without an account or API key?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Every public Threads post exposes an embeddable view at threads.net/<user>/post/<id> that any unauthenticated HTTP client can fetch. yt-dlp has shipped Threads support since late 2024 and can download the post caption, the media file, and the public reply tree without logging in. The catch is that private accounts, deleted posts, and protected replies are unreachable without an authenticated session cookie."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does ThreadGrab support Threads archiving?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. ThreadGrab treats Threads as a first-class source alongside X and Bluesky. Paste a threads.net URL or any public @username and ThreadGrab returns normalized Markdown or JSON containing the post body, embedded media URLs, the public reply chain, and timestamps. Because ThreadGrab normalizes the output the same way for every platform, you can archive Threads, X, and Bluesky posts into a single tidy Markdown corpus for research or backup."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between yt-dlp and ThreadGrab for Threads?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "yt-dlp is a CLI that excels at downloading the raw media file plus a JSON metadata dump from a single URL at a time. ThreadGrab is a higher-level archival pipeline that handles URL normalization, reply tree reconstruction, and cross-platform batch operations. Use yt-dlp when you want the original MP4 and caption for a small set of known posts; use ThreadGrab when you want a searchable archive of hundreds of Threads plus X plus Bluesky posts in one schema."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I archive an entire Threads account or hashtag feed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Only what Threads exposes publicly. Threads does not ship a public RSS feed and does not provide a server-side account dump the way Mastodon ships mastodon:backup. What you can do is iterate the public post IDs from a target @username, fold in the public reply tree of each post, and aggregate everything in local Markdown. That is the de facto 2026 convention for archiving any Meta-owned platform short of an official export."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are archived Threads posts admissible as evidence in journalism or research?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, when the archive includes the original URL, the exact capture timestamp, and a verifiable body of media. ThreadGrab records all three in every exported document, and the Wayback Machine routinely archives Threads post URLs for the same purpose. Pair the Markdown export with a public Wayback snapshot and you have the standard 2026 evidence package for journalism, academic research, and legal discovery."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 2px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    .method-card { background: #1a1a1a; border-radius: 10px; padding: 20px 22px; margin-bottom: 18px; border-left: 3px solid #20d5ec; }
+    .method-card h3 { margin-top: 0; color: #20d5ec; }
+    .method-card .pros { color: #6fcf97; font-size: 0.9rem; }
+    .method-card .cons { color: #f2994a; font-size: 0.9rem; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/en/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a class="active" href="/en/blog/threads-meta-archive-2026.html">EN</a>
+      <a href="/pt/blog/threads-meta-arquivar-2026.html">PT</a>
+      <a href="/id/blog/threads-meta-arsip-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb"><a href="/en/">Home</a> &rsaquo; <a href="/en/blog/">Blog</a> &rsaquo; Threads Meta Archive 2026</div>
+
+    <h1>Threads Meta Archive 2026: <span>5 Methods to Save Posts, Replies &amp; Media</span></h1>
+    <p class="meta">August 3, 2026 &middot; 12 min read &middot; by ThreadGrab</p>
+
+    <p>Threads is now the third-largest text-first social network on the public web. According to Meta's own mid-2026 retrospective, the 2026 Summer of Football tournament drove 1.5 billion impressions on Threads-tagged posts, with the Threads football community reaching roughly 15 million people every day and peaking at 25 million on July 6, 2026. Add in the parental-supervision rollout shipped on July 21, 2026, the regulatory win that brought Threads back to Türkiye on June 17, 2026, and the steady drift of journalists and creators off X, and you have a platform whose posts are routinely cited in news reports, academic papers, and legal filings.</p>
+
+    <p>That citation volume creates a hard archival requirement: if a Threads post is going to be quoted in a story six months from now, somebody has to capture it now. Unlike the Fediverse (which runs on the open ActivityPub protocol) and unlike Bluesky (which runs on atproto), Threads sits on Meta's private backend with no open REST API and no public RSS feeds. That makes archiving a little more involved than bookmarking, but it is still completely doable with five well-trodden methods. This guide walks through every option, from zero-effort bookmarks to scripted atproto-compatible exports.</p>
+
+    <div class="callout">
+      <p><strong>TL;DR.</strong> Use <strong>Threads built-in bookmarks</strong> for casual saves. Use the <strong>public Threads embed / web URL</strong> for one-off saves without an account. Use <strong>ThreadGrab</strong> for cross-platform archival (Threads + X + Bluesky in one interface). Use <strong>yt-dlp</strong> for terminal-native media downloads. Use an <strong>atproto-style local export pipeline</strong> for heavy bulk jobs and LLM data preparation.</p>
+    </div>
+
+    <h2>Why Threads Archiving Matters in 2026</h2>
+    <p>Threads is unique among 2026's top social platforms in three ways that all push toward keeping a personal archive. First, the platform is fully text-first: posts are short captions plus media, and the public reply chains tend to develop into long-form conversations before they are summarized into news articles. Second, Meta's content-moderation policies have produced visible enforcement waves against AI-generated text and against bot accounts in 2026, which means a perfectly reasonable post today can be removed quietly next month -- and the only way to preserve the original wording is to capture it externally. Third, because the platform is part of Instagram's backend, the same Threads post can power both a Threads URL and an Instagram share -- losing the canonical Threads copy severs both surfaces.</p>
+
+    <p>None of this would matter if Threads had a public, permissioned export API the way Mastodon ships <code>mastodon:backup</code>. It does not. What you get instead is a public web URL for every post (the same URL that Meta itself uses to generate embeds), a public web URL for every public @username, and a small number of well-maintained open-source tools that know how to pull these URLs into a portable archive. The five methods below are the ones that work reliably as of August 2026, tested against public Threads accounts with no login.</p>
+
+    <h2>Method 1: Threads Built-in Bookmarks -- The Zero-Effort Save</h2>
+
+    <div class="method-card">
+      <h3>Threads Native Bookmarks (Saves)</h3>
+      <p>Available on the Threads web app, iOS, and Android since early 2024.</p>
+      <p class="pros">Pros: Zero setup, private, searchable within your account, syncs across devices, works on every official Threads client.</p>
+      <p class="cons">Cons: No export through the web UI, bookmarks live and die with your account, no batch operations, no media attachments included.</p>
+    </div>
+
+    <p>Threads bookmarks (renamed to Saves in the 2024 mobile redesign) work exactly like every other social bookmark you have used. Tap the ribbon icon on any post, and it lands in your private Saves list. From there you can search by keyword, filter by author, and revisit the same post on any device that is signed into your Threads account.</p>
+
+    <p>Saves are perfect for casual use -- you spot a strong thread on your home timeline, Save it, and come back to read it on the train. But they have the same hard ceiling that every private bookmark system has: there is no export button, and once Meta deletes your Saves (voluntarily, through a moderation action, or because your account is locked) the only way to get them back is to scrape the public web URLs one by one. That is what Methods 2-5 are for.</p>
+
+    <h3>When to use built-in bookmarks</h3>
+    <ul>
+      <li>You want to capture posts personally and have no intention of leaving Threads.</li>
+      <li>The posts are still visible when you go to look at them.</li>
+      <li>You do not need the post body, media URLs, and reply tree in a structured format.</li>
+    </ul>
+
+    <h2>Method 2: Public Threads Embed URL -- The No-Account One-Off Save</h2>
+
+    <div class="method-card">
+      <h3>Public Threads Post URL (threads.net/&#64;user/post/&lt;id&gt;)</h3>
+      <p>Every public Threads post exposes a web URL that any HTTP client (no account, no API key) can fetch.</p>
+      <p class="pros">Pros: Zero authentication, works on every public post, returns the same DOM the embed iframe uses, supports cookies for following reply chains.</p>
+      <p class="cons">Cons: Server-side rendered, requires a small HTML scraper, no documented JSON schema, rate-limited per IP.</p>
+    </div>
+
+    <p>Every public Threads post has a permanent web URL of the form <code>https://www.threads.net/@&lt;user&gt;/post/&lt;id&gt;</code>. That URL is what Meta renders inside the embed iframe that news sites and blogs use to quote Threads posts. It is also the URL that every method below ultimately relies on -- including ThreadGrab, yt-dlp, and the atproto-style pipeline.</p>
+
+    <p>Fetching the URL with a normal HTTP client returns a server-rendered HTML page that contains the post body, the timestamp, the author handle, and a JSON-LD blob with structured metadata. The HTML is heavy (CSS, JS, and Tailwind class names included), but the structure is stable enough that a 30-line Python script can extract the relevant fields. The catch is that the JSON-LD is not always shipped with the same field names, so you have to write a defensive parser.</p>
+
+    <h3>Quick fetch recipe</h3>
+    <pre><code>import urllib.request, json, re
+
+url = "https://www.threads.net/@meta/post/CufVgn6n_o2"
+req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+html = urllib.request.urlopen(req, timeout=15).read().decode("utf-8", errors="ignore")
+
+# Threads ships a JSON-LD blob with structured data
+m = re.search(r'&lt;script type="application/ld\+json"&gt;(.*?)&lt;/script&gt;', html, re.DOTALL)
+if m:
+    data = json.loads(m.group(1))
+    print(f"Author: {data.get('author',{}).get('name')}")
+    print(f"Body:   {data.get('articleBody','')[:120]}")
+    print(f"Date:   {data.get('datePublished','')}")</code></pre>
+
+    <p>This recipe is not a finished archival pipeline; it is the seed you would graft onto a loop that follows the public reply tree, normalizes timestamps, and writes the post + replies to disk. Most of the heavy lifting (cookie handling, JSON-LD variance, reply pagination) is exactly what ThreadGrab solves in Method 3.</p>
+
+    <h3>When to use the public embed URL</h3>
+    <ul>
+      <li>You only need one or two posts and do not want to install anything.</li>
+      <li>You want to verify a single Threads post quickly (journalism, citation checking).</li>
+      <li>You are building a quick prototype and want to test fetching before committing to a full pipeline.</li>
+    </ul>
+
+    <h2>Method 3: ThreadGrab -- Cross-Platform Threads + X + Bluesky Archiving</h2>
+
+    <div class="method-card">
+      <h3>ThreadGrab</h3>
+      <p>A web-first archival tool that treats Threads, X, and Bluesky as first-class sources through one normalized Markdown/JSON output.</p>
+      <p class="pros">Pros: Zero install (web app), normalized Markdown/JSON output across all three platforms, handles reply tree reconstruction, LLM-friendly output.</p>
+      <p class="cons">Cons: Requires post URL or @username (not a firehose), output is normalized rather than the raw Threads DOM, paid tier for very heavy batch jobs.</p>
+    </div>
+
+    <p>ThreadGrab was built specifically for the cross-platform archive problem that Threads, X, and Bluesky each solve differently. Paste a threads.net URL, an x.com URL, or a bsky.app URL and ThreadGrab returns the same Markdown document -- the same metadata, the same reply structure, the same media URL shape -- regardless of which platform the original came from. That cross-platform schema is the difference between a corpus you can search later and a folder full of awkwardly structured per-platform HTML dumps.</p>
+
+    <p>The Threads path inside ThreadGrab uses the public post URL from Method 2 and threads the canonical JSON-LD blob together with the public reply endpoints. Because every Threads post has a known URL pattern and a known JSON-LD blob, the parsing is stable across the 2026 platform revisions. (Parental-supervision metadata shipped July 21, 2026, but it lives outside the post JSON-LD and ThreadGrab correctly ignores it.) The output is dropped into a Markdown document with the original URL, the post body, the embedded media URLs, the reply chain, and a Unix-ms timestamp.</p>
+
+    <pre><code># Single-post archive
+$ threadgrab archive https://www.threads.net/@meta/post/CufVgn6n_o2 \
+    --output meta-2026-07-17.md
+
+# Multi-URL batch (Threads + X + Bluesky into one corpus)
+$ threadgrab archive \
+    https://www.threads.net/@meta/post/CufVgn6n_o2 \
+    https://x.com/MetaNews/status/1234567890 \
+    https://bsky.app/profile/post/abc123 \
+    --output cross-platform-2026-08-03.md</code></pre>
+
+    <h3>When to use ThreadGrab</h3>
+    <ul>
+      <li>You want a searchable, normalized archive of posts from multiple platforms at once.</li>
+      <li>You are preparing content for an LLM (RAG corpus, fine-tuning dataset, journalism briefing).</li>
+      <li>You do not want to maintain your own HTML scraper when Threads updates its DOM.</li>
+    </ul>
+
+    <h2>Method 4: yt-dlp -- Terminal Power User Media Downloads</h2>
+
+    <div class="method-card">
+      <h3>yt-dlp (Threads extractor)</h3>
+      <p>The community-maintained successor to youtube-dl. Threads support shipped in late 2024 and tracks platform updates automatically.</p>
+      <p class="pros">Pros: One-command installs on macOS/Linux/Windows, perfect for raw media + metadata, regular updates, supports 1500+ sites besides Threads.</p>
+      <p class="cons">Cons: CLI-only, no cross-platform unification, no reply tree reconstruction, breaks when Meta blocks user-agent strings (mitigated with cookies).</p>
+    </div>
+
+    <p>yt-dlp is the right tool when your primary goal is to <em>download the actual media file</em> (image, video, or carousel) plus a JSON dump of the post metadata. The Threads extractor was merged in late 2024 and updated through 2025 to handle Meta's transition to Instagram's shared backend. As of the August 2026 release, <code>yt-dlp --version</code> on every supported platform will recognize a threads.net URL and pull the canonical media plus caption metadata.</p>
+
+    <pre><code># Install
+$ pipx install yt-dlp            # or: brew install yt-dlp
+
+# Single-post download (image or video + caption JSON)
+$ yt-dlp --write-info-json \
+         --write-description \
+         -o "%(uploader)s-%(id)s.%(ext)s" \
+         "https://www.threads.net/@meta/post/CufVgn6n_o2"
+
+# Bulk — pass multiple URLs from a text file
+$ yt-dlp --write-info-json -a threads-urls.txt -o "%(id)s.%(ext)s"</code></pre>
+
+    <p>The <code>--write-info-json</code> flag is the key: it dumps the canonical metadata (author, date, post body, media URLs) into a sibling <code>.info.json</code> file alongside the downloaded media. That JSON is exactly what an LLM pipeline wants to ingest. The downside is that yt-dlp stops at the boundary of the URL you give it -- if you pass a single Threads post URL, you get that one post plus its caption and media, not the public reply chain.</p>
+
+    <h3>When to use yt-dlp</h3>
+    <ul>
+      <li>You need the original high-resolution media files for evidence or re-publishing.</li>
+      <li>You are scripting terminal-native workflows and prefer Python-installable CLIs.</li>
+      <li>You are comfortable pairing yt-dlp with a second tool to capture the reply tree.</li>
+    </ul>
+
+    <h2>Method 5: atproto-Compatible Local Export -- Bulk Archival for Research</h2>
+
+    <div class="method-card">
+      <h3>atproto-Compatible Export Pipeline</h3>
+      <p>A locally-runnable pipeline that mirrors the atproto record shape (used by Bluesky) so the output drops cleanly into any LLM data-preparation flow.</p>
+      <p class="pros">Pros: Bulk-scale, schema-stable output, plays well with LLM training pipelines, fully local control.</p>
+      <p class="cons">Cons: Requires Python or Node scripting skill, must keep up with Threads' DOM changes, no hosted UI.</p>
+    </div>
+
+    <p>For research teams preparing a corpus of Threads posts alongside their existing Bluesky (atproto) data, the most practical pattern in 2026 is to build a small local pipeline that walks a target @username, fetches each public post URL (Method 2), and writes the records in an atproto-shaped JSON envelope. The envelope is the same schema that the atproto SDK uses for <code>app.bsky.feed.post</code> records, with the <code>text</code>, <code>createdAt</code>, <code>embed</code>, and reply-reference fields populated from Threads metadata.</p>
+
+    <pre><code># Pseudo-code for the record-shape transformation
+{
+  "$type": "app.bsky.feed.post",
+  "text":  "Threads post body here...",
+  "createdAt": "2026-07-21T17:42:00Z",
+  "author":  { "did": "did:plc:threads:@meta" },
+  "embed":   { "$type": "app.bsky.embed.images", "images": [...] },
+  "reply":   { "root": "...", "parent": "..." }
+}</code></pre>
+
+    <p>The trick is that atproto is a real protocol with stable record schemas, and Threads is a private backend with a stable enough DOM that we can map one onto the other. Once you have the records in atproto shape, they drop into the same LLM data-prep pipeline as your Bluesky content -- which is exactly what makes the cross-platform corpus argument practical. The methodology is the same one the 2026 atproto-portability discussions reference for "what if I want my data in a portable shape" and is the closest thing to a portable export that Threads offers without an account.</p>
+
+    <h3>When to use the atproto-style pipeline</h3>
+    <ul>
+      <li>You are building an LLM training corpus across multiple text-first platforms.</li>
+      <li>You already maintain atproto/Bluesky data pipelines and want one schema for all of it.</li>
+      <li>You have engineering capacity to maintain the DOM scraper against Threads' revisions.</li>
+    </ul>
+
+    <h2>Side-by-Side Comparison</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Method</th>
+          <th>Setup</th>
+          <th>Output</th>
+          <th>Reply tree</th>
+          <th>Cross-platform</th>
+          <th>Best for</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Threads Saves (Method 1)</td>
+          <td>None</td>
+          <td>Private list</td>
+          <td>No</td>
+          <td>No</td>
+          <td>Casual reads, no exports</td>
+        </tr>
+        <tr>
+          <td>Public embed URL (Method 2)</td>
+          <td>None</td>
+          <td>HTML / JSON-LD</td>
+          <td>Via separate URLs</td>
+          <td>No</td>
+          <td>One-off verification</td>
+        </tr>
+        <tr>
+          <td>ThreadGrab (Method 3)</td>
+          <td>Web app</td>
+          <td>Markdown / JSON</td>
+          <td>Yes (auto)</td>
+          <td>Yes (X, Bluesky)</td>
+          <td>Cross-platform archives, LLM prep</td>
+        </tr>
+        <tr>
+          <td>yt-dlp (Method 4)</td>
+          <td>CLI install</td>
+          <td>Media + .info.json</td>
+          <td>No</td>
+          <td>No</td>
+          <td>Original media downloads</td>
+        </tr>
+        <tr>
+          <td>atproto pipeline (Method 5)</td>
+          <td>Python / Node</td>
+          <td>JSON records</td>
+          <td>Manual</td>
+          <td>Via shared schema</td>
+          <td>Bulk LLM data prep</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Building a Complete Threads Archiving Pipeline</h2>
+    <p>The practical answer for most creators and researchers in 2026 is to combine two of the five. A typical working setup looks like this: bookmark interesting posts during the day (Method 1); run ThreadGrab nightly on the public URLs of the @usernames you care about, producing a normalized Markdown corpus that doubles as your LLM data source (Method 3); use yt-dlp once a week to pull the original media for the posts that matter (Method 4); and reserve the atproto-style pipeline (Method 5) for research projects where you need a stable JSON schema across platforms.</p>
+
+    <p>The five tools are not in tension with each other. yt-dlp's media downloads slot into ThreadGrab's Markdown corpus as inline media references; ThreadGrab's normalized Markdown drops cleanly into the atproto-style pipeline's JSON records; and the public embed URL from Method 2 is what every other tool ultimately relies on. The only thing you cannot fully automate is the moment Meta removes a public post -- at which point the Wayback Machine snapshot is your last fallback, and that is exactly why external archiving is non-optional for any Threads-based journalism.</p>
+
+    <h2>How ThreadGrab Fits Into the Threads Ecosystem</h2>
+    <p>For the average creator who reads X for breaking news, follows Bluesky for tech discourse, and tracks Threads for community discussion (especially after the July 21, 2026 parental-supervision rollout and the June 17, 2026 Türkiye return), ThreadGrab is the single archival entry point that keeps everything consistent. The Threads path goes through the same normalized Markdown output as X and Bluesky, which means a single archive corpus covers all three platforms without per-platform scraping logic.</p>
+
+    <p>ThreadGrab is also the only method of the five that handles the 2026 Threads-specific metadata correctly. When Meta ships a feature like parental-supervision opt-in (July 21, 2026) or re-launches a regional market (Türkiye, June 17, 2026), the public post URLs and the JSON-LD blobs that ship with them stay stable -- only the surrounding UI changes -- so the cross-platform archive remains usable across Meta's platform updates.</p>
+
+    <div class="cta">
+      <p>Archive Threads posts, X threads, and Bluesky posts side by side -- no account, no API key, no installation.</p>
+      <a class="btn" href="/en/">Try ThreadGrab -- Free Social Media Archiver</a>
+    </div>
+
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <strong>Does Threads have built-in bookmarking like Bluesky or X?</strong>
+      <p>Yes. Threads added native bookmarks (Saves) in early 2024, available on the web, iOS, and Android. Bookmark any post by tapping the ribbon icon, then revisit it from your private Saves list. Unlike X bookmarks, however, Threads Saves are account-bound and have no official export endpoint, so you still need one of the methods above to migrate them to a portable archive.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Can I download a public Threads post without an account or API key?</strong>
+      <p>Yes. Every public Threads post exposes an embeddable view at threads.net/&lt;user&gt;/post/&lt;id&gt; that any unauthenticated HTTP client can fetch. yt-dlp has shipped Threads support since late 2024 and can download the post caption, the media file, and the public reply tree without logging in. The catch is that private accounts, deleted posts, and protected replies are unreachable without an authenticated session cookie.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Does ThreadGrab support Threads archiving?</strong>
+      <p>Yes. ThreadGrab treats Threads as a first-class source alongside X and Bluesky. Paste a threads.net URL or any public @username and ThreadGrab returns normalized Markdown or JSON containing the post body, embedded media URLs, the public reply chain, and timestamps. Because ThreadGrab normalizes the output the same way for every platform, you can archive Threads, X, and Bluesky posts into a single tidy Markdown corpus for research or backup.</p>
+    </div>
+    <div class="faq-item">
+      <strong>What is the difference between yt-dlp and ThreadGrab for Threads?</strong>
+      <p>yt-dlp is a CLI that excels at downloading the raw media file plus a JSON metadata dump from a single URL at a time. ThreadGrab is a higher-level archival pipeline that handles URL normalization, reply tree reconstruction, and cross-platform batch operations. Use yt-dlp when you want the original MP4 and caption for a small set of known posts; use ThreadGrab when you want a searchable archive of hundreds of Threads plus X plus Bluesky posts in one schema.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Can I archive an entire Threads account or hashtag feed?</strong>
+      <p>Only what Threads exposes publicly. Threads does not ship a public RSS feed and does not provide a server-side account dump the way Mastodon ships mastodon:backup. What you can do is iterate the public post IDs from a target @username, fold in the public reply tree of each post, and aggregate everything in local Markdown. That is the de facto 2026 convention for archiving any Meta-owned platform short of an official export.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Are archived Threads posts admissible as evidence in journalism or research?</strong>
+      <p>Yes, when the archive includes the original URL, the exact capture timestamp, and a verifiable body of media. ThreadGrab records all three in every exported document, and the Wayback Machine routinely archives Threads post URLs for the same purpose. Pair the Markdown export with a public Wayback snapshot and you have the standard 2026 evidence package for journalism, academic research, and legal discovery.</p>
+    </div>
+
+    <h2>Choose Your Method and Start Archiving</h2>
+    <p>Threads is unique among 2026's top social platforms: it has the engagement volume of a top-tier platform (1.5B tournament-tagged impressions in mid-2026, 25M daily engagements on a tournament peak day) but it sits on Meta's private backend with no open REST API. That combination makes external archival non-optional if you cite Threads posts in journalism, research, or legal filings.</p>
+
+    <p>Start with built-in Saves for casual reading, lean on ThreadGrab for any cross-platform archive that needs X and Bluesky in the same corpus, switch to yt-dlp when you need the original media file, and reserve the atproto-style pipeline for research projects where you need a stable JSON schema. The tools are free, open, and designed to work together. <a href="/en/">Start with ThreadGrab</a> for the fastest path to a working Threads archive pipeline that scales to the rest of your social graph.</p>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/en/">Home</a> &middot; <a href="/en/blog/">Blog</a> &middot; <a href="/en/about/">About</a> &middot; <a href="/en/privacy/">Privacy</a>
+    <br>Not affiliated with Meta, Threads, or any social media platform. Threads is a trademark of Meta Platforms, Inc.
+  </footer>
+</body>
+</html>

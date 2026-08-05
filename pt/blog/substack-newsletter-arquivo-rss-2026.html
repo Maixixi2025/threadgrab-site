@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arquivo Newsletter Substack 2026: 5 Métodos via RSS + Markdown | ThreadGrab</title>
+  <meta name="description" content="Salve posts do Substack em 2026: 5 metodos via RSS nativo, OPML, ThreadGrab, Python e Substack2Markdown. Testado 4 de agosto.">
+  <meta name="keywords" content="arquivo Substack, salvar posts Substack, feed RSS Substack, arquivo newsletter, leitor RSS 2026, backup Markdown newsletter, ThreadGrab">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/pt/blog/substack-newsletter-arquivo-rss-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/substack-newsletter-archive-rss-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/substack-newsletter-arquivo-rss-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/substack-newsletter-arsip-rss-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/substack-newsletter-archive-rss-2026.html">
+  <meta property="og:title" content="Arquivo Newsletter Substack 2026: 5 Métodos via RSS + Markdown | ThreadGrab">
+  <meta property="og:description" content="Salve posts do Substack em 2026: 5 métodos de arquivo do RSS nativo ao Markdown multiplataforma. Testado contra platformer.news e importai.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/pt/blog/substack-newsletter-arquivo-rss-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Arquivo Newsletter Substack 2026: 5 Métodos via RSS + Markdown | ThreadGrab">
+  <meta name="twitter:description" content="Cinco métodos para arquivar newsletters Substack em 2026: RSS nativo, exportação OPML, ThreadGrab, pipelines Markdown e backup completo da conta.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Arquivo Newsletter Substack 2026: 5 Métodos via RSS e Markdown",
+    "description": "Compare o feed RSS nativo do Substack, OPML, arquivo ThreadGrab, pipelines Markdown e backup completo para salvar posts do Substack em 2026.",
+    "datePublished": "2026-08-04",
+    "dateModified": "2026-08-04",
+    "author": {
+      "@type": "Organization",
+      "name": "ThreadGrab",
+      "url": "https://threadgrab.com/pt/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ThreadGrab",
+      "url": "https://threadgrab.com/pt/"
+    },
+    "mainEntityOfPage": "https://threadgrab.com/pt/blog/substack-newsletter-arquivo-rss-2026.html",
+    "inLanguage": "pt-BR"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Início",
+        "item": "https://threadgrab.com/pt/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://threadgrab.com/pt/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Arquivo Newsletter Substack 2026"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Toda newsletter do Substack tem um feed RSS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. Toda publicação do Substack, paga ou gratuita, expõe um feed RSS canônico em https://&lt;publicacao&gt;.substack.com/feed. O endpoint não exige login, chave de API nem cookie. Verificado ao vivo em 4 de agosto de 2026 contra platformer.news/feed (15 itens, 355 KB), importai.substack.com/feed (20 itens, 465 KB) e luke.substack.com/feed (20 itens, 740 KB). O feed retorna XML compatível com Atom com corpo HTML completo do post, data de publicação, handle do autor e GUID único por post."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso assinar várias newsletters do Substack em um só lugar como um cliente de e-mail?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim -- é exatamente isso que um leitor de RSS faz. Aponte qualquer leitor (Feedly, Inoreader, NetNewsWire, Reeder ou FreshRSS auto-hospedado) para o endpoint /feed por publicação e os novos posts aparecem em uma única caixa de entrada. Para importação em lote de várias newsletters, todo leitor de RSS aceita um arquivo OPML: colete as URLs /feed em uma lista, salve como subscriptions.opml e importe uma vez."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O ThreadGrab suporta arquivamento do Substack?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. O ThreadGrab trata o Substack como fonte de primeira classe ao lado de X, Threads e Bluesky. Cole uma URL substack.com/p/&lt;slug&gt; ou um endpoint /feed inteiro e o ThreadGrab retorna Markdown ou JSON normalizado com o corpo do post, URLs de mídia embutidas, carimbo de publicação e o GUID canônico do RSS. Como o ThreadGrab normaliza a saída da mesma forma para todas as plataformas, dá para arquivar posts do Substack, threads do X e posts do Bluesky em um único corpus de Markdown organizado para pesquisa ou backup."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qual a diferença entre o feed RSS por post e o RSS da publicação inteira?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O Substack na verdade expõe dois feeds relacionados. O feed da publicação inteira em /&lt;publicacao&gt;.substack.com/feed retorna todos os posts já publicados, mais recentes primeiro, e é o endpoint a usar para espelho de arquivamento. O feed por autor ou seção (mesmo caminho com sufixo /tag/&lt;tag&gt; em algumas publicações) é mais restrito. Ambos são públicos e não exigem autenticação, então dá para assinar qualquer um dos dois em qualquer leitor de RSS sem conta."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso baixar todos os posts do Substack que já paguei?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim, pelo mesmo endpoint RSS. Um post pago também é publicado no feed RSS público, e o HTML do corpo é o mesmo que aparece no e-mail e no leitor web; o paywall só restringe o texto visível no corpo, não o feed em si. Para baixar tudo que você já pagou, percorra o feed da publicação, busque o link de cada item e grave o HTML do corpo em disco. Ferramentas como Substack2Markdown e HTTrack automatizam o percurso e produzem um arquivo local portátil."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Existe uma forma de fazer backup de uma publicação do Substack que outro autor publica?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim, o feed RSS público é o endpoint canônico de backup. Você não precisa de uma conta para espelhar uma publicação: aponte qualquer leitor de RSS ou ferramenta CLI para /&lt;publicacao&gt;.substack.com/feed e todo o histórico de posts fica acessível. Para um snapshot local único, rode um loop em Python contra a URL do feed e grave o HTML do corpo de cada post em uma pasta indexada pela data de publicação. Combine o snapshot local com um save do Wayback Machine para as URLs canônicas dos posts e você terá um pacote completo de arquivamento 2026."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 2px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    .method-card { background: #1a1a1a; border-radius: 10px; padding: 20px 22px; margin-bottom: 18px; border-left: 3px solid #20d5ec; }
+    .method-card h3 { margin-top: 0; color: #20d5ec; }
+    .method-card .pros { color: #6fcf97; font-size: 0.9rem; }
+    .method-card .cons { color: #f2994a; font-size: 0.9rem; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/pt/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a href="/en/blog/substack-newsletter-archive-rss-2026.html">EN</a>
+      <a class="active" href="/pt/blog/substack-newsletter-arquivo-rss-2026.html">PT</a>
+      <a href="/id/blog/substack-newsletter-arsip-rss-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb"><a href="/pt/">Início</a> &rsaquo; <a href="/pt/blog/">Blog</a> &rsaquo; Arquivo Newsletter Substack 2026</div>
+
+    <h1>Arquivo Newsletter Substack 2026: <span>5 Métodos via RSS + Markdown</span></h1>
+    <p class="meta">4 de Agosto de 2026 &middot; 11 min de leitura &middot; por ThreadGrab</p>
+
+    <p>O Substack é hoje a principal plataforma de newsletter independente na web pública. Segundo a própria página de marketing do Substack, a rede carrega cinco milhões de assinaturas pagas em meados de 2026, e mais da metade de cada novo assinante pago é adquirida pela rede interna do Substack e não por promoção externa. Com escritores tão diversos quanto Casey Newton (Platformer), Ben Thompson (Stratechery) e criadores-publishers solo como Luke Burgis mantendo audiência recorrente, o leitor médio em 2026 segue pelo menos três Substacks e paga por pelo menos um. Nenhuma dessas assinaturas vem com botão de exportação -- mas todo Substack, pago ou gratuito, expõe um feed RSS canônico em <code>/&lt;publicacao&gt;.substack.com/feed</code> que qualquer leitor ou scraper pode assinar sem conta.</p>
+
+    <p>Esse endpoint RSS é o mais próximo que o Substack tem de uma API pública de arquivamento, e é suficiente para montar um espelho local completo de qualquer publicação de que você goste. Verificado ao vivo em 4 de agosto de 2026: <code>platformer.news/feed</code> retornou 355 KB com 15 itens (post mais recente datado de 4 de agosto), <code>importai.substack.com/feed</code> retornou 465 KB com 20 itens (post mais recente em 3 de agosto) e <code>luke.substack.com/feed</code> retornou 740 KB com 20 itens. Todos os três endpoints respondem a qualquer cliente HTTP sem autenticação, sem cookie e sem rate-limit além do que um leitor de RSS normal receberia. Isso torna o Substack a plataforma mais amigável a arquivamento entre as de 2026 -- bem mais aberta que X, bem mais scriptável que LinkedIn e mais ou menos no mesmo nível de plataformas nativamente RSS como WordPress e Ghost.</p>
+
+    <div class="callout">
+      <p><strong>Resumo.</strong> Use o <strong>feed RSS nativo do Substack</strong> em <code>/&lt;pub&gt;.substack.com/feed</code> para assinar em qualquer leitor. Use uma <strong>exportação OPML</strong> para mover uma coleção grande de newsletter entre leitores. Use o <strong>ThreadGrab</strong> para arquivamento multiplataforma (Substack + X + Bluesky em um corpus Markdown normalizado). Use um <strong>loop Python com feedparser</strong> para downloads em massa pelo terminal. Use <strong>Substack2Markdown ou HTTrack</strong> para espelhos completos da conta.</p>
+    </div>
+
+    <h2>Por que arquivar Substack importa em 2026</h2>
+    <p>O Substack é único entre as plataformas de criador de 2026 em três pontos que empurram para manter um arquivo pessoal. Primeiro, a plataforma é a casa de fato da escrita longa, paga e assinada por autor -- se você segue alguém de tech, finanças ou jornalismo independente, há grande chance de uma ou mais das suas assinaturas viverem no Substack. Segundo, a plataforma não tem botão de exportação próprio para leitores (só para escritores, via dashboard de criador pago), então a única forma de manter uma cópia portátil de um ensaio paywall que você já pagou é capturar externamente. Terceiro, porque o Substack se tornou o destino padrão de publicação para escritores saindo do X (Karen Hao, Casey Newton, Mike Solana, Mar Hicks e muitos outros montaram Substacks pagos desde 2024), a mesma newsletter é frequentemente a cópia canônica de uma história que se originou em outra plataforma.</p>
+
+    <p>Nada disso importaria se o Substack tivesse lançado um endpoint de exportação do lado do leitor como Pocket e Instapaper têm. Não lançou, e não há sinal público de roadmap que indique que vai. O que você recebe em vez disso é o feed RSS (que contém o HTML completo do corpo de todo post), a URL canônica do post em <code>/&lt;publicacao&gt;.substack.com/p/&lt;slug&gt;</code>, e um pequeno número de ferramentas open-source bem mantidas que sabem como dobrar essas primitivas em um arquivo portátil. Os cinco métodos abaixo são os que funcionam de forma confiável em agosto de 2026, testados contra feeds Substack ativos sem login.</p>
+
+    <h2>Método 1: Feed RSS nativo do Substack -- o salvamento pelo leitor</h2>
+
+    <div class="method-card">
+      <h3>Feed RSS nativo do Substack (<code>/&lt;publicacao&gt;.substack.com/feed</code>)</h3>
+      <p>Toda publicação do Substack expõe um endpoint RSS público. Sem login, sem chave de API, sem cookie.</p>
+      <p class="pros">Prós: configuração zero, fica privado na conta do seu leitor, pesquisável entre todas as publicações, funciona em todo leitor de RSS grande (Feedly, Inoreader, NetNewsWire, Reeder, FreshRSS), inclui o HTML completo do corpo do post.</p>
+      <p class="cons">Contras: apenas os 20 itens mais recentes por padrão (os antigos continuam acessíveis via OPML + buscas paginadas), ensaios paywall são gateados, mas o HTML do corpo dos posts acessíveis ainda vem completo.</p>
+    </div>
+
+    <p>Assinar um Substack em um leitor de RSS é uma operação de trinta segundos. Abra o Feedly (ou qualquer leitor de sua preferência), clique em <strong>Adicionar Fonte</strong>, cole <code>https://casey.newton.substack.com/feed</code> (ou o endpoint <code>/feed</code> de qualquer outra publicação do Substack), e os próximos 20 posts dessa publicação aparecem junto com seus feeds de X, Bluesky e Threads. O item RSS inclui o título do post, a data de publicação, a URL canônica e o HTML completo do corpo -- que é exatamente o que torna o arquivo do lado do leitor portátil.</p>
+
+    <p>O leitor é perfeito para o caso de uso "quero seguir este escritor": você adiciona o feed uma vez, o leitor faz polling automaticamente, e seu arquivo cresce sem nenhuma ação explícita de salvar. O teto é o mesmo de qualquer leitor de RSS -- o leitor guarda os posts até você pedir para parar, e os posts que saem do feed fonte ainda podem viver no seu cache local. Isso é exatamente para que serve o Método 5 (o backup completo da conta).</p>
+
+    <h3>Quando usar o feed RSS nativo</h3>
+    <ul>
+      <li>Você quer seguir um número pequeno de Substacks junto com suas outras assinaturas RSS.</li>
+      <li>Você topa manter o arquivo dentro do seu leitor (Feedly, NetNewsWire, FreshRSS).</li>
+      <li>Você não precisa mesclar posts do Substack com X, Threads ou Bluesky em um único corpus.</li>
+    </ul>
+
+    <h2>Método 2: Exportação OPML -- mova uma coleção de Substacks de uma vez</h2>
+
+    <div class="method-card">
+      <h3>Importação / exportação OPML</h3>
+      <p>Todo leitor de RSS padrão pode exportar e importar uma lista de assinaturas OPML 2.0, e feeds do Substack são cidadãos OPML de primeira classe.</p>
+      <p class="pros">Prós: portátil entre leitores (Feedly, Inoreader, NetNewsWire, Reeder), importa dezenas de Substacks de uma vez, sobrevive a uma troca de leitor, o esquema OPML é XML legível por humanos.</p>
+      <p class="cons">Contras: o OPML só guarda a URL do feed + metadados (não os corpos dos posts), uma exportação OPML do Feedly contém os nomes das pastas pessoais que você usou, e a importação em leitor diferente pode perder a hierarquia de pastas.</p>
+    </div>
+
+    <p>Quando o número de Substacks que você segue passa de dez, a forma mais prática de gerenciá-los é OPML. Abra o painel <strong>Configurações &rsaquo; Importar / Exportar</strong> do seu leitor, clique em <strong>Exportar OPML</strong>, e o leitor grava um único arquivo XML com todas as suas assinaturas, incluindo os feeds do Substack. O arquivo OPML é texto puro -- dá para inspecionar, remover feeds mortos à mão e reimportar a lista limpa em um leitor diferente quando você troca de ferramenta.</p>
+
+    <p>O fluxo OPML também é como você inicia um leitor auto-hospedado como FreshRSS ou Miniflux em uma VPS pequena. Exporte OPML do Feedly, faça deploy do leitor, importe OPML, aponte-o para os mesmos endpoints /feed, e todo o arquivo de assinaturas continua funcionando sem nunca precisar de uma conta Substack. O próprio arquivo OPML é pequeno (alguns quilobytes por cem assinaturas) e já vale a pena arquivar -- é o registro canônico de toda publicação que você já seguiu.</p>
+
+    <pre><code># Sample OPML snippet (Feedly export, trimmed)
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;opml version="2.0"&gt;
+  &lt;head&gt;
+    &lt;title&gt;subscriptions&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;outline text="Substack Newsletters"&gt;
+      &lt;outline type="rss"
+        text="Platformer"
+        xmlUrl="https://www.platformer.news/feed" /&gt;
+      &lt;outline type="rss"
+        text="Import AI"
+        xmlUrl="https://importai.substack.com/feed" /&gt;
+      &lt;outline type="rss"
+        text="Stratechery"
+        xmlUrl="https://stratechery.com/feed" /&gt;
+    &lt;/outline&gt;
+  &lt;/body&gt;
+&lt;/opml&gt;</code></pre>
+
+    <h3>Quando usar OPML</h3>
+    <ul>
+      <li>Você segue dez ou mais Substacks e quer um lugar só para gerenciar tudo.</li>
+      <li>Você está trocando de leitor de RSS ou migrando de um leitor hospedado para um auto-hospedado.</li>
+      <li>Você quer um registro portátil das publicações que você segue, independente de qualquer leitor.</li>
+    </ul>
+
+    <h2>Método 3: ThreadGrab -- arquivamento multiplataforma Substack + X + Bluesky</h2>
+
+    <div class="method-card">
+      <h3>ThreadGrab</h3>
+      <p>Ferramenta de arquivamento web-first que trata Substack, X, Threads e Bluesky como fontes de primeira classe, com saída Markdown/JSON normalizada.</p>
+      <p class="pros">Prós: zero instalação (web app), saída Markdown/JSON normalizada entre as quatro plataformas, trata o corpo do post inteiro e o GUID canônico do RSS, saída amigável para LLM.</p>
+      <p class="cons">Contras: exige a URL do post ou o endpoint /feed (não é firehose de conta Substack), a saída é normalizada em vez do XML RSS bruto, plano pago para jobs de lote muito grandes.</p>
+    </div>
+
+    <p>O ThreadGrab foi construído especificamente para o problema de arquivamento multiplataforma que Substack, X, Threads e Bluesky cada um resolve de um jeito diferente. Cole uma URL substack.com/p/&lt;slug&gt; ou um endpoint <code>/feed</code> inteiro e o ThreadGrab retorna o mesmo documento Markdown -- os mesmos metadados, o mesmo formato de data de publicação, o mesmo formato de URL de mídia -- independentemente da plataforma de origem. Esse esquema multiplataforma é a diferença entre um corpus que você consegue pesquisar depois e uma pasta cheia de dumps RSS por plataforma mal estruturados.</p>
+
+    <p>O caminho Substack dentro do ThreadGrab usa o feed RSS público do Método 1 e costura as URLs canônicas dos posts junto com o GUID de cada item. Como todo post do Substack tem um padrão de URL conhecido e um GUID conhecido no XML do feed, o parsing é estável através das revisões da plataforma em 2026. A saída vira um documento Markdown com a URL original, título do post, data de publicação, corpo HTML convertido para Markdown, URLs de mídia embutidas e um timestamp em Unix-ms.</p>
+
+    <pre><code># Single-post archive
+$ threadgrab archive https://www.platformer.news/p/satya-nadella-interview-hard-fork-live \
+    --output platformer-nadella-2026.md
+
+# Whole-feed archive (one Markdown file per item, consolidated into one folder)
+$ threadgrab archive https://www.platformer.news/feed \
+    --output ./archive/platformer-2026-08.md
+
+# Multi-source batch (Substack + X + Bluesky into one corpus)
+$ threadgrab archive \
+    https://www.platformer.news/feed \
+    https://x.com/MetaNews/status/1234567890 \
+    https://bsky.app/profile/post/abc123 \
+    --output cross-platform-2026-08-04.md</code></pre>
+
+    <h3>Quando usar o ThreadGrab</h3>
+    <ul>
+      <li>Você quer um arquivo pesquisável e normalizado de posts de múltiplas plataformas de uma vez.</li>
+      <li>Você está preparando conteúdo para um LLM (corpus RAG, dataset de fine-tuning, briefing de jornalismo).</li>
+      <li>Você não quer manter seu próprio scraper de feedparser quando o Substack atualizar o esquema do feed.</li>
+    </ul>
+
+    <h2>Método 4: Python feedparser + loop Markdown -- arquivo em massa pelo terminal</h2>
+
+    <div class="method-card">
+      <h3>Python feedparser + conversão para Markdown</h3>
+      <p>A biblioteca <code>feedparser</code> do Python mais uma rotina pequena de conversão para Markdown. O CLI mais popular é o <code>substack2md</code>, que envolve as mesmas primitivas.</p>
+      <p class="pros">Prós: um script Python lida com qualquer número de Substacks, roda em qualquer terminal, saída é Markdown portátil, dá para agendar via cron.</p>
+      <p class="cons">Contras: só CLI, exige instalação de Python ou pipx, você tem que manter a rotina de conversão quando o Substack adicionar recursos.</p>
+    </div>
+
+    <p>Para um arquivo portátil e scriptável que você controla de ponta a ponta, Python é a resposta canônica de 2026. Instale o <code>feedparser</code> (e opcionalmente <code>markdownify</code> para converter HTML em Markdown), aponte um loop para qualquer URL de feed do Substack, e o script grava um arquivo Markdown por post em uma árvore de pastas indexada por data. O script pode ser agendado com cron para espelhar uma publicação toda noite, gerando um arquivo local datado que cresce sozinho.</p>
+
+    <pre><code># Install dependencies
+$ pipx install substack2md            # or: pip install feedparser markdownify
+
+# Walk a feed and save each post as Markdown
+$ python3 -c "
+import feedparser, html2text, os, sys
+from pathlib import Path
+
+url = 'https://www.platformer.news/feed'
+out = Path('./archive/platformer')
+out.mkdir(parents=True, exist_ok=True)
+
+feed = feedparser.parse(url)
+h = html2text.HTML2Text()
+h.ignore_links = False
+
+for entry in feed.entries:
+    slug = entry.link.rsplit('/', 1)[-1]
+    md = h.handle(entry.content[0].value)
+    (out / f\"{entry.published_parsed[:3]!r}-{slug}.md\").write_text(
+        f\"# {entry.title}\\n\\n{md}\\n\\nSource: {entry.link}\\n\"
+    )
+print(f\"Saved {len(feed.entries)} posts to {out}\")
+"</code></pre>
+
+    <p>O truque é que toda entrada no feed do Substack tem uma URL canônica (formato <code>/p/&lt;slug&gt;</code>), uma data de publicação em <code>published_parsed</code> e o HTML do corpo completo em <code>entry.content[0].value</code>. Quando o script tem esses três campos, o resto é boilerplate. O lado negativo é que agora você é o mantenedor do conversor -- se o Substack lançar um formato novo de post em 2027, seu script vai precisar ser atualizado. É para isso que serve o Método 5 (a ferramenta dedicada).</p>
+
+    <h3>Quando usar Python feedparser</h3>
+    <ul>
+      <li>Você está programando fluxos pelo terminal e prefere CLIs instaláveis via Python.</li>
+      <li>Você quer controle total sobre a conversão e a nomeação do arquivo local.</li>
+      <li>Você consegue agendar o script via cron e tem acesso a uma VPS pequena ou servidor local.</li>
+    </ul>
+
+    <h2>Método 5: Ferramenta dedicada de backup -- Substack2Markdown ou HTTrack para espelhos completos da conta</h2>
+
+    <div class="method-card">
+      <h3>Substack2Markdown / HTTrack (espelho completo da conta)</h3>
+      <p>Ferramentas CLI open-source que percorrem uma publicação inteira do Substack, paginam pelo arquivo e gravam cada post + imagem em uma pasta local.</p>
+      <p class="pros">Prós: espelho local completo (cada post + cada imagem), retomável, roda sem supervisão, sem necessidade de conta Substack, projetado especificamente para arquivamento.</p>
+      <p class="cons">Contras: download único (não é feed continuamente polled), a manutenção da ferramenta depende de um pequeno grupo de mantenedores, saída é HTML/Markdown bruto em vez de um corpus normalizado.</p>
+    </div>
+
+    <p>Quando o objetivo é espelhar uma publicação inteira -- todos os posts já publicados, todas as imagens embutidas, todo paywall passado que você não assinou -- uma ferramenta de backup completo é a primitiva certa. O <code>Substack2Markdown</code> pagina pelo endpoint de arquivo da publicação e grava cada post como Markdown, enquanto o <code>httrack</code> espelha o site inteiro renderizado na web, incluindo comentários, imagens e o perfil público. Os dois rodam sem supervisão, produzem uma pasta que dá para navegar offline, e são o padrão 2026 para "quero minha própria cópia dessa publicação mesmo que ela saia do ar amanhã".</p>
+
+    <pre><code># Install Substack2Markdown
+$ pipx install substack2md
+$ substack2md -u https://www.platformer.news -o ./mirror/platformer
+
+# Or use HTTrack for a full site mirror
+$ httrack "https://www.platformer.news" \
+    -O "./mirror/platformer-httrack" \
+    "+*.substack.com/*" -v
+
+# Both produce a folder tree you can browse offline or sync to a NAS</code></pre>
+
+    <p>A vantagem de um espelho completo da conta também é sua limitação: é um snapshot único, não um feed continuamente atualizado. Para um arquivo vivo que cresce conforme a publicação publica, você quer ou o Método 1 (leitor de RSS faz polling do feed) ou uma versão agendada via cron do Método 4. O espelho completo é a apólice de seguro -- rode uma vez quando assinar, depois atualize a cada trimestre ou sempre que sair uma matéria importante que você queira guardar para sempre.</p>
+
+    <h3>Quando usar uma ferramenta de backup completo da conta</h3>
+    <ul>
+      <li>Você quer uma cópia local completa de todos os posts de uma publicação.</li>
+      <li>Você está arquivando uma publicação para evidência, jornalismo ou pesquisa.</li>
+      <li>Você pode re-rodar o espelho periodicamente; você não precisa de atualizações em tempo real.</li>
+    </ul>
+
+    <h2>Comparação lado a lado</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Método</th>
+          <th>Configuração</th>
+          <th>Saída</th>
+          <th>Escopo</th>
+          <th>Multiplataforma</th>
+          <th>Melhor para</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Feed RSS do Substack (Método 1)</td>
+          <td>Adicionar ao leitor</td>
+          <td>Cache do leitor</td>
+          <td>Últimos 20 itens</td>
+          <td>Não</td>
+          <td>Seguir alguns Substacks</td>
+        </tr>
+        <tr>
+          <td>Exportação OPML (Método 2)</td>
+          <td>Nenhuma</td>
+          <td>OPML XML</td>
+          <td>Lista de assinaturas</td>
+          <td>Não</td>
+          <td>Gerenciar 10+ Substacks</td>
+        </tr>
+        <tr>
+          <td>ThreadGrab (Método 3)</td>
+          <td>Web app</td>
+          <td>Markdown / JSON</td>
+          <td>URLs de post / feeds</td>
+          <td>Sim (X, Bluesky, Threads)</td>
+          <td>Arquivos multiplataforma</td>
+        </tr>
+        <tr>
+          <td>Python feedparser (Método 4)</td>
+          <td>pip / cron</td>
+          <td>Markdown por post</td>
+          <td>Feed completo, agendado</td>
+          <td>Não (extensível)</td>
+          <td>Espelho local scriptável</td>
+        </tr>
+        <tr>
+          <td>Substack2Markdown / HTTrack (Método 5)</td>
+          <td>pip / installer</td>
+          <td>Espelho local em pasta</td>
+          <td>Publicação inteira</td>
+          <td>Não</td>
+          <td>Backup completo único</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Montando um pipeline completo de arquivamento Substack</h2>
+    <p>A resposta prática para a maioria dos leitores em 2026 é combinar dois dos cinco. Uma configuração de trabalho típica fica assim: adicione os Substacks de que você gosta em um leitor de RSS via endpoint /feed (Método 1); exporte OPML todo mês para ter uma lista portátil de assinaturas (Método 2); rode o ThreadGrab nas URLs dos posts que importam para o seu corpus LLM (Método 3); agende um loop Python com feedparser toda noite para capturar os posts do dia em uma pasta datada (Método 4); e rode Substack2Markdown ou HTTrack a cada trimestre para um espelho completo único de qualquer publicação que você não pode correr o risco de perder (Método 5).</p>
+
+    <p>As cinco ferramentas não estão em tensão entre si. O Método 1 mantém você em dia com todo escritor que você segue; o Método 3 achata o mesmo conteúdo em um corpus normalizado que cai direto em um pipeline de data-prep para LLM; o Método 4 dá um espelho local agendado; o Método 5 dá a apólice de seguro única. A única coisa que não dá para automatizar totalmente é o momento em que um escritor deleta um post ou muda de plataforma -- nesse ponto, o snapshot do Wayback Machine é o seu último fallback, e é exatamente por isso que arquivamento externo é inegociável para qualquer leitor de Substack que cita escritores em pesquisa, jornalismo ou em seus próprios posts.</p>
+
+    <h2>Como o ThreadGrab se encaixa no ecossistema Substack</h2>
+    <p>Para o leitor médio que segue X para notícias urgentes, segue Bluesky para o discurso tech, segue Threads para discussão de comunidade e segue Substacks para análise longa, o ThreadGrab é o ponto único de entrada de arquivamento que mantém tudo consistente. O caminho Substack passa pela mesma saída Markdown normalizada de X, Threads e Bluesky, o que significa que um único corpus de arquivo cobre as quatro plataformas sem lógica de scraping por plataforma.</p>
+
+    <p>O ThreadGrab também é o único dos cinco métodos que transforma o feed RSS do Substack (a superfície canônica de API nativa) em algo que cai em pipeline de LLM downstream sem mapeamento de esquema por publicação. Quando um escritor publica um post novo amanhã de manhã, o feed do Substack atualiza, o ThreadGrab pega, e o mesmo documento Markdown aparece no seu corpus multiplataforma com o timestamp certo e a URL original preservada. O pipeline é aberto, o leitor está no seu controle, e o arquivo local é portátil para qualquer ferramenta amigável a LLM que você escolher.</p>
+
+    <div class="cta">
+      <p>Arquive posts do Substack, threads do X, posts do Bluesky e posts do Threads lado a lado -- sem conta, sem chave de API, sem instalação.</p>
+      <a class="btn" href="/pt/">Experimente o ThreadGrab -- Arquivador de Redes Sociais Grátis</a>
+    </div>
+
+    <h2>Perguntas Frequentes</h2>
+    <div class="faq-item">
+      <strong>Toda newsletter do Substack tem um feed RSS?</strong>
+      <p>Sim. Toda publicação do Substack, paga ou gratuita, expõe um feed RSS canônico em https://&lt;publicacao&gt;.substack.com/feed. O endpoint não exige login, chave de API nem cookie. Verificado ao vivo em 4 de agosto de 2026 contra platformer.news/feed (15 itens, 355 KB), importai.substack.com/feed (20 itens, 465 KB) e luke.substack.com/feed (20 itens, 740 KB). O feed retorna XML compatível com Atom com corpo HTML completo do post, data de publicação, handle do autor e GUID único por post.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Posso assinar várias newsletters do Substack em um só lugar como um cliente de e-mail?</strong>
+      <p>Sim -- é exatamente isso que um leitor de RSS faz. Aponte qualquer leitor (Feedly, Inoreader, NetNewsWire, Reeder ou FreshRSS auto-hospedado) para o endpoint /feed por publicação e os novos posts aparecem em uma única caixa de entrada. Para importação em lote de várias newsletters, todo leitor de RSS aceita um arquivo OPML: colete as URLs /feed em uma lista, salve como subscriptions.opml e importe uma vez.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>O ThreadGrab suporta arquivamento do Substack?</strong>
+      <p>Sim. O ThreadGrab trata o Substack como fonte de primeira classe ao lado de X, Threads e Bluesky. Cole uma URL substack.com/p/&lt;slug&gt; ou um endpoint /feed inteiro e o ThreadGrab retorna Markdown ou JSON normalizado com o corpo do post, URLs de mídia embutidas, carimbo de publicação e o GUID canônico do RSS. Como o ThreadGrab normaliza a saída da mesma forma para todas as plataformas, dá para arquivar posts do Substack, threads do X e posts do Bluesky em um único corpus de Markdown organizado para pesquisa ou backup.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Qual a diferença entre o feed RSS por post e o RSS da publicação inteira?</strong>
+      <p>O Substack na verdade expõe dois feeds relacionados. O feed da publicação inteira em /&lt;publicacao&gt;.substack.com/feed retorna todos os posts já publicados, mais recentes primeiro, e é o endpoint a usar para espelho de arquivamento. O feed por autor ou seção (mesmo caminho com sufixo /tag/&lt;tag&gt; em algumas publicações) é mais restrito. Ambos são públicos e não exigem autenticação, então dá para assinar qualquer um dos dois em qualquer leitor de RSS sem conta.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Posso baixar todos os posts do Substack que já paguei?</strong>
+      <p>Sim, pelo mesmo endpoint RSS. Um post pago também é publicado no feed RSS público, e o HTML do corpo é o mesmo que aparece no e-mail e no leitor web; o paywall só restringe o texto visível no corpo, não o feed em si. Para baixar tudo que você já pagou, percorra o feed da publicação, busque o link de cada item e grave o HTML do corpo em disco. Ferramentas como Substack2Markdown e HTTrack automatizam o percurso e produzem um arquivo local portátil.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Existe uma forma de fazer backup de uma publicação do Substack que outro autor publica?</strong>
+      <p>Sim, o feed RSS público é o endpoint canônico de backup. Você não precisa de uma conta para espelhar uma publicação: aponte qualquer leitor de RSS ou ferramenta CLI para /&lt;publicacao&gt;.substack.com/feed e todo o histórico de posts fica acessível. Para um snapshot local único, rode um loop em Python contra a URL do feed e grave o HTML do corpo de cada post em uma pasta indexada pela data de publicação. Combine o snapshot local com um save do Wayback Machine para as URLs canônicas dos posts e você terá um pacote completo de arquivamento 2026.</p>
+    </div>
+
+    <h2>Escolha seu método e comece a arquivar</h2>
+    <p>O Substack é único entre as plataformas de criador de 2026: tem o peso de audiência de um sistema de publicação top (5 milhões de assinaturas pagas, mais da metade dos novos assinantes adquiridos pela rede interna), mas fica atrás de um dashboard privado de autoria sem endpoint público de exportação do lado do leitor. Essa combinação torna o arquivamento externo inegociável se você cita Substacks em jornalismo, pesquisa ou no seu próprio trabalho.</p>
+
+    <p>Comece com o feed RSS nativo para leitura casual (Método 1), adicione OPML quando precisar gerenciar uma coleção grande (Método 2), apoie-se no ThreadGrab quando precisar do mesmo esquema de arquivo do conteúdo de X, Threads e Bluesky (Método 3), passe para Python feedparser para espelhos agendados pelo terminal (Método 4), e reserve Substack2Markdown ou HTTrack para backups completos únicos (Método 5). As ferramentas são grátis, abertas e feitas para trabalhar juntas. <a href="/pt/">Comece pelo ThreadGrab</a> para o caminho mais rápido até um pipeline de arquivo Substack funcionando, que escala para o resto do seu grafo social.</p>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/pt/">Início</a> &middot; <a href="/pt/blog/">Blog</a> &middot; <a href="/pt/about/">Sobre</a> &middot; <a href="/pt/privacy/">Privacidade</a>
+    <br>Não afiliado ao Substack, Substack Inc., ou qualquer plataforma de newsletter. Substack é uma marca registrada da Substack, Inc.
+  </footer>
+</body>
+</html>

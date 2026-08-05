@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arquivamento Threads Meta 2026: 5 M&eacute;todos para Salvar Posts, Respostas e M&iacute;dia | ThreadGrab</title>
+  <meta name="description" content="Compare 5 m&eacute;todos para arquivar posts do Threads (Meta) em 2026: bookmarks, embeds, ThreadGrab, yt-dlp, atproto.">
+  <meta name="keywords" content="arquivamento Threads, salvar posts Threads, download Threads, scraper Meta Threads, bookmark Threads, embed Threads, ThreadGrab Threads, yt-dlp Threads, arquivamento m&iacute;dias sociais">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/pt/blog/threads-meta-arquivar-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/threads-meta-archive-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/threads-meta-arquivar-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/threads-meta-arsip-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/threads-meta-archive-2026.html">
+  <meta property="og:title" content="Arquivamento Threads Meta 2026: 5 M&eacute;todos para Salvar Posts, Respostas e M&iacute;dia | ThreadGrab">
+  <meta property="og:description" content="Cinco m&eacute;todos para arquivar posts do Threads (Meta): bookmarks, embeds, ThreadGrab, yt-dlp, atproto.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/pt/blog/threads-meta-arquivar-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Arquivamento Threads Meta 2026: 5 M&eacute;todos para Salvar Posts, Respostas e M&iacute;dia | ThreadGrab">
+  <meta name="twitter:description" content="Cinco m&eacute;todos para arquivar posts do Threads (Meta): bookmarks, embeds, ThreadGrab, yt-dlp, atproto.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Arquivamento Threads Meta 2026: 5 Metodos para Salvar Posts, Respostas e Midia",
+    "description": "Compare Threads bookmarks, embeds publicos, ThreadGrab, yt-dlp e exportacao atproto para arquivar posts, respostas e midia do Threads (Meta) em 2026.",
+    "datePublished": "2026-08-03",
+    "dateModified": "2026-08-03",
+    "author": {
+      "@type": "Organization",
+      "name": "ThreadGrab",
+      "url": "https://threadgrab.com/pt/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ThreadGrab",
+      "url": "https://threadgrab.com/pt/"
+    },
+    "mainEntityOfPage": "https://threadgrab.com/pt/blog/threads-meta-arquivar-2026.html",
+    "inLanguage": "pt-BR"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "In\u00edcio",
+        "item": "https://threadgrab.com/pt/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://threadgrab.com/pt/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Arquivamento Threads Meta 2026"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "O Threads tem bookmark nativo como Bluesky ou X?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. O Threads adicionou bookmarks nativos (Saves) no in\u00edcio de 2024, dispon\u00edveis na web, iOS e Android. Marque qualquer post tocando no \u00edcone de fita e revise depois na sua lista privada de Saves. Diferente do X, por\u00eacute;m, os Saves do Threads ficam presos \u00e0 conta e n\u00e3o t\u00eam endpoint oficial de exporta\u00e7\u00e3o, ent\u00e3o voc\u00ea ainda precisa de um dos m\u00e9todos abaixo para migrar para um arquivo port\u00e1til."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso baixar um post p\u00fablico do Threads sem conta nem chave de API?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. Todo post p\u00fablico do Threads exp\u00f5e uma visualiza\u00e7\u00e3o embarc\u00e1vel em threads.net/usuario/post/id que qualquer cliente HTTP sem autentica\u00e7\u00e3o consegue buscar. O yt-dlp oferece suporte ao Threads desde o final de 2024 e baixa a legenda, o arquivo de m\u00eddia e a \u00e1rvore p\u00fablica de respostas sem login. O detalhe \u00e9 que contas privadas, posts deletados e respostas protegidas ficam inacess\u00edveis sem cookie de sess\u00e3o autenticado."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O ThreadGrab suporta arquivamento do Threads?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. O ThreadGrab trata Threads como fonte de primeira classe ao lado do X e Bluesky. Cole um URL threads.net ou um @usuario publico e o ThreadGrab devolve Markdown ou JSON normalizado com corpo do post, URLs de m\u00eddia embarcada, cadeia p\u00fablica de respostas e timestamps. Como a sa\u00edda \u00e9 normalizada do mesmo jeito para todas as plataformas, voc\u00ea consegue arquivar Threads, X e Bluesky em um unico corpus Markdown para pesquisa ou backup."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qual a diferen\u00e7a entre yt-dlp e ThreadGrab para Threads?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "yt-dlp \u00e9 uma CLI excelente para baixar o arquivo bruto de m\u00eddia mais um dump JSON de metadados de um URL por vez. ThreadGrab \u00e9 um pipeline de arquivamento de n\u00edvel superior que cuida de normaliza\u00e7\u00e3o de URL, reconstru\u00e7\u00e3o da \u00e1rvore de respostas e opera\u00e7\u00f5es em lote entre plataformas. Use yt-dlp quando quiser o MP4 original mais a legenda para um conjunto pequeno de posts conhecidos; use ThreadGrab quando quiser um arquivo pesquis\u00e1vel de centenas de posts de Threads, X e Bluesky em um mesmo schema."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso arquivar uma conta ou feed de hashtag inteira do Threads?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Apenas o que o Threads exp\u00f5e publicamente. O Threads n\u00e3o tem feed RSS p\u00fablico e n\u00e3o oferece dump server-side da conta como o Mastodon oferece via mastodon:backup. O que voc\u00ea pode fazer \u00e9 iterar os IDs p\u00fablicos de post de um @usuario alvo, dobrar a \u00e1rvore p\u00fablica de respostas de cada post e agregar tudo em Markdown local. Essa \u00e9 a conven\u00e7\u00e3o de fato de 2026 para arquivar qualquer plataforma da Meta que n\u00e3o ofere\u00e7a exporta\u00e7\u00e3o oficial."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Posts arquivados do Threads s\u00e3o admiss\u00edveis como evid\u00eancia em jornalismo ou pesquisa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim, quando o arquivo inclui o URL original, o timestamp exato da captura e um corpo verific\u00e1vel de m\u00eddia. O ThreadGrab registra os tres em todo documento exportado, e o Wayback Machine arquiva rotineiramente URLs de post do Threads para o mesmo prop\u00f3sito. Combine a exporta\u00e7\u00e3o em Markdown com um snapshot publico do Wayback e voce tem o pacote padrao de evidencia para jornalismo, pesquisa academica e discovery juridico em 2026."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 2px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    .method-card { background: #1a1a1a; border-radius: 10px; padding: 20px 22px; margin-bottom: 18px; border-left: 3px solid #20d5ec; }
+    .method-card h3 { margin-top: 0; color: #20d5ec; }
+    .method-card .pros { color: #6fcf97; font-size: 0.9rem; }
+    .method-card .cons { color: #f2994a; font-size: 0.9rem; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/pt/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a href="/en/blog/threads-meta-archive-2026.html">EN</a>
+      <a class="active" href="/pt/blog/threads-meta-arquivar-2026.html">PT</a>
+      <a href="/id/blog/threads-meta-arsip-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb"><a href="/pt/">In&iacute;cio</a> &rsaquo; <a href="/pt/blog/">Blog</a> &rsaquo; Arquivamento Threads Meta 2026</div>
+
+    <h1>Arquivamento Threads Meta 2026: <span>5 M&eacute;todos para Salvar Posts, Respostas e M&iacute;dia</span></h1>
+    <p class="meta">3 de Agosto de 2026 &middot; 12 min de leitura &middot; por ThreadGrab</p>
+
+    <p>Threads agora &eacute; a terceira maior rede social centrada em texto da web p&uacute;blica. Segundo a retrospectiva da pr&oacute;pria Meta de meados de 2026, o torneio Ver&atilde;o do Futebol 2026 gerou 1,5 bilh&atilde;o de impress&otilde;es em posts marcados com Threads, com a comunidade de futebol do Threads alcan&ccedil;ando cerca de 15 milh&otilde;es de pessoas por dia e atingindo pico de 25 milh&otilde;es em 6 de julho de 2026. Some a isso o lan&ccedil;amento da supervis&atilde;o parental em 21 de julho de 2026, a vit&oacute;ria regulat&oacute;ria que trouxe o Threads de volta &agrave; Turquia em 17 de junho de 2026 e a migra&ccedil;&atilde;o constante de jornalistas e criadores do X, e voc&ecirc; tem uma plataforma cujos posts s&atilde;o rotineiramente citados em not&iacute;cias, papers acad&ecirc;micos e processos jur&iacute;dicos.</p>
+
+    <p>Esse volume de cita&ccedil;&atilde;o cria uma exig&ecirc;ncia firme de arquivamento: se um post do Threads vai ser citado em uma mat&eacute;ria daqui a seis meses, algu&eacute;m precisa captur&aacute;-lo agora. Diferente do Fediverso (que roda no protocolo aberto ActivityPub) e diferente do Bluesky (que roda no atproto), Threads fica no backend privado da Meta, sem API REST aberta e sem feeds RSS p&uacute;blicos. Isso torna o arquivamento um pouco mais trabalhoso do que marcar bookmarks, mas ainda totalmente vi&aacute;vel com cinco m&eacute;todos bem testados. Este guia percorre cada op&ccedil;&atilde;o, dos bookmarks sem esfor&ccedil;o at&eacute; pipelines de exporta&ccedil;&atilde;o no estilo atproto.</p>
+
+    <div class="callout">
+      <p><strong>Resumo.</strong> Use <strong>bookmarks nativos do Threads</strong> para saves casuais. Use a <strong>URL p&uacute;blica de embed do Threads</strong> para saves pontuais sem conta. Use <strong>ThreadGrab</strong> para arquivamento multiplataforma (Threads + X + Bluesky em uma interface). Use <strong>yt-dlp</strong> para downloads de m&iacute;dia pelo terminal. Use um <strong>pipeline local de exporta&ccedil;&atilde;o no estilo atproto</strong> para trabalhos pesados em massa e prepara&ccedil;&atilde;o de dados para LLM.</p>
+    </div>
+
+    <h2>Por que o arquivamento do Threads importa em 2026</h2>
+    <p>Threads &eacute; &uacute;nico entre as principais plataformas sociais de 2026 de tr&ecirc;s maneiras que empurram para manter um arquivo pessoal. Primeiro, a plataforma &eacute; totalmente centrada em texto: os posts s&atilde;o legendas curtas mais m&iacute;dia, e as cadeias p&uacute;blicas de respostas tendem a virar conversas longas antes de virarem mat&eacute;rias de not&iacute;cia. Segundo, as pol&iacute;ticas de modera&ccedil;&atilde;o de conte&uacute;do da Meta produziram ondas vis&iacute;veis de enforcement contra texto gerado por IA e contas de bots em 2026, o que significa que um post perfeitamente razo&aacute;vel hoje pode ser removido silenciosamente no pr&oacute;ximo m&ecirc;s -- e a &uacute;nica forma de preservar a formula&ccedil;&atilde;o original &eacute; capturar externamente. Terceiro, porque a plataforma faz parte do backend do Instagram, o mesmo post do Threads pode alimentar tanto um URL do Threads quanto um compartilhamento do Instagram -- perder a c&oacute;pia can&ocirc;nica do Threads rompe as duas superf&iacute;cies.</p>
+
+    <p>Nada disso importaria se Threads tivesse uma API de exporta&ccedil;&atilde;o p&uacute;blica com permiss&atilde;o como o Mastodon oferece via <code>mastodon:backup</code>. Mas n&atilde;o tem. O que voc&ecirc; recebe &eacute; uma URL p&uacute;blica para cada post (a mesma URL que a Meta usa para gerar embeds), uma URL p&uacute;blica para cada @usuario p&uacute;blico e um pequeno conjunto de ferramentas open source bem mantidas que sabem puxar essas URLs para um arquivo port&aacute;til. Os cinco m&eacute;todos abaixo s&atilde;o os que funcionam de forma confi&aacute;vel em agosto de 2026, testados contra contas p&uacute;blicas do Threads sem login.</p>
+
+    <h2>M&eacute;todo 1: Bookmarks nativos do Threads -- O salvamento sem esfor&ccedil;o</h2>
+
+    <div class="method-card">
+      <h3>Bookmarks nativos do Threads (Saves)</h3>
+      <p>Dispon&iacute;vel no app web, iOS e Android do Threads desde o in&iacute;cio de 2024.</p>
+      <p class="pros">Pr&oacute;s: Configura&ccedil;&atilde;o zero, privado, pesquis&aacute;vel dentro da sua conta, sincroniza entre dispositivos, funciona em todo cliente oficial.</p>
+      <p class="cons">Contras: Sem exporta&ccedil;&atilde;o via UI web, bookmarks vivem e morrem com sua conta, sem opera&ccedil;&otilde;es em lote, sem anexos de m&iacute;dia.</p>
+    </div>
+
+    <p>Bookmarks do Threads (renomeados para Saves no redesign mobile de 2024) funcionam exatamente como qualquer outro bookmark social que voc&ecirc; j&aacute; usou. Toque no &iacute;cone de fita em qualquer post, e ele aterrissa na sua lista privada de Saves. Da&iacute; voc&ecirc; pesquisa por palavra-chave, filtra por autor e revisita o mesmo post em qualquer dispositivo logado na sua conta.</p>
+
+    <p>Saves s&atilde;o perfeitos para uso casual -- voc&ecirc; v&ecirc; uma thread forte no seu timeline, salva, e volta para ler no caminho pro trabalho. Mas t&ecirc;m o mesmo teto que todo sistema privado de bookmarks tem: n&atilde;o tem bot&atilde;o de exporta&ccedil;&atilde;o, e uma vez que a Meta deleta seus Saves (voluntariamente, por a&ccedil;&atilde;o de modera&ccedil;&atilde;o ou porque sua conta foi bloqueada) a &uacute;nica forma de recuper&aacute;-los &eacute; raspar as URLs p&uacute;blicas uma por uma. &Eacute; para isso que servem os M&eacute;todos 2 a 5.</p>
+
+    <h3>Quando usar bookmarks nativos</h3>
+    <ul>
+      <li>Voc&ecirc; quer capturar posts pessoalmente e n&atilde;o pretende sair do Threads.</li>
+      <li>Os posts ainda est&atilde;o vis&iacute;veis quando voc&ecirc; for conferir.</li>
+      <li>Voc&ecirc; n&atilde;o precisa do corpo do post, das URLs de m&iacute;dia nem da &aacute;rvore de respostas em formato estruturado.</li>
+    </ul>
+
+    <h2>M&eacute;todo 2: URL p&uacute;blica de embed do Threads -- O salvamento pontual sem conta</h2>
+
+    <div class="method-card">
+      <h3>URL p&uacute;blica de post do Threads (threads.net/&#64;user/post/&lt;id&gt;)</h3>
+      <p>Todo post p&uacute;blico do Threads exp&otilde;e uma URL web que qualquer cliente HTTP (sem conta, sem chave de API) consegue buscar.</p>
+      <p class="pros">Pr&oacute;s: Zero autentica&ccedil;&atilde;o, funciona em qualquer post p&uacute;blico, retorna o mesmo DOM que o iframe de embed usa, suporta cookies para acompanhar cadeias de respostas.</p>
+      <p class="cons">Contras: Renderizado pelo servidor, exige um pequeno scraper HTML, sem schema JSON documentado, com limite de taxa por IP.</p>
+    </div>
+
+    <p>Todo post p&uacute;blico do Threads tem uma URL web permanente no formato <code>https://www.threads.net/@&lt;user&gt;/post/&lt;id&gt;</code>. Essa URL &eacute; o que a Meta renderiza dentro do iframe de embed que sites de not&iacute;cia e blogs usam para citar posts do Threads. &Eacute; tamb&eacute;m a URL da qual todo m&eacute;todo abaixo depende -- incluindo ThreadGrab, yt-dlp e o pipeline no estilo atproto.</p>
+
+    <p>Buscar essa URL com um cliente HTTP normal retorna uma p&aacute;gina HTML renderizada no servidor com o corpo do post, o timestamp, o handle do autor e um blob JSON-LD com metadados estruturados. O HTML &eacute; pesado (CSS, JS e nomes de classe Tailwind inclusos), mas a estrutura &eacute; est&aacute;vel o suficiente para um script Python de 30 linhas extrair os campos relevantes. O detalhe &eacute; que o JSON-LD nem sempre vem com os mesmos nomes de campo, ent&atilde;o voc&ecirc; precisa escrever um parser defensivo.</p>
+
+    <h3>Receita r&aacute;pida de fetch</h3>
+    <pre><code>import urllib.request, json, re
+
+url = "https://www.threads.net/@meta/post/CufVgn6n_o2"
+req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+html = urllib.request.urlopen(req, timeout=15).read().decode("utf-8", errors="ignore")
+
+# Threads ships a JSON-LD blob with structured data
+m = re.search(r'&lt;script type="application/ld\+json"&gt;(.*?)&lt;/script&gt;', html, re.DOTALL)
+if m:
+    data = json.loads(m.group(1))
+    print(f"Author: {data.get('author',{}).get('name')}")
+    print(f"Body:   {data.get('articleBody','')[:120]}")
+    print(f"Date:   {data.get('datePublished','')}")</code></pre>
+
+    <p>Esta receita n&atilde;o &eacute; um pipeline de arquivamento pronto; &eacute; a semente que voc&ecirc; conecta a um loop que acompanha a &aacute;rvore p&uacute;blica de respostas, normaliza timestamps e grava o post + respostas em disco. A maior parte do trabalho pesado (tratamento de cookie, vari&acirc;ncia do JSON-LD, pagina&ccedil;&atilde;o de respostas) &eacute; exatamente o que o ThreadGrab resolve no M&eacute;todo 3.</p>
+
+    <h3>Quando usar a URL p&uacute;blica de embed</h3>
+    <ul>
+      <li>Voc&ecirc; precisa de um ou dois posts e n&atilde;o quer instalar nada.</li>
+      <li>Voc&ecirc; quer verificar um &uacute;nico post do Threads rapidamente (jornalismo, confer&ecirc;ncia de cita&ccedil;&otilde;es).</li>
+      <li>Voc&ecirc; est&aacute; construindo um prot&oacute;tipo r&aacute;pido e quer testar a busca antes de comprometer-se com um pipeline completo.</li>
+    </ul>
+
+    <h2>M&eacute;todo 3: ThreadGrab -- Arquivamento multiplataforma Threads + X + Bluesky</h2>
+
+    <div class="method-card">
+      <h3>ThreadGrab</h3>
+      <p>Uma ferramenta de arquivamento centrada na web que trata Threads, X e Bluesky como fontes de primeira classe atrav&eacute;s de uma &uacute;nica sa&iacute;da Markdown/JSON normalizada.</p>
+      <p class="pros">Pr&oacute;s: Sem instala&ccedil;&atilde;o (app web), sa&iacute;da Markdown/JSON normalizada entre as tr&ecirc;s plataformas, reconstroi &aacute;rvore de respostas, output pronto para LLM.</p>
+      <p class="cons">Contras: Exige URL de post ou @usuario (n&atilde;o &eacute; um firehose), sa&iacute;da normalizada em vez do DOM bruto do Threads, plano pago para jobs em lote muito pesados.</p>
+    </div>
+
+    <p>ThreadGrab foi constru&iacute;do especificamente para o problema de arquivamento multiplataforma que Threads, X e Bluesky resolvem de jeitos diferentes. Cole um URL threads.net, um URL x.com ou um URL bsky.app e o ThreadGrab devolve o mesmo documento Markdown -- a mesma metadados, a mesma estrutura de resposta, o mesmo formato de URL de m&iacute;dia -- independente da plataforma de origem. Esse schema multiplataforma &eacute; a diferen&ccedil;a entre um corpus que voc&ecirc; consegue pesquisar depois e uma pasta cheia de dumps HTML por plataforma mal estruturados.</p>
+
+    <p>O caminho do Threads dentro do ThreadGrab usa a URL p&uacute;blica de post do M&eacute;todo 2 e costura o blob can&ocirc;nico de JSON-LD junto com os endpoints p&uacute;blicos de resposta. Como todo post do Threads tem um padr&atilde;o de URL conhecido e um blob JSON-LD conhecido, o parsing &eacute; est&aacute;vel atrav&eacute;s das revis&otilde;es da plataforma em 2026. (Os metadados de supervis&atilde;o parental lan&ccedil;ados em 21 de julho de 2026 vivem fora do JSON-LD do post, e o ThreadGrab os ignora corretamente.) A sa&iacute;da &eacute; despejada em um documento Markdown com o URL original, o corpo do post, as URLs de m&iacute;dia embarcadas, a cadeia de respostas e um timestamp em Unix-ms.</p>
+
+    <pre><code># Single-post archive
+$ threadgrab archive https://www.threads.net/@meta/post/CufVgn6n_o2 \
+    --output meta-2026-07-17.md
+
+# Multi-URL batch (Threads + X + Bluesky into one corpus)
+$ threadgrab archive \
+    https://www.threads.net/@meta/post/CufVgn6n_o2 \
+    https://x.com/MetaNews/status/1234567890 \
+    https://bsky.app/profile/post/abc123 \
+    --output cross-platform-2026-08-03.md</code></pre>
+
+    <h3>Quando usar ThreadGrab</h3>
+    <ul>
+      <li>Voc&ecirc; quer um arquivo pesquis&aacute;vel e normalizado de posts de v&aacute;rias plataformas ao mesmo tempo.</li>
+      <li>Voc&ecirc; est&aacute; preparando conte&uacute;do para um LLM (corpus RAG, dataset de fine-tuning, briefing jornal&iacute;stico).</li>
+      <li>Voc&ecirc; n&atilde;o quer manter seu pr&oacute;prio scraper HTML cada vez que o Threads atualiza o DOM.</li>
+    </ul>
+
+    <h2>M&eacute;todo 4: yt-dlp -- Downloads de m&iacute;dia pelo terminal</h2>
+
+    <div class="method-card">
+      <h3>yt-dlp (extrator Threads)</h3>
+      <p>O sucessor mantido pela comunidade do youtube-dl. O suporte a Threads chegou no final de 2024 e acompanha atualiza&ccedil;&otilde;es da plataforma automaticamente.</p>
+      <p class="pros">Pr&oacute;s: Instala com um comando em macOS/Linux/Windows, perfeito para m&iacute;dia bruta + metadados, atualiza&ccedil;&otilde;es regulares, suporta mais de 1500 sites al&eacute;m do Threads.</p>
+      <p class="cons">Contras: Apenas CLI, sem unifica&ccedil;&atilde;o entre plataformas, sem reconstru&ccedil;&atilde;o da &aacute;rvore de respostas, quebra quando a Meta bloqueia strings de user-agent (mitigado com cookies).</p>
+    </div>
+
+    <p>yt-dlp &eacute; a ferramenta certa quando seu objetivo principal &eacute; <em>baixar o arquivo de m&iacute;dia real</em> (imagem, v&iacute;deo ou carrossel) mais um dump JSON dos metadados do post. O extrator do Threads foi mergeado no final de 2024 e atualizado durante 2025 para lidar com a transi&ccedil;&atilde;o da Meta para o backend compartilhado do Instagram. A partir do lan&ccedil;amento de agosto de 2026, <code>yt-dlp --version</code> em toda plataforma suportada reconhece um URL threads.net e puxa a m&iacute;dia can&ocirc;nica mais os metadados da legenda.</p>
+
+    <pre><code># Install
+$ pipx install yt-dlp            # or: brew install yt-dlp
+
+# Single-post download (image or video + caption JSON)
+$ yt-dlp --write-info-json \
+         --write-description \
+         -o "%(uploader)s-%(id)s.%(ext)s" \
+         "https://www.threads.net/@meta/post/CufVgn6n_o2"
+
+# Bulk — pass multiple URLs from a text file
+$ yt-dlp --write-info-json -a threads-urls.txt -o "%(id)s.%(ext)s"</code></pre>
+
+    <p>O flag <code>--write-info-json</code> &eacute; o pulo do gato: ele despeja os metadados can&ocirc;nicos (autor, data, corpo do post, URLs de m&iacute;dia) em um arquivo irm&atilde;o <code>.info.json</code> ao lado da m&iacute;dia baixada. Esse JSON &eacute; exatamente o que um pipeline de LLM quer ingerir. O lado negativo &eacute; que o yt-dlp para no limite do URL que voc&ecirc; passa -- se voc&ecirc; passa a URL de um &uacute;nico post do Threads, recebe aquele &uacute;nico post mais sua legenda e m&iacute;dia, n&atilde;o a cadeia p&uacute;blica de respostas.</p>
+
+    <h3>Quando usar yt-dlp</h3>
+    <ul>
+      <li>Voc&ecirc; precisa dos arquivos originais de m&iacute;dia em alta resolu&ccedil;&atilde;o para evid&ecirc;ncia ou re-publica&ccedil;&atilde;o.</li>
+      <li>Voc&ecirc; est&aacute; automatizando fluxos no terminal e prefere CLIs instal&aacute;veis via Python.</li>
+      <li>Voc&ecirc; est&aacute; confort&aacute;vel pareando yt-dlp com uma segunda ferramenta para capturar a &aacute;rvore de respostas.</li>
+    </ul>
+
+    <h2>M&eacute;todo 5: Exporta&ccedil;&atilde;o local compat&iacute;vel com atproto -- Arquivamento em massa para pesquisa</h2>
+
+    <div class="method-card">
+      <h3>Pipeline de exporta&ccedil;&atilde;o compat&iacute;vel com atproto</h3>
+      <p>Um pipeline execut&aacute;vel localmente que espelha o formato de registro do atproto (usado pelo Bluesky), de modo que a sa&iacute;da cai limpa em qualquer fluxo de prepara&ccedil;&atilde;o de dados para LLM.</p>
+      <p class="pros">Pr&oacute;s: Escala em massa, schema de sa&iacute;da est&aacute;vel, combina bem com pipelines de treinamento de LLM, controle 100% local.</p>
+      <p class="cons">Contras: Exige habilidade de scripting em Python ou Node, tem que acompanhar as mudan&ccedil;as de DOM do Threads, sem UI hospedada.</p>
+    </div>
+
+    <p>Para equipes de pesquisa preparando um corpus de posts do Threads junto com seus dados existentes de Bluesky (atproto), o padr&atilde;o mais pr&aacute;tico em 2026 &eacute; construir um pequeno pipeline local que percorre um @usuario alvo, busca cada URL p&uacute;blica de post (M&eacute;todo 2) e grava os registros em um envelope JSON no formato atproto. O envelope &eacute; o mesmo schema que o SDK do atproto usa para registros <code>app.bsky.feed.post</code>, com os campos <code>text</code>, <code>createdAt</code>, <code>embed</code> e de refer&ecirc;ncia de resposta populados a partir dos metadados do Threads.</p>
+
+    <pre><code># Pseudo-code for the record-shape transformation
+{
+  "$type": "app.bsky.feed.post",
+  "text":  "Threads post body here...",
+  "createdAt": "2026-07-21T17:42:00Z",
+  "author":  { "did": "did:plc:threads:@meta" },
+  "embed":   { "$type": "app.bsky.embed.images", "images": [...] },
+  "reply":   { "root": "...", "parent": "..." }
+}</code></pre>
+
+    <p>O truque &eacute; que atproto &eacute; um protocolo real com schemas de registro est&aacute;veis, e Threads &eacute; um backend privado com DOM est&aacute;vel o suficiente para mapearmos um no outro. Uma vez que voc&ecirc; tem os registros no formato atproto, eles caem no mesmo pipeline de prepara&ccedil;&atilde;o de dados para LLM que o seu conte&uacute;do do Bluesky -- o que &eacute; exatamente o que torna o argumento de corpus multiplataforma pr&aacute;tico. A metodologia &eacute; a mesma que as discuss&otilde;es de portabilidade atproto de 2026 referenciam para "e se eu quiser meus dados em formato port&aacute;til" e &eacute; o mais pr&oacute;ximo de exporta&ccedil;&atilde;o port&aacute;til que o Threads oferece sem conta.</p>
+
+    <h3>Quando usar o pipeline atproto</h3>
+    <ul>
+      <li>Voc&ecirc; est&aacute; construindo um corpus de treino de LLM entre v&aacute;rias plataformas centradas em texto.</li>
+      <li>Voc&ecirc; j&aacute; mant&eacute;m pipelines de dados atproto/Bluesky e quer um &uacute;nico schema para tudo.</li>
+      <li>Voc&ecirc; tem engenharia para manter o scraper de DOM contra as revis&otilde;es do Threads.</li>
+    </ul>
+
+    <h2>Compara&ccedil;&atilde;o lado a lado</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>M&eacute;todo</th>
+          <th>Setup</th>
+          <th>Sa&iacute;da</th>
+          <th>&Aacute;rvore de respostas</th>
+          <th>Multiplataforma</th>
+          <th>Melhor para</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Threads Saves (M&eacute;todo 1)</td>
+          <td>Nenhum</td>
+          <td>Lista privada</td>
+          <td>N&atilde;o</td>
+          <td>N&atilde;o</td>
+          <td>Leituras casuais, sem exporta&ccedil;&otilde;es</td>
+        </tr>
+        <tr>
+          <td>URL p&uacute;blica de embed (M&eacute;todo 2)</td>
+          <td>Nenhum</td>
+          <td>HTML / JSON-LD</td>
+          <td>Via URLs separadas</td>
+          <td>N&atilde;o</td>
+          <td>Verifica&ccedil;&atilde;o pontual</td>
+        </tr>
+        <tr>
+          <td>ThreadGrab (M&eacute;todo 3)</td>
+          <td>App web</td>
+          <td>Markdown / JSON</td>
+          <td>Sim (autom&aacute;tico)</td>
+          <td>Sim (X, Bluesky)</td>
+          <td>Arquivos multiplataforma, prep LLM</td>
+        </tr>
+        <tr>
+          <td>yt-dlp (M&eacute;todo 4)</td>
+          <td>Instala&ccedil;&atilde;o CLI</td>
+          <td>M&iacute;dia + .info.json</td>
+          <td>N&atilde;o</td>
+          <td>N&atilde;o</td>
+          <td>Downloads de m&iacute;dia original</td>
+        </tr>
+        <tr>
+          <td>Pipeline atproto (M&eacute;todo 5)</td>
+          <td>Python / Node</td>
+          <td>Registros JSON</td>
+          <td>Manual</td>
+          <td>Via schema compartilhado</td>
+          <td>Prep de dados para LLM em massa</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Construindo um pipeline completo de arquivamento do Threads</h2>
+    <p>A resposta pr&aacute;tica para a maioria dos criadores e pesquisadores em 2026 &eacute; combinar dois dos cinco. Um setup comum funciona assim: marque posts interessantes durante o dia (M&eacute;todo 1); rode o ThreadGrab &agrave; noite nas URLs p&uacute;blicas dos @usuarios de que voc&ecirc; gosta, produzindo um corpus Markdown normalizado que tamb&eacute;m serve como sua fonte de dados para LLM (M&eacute;todo 3); use yt-dlp uma vez por semana para puxar a m&iacute;dia original dos posts que importam (M&eacute;todo 4); e reserve o pipeline no estilo atproto (M&eacute;todo 5) para projetos de pesquisa em que voc&ecirc; precisa de um schema JSON est&aacute;vel entre plataformas.</p>
+
+    <p>As cinco ferramentas n&atilde;o est&atilde;o em tens&atilde;o umas com as outras. Os downloads de m&iacute;dia do yt-dlp encaixam no corpus Markdown do ThreadGrab como refer&ecirc;ncias de m&iacute;dia inline; o Markdown normalizado do ThreadGrab cai limpo nos registros JSON do pipeline atproto; e a URL p&uacute;blica de embed do M&eacute;todo 2 &eacute; na qual toda outra ferramenta acaba dependendo. A &uacute;nica coisa que voc&ecirc; n&atilde;o consegue automatizar totalmente &eacute; o momento em que a Meta remove um post p&uacute;blico -- nesse ponto o snapshot do Wayback Machine &eacute; seu &uacute;ltimo fallback, e &eacute; exatamente por isso que arquivamento externo &eacute; n&atilde;o-opcional para qualquer jornalismo baseado em Threads.</p>
+
+    <h2>Como o ThreadGrab se encaixa no ecossistema do Threads</h2>
+    <p>Para o criador m&eacute;dio que l&ecirc; X para not&iacute;cias urgentes, segue Bluesky para discurso de tecnologia e acompanha Threads para discuss&atilde;o de comunidade (especialmente depois do lan&ccedil;amento da supervis&atilde;o parental em 21 de julho de 2026 e do retorno &agrave; Turquia em 17 de junho de 2026), o ThreadGrab &eacute; o &uacute;nico ponto de entrada de arquivamento que mant&eacute;m tudo consistente. O caminho do Threads passa pela mesma sa&iacute;da Markdown normalizada do X e Bluesky, o que significa que um &uacute;nico corpus de arquivo cobre as tr&ecirc;s plataformas sem l&oacute;gica de scraping por plataforma.</p>
+
+    <p>O ThreadGrab &eacute; tamb&eacute;m o &uacute;nico m&eacute;todo dos cinco que lida corretamente com os metadados espec&iacute;ficos do Threads em 2026. Quando a Meta lan&ccedil;a um recurso como opt-in de supervis&atilde;o parental (21 de julho de 2026) ou relan&ccedil;a um mercado regional (Turquia, 17 de junho de 2026), as URLs p&uacute;blicas de post e os blobs JSON-LD que v&ecirc;m com elas permanecem est&aacute;veis -- apenas a UI ao redor muda -- ent&atilde;o o arquivo multiplataforma continua us&aacute;vel atrav&eacute;s das atualiza&ccedil;&otilde;es de plataforma da Meta.</p>
+
+    <div class="cta">
+      <p>Arquive posts do Threads, threads do X e posts do Bluesky lado a lado -- sem conta, sem chave de API, sem instala&ccedil;&atilde;o.</p>
+      <a class="btn" href="/pt/">Experimente o ThreadGrab -- Arquivador de M&iacute;dias Sociais Gr&aacute;tis</a>
+    </div>
+
+    <h2>Perguntas frequentes</h2>
+    <div class="faq-item">
+      <strong>O Threads tem bookmark nativo como Bluesky ou X?</strong>
+      <p>Sim. O Threads adicionou bookmarks nativos (Saves) no in&iacute;cio de 2024, dispon&iacute;veis na web, iOS e Android. Marque qualquer post tocando no &iacute;cone de fita e revise depois na sua lista privada de Saves. Diferente do X, por&eacute;m, os Saves do Threads ficam presos &agrave; conta e n&atilde;o t&ecirc;m endpoint oficial de exporta&ccedil;&atilde;o, ent&atilde;o voc&ecirc; ainda precisa de um dos m&eacute;todos acima para migrar para um arquivo port&aacute;til.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Posso baixar um post p&uacute;blico do Threads sem conta nem chave de API?</strong>
+      <p>Sim. Todo post p&uacute;blico do Threads exp&otilde;e uma visualiza&ccedil;&atilde;o embarc&aacute;vel em threads.net/&lt;usuario&gt;/post/&lt;id&gt; que qualquer cliente HTTP sem autentica&ccedil;&atilde;o consegue buscar. O yt-dlp oferece suporte ao Threads desde o final de 2024 e baixa a legenda, o arquivo de m&iacute;dia e a &aacute;rvore p&uacute;blica de respostas sem login. O detalhe &eacute; que contas privadas, posts deletados e respostas protegidas ficam inacess&iacute;veis sem cookie de sess&atilde;o autenticado.</p>
+    </div>
+    <div class="faq-item">
+      <strong>O ThreadGrab suporta arquivamento do Threads?</strong>
+      <p>Sim. O ThreadGrab trata Threads como fonte de primeira classe ao lado do X e Bluesky. Cole um URL threads.net ou um @usuario p&uacute;blico e o ThreadGrab devolve Markdown ou JSON normalizado com corpo do post, URLs de m&iacute;dia embarcada, cadeia p&uacute;blica de respostas e timestamps. Como a sa&iacute;da &eacute; normalizada do mesmo jeito para todas as plataformas, voc&ecirc; consegue arquivar Threads, X e Bluesky em um &uacute;nico corpus Markdown bem arrumado para pesquisa ou backup.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Qual a diferen&ccedil;a entre yt-dlp e ThreadGrab para Threads?</strong>
+      <p>yt-dlp &eacute; uma CLI excelente para baixar o arquivo bruto de m&iacute;dia mais um dump JSON de metadados de um URL por vez. ThreadGrab &eacute; um pipeline de arquivamento de n&iacute;vel superior que cuida de normaliza&ccedil;&atilde;o de URL, reconstru&ccedil;&atilde;o da &aacute;rvore de respostas e opera&ccedil;&otilde;es em lote entre plataformas. Use yt-dlp quando quiser o MP4 original mais a legenda para um conjunto pequeno de posts conhecidos; use ThreadGrab quando quiser um arquivo pesquis&aacute;vel de centenas de posts de Threads, X e Bluesky em um mesmo schema.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Posso arquivar uma conta ou feed de hashtag inteira do Threads?</strong>
+      <p>Apenas o que o Threads exp&otilde;e publicamente. O Threads n&atilde;o tem feed RSS p&uacute;blico e n&atilde;o oferece dump server-side da conta como o Mastodon oferece via mastodon:backup. O que voc&ecirc; pode fazer &eacute; iterar os IDs p&uacute;blicos de post de um @usuario alvo, dobrar a &aacute;rvore p&uacute;blica de respostas de cada post e agregar tudo em Markdown local. Essa &eacute; a conven&ccedil;&atilde;o de fato de 2026 para arquivar qualquer plataforma da Meta que n&atilde;o ofere&ccedil;a exporta&ccedil;&atilde;o oficial.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Posts arquivados do Threads s&atilde;o admiss&iacute;veis como evid&ecirc;ncia em jornalismo ou pesquisa?</strong>
+      <p>Sim, quando o arquivo inclui o URL original, o timestamp exato da captura e um corpo verific&aacute;vel de m&iacute;dia. O ThreadGrab registra os tr&ecirc;s em todo documento exportado, e o Wayback Machine arquiva rotineiramente URLs de post do Threads para o mesmo prop&oacute;sito. Combine a exporta&ccedil;&atilde;o em Markdown com um snapshot p&uacute;blico do Wayback e voc&ecirc; tem o pacote padr&atilde;o de evid&ecirc;ncia para jornalismo, pesquisa acad&ecirc;mica e discovery jur&iacute;dico em 2026.</p>
+    </div>
+
+    <h2>Escolha seu m&eacute;todo e comece a arquivar</h2>
+    <p>Threads &eacute; &uacute;nico entre as principais plataformas sociais de 2026: tem o volume de engajamento de uma plataforma top (1,5 bilh&atilde;o de impress&otilde;es em posts marcados no torneio de meio de 2026, 25 milh&otilde;es de engajamento di&aacute;rio no dia de pico) mas fica no backend privado da Meta sem API REST aberta. Essa combina&ccedil;&atilde;o torna o arquivamento externo n&atilde;o opcional se voc&ecirc; cita posts do Threads em jornalismo, pesquisa ou processos jur&iacute;dicos.</p>
+
+    <p>Comece com Saves nativos para leitura casual, apoie-se no ThreadGrab para qualquer arquivo multiplataforma que precise de X e Bluesky no mesmo corpus, troque para yt-dlp quando precisar do arquivo de m&iacute;dia original e reserve o pipeline atproto para projetos de pesquisa em que voc&ecirc; precisa de um schema JSON est&aacute;vel. As ferramentas s&atilde;o gratuitas, abertas e desenhadas para trabalhar juntas. <a href="/pt/">Comece com o ThreadGrab</a> para o caminho mais r&aacute;pido at&eacute; um pipeline funcional de arquivamento do Threads que escala para o resto do seu grafo social.</p>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/pt/">In&iacute;cio</a> &middot; <a href="/pt/blog/">Blog</a> &middot; <a href="/pt/about/">Sobre</a> &middot; <a href="/pt/privacy/">Privacidade</a>
+    <br>N&atilde;o afiliado a Meta, Threads ou qualquer plataforma de m&iacute;dias sociais. Threads &eacute; marca registrada da Meta Platforms, Inc.
+  </footer>
+</body>
+</html>

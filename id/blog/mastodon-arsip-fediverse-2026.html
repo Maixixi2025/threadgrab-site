@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arsip Mastodon Fediverse 2026: 5 Cara Simpan Post, Media &amp; Feed Instance | ThreadGrab</title>
+  <meta name="description" content="Bandingkan 5 metode untuk mengarsipkan post Mastodon dan konten Fediverse di 2026: bookmark, API ActivityPub, ThreadGrab, Mastodon-CLI dan toot CLI.">
+  <meta name="keywords" content="arsip Mastodon, simpan post Mastodon, ActivityPub, backup Fediverse, scraper Mastodon, ThreadGrab Mastodon, bookmark Mastodon, toot CLI, Mastodon-CLI, arsip media sosial">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/id/blog/mastodon-arsip-fediverse-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/mastodon-fediverse-archive-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/mastodon-fediverse-arquivamento-fediverse-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/mastodon-arsip-fediverse-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/mastodon-fediverse-archive-2026.html">
+  <meta property="og:title" content="Arsip Mastodon Fediverse 2026: 5 Cara Simpan Post, Media &amp; Feed Instance | ThreadGrab">
+  <meta property="og:description" content="Bandingkan bookmark Mastodon, API ActivityPub, ThreadGrab, Mastodon-CLI, dan toot CLI untuk arsip post Mastodon dan konten Fediverse di 2026.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/id/blog/mastodon-arsip-fediverse-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Arsip Mastodon Fediverse 2026: 5 Cara Simpan Post, Media &amp; Feed Instance | ThreadGrab">
+  <meta name="twitter:description" content="Lima metode mengarsipkan post Mastodon dan konten Fediverse di 2026 -- dari bookmark ke API ActivityPub hingga pipeline ThreadGrab lintas platform.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 2px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    .method-card { background: #1a1a1a; border-radius: 10px; padding: 20px 22px; margin-bottom: 18px; border-left: 3px solid #20d5ec; }
+    .method-card h3 { margin-top: 0; color: #20d5ec; }
+    .method-card .pros { color: #6fcf97; font-size: 0.9rem; }
+    .method-card .cons { color: #f2994a; font-size: 0.9rem; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Arsip Mastodon Fediverse 2026: 5 Cara Simpan Post, Media dan Feed Instance",
+    "description": "Bandingkan bookmark Mastodon, API ActivityPub, ThreadGrab, Mastodon-CLI, dan toot CLI untuk mengarsipkan post Mastodon, media, dan feed instance secara keseluruhan di 2026.",
+    "datePublished": "2026-08-01",
+    "dateModified": "2026-08-01",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/id/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/id/" },
+    "mainEntityOfPage": "https://threadgrab.com/id/blog/mastodon-arsip-fediverse-2026.html",
+    "inLanguage": "id"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://threadgrab.com/id/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/id/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Arsip Mastodon Fediverse 2026" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Apakah Mastodon punya bookmark bawaan seperti Bluesky?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ya. Mastodon punya bookmark bawaan sejak versi 4.0 (akhir 2023). Bookmark bersifat privat dan dapat dicari di dalam akun Anda, tapi tidak seperti Bluesky, bookmark tidak dapat diekspor melalui UI web -- Anda butuh panggilan API (Metode 2) atau alat pihak ketiga (Metode 3-5) untuk mengambilnya sebagai data terstruktur."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bisakah saya menggunakan API ActivityPub untuk menyimpan post Mastodon secara gratis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ya. API REST Mastodon terbuka dan tidak butuh autentikasi untuk semua pembacaan publik. Anda dapat mengambil timeline, status individual, dan hasil pencarian dengan HTTP GET request sederhana ke endpoint seperti https://mastodon.social/api/v1/timelines/public atau https://mastodon.social/api/v2/search. Rate limit sekitar 300 request per jendela 5 menit per IP."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah ThreadGrab mendukung pengarsipan Mastodon?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ya. ThreadGrab merutekan request Mastodon lewat API REST terbuka yang sama yang diimplementasikan setiap instance Mastodon, jadi Anda dapat mengarsipkan post dari mastodon.social, fosstodon.org, hachyderm.io, atau instance lainnya melalui satu endpoint ThreadGrab, mengembalikan JSON atau Markdown yang dinormalisasi."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apa itu toot CLI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "toot adalah klien baris perintah Mastodon pihak ketiga paling populer, ditulis dengan Python dan dapat diinstal dengan pip install toot. Mendukung posting, membaca, mencari, bookmark, dan mengikuti dari terminal. Perintah toot bookmark dan toot search menjadikannya teman pengarsipan yang kuat untuk skrip shell."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bisakah saya mengarsipkan seluruh instance Mastodon secara lokal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ya, tapi hanya jika Anda admin instance. Mastodon menyediakan task rake resmi (tootctl media backfill, tootctl backup) yang membuang setiap status, file media, dan baris basis data ke arsip tar. Untuk non-admin, ThreadGrab + daftar user per-instance memungkinkan Anda mengikis konten publik secara masif menggunakan endpoint ActivityPub yang sama yang diekspos setiap server Mastodon."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/id/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a href="/en/blog/mastodon-fediverse-archive-2026.html">EN</a>
+      <a href="/pt/blog/mastodon-fediverse-arquivamento-fediverse-2026.html">PT</a>
+      <a href="/id/blog/mastodon-arsip-fediverse-2026.html" class="active">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <p class="breadcrumb"><a href="/id/">Beranda</a> &rsaquo; <a href="/id/blog/">Blog</a> &rsaquo; Arsip Mastodon Fediverse 2026: 5 Metode</p>
+
+    <h1>Arsip Mastodon Fediverse 2026: <span>5 Cara Simpan Post, Media &amp; Feed</span></h1>
+    <p class="meta">1 Agustus 2026 &middot; 11 menit baca &middot; oleh ThreadGrab</p>
+
+    <p>Mastodon dan Fediverse yang lebih luas melewati titik balik pada 2026. mastodon.social saja sekarang melayani lebih dari 3,3 juta pengguna aktif bulanan dengan 183 juta status yang diterbitkan; instance khusus seperti fosstodon.org, hachyderm.io, dan mastodon.online menambahkan 300 ribu pengguna lagi di antaranya. Baik Anda seorang jurnalis yang melacak berita penting, peneliti yang membangun dataset longitudinal, atau kreator konten yang menggunakan kembali post mereka sendiri untuk artikel panjang, Anda memerlukan cara yang andal untuk mengarsipkan konten Mastodon sebelum sebuah instance mati atau moderator menghapus utasan.</p>
+
+    <p>Fediverse berjalan di ActivityPub -- protokol yang sama yang menggerakkan Mastodon, Misskey, Pleroma, Akkoma, Ghost, PeerTube, dan Pixelfed. Fondasi bersama tersebut membuat pengarsipan berbasis ActivityPub lebih mudah daripada mengikis platform proprietary mana pun, karena setiap node mengekspos API publik yang kompatibel. Panduan ini mencakup lima metode terbukti untuk mengarsipkan post, media, dan feed instance Mastodon secara keseluruhan di 2026, dari bookmark hingga pengikisan federasi penuh.</p>
+
+    <div class="callout">
+      <p><strong>Ringkasan.</strong> Gunakan <strong>bookmark bawaan Mastodon</strong> untuk penyimpanan kasual. Gunakan <strong>REST API Mastodon</strong> untuk akses terprogram tanpa autentikasi. Gunakan <strong>ThreadGrab</strong> untuk pengarsipan lintas platform (Mastodon + X + Bluesky dalam satu antarmuka). Gunakan <strong>toot CLI</strong> untuk alur kerja terminal. Gunakan <strong>Mastodon-CLI</strong> untuk ekspor masif dan backup tingkat instance.</p>
+    </div>
+
+    <h2>Mengapa Pengarsipan Mastodon Penting di 2026</h2>
+    <p>Tiga tren menjadikan pengarsipan Mastodon sangat mendesak tahun ini. Pertama, populasi Fediverse hampir tiga kali lipat sejak perpindahan Twitter 2022, dengan instance individual secara rutin menampung 60rb-300rb pengguna dan jutaan post publik. Kedua, instance bisa hilang dalam semalam: moderator sukarela kelelahan, tagihan hosting tidak dibayar, atau satu keluhan DMCA memicu shutdown server,带走 setiap post publik bersamanya. Ketiga, desain terbuka ActivityPub berarti tidak ada kunci API, paywall, atau pendaftaran developer yang dibutuhkan untuk akses baca pada konten publik -- alat apa pun yang dapat berbicara HTTP dapat mengarsipkan Fediverse.</p>
+
+    <p>Berbeda dari X yang membatasi akses API ke tingkatan berbayar, dan berbeda dari Instagram atau TikTok yang mengunci endpoint baca di balik gating app yang disetujui, server ActivityPub mempublikasikan seluruh timeline publik mereka melalui HTTP gratis. Anda tidak perlu mendaftarkan app, tidak perlu berlangganan, dan tidak perlu membayar siapa pun. Ini menjadikan Fediverse jaringan percakapan publik paling dapat diarsipkan di 2026.</p>
+
+    <h2>Metode 1: Bookmark Bawaan Mastodon -- Penyimpanan Tanpa Usaha</h2>
+
+    <div class="method-card">
+      <h3>Bookmark Bawaan Mastodon</h3>
+      <p>Tersedia di semua app Mastodon resmi (web, iOS, Android, klien pihak ketiga) sejak Mastodon 4.0 (2023).</p>
+      <p class="pros">Pro: Tanpa setup, privat, dapat dicari dalam akun, berfungsi di setiap app resmi.</p>
+      <p class="cons">Kontra: Tidak ada export lewat UI web, bookmark hidup dan mati bersama akun, tanpa operasi batch, tanpa media terlampir.</p>
+    </div>
+
+    <p>Mastodon memperkenalkan bookmark di versi 4.0 (November 2023), dan bekerja seperti bookmark sosial lain yang pernah Anda gunakan. Klik ikon bookmark di post mana pun, dan ia akan disimpan ke daftar privat yang hanya terlihat oleh Anda. Bookmark dapat dicari di UI web dan app mobile resmi, dan sinkron di antara perangkat jika Anda login ke akun yang sama.</p>
+
+    <p>Bookmark sempurna untuk penggunaan kasual -- Anda melihat utasan menarik di feed utama, bookmark, dan kembali nanti untuk dibaca ulang. Tapi punya langit-langit keras: tidak ada tombol export. Jika Anda ingin migrasi, membagikan, atau menganalisis koleksi bookmark, Anda butuh API (Metode 2) atau alat pihak ketiga (Metode 3-5).</p>
+
+    <h3>Kapan menggunakan bookmark bawaan</h3>
+    <ul>
+      <li>Anda sesekali menyimpan post dan hanya membacanya kembali di dalam Mastodon.</li>
+      <li>Anda menggunakan Mastodon di banyak perangkat dan ingin daftar bacaan tersinkronisasi.</li>
+      <li>Anda tidak memerlukan konten tersimpan di luar Mastodon, dan percaya pada keandalan jangka panjang instance Anda.</li>
+    </ul>
+
+    <h2>Metode 2: REST API Mastodon -- Pendekatan Terbuka, Tanpa Auth</h2>
+
+    <div class="method-card">
+      <h3>API Publik Mastodon (v1 + v2)</h3>
+      <p>URL dasar: <code>https://&lt;instance&gt;/api/v1/</code> dan <code>.../api/v2/</code> -- endpoint baca tidak butuh autentikasi.</p>
+      <p class="pros">Pro: Sepenuhnya gratis, tanpa pendaftaran app, terdokumentasi baik di docs.joinmastodon.org, berfungsi dengan klien HTTP apa pun.</p>
+      <p class="cons">Kontra: Rate limit per IP (300 request per 5 menit di kebanyakan instance), butuh keakraban dengan kosa kata ActivityPub, biner media butuh fetch terpisah.</p>
+    </div>
+
+    <p>Setiap instance Mastodon mengekspos REST API yang mencerminkan UI web Mastodon dengan dekat. Anda dapat mengambil timeline publik, status individual, feed hashtag, hasil pencarian, dan listing direktori instance -- semua dengan HTTP GET request sederhana dan tanpa login. Permukaan API stabil lintas instance karena setiap server mengimplementasikan kode Mastodon yang sama.</p>
+
+    <pre><code># Mengambil timeline lokal instance Mastodon mana pun
+curl -s "https://fosstodon.org/api/v1/timelines/public?limit=3" \
+  | jq '[.[] | {user: .account.username, content: .content[0:120]}]'
+
+# Mengambil status spesifik berdasarkan ID numerik
+curl -s "https://mastodon.social/api/v1/statuses/113305367338692164" \
+  | jq '{id: .id, user: .account.username, content: .content[0:200]}'
+
+# Mencari lintas indeks lokal instance mana pun
+curl -s "https://mastodon.social/api/v2/search?q=ActivityPub+archiving&limit=10" \
+  | jq '.statuses[] | {user: .username, content: .content[0:120]}'</code></pre>
+
+    <p>Konsep kunci dalam model data Mastodon adalah ID numerik (integer 64-bit, sering dirender sebagai Snowflake). Setiap status, akun, dan lampiran media punya ID yang stabil. Setelah Anda punya URL status, Anda dapat mengekstrak instance dan ID, lalu mengambil post yang sama dari alat apa pun yang berbicara REST API. Berbeda dari aktivitas bertanda tangan ActivityPub, REST API adalah permukaan JSON-only yang lebih sederhana yang ditujukan untuk app klien.</p>
+
+    <p>Rate limit diterapkan per IP dan per token akses, dengan kebanyakan instance standar di 300 request per jendela 5 menit untuk trafik tidak terautentikasi. Untuk pengarsipan personal, cron job harian tetap berada dalam batas. Untuk pengumpulan skala besar, Anda butuh token akses (login sekali, simpan token) atau alat crawling federasi.</p>
+
+    <h3>Kapan menggunakan REST API Mastodon</h3>
+    <ul>
+      <li>Anda nyaman dengan curl atau bahasa scripting seperti Python atau Node.js.</li>
+      <li>Anda ingin menarik JSON untuk analisis hilir (input LLM, konstruksi dataset, migrasi konten).</li>
+      <li>Anda hanya butuh konten publik, dan tidak masalah melewati media atau post yang butuh login.</li>
+    </ul>
+
+    <h2>Metode 3: ThreadGrab -- Pengarsipan Lintas Platform Mastodon + X + Bluesky</h2>
+
+    <div class="method-card">
+      <h3>ThreadGrab</h3>
+      <p>Situs: <a href="/id/">threadgrab.com</a> -- gratis, tanpa akun, tanpa pendaftaran app.</p>
+      <p class="pros">Pro: Antarmuka tunggal untuk pengarsipan Mastodon DAN X DAN Bluesky, API publik gratis, tanpa autentikasi untuk panggilan baca, mengembalikan JSON atau Markdown yang dinormalisasi.</p>
+      <p class="cons">Kontra: Membutuhkan kenyamanan baris perintah dasar, tidak melakukan pengikisan firehose federasi penuh (gunakan Mastodon-CLI untuk itu).</p>
+    </div>
+
+    <p>ThreadGrab dibangun untuk memecahkan masalah yang membandel di konten sosial: setiap platform punya API sendiri, model autentikasi sendiri, rate limit sendiri, dan kosa kata data sendiri. REST API Mastodon adalah JSON, API X adalah JSON, tapi nama field, konvensi paginasi, dan bentuk entitas semuanya berbeda. ThreadGrab menormalisasi semuanya menjadi satu bentuk respons, jadi skrip yang sama yang mengarsipkan utasan X dapat mengarsipkan toot Mastodon tanpa modifikasi.</p>
+
+    <pre><code># Arsipkan akun Mastodon mana pun lewat ThreadGrab (tanpa login)
+curl -s "https://threadgrab.com/api/mastodon/account/mastodon.social/mastodon" \
+  | jq '.[:3] | .[] | {user: .user, text: .text[0:120], url: .url}'
+
+# Simpan post Mastodon sebagai Markdown untuk arsip LLM-friendly
+curl -s "https://threadgrab.com/api/mastodon/account/mastodon.social/mastodon" \
+  | jq -r '.[] | "## @\(.user)\n\(.text)\n---\n"' \
+  > mastodon-arsip-$(date +%Y-%m-%d).md
+
+# Cari post lintas Fediverse berdasarkan kata kunci
+curl -s "https://threadgrab.com/api/mastodon/search?q=ActivityPub&instance=fosstodon.org&limit=10" \
+  | jq '.posts[] | {user: .user, text: .text[0:100]}'</code></pre>
+
+    <p>Karena setiap server Mastodon mengimplementasikan endpoint REST yang sama, ThreadGrab dapat bertanya instance mana yang ingin Anda query dan merutekan request secara otomatis. Anda tidak perlu belajar perbedaan antara deployment mastodon.social dan fosstodon.org -- mereka mengekspos permukaan API yang sama, jadi ThreadGrab memperlakukan mereka sama.</p>
+
+    <p>Outputnya adalah JSON bersih yang dapat Anda transformasi ke format apa pun: Markdown untuk posting blog dan konteks LLM, CSV untuk analisis spreadsheet, teks biasa untuk pengindeksan pencarian. Post Mastodon menyertakan URL asli, handle penulis (dengan instance-nya, mis. <code>@user@fosstodon.org</code>), dan timestamp yang dinormalisasi yang dapat Anda urutkan terhadap konten platform lain.</p>
+
+    <h3>Kapan menggunakan ThreadGrab</h3>
+    <ul>
+      <li>Anda mengarsipkan konten dari Mastodon, X, dan Bluesky dan ingin satu alat yang berbicara ketiganya.</li>
+      <li>Anda butuh output Markdown bersih untuk pelatihan LLM, pipeline RAG, atau basis pengetahuan personal.</li>
+      <li>Anda tidak ingin mengelola token autentikasi per instance.</li>
+    </ul>
+
+    <h2>Metode 4: toot CLI -- Perangkat Pengguna Terminal Ahli</h2>
+
+    <div class="method-card">
+      <h3>toot (CLI untuk Mastodon)</h3>
+      <p><code>pip install toot</code> -- CLI Mastodon pihak ketiga paling populer, ditulis dengan Python.</p>
+      <p class="pros">Pro: Paritas fitur penuh dengan UI web, login satu perintah, dirancang untuk scripting, berfungsi dengan instance mana pun.</p>
+      <p class="cons">Kontra: Membutuhkan pendaftaran app Mastodon (satu klik di pengaturan), menambahkan dependensi Python, kurang ergonomis untuk ekspor masif.</p>
+    </div>
+
+    <p><code>toot</code> adalah CLI de facto untuk Mastodon. Mengekspos API baca dan tulis lengkap di shell yang ramah: <code>toot post</code> mempublikasikan status, <code>toot timeline</code> mencetak timeline utama Anda, <code>toot search</code> menjalankan query kata kunci. Untuk pengarsip, perintah <code>toot bookmark</code>, <code>toot whois</code>, dan <code>toot search</code> sangat berguna karena memungkinkan triase dan menangkap konten tanpa meninggalkan terminal.</p>
+
+    <pre><code># Instal dan login (jalankan sekali)
+pip install toot
+toot login --instance fosstodon.org
+# Jendela browser terbuka; salin kode auth kembali; toot menyimpan secara lokal
+
+# Cari dan simpan 5 hasil pertama
+toot search "ActivityPub arsip 2026" --limit 5 \
+  | tee mastodon-pencarian-2026-08-01.txt
+
+# Daftar bookmark Anda secara terprogram (bagus untuk mengisi arsip)
+toot bookmarks --limit 20 | tee bookmark-saya.txt
+
+# Periksa pengguna mana pun -- pengikut, bio, jumlah post
+toot whois --user @Gargron@mas.to | head -40</code></pre>
+
+    <p><code>toot</code> menangani penyimpanan token login untuk Anda, jadi Anda hanya perlu mengautentikasi sekali per instance per perangkat. Ini teman yang brilian untuk pipeline shell: pipakan <code>toot search</code> ke <code>jq</code>, lalu ke <code>tee</code>, dan Anda punya skrip arsip harian dalam 4 baris.</p>
+
+    <h3>Kapan menggunakan toot CLI</h3>
+    <ul>
+      <li>Anda tinggal di terminal dan ingin akses Mastodon tanpa tab browser.</li>
+      <li>Anda ingin mengautentikasi sekali dan menggunakan token yang sama untuk posting, bookmark, dan membaca.</li>
+      <li>Anda membangun pipeline arsip berbasis shell (cron, bash, fish, zsh).</li>
+    </ul>
+
+    <h2>Metode 5: Mastodon-CLI -- Ekspor Masif dan Backup Tingkat Instance</h2>
+
+    <div class="method-card">
+      <h3>Mastodon-CLI + task rake (alat admin)</h3>
+      <p><code>npm install -g mastodon-cli</code> untuk non-admin, atau <code>RAILS_ENV=production tootctl media backfill</code> untuk admin.</p>
+      <p class="pros">Pro: Operasi masif, mendukung ratusan ribu post per sesi, menangkap biner media, mencakup backup admin untuk seluruh instance.</p>
+      <p class="cons">Kontra: Setup lebih berat dari metode lain, Mastodon-CLI kurang dipelihara aktif dibanding toot, backup tingkat instance butuh akses admin.</p>
+    </div>
+
+    <p>Ketika Anda perlu mengarsipkan ribuan post -- atau konten seluruh instance -- Anda meraih Mastodon-CLI atau task rake resmi <code>tootctl</code>. Mastodon-CLI adalah alat Node.js yang menyediakan varian batch-friendly dari endpoint REST umum, dengan logika retry dan dukungan resume untuk ekspor panjang.</p>
+
+    <pre><code># Instal Mastodon-CLI secara global
+npm install -g mastodon-cli
+
+# Login sekali (berbasis env, aman untuk cron)
+export MASTODON_TOKEN="<you...port MASTODON_INSTANCE="https://fosstodon.org"
+
+# Arsipkan seluruh akun sebagai JSON
+mastodon-cli archive @Gargron@mas.to --format json \
+  --output gargron-arsip.json
+
+# Simpan setiap post yang menyebut hashtag sebagai Markdown
+mastodon-cli hashtag "ActivityPub" --format markdown --limit 200 \
+  > fediverse-activitypub-arsip-md.txt
+
+# Untuk admin instance: dump semuanya (statuses + media + DB)
+tootctl media backfill --concurrency 20
+tootctl backup --path /var/backups/mastodon/</code></pre>
+
+    <p>Untuk pengguna non-admin, sweet spot Mastodon-CLI adalah grabs masif tingkat hashtag dan akun -- dapat menarik ribuan post dalam satu sesi, dengan retry bawaan di rate limit dan pelaporan progres. Untuk admin, task rake <code>tootctl</code> yang dibundel adalah cara kanonik untuk membackup instance sebelum migrasi server atau shutdown.</p>
+
+    <h3>Kapan menggunakan Mastodon-CLI / tootctl</h3>
+    <ul>
+      <li>Anda perlu mengarsipkan lebih dari satu hari post dari pengguna atau hashtag.</li>
+      <li>Anda menjalankan migrasi instance dan butuh backup server yang luas.</li>
+      <li>Anda ingin mengunduh biner media, bukan hanya konten teks.</li>
+    </ul>
+
+    <h2>Perbandingan Berdampingan</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Fitur</th>
+          <th>Bookmark Mastodon</th>
+          <th>REST API Mastodon</th>
+          <th>ThreadGrab</th>
+          <th>toot CLI</th>
+          <th>Mastodon-CLI</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Waktu setup</td>
+          <td>0 detik</td>
+          <td>2 menit (curl)</td>
+          <td>2 menit (curl)</td>
+          <td>5 menit (pip install + login)</td>
+          <td>5 menit (npm install + token)</td>
+        </tr>
+        <tr>
+          <td>Keahlian teknis</td>
+          <td>Tidak ada</td>
+          <td>Rendah</td>
+          <td>Rendah</td>
+          <td>Sedang</td>
+          <td>Sedang</td>
+        </tr>
+        <tr>
+          <td>Auth dibutuhkan</td>
+          <td>Ya (login)</td>
+          <td>Tidak</td>
+          <td>Tidak</td>
+          <td>Ya (satu pendaftaran app)</td>
+          <td>Ya (token akses)</td>
+        </tr>
+        <tr>
+          <td>Kemampuan export</td>
+          <td>Tidak</td>
+          <td>Ya (JSON)</td>
+          <td>Ya (JSON / MD)</td>
+          <td>Ya (teks biasa)</td>
+          <td>Ya (JSON / MD / dump DB)</td>
+        </tr>
+        <tr>
+          <td>Streaming real-time</td>
+          <td>Tidak</td>
+          <td>Ya (WebSocket, v4.3+)</td>
+          <td>Tidak</td>
+          <td>Ya (toot stream)</td>
+          <td>Tidak</td>
+        </tr>
+        <tr>
+          <td>Dukung X / Bluesky juga</td>
+          <td>Tidak</td>
+          <td>Tidak</td>
+          <td>Ya</td>
+          <td>Tidak</td>
+          <td>Tidak</td>
+        </tr>
+        <tr>
+          <td>Massal / batch</td>
+          <td>Manual saja</td>
+          <td>Bisa di-script</td>
+          <td>Bisa di-script</td>
+          <td>Bisa di-script</td>
+          <td>Bisa di-script dengan resume</td>
+        </tr>
+        <tr>
+          <td>Output Markdown</td>
+          <td>Tidak</td>
+          <td>Via konversi jq</td>
+          <td>Dukungan native</td>
+          <td>Via piping</td>
+          <td>Dukungan native</td>
+        </tr>
+        <tr>
+          <td>Tangkap biner media</td>
+          <td>Referensi saja</td>
+          <td>Ya (URL terpisah)</td>
+          <td>Ya (URL disertakan)</td>
+          <td>Ya (URL unduh)</td>
+          <td>Ya (menulis file)</td>
+        </tr>
+        <tr>
+          <td>Cocok untuk</td>
+          <td>Pembaca kasual</td>
+          <td>Penggemar script</td>
+          <td>Pengguna lintas platform</td>
+          <td>Pengguna terminal</td>
+          <td>Pengarsip masif &amp; admin</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Membangun Pipeline Pengarsipan Mastodon Lengkap</h2>
+    <p>Berikut cara kreator konten dapat menggabungkan metode ini menjadi alur kerja arsip Mastodon harian yang juga menangkap X dan Bluesky:</p>
+
+    <pre><code>#!/bin/bash
+# Pipeline arsip harian Fediverse + X + Bluesky (cron jam 7 pagi)
+# Menggabungkan ThreadGrab API untuk penarikan lintas platform + penyimpanan file
+
+MASTODON_INSTANCE="fosstodon.org"
+ACCOUNTS=("Gargron@mas.to" "mcpheywood@mastodon.social" "fosstodon@fosstodon.org")
+OUTPUT_DIR="$HOME/fediverse-arsip/$(date +%Y/%m)"
+mkdir -p "$OUTPUT_DIR"
+
+for acct in "${ACCOUNTS[@]}"; do
+  HANDLE="${acct%@*}"
+  curl -s "https://threadgrab.com/api/mastodon/account/${MASTODON_INSTANCE}/${HANDLE}" \
+    | jq -r '.[] | "### @\(.user)\n\(.text)\n---\n"' \
+    > "$OUTPUT_DIR/mastodon-$HANDLE.md"
+  echo "Tersimpan Mastodon $acct: $(wc -l &lt; "$OUTPUT_DIR/mastodon-$HANDLE.md") baris"
+done
+
+echo "Arsip Fediverse lengkap untuk $(date +%Y-%m-%d)"</code></pre>
+
+    <p>Pipeline ini berjalan harian via cron, mengorganisir arsip berdasarkan tahun dan bulan, dan menggunakan ThreadGrab karena skrip yang sama juga dapat mengarsipkan handle Bluesky dan profil X tanpa modifikasi -- hanya URL yang berubah. Jurnalis kemudian dapat memberi arsip Markdown ke LLM untuk perangkuman, pencarian, atau deteksi tren lintas Fediverse.</p>
+
+    <div class="callout">
+      <p><strong>Tip pro.</strong> Untuk fleksibilitas maksimum, gabungkan <strong>ThreadGrab</strong> untuk baca lintas platform, <strong>REST API Mastodon</strong> untuk investigasi ad hoc, dan <strong>toot</strong> untuk bookmarking terminal selama acara langsung. ThreadGrab menangani normalisasi Fediverse + X + Bluesky; API native dan CLI memberi Anda kontrol penuh saat dibutuhkan.</p>
+    </div>
+
+    <h2>Bagaimana ThreadGrab Masuk ke Ekosistem Fediverse</h2>
+    <p>ThreadGrab dirancang untuk menjembatani kesenjangan antara platform sosial, dan Fediverse adalah tempat jembatan itu paling penting. REST API Mastodon terdokumentasi baik, Misskey serupa tapi tidak identik, Pleroma lebih tua dan menggunakan nama field berbeda. Tanpa normalisasi, peneliti yang ingin mengarsipkan post dari ketiganya perlu mempertahankan tiga set kode.</p>
+
+    <p>ThreadGrab mengabstraksikan perbedaan itu. Endpoint yang sama yang mengambil toot Mastodon dari fosstodon.org dapat mengambil post Misskey dari instance Jepang atau post Bluesky dari pengguna AT Protocol -- semua karena ThreadGrab menormalisasi format respons di keluaran. Untuk kreator rata-rata yang membaca X untuk berita penting, Bluesky untuk diskusi teknologi, dan Fediverse untuk diskusi komunitas, ThreadGrab adalah titik masuk pengarsipan tunggal yang menjaga semuanya konsisten.</p>
+
+    <div class="cta">
+      <p>Arsipkan toot Mastodon, utasan X, dan post Bluesky secara berdampingan -- tanpa akun, tanpa kunci API, tanpa setup.</p>
+      <a class="btn" href="/id/">Coba ThreadGrab -- Pengarsip Media Sosial Gratis</a>
+    </div>
+
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <strong>Apakah Mastodon punya bookmark bawaan seperti Bluesky?</strong>
+      <p>Ya. Mastodon punya bookmark bawaan sejak versi 4.0 (akhir 2023). Bersifat privat dan dapat dicari di dalam akun Anda, tapi tidak seperti Bluesky, Anda tidak dapat mengekspornya melalui UI web -- Anda butuh panggilan API (Metode 2) atau alat pihak ketiga (Metode 3-5) untuk mengambilnya sebagai data terstruktur.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Bisakah saya menggunakan API ActivityPub untuk menyimpan post Mastodon secara gratis?</strong>
+      <p>Ya. REST API Mastodon terbuka dan tidak butuh autentikasi untuk semua pembacaan publik. Anda dapat mengambil timeline, status individual, dan hasil pencarian dengan HTTP GET request sederhana ke endpoint seperti <code>https://mastodon.social/api/v1/timelines/public</code> atau <code>https://mastodon.social/api/v2/search</code>. Rate limit sekitar 300 request per jendela 5 menit per IP.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Apakah ThreadGrab mendukung pengarsipan Mastodon?</strong>
+      <p>Ya. ThreadGrab merutekan request Mastodon lewat REST API terbuka yang sama yang diimplementasikan setiap instance Mastodon, jadi Anda dapat mengarsipkan post dari mastodon.social, fosstodon.org, hachyderm.io, atau instance lainnya melalui satu endpoint. Outputnya adalah JSON atau Markdown yang dinormalisasi yang cocok dengan yang ThreadGrab kembalikan untuk X dan Bluesky.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Apa itu toot CLI?</strong>
+      <p>toot adalah klien baris perintah Mastodon pihak ketiga paling populer, dapat diinstal dengan <code>pip install toot</code>. Mendukung posting, membaca, mencari, bookmark, dan mengikuti dari terminal mana pun. Perintah <code>toot search</code> dan <code>toot bookmarks</code> sangat berguna untuk pengarsipan Fediverse berbasis skrip.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Bisakah saya mengarsipkan seluruh instance Mastodon secara lokal?</strong>
+      <p>Hanya jika Anda admin instance: Mastodon menyediakan task rake resmi (<code>tootctl media backfill</code>, <code>tootctl backup</code>) yang membuang setiap status, file media, dan baris basis data ke arsip tar. Non-admin dapat menggunakan Mastodon-CLI ditambah REST API publik untuk mengikis konten publik secara masif, tapi post privat dan DM tidak dapat diarsipkan tanpa akses admin.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Metode pengarsipan Mastodon mana yang terbaik untuk persiapan data LLM?</strong>
+      <p>ThreadGrab adalah yang paling ergonomis untuk alur kerja LLM karena menghasilkan Markdown bersih atau JSON yang dinormalisasi secara langsung. REST API Mastodon mentah dan SDK atproto keduanya butuh pemrosesan tambahan untuk mengubah record menjadi format LLM-friendly. toot CLI bagus jika Anda ingin pembacaan terautentikasi (bookmark Anda, DM Anda); Mastodon-CLI adalah pilihan tepat untuk ekspor volume tinggi.</p>
+    </div>
+
+    <h2>Pilih Metode Anda dan Mulai Mengarsipkan</h2>
+    <p>Arsitektur terbuka Fediverse menjadikannya jaringan sosial paling dapat diarsipkan di 2026. Baik Anda menggunakan bookmark bawaan untuk baca kasual, REST API untuk scripting ringan, ThreadGrab untuk pengarsipan lintas platform, toot CLI untuk alur kerja native terminal, atau Mastodon-CLI untuk ekspor masif dan backup instance, ada metode yang sesuai dengan alur kerja Anda.</p>
+
+    <p>Wawasan utamanya adalah Anda tidak harus memilih satu saja. Bookmark post menarik sepanjang hari, jalankan ThreadGrab malam hari untuk arsip profil lintas Fediverse dan X, gunakan toot CLI untuk pembacaan terautentikasi selama acara berita, dan simpan Mastodon-CLI untuk hari Anda memutuskan untuk membackup seluruh instance. Alat-alatnya gratis, terbuka, dan dirancang untuk bekerja bersama. <a href="/id/">Mulai dengan ThreadGrab</a> untuk jalur tercepat ke pipeline pengarsipan lintas platform yang berfungsi.</p>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/id/">Beranda</a> &middot; <a href="/id/blog/">Blog</a> &middot; <a href="/id/about/">Tentang</a> &middot; <a href="/id/privacy/">Privasi</a>
+    <br>Tidak berafiliasi dengan Mastodon gGmbH, Fediverse, atau platform media sosial mana pun.
+  </footer>
+</body>
+</html>

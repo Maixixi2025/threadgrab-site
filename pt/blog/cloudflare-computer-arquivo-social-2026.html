@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloudflare Computer 2026: Runtime para Arquivos Sociais | ThreadGrab</title>
+  <meta name="description" content="Cloudflare Computer dá aos agentes um filesystem durável e runtimes isolate e container sob demanda. Guia 2026 para arquivar X, Bluesky e LinkedIn.">
+  <meta name="keywords" content="Cloudflare Computer, @cloudflare/computer, runtime de agente, arquivo social, arquivo X Articles, arquivo Bluesky, arquivo newsletter LinkedIn, Durable Objects, arquivo Markdown, ThreadGrab">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/pt/blog/cloudflare-computer-arquivo-social-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/cloudflare-computer-social-archive-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/cloudflare-computer-arquivo-social-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/cloudflare-computer-arsip-sosial-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/cloudflare-computer-social-archive-2026.html">
+  <meta property="og:title" content="Cloudflare Computer 2026: Runtime para Arquivos Sociais | ThreadGrab">
+  <meta property="og:description" content="Cloudflare Computer dá aos agentes um filesystem durável e runtimes isolate e container sob demanda. Guia 2026 para arquivar X, Bluesky e LinkedIn.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/pt/blog/cloudflare-computer-arquivo-social-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cloudflare Computer 2026: Runtime para Arquivos Sociais | ThreadGrab">
+  <meta name="twitter:description" content="Cloudflare Computer dá aos agentes um filesystem durável e runtimes isolate e container sob demanda. Guia 2026 para arquivar X, Bluesky e LinkedIn.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Cloudflare Computer 2026: Runtime para Arquivos Sociais",
+    "description": "Cloudflare Computer dá aos agentes um filesystem durável e runtimes isolate e container sob demanda. Guia 2026 para arquivar X, Bluesky e LinkedIn.",
+    "datePublished": "2026-08-05",
+    "dateModified": "2026-08-05",
+    "author": {
+      "@type": "Organization",
+      "name": "ThreadGrab",
+      "url": "https://threadgrab.com/pt/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ThreadGrab",
+      "url": "https://threadgrab.com/pt/"
+    },
+    "mainEntityOfPage": "https://threadgrab.com/pt/blog/cloudflare-computer-arquivo-social-2026.html",
+    "inLanguage": "pt"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Início",
+        "item": "https://threadgrab.com/pt/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://threadgrab.com/pt/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Cloudflare Computer 2026"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "O que é o Cloudflare Computer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cloudflare Computer é o runtime de agente em pré-visualização inicial por trás do pacote npm @cloudflare/computer, anunciado pela Cloudflare durante a Agents Week 2026. Ele dá a cada agente um filesystem virtual durável (um workspace) e deixa a plataforma decidir se uma tarefa roda em um isolate rápido, em um sandbox de container Linux ou em um navegador web. O anúncio o posiciona como um computador, não um container, para agentes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como um workspace difere de uma pasta normal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Um workspace é um filesystem virtual apoiado em SQLite que pode ser populado a partir de repositórios git, buckets de armazenamento ou quaisquer arquivos que você escolher. Ele oferece ferramentas auditadas de leitura, escrita e edição, pode ser instanciado em qualquer Durable Object e expõe um wrapper compatível com node:fs, então se comporta como um filesystem que sobrevive a reinicializações e mantém uma trilha de auditoria."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O Cloudflare Computer já pode ser usado hoje?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim, como pré-visualização open-source. Você instala com npm install @cloudflare/computer e roda no Workers com Durable Objects. Por ser uma pré-visualização inicial, trate a API como algo em movimento: fixe versões, leia a documentação atual e reverifique a disponibilidade antes de construir um pipeline de arquivo em produção."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Por que um runtime de agente importa para arquivamento social?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Porque arquivar X Articles, posts do Bluesky e newsletters do LinkedIn é um loop repetível de várias etapas: buscar, normalizar para Markdown, armazenar com proveniência e verificar. Um runtime com filesystem durável e ambientes de execução por tarefa transforma esse loop em algo que um agente pode rodar sem supervisão, com isolates para etapas baratas e containers para processamento pesado."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O Cloudflare Computer substitui o ThreadGrab?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não, eles são complementares. O ThreadGrab é uma ferramenta pronta para uso que normaliza posts públicos de X, Bluesky, Threads, Substack e LinkedIn em Markdown ou JSON limpos hoje, sem etapa de build. O Cloudflare Computer é um runtime para quem quer automatizar todo o loop de arquivo como um agente. A configuração pragmática de 2026 é ThreadGrab para captura e normalização, mais um runtime de agente apenas quando o volume justificar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quais são as limitações da pré-visualização?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não é um serviço hospedado: você precisa de um projeto Workers com Durable Objects. O pacote entrega dois runtimes de execução prontos (isolate e container), e você escreve o seu para qualquer outra coisa. Também não recupera conteúdo que nunca foi capturado: posts pagos ou apagados ainda precisam ser salvos antes de desaparecerem."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 2px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/pt/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a href="/en/blog/cloudflare-computer-social-archive-2026.html">EN</a>
+      <a class="active" href="/pt/blog/cloudflare-computer-arquivo-social-2026.html">PT</a>
+      <a href="/id/blog/cloudflare-computer-arsip-sosial-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb"><a href="/pt/">Início</a> &rsaquo; <a href="/pt/blog/">Blog</a> &rsaquo; Cloudflare Computer 2026</div>
+
+    <h1>Cloudflare Computer 2026: <span>Runtime para Arquivos Sociais</span></h1>
+    <p class="meta">5 de Agosto de 2026 &middot; 10 min de leitura &middot; por ThreadGrab</p>
+
+    <p>Na primeira semana de agosto de 2026, a Agents Week da Cloudflare começou com um título deliberadamente provocativo: <strong>"Seu agente precisa de um computador, não de um container."</strong> O post apresentou o <strong>@cloudflare/computer</strong>, um runtime de agente em pré-visualização inicial e open-source que dá a cada agente um filesystem durável e deixa a plataforma decidir se uma tarefa roda em um isolate rápido, em um sandbox de container Linux ou em um navegador web. Para quem arquiva conteúdo longo de redes sociais &mdash; X Articles, posts do Bluesky, newsletters do LinkedIn &mdash; o anúncio importa mais do que parece: buscar, normalizar, armazenar e verificar é exatamente o pipeline agêntico de várias etapas para o qual o novo runtime foi construído.</p>
+
+    <p>Este guia explica o que o Cloudflare Computer realmente é (verificado no anúncio oficial), como o modelo de workspace muda a forma de armazenar um arquivo Markdown e como combinar o novo runtime com a normalização pronta para uso do ThreadGrab em um pipeline de arquivo social.</p>
+
+    <div class="callout">
+      <p><strong>TL;DR.</strong> A Cloudflare anunciou o <strong>@cloudflare/computer</strong> (Agents Week, início de agosto de 2026) &mdash; um runtime de agente open-source em que um <strong>workspace</strong> (um filesystem virtual apoiado em SQLite em um Durable Object) armazena arquivos e uma interface <strong>exec()</strong> roda tarefas em um isolate ou em um container. Para arquivamento social, isso se traduz em um corpus Markdown durável com proveniência, com o ThreadGrab como camada de captura e normalização. É uma pré-visualização inicial: fixe versões e reverifique a disponibilidade antes do uso em produção.</p>
+    </div>
+
+    <h2>O que é o Cloudflare Computer</h2>
+    <p>De acordo com o anúncio oficial em <a href="https://blog.cloudflare.com/cloudflare-computer/">blog.cloudflare.com/cloudflare-computer</a>, o @cloudflare/computer é um runtime de agente em que "os detalhes e mecanismos de qual código roda em um isolate, em um sandbox de container ou em um navegador web são tratados pela plataforma." O runtime orquestra dinamicamente entre isolates rápidos e eficientes e containers Linux completos "para dar a cada agente um computador próprio."</p>
+
+    <p>O projeto é distribuído como uma biblioteca open-source, instalada com <code>npm install @cloudflare/computer</code>. A motivação declarada da Cloudflare é escala: dar a cada agente seu próprio container não escala, porque em todas as nuvens não há computação suficiente para cada empresa entregar um ambiente containerizado ao agente de cada usuário. Isolates são o primitivo eficiente &mdash; a mesma aposta que a Cloudflare fez com o Workers há cerca de dez anos e com os Durable Objects há cerca de seis anos. No ano passado, os isolates ganharam a capacidade de subir seus próprios sandboxes de container, e o novo pacote envolve os dois primitivos atrás de uma única abstração.</p>
+
+    <p><strong>Ressalva:</strong> isto é uma pré-visualização inicial. A superfície da API pode mudar antes de uma versão estável, e a disponibilidade dos recursos deve ser reverificada antes de construir um fluxo de produção sobre ela.</p>
+
+    <h2>O Workspace: um Filesystem Durável para o Seu Arquivo</h2>
+    <p>A peça central do @cloudflare/computer é o <strong>workspace</strong>: um filesystem virtual apoiado em SQLite que pode ser populado a partir de armazenamento em nuvem, controle de versão ou quaisquer arquivos que você escolher. Ele fornece ferramentas para ler, escrever e editar arquivos usando Code Mode ou comandos bash, e todas as operações são controladas, auditadas e observadas &mdash; você tem controle fino sobre o que um agente pode tocar.</p>
+
+    <p>Para arquivamento social, isso se conecta diretamente ao problema do "corpus de arquivo". Em vez de espalhar arquivos Markdown por pastas, um workspace dá um lar durável e versionado para cada X Article, post do Bluesky e newsletter do LinkedIn que você capturar, com uma trilha de auditoria de cada escrita. O workspace pode ser instanciado em qualquer Durable Object, então o filesystem fica ao lado do código que o popula.</p>
+
+    <p>A classe Workspace também expõe um wrapper compatível com <code>node:fs</code>, o que significa que bibliotecas JavaScript existentes que esperam um filesystem podem ler e escrever o arquivo sem adaptadores personalizados.</p>
+
+    <h2>Runtimes de Execução: Isolate ou Container, Escolhidos por Tarefa</h2>
+    <p>Todos os runtimes de execução do pacote compartilham a mesma interface &mdash; <code>exec(string, options)</code> &mdash; e dois são fornecidos prontos (você pode escrever o seu). O anúncio observa que os agentes são surpreendentemente capazes de selecionar o ambiente certo para a tarefa em questão: um trabalho que só precisa manipular arquivos, processar dados ou gerenciar um repositório git pode rodar dentro de um isolate; um comando que precisa de Linux, npm ou um binário nativo roda dentro de um container.</p>
+
+    <p>Para um pipeline de arquivo, a divisão é natural. Isolates cuidam das etapas baratas e frequentes (buscar um post, converter HTML para Markdown, escrever o arquivo, contar palavras), e containers cuidam das etapas pesadas e ocasionais (rodar markdownlint no corpus, converter Markdown para EPUB ou PDF, executar ferramentas nativas de imagem).</p>
+
+    <h2>Um Workspace Mínimo de Arquivo Social</h2>
+    <p>Os dois blocos de código abaixo seguem a API do anúncio oficial. O bloco 1 instala o pacote e cria um workspace em um Durable Object, e então escreve um artigo capturado como Markdown. O bloco 2 mostra a interface <code>exec()</code> e o backend de container para trabalho mais pesado. O código é ilustrativo da API de pré-visualização &mdash; fixe versões e reverifique a documentação antes do uso em produção.</p>
+
+    <pre><code># Install the open-source preview package
+npm install @cloudflare/computer
+
+# Create a durable archive workspace inside a Durable Object
+import { Workspace } from "@cloudflare/computer";
+
+const archive = new Workspace({ storage: this.ctx.storage });
+await archive.fs.mkdir("/archive/2026", { recursive: true });
+await archive.fs.writeText(
+  "/archive/2026/x-article-2026-08-05.md",
+  markdown
+);</code></pre>
+
+    <p>Uma vez que o workspace existe, cada post capturado pode ser escrito em um caminho com chave de data. Como o filesystem é apoiado em SQLite e vive em um Durable Object, o arquivo sobrevive a reinicializações e pode ser consultado como um banco de dados se você mantiver um índice de metadados.</p>
+
+    <pre><code># Run a command inside the workspace filesystem
+const result = await archive.exec("bash", ["-c", "wc -l /archive/2026/*.md"]);
+console.log(result.stdout);
+
+# Container backend for native binaries and npm packages
+import { Think } from "@cloudflare/think";
+import { withWorkspaceContainer } from "@cloudflare/computer/backends/container";
+
+export class ArchiveAgent extends withWorkspaceContainer(Think) {
+  override workspaceBash = false;
+  // The agent selects isolate or container per task
+}</code></pre>
+
+    <h2>Construindo um Pipeline Agêntico de Arquivo para X, Bluesky e LinkedIn</h2>
+    <p>Um pipeline prático para 2026 tem cinco etapas. Primeiro, busque o post público &mdash; um X Article, um post longo do Bluesky ou uma newsletter do LinkedIn. Segundo, normalize-o para Markdown com uma ferramenta como o ThreadGrab: cole a URL e receba Markdown ou JSON limpos com a URL original e o timestamp preservados. Terceiro, escreva o Markdown no workspace em um caminho com chave de data. Quarto, rode a verificação dentro de um isolate &mdash; confira se os links resolvem, conte palavras, confirme se a URL canônica está presente. Quinto, para trabalhos mais pesados como gerar um EPUB a partir do arquivo da semana, mude para o runtime de container e então faça commit do workspace no git como um snapshot durável.</p>
+
+    <p>A divisão de trabalho importa. O ThreadGrab é a camada de normalização que você pode usar hoje, sem etapa de build; o Cloudflare Computer é o runtime que você usaria se quisesse automatizar todo o loop como um agente. A maioria dos criadores deve começar com o ThreadGrab e adicionar um runtime de agente apenas quando o volume de posts arquivados justificar.</p>
+
+    <p>A proveniência é a parte fácil de pular e difícil de recuperar. Armazene a URL original do post, a plataforma, o timestamp da captura e (quando disponível) o ID do post na própria plataforma ao lado do Markdown. Um workspace transforma isso em convenção, não em disciplina: o mesmo caminho de escrita pode sempre incluir um pequeno cabeçalho de metadados.</p>
+
+    <h2>Isolate vs Container para Arquivamento</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Ambiente</th>
+          <th>Melhor para</th>
+          <th>Perfil de custo</th>
+          <th>Caso de uso de arquivo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Isolate (Workers)</td>
+          <td>Manipulação de arquivos, processamento de dados, operações git</td>
+          <td>Rápido, baixa sobrecarga, cold starts em milissegundos</td>
+          <td>Buscar um post, converter HTML para Markdown, escrever arquivos, contar palavras</td>
+        </tr>
+        <tr>
+          <td>Sandbox de container</td>
+          <td>Ferramentas Linux, pacotes npm, binários nativos</td>
+          <td>Mais pesado, sob demanda, segundos para iniciar</td>
+          <td>markdownlint, pandoc, conversão EPUB/PDF, processamento de imagem</td>
+        </tr>
+        <tr>
+          <td>Runtime de navegador</td>
+          <td>Renderização de UI e verificação por captura de tela</td>
+          <td>Emergente na pré-visualização</td>
+          <td>Checagem visual de um artigo renderizado antes do arquivamento (verifique a disponibilidade atual)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Ressalvas: Software em Pré-visualização e Disciplina de Verificação</h2>
+    <p>Três cautelas antes de construir. Primeiro, o @cloudflare/computer é uma pré-visualização inicial &mdash; o anúncio é explícito que o projeto é um experimento lançado "para aprender com nossos clientes." Trate a API como algo em movimento. Segundo, a afirmação de que os agentes escolhem o ambiente certo de forma confiável vem do anúncio da Cloudflare; teste-a nas suas próprias cargas de arquivo antes de confiar. Terceiro, alguns recursos mencionados no anúncio (como um ambiente de execução em navegador web) podem não estar disponíveis prontos &mdash; o pacote entrega dois runtimes hoje, e a disponibilidade deve ser reverificada.</p>
+
+    <h2>Limitações</h2>
+    <p>A pré-visualização não é um produto hospedado: você roda no Cloudflare Workers com Durable Objects, o que significa ter uma conta Cloudflare, um projeto Workers e familiaridade com JavaScript no servidor. Também não resolve o problema de conteúdo: um artigo pago do LinkedIn ou um post apagado do X ainda precisam de uma captura feita antes de desaparecerem &mdash; um runtime de agente apenas torna o loop de captura mais fácil de automatizar. Por fim, a qualidade do arquivamento ainda depende da sua camada de normalização; o runtime não julga se o Markdown que você salvou é fiel ao original.</p>
+
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <strong>O que é o Cloudflare Computer?</strong>
+      <p>Cloudflare Computer é o runtime de agente em pré-visualização inicial por trás do pacote npm @cloudflare/computer, anunciado pela Cloudflare durante a Agents Week 2026. Ele dá a cada agente um filesystem virtual durável (um workspace) e deixa a plataforma decidir se uma tarefa roda em um isolate rápido, em um sandbox de container Linux ou em um navegador web. O anúncio o posiciona como um computador, não um container, para agentes.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Como um workspace difere de uma pasta normal?</strong>
+      <p>Um workspace é um filesystem virtual apoiado em SQLite que pode ser populado a partir de repositórios git, buckets de armazenamento ou quaisquer arquivos que você escolher. Ele oferece ferramentas auditadas de leitura, escrita e edição, pode ser instanciado em qualquer Durable Object e expõe um wrapper compatível com node:fs, então se comporta como um filesystem que sobrevive a reinicializações e mantém uma trilha de auditoria.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>O Cloudflare Computer já pode ser usado hoje?</strong>
+      <p>Sim, como pré-visualização open-source. Você instala com npm install @cloudflare/computer e roda no Workers com Durable Objects. Por ser uma pré-visualização inicial, trate a API como algo em movimento: fixe versões, leia a documentação atual e reverifique a disponibilidade antes de construir um pipeline de arquivo em produção.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Por que um runtime de agente importa para arquivamento social?</strong>
+      <p>Porque arquivar X Articles, posts do Bluesky e newsletters do LinkedIn é um loop repetível de várias etapas: buscar, normalizar para Markdown, armazenar com proveniência e verificar. Um runtime com filesystem durável e ambientes de execução por tarefa transforma esse loop em algo que um agente pode rodar sem supervisão, com isolates para etapas baratas e containers para processamento pesado.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>O Cloudflare Computer substitui o ThreadGrab?</strong>
+      <p>Não, eles são complementares. O ThreadGrab é uma ferramenta pronta para uso que normaliza posts públicos de X, Bluesky, Threads, Substack e LinkedIn em Markdown ou JSON limpos hoje, sem etapa de build. O Cloudflare Computer é um runtime para quem quer automatizar todo o loop de arquivo como um agente. A configuração pragmática de 2026 é ThreadGrab para captura e normalização, mais um runtime de agente apenas quando o volume justificar.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Quais são as limitações da pré-visualização?</strong>
+      <p>Não é um serviço hospedado: você precisa de um projeto Workers com Durable Objects. O pacote entrega dois runtimes de execução prontos (isolate e container), e você escreve o seu para qualquer outra coisa. Também não recupera conteúdo que nunca foi capturado: posts pagos ou apagados ainda precisam ser salvos antes de desaparecerem.</p>
+    </div>
+
+    <h2>Comece com um Arquivo Durável Hoje</h2>
+    <p>O argumento "computador, não container" da Cloudflare é voltado para construtores de agentes, mas descreve um problema que os criadores sociais já têm: seu conteúdo longo vive em plataformas que podem mudar as regras a qualquer momento, e a única cópia durável é aquela que eles mesmos mantêm. Um arquivo apoiado em workspace dá a essa cópia um lar estável, e o ThreadGrab dá a você a camada de normalização para preenchê-lo.</p>
+
+    <p>Você não precisa rodar um agente para começar. Abra o ThreadGrab, cole um X Article, um post longo do Bluesky ou uma newsletter do LinkedIn e salve o Markdown na sua própria pasta &mdash; depois, quando o volume crescer, evolua para um workspace e deixe um agente rodar o loop por você.</p>
+
+    <div class="cta">
+      <p>Arquive X Articles, posts do Bluesky e newsletters do LinkedIn como Markdown limpo &mdash; sem conta, sem instalação.</p>
+      <a class="btn" href="/pt/">Experimente o ThreadGrab -- Arquivador Social Gratuito</a>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/pt/">Início</a> &middot; <a href="/pt/blog/">Blog</a> &middot; <a href="/pt/about/">Sobre</a> &middot; <a href="/pt/privacy/">Privacidade</a>
+    <br>Não afiliado à Cloudflare, Inc. Cloudflare, Workers e Durable Objects são marcas registradas da Cloudflare, Inc.
+  </footer>
+</body>
+</html>
