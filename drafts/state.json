@@ -3419,6 +3419,165 @@
         "word_count": 3442,
         "file_size_bytes": 38771
       }
+    },
+    {
+      "slug": "bluesky-longform-publishing-archive-2026",
+      "date": "2026-08-06",
+      "type": "guide",
+      "lang": "en",
+      "file": "en/blog/bluesky-longform-publishing-archive-2026.html",
+      "url": "https://threadgrab.com/en/blog/bluesky-longform-publishing-archive-2026.html",
+      "title": "Bluesky Long-Form Publishing 2026: Standard.site + Archive",
+      "description": "Publish long-form on Bluesky via AT Protocol Standard.site, then archive posts to Markdown with ThreadGrab. A 2026 creator workflow for the Atmosphere.",
+      "heat_source": "⭐ 2026-08-05 briefing threadgrab direction + briefing-gap pivot (2026-08-06): all 4 priority topics + Cloudflare-computer ⭐ already covered. Fresh verifiable story: Bluesky long-form via Standard.site/Atmosphere (TechCrunch 2026-05-28, verified body: Leaflet/pckt/Offprint, 44.5M users, dynamic link cards, WordPress Atmosphere plug-in) + The Verge 2026-08-03 Toni Schneider named permanent CEO + first-party bsky.social 'Summer of Standard.site'. No prior EN/PT/ID article covered the PUBLISHING side of Bluesky long-form (07-23 was platform comparison; atproto-data-portability was export-only).",
+      "tags": [
+        "Bluesky",
+        "long-form publishing",
+        "Standard.site",
+        "AT Protocol",
+        "Atmosphere",
+        "Markdown archive",
+        "ThreadGrab",
+        "Toni Schneider",
+        "WordPress",
+        "creator tools 2026"
+      ],
+      "status": "published",
+      "created_at": "2026-08-06",
+      "published_at": "2026-08-06",
+      "providers_featured": [
+        "Bluesky",
+        "Standard.site",
+        "ThreadGrab"
+      ],
+      "primary_cta": "Try ThreadGrab (en)",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "qa_passed": {
+        "title_chars": 71,
+        "description_chars": 151,
+        "hreflang_alternates": 4,
+        "canonical_present": true,
+        "jsonld_blocks": 3,
+        "article_headline_chars": 58,
+        "article_jsonld_desc_chars": 151,
+        "faq_count": 6,
+        "h2_count": 10,
+        "code_blocks": 3,
+        "code_block_byte_identity_en_pt_id": true,
+        "raw_lt_in_body": 2,
+        "word_count": 1921,
+        "file_size_bytes": 24738,
+        "chinese_chars": 0,
+        "cyrillic_chars": 0
+      }
+    },
+    {
+      "slug": "bluesky-publicacao-texto-longo-arquivo-2026",
+      "date": "2026-08-06",
+      "type": "guia",
+      "lang": "pt",
+      "file": "pt/blog/bluesky-publicacao-texto-longo-arquivo-2026.html",
+      "url": "https://threadgrab.com/pt/blog/bluesky-publicacao-texto-longo-arquivo-2026.html",
+      "title": "Publicação Long-Form no Bluesky 2026: Standard.site + Arquivo",
+      "description": "Publique texto longo no Bluesky via AT Protocol Standard.site e arquive posts em Markdown com ThreadGrab. Um fluxo para criadores em 2026.",
+      "heat_source": "pt mirror of EN article 2026-08-06 (Bluesky long-form Standard.site/Atmosphere publishing + archive)",
+      "tags": [
+        "Bluesky",
+        "publicação long-form",
+        "Standard.site",
+        "AT Protocol",
+        "Atmosphere",
+        "arquivo Markdown",
+        "ThreadGrab"
+      ],
+      "status": "published",
+      "created_at": "2026-08-06",
+      "published_at": "2026-08-06",
+      "providers_featured": [
+        "Bluesky",
+        "Standard.site",
+        "ThreadGrab"
+      ],
+      "primary_cta": "Experimente o ThreadGrab (pt)",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "qa_passed": {
+        "title_chars": 74,
+        "description_chars": 138,
+        "hreflang_alternates": 4,
+        "canonical_present": true,
+        "jsonld_blocks": 3,
+        "article_headline_chars": 61,
+        "article_jsonld_desc_chars": 138,
+        "faq_count": 6,
+        "h2_count": 10,
+        "code_blocks": 3,
+        "code_block_byte_identity_en_pt_id": true,
+        "raw_lt_in_body": 2,
+        "word_count": 2085,
+        "file_size_bytes": 25882,
+        "chinese_chars": 0,
+        "cyrillic_chars": 0
+      }
+    },
+    {
+      "slug": "bluesky-publikasi-konten-panjang-arsip-2026",
+      "date": "2026-08-06",
+      "type": "panduan",
+      "lang": "id",
+      "file": "id/blog/bluesky-publikasi-konten-panjang-arsip-2026.html",
+      "url": "https://threadgrab.com/id/blog/bluesky-publikasi-konten-panjang-arsip-2026.html",
+      "title": "Publikasi Konten Panjang Bluesky 2026: Standard.site + Arsip",
+      "description": "Terbitkan konten panjang di Bluesky via AT Protocol Standard.site, lalu arsipkan post ke Markdown dengan ThreadGrab. Alur kerja kreator 2026.",
+      "heat_source": "id mirror of EN article 2026-08-06 (Bluesky long-form Standard.site/Atmosphere publishing + archive)",
+      "tags": [
+        "Bluesky",
+        "publikasi konten panjang",
+        "Standard.site",
+        "AT Protocol",
+        "Atmosphere",
+        "arsip Markdown",
+        "ThreadGrab"
+      ],
+      "status": "published",
+      "created_at": "2026-08-06",
+      "published_at": "2026-08-06",
+      "providers_featured": [
+        "Bluesky",
+        "Standard.site",
+        "ThreadGrab"
+      ],
+      "primary_cta": "Coba ThreadGrab (id)",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "qa_passed": {
+        "title_chars": 73,
+        "description_chars": 141,
+        "hreflang_alternates": 4,
+        "canonical_present": true,
+        "jsonld_blocks": 3,
+        "article_headline_chars": 60,
+        "article_jsonld_desc_chars": 141,
+        "faq_count": 6,
+        "h2_count": 10,
+        "code_blocks": 3,
+        "code_block_byte_identity_en_pt_id": true,
+        "raw_lt_in_body": 2,
+        "word_count": 1817,
+        "file_size_bytes": 26134,
+        "chinese_chars": 0,
+        "cyrillic_chars": 0
+      }
     }
   ],
   "drafts": [
@@ -4003,28 +4162,24 @@
     }
   ],
   "recent_topics": [
+    "bluesky-longform-publishing-archive-2026",
     "cloudflare-computer-social-archive-2026",
     "writemark-markdown-inline-editor-2026",
     "writemark-editor-markdown-embutido-2026",
-    "writemark-editor-markdown-sebaris-2026",
-    "screenpipe-social-content-capture-2026",
-    "ai-assisted-social-content-human-voice-2026",
-    "search-traffic-decline-social-archive-2026",
-    "x-articles-rich-media-premium-plus-2026",
-    "bluesky-long-form-vs-x-articles-linkedin-newsletter-2026",
-    "tweet-md-browser-redirect-2026"
+    "writemark-editor-markdown-sebaris-2026"
   ],
-  "last_run": "2026-08-05",
-  "last_publish": "2026-08-05",
-  "last_published_slug": "cloudflare-computer-social-archive-2026",
-  "last_draft_slug": "cloudflare-computer-social-archive-2026",
-  "last_published_at": "2026-08-05",
+  "last_run": "2026-08-06",
+  "last_publish": "2026-08-06",
+  "last_published_slug": "bluesky-longform-publishing-archive-2026",
+  "last_draft_slug": "bluesky-longform-publishing-archive-2026",
+  "last_published_at": "2026-08-06",
   "drafts_count": 24,
-  "published_count": 141,
-  "last_topic_picked": "cloudflare-computer-social-archive-2026",
-  "last_pick_source": "2026-08-05 daily briefing social #1 (Cloudflare Computer preview, Agents Week)",
-  "last_drafted_slug": "cloudflare-computer-social-archive-2026",
+  "published_count": 144,
+  "last_topic_picked": "bluesky-longform-publishing-archive-2026",
+  "last_pick_source": "2026-08-06 briefing-gap pivot (Bluesky long-form Standard.site/Atmosphere publishing; briefing #FAILED API 400, used 08-05 briefing + fresh Google News RSS verification)",
+  "last_drafted_slug": "bluesky-longform-publishing-archive-2026",
   "publish_notes": [
+    "2026-08-06 threadgrab-daily-article (cron 82d8b8a903ed): authored Bluesky Long-Form Publishing 2026 in EN/PT/ID. Today's briefing (3ea88f8bb2d0 08:00) FAILED with API 400 (reasoning_content unsupported); fell back to 2026-08-05 briefing + fresh research. All 4 priority topics + Cloudflare-computer ⭐ already covered -> briefing-gap pivot to the PUBLISHING side of Bluesky long-form (Standard.site / AT Protocol Atmosphere), verified from TechCrunch 2026-05-28 body + The Verge 2026-08-03 (Toni Schneider permanent CEO) + bsky.social 'Summer of Standard.site'. Published EN/PT/ID (slug bluesky-longform-publishing-archive-2026). Deployed via git push (threadgrab uses git auto-deploy, NOT wrangler).",
     "2026-08-04 threadgrab-daily-article (cron 82d8b8a903ed): authored Substack Newsletter Archive 2026 in EN/PT/ID. Topic selection: briefing social ⭐ was AI-industry culture reset (Palantir+Anthropic escape), but the angle overlapped with 3 existing articles (human-voice, provenance, slop-button) per the 6 angle-diff criteria, so fell through to content-gap-driven scan. Result: Substack was the highest-signal 0-coverage gap among 56 published EN articles. Live-verified anchors (2026-08-04): Substack /about 5M paid subs + 3 working RSS feeds (platformer.news/feed 355KB/15, importai 465KB/20, luke 740KB/20). All 3 langs passed 14-gate QA: title 72-75c / desc 125-130c / 4-hreflang en+pt+id+x-default / Article+BreadcrumbList+FAQPage JSON-LD / 6 FAQ Q/A pairs / 11 H2 / 4 code blocks byte-identical across EN/PT/ID / 0 chinese + 0 cyrillic chars / 3400-4000 words.",
     "2026-08-05 threadgrab-daily-article (cron 82d8b8a903ed): authored Cloudflare Computer 2026 social archive guide in EN/PT/ID. Topic: briefing social ⭐ #1 (Cloudflare @cloudflare/computer preview, Agents Week Aug 3-4, verified from official blog post). Angle = agentic archive pipeline for X Articles / Bluesky / LinkedIn with durable workspace filesystem; 0 prior coverage confirmed. Also pushed 3-day publish backlog (mastodon 08-01, threads 08-03, substack 08-04) that prior runs left uncommitted, and backfilled their sitemap groups. QA: EN/PT/ID title 72/68/70c, desc 150/147/155c, 4 hreflang, Article+BreadcrumbList+FAQPage, 6 FAQ, 10 H2, 2 code blocks byte-identical, 0 zh/cyr."
   ]
