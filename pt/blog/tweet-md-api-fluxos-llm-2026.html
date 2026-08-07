@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API tweet.md para LLMs 2026: 5 Fluxos de Markdown</title>
+  <meta name="description" content="A tweet.md oferece uma API paga que converte posts, threads e perfis do X em Markdown limpo para pipelines de LLM. Veja os 5 fluxos que compensam.">
+  <meta name="keywords" content="API tweet.md, X para Markdown API, fluxo de trabalho Markdown LLM, autenticação tweet.md, precificação por créditos tweet.md, escopo de thread tweet.md, pipeline RAG de tweets, ThreadGrab, arquivamento social">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/pt/blog/tweet-md-api-fluxos-llm-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/tweet-md-api-llm-workflows-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/tweet-md-api-fluxos-llm-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/tweet-md-api-alur-kerja-llm-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/tweet-md-api-llm-workflows-2026.html">
+  <meta property="og:title" content="API tweet.md para LLMs 2026: 5 Fluxos de Markdown">
+  <meta property="og:description" content="A tweet.md oferece uma API paga que converte posts, threads e perfis do X em Markdown limpo. Cinco fluxos de LLM que se pagam na primeira tarde.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/pt/blog/tweet-md-api-fluxos-llm-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="API tweet.md para LLMs 2026: 5 Fluxos de Markdown">
+  <meta name="twitter:description" content="A API paga da tweet.md converte posts, threads e perfis do X em Markdown limpo. Cinco fluxos de LLM que se pagam na primeira tarde.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo:hover { color: #1d9bf0; }
+    .tagline { color: #888; font-size: 0.85rem; margin-left: auto; }
+    .lang-bar { display: flex; gap: 12px; padding: 12px 24px; background: #1a1a1a; font-size: 0.85rem; }
+    .lang-bar a { color: #888; text-decoration: none; padding: 4px 10px; border-radius: 4px; }
+    .lang-bar a.active { background: #1d9bf0; color: #fff; }
+    .lang-bar a:hover:not(.active) { background: #2a2a2a; color: #fff; }
+    main { max-width: 780px; margin: 0 auto; padding: 40px 24px; }
+    h1 { font-size: 2rem; margin-bottom: 8px; line-height: 1.2; }
+    h1 span { color: #1d9bf0; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { font-size: 1.5rem; margin-top: 40px; margin-bottom: 16px; color: #1d9bf0; }
+    h3 { font-size: 1.15rem; margin-top: 24px; margin-bottom: 12px; color: #fff; }
+    p { margin-bottom: 16px; color: #d0d0d0; }
+    code { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-family: 'SF Mono', Monaco, Consolas, monospace; font-size: 0.9em; color: #ff7b72; }
+    pre { background: #1a1a1a; padding: 16px; border-radius: 6px; overflow-x: auto; margin-bottom: 16px; border: 1px solid #2a2a2a; }
+    pre code { background: none; padding: 0; color: #e6e6e6; font-size: 0.85rem; line-height: 1.5; }
+    ul, ol { margin-bottom: 16px; padding-left: 24px; color: #d0d0d0; }
+    li { margin-bottom: 8px; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 0.9rem; }
+    th { background: #1a1a1a; padding: 10px 12px; text-align: left; color: #1d9bf0; border-bottom: 2px solid #2a2a2a; }
+    td { padding: 10px 12px; border-bottom: 1px solid #2a2a2a; color: #d0d0d0; }
+    tr:hover td { background: #1a1a1a; }
+    .callout { background: #1a2332; border-left: 4px solid #1d9bf0; padding: 16px 20px; margin: 24px 0; border-radius: 4px; }
+    .callout p { margin: 0; color: #d0d0d0; }
+    .callout strong { color: #1d9bf0; }
+    .cta { background: linear-gradient(135deg, #1d9bf0 0%, #1a6fb8 100%); padding: 24px; border-radius: 8px; margin: 32px 0; text-align: center; }
+    .cta p { color: #fff; margin-bottom: 12px; }
+    .btn { display: inline-block; background: #fff; color: #0f0f0f; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; }
+    .btn:hover { background: #e6e6e6; }
+    .faq-item { background: #1a1a1a; padding: 16px 20px; margin-bottom: 12px; border-radius: 6px; border-left: 3px solid #1d9bf0; }
+    .faq-item strong { color: #fff; display: block; margin-bottom: 8px; }
+    .faq-item p { margin: 0; color: #d0d0d0; }
+    .related { background: #1a1a1a; padding: 20px; border-radius: 6px; margin: 32px 0; }
+    .related h3 { color: #1d9bf0; margin-bottom: 12px; }
+    .related ul { list-style: none; padding: 0; }
+    .related li { padding: 6px 0; border-bottom: 1px solid #2a2a2a; }
+    .related li:last-child { border-bottom: none; }
+    .related a { color: #1d9bf0; text-decoration: none; }
+    .related a:hover { text-decoration: underline; }
+    footer { text-align: center; padding: 32px 24px; color: #888; font-size: 0.85rem; border-top: 1px solid #1a1a1a; margin-top: 64px; }
+    footer a { color: #888; text-decoration: none; }
+    footer a:hover { color: #1d9bf0; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "API tweet.md para LLMs 2026: 5 Fluxos de Markdown",
+    "description": "A tweet.md oferece uma API paga que converte posts, threads e perfis do X em Markdown limpo para pipelines de LLM. Veja os 5 fluxos que compensam.",
+    "datePublished": "2026-08-07",
+    "dateModified": "2026-08-07",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/" },
+    "mainEntityOfPage": "https://threadgrab.com/pt/blog/tweet-md-api-fluxos-llm-2026.html",
+    "inLanguage": "pt"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://threadgrab.com/pt/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/pt/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "API tweet.md para LLMs 2026", "item": "https://threadgrab.com/pt/blog/tweet-md-api-fluxos-llm-2026.html" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "A API da tweet.md é gratuita?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O plano gratuito dá 5 requisições de post único por IP por mês civil, com thread=off e userinfo=off forçados. Isso cobre testes casuais. Qualquer coisa além disso (escopos de thread além de off, userinfo, perfis, X Articles) exige uma chave de API paga. O menor pacote pago é US$ 5 por 500 créditos (1 crédito por post retornado, mais 2 créditos por autor único quando userinfo está ativado)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso usar a API da tweet.md a partir de um agente Claude ou ChatGPT?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. A tweet.md publica um SKILL.md em github.com/tweet-md/skill que o Claude Code, o Cursor e outros runtimes de agente instalam via `npx skills add tweet-md/skill`. A skill ensina o agente a reescrever URLs x.com e twitter.com para tweet.md antes de buscar, e a chamar /i/api/convert quando só tem a URL completa do X. Combine a skill com uma chave de API no env do seu agente (TWEETMD_API_KEY) e o agente cuida do resto."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como funciona o parâmetro thread scope?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "thread controla quanto da conversa volta com o post solicitado. thread=off retorna apenas o post único (plano gratuito). thread=ancestors retorna o post mais a cadeia de respostas acima dele. thread=branch (padrão pago: branch-15) retorna os ancestrais primeiro e depois as respostas abaixo. thread=all retorna a conversa inteira, incluindo ramos irmãos. Anexe -N para limitar o total de posts (2-500, padrão 20). branch-8 significa: preencher ancestrais até 8 e depois respostas abaixo, não importa o tamanho real da thread."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O que a tweet.md retorna, JSON ou Markdown?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Markdown, sempre. A tweet.md rejeita explicitamente format=json. O corpo da resposta é texto/markdown com um título, metadados do post e o texto do post. Com format=obsidian você ganha frontmatter YAML em volta do mesmo Markdown, adequado para importação direta em um vault do Obsidian. O custo em créditos e os cabeçalhos (X-Tweetmd-Posts-Returned, X-Tweetmd-Credits-Charged, X-Tweetmd-Thread-Cap, X-Tweetmd-Cap-Hit) vêm nos cabeçalhos HTTP, nunca anexados ao corpo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quando devo usar o ThreadGrab em vez da API da tweet.md?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use a API da tweet.md quando quiser Markdown limpo para um pipeline de LLM, uma consulta única, um loop de agente ou uma importação no Obsidian. Use o ThreadGrab quando quiser guardar a thread: baixar os arquivos de mídia (imagens, vídeo, capturas de tela) para o seu próprio disco, acompanhar correções de posts ao longo do tempo, arquivar um perfil ou lista completa em massa, ou preservar uma declaração pública como evidência com histórico de versões. A tweet.md lê o post. O ThreadGrab guarda o post."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a href="/pt/" class="logo">ThreadGrab</a>
+    <span class="tagline">Arquive threads do X como Markdown</span>
+  </header>
+  <div class="lang-bar">
+    <a href="/en/blog/tweet-md-api-llm-workflows-2026.html">EN</a>
+    <a href="/pt/blog/tweet-md-api-fluxos-llm-2026.html" class="active">PT</a>
+    <a href="/id/blog/tweet-md-api-alur-kerja-llm-2026.html">ID</a>
+  </div>
+
+  <main>
+    <h1>API tweet.md para LLMs 2026: <span>5 Fluxos de Markdown</span></h1>
+    <div class="meta">7 de Agosto, 2026 &middot; 9 min de leitura &middot; Guia</div>
+
+    <p>Se você tem tratado a tweet.md apenas como um truque de reescrita de URL — o truque do navegador em que você troca <code>x.com</code> por <code>tweet.md</code> e o post renderiza como Markdown limpo — você está perdendo a melhor metade. A tweet.md também oferece uma pequena API HTTP bem documentada que pega os mesmos posts, threads e perfis do X e os devolve como Markdown puro que seu LLM pode ingerir diretamente. Sem JSON, sem parsing, sem etapa de limpeza.</p>
+
+    <p>O plano gratuito cobre testes casuais (5 requisições de post único por IP por mês civil, apenas <code>thread=off</code>). Qualquer coisa além disso — cadeias de ancestrais, contexto de ramo, dumps de perfil, X Articles — exige uma chave de API paga. Este guia percorre a superfície da API, os quatro métodos de autenticação, os cinco fluxos de LLM que se pagam em uma tarde e quando recorrer ao ThreadGrab em vez disso.</p>
+
+    <div class="callout">
+      <p><strong>Resumo rápido:</strong> a API da tweet.md retorna <code>text/markdown</code>, não JSON. O plano gratuito é apenas de post único. O plano pago é US$ 5 por 500 créditos. Cinco fluxos realmente compensam: ingestão RAG, extração de citações, uso de ferramentas por agentes, sincronização com Obsidian e Apple Shortcuts no iOS.</p>
+    </div>
+
+    <h2>O que a API da tweet.md realmente retorna</h2>
+
+    <p>A API tem um único propósito: dada uma URL de post do X (ou um handle + ID de post, ou um handle de perfil), devolver um documento Markdown com o texto do post, o handle do autor, o timestamp, links de mídia, estatísticas de engajamento e qualquer tweet citado ou resposta embutida renderizados como blocos Markdown aninhados. A saída é <code>text/markdown</code>, nunca JSON. A tweet.md rejeita explicitamente <code>format=json</code>.</p>
+
+    <p>Há três pontos de entrada:</p>
+
+    <ul>
+      <li><strong>Reescrita no navegador:</strong> substitua <code>x.com</code> por <code>tweet.md</code> em qualquer URL de post. Funciona sem chave no mesmo navegador após o checkout (cookie de sessão). O plano gratuito é apenas de post único.</li>
+      <li><strong>Post/thread programático:</strong> <code>GET https://tweet.md/{handle}/status/{tweetId}</code> quando você já tem o handle e o ID. Mesmo formato de resposta da reescrita no navegador.</li>
+      <li><strong>Programático com URL completa:</strong> <code>GET https://tweet.md/i/api/convert?url={encoded_url}</code> quando você só tem a URL completa do x.com. Este é o endpoint que agentes e Shortcuts usam.</li>
+      <li><strong>Perfil:</strong> <code>GET https://tweet.md/{handle}</code> (navegador) ou <code>GET https://tweet.md/i/api/profile?handle={handle}</code> (programático). Exige créditos.</li>
+    </ul>
+
+    <p>Os quatro endpoints aceitam os mesmos parâmetros de consulta: <code>format</code>, <code>thread</code>, <code>userinfo</code>, <code>stats</code>, <code>metadata</code> e (para perfis) <code>pinnedpost</code>, <code>latest</code>, <code>replies</code>, <code>articles</code>. Os padrões diferem levemente entre gratuito e pago: o plano gratuito força <code>thread=off</code> e <code>userinfo=off</code>; o plano pago usa como padrão <code>thread=ancestors-20</code> e <code>userinfo=author</code> quando esses parâmetros são omitidos.</p>
+
+    <h2>Autenticação — Quatro Métodos, Uma Chave</h2>
+
+    <p>A tweet.md aceita a mesma chave de API de quatro maneiras diferentes. Escolha a que melhor se adapta ao seu runtime.</p>
+
+    <table>
+      <thead>
+        <tr><th>Método</th><th>Cabeçalho / Parâmetro</th><th>Quando usar</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Bearer</td><td><code>Authorization: Bearer twmd_key_...</code></td><td>Scripts, agentes e servidores (recomendado)</td></tr>
+        <tr><td>Chave iOS</td><td><code>x-ios-apikey: twmd_key_...</code></td><td>Apple Shortcuts — retorna text/html com quebras de linha como &lt;br&gt;</td></tr>
+        <tr><td>Parâmetro URL</td><td><code>?apikey=twmd_key_...</code></td><td>Testes manuais rápidos (evite compartilhar URLs que o contenham)</td></tr>
+        <tr><td>Cookie de sessão</td><td>automático após checkout/login</td><td>Reescritas no navegador no mesmo navegador após o topup</td></tr>
+        <tr><td>IP confiável</td><td>na lista branca do painel</td><td>IPs de servidores públicos — agentes de orçamento fixo sem enviar chave</td></tr>
+      </tbody>
+    </table>
+
+    <p>A chave se parece com <code>twmd_key_…</code> e é enviada por e-mail após o checkout no Stripe, ou gerada no painel. Os IPs confiáveis permitem pular o cabeçalho inteiramente para IPs de servidor fixos — útil quando você roda um cron em um VPS com endereço estável. A regra de precedência: se uma requisição inclui tanto um cabeçalho Bearer quanto um IP confiável, a chave Bearer vence.</p>
+
+    <p>Existe um plano gratuito para testes casuais, mas não é o que agentes de produção querem. O plano gratuito força <code>thread=off</code> e <code>userinfo=off</code>, o que significa que você recebe apenas o post único, sem metadados do autor, sem contexto de respostas. Cinco requisições por IP por mês civil. Qualquer coisa além de um teste rápido exige uma chave paga.</p>
+
+    <h2>O Endpoint /i/api/convert (Programático)</h2>
+
+    <p>Este é o endpoint que seu agente chamará com mais frequência. O contrato é simples: passe a URL completa do x.com como parâmetro de consulta e receba um documento Markdown. O cabeçalho carrega a chave Bearer.</p>
+
+    <pre><code>curl -H "Authorization: Bearer twmd_key_..." \
+  "https://tweet.md/i/api/convert?url=https%3A%2F%2Fx.com%2Fjack%2Fstatus%2F20&amp;thread=branch-8"
+</code></pre>
+
+    <p>A resposta é a thread completa renderizada como Markdown. O parâmetro <code>thread=branch-8</code> limita a resposta a 8 posts no total: primeiro os ancestrais (a cadeia acima do seu post) e depois as respostas abaixo. Os cabeçalhos de resposta reais carregam os metadados que seu agente deve cobrar:</p>
+
+    <ul>
+      <li><code>X-Tweetmd-Posts-Returned</code> — quantos posts voltaram no corpo</li>
+      <li><code>X-Tweetmd-Credits-Charged</code> — créditos deduzidos nesta chamada</li>
+      <li><code>X-Tweetmd-Thread-Cap</code> — o limite que você pediu (por ex. 8)</li>
+      <li><code>X-Tweetmd-Cap-Hit</code> — se o limite truncou uma thread mais longa</li>
+    </ul>
+
+    <p>Esses cabeçalhos são anexados apenas à resposta HTTP, nunca ao corpo Markdown. Seu agente pode lê-los para registrar o uso de créditos sem poluir o conteúdo que o LLM ingere.</p>
+
+    <h2>O Endpoint /i/api/profile (Raspagem de Perfil)</h2>
+
+    <p>Perfis são cobrados de forma diferente. O perfil base custa 2 créditos, mais 1 crédito por post retornado em qualquer seção ativada (pinned, latest, replies, articles). O plano gratuito não inclui acesso a perfis.</p>
+
+    <pre><code>curl -H "Authorization: Bearer twmd_key_..." \
+  "https://tweet.md/i/api/profile?handle=jack&amp;latest=10&amp;replies=5"
+</code></pre>
+
+    <p>Os padrões são conservadores: post fixado ativado, 5 posts mais recentes, respostas desativadas, artigos desativados. Os parâmetros <code>latest</code>, <code>replies</code> e <code>articles</code> aceitam um intervalo (latest 5-50, replies e articles 5-20). Cada post retornado é +1 crédito. Para um dump de perfil com o post fixado, 10 recentes e 5 respostas, você gasta 2 + 1 + 10 + 5 = 18 créditos para um perfil.</p>
+
+    <p>Este é o endpoint que você quer ao construir um pesquisador do X ou um ímã de leads. Puxe o perfil uma vez, receba bio + estatísticas + 10 posts recentes como um único documento Markdown. Seu LLM pode ingerir isso como contexto para um e-mail de prospecção personalizado ou uma análise competitiva.</p>
+
+    <h2>5 Fluxos Que Realmente Compensam</h2>
+
+    <p>Cinco padrões aparecem repetidamente em pipelines reais de LLM que usam a tweet.md. A lista não é exaustiva, mas todos pagam um pacote de US$ 5 de créditos em menos de uma tarde.</p>
+
+    <h3>Fluxo 1: Ingestão RAG a Partir de Listas de Tweets Curadas</h3>
+
+    <p>O uso de produção mais comum. Você mantém uma lista de URLs de posts do X sobre um tema (frameworks de agentes de IA, conselhos de indie hackers, pesquisa do setor). Num cron, seu script busca cada URL via <code>/i/api/convert</code> com <code>thread=branch-8</code>, divide nos separadores por post, gera os embeddings de cada post com seu modelo e os empurra para o seu vector store. A saída Markdown já é limpa: sem remoção de HTML, sem decodificação de entidades, sem parsing JSON. Sua lógica de chunking pode dividir nos cabeçalhos <code># 1/N — Post by …</code> que a tweet.md emite.</p>
+
+    <pre><code># Pseudo-pipeline
+for url in curated_urls:
+    md = requests.get(
+        f"https://tweet.md/i/api/convert",
+        params={"url": url, "thread": "branch-8", "userinfo": "author"},
+        headers={"Authorization": f"Bearer {TWEETMD_API_KEY}"},
+    ).text
+    for chunk in split_on_post_headers(md):
+        embed_and_store(chunk, metadata={"source": url})
+</code></pre>
+
+    <p>Custo: 1 crédito por post na thread retornada, mais 2 para o autor. Para 50 threads com média de 4 posts cada, isso é 50 + (50 &times; 2) = 150 créditos — bem dentro do pacote de US$ 5.</p>
+
+    <h3>Fluxo 2: Extração de Citações Para Posts Long-Form</h3>
+
+    <p>Você está escrevendo um Substack ou um long-form do LinkedIn pesado em pesquisa e quer citar 10 threads específicas do X. Para cada thread citada, busque a URL do post com <code>thread=ancestors</code> para obter a cadeia completa de respostas e depois cite os trechos relevantes. Como a tweet.md retorna Markdown com URLs de origem nos cabeçalhos dos posts, você tem um formato de citação pronto:</p>
+
+    <pre><code>&gt; Original post: https://x.com/exampleuser/status/9000000000000000001
+&gt; Captured: 2026-05-17T00:00:00.000Z
+&gt;
+&gt; Shipping notes: what changed in this release and why.
+</code></pre>
+
+    <p>Você pode colar este bloco diretamente no seu artigo com atribuição adequada. O timestamp é o momento da captura, não o do post original, mas a tweet.md também inclui o horário original do post como um campo de metadados separado quando você usa <code>userinfo=author</code>.</p>
+
+    <h3>Fluxo 3: Uso de Ferramentas por Agentes (Claude Code / Cursor / skills.sh)</h3>
+
+    <p>A tweet.md publica um SKILL.md oficial em <code>github.com/tweet-md/skill</code> que instala via <code>npx skills add tweet-md/skill</code>. A skill ensina o agente três padrões: (1) reescrever URLs x.com e twitter.com para tweet.md antes de buscar, (2) chamar <code>/i/api/convert</code> quando só tem a URL completa do X, (3) chamar <code>/i/api/profile</code> quando precisa do contexto da bio. Combine a skill com uma chave de API no ambiente do seu agente:</p>
+
+    <pre><code>export TWEETMD_API_KEY=twmd_key_...
+
+# In Claude Code / Cursor, the agent will now:
+# - rewrite x.com/jack/status/20 → tweet.md/jack/status/20 when fetching
+# - call /i/api/convert when it has the full URL
+# - log credit usage from X-Tweetmd-Credits-Charged headers
+</code></pre>
+
+    <p>Sem a skill, um agente que encontra uma URL x.com tem três opções ruins: visitar o X diretamente (muro de login + rastreamento), tentar raspar o post (frágil, bloqueado pela detecção de bots do X) ou chamar um fetcher web genérico (retorna HTML, não Markdown, com anúncios e pixels de rastreamento). Com a skill, o agente reescreve a URL e recebe um documento Markdown limpo em uma única chamada HTTP.</p>
+
+    <h3>Fluxo 4: Sincronização com Obsidian</h3>
+
+    <p>O parâmetro <code>format=obsidian</code> envolve o mesmo Markdown em frontmatter YAML. O frontmatter inclui source, author, author handle, timestamp do post, timestamp da captura, bio (para perfis), stats e tags. O corpo é o texto do post e os metadados que você obteria com o formato padrão <code>markdown</code>.</p>
+
+    <pre><code>---
+source: https://x.com/jack/status/20
+author: "jack"
+author_handle: jack
+posted: 2006-03-21T20:50:14.000Z
+captured: 2026-05-17T00:00:00.000Z
+tags: [x-post, tweetmd]
+---
+
+# X Post — jack — 2006-03-21
+Post ID: 20
+Source: https://x.com/jack/status/20
+...
+</code></pre>
+
+    <p>Num cron diário, seu script de sincronização percorre uma pasta de URLs salvas do X, busca cada uma com <code>format=obsidian</code> e grava o resultado no seu vault. O plugin Dataview do Obsidian pode então indexar posts por autor, por tag ou por data. O frontmatter é a única coisa que distingue isso de uma sincronização Markdown simples — se você quiser apenas Markdown puro, omita <code>format</code>.</p>
+
+    <h3>Fluxo 5: Apple Shortcuts no iOS</h3>
+
+    <p>O Shortcut pré-construído instala a partir da página de docs da tweet.md e executa uma única ação HTTP. A chave aqui é o cabeçalho <code>x-ios-apikey</code> — a tweet.md detecta requisições com chave iOS e retorna <code>text/html</code> com quebras de linha convertidas em <code>&lt;br&gt;</code>, que é o que os Shortcuts conseguem copiar para uma nota com limpeza.</p>
+
+    <pre><code>GET https://tweet.md/jack/status/20
+Headers:
+  x-ios-apikey: twmd_key_...
+</code></pre>
+
+    <p>O Shortcut aceita entrada da Share Sheet, recorre ao Clipboard se você o abriu diretamente, reescreve <code>x.com</code> para <code>tweet.md</code> na URL, chama o endpoint com o cabeçalho iOS e copia o Markdown retornado para a área de transferência. A partir daí você cola no Apple Notes, no Obsidian Mobile ou em qualquer app que aceite texto. O Shortcut armazena sua chave localmente; não compartilhe uma cópia personalizada.</p>
+
+    <div class="cta">
+      <p><strong>Guarde as threads que importam.</strong> O ThreadGrab arquiva threads do X como Markdown com mídia, rastreamento de correções e exportação em massa. A tweet.md lê o post — o ThreadGrab o guarda.</p>
+      <a class="btn" href="/pt/">Experimente o ThreadGrab</a>
+    </div>
+
+    <h2>Resumo do Escopo de Thread</h2>
+
+    <p>O parâmetro <code>thread</code> é a parte mais confusa da API. Os quatro valores mapeiam quatro escopos de conversa, e o sufixo <code>-N</code> limita a resposta. Escolha o menor escopo que dá ao seu LLM o contexto de que ele precisa.</p>
+
+    <table>
+      <thead>
+        <tr><th>Escopo</th><th>O que vem de volta</th><th>Padrão</th><th>Uso típico</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>off</code></td><td>Apenas o post único</td><td>Plano gratuito forçado</td><td>Citação única</td></tr>
+        <tr><td><code>ancestors</code></td><td>O post mais a cadeia de respostas acima até a raiz da conversa</td><td>—</td><td>Ler uma resposta em contexto completo</td></tr>
+        <tr><td><code>branch</code></td><td>Ancestrais primeiro, depois respostas abaixo (ramos irmãos excluídos)</td><td>branch-15 (pago)</td><td>Ingestão RAG, extração de citações</td></tr>
+        <tr><td><code>all</code></td><td>Conversa inteira, incluindo ramos irmãos</td><td>—</td><td>Mapeamento de tópicos, análise de controvérsia</td></tr>
+      </tbody>
+    </table>
+
+    <p>A sintaxe do limite é <code>scope-N</code>, onde N vai de 2 a 500 (padrão 20). <code>branch-8</code> significa: gastar até 8 posts em ancestrais primeiro e depois respostas abaixo, não importa o tamanho real da thread. Se seu post tem 12 ancestrais, branch-8 gasta todos os 8 na cadeia ascendente e ignora as respostas abaixo. Se seu post tem 3 ancestrais, branch-8 gasta 3 para cima e 5 para baixo. <code>full</code> e <code>conversation</code> são aliases de <code>branch</code> e <code>all</code>.</p>
+
+    <h2>format=markdown vs format=obsidian</h2>
+
+    <p>O formato padrão <code>markdown</code> retorna o corpo do post com stats, mídia, citações e X Articles completos quando presentes. É o que você quer ao alimentar um LLM ou salvar em uma nota de texto puro.</p>
+
+    <p>O formato <code>obsidian</code> adiciona frontmatter YAML no topo: <code>source</code>, <code>author</code>, <code>author_handle</code>, <code>posted</code>, <code>captured</code>, <code>bio</code> opcional para perfis, bloco <code>stats</code> opcional e <code>tags</code>. O corpo é idêntico ao formato markdown. Use obsidian quando quiser consultas do Dataview por autor ou data, ou quando quiser que a visão de grafo do Obsidian mostre conexões entre autores e tópicos.</p>
+
+    <p>Nenhum dos formatos retorna JSON. A tweet.md rejeita deliberadamente <code>format=json</code> — a filosofia do projeto é que Markdown é o formato de intercâmbio canônico para consumidores de LLM, e o envolvimento com JSON adiciona custo de parsing sem agregar valor.</p>
+
+    <h2>Matemática de Preços — Qual Pacote Comprar</h2>
+
+    <p>Três pacotes de créditos, US$ 5 / US$ 19 / US$ 49. O custo por crédito cai conforme o pacote cresce, mas o valor em dólares é a decisão real. Aqui está a matemática do ponto de equilíbrio.</p>
+
+    <table>
+      <thead>
+        <tr><th>Pacote</th><th>Créditos</th><th>Por crédito</th><th>Fetch de post único</th><th>Thread branch-8</th><th>Dump de perfil</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>US$ 5</td><td>500</td><td>US$ 0,0100</td><td>~500 fetches</td><td>~62 fetches</td><td>~31 dumps</td></tr>
+        <tr><td>US$ 19 (melhor valor)</td><td>2.200</td><td>US$ 0,0086</td><td>~2.200 fetches</td><td>~275 fetches</td><td>~138 dumps</td></tr>
+        <tr><td>US$ 49</td><td>6.000</td><td>US$ 0,0082</td><td>~6.000 fetches</td><td>~750 fetches</td><td>~375 dumps</td></tr>
+      </tbody>
+    </table>
+
+    <p>"Fetch de post único" assume <code>thread=off</code> e <code>userinfo=off</code>, então 1 crédito por chamada. "Thread branch-8" assume 8 posts retornados (8 créditos) + 2 do metadado do autor = 10 créditos por chamada. "Dump de perfil" assume fixado + 10 recentes + 5 respostas = 18 créditos por chamada (2 base + 1 fixado + 10 recentes + 5 respostas).</p>
+
+    <p>O pacote de US$ 19 é o ponto de partida certo para a maioria dos criadores individuais: 2.200 créditos cobrem cerca de 138 dumps de perfil ou 275 threads branch-8. O pacote de US$ 49 é para equipes que rodam vários crons diários ou agentes que ingerem dezenas de threads por dia. O pacote de US$ 5 é para testar a API antes de se comprometer.</p>
+
+    <h2>Quando Combinar a tweet.md com o ThreadGrab</h2>
+
+    <p>A tweet.md e o ThreadGrab são complementares, não concorrentes. A versão curta: a tweet.md lê o post, o ThreadGrab guarda o post.</p>
+
+    <table>
+      <thead>
+        <tr><th>Capacidade</th><th>API tweet.md</th><th>ThreadGrab</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Ler posts do X como Markdown</td><td>Sim (renderização no servidor)</td><td>Sim (exporte e depois leia)</td></tr>
+        <tr><td>Uma única chamada HTTP por post</td><td>Sim</td><td>Não (várias etapas)</td></tr>
+        <tr><td>Pronto para pipeline de LLM</td><td>Sim (text/markdown, sem JSON)</td><td>Não (saída Markdown, corpo maior)</td></tr>
+        <tr><td>Arquivos de mídia baixados para o disco</td><td>Não (apenas links)</td><td>Sim</td></tr>
+        <tr><td>Acompanhar correções de posts ao longo do tempo</td><td>Não</td><td>Sim (re-fetch + diff)</td></tr>
+        <tr><td>Arquivar perfil ou lista em massa</td><td>Baseado em créditos, limitado</td><td>Sim (exportação completa)</td></tr>
+        <tr><td>Exportar para Notion / GitHub / S3</td><td>Não</td><td>Sim</td></tr>
+        <tr><td>Auto-hospedável</td><td>Não</td><td>Não (hospedado na nuvem)</td></tr>
+        <tr><td>Modelo de preços</td><td>Por crédito</td><td>Assinatura / pagamento único</td></tr>
+      </tbody>
+    </table>
+
+    <p>A divisão natural de trabalho: tweet.md para o caminho de leitura e o loop de agente (seu LLM busca um post, resume, responde a uma pergunta sobre ele), ThreadGrab para o caminho de guardar (você encontra uma thread que vale preservar e a salva no seu próprio armazenamento com mídia e histórico de versões). A maioria dos criadores ativos acaba usando ambos — tweet.md para as dezenas de leituras descartáveis por dia, ThreadGrab para as poucas threads por semana que merecem uma cópia permanente.</p>
+
+    <div class="related">
+      <h3>Relacionados no ThreadGrab</h3>
+      <ul>
+        <li><a href="/pt/blog/tweet-md-redirecionador-navegador-2026.html">Redirecionador tweet.md 2026: Substituir Links do x.com</a></li>
+        <li><a href="/pt/blog/tweet-md-vs-threadgrab-2026.html">tweet.md vs ThreadGrab 2026: Ferramentas X para Markdown Comparadas</a></li>
+        <li><a href="/pt/blog/tweet-md-seo-llm-citation-pivot-2026.html">Torne Posts do X Citáveis para IA: a Mudança SEO 2026 da tweet.md</a></li>
+        <li><a href="/pt/blog/x-post-correcao-notificacao-re-busca-2026.html">Notificações de Correção de Posts do X e Re-Busca Automática do ThreadGrab</a></li>
+      </ul>
+    </div>
+
+    <h2>FAQ</h2>
+
+    <div class="faq-item">
+      <strong>A API da tweet.md é gratuita?</strong>
+      <p>O plano gratuito dá 5 requisições de post único por IP por mês civil com <code>thread=off</code> e <code>userinfo=off</code> forçados. Isso cobre testes casuais. Qualquer coisa além disso (escopos de thread além de off, userinfo, perfis, X Articles) exige uma chave de API paga. O menor pacote pago é US$ 5 por 500 créditos (1 crédito por post retornado, mais 2 créditos por autor único quando userinfo está ativado).</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Posso usar a API da tweet.md a partir de um agente Claude ou ChatGPT?</strong>
+      <p>Sim. A tweet.md publica um SKILL.md em <code>github.com/tweet-md/skill</code> que o Claude Code, o Cursor e outros runtimes de agente instalam via <code>npx skills add tweet-md/skill</code>. A skill ensina o agente a reescrever URLs x.com e twitter.com para tweet.md antes de buscar e a chamar <code>/i/api/convert</code> quando só tem a URL completa do X. Combine a skill com uma chave de API no env do seu agente (<code>TWEETMD_API_KEY</code>) e o agente cuida do resto.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Como funciona o parâmetro thread scope?</strong>
+      <p><code>thread</code> controla quanto da conversa volta com o post solicitado. <code>thread=off</code> retorna apenas o post único (plano gratuito). <code>thread=ancestors</code> retorna o post mais a cadeia de respostas acima dele. <code>thread=branch</code> (padrão pago: branch-15) retorna os ancestrais primeiro e depois as respostas abaixo. <code>thread=all</code> retorna a conversa inteira, incluindo ramos irmãos. Anexe <code>-N</code> para limitar o total de posts (2-500, padrão 20). branch-8 significa: preencher ancestrais até 8 e depois respostas abaixo, não importa o tamanho real da thread.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>O que a tweet.md retorna, JSON ou Markdown?</strong>
+      <p>Markdown, sempre. A tweet.md rejeita explicitamente <code>format=json</code>. O corpo da resposta é texto/markdown com um título, metadados do post e o texto do post. Com <code>format=obsidian</code> você ganha frontmatter YAML em volta do mesmo Markdown, adequado para importação direta em um vault do Obsidian. O custo em créditos e os cabeçalhos (<code>X-Tweetmd-Posts-Returned</code>, <code>X-Tweetmd-Credits-Charged</code>, <code>X-Tweetmd-Thread-Cap</code>, <code>X-Tweetmd-Cap-Hit</code>) vêm nos cabeçalhos HTTP, nunca anexados ao corpo.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Quando devo usar o ThreadGrab em vez da API da tweet.md?</strong>
+      <p>Use a API da tweet.md quando quiser Markdown limpo para um pipeline de LLM, uma consulta única, um loop de agente ou uma importação no Obsidian. Use o ThreadGrab quando quiser guardar a thread: baixar os arquivos de mídia (imagens, vídeo, capturas de tela) para o seu próprio disco, acompanhar correções de posts ao longo do tempo, arquivar um perfil ou lista completa em massa, ou preservar uma declaração pública como evidência com histórico de versões. A tweet.md lê o post. O ThreadGrab guarda o post.</p>
+    </div>
+  </main>
+
+  <footer>
+    <a href="/pt/">Início</a> &middot;
+    <a href="/pt/blog/">Blog</a> &middot;
+    <a href="/pt/blog/tweet-md-vs-threadgrab-2026.html">tweet.md vs ThreadGrab</a>
+    <br>
+    O ThreadGrab é uma ferramenta independente. Não afiliado à X Corp., Twitter, tweet.md ou qualquer serviço apresentado.
+    <br>
+    &copy; 2026 ThreadGrab
+  </footer>
+</body>
+</html>

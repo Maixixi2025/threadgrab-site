@@ -77,8 +77,8 @@
     "@type": "Article",
     "headline": "tweet.md API for LLMs 2026: 5 Markdown Workflows",
     "description": "tweet.md ships a paid API that turns X posts, threads, and profiles into clean Markdown for LLM pipelines. Here are the 5 workflows that actually pay off.",
-    "datePublished": "2026-07-14",
-    "dateModified": "2026-07-14",
+    "datePublished": "2026-08-07",
+    "dateModified": "2026-08-07",
     "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/en/" },
     "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/en/" },
     "mainEntityOfPage": "https://threadgrab.com/en/blog/tweet-md-api-llm-workflows-2026.html",
@@ -160,7 +160,7 @@
 
   <main>
     <h1>tweet.md API for LLMs 2026: <span>5 Markdown Workflows</span></h1>
-    <div class="meta">July 14, 2026 &middot; 9 min read &middot; Guide</div>
+    <div class="meta">August 7, 2026 &middot; 9 min read &middot; Guide</div>
 
     <p>If you have been treating tweet.md as a URL rewrite trick — the browser trick where you swap <code>x.com</code> with <code>tweet.md</code> and the post renders as clean Markdown — you have been missing the better half. tweet.md also ships a small, well-documented HTTP API that takes the same X posts, threads, and profiles and returns them as plain Markdown your LLM can ingest directly. No JSON, no parsing, no cleanup pass.</p>
 
@@ -194,7 +194,7 @@
         <tr><th>Method</th><th>Header / Param</th><th>When to use</th></tr>
       </thead>
       <tbody>
-        <tr><td>Bearer</td><td><code>Authorization: Bearer ***</code></td><td>Scripts, agents, and servers (recommended)</td></tr>
+        <tr><td>Bearer</td><td><code>Authorization: Bearer twmd_key_...</code></td><td>Scripts, agents, and servers (recommended)</td></tr>
         <tr><td>iOS key</td><td><code>x-ios-apikey: twmd_key_...</code></td><td>Apple Shortcuts — returns text/html with line breaks as &lt;br&gt;</td></tr>
         <tr><td>URL param</td><td><code>?apikey=twmd_key_...</code></td><td>Quick manual tests (avoid sharing URLs that contain it)</td></tr>
         <tr><td>Session cookie</td><td>automatic after checkout/login</td><td>Browser rewrites in the same browser after topup</td></tr>

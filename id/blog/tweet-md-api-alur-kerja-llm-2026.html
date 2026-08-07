@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API tweet.md untuk LLM 2026: 5 Alur Kerja Markdown</title>
+  <meta name="description" content="tweet.md menyediakan API berbayar yang mengubah post, utas, dan profil X menjadi Markdown bersih untuk pipeline LLM. Lima alur kerja sepadan.">
+  <meta name="keywords" content="API tweet.md, X ke Markdown API, alur kerja Markdown LLM, autentikasi tweet.md, harga kredit tweet.md, cakupan utas tweet.md, pipeline RAG tweet, ThreadGrab, pengarsipan sosial">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/id/blog/tweet-md-api-alur-kerja-llm-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/tweet-md-api-llm-workflows-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/tweet-md-api-fluxos-llm-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/tweet-md-api-alur-kerja-llm-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/tweet-md-api-llm-workflows-2026.html">
+  <meta property="og:title" content="API tweet.md untuk LLM 2026: 5 Alur Kerja Markdown">
+  <meta property="og:description" content="API berbayar tweet.md mengubah post, utas, dan profil X menjadi Markdown bersih. Lima alur kerja LLM yang membayar kembali diri mereka di sore pertama.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/id/blog/tweet-md-api-alur-kerja-llm-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="API tweet.md untuk LLM 2026: 5 Alur Kerja Markdown">
+  <meta name="twitter:description" content="API berbayar tweet.md mengubah post, utas, dan profil X menjadi Markdown bersih. Lima alur kerja LLM yang sepadan di sore pertama.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo:hover { color: #1d9bf0; }
+    .tagline { color: #888; font-size: 0.85rem; margin-left: auto; }
+    .lang-bar { display: flex; gap: 12px; padding: 12px 24px; background: #1a1a1a; font-size: 0.85rem; }
+    .lang-bar a { color: #888; text-decoration: none; padding: 4px 10px; border-radius: 4px; }
+    .lang-bar a.active { background: #1d9bf0; color: #fff; }
+    .lang-bar a:hover:not(.active) { background: #2a2a2a; color: #fff; }
+    main { max-width: 780px; margin: 0 auto; padding: 40px 24px; }
+    h1 { font-size: 2rem; margin-bottom: 8px; line-height: 1.2; }
+    h1 span { color: #1d9bf0; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { font-size: 1.5rem; margin-top: 40px; margin-bottom: 16px; color: #1d9bf0; }
+    h3 { font-size: 1.15rem; margin-top: 24px; margin-bottom: 12px; color: #fff; }
+    p { margin-bottom: 16px; color: #d0d0d0; }
+    code { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-family: 'SF Mono', Monaco, Consolas, monospace; font-size: 0.9em; color: #ff7b72; }
+    pre { background: #1a1a1a; padding: 16px; border-radius: 6px; overflow-x: auto; margin-bottom: 16px; border: 1px solid #2a2a2a; }
+    pre code { background: none; padding: 0; color: #e6e6e6; font-size: 0.85rem; line-height: 1.5; }
+    ul, ol { margin-bottom: 16px; padding-left: 24px; color: #d0d0d0; }
+    li { margin-bottom: 8px; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 0.9rem; }
+    th { background: #1a1a1a; padding: 10px 12px; text-align: left; color: #1d9bf0; border-bottom: 2px solid #2a2a2a; }
+    td { padding: 10px 12px; border-bottom: 1px solid #2a2a2a; color: #d0d0d0; }
+    tr:hover td { background: #1a1a1a; }
+    .callout { background: #1a2332; border-left: 4px solid #1d9bf0; padding: 16px 20px; margin: 24px 0; border-radius: 4px; }
+    .callout p { margin: 0; color: #d0d0d0; }
+    .callout strong { color: #1d9bf0; }
+    .cta { background: linear-gradient(135deg, #1d9bf0 0%, #1a6fb8 100%); padding: 24px; border-radius: 8px; margin: 32px 0; text-align: center; }
+    .cta p { color: #fff; margin-bottom: 12px; }
+    .btn { display: inline-block; background: #fff; color: #0f0f0f; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; }
+    .btn:hover { background: #e6e6e6; }
+    .faq-item { background: #1a1a1a; padding: 16px 20px; margin-bottom: 12px; border-radius: 6px; border-left: 3px solid #1d9bf0; }
+    .faq-item strong { color: #fff; display: block; margin-bottom: 8px; }
+    .faq-item p { margin: 0; color: #d0d0d0; }
+    .related { background: #1a1a1a; padding: 20px; border-radius: 6px; margin: 32px 0; }
+    .related h3 { color: #1d9bf0; margin-bottom: 12px; }
+    .related ul { list-style: none; padding: 0; }
+    .related li { padding: 6px 0; border-bottom: 1px solid #2a2a2a; }
+    .related li:last-child { border-bottom: none; }
+    .related a { color: #1d9bf0; text-decoration: none; }
+    .related a:hover { text-decoration: underline; }
+    footer { text-align: center; padding: 32px 24px; color: #888; font-size: 0.85rem; border-top: 1px solid #1a1a1a; margin-top: 64px; }
+    footer a { color: #888; text-decoration: none; }
+    footer a:hover { color: #1d9bf0; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "API tweet.md untuk LLM 2026: 5 Alur Kerja Markdown",
+    "description": "tweet.md menyediakan API berbayar yang mengubah post, utas, dan profil X menjadi Markdown bersih untuk pipeline LLM. Lima alur kerja sepadan.",
+    "datePublished": "2026-08-07",
+    "dateModified": "2026-08-07",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/id/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/id/" },
+    "mainEntityOfPage": "https://threadgrab.com/id/blog/tweet-md-api-alur-kerja-llm-2026.html",
+    "inLanguage": "id"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://threadgrab.com/id/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/id/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "API tweet.md untuk LLM 2026", "item": "https://threadgrab.com/id/blog/tweet-md-api-alur-kerja-llm-2026.html" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Apakah API tweet.md gratis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tingkat gratis memberi 5 permintaan post tunggal per IP per bulan kalender, dengan thread=off dan userinfo=off dipaksa aktif. Itu cukup untuk pengujian kasual. Apa pun di luar itu (cakupan utas selain off, userinfo, profil, X Articles) memerlukan kunci API berbayar. Paket berbayar terkecil adalah $5 untuk 500 kredit (1 kredit per post yang dikembalikan, ditambah 2 kredit per penulis unik saat userinfo diaktifkan)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bisakah saya menggunakan API tweet.md dari agen Claude atau ChatGPT?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ya. tweet.md menerbitkan SKILL.md di github.com/tweet-md/skill yang diinstal oleh Claude Code, Cursor, dan runtime agen lain via `npx skills add tweet-md/skill`. Skill tersebut mengajarkan agen untuk menulis ulang URL x.com dan twitter.com menjadi tweet.md sebelum mengambil, dan memanggil /i/api/convert saat hanya punya URL X lengkap. Padukan skill dengan kunci API di env agen Anda (TWEETMD_API_KEY) dan agen menangani sisanya."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bagaimana cara kerja parameter thread scope?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "thread mengontrol seberapa banyak percakapan yang kembali bersama post yang Anda minta. thread=off mengembalikan hanya post tunggal (tingkat gratis). thread=ancestors mengembalikan post plus rantai balasan di atasnya. thread=branch (default berbayar: branch-15) mengembalikan leluhur dulu, lalu balasan di bawahnya. thread=all mengembalikan seluruh percakapan termasuk cabang sejawat. Lampirkan -N untuk membatasi total post (2-500, default 20). branch-8 berarti: isi leluhur sampai 8, lalu balasan di bawah, tidak peduli seberapa panjang utas sebenarnya."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apa yang dikembalikan tweet.md, JSON atau Markdown?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Markdown, selalu. tweet.md secara eksplisit menolak format=json. Badan respons adalah teks/markdown dengan judul, metadata post, dan teks post. Dengan format=obsidian Anda mendapat frontmatter YAML di sekitar Markdown yang sama, cocok untuk impor langsung ke vault Obsidian. Biaya kredit dan header (X-Tweetmd-Posts-Returned, X-Tweetmd-Credits-Charged, X-Tweetmd-Thread-Cap, X-Tweetmd-Cap-Hit) dikembalikan dalam header HTTP, tidak pernah ditempel ke badan."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kapan saya harus menggunakan ThreadGrab alih-alih API tweet.md?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Gunakan API tweet.md saat Anda ingin Markdown bersih untuk pipeline LLM, kueri sekali jalan, loop agen, atau impor Obsidian. Gunakan ThreadGrab saat ingin menyimpan utas: unduh file media (gambar, video, tangkapan layar) ke disk Anda sendiri, lacak koreksi post dari waktu ke waktu, arsipkan profil atau daftar lengkap secara massal, atau simpan pernyataan publik sebagai bukti dengan riwayat versi. tweet.md membaca post. ThreadGrab menyimpan post."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a href="/id/" class="logo">ThreadGrab</a>
+    <span class="tagline">Arsipkan utas X sebagai Markdown</span>
+  </header>
+  <div class="lang-bar">
+    <a href="/en/blog/tweet-md-api-llm-workflows-2026.html">EN</a>
+    <a href="/pt/blog/tweet-md-api-fluxos-llm-2026.html">PT</a>
+    <a href="/id/blog/tweet-md-api-alur-kerja-llm-2026.html" class="active">ID</a>
+  </div>
+
+  <main>
+    <h1>API tweet.md untuk LLM 2026: <span>5 Alur Kerja Markdown</span></h1>
+    <div class="meta">7 Agustus 2026 &middot; 9 menit baca &middot; Panduan</div>
+
+    <p>Jika Anda memperlakukan tweet.md hanya sebagai trik penulisan ulang URL — trik peramban tempat Anda mengganti <code>x.com</code> dengan <code>tweet.md</code> dan postnya tampil sebagai Markdown bersih — Anda sudah melewatkan separuh yang lebih baik. tweet.md juga menyediakan API HTTP kecil yang terdokumentasi baik yang mengambil post, utas, dan profil X yang sama dan mengembalikannya sebagai Markdown polos yang bisa langsung dicerna LLM Anda. Tanpa JSON, tanpa parsing, tanpa tahap pembersihan.</p>
+
+    <p>Tingkat gratis mencakup pengujian kasual (5 permintaan post tunggal per IP per bulan kalender, hanya <code>thread=off</code>). Apa pun di luar itu — rantai leluhur, konteks cabang, dump profil, X Articles — memerlukan kunci API berbayar. Panduan ini menelusuri permukaan API, empat metode autentikasi, lima alur kerja LLM yang membayar kembali diri mereka dalam satu sore, dan kapan harus beralih ke ThreadGrab.</p>
+
+    <div class="callout">
+      <p><strong>Ringkasan singkat:</strong> API tweet.md mengembalikan <code>text/markdown</code>, bukan JSON. Tingkat gratis hanya post tunggal. Tingkat berbayar adalah $5 untuk 500 kredit. Lima alur kerja yang benar-benar sepadan: ingest RAG, penarikan kutipan, penggunaan alat oleh agen, sinkronisasi Obsidian, dan Apple Shortcuts di iOS.</p>
+    </div>
+
+    <h2>Apa yang Sebenarnya Dikembalikan API tweet.md</h2>
+
+    <p>API ini bertujuan tunggal: diberikan URL post X (atau handle + ID post, atau handle profil), kembalikan dokumen Markdown dengan teks post, handle penulis, stempel waktu, tautan media, statistik keterlibatan, dan tweet yang dikutip atau balasan tertanam yang dirender sebagai blok Markdown bersarang. Keluarannya adalah <code>text/markdown</code>, tidak pernah JSON. tweet.md secara eksplisit menolak <code>format=json</code>.</p>
+
+    <p>Ada tiga titik masuk:</p>
+
+    <ul>
+      <li><strong>Penulisan ulang peramban:</strong> ganti <code>x.com</code> dengan <code>tweet.md</code> di URL post mana pun. Berfungsi tanpa kunci di peramban yang sama setelah checkout (cookie sesi). Tingkat gratis hanya post tunggal.</li>
+      <li><strong>Post/utas programatik:</strong> <code>GET https://tweet.md/{handle}/status/{tweetId}</code> saat Anda sudah punya handle dan ID. Bentuk respons sama dengan penulisan ulang peramban.</li>
+      <li><strong>Programatik dengan URL lengkap:</strong> <code>GET https://tweet.md/i/api/convert?url={encoded_url}</code> saat Anda hanya punya URL x.com lengkap. Ini adalah endpoint yang digunakan agen dan Shortcuts.</li>
+      <li><strong>Profil:</strong> <code>GET https://tweet.md/{handle}</code> (peramban) atau <code>GET https://tweet.md/i/api/profile?handle={handle}</code> (programatik). Memerlukan kredit.</li>
+    </ul>
+
+    <p>Keempat endpoint menerima parameter kueri yang sama: <code>format</code>, <code>thread</code>, <code>userinfo</code>, <code>stats</code>, <code>metadata</code>, dan (untuk profil) <code>pinnedpost</code>, <code>latest</code>, <code>replies</code>, <code>articles</code>. Default sedikit berbeda antara gratis dan berbayar: tingkat gratis memaksa <code>thread=off</code> dan <code>userinfo=off</code>; tingkat berbayar default ke <code>thread=ancestors-20</code> dan <code>userinfo=author</code> saat parameter tersebut dihilangkan.</p>
+
+    <h2>Autentikasi — Empat Metode, Satu Kunci</h2>
+
+    <p>tweet.md menerima kunci API yang sama dalam empat cara berbeda. Pilih yang paling cocok dengan runtime Anda.</p>
+
+    <table>
+      <thead>
+        <tr><th>Metode</th><th>Header / Parameter</th><th>Kapan menggunakannya</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Bearer</td><td><code>Authorization: Bearer twmd_key_...</code></td><td>Skrip, agen, dan server (direkomendasikan)</td></tr>
+        <tr><td>Kunci iOS</td><td><code>x-ios-apikey: twmd_key_...</code></td><td>Apple Shortcuts — mengembalikan text/html dengan jeda baris sebagai &lt;br&gt;</td></tr>
+        <tr><td>Parameter URL</td><td><code>?apikey=twmd_key_...</code></td><td>Pengujian manual cepat (hindari berbagi URL yang memuatnya)</td></tr>
+        <tr><td>Cookie sesi</td><td>otomatis setelah checkout/login</td><td>Penulisan ulang peramban di peramban yang sama setelah topup</td></tr>
+        <tr><td>IP tepercaya</td><td>di daftar putih dashboard</td><td>IP server publik — agen beranggaran tetap tanpa mengirim kunci</td></tr>
+      </tbody>
+    </table>
+
+    <p>Kuncinya terlihat seperti <code>twmd_key_…</code> dan dikirim melalui email setelah checkout Stripe, atau dibuat dari dashboard. IP tepercaya memungkinkan Anda melewati header sepenuhnya untuk IP server tetap — berguna saat menjalankan cron di VPS dengan alamat stabil. Aturan preseden: jika permintaan menyertakan header Bearer dan IP tepercaya, kunci Bearer menang.</p>
+
+    <p>Tingkat gratis ada untuk pengujian kasual tetapi bukan yang diinginkan agen produksi. Tingkat gratis memaksa <code>thread=off</code> dan <code>userinfo=off</code>, artinya Anda hanya mendapat post tunggal, tanpa metadata penulis, tanpa konteks balasan. Lima permintaan per IP per bulan kalender. Apa pun di luar smoke-testing memerlukan kunci berbayar.</p>
+
+    <h2>Endpoint /i/api/convert (Programatik)</h2>
+
+    <p>Ini adalah endpoint yang paling sering dipanggil agen Anda. Kontraknya sederhana: berikan URL x.com lengkap sebagai parameter kueri, dapatkan dokumen Markdown. Header membawa kunci Bearer.</p>
+
+    <pre><code>curl -H "Authorization: Bearer twmd_key_..." \
+  "https://tweet.md/i/api/convert?url=https%3A%2F%2Fx.com%2Fjack%2Fstatus%2F20&amp;thread=branch-8"
+</code></pre>
+
+    <p>Responsnya adalah utas lengkap yang dirender sebagai Markdown. Parameter <code>thread=branch-8</code> membatasi respons pada total 8 post: leluhur dulu (rantai di atas post Anda), lalu balasan di bawah. Header respons sebenarnya membawa metadata yang harus ditagih agen Anda:</p>
+
+    <ul>
+      <li><code>X-Tweetmd-Posts-Returned</code> — berapa banyak post yang kembali di badan</li>
+      <li><code>X-Tweetmd-Credits-Charged</code> — kredit yang dipotong untuk panggilan ini</li>
+      <li><code>X-Tweetmd-Thread-Cap</code> — batas yang Anda minta (mis. 8)</li>
+      <li><code>X-Tweetmd-Cap-Hit</code> — apakah batas memotong utas yang lebih panjang</li>
+    </ul>
+
+    <p>Header ini hanya dilampirkan ke respons HTTP, tidak pernah ke badan Markdown. Agen Anda dapat membacanya untuk mencatat penggunaan kredit tanpa mencemari konten yang dicerna LLM.</p>
+
+    <h2>Endpoint /i/api/profile (Scraping Profil)</h2>
+
+    <p>Profil ditagih berbeda. Profil dasar berharga 2 kredit, ditambah 1 kredit per post yang dikembalikan di bagian mana pun yang diaktifkan (pinned, latest, replies, articles). Tingkat gratis tidak menyertakan akses profil sama sekali.</p>
+
+    <pre><code>curl -H "Authorization: Bearer twmd_key_..." \
+  "https://tweet.md/i/api/profile?handle=jack&amp;latest=10&amp;replies=5"
+</code></pre>
+
+    <p>Default konservatif: post tersemat aktif, 5 post terbaru, balasan nonaktif, artikel nonaktif. Parameter <code>latest</code>, <code>replies</code>, dan <code>articles</code> masing-masing menerima rentang (latest 5-50, replies dan articles 5-20). Setiap post yang dikembalikan adalah +1 kredit. Untuk dump profil dengan post tersemat, 10 terbaru, dan 5 balasan, Anda menghabiskan 2 + 1 + 10 + 5 = 18 kredit untuk satu profil.</p>
+
+    <p>Ini adalah endpoint yang Anda inginkan saat membangun peneliti X atau penarik prospek. Tarik profil sekali, dapatkan bio + statistik + 10 post terbaru sebagai satu dokumen Markdown. LLM Anda dapat mencernanya sebagai konteks untuk email penjangkauan yang dipersonalisasi atau analisis kompetitif.</p>
+
+    <h2>5 Alur Kerja yang Benar-Benar Sepadan</h2>
+
+    <p>Lima pola muncul berulang kali di pipeline LLM nyata yang menyentuh tweet.md. Daftar ini tidak lengkap, tetapi setiap pola membayar paket kredit $5 dalam waktu kurang dari satu sore.</p>
+
+    <h3>Alur Kerja 1: Ingest RAG dari Daftar Tweet Terkurasi</h3>
+
+    <p>Penggunaan produksi paling umum. Anda memelihara daftar URL post X tentang suatu topik (kerangka kerja agen AI, nasihat indie hacker, riset industri). Pada cron, skrip Anda mengambil setiap URL via <code>/i/api/convert</code> dengan <code>thread=branch-8</code>, memisahkan pada pemisah per post, membuat embedding untuk setiap post dengan model embedding Anda, dan mendorongnya ke vector store Anda. Keluaran Markdown sudah bersih: tanpa penghapusan HTML, tanpa dekode entitas, tanpa parsing JSON. Logika chunking Anda dapat memisahkan pada header <code># 1/N — Post by …</code> yang dikeluarkan tweet.md.</p>
+
+    <pre><code># Pseudo-pipeline
+for url in curated_urls:
+    md = requests.get(
+        f"https://tweet.md/i/api/convert",
+        params={"url": url, "thread": "branch-8", "userinfo": "author"},
+        headers={"Authorization": f"Bearer {TWEETMD_API_KEY}"},
+    ).text
+    for chunk in split_on_post_headers(md):
+        embed_and_store(chunk, metadata={"source": url})
+</code></pre>
+
+    <p>Biaya: 1 kredit per post di utas yang dikembalikan, ditambah 2 untuk penulis. Untuk 50 utas dengan rata-rata 4 post, itu 50 + (50 &times; 2) = 150 kredit — masih di dalam paket $5.</p>
+
+    <h3>Alur Kerja 2: Penarikan Kutipan untuk Post Bentuk Panjang</h3>
+
+    <p>Anda sedang menulis Substack atau bentuk panjang LinkedIn yang sarat riset dan ingin mengutip 10 utas X tertentu. Untuk setiap utas yang dikutip, ambil URL post dengan <code>thread=ancestors</code> untuk mendapatkan rantai balasan lengkap, lalu kutip bagian yang relevan. Karena tweet.md mengembalikan Markdown dengan URL sumber di header post, Anda punya format kutipan siap pakai:</p>
+
+    <pre><code>&gt; Original post: https://x.com/exampleuser/status/9000000000000000001
+&gt; Captured: 2026-05-17T00:00:00.000Z
+&gt;
+&gt; Shipping notes: what changed in this release and why.
+</code></pre>
+
+    <p>Anda dapat menempel blok ini langsung ke artikel Anda dengan atribusi yang tepat. Stempel waktu adalah waktu pengambilan, bukan waktu post asli, tetapi tweet.md juga menyertakan waktu post asli sebagai bidang metadata terpisah saat Anda menggunakan <code>userinfo=author</code>.</p>
+
+    <h3>Alur Kerja 3: Penggunaan Alat oleh Agen (Claude Code / Cursor / skills.sh)</h3>
+
+    <p>tweet.md menerbitkan SKILL.md resmi di <code>github.com/tweet-md/skill</code> yang terinstal via <code>npx skills add tweet-md/skill</code>. Skill tersebut mengajarkan agen tiga pola: (1) menulis ulang URL x.com dan twitter.com menjadi tweet.md sebelum mengambil, (2) memanggil <code>/i/api/convert</code> saat hanya punya URL X lengkap, (3) memanggil <code>/i/api/profile</code> saat membutuhkan konteks bio. Padukan skill dengan kunci API di lingkungan agen Anda:</p>
+
+    <pre><code>export TWEETMD_API_KEY=twmd_key_...
+
+# In Claude Code / Cursor, the agent will now:
+# - rewrite x.com/jack/status/20 → tweet.md/jack/status/20 when fetching
+# - call /i/api/convert when it has the full URL
+# - log credit usage from X-Tweetmd-Credits-Charged headers
+</code></pre>
+
+    <p>Tanpa skill, agen yang menemukan URL x.com memiliki tiga opsi buruk: mengunjungi X langsung (dinding login + pelacakan), mencoba scraping post (rapuh, diblokir deteksi bot X), atau memanggil pengambil web generik (mengembalikan HTML, bukan Markdown, dengan iklan dan piksel pelacakan). Dengan skill, agen menulis ulang URL dan mendapatkan dokumen Markdown bersih dalam satu panggilan HTTP.</p>
+
+    <h3>Alur Kerja 4: Sinkronisasi Vault Obsidian</h3>
+
+    <p>Parameter <code>format=obsidian</code> membungkus Markdown yang sama dalam frontmatter YAML. Frontmatter mencakup source, author, author_handle, stempel waktu post, stempel waktu pengambilan, bio (untuk profil), stats, dan tags. Badan adalah teks post dan metadata yang Anda dapatkan dengan format <code>markdown</code> default.</p>
+
+    <pre><code>---
+source: https://x.com/jack/status/20
+author: "jack"
+author_handle: jack
+posted: 2006-03-21T20:50:14.000Z
+captured: 2026-05-17T00:00:00.000Z
+tags: [x-post, tweetmd]
+---
+
+# X Post — jack — 2006-03-21
+Post ID: 20
+Source: https://x.com/jack/status/20
+...
+</code></pre>
+
+    <p>Pada cron harian, skrip sinkronisasi Anda berjalan melalui folder URL X yang disimpan, mengambil setiap URL dengan <code>format=obsidian</code>, dan menulis hasilnya ke vault Anda. Plugin Dataview Obsidian kemudian dapat mengindeks post berdasarkan penulis, tag, atau tanggal. Frontmatter adalah satu-satunya yang membedakan ini dari sinkronisasi Markdown polos — jika Anda hanya menginginkan Markdown polos, hilangkan <code>format</code>.</p>
+
+    <h3>Alur Kerja 5: Apple Shortcuts di iOS</h3>
+
+    <p>Shortcut bawaan terinstal dari halaman docs tweet.md dan menjalankan satu aksi HTTP. Kuncinya di sini adalah header <code>x-ios-apikey</code> — tweet.md mendeteksi permintaan kunci iOS dan mengembalikan <code>text/html</code> dengan jeda baris yang dikonversi menjadi <code>&lt;br&gt;</code>, yang dapat disalin Shortcuts ke catatan dengan bersih.</p>
+
+    <pre><code>GET https://tweet.md/jack/status/20
+Headers:
+  x-ios-apikey: twmd_key_...
+</code></pre>
+
+    <p>Shortcut menerima input Share Sheet, mundur ke Clipboard jika dibuka langsung, menulis ulang <code>x.com</code> menjadi <code>tweet.md</code> di URL, memanggil endpoint dengan header iOS, dan menyalin Markdown yang dikembalikan ke clipboard Anda. Dari sana Anda menempel ke Apple Notes, Obsidian Mobile, atau aplikasi apa pun yang menerima teks. Shortcut menyimpan kunci Anda secara lokal; jangan bagikan salinan khusus.</p>
+
+    <div class="cta">
+      <p><strong>Simpan utas yang penting.</strong> ThreadGrab mengarsipkan utas X sebagai Markdown dengan media, pelacakan koreksi, dan ekspor massal. tweet.md membaca post — ThreadGrab menyimpannya.</p>
+      <a class="btn" href="/id/">Coba ThreadGrab</a>
+    </div>
+
+    <h2>Ringkasan Cakupan Utas</h2>
+
+    <p>Parameter <code>thread</code> adalah bagian API yang paling membingungkan. Keempat nilai memetakan empat cakupan percakapan, dan akhiran <code>-N</code> membatasi respons. Pilih cakupan terkecil yang memberi LLM Anda konteks yang dibutuhkan.</p>
+
+    <table>
+      <thead>
+        <tr><th>Cakupan</th><th>Apa yang kembali</th><th>Default</th><th>Penggunaan khas</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>off</code></td><td>Hanya post tunggal</td><td>Tingkat gratis dipaksa</td><td>Kutipan tunggal</td></tr>
+        <tr><td><code>ancestors</code></td><td>Post plus rantai balasan di atasnya hingga akar percakapan</td><td>—</td><td>Membaca balasan dalam konteks lengkap</td></tr>
+        <tr><td><code>branch</code></td><td>Leluhur dulu, lalu balasan di bawah (cabang sejawat dikecualikan)</td><td>branch-15 (berbayar)</td><td>Ingest RAG, penarikan kutipan</td></tr>
+        <tr><td><code>all</code></td><td>Seluruh percakapan termasuk cabang sejawat</td><td>—</td><td>Pemetaan topik, analisis kontroversi</td></tr>
+      </tbody>
+    </table>
+
+    <p>Sintaks batas adalah <code>scope-N</code> dengan N 2-500 (default 20). <code>branch-8</code> berarti: habiskan hingga 8 post untuk leluhur dulu, lalu balasan di bawah, tidak peduli seberapa panjang utas sebenarnya. Jika post Anda punya 12 leluhur, branch-8 menghabiskan semua 8 di rantai ke atas dan mengabaikan balasan di bawah. Jika post Anda punya 3 leluhur, branch-8 menghabiskan 3 ke atas dan 5 ke bawah. <code>full</code> dan <code>conversation</code> adalah alias dari <code>branch</code> dan <code>all</code>.</p>
+
+    <h2>format=markdown vs format=obsidian</h2>
+
+    <p>Format <code>markdown</code> default mengembalikan badan post dengan stats, media, kutipan, dan X Articles lengkap saat ada. Itulah yang Anda inginkan saat memberi makan LLM atau menyimpan ke catatan teks polos.</p>
+
+    <p>Format <code>obsidian</code> menambahkan frontmatter YAML di bagian atas: <code>source</code>, <code>author</code>, <code>author_handle</code>, <code>posted</code>, <code>captured</code>, <code>bio</code> opsional untuk profil, blok <code>stats</code> opsional, dan <code>tags</code>. Badan identik dengan format markdown. Gunakan obsidian saat ingin kueri Dataview berdasarkan penulis atau tanggal, atau saat ingin tampilan grafik Obsidian menunjukkan koneksi antar penulis dan topik.</p>
+
+    <p>Tak satu pun format mengembalikan JSON. tweet.md dengan sengaja menolak <code>format=json</code> — filosofi proyeknya adalah Markdown sebagai format pertukaran kanonis untuk konsumen LLM, dan pembungkusan JSON menambah biaya parsing tanpa menambah nilai.</p>
+
+    <h2>Matematika Harga — Paket Mana yang Dibeli</h2>
+
+    <p>Tiga paket kredit, $5 / $19 / $49. Biaya per kredit turun seiring ukuran paket bertambah, tetapi jumlah dolar adalah keputusan nyata. Berikut matematika titik impasnya.</p>
+
+    <table>
+      <thead>
+        <tr><th>Paket</th><th>Kredit</th><th>Per kredit</th><th>Ambil post tunggal</th><th>Utas branch-8</th><th>Dump profil</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>$5</td><td>500</td><td>$0,0100</td><td>~500 ambilan</td><td>~62 ambilan</td><td>~31 dump</td></tr>
+        <tr><td>$19 (nilai terbaik)</td><td>2.200</td><td>$0,0086</td><td>~2.200 ambilan</td><td>~275 ambilan</td><td>~138 dump</td></tr>
+        <tr><td>$49</td><td>6.000</td><td>$0,0082</td><td>~6.000 ambilan</td><td>~750 ambilan</td><td>~375 dump</td></tr>
+      </tbody>
+    </table>
+
+    <p>"Ambil post tunggal" mengasumsikan <code>thread=off</code> dan <code>userinfo=off</code>, jadi 1 kredit per panggilan. "Utas branch-8" mengasumsikan 8 post dikembalikan (8 kredit) + 2 untuk metadata penulis = 10 kredit per panggilan. "Dump profil" mengasumsikan tersemat + 10 terbaru + 5 balasan = 18 kredit per panggilan (2 dasar + 1 tersemat + 10 terbaru + 5 balasan).</p>
+
+    <p>Paket $19 adalah titik awal yang tepat untuk kebanyakan kreator individu: 2.200 kredit mencakup sekitar 138 dump profil atau 275 utas branch-8. Paket $49 untuk tim yang menjalankan beberapa cron harian atau agen yang mencerna puluhan utas per hari. Paket $5 untuk menguji API sebelum berkomitmen.</p>
+
+    <h2>Kapan Memadukan tweet.md dengan ThreadGrab</h2>
+
+    <p>tweet.md dan ThreadGrab bersifat saling melengkapi, bukan bersaing. Versi singkatnya: tweet.md membaca post, ThreadGrab menyimpan post.</p>
+
+    <table>
+      <thead>
+        <tr><th>Kemampuan</th><th>API tweet.md</th><th>ThreadGrab</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Membaca post X sebagai Markdown</td><td>Ya (rendering sisi server)</td><td>Ya (ekspor lalu baca)</td></tr>
+        <tr><td>Satu panggilan HTTP per post</td><td>Ya</td><td>Tidak (multi-langkah)</td></tr>
+        <tr><td>Siap pipeline LLM</td><td>Ya (text/markdown, tanpa JSON)</td><td>Tidak (keluaran Markdown, badan lebih besar)</td></tr>
+        <tr><td>File media diunduh ke disk</td><td>Tidak (hanya tautan)</td><td>Ya</td></tr>
+        <tr><td>Melacak koreksi post dari waktu ke waktu</td><td>Tidak</td><td>Ya (ambil ulang + diff)</td></tr>
+        <tr><td>Mengarsipkan profil atau daftar massal</td><td>Berbasis kredit, terbatas</td><td>Ya (ekspor penuh)</td></tr>
+        <tr><td>Ekspor ke Notion / GitHub / S3</td><td>Tidak</td><td>Ya</td></tr>
+        <tr><td>Dapat dihosting sendiri</td><td>Tidak</td><td>Tidak (hosting cloud)</td></tr>
+        <tr><td>Model harga</td><td>Per kredit</td><td>Berlangganan / sekali bayar</td></tr>
+      </tbody>
+    </table>
+
+    <p>Pembagian kerja alami: tweet.md untuk jalur baca dan loop agen (LLM Anda mengambil post, merangkumnya, menjawab pertanyaan tentangnya), ThreadGrab untuk jalur simpan (Anda menemukan utas yang layak dipertahankan, menyimpannya ke penyimpanan Anda sendiri dengan media dan riwayat versi). Kebanyakan kreator aktif akhirnya menggunakan keduanya — tweet.md untuk puluhan bacaan sekali pakai per hari, ThreadGrab untuk beberapa utas per minggu yang layak mendapatkan salinan permanen.</p>
+
+    <div class="related">
+      <h3>Terkait di ThreadGrab</h3>
+      <ul>
+        <li><a href="/id/blog/tweet-md-pengalihan-peramban-2026.html">Pengalihan Browser tweet.md 2026: Ganti Tautan x.com</a></li>
+        <li><a href="/id/blog/tweet-md-vs-threadgrab-2026.html">tweet.md vs ThreadGrab 2026: Alat X ke Markdown Dibandingkan</a></li>
+        <li><a href="/id/blog/tweet-md-seo-llm-citation-pivot-2026.html">Buat Post X Siap Dikutip AI: Perubahan SEO 2026 tweet.md</a></li>
+        <li><a href="/id/blog/x-post-koreksi-notifikasi-ambil-ulang-2026.html">Notifikasi Koreksi Post X &amp; Ambil Ulang Otomatis ThreadGrab</a></li>
+      </ul>
+    </div>
+
+    <h2>FAQ</h2>
+
+    <div class="faq-item">
+      <strong>Apakah API tweet.md gratis?</strong>
+      <p>Tingkat gratis memberi 5 permintaan post tunggal per IP per bulan kalender dengan <code>thread=off</code> dan <code>userinfo=off</code> dipaksa aktif. Itu cukup untuk pengujian kasual. Apa pun di luar itu (cakupan utas selain off, userinfo, profil, X Articles) memerlukan kunci API berbayar. Paket berbayar terkecil adalah $5 untuk 500 kredit (1 kredit per post yang dikembalikan, ditambah 2 kredit per penulis unik saat userinfo diaktifkan).</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Bisakah saya menggunakan API tweet.md dari agen Claude atau ChatGPT?</strong>
+      <p>Ya. tweet.md menerbitkan SKILL.md di <code>github.com/tweet-md/skill</code> yang diinstal oleh Claude Code, Cursor, dan runtime agen lain via <code>npx skills add tweet-md/skill</code>. Skill tersebut mengajarkan agen untuk menulis ulang URL x.com dan twitter.com menjadi tweet.md sebelum mengambil, dan memanggil <code>/i/api/convert</code> saat hanya punya URL X lengkap. Padukan skill dengan kunci API di env agen Anda (<code>TWEETMD_API_KEY</code>) dan agen menangani sisanya.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Bagaimana cara kerja parameter thread scope?</strong>
+      <p><code>thread</code> mengontrol seberapa banyak percakapan yang kembali bersama post yang Anda minta. <code>thread=off</code> mengembalikan hanya post tunggal (tingkat gratis). <code>thread=ancestors</code> mengembalikan post plus rantai balasan di atasnya. <code>thread=branch</code> (default berbayar: branch-15) mengembalikan leluhur dulu, lalu balasan di bawah. <code>thread=all</code> mengembalikan seluruh percakapan termasuk cabang sejawat. Lampirkan <code>-N</code> untuk membatasi total post (2-500, default 20). branch-8 berarti: isi leluhur sampai 8, lalu balasan di bawah, tidak peduli seberapa panjang utas sebenarnya.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Apa yang dikembalikan tweet.md, JSON atau Markdown?</strong>
+      <p>Markdown, selalu. tweet.md secara eksplisit menolak <code>format=json</code>. Badan respons adalah teks/markdown dengan judul, metadata post, dan teks post. Dengan <code>format=obsidian</code> Anda mendapat frontmatter YAML di sekitar Markdown yang sama, cocok untuk impor langsung ke vault Obsidian. Biaya kredit dan header (<code>X-Tweetmd-Posts-Returned</code>, <code>X-Tweetmd-Credits-Charged</code>, <code>X-Tweetmd-Thread-Cap</code>, <code>X-Tweetmd-Cap-Hit</code>) dikembalikan dalam header HTTP, tidak pernah ditempel ke badan.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Kapan saya harus menggunakan ThreadGrab alih-alih API tweet.md?</strong>
+      <p>Gunakan API tweet.md saat Anda ingin Markdown bersih untuk pipeline LLM, kueri sekali jalan, loop agen, atau impor Obsidian. Gunakan ThreadGrab saat ingin menyimpan utas: unduh file media (gambar, video, tangkapan layar) ke disk Anda sendiri, lacak koreksi post dari waktu ke waktu, arsipkan profil atau daftar lengkap secara massal, atau simpan pernyataan publik sebagai bukti dengan riwayat versi. tweet.md membaca post. ThreadGrab menyimpan post.</p>
+    </div>
+  </main>
+
+  <footer>
+    <a href="/id/">Beranda</a> &middot;
+    <a href="/id/blog/">Blog</a> &middot;
+    <a href="/id/blog/tweet-md-vs-threadgrab-2026.html">tweet.md vs ThreadGrab</a>
+    <br>
+    ThreadGrab adalah alat independen. Tidak berafiliasi dengan X Corp., Twitter, tweet.md, atau layanan yang ditampilkan mana pun.
+    <br>
+    &copy; 2026 ThreadGrab
+  </footer>
+</body>
+</html>
