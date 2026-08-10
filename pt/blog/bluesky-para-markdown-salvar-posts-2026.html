@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bluesky para Markdown 2026: Salve Posts como Markdown</title>
+  <meta name="description" content="Salve posts do Bluesky como Markdown em 2026 com a API pública atproto e ferramentas de arquivo para manter uma cópia local durável de seus posts.">
+  <meta name="keywords" content="Bluesky para Markdown, salvar posts do Bluesky como Markdown, API atproto Bluesky, exportar posts Bluesky, arquivamento Bluesky 2026, feed Bluesky curl, fluxo Markdown Bluesky, ThreadGrab, backup de posts Bluesky">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/pt/blog/bluesky-para-markdown-salvar-posts-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/bluesky-to-markdown-save-posts-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/bluesky-para-markdown-salvar-posts-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/bluesky-ke-markdown-simpan-posts-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/bluesky-to-markdown-save-posts-2026.html">
+  <meta property="og:title" content="Bluesky para Markdown 2026: Salve Posts como Markdown">
+  <meta property="og:description" content="Salve posts do Bluesky como Markdown em 2026 com a API pública atproto e ferramentas de arquivo para manter uma cópia local durável de seus posts.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/pt/blog/bluesky-para-markdown-salvar-posts-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bluesky para Markdown 2026: Salve Posts como Markdown">
+  <meta name="twitter:description" content="Salve posts do Bluesky como Markdown em 2026 com a API pública atproto e ferramentas de arquivo para manter uma cópia local durável de seus posts.">
+  <meta property="article:published_time" content="2026-08-10">
+  <meta property="article:modified_time" content="2026-08-10">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo:hover { color: #1d9bf0; }
+    .tagline { color: #888; font-size: 0.85rem; margin-left: auto; }
+    .lang-bar { display: flex; gap: 12px; padding: 12px 24px; background: #1a1a1a; font-size: 0.85rem; }
+    .lang-bar a { color: #888; text-decoration: none; padding: 4px 10px; border-radius: 4px; }
+    .lang-bar a.active { background: #1d9bf0; color: #fff; }
+    .lang-bar a:hover:not(.active) { background: #2a2a2a; color: #fff; }
+    main { max-width: 780px; margin: 0 auto; padding: 40px 24px; }
+    h1 { font-size: 2rem; margin-bottom: 8px; line-height: 1.2; }
+    h1 span { color: #1d9bf0; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { font-size: 1.5rem; margin-top: 40px; margin-bottom: 16px; color: #1d9bf0; }
+    h3 { font-size: 1.15rem; margin-top: 24px; margin-bottom: 12px; color: #fff; }
+    p { margin-bottom: 16px; color: #d0d0d0; }
+    code { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-family: 'SF Mono', Monaco, Consolas, monospace; font-size: 0.9em; color: #ff7b72; }
+    pre { background: #1a1a1a; padding: 16px; border-radius: 6px; overflow-x: auto; margin-bottom: 16px; border: 1px solid #2a2a2a; }
+    pre code { background: none; padding: 0; color: #e6e6e6; font-size: 0.85rem; line-height: 1.5; }
+    ul, ol { margin-bottom: 16px; padding-left: 24px; color: #d0d0d0; }
+    li { margin-bottom: 8px; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 0.9rem; }
+    th { background: #1a1a1a; padding: 10px 12px; text-align: left; color: #1d9bf0; border-bottom: 2px solid #2a2a2a; }
+    td { padding: 10px 12px; border-bottom: 1px solid #2a2a2a; color: #d0d0d0; }
+    tr:hover td { background: #1a1a1a; }
+    .callout { background: #1a2332; border-left: 4px solid #1d9bf0; padding: 16px 20px; margin: 24px 0; border-radius: 4px; }
+    .callout p { margin: 0; color: #d0d0d0; }
+    .callout strong { color: #1d9bf0; }
+    .cta { background: linear-gradient(135deg, #1d9bf0 0%, #1a6fb8 100%); padding: 24px; border-radius: 8px; margin: 32px 0; text-align: center; }
+    .cta p { color: #fff; margin-bottom: 12px; }
+    .btn { display: inline-block; background: #fff; color: #0f0f0f; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; }
+    .btn:hover { background: #e6e6e6; }
+    .faq-item { background: #1a1a1a; padding: 16px 20px; margin-bottom: 12px; border-radius: 6px; border-left: 3px solid #1d9bf0; }
+    .faq-item strong { color: #fff; display: block; margin-bottom: 8px; }
+    .faq-item p { margin: 0; color: #d0d0d0; }
+    .related { background: #1a1a1a; padding: 20px; border-radius: 6px; margin: 32px 0; }
+    .related h3 { color: #1d9bf0; margin-bottom: 12px; }
+    .related ul { list-style: none; padding: 0; }
+    .related li { padding: 6px 0; border-bottom: 1px solid #2a2a2a; }
+    .related li:last-child { border-bottom: none; }
+    .related a { color: #1d9bf0; text-decoration: none; }
+    .related a:hover { text-decoration: underline; }
+    footer { text-align: center; padding: 32px 24px; color: #888; font-size: 0.85rem; border-top: 1px solid #1a1a1a; margin-top: 64px; }
+    footer a { color: #888; text-decoration: none; }
+    footer a:hover { color: #1d9bf0; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Bluesky para Markdown 2026: Salve Posts como Markdown",
+    "description": "Salve posts do Bluesky como Markdown em 2026 com a API pública atproto e ferramentas de arquivo para manter uma cópia local durável de seus posts.",
+    "datePublished": "2026-08-10",
+    "dateModified": "2026-08-10",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/" },
+    "mainEntityOfPage": "https://threadgrab.com/pt/blog/bluesky-para-markdown-salvar-posts-2026.html",
+    "inLanguage": "pt"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://threadgrab.com/pt/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/pt/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Bluesky para Markdown 2026", "item": "https://threadgrab.com/pt/blog/bluesky-para-markdown-salvar-posts-2026.html" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Posso salvar posts do Bluesky como Markdown?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. A API pública atproto do Bluesky serve os posts como JSON simples sem autenticação, então você pode buscar um post, uma thread ou um feed completo do autor e formatá-lo como Markdown na sua própria máquina. Ferramentas dedicadas e extensões de navegador também renderizam posts do Bluesky como Markdown com um clique."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "A API do Bluesky exige conta ou token?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Para posts públicos, não. O endpoint público atproto public.api.bsky.app permite resolver um handle para um DID e buscar feeds de autores ou posts individuais sem fazer login. Você só precisa de uma senha de app se quiser ler conteúdo privado ou agir na conta."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como obtenho um post do Bluesky como Markdown?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O método mais simples é substituir o domínio na URL do post ou chamar a API pública diretamente. Por exemplo, resolva um handle com com.atproto.identity.resolveHandle e depois chame app.bsky.feed.getAuthorFeed ou getPosts e converta o texto do record em Markdown. Um script local pode automatizar isso para cada post que você quiser guardar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O ThreadGrab é compatível com o Bluesky?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. O ThreadGrab é construído em torno da conversão de conteúdo social em Markdown limpo e do download de mídias vinculadas para o seu próprio armazenamento. Ele suporta o mesmo fluxo para posts do Bluesky como faz para threads do X e posts de texto longo, então você termina com uma biblioteca Markdown portátil e pesquisável em várias plataformas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Por que salvar posts do Bluesky como Markdown em vez de screenshots?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Markdown é texto simples, então é pesquisável, versionável em git, indexável por um LLM e legível em qualquer app de notas. Um screenshot é uma imagem: você não pode fazer Ctrl+F, não pode diffar e não pode colá-lo em um fluxo de IA. O Markdown preserva o texto, a estrutura e os links enquanto continua portátil e à prova de futuro."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a href="/pt/" class="logo">ThreadGrab</a>
+    <span class="tagline">Arquive threads do X como Markdown</span>
+  </header>
+  <div class="lang-bar">
+    <a href="/en/blog/bluesky-to-markdown-save-posts-2026.html">EN</a>
+    <a href="/pt/blog/bluesky-para-markdown-salvar-posts-2026.html" class="active">PT</a>
+    <a href="/id/blog/bluesky-ke-markdown-simpan-posts-2026.html">ID</a>
+  </div>
+
+  <main>
+    <h1>Bluesky para Markdown 2026: <span>Salve Posts como Markdown</span></h1>
+    <div class="meta">10 de Agosto, 2026 &middot; 10 min de leitura &middot; Guia</div>
+
+    <p>O Bluesky é construído sobre o AT Protocol (&ldquo;atproto&rdquo;), e essa escolha o torna uma das plataformas sociais mais fáceis de exportar em 2026. Cada post público, thread e feed de autor é servido por uma API pública que retorna JSON limpo &mdash; sem conta, sem token e sem aperto de mão de rate limit para leituras básicas. Isso significa que &ldquo;Bluesky para Markdown&rdquo; não é um contorno de nicho; é um fluxo de trabalho normal e suportado.</p>
+
+    <p>Este guia mostra por que salvar posts do Bluesky como Markdown vale a pena, como funcionam os endpoints públicos do atproto e os caminhos mais rápidos para um arquivo local portátil &mdash; de um único <code>curl</code> a um script em lote que você pode rodar na sua timeline inteira.</p>
+
+    <div class="callout">
+      <p><strong>Resumo rápido:</strong> o Bluesky expõe posts públicos por meio de <code>public.api.bsky.app</code> sem autenticação. Resolva um handle para um DID, busque o feed, converta o texto do record em Markdown e você terá uma cópia durável e pesquisável em segundos. É o mesmo padrão &ldquo;capture o conteúdo, guarde o Markdown&rdquo; que o ThreadGrab usa para o X &mdash; e funciona para o Bluesky também.</p>
+    </div>
+
+    <h2>Por Que Salvar Posts do Bluesky como Markdown</h2>
+
+    <p>O Bluesky é mais aberto do que a maioria das redes, mas aberto não significa permanente. Posts podem ser deletados, handles podem mudar, e um problema na conta ou na instância pode levar sua lista de leitura junto. Se um post importa &mdash; uma nota de pesquisa, uma thread útil, uma referência que você citará depois &mdash; a única cópia que você realmente controla é a que está no seu próprio disco.</p>
+
+    <p>Markdown é o formato certo para esse trabalho por três razões concretas:</p>
+
+    <ul>
+      <li><strong>É texto simples.</strong> Você pode pesquisá-lo, usar grep e lê-lo em qualquer editor ou app de notas agora e daqui a dez anos.</li>
+      <li><strong>Ele versiona.</strong> Coloque-o no git e você pode fazer diff de um post contra uma versão editada, o que importa quando você acompanha mudanças ou correções.</li>
+      <li><strong>Ele alimenta fluxos de IA.</strong> LLMs, agentes e pipelines de RAG ingerem Markdown com muito mais limpeza do que imagens capturadas ou scrapers da web.</li>
+    </ul>
+
+    <p>Um screenshot preserva os pixels, não o conteúdo. O Markdown preserva as palavras, a estrutura, os links e os metadados &mdash; por isso a comunidade de arquivamento se padronizou nele.</p>
+
+    <h2>Como Funciona a API Pública do Bluesky</h2>
+
+    <p>O Bluesky roda sobre atproto, e os caminhos de leitura são deliberadamente públicos. Dois endpoints fazem quase todo o trabalho de arquivamento:</p>
+
+    <ul>
+      <li><code>com.atproto.identity.resolveHandle</code> &mdash; transforma um handle como <code>@bsky.app</code> em um DID persistente (<code>did:plc:...</code>).</li>
+      <li><code>app.bsky.feed.getAuthorFeed</code> (e <code>getPosts</code>) &mdash; retorna posts recentes para esse DID como JSON, incluindo o texto do post e os carimbos de data/hora.</li>
+    </ul>
+
+    <p>A URL base é <code>https://public.api.bsky.app</code>. A referência completa dos endpoints é publicada pelo Bluesky em <a href="https://docs.bsky.app/docs/api/com-atproto-identity-resolve-handle" rel="noopener" target="_blank">docs.bsky.app</a>, e <a href="https://docs.bsky.app/docs/api/app-bsky-feed-get-author-feed" rel="noopener" target="_blank">o endpoint de feed</a> documenta o formato exato da resposta. Não há etapa de login para conteúdo público: você resolve, busca e pronto. A resposta é JSON estruturado, então convertê-la para Markdown são poucas linhas de código em qualquer linguagem.</p>
+
+    <div class="callout">
+      <p><strong>Observação:</strong> você só precisa de uma senha de app (um token) se quiser ler posts privados ou executar ações em uma conta. Arquivamento público puro nunca toca em autenticação, o que também torna fácil automatizar com scripts em um servidor headless ou dentro de um cron job.</p>
+    </div>
+
+    <h2>Método 1 &mdash; Salve um Único Post com curl</h2>
+
+    <p>A maneira mais rápida de capturar um post do Bluesky como Markdown é chamar a API pública diretamente. Primeiro, resolva o handle do autor para um DID:</p>
+
+    <pre><code>curl "https://public.api.bsky.app/xrpc/com.atproto.identity.resolveHandle?handle=bsky.app"</code></pre>
+
+    <p>A resposta retorna o identificador persistente:</p>
+
+    <pre><code>{ "did": "did:plc:z72i7hdynmk6r22z27h6tvur" }</code></pre>
+
+    <p>Agora busque o feed do autor, mantendo apenas os campos que você quer. Uma linha curta em Python transforma o JSON em bullets Markdown limpos:</p>
+
+    <pre><code>import json, urllib.request
+did = "did:plc:z72i7hdynmk6r22z27h6tvur"
+url = ("https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed"
+       "?actor=" + did + "&amp;limit=5")
+data = json.load(urllib.request.urlopen(url))
+for item in data["feed"]:
+    rec = item["post"]["record"]
+    print("## " + rec.get("createdAt", "")[:10])
+    print(rec.get("text", "") + "\n")</code></pre>
+
+    <p>Execute e você obtém um bloco Markdown legível por post &mdash; a data como título, o texto como parágrafo. Esse é todo o fluxo de trabalho para um salvamento manual único.</p>
+
+    <h2>Método 2 &mdash; Arquive uma Timeline Inteira em Lote</h2>
+
+    <p>Para os posts recentes de uma conta inteira, adicione paginação. <code>getAuthorFeed</code> retorna um <code>cursor</code> que você passa de volta para buscar a próxima página, então um pequeno loop captura tudo sem perder nada:</p>
+
+    <pre><code>import json, urllib.request, urllib.parse
+did = "did:plc:z72i7hdynmk6r22z27h6tvur"
+cursor = None
+for page in range(3):
+    params = {"actor": did, "limit": 50}
+    if cursor:
+        params["cursor"] = cursor
+    url = ("https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?"
+           + urllib.parse.urlencode(params))
+    data = json.load(urllib.request.urlopen(url))
+    for item in data.get("feed", []):
+        rec = item["post"]["record"]
+        print("## " + rec.get("createdAt", "")[:10] + "\n"
+              + rec.get("text", "") + "\n")
+    cursor = data.get("cursor")
+    if not cursor:
+        break</code></pre>
+
+    <p>Cada execução adiciona os posts a um arquivo Markdown, e o cursor garante que você veja todas as páginas. Rode semanalmente dentro de um cron job e você terá um arquivo contínuo e pesquisável de qualquer conta do Bluesky que você siga.</p>
+
+    <h2>Método 3 &mdash; ThreadGrab para Markdown Multiplataforma</h2>
+
+    <p>O caminho da API é poderoso, mas exige trabalho manual. Se você quiser o mesmo resultado para threads do X, X Articles de texto longo e posts do Bluesky sem escrever e manter scripts, o ThreadGrab envolve o padrão &ldquo;capture o conteúdo, guarde o Markdown&rdquo; em uma única ferramenta. Ele converte posts sociais em Markdown limpo, baixa mídias vinculadas para o seu próprio armazenamento e lhe dá uma biblioteca portátil que não depende da API ou do preço de uma única plataforma.</p>
+
+    <p>Isso importa quando seu arquivo abrange várias plataformas. Uma abordagem de API com script único funciona lindamente para uma conta do Bluesky; uma biblioteca mista de X e Bluesky se beneficia de uma ferramenta que padroniza o formato de saída em todos os lugares.</p>
+
+    <h2>Qual Método Você Deve Usar?</h2>
+
+    <table>
+      <thead>
+        <tr><th>Cenário</th><th>Melhor opção</th><th>Por quê</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Salvamento manual único</td><td>curl + resolveHandle</td><td>Sem setup, segundos para rodar</td></tr>
+        <tr><td>Conta / timeline inteira</td><td>Script paged getAuthorFeed</td><td>Paginação com cursor, zero autenticação</td></tr>
+        <tr><td>Arquivo semanal contínuo</td><td>Cron automatizado + arquivo Markdown</td><td>Histórico contínuo e pesquisável</td></tr>
+        <tr><td>Biblioteca mista X + Bluesky</td><td>ThreadGrab</td><td>Markdown padronizado entre plataformas</td></tr>
+      </tbody>
+    </table>
+
+    <p>Não existe uma única resposta certa. Comece com o one-liner <code>curl</code> para provar o conceito e depois evolua para um script paginado ou para o ThreadGrab conforme seu arquivo cresce.</p>
+
+    <h2>Construindo um Arquivo Bluesky Portátil</h2>
+
+    <p>Qualquer que seja o método que você escolher, mantenha a saída estruturada para que continue útil. Uma convenção simples vence uma complicada:</p>
+
+    <pre><code>bluesky-archive/
+  profile.json
+  2026-08-05-bsky-app.md
+  2026-08-04-group-chats-100.md
+  media/
+    image-01.jpg</code></pre>
+
+    <p>Nomeie cada arquivo pela data e slug do post, armazene o DID e o horário de captura em um pequeno <code>profile.json</code> junto e mantenha os links de imagem relativos para que a pasta espelhe limpa em qualquer lugar. Como tudo é texto simples mais arquivos, o arquivo é portátil entre repos git, drives na nuvem e discos locais &mdash; sem servidor do Bluesky necessário para lê-lo.</p>
+
+    <h2>Conclusão</h2>
+
+    <p>O design atproto do Bluesky é uma vantagem genuína para arquivamento. Posts públicos estão a uma chamada de API pública de distância do Markdown limpo &mdash; sem autenticação, sem paywall, sem ferramenta de exportação proprietária. Se você captura um único post com <code>curl</code>, pagina uma timeline inteira com um script curto ou usa o ThreadGrab para manter X e Bluesky em uma única biblioteca padronizada, o resultado é o mesmo: conteúdo que você realmente controla.</p>
+
+    <p>Posts desaparecem, handles mudam, algoritmos seguem em frente. O Markdown que você salvou hoje é a cópia que você ainda poderá ler no ano que vem &mdash; e a cópia que você pode alimentar em qualquer ferramenta, LLM ou app de notas que vier depois.</p>
+
+    <div class="cta">
+      <p><strong>Guarde os posts que importam.</strong> O ThreadGrab converte threads do X e posts do Bluesky em Markdown limpo, baixa as mídias para o seu próprio disco e mantém sua biblioteca multiplataforma portátil &mdash; para que o conteúdo que você valoriza nunca fique preso em uma única rede.</p>
+      <a class="btn" href="/pt/">Experimente o ThreadGrab</a>
+    </div>
+
+    <div class="related">
+      <h3>Relacionados no ThreadGrab</h3>
+      <ul>
+        <li><a href="/pt/blog/bluesky-post-archiving-solutions-2026.html">Soluções de Arquivamento de Posts do Bluesky 2026</a></li>
+        <li><a href="/pt/blog/atproto-bluesky-data-portability-2026.html">Portabilidade de Dados atproto do Bluesky 2026</a></li>
+        <li><a href="/pt/blog/x-to-markdown-3-methods-2026.html">X para Markdown: 3 Métodos Comparados</a></li>
+        <li><a href="/pt/blog/social-content-ownership-local-archiving-2026.html">Propriedade de Conteúdo Social &amp; Arquivamento Local 2026</a></li>
+        <li><a href="/pt/blog/social-media-content-backup-strategy-2026.html">Estratégia de Backup de Conteúdo Social 2026</a></li>
+      </ul>
+    </div>
+
+    <h2>FAQ</h2>
+
+    <div class="faq-item">
+      <strong>Posso salvar posts do Bluesky como Markdown?</strong>
+      <p>Sim. A API pública atproto do Bluesky serve os posts como JSON simples sem autenticação, então você pode buscar um post, uma thread ou um feed completo do autor e formatá-lo como Markdown na sua própria máquina. Ferramentas dedicadas e extensões de navegador também renderizam posts do Bluesky como Markdown com um clique.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>A API do Bluesky exige conta ou token?</strong>
+      <p>Para posts públicos, não. O endpoint público atproto public.api.bsky.app permite resolver um handle para um DID e buscar feeds de autores ou posts individuais sem fazer login. Você só precisa de uma senha de app se quiser ler conteúdo privado ou agir na conta.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Como obtenho um post do Bluesky como Markdown?</strong>
+      <p>O método mais simples é substituir o domínio na URL do post ou chamar a API pública diretamente. Por exemplo, resolva um handle com com.atproto.identity.resolveHandle e depois chame app.bsky.feed.getAuthorFeed ou getPosts e converta o texto do record em Markdown. Um script local pode automatizar isso para cada post que você quiser guardar.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>O ThreadGrab é compatível com o Bluesky?</strong>
+      <p>Sim. O ThreadGrab é construído em torno da conversão de conteúdo social em Markdown limpo e do download de mídias vinculadas para o seu próprio armazenamento. Ele suporta o mesmo fluxo para posts do Bluesky como faz para threads do X e posts de texto longo, então você termina com uma biblioteca Markdown portátil e pesquisável em várias plataformas.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Por que salvar posts do Bluesky como Markdown em vez de screenshots?</strong>
+      <p>Markdown é texto simples, então é pesquisável, versionável em git, indexável por um LLM e legível em qualquer app de notas. Um screenshot é uma imagem: você não pode fazer Ctrl+F, não pode diffar e não pode colá-lo em um fluxo de IA. O Markdown preserva o texto, a estrutura e os links enquanto continua portátil e à prova de futuro.</p>
+    </div>
+  </main>
+
+  <footer>
+    <a href="/pt/">Início</a> &middot;
+    <a href="/pt/blog/">Blog</a> &middot;
+    <a href="/pt/blog/bluesky-post-archiving-solutions-2026.html">Arquivamento Bluesky</a>
+    <br>
+    O ThreadGrab é uma ferramenta independente. Não afiliado à X Corp., Twitter, Bluesky Social PBC ou a qualquer serviço apresentado.
+    <br>
+    &copy; 2026 ThreadGrab
+  </footer>
+</body>
+</html>

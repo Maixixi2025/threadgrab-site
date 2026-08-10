@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bluesky ke Markdown 2026: Simpan Postingan sebagai Markdown</title>
+  <meta name="description" content="Simpan postingan Bluesky sebagai Markdown di 2026 dengan API publik atproto dan alat pengarsipan untuk salinan lokal yang tahan lama dan mudah dicari.">
+  <meta name="keywords" content="Bluesky ke Markdown, simpan postingan Bluesky sebagai Markdown, API atproto Bluesky, ekspor postingan Bluesky, pengarsipan Bluesky 2026, feed Bluesky curl, alur kerja Markdown Bluesky, ThreadGrab, cadangan postingan Bluesky">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/id/blog/bluesky-ke-markdown-simpan-posts-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/bluesky-to-markdown-save-posts-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/bluesky-para-markdown-salvar-posts-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/bluesky-ke-markdown-simpan-posts-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/bluesky-to-markdown-save-posts-2026.html">
+  <meta property="og:title" content="Bluesky ke Markdown 2026: Simpan Postingan sebagai Markdown">
+  <meta property="og:description" content="Simpan postingan Bluesky sebagai Markdown di 2026 dengan API publik atproto dan alat pengarsipan untuk salinan lokal yang tahan lama dan mudah dicari.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/id/blog/bluesky-ke-markdown-simpan-posts-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bluesky ke Markdown 2026: Simpan Postingan sebagai Markdown">
+  <meta name="twitter:description" content="Simpan postingan Bluesky sebagai Markdown di 2026 dengan API publik atproto dan alat pengarsipan untuk salinan lokal yang tahan lama dan mudah dicari.">
+  <meta property="article:published_time" content="2026-08-10">
+  <meta property="article:modified_time" content="2026-08-10">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo:hover { color: #1d9bf0; }
+    .tagline { color: #888; font-size: 0.85rem; margin-left: auto; }
+    .lang-bar { display: flex; gap: 12px; padding: 12px 24px; background: #1a1a1a; font-size: 0.85rem; }
+    .lang-bar a { color: #888; text-decoration: none; padding: 4px 10px; border-radius: 4px; }
+    .lang-bar a.active { background: #1d9bf0; color: #fff; }
+    .lang-bar a:hover:not(.active) { background: #2a2a2a; color: #fff; }
+    main { max-width: 780px; margin: 0 auto; padding: 40px 24px; }
+    h1 { font-size: 2rem; margin-bottom: 8px; line-height: 1.2; }
+    h1 span { color: #1d9bf0; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { font-size: 1.5rem; margin-top: 40px; margin-bottom: 16px; color: #1d9bf0; }
+    h3 { font-size: 1.15rem; margin-top: 24px; margin-bottom: 12px; color: #fff; }
+    p { margin-bottom: 16px; color: #d0d0d0; }
+    code { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-family: 'SF Mono', Monaco, Consolas, monospace; font-size: 0.9em; color: #ff7b72; }
+    pre { background: #1a1a1a; padding: 16px; border-radius: 6px; overflow-x: auto; margin-bottom: 16px; border: 1px solid #2a2a2a; }
+    pre code { background: none; padding: 0; color: #e6e6e6; font-size: 0.85rem; line-height: 1.5; }
+    ul, ol { margin-bottom: 16px; padding-left: 24px; color: #d0d0d0; }
+    li { margin-bottom: 8px; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 0.9rem; }
+    th { background: #1a1a1a; padding: 10px 12px; text-align: left; color: #1d9bf0; border-bottom: 2px solid #2a2a2a; }
+    td { padding: 10px 12px; border-bottom: 1px solid #2a2a2a; color: #d0d0d0; }
+    tr:hover td { background: #1a1a1a; }
+    .callout { background: #1a2332; border-left: 4px solid #1d9bf0; padding: 16px 20px; margin: 24px 0; border-radius: 4px; }
+    .callout p { margin: 0; color: #d0d0d0; }
+    .callout strong { color: #1d9bf0; }
+    .cta { background: linear-gradient(135deg, #1d9bf0 0%, #1a6fb8 100%); padding: 24px; border-radius: 8px; margin: 32px 0; text-align: center; }
+    .cta p { color: #fff; margin-bottom: 12px; }
+    .btn { display: inline-block; background: #fff; color: #0f0f0f; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; }
+    .btn:hover { background: #e6e6e6; }
+    .faq-item { background: #1a1a1a; padding: 16px 20px; margin-bottom: 12px; border-radius: 6px; border-left: 3px solid #1d9bf0; }
+    .faq-item strong { color: #fff; display: block; margin-bottom: 8px; }
+    .faq-item p { margin: 0; color: #d0d0d0; }
+    .related { background: #1a1a1a; padding: 20px; border-radius: 6px; margin: 32px 0; }
+    .related h3 { color: #1d9bf0; margin-bottom: 12px; }
+    .related ul { list-style: none; padding: 0; }
+    .related li { padding: 6px 0; border-bottom: 1px solid #2a2a2a; }
+    .related li:last-child { border-bottom: none; }
+    .related a { color: #1d9bf0; text-decoration: none; }
+    .related a:hover { text-decoration: underline; }
+    footer { text-align: center; padding: 32px 24px; color: #888; font-size: 0.85rem; border-top: 1px solid #1a1a1a; margin-top: 64px; }
+    footer a { color: #888; text-decoration: none; }
+    footer a:hover { color: #1d9bf0; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Bluesky ke Markdown 2026: Simpan Postingan sebagai Markdown",
+    "description": "Simpan postingan Bluesky sebagai Markdown di 2026 dengan API publik atproto dan alat pengarsipan untuk salinan lokal yang tahan lama dan mudah dicari.",
+    "datePublished": "2026-08-10",
+    "dateModified": "2026-08-10",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/id/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/id/" },
+    "mainEntityOfPage": "https://threadgrab.com/id/blog/bluesky-ke-markdown-simpan-posts-2026.html",
+    "inLanguage": "id"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://threadgrab.com/id/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/id/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Bluesky ke Markdown 2026", "item": "https://threadgrab.com/id/blog/bluesky-ke-markdown-simpan-posts-2026.html" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Bisakah saya menyimpan postingan Bluesky sebagai Markdown?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ya. API publik atproto Bluesky menyajikan postingan sebagai JSON polos tanpa autentikasi, jadi Anda bisa mengambil postingan, thread, atau feed penulis lengkap dan memformatnya sebagai Markdown di perangkat Anda. Alat khusus dan ekstensi browser juga merender postingan Bluesky sebagai Markdown dengan satu klik."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah API Bluesky memerlukan akun atau token?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Untuk postingan publik, tidak. Endpoint publik atproto public.api.bsky.app memungkinkan Anda menyelesaikan handle menjadi DID dan mengambil feed penulis atau postingan individual tanpa masuk. Anda hanya memerlukan app password jika ingin membaca konten privat atau bertindak atas nama akun."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bagaimana cara mendapatkan postingan Bluesky sebagai Markdown?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cara termudah adalah mengganti domain pada URL postingan atau memanggil API publik secara langsung. Misalnya, selesaikan handle dengan com.atproto.identity.resolveHandle, lalu panggil app.bsky.feed.getAuthorFeed atau getPosts dan ubah teks record menjadi Markdown. Skrip lokal dapat mengotomatiskan ini untuk setiap postingan yang ingin Anda simpan."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah ThreadGrab kompatibel dengan Bluesky?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ya. ThreadGrab dibangun untuk mengubah konten sosial menjadi Markdown bersih dan mengunduh media tertaut ke penyimpanan Anda sendiri. Ia mendukung alur kerja yang sama untuk postingan Bluesky sebagaimana untuk thread X dan postingan panjang, sehingga Anda mendapatkan pustaka Markdown portabel dan dapat dicari di berbagai platform."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kenapa menyimpan postingan Bluesky sebagai Markdown daripada screenshot?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Markdown adalah teks polos, sehingga dapat dicari, diperiksa versinya di git, diindeks oleh LLM, dan dibaca di aplikasi catatan apa pun. Screenshot adalah gambar: Anda tidak bisa Ctrl+F, tidak bisa diff, dan tidak bisa menempelkannya ke alur kerja AI. Markdown menjaga teks, struktur, dan tautan sambil tetap portabel dan tahan masa depan."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a href="/id/" class="logo">ThreadGrab</a>
+    <span class="tagline">Arsipkan thread X sebagai Markdown</span>
+  </header>
+  <div class="lang-bar">
+    <a href="/en/blog/bluesky-to-markdown-save-posts-2026.html">EN</a>
+    <a href="/pt/blog/bluesky-para-markdown-salvar-posts-2026.html">PT</a>
+    <a href="/id/blog/bluesky-ke-markdown-simpan-posts-2026.html" class="active">ID</a>
+  </div>
+
+  <main>
+    <h1>Bluesky ke Markdown 2026: <span>Simpan Postingan sebagai Markdown</span></h1>
+    <div class="meta">10 Agustus 2026 &middot; 10 menit baca &middot; Panduan</div>
+
+    <p>Bluesky dibangun di atas AT Protocol (&ldquo;atproto&rdquo;), dan pilihan itu menjadikannya salah satu platform sosial yang paling mudah diekspor di tahun 2026. Setiap postingan publik, thread, dan feed penulis disajikan oleh API publik yang mengembalikan JSON bersih &mdash; tanpa akun, tanpa token, dan tanpa jabat tangan rate limit untuk pembacaan dasar. Artinya, &ldquo;Bluesky ke Markdown&rdquo; bukan sekadar solusi khusus; itu adalah alur kerja normal yang didukung.</p>
+
+    <p>Panduan ini menunjukkan mengapa menyimpan postingan Bluesky sebagai Markdown layak dilakukan, cara kerja endpoint publik atproto, dan rute tercepat menuju arsip lokal yang portabel &mdash; dari satu <code>curl</code> hingga skrip batch yang bisa Anda jalankan untuk seluruh timeline.</p>
+
+    <div class="callout">
+      <p><strong>Ringkasan singkat:</strong> Bluesky mengekspos postingan publik melalui <code>public.api.bsky.app</code> tanpa autentikasi. Selesaikan handle menjadi DID, ambil feed, ubah teks record menjadi Markdown, dan Anda memiliki salinan tahan lama yang dapat dicari dalam hitungan detik. Ini pola yang sama &ldquo;ambil kontennya, simpan Markdown-nya&rdquo; yang digunakan ThreadGrab untuk X &mdash; dan berlaku juga untuk Bluesky.</p>
+    </div>
+
+    <h2>Mengapa Menyimpan Postingan Bluesky sebagai Markdown</h2>
+
+    <p>Bluesky lebih terbuka daripada kebanyakan jaringan, tetapi terbuka tidak berarti permanen. Postingan bisa dihapus, handle bisa berubah, dan masalah akun atau instance bisa membawa daftar bacaan Anda ikut hilang. Jika sebuah postingan penting &mdash; catatan riset, thread berguna, referensi yang nanti Anda kutip &mdash; satu-satunya salinan yang benar-benar Anda kendalikan adalah yang ada di disk Anda sendiri.</p>
+
+    <p>Markdown adalah format yang tepat untuk pekerjaan ini karena tiga alasan konkret:</p>
+
+    <ul>
+      <li><strong>Ini teks polos.</strong> Anda bisa mencarinya, menggrep-nya, dan membacanya di editor atau aplikasi catatan apa pun sekarang maupun sepuluh tahun lagi.</li>
+      <li><strong>Ini bisa diperiksa versinya.</strong> Masukkan ke git dan Anda bisa membandingkan postingan dengan versi yang diedit, yang penting saat melacak perubahan atau koreksi.</li>
+      <li><strong>Ini mengisi alur kerja AI.</strong> LLM, agen, dan pipeline RAG mencerna Markdown jauh lebih bersih daripada gambar tangkapan atau web scraper.</li>
+    </ul>
+
+    <p>Screenshot menjaga pikselnya, bukan isinya. Markdown menjaga kata-kata, struktur, tautan, dan metadata &mdash; itulah sebabnya komunitas pengarsipan menstandardisasinya.</p>
+
+    <h2>Bagaimana API Publik Bluesky Bekerja</h2>
+
+    <p>Bluesky berjalan di atas atproto, dan jalur pembacaan sengaja dibuat publik. Dua endpoint melakukan hampir semua pekerjaan pengarsipan:</p>
+
+    <ul>
+      <li><code>com.atproto.identity.resolveHandle</code> &mdash; mengubah handle seperti <code>@bsky.app</code> menjadi DID yang persisten (<code>did:plc:...</code>).</li>
+      <li><code>app.bsky.feed.getAuthorFeed</code> (dan <code>getPosts</code>) &mdash; mengembalikan postingan terbaru untuk DID tersebut sebagai JSON, termasuk teks postingan dan cap waktu.</li>
+    </ul>
+
+    <p>URL dasarnya adalah <code>https://public.api.bsky.app</code>. Referensi endpoint lengkap dipublikasikan oleh Bluesky di <a href="https://docs.bsky.app/docs/api/com-atproto-identity-resolve-handle" rel="noopener" target="_blank">docs.bsky.app</a>, dan <a href="https://docs.bsky.app/docs/api/app-bsky-feed-get-author-feed" rel="noopener" target="_blank">endpoint feed</a> mendokumentasikan bentuk respons yang persis. Tidak ada langkah masuk untuk konten publik: Anda menyelesaikan, mengambil, dan selesai. Responsnya adalah JSON terstruktur, jadi mengubahnya menjadi Markdown hanya beberapa baris kode dalam bahasa apa pun.</p>
+
+    <div class="callout">
+      <p><strong>Catatan:</strong> Anda hanya memerlukan app password (token) jika ingin membaca postingan privat atau melakukan tindakan pada akun. Pengarsipan publik murni tidak pernah menyentuh autentikasi, yang juga memudahkan otomatisasi dengan skrip di server headless atau dalam cron job.</p>
+    </div>
+
+    <h2>Metode 1 &mdash; Simpan Satu Postingan dengan curl</h2>
+
+    <p>Cara tercepat untuk mengambil satu postingan Bluesky sebagai Markdown adalah memanggil API publik secara langsung. Pertama, selesaikan handle penulis menjadi DID:</p>
+
+    <pre><code>curl "https://public.api.bsky.app/xrpc/com.atproto.identity.resolveHandle?handle=bsky.app"</code></pre>
+
+    <p>Respons mengembalikan identifikasi persisten:</p>
+
+    <pre><code>{ "did": "did:plc:z72i7hdynmk6r22z27h6tvur" }</code></pre>
+
+    <p>Sekarang ambil feed penulis, simpan hanya field yang Anda butuhkan. Satu baris pendek Python mengubah JSON menjadi bullet Markdown bersih:</p>
+
+    <pre><code>import json, urllib.request
+did = "did:plc:z72i7hdynmk6r22z27h6tvur"
+url = ("https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed"
+       "?actor=" + did + "&amp;limit=5")
+data = json.load(urllib.request.urlopen(url))
+for item in data["feed"]:
+    rec = item["post"]["record"]
+    print("## " + rec.get("createdAt", "")[:10])
+    print(rec.get("text", "") + "\n")</code></pre>
+
+    <p>Jalankan dan Anda mendapatkan blok Markdown yang dapat dibaca per postingan &mdash; tanggal sebagai judul, teks sebagai paragraf. Itulah seluruh alur kerja untuk penyimpanan manual sekali saja.</p>
+
+    <h2>Metode 2 &mdash; Arsipkan Seluruh Timeline dalam Batch</h2>
+
+    <p>Untuk postingan terbaru dari satu akun utuh, tambahkan pagination. <code>getAuthorFeed</code> mengembalikan <code>cursor</code> yang Anda teruskan kembali untuk mengambil halaman berikutnya, jadi loop kecil menangkap semuanya tanpa melewatkan apa pun:</p>
+
+    <pre><code>import json, urllib.request, urllib.parse
+did = "did:plc:z72i7hdynmk6r22z27h6tvur"
+cursor = None
+for page in range(3):
+    params = {"actor": did, "limit": 50}
+    if cursor:
+        params["cursor"] = cursor
+    url = ("https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?"
+           + urllib.parse.urlencode(params))
+    data = json.load(urllib.request.urlopen(url))
+    for item in data.get("feed", []):
+        rec = item["post"]["record"]
+        print("## " + rec.get("createdAt", "")[:10] + "\n"
+              + rec.get("text", "") + "\n")
+    cursor = data.get("cursor")
+    if not cursor:
+        break</code></pre>
+
+    <p>Setiap kali dijalankan, skrip menambahkan postingan ke file Markdown, dan cursor menjamin Anda melihat semua halaman. Jalankan mingguan di dalam cron job dan Anda mendapatkan arsip bergulir yang dapat dicari untuk akun Bluesky mana pun yang Anda ikuti.</p>
+
+    <h2>Metode 3 &mdash; ThreadGrab untuk Markdown Lintas-Platform</h2>
+
+    <p>Rute API itu kuat tetapi perlu penanganan manual. Jika Anda menginginkan hasil yang sama untuk thread X, X Articles panjang, dan postingan Bluesky tanpa menulis dan memelihara skrip, ThreadGrab membungkus pola &ldquo;ambil kontennya, simpan Markdown-nya&rdquo; ke dalam satu alat. Ia mengubah postingan sosial menjadi Markdown bersih, mengunduh media tertaut ke penyimpanan Anda sendiri, dan memberi Anda pustaka portabel yang tidak bergantung pada API atau harga satu platform.</p>
+
+    <p>Itu penting saat arsip Anda mencakup banyak platform. Pendekatan API dengan satu skrip bekerja indah untuk satu akun Bluesky; pustaka campuran X dan Bluesky lebih diuntungkan oleh alat yang menstandarkan format keluaran di mana-mana.</p>
+
+    <h2>Metode Mana yang Harus Anda Gunakan?</h2>
+
+    <table>
+      <thead>
+        <tr><th>Skenario</th><th>Cocok terbaik</th><th>Mengapa</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Penyimpanan manual sekali saja</td><td>curl + resolveHandle</td><td>Tanpa setup, selesai dalam detik</td></tr>
+        <tr><td>Seluruh akun / timeline</td><td>Skrip getAuthorFeed berpaginasi</td><td>Pagination cursor, tanpa autentikasi</td></tr>
+        <tr><td>Arsip mingguan berkelanjutan</td><td>Cron otomatis + file Markdown</td><td>Riwayat bergulir dan dapat dicari</td></tr>
+        <tr><td>Pustaka campuran X + Bluesky</td><td>ThreadGrab</td><td>Markdown terstandar di berbagai platform</td></tr>
+      </tbody>
+    </table>
+
+    <p>Tidak ada satu jawaban yang benar. Mulailah dengan one-liner <code>curl</code> untuk membuktikan konsepnya, lalu tingkatkan ke skrip berpaginasi atau ThreadGrab seiring arsip Anda bertumbuh.</p>
+
+    <h2>Membangun Arsip Bluesky yang Portabel</h2>
+
+    <p>Metode mana pun yang Anda pilih, jaga keluaran tetap terstruktur agar selalu berguna. Konvensi sederhana mengalahkan yang rumit:</p>
+
+    <pre><code>bluesky-archive/
+  profile.json
+  2026-08-05-bsky-app.md
+  2026-08-04-group-chats-100.md
+  media/
+    image-01.jpg</code></pre>
+
+    <p>Beri nama setiap file berdasarkan tanggal dan slug postingan, simpan DID dan waktu pengambilan dalam <code>profile.json</code> kecil di sampingnya, dan jaga tautan gambar tetap relatif sehingga folder ter-mirror dengan bersih di mana saja. Karena semuanya berupa teks polos plus file, arsip ini portabel antara repo git, drive cloud, dan disk lokal &mdash; tanpa memerlukan server Bluesky untuk membacanya.</p>
+
+    <h2>Kesimpulan</h2>
+
+    <p>Desain atproto Bluesky adalah keunggulan nyata untuk pengarsipan. Postingan publik hanya berjarak satu panggilan API publik dari Markdown bersih &mdash; tanpa autentikasi, tanpa paywall, tanpa alat ekspor proprietary. Baik Anda mengambil satu postingan dengan <code>curl</code>, memaginasi seluruh timeline dengan skrip pendek, atau menggunakan ThreadGrab untuk menjaga X dan Bluesky dalam satu pustaka terstandar, hasilnya sama: konten yang benar-benar Anda kendalikan.</p>
+
+    <p>Postingan menghilang, handle berubah, algoritma bergerak maju. Markdown yang Anda simpan hari ini adalah salinan yang masih bisa Anda baca tahun depan &mdash; dan salinan yang bisa Anda berikan ke alat, LLM, atau aplikasi catatan apa pun yang datang berikutnya.</p>
+
+    <div class="cta">
+      <p><strong>Simpan postingan yang penting.</strong> ThreadGrab mengubah thread X dan postingan Bluesky menjadi Markdown bersih, mengunduh media ke disk Anda sendiri, dan menjaga pustaka lintas-platform Anda tetap portabel &mdash; sehingga konten yang Anda hargai tidak pernah terperangkap di satu jaringan.</p>
+      <a class="btn" href="/id/">Coba ThreadGrab</a>
+    </div>
+
+    <div class="related">
+      <h3>Terkait di ThreadGrab</h3>
+      <ul>
+        <li><a href="/id/blog/bluesky-post-archiving-solutions-2026.html">Solusi Pengarsipan Postingan Bluesky 2026</a></li>
+        <li><a href="/id/blog/atproto-bluesky-data-portability-2026.html">Portabilitas Data atproto Bluesky 2026</a></li>
+        <li><a href="/id/blog/x-to-markdown-3-methods-2026.html">X ke Markdown: 3 Metode Dibandingkan</a></li>
+        <li><a href="/id/blog/social-content-ownership-local-archiving-2026.html">Kepemilikan Konten Sosial &amp; Pengarsipan Lokal 2026</a></li>
+        <li><a href="/id/blog/social-media-content-backup-strategy-2026.html">Strategi Cadangan Konten Sosial 2026</a></li>
+      </ul>
+    </div>
+
+    <h2>FAQ</h2>
+
+    <div class="faq-item">
+      <strong>Bisakah saya menyimpan postingan Bluesky sebagai Markdown?</strong>
+      <p>Ya. API publik atproto Bluesky menyajikan postingan sebagai JSON polos tanpa autentikasi, jadi Anda bisa mengambil postingan, thread, atau feed penulis lengkap dan memformatnya sebagai Markdown di perangkat Anda. Alat khusus dan ekstensi browser juga merender postingan Bluesky sebagai Markdown dengan satu klik.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Apakah API Bluesky memerlukan akun atau token?</strong>
+      <p>Untuk postingan publik, tidak. Endpoint publik atproto public.api.bsky.app memungkinkan Anda menyelesaikan handle menjadi DID dan mengambil feed penulis atau postingan individual tanpa masuk. Anda hanya memerlukan app password jika ingin membaca konten privat atau bertindak atas nama akun.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Bagaimana cara mendapatkan postingan Bluesky sebagai Markdown?</strong>
+      <p>Cara termudah adalah mengganti domain pada URL postingan atau memanggil API publik secara langsung. Misalnya, selesaikan handle dengan com.atproto.identity.resolveHandle, lalu panggil app.bsky.feed.getAuthorFeed atau getPosts dan ubah teks record menjadi Markdown. Skrip lokal dapat mengotomatiskan ini untuk setiap postingan yang ingin Anda simpan.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Apakah ThreadGrab kompatibel dengan Bluesky?</strong>
+      <p>Ya. ThreadGrab dibangun untuk mengubah konten sosial menjadi Markdown bersih dan mengunduh media tertaut ke penyimpanan Anda sendiri. Ia mendukung alur kerja yang sama untuk postingan Bluesky sebagaimana untuk thread X dan postingan panjang, sehingga Anda mendapatkan pustaka Markdown portabel dan dapat dicari di berbagai platform.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Kenapa menyimpan postingan Bluesky sebagai Markdown daripada screenshot?</strong>
+      <p>Markdown adalah teks polos, sehingga dapat dicari, diperiksa versinya di git, diindeks oleh LLM, dan dibaca di aplikasi catatan apa pun. Screenshot adalah gambar: Anda tidak bisa Ctrl+F, tidak bisa diff, dan tidak bisa menempelkannya ke alur kerja AI. Markdown menjaga teks, struktur, dan tautan sambil tetap portabel dan tahan masa depan.</p>
+    </div>
+  </main>
+
+  <footer>
+    <a href="/id/">Beranda</a> &middot;
+    <a href="/id/blog/">Blog</a> &middot;
+    <a href="/id/blog/bluesky-post-archiving-solutions-2026.html">Pengarsipan Bluesky</a>
+    <br>
+    ThreadGrab adalah alat independen. Tidak berafiliasi dengan X Corp., Twitter, Bluesky Social PBC, atau layanan apa pun yang ditampilkan.
+    <br>
+    &copy; 2026 ThreadGrab
+  </footer>
+</body>
+</html>

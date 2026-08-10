@@ -4030,6 +4030,150 @@
         "ThreadGrab"
       ],
       "primary_cta": "Coba ThreadGrab (id)"
+    },
+    {
+      "date": "2026-08-10",
+      "type": "guide",
+      "status": "published",
+      "created_at": "2026-08-10",
+      "published_at": "2026-08-10",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "providers_featured": [
+        "Bluesky",
+        "ThreadGrab"
+      ],
+      "heat_source": "Threadgrab topic priority review: ⭐⭐⭐ compare topic + ⭐⭐ trend-scraping + ⭐⭐ X-to-Markdown + ⭐ Bluesky archiving ALL already covered (x-articles-vs-bluesky-vs-linkedin-newsletter, bluesky-long-form-vs-x-articles-linkedin-newsletter, twitter-trend-scraping-tools, x-to-markdown-3-methods, bluesky-post-archiving-solutions all exist). Gap-scan found NO dedicated 'Bluesky to Markdown' article. Chose evergreen Bluesky-archiving angle (backup rotation: 社交内容存档). Facts verified live: public.api.bsky.app resolveHandle(@bsky.app -> did:plc:z72i7hdynmk6r22z27h6tvur) + getAuthorFeed return JSON with no auth; official docs links docs.bsky.app 200-verified. 2026-08-10 briefing threadgrab ⭐ = tweet.md tool review (saturated, 4 prior articles).",
+      "qa_passed": {
+        "title_chars": 48,
+        "description_chars": 147,
+        "hreflang_alternates": 4,
+        "canonical_present": true,
+        "jsonld_blocks": 3,
+        "faq_count": 5,
+        "h2_count": 9,
+        "code_blocks": 5,
+        "code_block_byte_identity_en_pt_id": true,
+        "raw_lt_in_code": 0,
+        "word_count": 1538,
+        "chinese_chars": 0,
+        "cyrillic_chars": 0
+      },
+      "slug": "bluesky-to-markdown-save-posts-2026",
+      "lang": "en",
+      "file": "en/blog/bluesky-to-markdown-save-posts-2026.html",
+      "url": "https://threadgrab.com/en/blog/bluesky-to-markdown-save-posts-2026.html",
+      "title": "Bluesky to Markdown 2026: Save Posts as Markdown",
+      "description": "Save Bluesky posts as Markdown in 2026. Use the public atproto API, feeds, and archiving tools to keep a durable local copy of your favorite posts.",
+      "tags": [
+        "Bluesky to Markdown",
+        "save Bluesky posts as Markdown",
+        "Bluesky atproto API",
+        "export Bluesky posts",
+        "Bluesky archiving 2026",
+        "Bluesky posts backup",
+        "ThreadGrab"
+      ],
+      "primary_cta": "Try ThreadGrab (en)"
+    },
+    {
+      "date": "2026-08-10",
+      "type": "guia",
+      "status": "published",
+      "created_at": "2026-08-10",
+      "published_at": "2026-08-10",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "providers_featured": [
+        "Bluesky",
+        "ThreadGrab"
+      ],
+      "heat_source": "PT translation of EN article 2026-08-10 (Bluesky to Markdown)",
+      "qa_passed": {
+        "title_chars": 53,
+        "description_chars": 146,
+        "hreflang_alternates": 4,
+        "canonical_present": true,
+        "jsonld_blocks": 3,
+        "faq_count": 5,
+        "h2_count": 9,
+        "code_blocks": 5,
+        "code_block_byte_identity_en_pt_id": true,
+        "raw_lt_in_code": 0,
+        "word_count": 1698,
+        "chinese_chars": 0,
+        "cyrillic_chars": 0
+      },
+      "slug": "bluesky-para-markdown-salvar-posts-2026",
+      "lang": "pt",
+      "file": "pt/blog/bluesky-para-markdown-salvar-posts-2026.html",
+      "url": "https://threadgrab.com/pt/blog/bluesky-para-markdown-salvar-posts-2026.html",
+      "title": "Bluesky para Markdown 2026: Salve Posts como Markdown",
+      "description": "Salve posts do Bluesky como Markdown em 2026 com a API pública atproto e ferramentas de arquivo para manter uma cópia local durável de seus posts.",
+      "tags": [
+        "Bluesky para Markdown",
+        "salvar posts do Bluesky como Markdown",
+        "API atproto Bluesky",
+        "exportar posts Bluesky",
+        "arquivamento Bluesky 2026",
+        "backup de posts Bluesky",
+        "ThreadGrab"
+      ],
+      "primary_cta": "Experimente o ThreadGrab (pt)"
+    },
+    {
+      "date": "2026-08-10",
+      "type": "panduan",
+      "status": "published",
+      "created_at": "2026-08-10",
+      "published_at": "2026-08-10",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "providers_featured": [
+        "Bluesky",
+        "ThreadGrab"
+      ],
+      "heat_source": "ID translation of EN article 2026-08-10 (Bluesky to Markdown)",
+      "qa_passed": {
+        "title_chars": 59,
+        "description_chars": 150,
+        "hreflang_alternates": 4,
+        "canonical_present": true,
+        "jsonld_blocks": 3,
+        "faq_count": 5,
+        "h2_count": 9,
+        "code_blocks": 5,
+        "code_block_byte_identity_en_pt_id": true,
+        "raw_lt_in_code": 0,
+        "word_count": 1433,
+        "chinese_chars": 0,
+        "cyrillic_chars": 0
+      },
+      "slug": "bluesky-ke-markdown-simpan-posts-2026",
+      "lang": "id",
+      "file": "id/blog/bluesky-ke-markdown-simpan-posts-2026.html",
+      "url": "https://threadgrab.com/id/blog/bluesky-ke-markdown-simpan-posts-2026.html",
+      "title": "Bluesky ke Markdown 2026: Simpan Postingan sebagai Markdown",
+      "description": "Simpan postingan Bluesky sebagai Markdown di 2026 dengan API publik atproto dan alat pengarsipan untuk salinan lokal yang tahan lama dan mudah dicari.",
+      "tags": [
+        "Bluesky ke Markdown",
+        "simpan postingan Bluesky sebagai Markdown",
+        "API atproto Bluesky",
+        "ekspor postingan Bluesky",
+        "pengarsipan Bluesky 2026",
+        "cadangan postingan Bluesky",
+        "ThreadGrab"
+      ],
+      "primary_cta": "Coba ThreadGrab (id)"
     }
   ],
   "drafts": [
@@ -4614,21 +4758,21 @@
     }
   ],
   "recent_topics": [
+    "bluesky-to-markdown-save-posts-2026",
     "x-original-content-rewards-creator-workflow-2026",
     "x-history-tab-save-later-archive-2026",
     "tweet-md-api-llm-workflows-2026",
-    "bluesky-longform-publishing-archive-2026",
-    "cloudflare-computer-social-archive-2026"
+    "bluesky-longform-publishing-archive-2026"
   ],
-  "last_run": "2026-08-09",
-  "last_publish": "2026-08-09",
-  "last_published_slug": "x-original-content-rewards-creator-workflow-2026",
+  "last_run": "2026-08-10",
+  "last_publish": "2026-08-10",
+  "last_published_slug": "bluesky-to-markdown-save-posts-2026",
   "last_draft_slug": "tweet-md-api-llm-workflows-2026",
-  "last_published_at": "2026-08-09",
+  "last_published_at": "2026-08-10T04:22:12Z",
   "drafts_count": 24,
-  "published_count": 153,
-  "last_topic_picked": "X Original Content Rewards (creator payouts overhaul) - fresh news Aug 8, 2026",
-  "last_pick_source": "briefing #FAILED API 400 (3rd day); used fresh Google News RSS + TechCrunch body verification",
+  "published_count": 156,
+  "last_topic_picked": "Bluesky to Markdown 2026 (evergreen archiving gap)",
+  "last_pick_source": "topic priority review + gap scan (⭐ topics all covered)",
   "last_drafted_slug": "tweet-md-api-llm-workflows-2026",
-  "publish_notes": "Published x-original-content-rewards-creator-workflow-2026 EN/PT/ID (X retires Revenue Sharing -> Original Content Rewards). Verified via TechCrunch body + 8 outlets. Deployed via git push (auto)."
+  "publish_notes": "2026-08-10: published trilingual Bluesky to Markdown 2026 guide (en/pt/id). Angle = evergreen Bluesky archiving gap (all ⭐ topics already covered). Verified Bluesky public atproto API live (resolveHandle + getAuthorFeed, no auth). Tweet.md briefing ⭐ skipped (saturated 4x)."
 }
