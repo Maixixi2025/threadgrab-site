@@ -31,7 +31,17 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
+    <url>
+    <loc>https://threadgrab.com/en/blog/bluesky-hide-reposts-curate-feed-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/bluesky-hide-reposts-curate-feed-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/bluesky-ocultar-reposts-curar-feed-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/bluesky-sembunyikan-repost-kurasi-feed-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/bluesky-hide-reposts-curate-feed-2026.html"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
     <loc>https://threadgrab.com/en/blog/bluesky-long-form-vs-x-articles-linkedin-newsletter-2026.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/bluesky-long-form-vs-x-articles-linkedin-newsletter-2026.html"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/bluesky-long-form-vs-x-articles-linkedin-newsletter-2026.html"/>
