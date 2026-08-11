@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Como Ocultar Reposts no Bluesky 2026: Cure um Feed Limpo | ThreadGrab</title>
+  <meta name="description" content="O Bluesky permite ocultar reposts de usuários específicos sem deixar de seguir. Aprenda o fluxo de curadoria e arquive o que importa como Markdown.">
+  <meta name="keywords" content="ocultar reposts Bluesky, esconder reposts de usuários específicos Bluesky, curadoria de feed Bluesky 2026, limpar feed Bluesky, numeração de posts em threads Bluesky, mute vs ocultar reposts Bluesky, controle de feed Bluesky, arquivo Bluesky Markdown, ThreadGrab">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/pt/blog/bluesky-ocultar-reposts-curar-feed-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/bluesky-hide-reposts-curate-feed-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/bluesky-ocultar-reposts-curar-feed-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/bluesky-sembunyikan-repost-kurasi-feed-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/bluesky-hide-reposts-curate-feed-2026.html">
+  <meta property="og:title" content="Como Ocultar Reposts no Bluesky 2026: Cure um Feed Limpo">
+  <meta property="og:description" content="O Bluesky permite ocultar reposts de usuários específicos sem deixar de seguir. Aprenda o fluxo de curadoria e arquive o que importa como Markdown.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/pt/blog/bluesky-ocultar-reposts-curar-feed-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Como Ocultar Reposts no Bluesky 2026: Cure um Feed Limpo">
+  <meta name="twitter:description" content="O Bluesky permite ocultar reposts de usuários específicos sem deixar de seguir. Aprenda o fluxo de curadoria e arquive o que importa como Markdown.">
+  <meta property="article:published_time" content="2026-08-11">
+  <meta property="article:modified_time" content="2026-08-11">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo:hover { color: #1d9bf0; }
+    .tagline { color: #888; font-size: 0.85rem; margin-left: auto; }
+    .lang-bar { display: flex; gap: 12px; padding: 12px 24px; background: #1a1a1a; font-size: 0.85rem; }
+    .lang-bar a { color: #888; text-decoration: none; padding: 4px 10px; border-radius: 4px; }
+    .lang-bar a.active { background: #1d9bf0; color: #fff; }
+    .lang-bar a:hover:not(.active) { background: #2a2a2a; color: #fff; }
+    main { max-width: 780px; margin: 0 auto; padding: 40px 24px; }
+    h1 { font-size: 2rem; margin-bottom: 8px; line-height: 1.2; }
+    h1 span { color: #1d9bf0; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { font-size: 1.5rem; margin-top: 40px; margin-bottom: 16px; color: #1d9bf0; }
+    h3 { font-size: 1.15rem; margin-top: 24px; margin-bottom: 12px; color: #fff; }
+    p { margin-bottom: 16px; color: #d0d0d0; }
+    code { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-family: 'SF Mono', Monaco, Consolas, monospace; font-size: 0.9em; color: #ff7b72; }
+    pre { background: #1a1a1a; padding: 16px; border-radius: 6px; overflow-x: auto; margin-bottom: 16px; border: 1px solid #2a2a2a; }
+    pre code { background: none; padding: 0; color: #e6e6e6; font-size: 0.85rem; line-height: 1.5; }
+    ul, ol { margin-bottom: 16px; padding-left: 24px; color: #d0d0d0; }
+    li { margin-bottom: 8px; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 0.9rem; }
+    th { background: #1a1a1a; padding: 10px 12px; text-align: left; color: #1d9bf0; border-bottom: 2px solid #2a2a2a; }
+    td { padding: 10px 12px; border-bottom: 1px solid #2a2a2a; color: #d0d0d0; }
+    tr:hover td { background: #1a1a1a; }
+    .callout { background: #1a2332; border-left: 4px solid #1d9bf0; padding: 16px 20px; margin: 24px 0; border-radius: 4px; }
+    .callout p { margin: 0; color: #d0d0d0; }
+    .callout strong { color: #1d9bf0; }
+    .cta { background: linear-gradient(135deg, #1d9bf0 0%, #1a6fb8 100%); padding: 24px; border-radius: 8px; margin: 32px 0; text-align: center; }
+    .cta p { color: #fff; margin-bottom: 12px; }
+    .btn { display: inline-block; background: #fff; color: #0f0f0f; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; }
+    .btn:hover { background: #e6e6e6; }
+    .faq-item { background: #1a1a1a; padding: 16px 20px; margin-bottom: 12px; border-radius: 6px; border-left: 3px solid #1d9bf0; }
+    .faq-item strong { color: #fff; display: block; margin-bottom: 8px; }
+    .faq-item p { margin: 0; color: #d0d0d0; }
+    .related { background: #1a1a1a; padding: 20px; border-radius: 6px; margin: 32px 0; }
+    .related h3 { color: #1d9bf0; margin-bottom: 12px; }
+    .related ul { list-style: none; padding: 0; }
+    .related li { padding: 6px 0; border-bottom: 1px solid #2a2a2a; }
+    .related li:last-child { border-bottom: none; }
+    .related a { color: #1d9bf0; text-decoration: none; }
+    .related a:hover { text-decoration: underline; }
+    footer { text-align: center; padding: 32px 24px; color: #888; font-size: 0.85rem; border-top: 1px solid #1a1a1a; margin-top: 64px; }
+    footer a { color: #888; text-decoration: none; }
+    footer a:hover { color: #1d9bf0; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Como Ocultar Reposts no Bluesky 2026: Cure um Feed Limpo",
+    "description": "O Bluesky permite ocultar reposts de usuários específicos sem deixar de seguir. Aprenda o fluxo de curadoria e arquive o que importa como Markdown.",
+    "datePublished": "2026-08-11",
+    "dateModified": "2026-08-11",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/" },
+    "mainEntityOfPage": "https://threadgrab.com/pt/blog/bluesky-ocultar-reposts-curar-feed-2026.html",
+    "inLanguage": "pt"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://threadgrab.com/pt/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/pt/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Como Ocultar Reposts no Bluesky 2026", "item": "https://threadgrab.com/pt/blog/bluesky-ocultar-reposts-curar-feed-2026.html" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "O Bluesky permite ocultar reposts de usuários específicos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. O Bluesky adicionou um recurso em agosto de 2026 que permite ocultar reposts de uma conta individual nos seus feeds sem deixar de seguir, silenciar ou bloquear essa pessoa. Você mantém a conta pelas próprias publicações e remove apenas os reposts dela."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qual é a diferença entre ocultar reposts e silenciar no Bluesky?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Silenciar oculta todas as publicações de uma conta da sua linha do tempo. Ocultar reposts remove apenas os reposts dessa pessoa, enquanto as publicações originais, respostas e quote posts continuam aparecendo. É uma alavanca menor e mais precisa do que silenciar, bloquear ou deixar de seguir."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ocultar reposts de um usuário afeta o que esse usuário vê?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não. Ocultar reposts é um filtro unilateral, do lado da leitura, que muda apenas os seus próprios feeds. A conta filtrada não recebe notificação e o alcance das publicações dela não é afetado. É algo local à sua linha do tempo e aos feeds personalizados."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O que faz a numeração de posts nas threads do Bluesky?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A numeração de posts adiciona números visíveis às publicações de uma thread, o que torna conversas mais longas mais fáceis de acompanhar. O Bluesky adicionou esse controle junto com o recurso de ocultar reposts em agosto de 2026. É uma configuração de legibilidade, não uma mudança em como as threads são ranqueadas ou distribuídas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como arquivo os posts do Bluesky que sobrevivem à minha curadoria de feed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Faça a curadoria primeiro e depois guarde o sinal. Depois de filtrar seu feed até o que você realmente quer ler, salve os posts importantes como Markdown com uma ferramenta como o ThreadGrab ou um pequeno script da API atproto. Markdown é texto simples, então continua pesquisável, versionável e portátil no seu próprio disco."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a href="/pt/" class="logo">ThreadGrab</a>
+    <span class="tagline">Arquive threads do X como Markdown</span>
+  </header>
+  <div class="lang-bar">
+    <a href="/en/blog/bluesky-hide-reposts-curate-feed-2026.html">EN</a>
+    <a href="/pt/blog/bluesky-ocultar-reposts-curar-feed-2026.html" class="active">PT</a>
+    <a href="/id/blog/bluesky-sembunyikan-repost-kurasi-feed-2026.html">ID</a>
+  </div>
+
+  <main>
+    <h1>Como Ocultar Reposts no Bluesky 2026: <span>Cure um Feed Limpo</span></h1>
+    <div class="meta">11 de Agosto, 2026 &middot; 9 min de leitura &middot; Guia</div>
+
+    <p>Em 10 de agosto de 2026, o Bluesky lançou um pequeno controle que muda como você pode limpar uma linha do tempo bagunçada: <strong>ocultar reposts de uma conta individual</strong> sem deixar de seguir, silenciar ou bloquear essa pessoa. Coberto pelo <a href="https://wersm.com/bluesky-hide-reposts-specific-users/" rel="noopener" target="_blank">wersm.com</a> e pelo The Verge, a atualização reforça a aposta de longo prazo do Bluesky de que os usuários devem conseguir moldar o sinal antes que a plataforma decida o que o sinal significa.</p>
+
+    <p>Este guia explica o que o novo recurso realmente faz, a segunda mudança que veio junto (numeração de posts para threads longas) e um fluxo de curadoria em quatro etapas que transforma um feed ruidoso em um limpo &mdash; e depois arquiva os posts que valem a pena como Markdown, para que o sinal sobreviva além do algoritmo.</p>
+
+    <div class="callout">
+      <p><strong>Resumo:</strong> a atualização de agosto de 2026 do Bluesky permite ocultar reposts de uma conta específica mantendo as publicações da própria pessoa. É o controle &ldquo;siga a pessoa, não o pacote&rdquo;, que combina com a identidade aberta e de agência do usuário da plataforma. Faça a curadoria do feed primeiro e depois arquive os sobreviventes como Markdown.</p>
+    </div>
+
+    <h2>Por que &ldquo;Ocultar Reposts de Usuários Específicos&rdquo; Importa</h2>
+
+    <p>Reposts são uma das formas mais comuns de um feed social ficar bagunçado. Um repost não é apenas um endosso &mdash; é um evento de distribuição. Uma conta ativa pode trazer um conjunto totalmente diferente de conversas, piadas, links e obsessões de nicho para a sua linha do tempo todos os dias. Historicamente, as plataformas tratavam isso como parte do acordo: siga uma pessoa, receba o pacote completo.</p>
+
+    <p>O novo controle do Bluesky separa essas camadas. Você pode manter a pessoa e rejeitar um comportamento específico &mdash; os reposts dela. Como o wersm.com resumiu a atualização, ela dá aos usuários &ldquo;uma alavanca menor do que silenciar, bloquear ou deixar de seguir&rdquo;. Para criadores e marcas, a implicação é clara: a distribuição está se tornando mais condicional. Repostar agressivamente ainda pode gerar alcance, mas também pode treinar seguidores a cortar esse comportamento do feed.</p>
+
+    <h2>Como Funciona o Recurso de Ocultar Reposts</h2>
+
+    <p>O recurso é um filtro do lado da leitura. Quando você oculta reposts de uma conta específica, apenas <em>os seus</em> feeds mudam. A conta filtrada não recebe nenhuma notificação e o alcance geral das publicações dela não é afetado. É algo local à sua linha do tempo inicial e aos feeds personalizados que você controla.</p>
+
+    <ul>
+      <li><strong>Não é deixar de seguir.</strong> Você continua vendo as publicações originais, respostas e quote posts da conta.</li>
+      <li><strong>Não é silenciar.</strong> Silenciar oculta tudo o que uma pessoa publica; ocultar reposts remove apenas os reposts.</li>
+      <li><strong>Não é bloquear.</strong> A relação continua intacta e bidirecional &mdash; você apenas para de receber aquele comportamento.</li>
+    </ul>
+
+    <p>O resultado é um feed que você pode ajustar no nível do comportamento, e não no nível da conta. É a mesma filosofia por trás dos feeds personalizados e dos controles de moderação do Bluesky: a experiência deve ser ajustável, não ditada de cima para baixo por um sistema de feed opaco.</p>
+
+    <div class="callout">
+      <p><strong>Nota:</strong> se você quiser confirmar a disponibilidade atual dessa configuração dentro do aplicativo &mdash; menus e configurações mudam entre versões &mdash; verifique o app do Bluesky ou a documentação oficial de suporte antes de depender de um caminho específico de menu.</p>
+    </div>
+
+    <h2>Numeração de Posts para Threads Longas</h2>
+
+    <p>A mesma atualização trouxe uma segunda mudança mais discreta: <strong>numeração de posts para threads</strong>.</p>
+
+    <p>Conversas longas no Bluesky costumam carregar valor em respostas, quote posts e threads em andamento. Numerar cada post torna essas conversas muito mais fáceis de acompanhar e reduz o atrito de permanecer em uma discussão longa. Isso não muda o que as pessoas publicam &mdash; muda o quanto uma thread fica legível. O wersm.com chamou as duas mudanças de &ldquo;muito Bluesky&rdquo;: controles pequenos e voltados ao usuário que apostam em legibilidade e agência.</p>
+
+    <h2>Um Fluxo de Curadoria de Feed em Quatro Etapas</h2>
+
+    <p>Aqui está um fluxo repetível para transformar um feed ruidoso do Bluesky em um limpo e depois guardar o que importa:</p>
+
+    <ol>
+      <li><strong>Audite o ruído.</strong> Passe um dia observando quais contas inundam sua linha do tempo com reposts que você pula mesmo assim.</li>
+      <li><strong>Oculte, não corte.</strong> Para cada conta, oculte os reposts em vez de deixar de seguir ou silenciar &mdash; você mantém a pessoa e remove o comportamento.</li>
+      <li><strong>Cure seus feeds.</strong> Use feeds personalizados para o sinal específico que você quer e aplique o novo filtro por conta por cima.</li>
+      <li><strong>Arquive os sobreviventes.</strong> Salve os posts que importam como Markdown antes que desapareçam, mudem ou sejam editados.</li>
+    </ol>
+
+    <p>Um pequeno script em Python usando a API pública atproto do Bluesky transforma os posts que você mantém em Markdown durável, sem conta ou token para conteúdo público:</p>
+
+    <pre><code>import json, urllib.request
+did = "did:plc:z72i7hdynmk6r22z27h6tvur"
+url = ("https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed"
+       "?actor=" + did + "&amp;limit=10")
+data = json.load(urllib.request.urlopen(url))
+for item in data["feed"]:
+    rec = item["post"]["record"]
+    print("## " + rec.get("createdAt", "")[:10])
+    print(rec.get("text", "") + "\n")</code></pre>
+
+    <p>Para uma conta ou linha do tempo completa, adicione paginação com o campo <code>cursor</code> para que nenhum post seja pulado. A <a href="https://docs.bsky.app/docs/api/app-bsky-feed-get-author-feed" rel="noopener" target="_blank">documentação oficial do endpoint de feed</a> descreve os campos exatos da resposta, incluindo texto, data e cursor.</p>
+
+    <h2>Cure e Depois Arquive &mdash; Salve o Sinal, Não o Ruído</h2>
+
+    <p>Curadoria de feed e arquivamento são duas metades do mesmo trabalho. A curadoria decide o que chega aos seus olhos; o arquivamento decide o que sobrevive. Uma conta gratuita pode editar ou excluir um post, um handle pode mudar e um algoritmo pode seguir em frente. Se um post bem curado importa &mdash; uma nota de pesquisa, uma thread útil, uma referência que você citará depois &mdash; a única cópia que você realmente controla é a que está no seu próprio disco.</p>
+
+    <p>Markdown é o formato certo para isso porque é texto simples: pesquisável, versionável no git, indexável por um LLM e legível em qualquer app de notas agora e daqui a dez anos. Uma captura de tela preserva os pixels; o Markdown preserva as palavras, a estrutura e os links.</p>
+
+    <pre><code>bluesky-archive/
+  profile.json
+  2026-08-11-feed-curation.md
+  media/
+    image-01.jpg</code></pre>
+
+    <p>Nomeie cada arquivo pela data e slug do post, guarde o handle em um pequeno <code>profile.json</code> ao lado e mantenha os links de imagem relativos para que a pasta espelhe limpa em qualquer lugar. Como tudo é texto simples mais arquivos, você pode ler o arquivo sem um servidor do Bluesky &mdash; e ele alimenta qualquer fluxo de IA, anotações ou publicação que você adicionar depois.</p>
+
+    <h2>Como a Curadoria de Feed se Compara Entre Plataformas</h2>
+
+    <table>
+      <thead>
+        <tr><th>Plataforma</th><th>Nível de controle</th><th>Como funciona em 2026</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Bluesky</td><td>Comportamento</td><td>Ocultar reposts por conta, feeds personalizados, numeração de posts</td></tr>
+        <tr><td>X / Twitter</td><td>Conta</td><td>Silenciar, bloquear, deixar de seguir; as Listas agrupam contas, mas os reposts continuam juntos</td></tr>
+        <tr><td>Threads</td><td>Conta</td><td>Palavras e contas silenciadas; sem filtro de reposts por conta</td></tr>
+        <tr><td>Mastodon</td><td>Comportamento</td><td>Ocultar boosts (reposts) por conta da sua linha do tempo</td></tr>
+      </tbody>
+    </table>
+
+    <p>O Bluesky não é a primeira plataforma a oferecer um filtro de boosts por conta &mdash; o Mastodon há muito permite ocultar boosts de contas individuais. O que torna a atualização do Bluesky notável é que ela chega dentro de um produto que já aposta forte em agência do usuário e sinaliza para onde a distribuição está indo: condicional, no nível do comportamento e controlada pelo usuário. Para quem constrói um arquivo multiplataforma, isso significa que o feed que você cura e os posts que salva são cada vez mais o mesmo conjunto curado.</p>
+
+    <h2>Conclusão</h2>
+
+    <p>Ocultar reposts de usuários específicos é um pequeno controle com uma direção clara. Ele permite seguir pessoas pelo que elas realmente publicam e rejeitar o comportamento que você não quer &mdash; sem o martelo bruto de deixar de seguir, silenciar ou bloquear. Junte isso à numeração de posts para threads longas e você terá uma experiência no Bluesky visivelmente mais limpa e legível.</p>
+
+    <p>A lição maior é sobre propriedade. Um feed curado ainda vive no servidor de outra pessoa, e os posts que você aprecia podem desaparecer a qualquer momento. Decida qual é o sinal e arquive-o. O Markdown dá a você uma cópia que nenhum algoritmo, mudança de conta ou decisão de plataforma pode tirar.</p>
+
+    <div class="cta">
+      <p><strong>Guarde os posts que importam.</strong> O ThreadGrab converte threads do X, artigos longos e posts do Bluesky em Markdown limpo, baixa a mídia para o seu próprio disco e mantém sua biblioteca multiplataforma portátil &mdash; para que o sinal que você curadou nunca fique preso em uma rede.</p>
+      <a class="btn" href="/pt/">Experimente o ThreadGrab</a>
+    </div>
+
+    <div class="related">
+      <h3>Relacionados no ThreadGrab</h3>
+      <ul>
+        <li><a href="/pt/blog/bluesky-para-markdown-salvar-posts-2026.html">Bluesky para Markdown 2026: Salve Posts como Markdown</a></li>
+        <li><a href="/pt/blog/bluesky-post-archiving-solutions-2026.html">Soluções de Arquivamento de Posts no Bluesky 2026</a></li>
+        <li><a href="/pt/blog/social-content-cross-posting-workflow-2026.html">Fluxo de Publicação Cruzada de Conteúdo Social 2026</a></li>
+        <li><a href="/pt/blog/atproto-bluesky-data-portability-2026.html">Portabilidade de Dados ATProto do Bluesky 2026</a></li>
+        <li><a href="/pt/blog/social-content-ownership-local-archiving-2026.html">Propriedade de Conteúdo Social e Arquivamento Local 2026</a></li>
+      </ul>
+    </div>
+
+    <h2>FAQ</h2>
+
+    <div class="faq-item">
+      <strong>O Bluesky permite ocultar reposts de usuários específicos?</strong>
+      <p>Sim. O Bluesky adicionou um recurso em agosto de 2026 que permite ocultar reposts de uma conta individual nos seus feeds sem deixar de seguir, silenciar ou bloquear essa pessoa. Você mantém a conta pelas próprias publicações e remove apenas os reposts dela.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Qual é a diferença entre ocultar reposts e silenciar no Bluesky?</strong>
+      <p>Silenciar oculta todas as publicações de uma conta da sua linha do tempo. Ocultar reposts remove apenas os reposts dessa pessoa, enquanto as publicações originais, respostas e quote posts continuam aparecendo. É uma alavanca menor e mais precisa do que silenciar, bloquear ou deixar de seguir.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Ocultar reposts de um usuário afeta o que esse usuário vê?</strong>
+      <p>Não. Ocultar reposts é um filtro unilateral, do lado da leitura, que muda apenas os seus próprios feeds. A conta filtrada não recebe notificação e o alcance das publicações dela não é afetado. É algo local à sua linha do tempo e aos feeds personalizados.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>O que faz a numeração de posts nas threads do Bluesky?</strong>
+      <p>A numeração de posts adiciona números visíveis às publicações de uma thread, o que torna conversas mais longas mais fáceis de acompanhar. O Bluesky adicionou esse controle junto com o recurso de ocultar reposts em agosto de 2026. É uma configuração de legibilidade, não uma mudança em como as threads são ranqueadas ou distribuídas.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Como arquivo os posts do Bluesky que sobrevivem à minha curadoria de feed?</strong>
+      <p>Faça a curadoria primeiro e depois guarde o sinal. Depois de filtrar seu feed até o que você realmente quer ler, salve os posts importantes como Markdown com uma ferramenta como o ThreadGrab ou um pequeno script da API atproto. Markdown é texto simples, então continua pesquisável, versionável e portátil no seu próprio disco.</p>
+    </div>
+  </main>
+
+  <footer>
+    <a href="/pt/">Home</a> &middot;
+    <a href="/pt/blog/">Blog</a> &middot;
+    <a href="/pt/blog/bluesky-para-markdown-salvar-posts-2026.html">Bluesky para Markdown</a>
+    <br>
+    O ThreadGrab é uma ferramenta independente. Não é afiliado à X Corp., Twitter, Bluesky Social PBC ou qualquer serviço destacado.
+    <br>
+    &copy; 2026 ThreadGrab
+  </footer>
+</body>
+</html>

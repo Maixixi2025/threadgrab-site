@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sembunyikan Repost di Bluesky 2026: Kurasi Feed yang Bersih | ThreadGrab</title>
+  <meta name="description" content="Bluesky memungkinkan Anda menyembunyikan repost dari pengguna tertentu tanpa unfollow. Pelajari alur kurasi feed dan arsipkan penting sebagai Markdown.">
+  <meta name="keywords" content="sembunyikan repost Bluesky, sembunyikan repost pengguna tertentu Bluesky, kurasi feed Bluesky 2026, bersihkan feed Bluesky, penomoran post thread Bluesky, mute vs sembunyikan repost Bluesky, kontrol feed Bluesky, arsip Bluesky Markdown, ThreadGrab">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/id/blog/bluesky-sembunyikan-repost-kurasi-feed-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/bluesky-hide-reposts-curate-feed-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/bluesky-ocultar-reposts-curar-feed-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/bluesky-sembunyikan-repost-kurasi-feed-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/bluesky-hide-reposts-curate-feed-2026.html">
+  <meta property="og:title" content="Sembunyikan Repost di Bluesky 2026: Kurasi Feed yang Bersih">
+  <meta property="og:description" content="Bluesky memungkinkan Anda menyembunyikan repost dari pengguna tertentu tanpa unfollow. Pelajari alur kurasi feed dan arsipkan penting sebagai Markdown.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/id/blog/bluesky-sembunyikan-repost-kurasi-feed-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sembunyikan Repost di Bluesky 2026: Kurasi Feed yang Bersih">
+  <meta name="twitter:description" content="Bluesky memungkinkan Anda menyembunyikan repost dari pengguna tertentu tanpa unfollow. Pelajari alur kurasi feed dan arsipkan penting sebagai Markdown.">
+  <meta property="article:published_time" content="2026-08-11">
+  <meta property="article:modified_time" content="2026-08-11">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo:hover { color: #1d9bf0; }
+    .tagline { color: #888; font-size: 0.85rem; margin-left: auto; }
+    .lang-bar { display: flex; gap: 12px; padding: 12px 24px; background: #1a1a1a; font-size: 0.85rem; }
+    .lang-bar a { color: #888; text-decoration: none; padding: 4px 10px; border-radius: 4px; }
+    .lang-bar a.active { background: #1d9bf0; color: #fff; }
+    .lang-bar a:hover:not(.active) { background: #2a2a2a; color: #fff; }
+    main { max-width: 780px; margin: 0 auto; padding: 40px 24px; }
+    h1 { font-size: 2rem; margin-bottom: 8px; line-height: 1.2; }
+    h1 span { color: #1d9bf0; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { font-size: 1.5rem; margin-top: 40px; margin-bottom: 16px; color: #1d9bf0; }
+    h3 { font-size: 1.15rem; margin-top: 24px; margin-bottom: 12px; color: #fff; }
+    p { margin-bottom: 16px; color: #d0d0d0; }
+    code { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-family: 'SF Mono', Monaco, Consolas, monospace; font-size: 0.9em; color: #ff7b72; }
+    pre { background: #1a1a1a; padding: 16px; border-radius: 6px; overflow-x: auto; margin-bottom: 16px; border: 1px solid #2a2a2a; }
+    pre code { background: none; padding: 0; color: #e6e6e6; font-size: 0.85rem; line-height: 1.5; }
+    ul, ol { margin-bottom: 16px; padding-left: 24px; color: #d0d0d0; }
+    li { margin-bottom: 8px; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 0.9rem; }
+    th { background: #1a1a1a; padding: 10px 12px; text-align: left; color: #1d9bf0; border-bottom: 2px solid #2a2a2a; }
+    td { padding: 10px 12px; border-bottom: 1px solid #2a2a2a; color: #d0d0d0; }
+    tr:hover td { background: #1a1a1a; }
+    .callout { background: #1a2332; border-left: 4px solid #1d9bf0; padding: 16px 20px; margin: 24px 0; border-radius: 4px; }
+    .callout p { margin: 0; color: #d0d0d0; }
+    .callout strong { color: #1d9bf0; }
+    .cta { background: linear-gradient(135deg, #1d9bf0 0%, #1a6fb8 100%); padding: 24px; border-radius: 8px; margin: 32px 0; text-align: center; }
+    .cta p { color: #fff; margin-bottom: 12px; }
+    .btn { display: inline-block; background: #fff; color: #0f0f0f; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; }
+    .btn:hover { background: #e6e6e6; }
+    .faq-item { background: #1a1a1a; padding: 16px 20px; margin-bottom: 12px; border-radius: 6px; border-left: 3px solid #1d9bf0; }
+    .faq-item strong { color: #fff; display: block; margin-bottom: 8px; }
+    .faq-item p { margin: 0; color: #d0d0d0; }
+    .related { background: #1a1a1a; padding: 20px; border-radius: 6px; margin: 32px 0; }
+    .related h3 { color: #1d9bf0; margin-bottom: 12px; }
+    .related ul { list-style: none; padding: 0; }
+    .related li { padding: 6px 0; border-bottom: 1px solid #2a2a2a; }
+    .related li:last-child { border-bottom: none; }
+    .related a { color: #1d9bf0; text-decoration: none; }
+    .related a:hover { text-decoration: underline; }
+    footer { text-align: center; padding: 32px 24px; color: #888; font-size: 0.85rem; border-top: 1px solid #1a1a1a; margin-top: 64px; }
+    footer a { color: #888; text-decoration: none; }
+    footer a:hover { color: #1d9bf0; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Sembunyikan Repost di Bluesky 2026: Kurasi Feed yang Bersih",
+    "description": "Bluesky memungkinkan Anda menyembunyikan repost dari pengguna tertentu tanpa unfollow. Pelajari alur kurasi feed dan arsipkan penting sebagai Markdown.",
+    "datePublished": "2026-08-11",
+    "dateModified": "2026-08-11",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/id/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/id/" },
+    "mainEntityOfPage": "https://threadgrab.com/id/blog/bluesky-sembunyikan-repost-kurasi-feed-2026.html",
+    "inLanguage": "id"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://threadgrab.com/id/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/id/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Cara Sembunyikan Repost di Bluesky 2026", "item": "https://threadgrab.com/id/blog/bluesky-sembunyikan-repost-kurasi-feed-2026.html" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Apakah Bluesky memungkinkan Anda menyembunyikan repost dari pengguna tertentu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ya. Bluesky menambahkan fitur pada Agustus 2026 yang memungkinkan Anda menyembunyikan repost dari satu akun di feed Anda tanpa unfollow, mute, atau memblokir orang tersebut. Anda tetap mengikuti akun itu untuk post aslinya dan hanya menghapus repost-nya."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apa perbedaan antara menyembunyikan repost dan mute di Bluesky?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mute menyembunyikan semua post dari sebuah akun di linimasa Anda. Menyembunyikan repost hanya menghapus repost orang tersebut, sementara post asli, balasan, dan quote post tetap muncul. Ini adalah tuas yang lebih kecil dan lebih presisi daripada mute, blokir, atau unfollow."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah menyembunyikan repost dari satu pengguna memengaruhi apa yang dilihat pengguna itu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tidak. Menyembunyikan repost adalah filter satu arah di sisi pembaca yang hanya mengubah feed Anda sendiri. Akun yang difilter tidak mendapat notifikasi dan jangkauan posting mereka tidak terpengaruh. Ini bersifat lokal untuk linimasa beranda dan feed khusus Anda."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apa fungsi penomoran post pada thread Bluesky?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Penomoran post menambahkan angka yang terlihat pada post dalam sebuah thread, sehingga percakapan yang lebih panjang lebih mudah diikuti. Bluesky menambahkan kontrol ini bersamaan dengan fitur sembunyikan repost pada Agustus 2026. Ini adalah pengaturan keterbacaan, bukan perubahan cara thread diperingkat atau didistribusikan."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bagaimana cara mengarsipkan post Bluesky yang tersisa setelah kurasi feed saya?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kurasi dulu, lalu simpan sinyalnya. Setelah memfilter feed Anda hingga apa yang benar-benar ingin dibaca, simpan post penting sebagai Markdown dengan alat seperti ThreadGrab atau skrip kecil API atproto. Markdown adalah teks biasa, sehingga tetap dapat dicari, dapat diberi versi, dan portabel di disk Anda sendiri."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a href="/id/" class="logo">ThreadGrab</a>
+    <span class="tagline">Arsipkan thread X sebagai Markdown</span>
+  </header>
+  <div class="lang-bar">
+    <a href="/en/blog/bluesky-hide-reposts-curate-feed-2026.html">EN</a>
+    <a href="/pt/blog/bluesky-ocultar-reposts-curar-feed-2026.html">PT</a>
+    <a href="/id/blog/bluesky-sembunyikan-repost-kurasi-feed-2026.html" class="active">ID</a>
+  </div>
+
+  <main>
+    <h1>Cara Sembunyikan Repost di Bluesky 2026: <span>Kurasi Feed yang Bersih</span></h1>
+    <div class="meta">11 Agustus 2026 &middot; 9 menit baca &middot; Panduan</div>
+
+    <p>Pada 10 Agustus 2026, Bluesky merilis kontrol kecil yang mengubah cara Anda membersihkan linimasa yang berantakan: <strong>menyembunyikan repost dari satu akun</strong> tanpa unfollow, mute, atau memblokir orang tersebut. Diliput oleh <a href="https://wersm.com/bluesky-hide-reposts-specific-users/" rel="noopener" target="_blank">wersm.com</a> dan The Verge, pembaruan ini memperkuat taruhan jangka panjang Bluesky bahwa pengguna harus bisa membentuk sinyal sebelum platform memutuskan apa arti sinyal itu.</p>
+
+    <p>Panduan ini menjelaskan apa yang sebenarnya dilakukan fitur baru ini, perubahan kedua yang hadir bersamanya (penomoran post untuk thread panjang), dan alur kurasi empat langkah yang mengubah feed berisik menjadi bersih &mdash; lalu mengarsipkan post yang layak disimpan sebagai Markdown, sehingga sinyalnya bertahan melampaui algoritme.</p>
+
+    <div class="callout">
+      <p><strong>Ringkasan:</strong> pembaruan Agustus 2026 Bluesky memungkinkan Anda menyembunyikan repost dari satu akun tertentu sambil tetap mempertahankan post asli orang itu. Ini adalah kontrol &ldquo;ikuti orangnya, bukan paketnya&rdquo; yang cocok dengan identitas terbuka dan agensi pengguna platform. Kurasi feed dulu, lalu arsipkan yang tersisa sebagai Markdown.</p>
+    </div>
+
+    <h2>Mengapa &ldquo;Sembunyikan Repost dari Pengguna Tertentu&rdquo; Itu Penting</h2>
+
+    <p>Repost adalah salah satu cara paling umum sebuah feed sosial menjadi berantakan. Repost bukan sekadar dukungan &mdash; ini adalah peristiwa distribusi. Satu akun aktif dapat menarik kumpulan percakapan, lelucon, tautan, dan obsesi niche yang sama sekali berbeda ke linimasa Anda setiap hari. Secara historis, platform memperlakukan ini sebagai bagian dari kesepakatan: ikuti seseorang, dapatkan seluruh paketnya.</p>
+
+    <p>Kontrol baru Bluesky memisahkan lapisan-lapisan itu. Anda dapat mempertahankan orangnya dan menolak satu perilaku tertentu &mdash; repost mereka. Seperti yang dirangkum wersm.com tentang pembaruan ini, fitur ini memberi pengguna &ldquo;tuas yang lebih kecil daripada mute, blokir, atau unfollow&rdquo;. Bagi kreator dan merek, implikasinya tajam: distribusi menjadi semakin bersyarat. Memposting ulang secara agresif mungkin masih mendorong jangkauan, tetapi juga dapat melatih pengikut untuk memotong perilaku itu dari feed mereka.</p>
+
+    <h2>Bagaimana Fitur Sembunyikan Repost Bekerja</h2>
+
+    <p>Fitur ini adalah filter di sisi pembaca. Saat Anda menyembunyikan repost dari akun tertentu, hanya <em>feed Anda</em> yang berubah. Akun yang Anda filter tidak mendapat notifikasi, dan jangkauan posting mereka secara keseluruhan tidak terpengaruh. Ini bersifat lokal untuk linimasa beranda dan feed khusus yang Anda kontrol.</p>
+
+    <ul>
+      <li><strong>Bukan unfollow.</strong> Anda tetap melihat post asli, balasan, dan quote post dari akun tersebut.</li>
+      <li><strong>Bukan mute.</strong> Mute menyembunyikan semua yang diposting seseorang; menyembunyikan repost hanya menghapus repost-nya.</li>
+      <li><strong>Bukan blokir.</strong> Hubungan tetap utuh dan dua arah &mdash; Anda hanya berhenti menerima satu perilaku itu.</li>
+    </ul>
+
+    <p>Hasilnya adalah feed yang dapat Anda sesuaikan pada tingkat perilaku, bukan tingkat akun. Ini adalah filosofi yang sama di balik feed khusus dan kontrol moderasi Bluesky: pengalaman harus dapat disesuaikan, bukan ditentukan dari atas ke bawah oleh satu sistem feed yang tidak transparan.</p>
+
+    <div class="callout">
+      <p><strong>Catatan:</strong> jika Anda ingin memverifikasi ketersediaan pengaturan ini saat ini di dalam aplikasi &mdash; menu dan pengaturan berubah antarversi &mdash; periksa aplikasi Bluesky atau dokumentasi dukungan resmi sebelum mengandalkan jalur menu tertentu.</p>
+    </div>
+
+    <h2>Penomoran Post untuk Thread Panjang</h2>
+
+    <p>Pembaruan yang sama menghadirkan perubahan kedua yang lebih tenang: <strong>penomoran post untuk thread</strong>.</p>
+
+    <p>Percakapan panjang di Bluesky sering membawa nilainya melintasi balasan, quote post, dan thread yang berjalan. Memberi nomor pada setiap post membuat percakapan itu jauh lebih mudah diikuti dan mengurangi gesekan untuk bertahan dalam diskusi panjang. Ini tidak mengubah apa yang diposting orang &mdash; ini mengubah seberapa mudah dibacanya sebuah thread. wersm.com menyebut kedua perubahan itu &ldquo;sangat Bluesky&rdquo;: kontrol kecil yang berpusat pada pengguna dan condong ke keterbacaan serta agensi.</p>
+
+    <h2>Alur Kurasi Feed Empat Langkah</h2>
+
+    <p>Berikut alur yang dapat diulang untuk mengubah feed Bluesky yang berisik menjadi bersih, lalu menyimpan apa yang penting:</p>
+
+    <ol>
+      <li><strong>Audit kebisingan.</strong> Habiskan sehari mengamati akun mana yang membanjiri linimasa Anda dengan repost yang tetap Anda lewati.</li>
+      <li><strong>Sembunyikan, jangan potong.</strong> Untuk setiap akun, sembunyikan repost alih-alih unfollow atau mute &mdash; Anda mempertahankan orangnya dan membuang perilakunya.</li>
+      <li><strong>Kurasi feed Anda.</strong> Andalkan feed khusus untuk sinyal spesifik yang Anda inginkan, lalu terapkan filter per akun yang baru di atasnya.</li>
+      <li><strong>Arsipkan yang tersisa.</strong> Simpan post yang penting sebagai Markdown sebelum hilang, berubah, atau diedit.</li>
+    </ol>
+
+    <p>Skrip Python kecil menggunakan API atproto publik Bluesky mengubah post yang Anda simpan menjadi Markdown yang tahan lama, tanpa akun atau token untuk konten publik:</p>
+
+    <pre><code>import json, urllib.request
+did = "did:plc:z72i7hdynmk6r22z27h6tvur"
+url = ("https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed"
+       "?actor=" + did + "&amp;limit=10")
+data = json.load(urllib.request.urlopen(url))
+for item in data["feed"]:
+    rec = item["post"]["record"]
+    print("## " + rec.get("createdAt", "")[:10])
+    print(rec.get("text", "") + "\n")</code></pre>
+
+    <p>Untuk akun atau linimasa lengkap, tambahkan penomoran halaman dengan kolom <code>cursor</code> sehingga tidak ada post yang terlewat. <a href="https://docs.bsky.app/docs/api/app-bsky-feed-get-author-feed" rel="noopener" target="_blank">Dokumentasi resmi endpoint feed</a> menjelaskan kolom respons yang tepat, termasuk teks, stempel waktu, dan cursor.</p>
+
+    <h2>Kurasi Dulu, Lalu Arsipkan &mdash; Simpan Sinyalnya, Bukan Kebisingannya</h2>
+
+    <p>Kurasi feed dan pengarsipan adalah dua bagian dari pekerjaan yang sama. Kurasi menentukan apa yang sampai ke mata Anda; pengarsipan menentukan apa yang bertahan. Akun gratis dapat mengedit atau menghapus sebuah post, handle dapat berubah, dan algoritme dapat bergerak maju. Jika post yang terkurasi dengan baik itu penting &mdash; catatan riset, thread yang berguna, referensi yang akan Anda kutip nanti &mdash; satu-satunya salinan yang benar-benar Anda kendalikan adalah yang ada di disk Anda sendiri.</p>
+
+    <p>Markdown adalah format yang tepat untuk itu karena berupa teks biasa: dapat dicari, dapat diberi versi di git, dapat diindeks oleh LLM, dan dapat dibaca di aplikasi catatan apa pun sekarang maupun sepuluh tahun lagi. Tangkapan layar melestarikan piksel; Markdown melestarikan kata, struktur, dan tautan.</p>
+
+    <pre><code>bluesky-archive/
+  profile.json
+  2026-08-11-feed-curation.md
+  media/
+    image-01.jpg</code></pre>
+
+    <p>Beri nama setiap file berdasarkan tanggal dan slug post, simpan handle dalam <code>profile.json</code> kecil di sampingnya, dan jaga tautan gambar tetap relatif agar folder tercermin rapi di mana pun. Karena semuanya berupa teks biasa plus file, Anda dapat membaca arsip tanpa server Bluesky &mdash; dan arsip itu siap dialirkan ke alur AI, catatan, atau penerbitan apa pun yang Anda tambahkan nanti.</p>
+
+    <h2>Perbandingan Kurasi Feed Antarplatform</h2>
+
+    <table>
+      <thead>
+        <tr><th>Platform</th><th>Tingkat kontrol</th><th>Cara kerjanya pada 2026</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Bluesky</td><td>Perilaku</td><td>Sembunyikan repost per akun, feed khusus, penomoran post</td></tr>
+        <tr><td>X / Twitter</td><td>Akun</td><td>Mute, blokir, unfollow; daftar mengelompokkan akun tetapi repost tetap menyatu</td></tr>
+        <tr><td>Threads</td><td>Akun</td><td>Kata dan akun yang dimute; tanpa filter repost per akun</td></tr>
+        <tr><td>Mastodon</td><td>Perilaku</td><td>Sembunyikan boost (repost) per akun dari linimasa Anda</td></tr>
+      </tbody>
+    </table>
+
+    <p>Bluesky bukan platform pertama yang menawarkan filter boost per akun &mdash; Mastodon telah lama memungkinkan Anda menyembunyikan boost dari akun individu. Yang membuat pembaruan Bluesky menonjol adalah bahwa ia hadir di dalam produk yang sudah sangat mengandalkan agensi pengguna dan menandakan ke mana arah distribusi: bersyarat, pada tingkat perilaku, dan dikendalikan pengguna. Bagi siapa pun yang membangun arsip lintas platform, itu berarti feed yang Anda kurasi dan post yang Anda simpan semakin menjadi kumpulan terkurasi yang sama.</p>
+
+    <h2>Kesimpulan</h2>
+
+    <p>Menyembunyikan repost dari pengguna tertentu adalah kontrol kecil dengan arah yang jelas. Ini memungkinkan Anda mengikuti orang untuk apa yang benar-benar mereka posting dan menolak perilaku yang tidak Anda inginkan &mdash; tanpa palu tumpul berupa unfollow, mute, atau blokir. Padukan dengan penomoran post untuk thread panjang dan Anda mendapatkan pengalaman Bluesky yang jauh lebih bersih dan mudah dibaca.</p>
+
+    <p>Pelajaran yang lebih besar adalah tentang kepemilikan. Feed yang terkurasi masih hidup di server orang lain, dan post yang Anda nikmati dapat hilang kapan saja. Putuskan apa sinyalnya, lalu arsipkan. Markdown memberi Anda salinan yang tidak dapat diambil oleh algoritme, perubahan akun, atau keputusan platform mana pun.</p>
+
+    <div class="cta">
+      <p><strong>Simpan post yang penting.</strong> ThreadGrab mengonversi thread X, artikel panjang, dan post Bluesky menjadi Markdown yang bersih, mengunduh media ke disk Anda sendiri, dan menjaga pustaka lintas platform Anda tetap portabel &mdash; sehingga sinyal yang Anda kurasi tidak pernah terperangkap di satu jaringan.</p>
+      <a class="btn" href="/id/">Coba ThreadGrab</a>
+    </div>
+
+    <div class="related">
+      <h3>Terkait di ThreadGrab</h3>
+      <ul>
+        <li><a href="/id/blog/bluesky-ke-markdown-simpan-posts-2026.html">Bluesky ke Markdown 2026: Simpan Post sebagai Markdown</a></li>
+        <li><a href="/id/blog/bluesky-post-archiving-solutions-2026.html">Solusi Pengarsipan Post Bluesky 2026 Dibandingkan</a></li>
+        <li><a href="/id/blog/social-content-cross-posting-workflow-2026.html">Alur Publikasi Silang Konten Sosial 2026</a></li>
+        <li><a href="/id/blog/atproto-bluesky-data-portability-2026.html">Portabilitas Data ATProto Bluesky 2026</a></li>
+        <li><a href="/id/blog/social-content-ownership-local-archiving-2026.html">Kepemilikan Konten Sosial dan Pengarsipan Lokal 2026</a></li>
+      </ul>
+    </div>
+
+    <h2>FAQ</h2>
+
+    <div class="faq-item">
+      <strong>Apakah Bluesky memungkinkan Anda menyembunyikan repost dari pengguna tertentu?</strong>
+      <p>Ya. Bluesky menambahkan fitur pada Agustus 2026 yang memungkinkan Anda menyembunyikan repost dari satu akun di feed Anda tanpa unfollow, mute, atau memblokir orang tersebut. Anda tetap mengikuti akun itu untuk post aslinya dan hanya menghapus repost-nya.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Apa perbedaan antara menyembunyikan repost dan mute di Bluesky?</strong>
+      <p>Mute menyembunyikan semua post dari sebuah akun di linimasa Anda. Menyembunyikan repost hanya menghapus repost orang tersebut, sementara post asli, balasan, dan quote post tetap muncul. Ini adalah tuas yang lebih kecil dan lebih presisi daripada mute, blokir, atau unfollow.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Apakah menyembunyikan repost dari satu pengguna memengaruhi apa yang dilihat pengguna itu?</strong>
+      <p>Tidak. Menyembunyikan repost adalah filter satu arah di sisi pembaca yang hanya mengubah feed Anda sendiri. Akun yang difilter tidak mendapat notifikasi dan jangkauan posting mereka tidak terpengaruh. Ini bersifat lokal untuk linimasa beranda dan feed khusus Anda.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Apa fungsi penomoran post pada thread Bluesky?</strong>
+      <p>Penomoran post menambahkan angka yang terlihat pada post dalam sebuah thread, sehingga percakapan yang lebih panjang lebih mudah diikuti. Bluesky menambahkan kontrol ini bersamaan dengan fitur sembunyikan repost pada Agustus 2026. Ini adalah pengaturan keterbacaan, bukan perubahan cara thread diperingkat atau didistribusikan.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Bagaimana cara mengarsipkan post Bluesky yang tersisa setelah kurasi feed saya?</strong>
+      <p>Kurasi dulu, lalu simpan sinyalnya. Setelah memfilter feed Anda hingga apa yang benar-benar ingin dibaca, simpan post penting sebagai Markdown dengan alat seperti ThreadGrab atau skrip kecil API atproto. Markdown adalah teks biasa, sehingga tetap dapat dicari, dapat diberi versi, dan portabel di disk Anda sendiri.</p>
+    </div>
+  </main>
+
+  <footer>
+    <a href="/id/">Home</a> &middot;
+    <a href="/id/blog/">Blog</a> &middot;
+    <a href="/id/blog/bluesky-ke-markdown-simpan-posts-2026.html">Bluesky ke Markdown</a>
+    <br>
+    ThreadGrab adalah alat independen. Tidak berafiliasi dengan X Corp., Twitter, Bluesky Social PBC, atau layanan unggulan mana pun.
+    <br>
+    &copy; 2026 ThreadGrab
+  </footer>
+</body>
+</html>

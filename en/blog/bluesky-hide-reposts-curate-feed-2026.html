@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Hide Reposts on Bluesky 2026: Curate a Clean Feed | ThreadGrab</title>
+  <meta name="description" content="Bluesky now lets you hide reposts from specific users without unfollowing. Learn the 2026 feed-curation workflow and archive what matters as Markdown.">
+  <meta name="keywords" content="Bluesky hide reposts, hide reposts from specific users Bluesky, Bluesky feed curation 2026, clean up Bluesky feed, Bluesky post numbers threads, Bluesky mute vs hide reposts, Bluesky feed control, Bluesky archive Markdown, ThreadGrab">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/en/blog/bluesky-hide-reposts-curate-feed-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/bluesky-hide-reposts-curate-feed-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/bluesky-ocultar-reposts-curar-feed-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/bluesky-sembunyikan-repost-kurasi-feed-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/bluesky-hide-reposts-curate-feed-2026.html">
+  <meta property="og:title" content="How to Hide Reposts on Bluesky 2026: Curate a Clean Feed">
+  <meta property="og:description" content="Bluesky now lets you hide reposts from specific users without unfollowing. Learn the 2026 feed-curation workflow and archive what matters as Markdown.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/en/blog/bluesky-hide-reposts-curate-feed-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Hide Reposts on Bluesky 2026: Curate a Clean Feed">
+  <meta name="twitter:description" content="Bluesky now lets you hide reposts from specific users without unfollowing. Learn the 2026 feed-curation workflow and archive what matters as Markdown.">
+  <meta property="article:published_time" content="2026-08-11">
+  <meta property="article:modified_time" content="2026-08-11">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo:hover { color: #1d9bf0; }
+    .tagline { color: #888; font-size: 0.85rem; margin-left: auto; }
+    .lang-bar { display: flex; gap: 12px; padding: 12px 24px; background: #1a1a1a; font-size: 0.85rem; }
+    .lang-bar a { color: #888; text-decoration: none; padding: 4px 10px; border-radius: 4px; }
+    .lang-bar a.active { background: #1d9bf0; color: #fff; }
+    .lang-bar a:hover:not(.active) { background: #2a2a2a; color: #fff; }
+    main { max-width: 780px; margin: 0 auto; padding: 40px 24px; }
+    h1 { font-size: 2rem; margin-bottom: 8px; line-height: 1.2; }
+    h1 span { color: #1d9bf0; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { font-size: 1.5rem; margin-top: 40px; margin-bottom: 16px; color: #1d9bf0; }
+    h3 { font-size: 1.15rem; margin-top: 24px; margin-bottom: 12px; color: #fff; }
+    p { margin-bottom: 16px; color: #d0d0d0; }
+    code { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-family: 'SF Mono', Monaco, Consolas, monospace; font-size: 0.9em; color: #ff7b72; }
+    pre { background: #1a1a1a; padding: 16px; border-radius: 6px; overflow-x: auto; margin-bottom: 16px; border: 1px solid #2a2a2a; }
+    pre code { background: none; padding: 0; color: #e6e6e6; font-size: 0.85rem; line-height: 1.5; }
+    ul, ol { margin-bottom: 16px; padding-left: 24px; color: #d0d0d0; }
+    li { margin-bottom: 8px; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 0.9rem; }
+    th { background: #1a1a1a; padding: 10px 12px; text-align: left; color: #1d9bf0; border-bottom: 2px solid #2a2a2a; }
+    td { padding: 10px 12px; border-bottom: 1px solid #2a2a2a; color: #d0d0d0; }
+    tr:hover td { background: #1a1a1a; }
+    .callout { background: #1a2332; border-left: 4px solid #1d9bf0; padding: 16px 20px; margin: 24px 0; border-radius: 4px; }
+    .callout p { margin: 0; color: #d0d0d0; }
+    .callout strong { color: #1d9bf0; }
+    .cta { background: linear-gradient(135deg, #1d9bf0 0%, #1a6fb8 100%); padding: 24px; border-radius: 8px; margin: 32px 0; text-align: center; }
+    .cta p { color: #fff; margin-bottom: 12px; }
+    .btn { display: inline-block; background: #fff; color: #0f0f0f; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; }
+    .btn:hover { background: #e6e6e6; }
+    .faq-item { background: #1a1a1a; padding: 16px 20px; margin-bottom: 12px; border-radius: 6px; border-left: 3px solid #1d9bf0; }
+    .faq-item strong { color: #fff; display: block; margin-bottom: 8px; }
+    .faq-item p { margin: 0; color: #d0d0d0; }
+    .related { background: #1a1a1a; padding: 20px; border-radius: 6px; margin: 32px 0; }
+    .related h3 { color: #1d9bf0; margin-bottom: 12px; }
+    .related ul { list-style: none; padding: 0; }
+    .related li { padding: 6px 0; border-bottom: 1px solid #2a2a2a; }
+    .related li:last-child { border-bottom: none; }
+    .related a { color: #1d9bf0; text-decoration: none; }
+    .related a:hover { text-decoration: underline; }
+    footer { text-align: center; padding: 32px 24px; color: #888; font-size: 0.85rem; border-top: 1px solid #1a1a1a; margin-top: 64px; }
+    footer a { color: #888; text-decoration: none; }
+    footer a:hover { color: #1d9bf0; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Hide Reposts on Bluesky 2026: Curate a Clean Feed",
+    "description": "Bluesky now lets you hide reposts from specific users without unfollowing. Learn the 2026 feed-curation workflow and archive what matters as Markdown.",
+    "datePublished": "2026-08-11",
+    "dateModified": "2026-08-11",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/en/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/en/" },
+    "mainEntityOfPage": "https://threadgrab.com/en/blog/bluesky-hide-reposts-curate-feed-2026.html",
+    "inLanguage": "en"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://threadgrab.com/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/en/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "How to Hide Reposts on Bluesky 2026", "item": "https://threadgrab.com/en/blog/bluesky-hide-reposts-curate-feed-2026.html" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does Bluesky let you hide reposts from specific users?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Bluesky added a feature in August 2026 that lets you hide reposts from an individual account in your feeds without unfollowing, muting, or blocking that person. You keep the account for its own posts and remove only its reposts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between hiding reposts and muting on Bluesky?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Muting hides all of an account's posts from your timeline. Hiding reposts removes only that person's reposts, while their original posts, replies, and quote posts still appear. It is a smaller, more precise lever than mute, block, or unfollow."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does hiding reposts from one user affect what that user sees?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Hiding reposts is a one-way, read-side filter that changes only your own feeds. The account you filter from does not get a notification and their posting reach is not affected. It is local to your home timeline and custom feeds."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does post numbering on Bluesky threads do?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Post numbering adds visible numbers to the posts in a thread, which makes longer conversations easier to follow. Bluesky added this control alongside the hide-reposts feature in August 2026. It is a readability toggle, not a change to how threads rank or are distributed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I archive the Bluesky posts that survive my feed curation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Curate first, then keep the signal. After you filter your feed down to what you actually want to read, save the important posts as Markdown with a tool like ThreadGrab or a small atproto API script. Markdown is plain text, so it stays searchable, versionable, and portable on your own disk."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a href="/en/" class="logo">ThreadGrab</a>
+    <span class="tagline">Archive X threads as Markdown</span>
+  </header>
+  <div class="lang-bar">
+    <a href="/en/blog/bluesky-hide-reposts-curate-feed-2026.html" class="active">EN</a>
+    <a href="/pt/blog/bluesky-ocultar-reposts-curar-feed-2026.html">PT</a>
+    <a href="/id/blog/bluesky-sembunyikan-repost-kurasi-feed-2026.html">ID</a>
+  </div>
+
+  <main>
+    <h1>How to Hide Reposts on Bluesky 2026: <span>Curate a Clean Feed</span></h1>
+    <div class="meta">August 11, 2026 &middot; 9 min read &middot; Guide</div>
+
+    <p>On August 10, 2026, Bluesky shipped a small control that changes how you can clean up a messy timeline: <strong>hiding reposts from an individual account</strong> without unfollowing, muting, or blocking that person. Covered by <a href="https://wersm.com/bluesky-hide-reposts-specific-users/" rel="noopener" target="_blank">wersm.com</a> and by The Verge, the update fits Bluesky&rsquo;s longer-running bet that users should be able to shape the signal before the platform decides what the signal means.</p>
+
+    <p>This guide explains what the new feature actually does, the second change that shipped with it (post numbering for long threads), and a four-step curation workflow that turns a noisy feed into a clean one &mdash; then archives the posts worth keeping as Markdown so the signal survives past the algorithm.</p>
+
+    <div class="callout">
+      <p><strong>Quick take:</strong> Bluesky&rsquo;s August 2026 update lets you hide reposts from one specific account while keeping that person&rsquo;s own posts. It is the &ldquo;follow the person, not the package&rdquo; control that fits the platform&rsquo;s open, user-agency identity. Curate the feed first, then archive the survivors as Markdown.</p>
+    </div>
+
+    <h2>Why &ldquo;Hide Reposts From Specific Users&rdquo; Matters</h2>
+
+    <p>Reposts are one of the most common ways a social feed gets messy. A repost is not just an endorsement &mdash; it is a distribution event. One active account can pull an entirely different set of conversations, jokes, links, and niche obsessions into your timeline every single day. Historically, platforms treated that as part of the bargain: follow a person, get the whole package.</p>
+
+    <p>Bluesky&rsquo;s new control separates those layers. You can keep the person and reject one specific behavior &mdash; their reposts. As wersm.com summarized the update, it gives users &ldquo;a smaller lever than mute, block, or unfollow.&rdquo; For creators and brands the implication is sharp: distribution is becoming more conditional. Reposting aggressively may still drive reach, but it can also train followers to cut that behavior out of their feed.</p>
+
+    <h2>How the Hide-Reposts Feature Works</h2>
+
+    <p>The feature is a read-side filter. When you hide reposts from a specific account, only <em>your</em> feeds change. The account you filter from gets no notification, and their overall posting reach is unaffected. It is local to your home timeline and any custom feeds you control.</p>
+
+    <ul>
+      <li><strong>Not unfollow.</strong> You still see the account&rsquo;s original posts, replies, and quote posts.</li>
+      <li><strong>Not mute.</strong> Muting hides everything a person posts; hiding reposts removes only the reposts.</li>
+      <li><strong>Not block.</strong> The relationship stays intact and two-way &mdash; you just stop receiving that one behavior.</li>
+    </ul>
+
+    <p>The result is a feed you can tune at the behavior level rather than the account level. It is the same philosophy behind Bluesky&rsquo;s custom feeds and moderation controls: the experience should be adjustable, not dictated from the top down by one opaque feed system.</p>
+
+    <div class="callout">
+      <p><strong>Note:</strong> if you want to verify the current availability of this setting inside the app &mdash; settings and menus shift between versions &mdash; check the Bluesky app or the official support docs before depending on a specific menu path.</p>
+    </div>
+
+    <h2>Post Numbering for Long Threads</h2>
+
+    <p>The same update shipped a second, quieter change: <strong>post numbers for threads</strong>.</p>
+
+    <p>Long Bluesky conversations often carry their value across replies, quote posts, and running threads. Numbering each post makes those conversations dramatically easier to follow and reduces the friction of staying with a long discussion. It does not change what people post &mdash; it changes how readable a thread becomes. wersm.com called both changes &ldquo;very Bluesky&rdquo;: small, user-facing controls that lean into readability and agency.</p>
+
+    <h2>A Four-Step Feed Curation Workflow</h2>
+
+    <p>Here is a repeatable workflow for turning a noisy Bluesky feed into a clean one, then keeping what matters:</p>
+
+    <ol>
+      <li><strong>Audit your noise.</strong> Spend a day watching which accounts flood your timeline with reposts you skip anyway.</li>
+      <li><strong>Hide, don&rsquo;t cut.</strong> For each account, hide reposts instead of unfollowing or muting &mdash; you keep the person and drop the behavior.</li>
+      <li><strong>Curate your feeds.</strong> Lean on custom feeds for the specific signal you want, and use the new per-account filter on top.</li>
+      <li><strong>Archive the survivors.</strong> Save the posts that matter as Markdown before they disappear, change, or get edited.</li>
+    </ol>
+
+    <p>A small Python script using Bluesky&rsquo;s public atproto API turns the posts you keep into durable Markdown, no account or token required for public content:</p>
+
+    <pre><code>import json, urllib.request
+did = "did:plc:z72i7hdynmk6r22z27h6tvur"
+url = ("https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed"
+       "?actor=" + did + "&amp;limit=10")
+data = json.load(urllib.request.urlopen(url))
+for item in data["feed"]:
+    rec = item["post"]["record"]
+    print("## " + rec.get("createdAt", "")[:10])
+    print(rec.get("text", "") + "\n")</code></pre>
+
+    <p>For a full account or timeline, add pagination with the <code>cursor</code> field so no post is skipped. The <a href="https://docs.bsky.app/docs/api/app-bsky-feed-get-author-feed" rel="noopener" target="_blank">official feed endpoint documentation</a> describes the exact response fields, including the text, timestamp, and cursor.</p>
+
+    <h2>Curate, Then Archive &mdash; Save the Signal, Not the Noise</h2>
+
+    <p>Feed curation and archiving are two halves of the same job. Curation decides what reaches your eyes; archiving decides what survives. A free account can edit or delete a post, a handle can change, and an algorithm can move on. If a well-curated post matters &mdash; a research note, a useful thread, a reference you will cite later &mdash; the only copy you truly control is the one on your own disk.</p>
+
+    <p>Markdown is the right format for that because it is plain text: searchable, versionable in git, indexable by an LLM, and readable in any notes app now and in ten years. A screenshot preserves the pixels; Markdown preserves the words, the structure, and the links.</p>
+
+    <pre><code>bluesky-archive/
+  profile.json
+  2026-08-11-feed-curation.md
+  media/
+    image-01.jpg</code></pre>
+
+    <p>Name each file by the post&rsquo;s date and slug, store the handle in a small <code>profile.json</code> alongside, and keep image links relative so the folder mirrors cleanly anywhere. Because everything is plain text plus files, you can read the archive without a Bluesky server &mdash; and it feeds into any AI, notes, or publishing workflow you add later.</p>
+
+    <h2>How Feed Curation Compares Across Platforms</h2>
+
+    <table>
+      <thead>
+        <tr><th>Platform</th><th>Control level</th><th>How it works in 2026</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Bluesky</td><td>Behavior</td><td>Hide reposts per account, custom feeds, post numbering</td></tr>
+        <tr><td>X / Twitter</td><td>Account</td><td>Mute, block, unfollow; Lists group accounts but reposts stay bundled</td></tr>
+        <tr><td>Threads</td><td>Account</td><td>Muted words and accounts; no per-account repost filter</td></tr>
+        <tr><td>Mastodon</td><td>Behavior</td><td>Hide boosts (reposts) per account from your timeline</td></tr>
+      </tbody>
+    </table>
+
+    <p>Bluesky is not the first platform to offer a per-account boost filter &mdash; Mastodon has long let you hide boosts from individual accounts. What makes the Bluesky update notable is that it lands inside a product already pushing hard on user agency, and it signals where distribution is heading: conditional, behavior-level, and user-controlled. For anyone building a cross-platform archive, that means the feed you curate and the posts you save are increasingly the same curated set.</p>
+
+    <h2>The Bottom Line</h2>
+
+    <p>Hiding reposts from specific users is a small control with a clear direction. It lets you follow people for what they actually post and reject the behavior you do not want &mdash; without the blunt hammer of unfollow, mute, or block. Pair it with post numbering for long threads and you have a noticeably cleaner, more readable Bluesky experience.</p>
+
+    <p>The larger lesson is about ownership. A curated feed still lives on someone else&rsquo;s server, and the posts you enjoy can vanish at any time. Decide what the signal is, then archive it. Markdown gives you a copy that no algorithm, account change, or platform decision can take away.</p>
+
+    <div class="cta">
+      <p><strong>Keep the posts that matter.</strong> ThreadGrab converts X threads, long-form articles, and Bluesky posts into clean Markdown, downloads the media to your own disk, and keeps your cross-platform library portable &mdash; so the signal you curated is never trapped on one network.</p>
+      <a class="btn" href="/en/">Try ThreadGrab</a>
+    </div>
+
+    <div class="related">
+      <h3>Related on ThreadGrab</h3>
+      <ul>
+        <li><a href="/en/blog/bluesky-to-markdown-save-posts-2026.html">Bluesky to Markdown 2026: Save Posts as Markdown</a></li>
+        <li><a href="/en/blog/bluesky-post-archiving-solutions-2026.html">Bluesky Post Archiving Solutions 2026 Compared</a></li>
+        <li><a href="/en/blog/social-content-cross-posting-workflow-2026.html">Social Content Cross-Posting Workflow 2026</a></li>
+        <li><a href="/en/blog/atproto-bluesky-data-portability-2026.html">Bluesky ATProto Data Portability 2026</a></li>
+        <li><a href="/en/blog/social-content-ownership-local-archiving-2026.html">Social Content Ownership &amp; Local Archiving 2026</a></li>
+      </ul>
+    </div>
+
+    <h2>FAQ</h2>
+
+    <div class="faq-item">
+      <strong>Does Bluesky let you hide reposts from specific users?</strong>
+      <p>Yes. Bluesky added a feature in August 2026 that lets you hide reposts from an individual account in your feeds without unfollowing, muting, or blocking that person. You keep the account for its own posts and remove only its reposts.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>What is the difference between hiding reposts and muting on Bluesky?</strong>
+      <p>Muting hides all of an account's posts from your timeline. Hiding reposts removes only that person's reposts, while their original posts, replies, and quote posts still appear. It is a smaller, more precise lever than mute, block, or unfollow.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Does hiding reposts from one user affect what that user sees?</strong>
+      <p>No. Hiding reposts is a one-way, read-side filter that changes only your own feeds. The account you filter from does not get a notification and their posting reach is not affected. It is local to your home timeline and custom feeds.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>What does post numbering on Bluesky threads do?</strong>
+      <p>Post numbering adds visible numbers to the posts in a thread, which makes longer conversations easier to follow. Bluesky added this control alongside the hide-reposts feature in August 2026. It is a readability toggle, not a change to how threads rank or are distributed.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>How do I archive the Bluesky posts that survive my feed curation?</strong>
+      <p>Curate first, then keep the signal. After you filter your feed down to what you actually want to read, save the important posts as Markdown with a tool like ThreadGrab or a small atproto API script. Markdown is plain text, so it stays searchable, versionable, and portable on your own disk.</p>
+    </div>
+  </main>
+
+  <footer>
+    <a href="/en/">Home</a> &middot;
+    <a href="/en/blog/">Blog</a> &middot;
+    <a href="/en/blog/bluesky-to-markdown-save-posts-2026.html">Bluesky to Markdown</a>
+    <br>
+    ThreadGrab is an independent tool. Not affiliated with X Corp., Twitter, Bluesky Social PBC, or any featured service.
+    <br>
+    &copy; 2026 ThreadGrab
+  </footer>
+</body>
+</html>
