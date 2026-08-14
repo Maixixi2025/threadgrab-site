@@ -4626,6 +4626,162 @@
       ],
       "primary_cta": "Coba ThreadGrab (id)",
       "git_commit": "04f7129"
+    },
+    {
+      "date": "2026-08-14",
+      "status": "published",
+      "created_at": "2026-08-14",
+      "published_at": "2026-08-14",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "providers_featured": [
+        "Bluesky",
+        "AT Protocol",
+        "ThreadGrab"
+      ],
+      "heat_source": "Bluesky app decline (down 52% from late-2024 peak; 10.4M mobile MAU June 2026, -27.2% YoY; DAU -25.6% July to ~3M, Similarweb) as CEO Toni Schneider pivots focus from the Bluesky app to the AT Protocol (BlackSky/Eurosky growing, Skylight video traction, Attie AI, private data support). TechCrunch Aug 11 2026 body fetched directly; verified multi-outlet Aug 12 (GIGAZINE -27% YoY, finance.biggo MAU halved, Global Dating Insights). Briefing 3ea88f8bb2d0 FAILED (reasoning_content API 400). All 4 priority topics already covered in archive; fresh Google News RSS gap-scan found ZERO coverage of Bluesky app-decline/protocol-pivot family. Maps to Bluesky-ecosystem + public-content-archiving angle for threadgrab.",
+      "git_commit": "282dc0e",
+      "type": "guide",
+      "slug": "bluesky-app-decline-protocol-pivot-2026",
+      "lang": "en",
+      "file": "en/blog/bluesky-app-decline-protocol-pivot-2026.html",
+      "url": "https://threadgrab.com/en/blog/bluesky-app-decline-protocol-pivot-2026.html",
+      "title": "Bluesky App Decline 2026: The Protocol Pivot Changes Archiving",
+      "description": "Bluesky's app is shrinking (down 52% from the peak) as it pivots to the AT Protocol. Archive public threads as Markdown before the conversation shifts.",
+      "tags": [
+        "Bluesky app decline 2026",
+        "Bluesky active users down",
+        "Bluesky protocol pivot",
+        "AT Protocol Bluesky",
+        "Toni Schneider Bluesky",
+        "Similarweb Bluesky data",
+        "archive Bluesky threads",
+        "save Bluesky posts Markdown",
+        "ThreadGrab"
+      ],
+      "primary_cta": "Try ThreadGrab (en)",
+      "qa_passed": {
+        "title_chars": 75,
+        "description_chars": 151,
+        "hreflang_alternates": 4,
+        "canonical_present": true,
+        "jsonld_blocks": 3,
+        "faq_count": 5,
+        "h2_count": 7,
+        "code_blocks": 2,
+        "code_block_byte_identity_en_pt_id": true,
+        "raw_lt_in_code": 0,
+        "word_count": 1685,
+        "chinese_chars": 0,
+        "cyrillic_chars": 0
+      }
+    },
+    {
+      "date": "2026-08-14",
+      "status": "published",
+      "created_at": "2026-08-14",
+      "published_at": "2026-08-14",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "providers_featured": [
+        "Bluesky",
+        "AT Protocol",
+        "ThreadGrab"
+      ],
+      "heat_source": "Bluesky app decline (down 52% from late-2024 peak; 10.4M mobile MAU June 2026, -27.2% YoY; DAU -25.6% July to ~3M, Similarweb) as CEO Toni Schneider pivots focus from the Bluesky app to the AT Protocol (BlackSky/Eurosky growing, Skylight video traction, Attie AI, private data support). TechCrunch Aug 11 2026 body fetched directly; verified multi-outlet Aug 12 (GIGAZINE -27% YoY, finance.biggo MAU halved, Global Dating Insights). Briefing 3ea88f8bb2d0 FAILED (reasoning_content API 400). All 4 priority topics already covered in archive; fresh Google News RSS gap-scan found ZERO coverage of Bluesky app-decline/protocol-pivot family. Maps to Bluesky-ecosystem + public-content-archiving angle for threadgrab.",
+      "git_commit": "282dc0e",
+      "type": "guia",
+      "slug": "bluesky-declinio-aplicativo-pivotal-protocolo-2026",
+      "lang": "pt",
+      "file": "pt/blog/bluesky-declinio-aplicativo-pivotal-protocolo-2026.html",
+      "url": "https://threadgrab.com/pt/blog/bluesky-declinio-aplicativo-pivotal-protocolo-2026.html",
+      "title": "Declínio do App Bluesky 2026: Pivô para o Protocolo",
+      "description": "O app do Bluesky encolhe (queda de 52% desde o pico) enquanto pivota para o AT Protocol. Arquive threads públicas como Markdown.",
+      "tags": [
+        "declínio app Bluesky 2026",
+        "usuários ativos Bluesky caindo",
+        "pivô protocolo Bluesky",
+        "AT Protocol Bluesky",
+        "Toni Schneider Bluesky",
+        "dados Similarweb Bluesky",
+        "arquivar threads Bluesky",
+        "salvar posts Bluesky Markdown",
+        "ThreadGrab"
+      ],
+      "primary_cta": "Experimente o ThreadGrab (pt)",
+      "qa_passed": {
+        "title_chars": 64,
+        "description_chars": 128,
+        "hreflang_alternates": 4,
+        "canonical_present": true,
+        "jsonld_blocks": 3,
+        "faq_count": 5,
+        "h2_count": 7,
+        "code_blocks": 2,
+        "code_block_byte_identity_en_pt_id": true,
+        "raw_lt_in_code": 0,
+        "word_count": 1875,
+        "chinese_chars": 0,
+        "cyrillic_chars": 0
+      }
+    },
+    {
+      "date": "2026-08-14",
+      "status": "published",
+      "created_at": "2026-08-14",
+      "published_at": "2026-08-14",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "providers_featured": [
+        "Bluesky",
+        "AT Protocol",
+        "ThreadGrab"
+      ],
+      "heat_source": "Bluesky app decline (down 52% from late-2024 peak; 10.4M mobile MAU June 2026, -27.2% YoY; DAU -25.6% July to ~3M, Similarweb) as CEO Toni Schneider pivots focus from the Bluesky app to the AT Protocol (BlackSky/Eurosky growing, Skylight video traction, Attie AI, private data support). TechCrunch Aug 11 2026 body fetched directly; verified multi-outlet Aug 12 (GIGAZINE -27% YoY, finance.biggo MAU halved, Global Dating Insights). Briefing 3ea88f8bb2d0 FAILED (reasoning_content API 400). All 4 priority topics already covered in archive; fresh Google News RSS gap-scan found ZERO coverage of Bluesky app-decline/protocol-pivot family. Maps to Bluesky-ecosystem + public-content-archiving angle for threadgrab.",
+      "git_commit": "282dc0e",
+      "type": "panduan",
+      "slug": "bluesky-penurunan-aplikasi-peralihan-protokol-2026",
+      "lang": "id",
+      "file": "id/blog/bluesky-penurunan-aplikasi-peralihan-protokol-2026.html",
+      "url": "https://threadgrab.com/id/blog/bluesky-penurunan-aplikasi-peralihan-protokol-2026.html",
+      "title": "Penurunan Bluesky 2026: Peralihan ke Protokol",
+      "description": "Aplikasi Bluesky menyusut (turun 52% dari puncak) saat beralih ke AT Protocol. Arsipkan thread publik sebagai Markdown sebelum percakapan berpindah.",
+      "tags": [
+        "penurunan aplikasi Bluesky 2026",
+        "pengguna aktif Bluesky turun",
+        "peralihan protokol Bluesky",
+        "AT Protocol Bluesky",
+        "Toni Schneider Bluesky",
+        "data Similarweb Bluesky",
+        "arsipkan thread Bluesky",
+        "simpan posting Bluesky Markdown",
+        "ThreadGrab"
+      ],
+      "primary_cta": "Coba ThreadGrab (id)",
+      "qa_passed": {
+        "title_chars": 58,
+        "description_chars": 153,
+        "hreflang_alternates": 4,
+        "canonical_present": true,
+        "jsonld_blocks": 3,
+        "faq_count": 5,
+        "h2_count": 7,
+        "code_blocks": 2,
+        "code_block_byte_identity_en_pt_id": true,
+        "raw_lt_in_code": 0,
+        "word_count": 1529,
+        "chinese_chars": 0,
+        "cyrillic_chars": 0
+      }
     }
   ],
   "drafts": [
@@ -5210,21 +5366,21 @@
     }
   ],
   "recent_topics": [
+    "bluesky-app-decline-protocol-pivot-2026",
     "x-communities-shutdown-xchat-groups-2026",
     "x-auto-translate-grok-multilingual-2026",
     "bluesky-hide-reposts-curate-feed-2026",
-    "bluesky-to-markdown-save-posts-2026",
-    "x-original-content-rewards-creator-workflow-2026"
+    "bluesky-to-markdown-save-posts-2026"
   ],
-  "last_run": "2026-08-13",
-  "last_publish": "2026-08-13",
-  "last_published_slug": "x-communities-shutdown-xchat-groups-2026",
+  "last_run": "2026-08-14",
+  "last_publish": "2026-08-14",
+  "last_published_slug": "bluesky-app-decline-protocol-pivot-2026",
   "last_draft_slug": "tweet-md-api-llm-workflows-2026",
-  "last_published_at": "2026-08-13",
+  "last_published_at": "2026-08-14",
   "drafts_count": 24,
-  "published_count": 165,
-  "last_topic_picked": "X Communities shutdown + XChat group chat pivot (public -> private conversation)",
-  "last_pick_source": "briefing #FAILED (5th reasoning_content API 400); fresh Google News RSS multi-keyword gap-scan surfacing XChat/Communities shutdown (TechCrunch Apr 23-24 2026 bodies verified); all 4 priority topics already covered",
+  "published_count": 168,
+  "last_topic_picked": "Bluesky app decline + AT Protocol pivot (public app shrinking -> archive the threads while public)",
+  "last_pick_source": "briefing #FAILED (reasoning_content API 400); fresh Google News RSS multi-keyword gap-scan surfacing Bluesky app decline/protocol pivot (TechCrunch Aug 11 2026 body verified); all 4 priority topics already covered",
   "last_drafted_slug": "tweet-md-api-llm-workflows-2026",
-  "publish_notes": "Published X Communities shutdown + XChat group chat guide (en/pt/id) 2026-08-13; rotated out oldest bluesky-post-archiving card from indexes"
+  "publish_notes": "Published Bluesky app decline + AT Protocol pivot archive guide (en/pt/id) 2026-08-14; rotated oldest cards out of indexes to 50"
 }
