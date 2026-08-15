@@ -9,6 +9,8 @@
 - [Home (Português)](https://threadgrab.com/pt/): ThreadGrab em português.
 
 ## Blog
+- [X Archive Cleanup 2026: Delete the Noise, Keep Best Threads | ThreadGrab](https://threadgrab.com/en/blog/x-twitter-archive-cleanup-2026.html): Clean up your X or Twitter archive with TweetEraser, TweetDelete, TweetDeleter, Redact, or Circleboom without losing your best work — preserve the threads that matter as Markdown before you mass-delete.
+
 - [X Original Content Rewards 2026: Creator Workflow | ThreadGrab](https://threadgrab.com/en/blog/x-original-content-rewards-creator-workflow-2026.html): X retires Revenue Sharing and launches Original Content Rewards on September 8, 2026 — Premium, 500 verified followers, and 500,000 verified-user impressions in 90 days, plus originality rules and a Markdown archive workflow to protect your payouts.
 
 - [X v11.90 Articles Scraper: threadgrab Long-Form 2026 | ThreadGrab](https://threadgrab.com/en/blog/x-articles-v1190-threadgrab-2026.html): X v11.90 changed the See All Articles entry to a top-level segmented control and switched the article id to 19-char base64. Here is how to scrape the new layout with threadgrab and clean Markdown.
