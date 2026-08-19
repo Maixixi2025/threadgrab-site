@@ -5106,6 +5106,63 @@
         "ThreadGrab"
       ],
       "primary_cta": "Try ThreadGrab (id)"
+    },
+    {
+      "slug": "x-articles-ai-native-composer-2026",
+      "date": "2026-08-19",
+      "type": "guide",
+      "file": "en/blog/x-articles-ai-native-composer-2026.html",
+      "url": "https://threadgrab.com/en/blog/x-articles-ai-native-composer-2026.html",
+      "title": "X Articles AI Native Composer 2026: Grok in the Long-Form Editor",
+      "description": "X Articles quietly became AI-native in 2026. Here is what Grok-powered suggestions, smart headings, and inline rephrasing mean for creators and for tools that archive X Articles.",
+      "heat_source": "Hacker News \"AI Native, Without the Badge\" by arkwor 2026-08-17; threadgrab daily briefing 2026-08-19 ⭐",
+      "status": "published",
+      "published_at": "2026-08-19T18:00:00+08:00",
+      "providers_featured": [
+        "X Articles",
+        "Grok",
+        "ThreadGrab"
+      ],
+      "primary_cta": "archive_x_article",
+      "lang": "en"
+    },
+    {
+      "slug": "x-articles-ai-native-composer-2026",
+      "date": "2026-08-19",
+      "type": "guide",
+      "file": "pt/blog/x-articles-ai-native-composer-2026.html",
+      "url": "https://threadgrab.com/pt/blog/x-articles-ai-native-composer-2026.html",
+      "title": "Compositor X Articles IA-Nativo 2026: Grok no Editor Long-Form",
+      "description": "O X Articles virou IA-nativo em 2026 sem alarde. Veja o que as sugestões do Grok, os títulos inteligentes e a reescrita inline significam para criadores e para ferramentas que arquivam X Articles.",
+      "heat_source": "Hacker News \"AI Native, Without the Badge\" by arkwor 2026-08-17; threadgrab daily briefing 2026-08-19 ⭐",
+      "status": "published",
+      "published_at": "2026-08-19T18:00:00+08:00",
+      "providers_featured": [
+        "X Articles",
+        "Grok",
+        "ThreadGrab"
+      ],
+      "primary_cta": "archive_x_article",
+      "lang": "pt"
+    },
+    {
+      "slug": "x-articles-ai-native-composer-2026",
+      "date": "2026-08-19",
+      "type": "guide",
+      "file": "id/blog/x-articles-ai-native-composer-2026.html",
+      "url": "https://threadgrab.com/id/blog/x-articles-ai-native-composer-2026.html",
+      "title": "Composer X Articles AI Native 2026: Grok di Editor Long-Form",
+      "description": "X Articles diam-diam menjadi AI-native di 2026. Inilah arti saran Grok, judul pintar, dan rewrite inline bagi kreator dan alat yang mengarsipkan X Articles.",
+      "heat_source": "Hacker News \"AI Native, Without the Badge\" by arkwor 2026-08-17; threadgrab daily briefing 2026-08-19 ⭐",
+      "status": "published",
+      "published_at": "2026-08-19T18:00:00+08:00",
+      "providers_featured": [
+        "X Articles",
+        "Grok",
+        "ThreadGrab"
+      ],
+      "primary_cta": "archive_x_article",
+      "lang": "id"
     }
   ],
   "drafts": [
@@ -5690,21 +5747,21 @@
     }
   ],
   "recent_topics": [
+    "x-articles-ai-native-composer-2026",
     "x-paywalled-tweets-archive-2026",
     "x-twitter-archive-cleanup-2026",
     "bluesky-app-decline-protocol-pivot-2026",
-    "x-communities-shutdown-xchat-groups-2026",
-    "x-auto-translate-grok-multilingual-2026"
+    "x-communities-shutdown-xchat-groups-2026"
   ],
-  "last_run": "2026-08-16",
-  "last_publish": "2026-08-16",
-  "last_published_slug": "x-paywalled-tweets-archive-2026",
+  "last_run": "2026-08-19",
+  "last_publish": "2026-08-19",
+  "last_published_slug": "x-articles-ai-native-composer-2026",
   "last_draft_slug": "tweet-md-api-llm-workflows-2026",
-  "last_published_at": "2026-08-16",
+  "last_published_at": "2026-08-19T18:00:00+08:00",
   "drafts_count": 24,
-  "published_count": 174,
-  "last_topic_picked": "X paywalled tweets (public-vs-paid grabbability): Nicki Minaj $10/mo subscription + X monetization push -> archive public threads before paywall",
-  "last_pick_source": "briefing 3ea88f8bb2d0 HEALTHY (threadgrab star Markleft is md2rich-scoped/off-theme); all 4 priority topics covered; fresh Google News RSS gap-scan -> public-vs-paywalled angle (Nicki Minaj $10/mo subscription body-verified, multi-outlet X monetization push) zero-covered in archive",
-  "last_drafted_slug": "tweet-md-api-llm-workflows-2026",
-  "publish_notes": "X paywalled tweets 2026 guide (en/pt/id): archive-the-public-thread-before-paywall + Nicki Minaj $10/mo hook + Exclusive Threads/X Pro/free-limit context. Fresh gap-scan topic (public-vs-paid grabbability)."
+  "published_count": 177,
+  "last_topic_picked": "X Articles AI-native composer 2026 (HN arkwor 2026-08-17)",
+  "last_pick_source": "daily briefing 2026-08-19 ⭐ \"AI Native, Without the Badge\"",
+  "last_drafted_slug": "x-articles-ai-native-composer-2026",
+  "publish_notes": "Trilingual (en/pt/id) published via git push (threadgrab uses Git auto-deploy on main). New article URL added to sitemap.xml. 3 lang entries appended to published[]; published_count 174 -> 177."
 }
