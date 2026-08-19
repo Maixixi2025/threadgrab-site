@@ -520,6 +520,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://threadgrab.com/en/blog/x-articles-ai-native-composer-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/x-articles-ai-native-composer-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/x-articles-ai-native-composer-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/x-articles-ai-native-composer-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/x-articles-ai-native-composer-2026.html"/>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://threadgrab.com/en/blog/x-articles-bluesky-scraping-frontier-2026.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/x-articles-bluesky-scraping-frontier-2026.html"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/x-articles-bluesky-scraping-frontier-2026.html"/>
@@ -630,6 +640,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://threadgrab.com/en/blog/x-paywalled-tweets-archive-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/x-paywalled-tweets-archive-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/x-postagens-pagas-arquivo-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/x-posting-berbayar-arsip-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/x-paywalled-tweets-archive-2026.html"/>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://threadgrab.com/en/blog/x-post-correction-re-fetch-2026.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/x-post-correction-re-fetch-2026.html"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/x-post-correcao-notificacao-re-busca-2026.html"/>
@@ -669,17 +689,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://threadgrab.com/en/blog/x-paywalled-tweets-archive-2026.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/x-paywalled-tweets-archive-2026.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/x-postagens-pagas-arquivo-2026.html"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/x-posting-berbayar-arsip-2026.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/x-paywalled-tweets-archive-2026.html"/>
-    <lastmod>2026-08-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
   <url>
     <loc>https://threadgrab.com/id/blog/ai-social-content-provenance-2026.html</loc>
     <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/ai-social-content-provenance-2026.html"/>
