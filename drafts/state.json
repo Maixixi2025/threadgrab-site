@@ -5163,6 +5163,63 @@
       ],
       "primary_cta": "archive_x_article",
       "lang": "id"
+    },
+    {
+      "slug": "notula-markdown-ai-agents-2026",
+      "date": "2026-08-20",
+      "type": "guide",
+      "file": "en/blog/notula-markdown-ai-agents-2026.html",
+      "url": "https://threadgrab.com/en/blog/notula-markdown-ai-agents-2026.html",
+      "title": "Notula 2026: Human-Edited Markdown Your AI Agents Read",
+      "description": "Notula is a WYSIWYG Markdown editor for docs as code. Learn why clean, human-curated Markdown makes AI agents read your archive better, and how ThreadGrab feeds it.",
+      "heat_source": "Show HN Notula 2026-08-19 (notula.org); threadgrab daily briefing 2026-08-20 social-tools item",
+      "status": "published",
+      "published_at": "2026-08-20T18:00:00+08:00",
+      "providers_featured": [
+        "Notula",
+        "ThreadGrab",
+        "docs as code"
+      ],
+      "primary_cta": "archive_x_thread",
+      "lang": "en"
+    },
+    {
+      "slug": "notula-markdown-ai-agents-2026",
+      "date": "2026-08-20",
+      "type": "guide",
+      "file": "pt/blog/notula-markdown-ai-agents-2026.html",
+      "url": "https://threadgrab.com/pt/blog/notula-markdown-ai-agents-2026.html",
+      "title": "Notula 2026: Markdown Editado por Humanos para seus Agentes de IA",
+      "description": "Notula é um editor WYSIWYG de Markdown para docs as code. Veja por que Markdown limpo e editado por humanos ajuda agentes de IA a ler seu arquivo, e como o ThreadGrab alimenta isso.",
+      "heat_source": "Show HN Notula 2026-08-19 (notula.org); threadgrab daily briefing 2026-08-20 social-tools item",
+      "status": "published",
+      "published_at": "2026-08-20T18:00:00+08:00",
+      "providers_featured": [
+        "Notula",
+        "ThreadGrab",
+        "docs as code"
+      ],
+      "primary_cta": "archive_x_thread",
+      "lang": "pt"
+    },
+    {
+      "slug": "notula-markdown-ai-agents-2026",
+      "date": "2026-08-20",
+      "type": "guide",
+      "file": "id/blog/notula-markdown-ai-agents-2026.html",
+      "url": "https://threadgrab.com/id/blog/notula-markdown-ai-agents-2026.html",
+      "title": "Notula 2026: Markdown Disunting Manusia untuk Agen AI Anda",
+      "description": "Notula adalah editor Markdown WYSIWYG untuk docs as code. Pelajari mengapa Markdown bersih dan disunting manusia membantu agen AI membaca arsip Anda, dan bagaimana ThreadGrab menyuplainya.",
+      "heat_source": "Show HN Notula 2026-08-19 (notula.org); threadgrab daily briefing 2026-08-20 social-tools item",
+      "status": "published",
+      "published_at": "2026-08-20T18:00:00+08:00",
+      "providers_featured": [
+        "Notula",
+        "ThreadGrab",
+        "docs as code"
+      ],
+      "primary_cta": "archive_x_thread",
+      "lang": "id"
     }
   ],
   "drafts": [
@@ -5747,21 +5804,21 @@
     }
   ],
   "recent_topics": [
-    "x-articles-ai-native-composer-2026",
     "x-paywalled-tweets-archive-2026",
     "x-twitter-archive-cleanup-2026",
     "bluesky-app-decline-protocol-pivot-2026",
-    "x-communities-shutdown-xchat-groups-2026"
+    "x-communities-shutdown-xchat-groups-2026",
+    "notula-markdown-ai-agents-2026"
   ],
-  "last_run": "2026-08-19",
-  "last_publish": "2026-08-19",
-  "last_published_slug": "x-articles-ai-native-composer-2026",
-  "last_draft_slug": "tweet-md-api-llm-workflows-2026",
-  "last_published_at": "2026-08-19T18:00:00+08:00",
+  "last_run": "2026-08-20",
+  "last_publish": "2026-08-20",
+  "last_published_slug": "notula-markdown-ai-agents-2026",
+  "last_draft_slug": "notula-markdown-ai-agents-2026",
+  "last_published_at": "2026-08-20T18:00:00+08:00",
   "drafts_count": 24,
-  "published_count": 177,
-  "last_topic_picked": "X Articles AI-native composer 2026 (HN arkwor 2026-08-17)",
-  "last_pick_source": "daily briefing 2026-08-19 ⭐ \"AI Native, Without the Badge\"",
+  "published_count": 180,
+  "last_topic_picked": "Notula human-edited Markdown for AI agents (Show HN 2026-08-19)",
+  "last_pick_source": "daily briefing 2026-08-20 social-tools item",
   "last_drafted_slug": "x-articles-ai-native-composer-2026",
-  "publish_notes": "Trilingual (en/pt/id) published via git push (threadgrab uses Git auto-deploy on main). New article URL added to sitemap.xml. 3 lang entries appended to published[]; published_count 174 -> 177."
+  "publish_notes": "Trilingual (en/pt/id) published via git push (threadgrab Git auto-deploy on main). New article URLs added to sitemap.xml. 3 lang entries appended to published[]; published_count -> 180."
 }
