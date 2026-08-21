@@ -5220,6 +5220,63 @@
       ],
       "primary_cta": "archive_x_thread",
       "lang": "id"
+    },
+    {
+      "date": "2026-08-21",
+      "type": "guide",
+      "heat_source": "HackerNoon newsletter 2026-08-19 'Has LinkedIn Become the New Business Newspaper?'; threadgrab daily briefing 2026-08-21",
+      "status": "published",
+      "published_at": "2026-08-21T18:00:00+08:00",
+      "providers_featured": [
+        "ThreadGrab",
+        "LinkedIn Newsletter",
+        "X (Twitter)"
+      ],
+      "primary_cta": "archive_x_thread",
+      "slug": "x-to-linkedin-newsletter-repurpose-2026",
+      "lang": "en",
+      "file": "en/blog/x-to-linkedin-newsletter-repurpose-2026.html",
+      "url": "https://threadgrab.com/en/blog/x-to-linkedin-newsletter-repurpose-2026.html",
+      "title": "X to LinkedIn Newsletter 2026: The Business Newspaper Workflow",
+      "description": "LinkedIn is becoming the business newspaper of 2026. Repurpose X threads into clean, on-brand Newsletter issues with a workflow built around ThreadGrab."
+    },
+    {
+      "date": "2026-08-21",
+      "type": "guide",
+      "heat_source": "HackerNoon newsletter 2026-08-19 'Has LinkedIn Become the New Business Newspaper?'; threadgrab daily briefing 2026-08-21",
+      "status": "published",
+      "published_at": "2026-08-21T18:00:00+08:00",
+      "providers_featured": [
+        "ThreadGrab",
+        "LinkedIn Newsletter",
+        "X (Twitter)"
+      ],
+      "primary_cta": "archive_x_thread",
+      "slug": "x-para-linkedin-newsletter-reaproveitar-2026",
+      "lang": "pt",
+      "file": "pt/blog/x-para-linkedin-newsletter-reaproveitar-2026.html",
+      "url": "https://threadgrab.com/pt/blog/x-para-linkedin-newsletter-reaproveitar-2026.html",
+      "title": "X para LinkedIn Newsletter 2026: Guia do \"Jornal de Negócios\"",
+      "description": "O LinkedIn está se tornando o jornal de negócios de 2026. Reaproveite threads do X em edições limpas de Newsletter com um fluxo construído em torno do ThreadGrab."
+    },
+    {
+      "date": "2026-08-21",
+      "type": "guide",
+      "heat_source": "HackerNoon newsletter 2026-08-19 'Has LinkedIn Become the New Business Newspaper?'; threadgrab daily briefing 2026-08-21",
+      "status": "published",
+      "published_at": "2026-08-21T18:00:00+08:00",
+      "providers_featured": [
+        "ThreadGrab",
+        "LinkedIn Newsletter",
+        "X (Twitter)"
+      ],
+      "primary_cta": "archive_x_thread",
+      "slug": "x-ke-linkedin-newsletter-gunakan-ulang-2026",
+      "lang": "id",
+      "file": "id/blog/x-ke-linkedin-newsletter-gunakan-ulang-2026.html",
+      "url": "https://threadgrab.com/id/blog/x-ke-linkedin-newsletter-gunakan-ulang-2026.html",
+      "title": "X ke LinkedIn Newsletter 2026: Alur Kerja \"Koran Bisnis\"",
+      "description": "LinkedIn sedang menjadi koran bisnis di 2026. Gunakan ulang thread X menjadi edisi Newsletter LinkedIn yang bersih dengan alur kerja berbasis ThreadGrab."
     }
   ],
   "drafts": [
@@ -5804,21 +5861,21 @@
     }
   ],
   "recent_topics": [
-    "x-paywalled-tweets-archive-2026",
-    "x-twitter-archive-cleanup-2026",
-    "bluesky-app-decline-protocol-pivot-2026",
     "x-communities-shutdown-xchat-groups-2026",
-    "notula-markdown-ai-agents-2026"
+    "notula-markdown-ai-agents-2026",
+    "x-to-linkedin-newsletter-repurpose-2026",
+    "x-para-linkedin-newsletter-reaproveitar-2026",
+    "x-ke-linkedin-newsletter-gunakan-ulang-2026"
   ],
-  "last_run": "2026-08-20",
-  "last_publish": "2026-08-20",
-  "last_published_slug": "notula-markdown-ai-agents-2026",
+  "last_run": "2026-08-21",
+  "last_publish": "2026-08-21",
+  "last_published_slug": "x-to-linkedin-newsletter-repurpose-2026",
   "last_draft_slug": "notula-markdown-ai-agents-2026",
-  "last_published_at": "2026-08-20T18:00:00+08:00",
+  "last_published_at": "2026-08-21T18:00:00+08:00",
   "drafts_count": 24,
-  "published_count": 180,
-  "last_topic_picked": "Notula human-edited Markdown for AI agents (Show HN 2026-08-19)",
-  "last_pick_source": "daily briefing 2026-08-20 social-tools item",
+  "published_count": 183,
+  "last_topic_picked": "x-to-linkedin-newsletter-repurpose-2026",
+  "last_pick_source": "HackerNoon business-newspaper angle (threadgrab LinkedIn direction)",
   "last_drafted_slug": "x-articles-ai-native-composer-2026",
   "publish_notes": "Trilingual (en/pt/id) published via git push (threadgrab Git auto-deploy on main). New article URLs added to sitemap.xml. 3 lang entries appended to published[]; published_count -> 180."
 }
