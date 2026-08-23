@@ -5277,6 +5277,63 @@
       "url": "https://threadgrab.com/id/blog/x-ke-linkedin-newsletter-gunakan-ulang-2026.html",
       "title": "X ke LinkedIn Newsletter 2026: Alur Kerja \"Koran Bisnis\"",
       "description": "LinkedIn sedang menjadi koran bisnis di 2026. Gunakan ulang thread X menjadi edisi Newsletter LinkedIn yang bersih dengan alur kerja berbasis ThreadGrab."
+    },
+    {
+      "date": "2026-08-23",
+      "type": "guide",
+      "heat_source": "threadgrab daily briefing 2026-08-23 social-tools item + HN 2026-08-22 (Panache: Markdown/Quarto/R Markdown language server + formatter + linter, jolars/panache GitHub); maps to priority #3 X-to-Markdown toolchain",
+      "status": "published",
+      "published_at": "2026-08-23T18:00:00+08:00",
+      "providers_featured": [
+        "ThreadGrab",
+        "Panache",
+        "Markdown"
+      ],
+      "primary_cta": "archive_x_thread",
+      "slug": "panache-lint-x-thread-markdown-2026",
+      "lang": "en",
+      "file": "en/blog/panache-lint-x-thread-markdown-2026.html",
+      "url": "https://threadgrab.com/en/blog/panache-lint-x-thread-markdown-2026.html",
+      "title": "Panache for X Threads 2026: Format & Lint Grabbed Markdown",
+      "description": "New Markdown formatter + linter Panache turns grabbed X threads into clean, republishable source. Format, lint, and auto-fix with one Rust CLI before reposting."
+    },
+    {
+      "date": "2026-08-23",
+      "type": "guide",
+      "heat_source": "threadgrab daily briefing 2026-08-23 social-tools item + HN 2026-08-22 (Panache: Markdown/Quarto/R Markdown language server + formatter + linter, jolars/panache GitHub); maps to priority #3 X-to-Markdown toolchain",
+      "status": "published",
+      "published_at": "2026-08-23T18:00:00+08:00",
+      "providers_featured": [
+        "ThreadGrab",
+        "Panache",
+        "Markdown"
+      ],
+      "primary_cta": "archive_x_thread",
+      "slug": "panache-lint-markdown-thread-x-2026",
+      "lang": "pt",
+      "file": "pt/blog/panache-lint-markdown-thread-x-2026.html",
+      "url": "https://threadgrab.com/pt/blog/panache-lint-markdown-thread-x-2026.html",
+      "title": "Panache para Threads do X 2026: Formate e Audite o Markdown Capturado",
+      "description": "O novo formatador + linter de Markdown Panache transforma threads do X capturados em fonte limpa e republicável. Formate, audite e corrija com um CLI em Rust."
+    },
+    {
+      "date": "2026-08-23",
+      "type": "guide",
+      "heat_source": "threadgrab daily briefing 2026-08-23 social-tools item + HN 2026-08-22 (Panache: Markdown/Quarto/R Markdown language server + formatter + linter, jolars/panache GitHub); maps to priority #3 X-to-Markdown toolchain",
+      "status": "published",
+      "published_at": "2026-08-23T18:00:00+08:00",
+      "providers_featured": [
+        "ThreadGrab",
+        "Panache",
+        "Markdown"
+      ],
+      "primary_cta": "archive_x_thread",
+      "slug": "panache-lint-markdown-thread-x-2026",
+      "lang": "id",
+      "file": "id/blog/panache-lint-markdown-thread-x-2026.html",
+      "url": "https://threadgrab.com/id/blog/panache-lint-markdown-thread-x-2026.html",
+      "title": "Panache untuk Thread X 2026: Format & Lint Markdown yang Diambil",
+      "description": "Formatter + linter Markdown baru Panache mengubah thread X yang diambil menjadi sumber bersih yang siap diterbitkan ulang. Format, lint, dan perbaiki dengan satu CLI Rust."
     }
   ],
   "drafts": [
@@ -5861,19 +5918,31 @@
     }
   ],
   "recent_topics": [
-    "x-communities-shutdown-xchat-groups-2026",
-    "notula-markdown-ai-agents-2026",
-    "x-to-linkedin-newsletter-repurpose-2026",
     "x-para-linkedin-newsletter-reaproveitar-2026",
-    "x-ke-linkedin-newsletter-gunakan-ulang-2026"
+    "x-ke-linkedin-newsletter-gunakan-ulang-2026",
+    {
+      "slug": "panache-lint-x-thread-markdown-2026",
+      "lang": "en",
+      "date": "2026-08-23"
+    },
+    {
+      "slug": "panache-lint-markdown-thread-x-2026",
+      "lang": "pt",
+      "date": "2026-08-23"
+    },
+    {
+      "slug": "panache-lint-markdown-thread-x-2026",
+      "lang": "id",
+      "date": "2026-08-23"
+    }
   ],
-  "last_run": "2026-08-21",
-  "last_publish": "2026-08-21",
+  "last_run": "2026-08-23",
+  "last_publish": "2026-08-23",
   "last_published_slug": "x-to-linkedin-newsletter-repurpose-2026",
   "last_draft_slug": "notula-markdown-ai-agents-2026",
   "last_published_at": "2026-08-21T18:00:00+08:00",
   "drafts_count": 24,
-  "published_count": 183,
+  "published_count": 186,
   "last_topic_picked": "x-to-linkedin-newsletter-repurpose-2026",
   "last_pick_source": "HackerNoon business-newspaper angle (threadgrab LinkedIn direction)",
   "last_drafted_slug": "x-articles-ai-native-composer-2026",
