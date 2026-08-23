@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panache para Threads do X 2026: Formate e Linter no Markdown Capturado | ThreadGrab</title>
+  <meta name="description" content="O novo formatador + linter de Markdown Panache transforma threads do X capturados em fonte limpa e republicável. Formate, audite e corrija com um CLI em Rust.">
+  <meta name="keywords" content="Panache formatador markdown, Panache linter markdown, formatar thread X markdown, auditar thread capturado 2026, language server markdown Rust, markdown limpo antes de republicar, Panache threads X 2026, ferramenta CLI markdown, formatador Quarto R markdown">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/pt/blog/panache-lint-markdown-thread-x-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/panache-lint-x-thread-markdown-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/panache-lint-markdown-thread-x-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/panache-lint-markdown-thread-x-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/panache-lint-x-thread-markdown-2026.html">
+  <meta property="og:title" content="Panache para Threads do X 2026: Formate e Audite o Markdown Capturado">
+  <meta property="og:description" content="O novo formatador + linter de Markdown Panache transforma threads do X capturados em fonte limpa e republicável. Formate, audite e corrija com um CLI em Rust.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/pt/blog/panache-lint-markdown-thread-x-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Panache para Threads do X 2026: Formate e Audite o Markdown Capturado">
+  <meta name="twitter:description" content="O novo formatador + linter de Markdown Panache transforma threads do X capturados em fonte limpa e republicável. Formate, audite e corrija com um CLI em Rust.">
+  <meta property="article:published_time" content="2026-08-23">
+  <meta property="article:modified_time" content="2026-08-23">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo:hover { color: #1d9bf0; }
+    .tagline { color: #888; font-size: 0.85rem; margin-left: auto; }
+    .lang-bar { display: flex; gap: 12px; padding: 12px 24px; background: #1a1a1a; font-size: 0.85rem; }
+    .lang-bar a { color: #888; text-decoration: none; padding: 4px 10px; border-radius: 4px; }
+    .lang-bar a.active { background: #1d9bf0; color: #fff; }
+    .lang-bar a:hover:not(.active) { background: #2a2a2a; color: #fff; }
+    main { max-width: 780px; margin: 0 auto; padding: 40px 24px; }
+    h1 { font-size: 2rem; margin-bottom: 8px; line-height: 1.2; }
+    h1 span { color: #1d9bf0; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { font-size: 1.5rem; margin-top: 40px; margin-bottom: 16px; color: #1d9bf0; }
+    h3 { font-size: 1.15rem; margin-top: 24px; margin-bottom: 12px; color: #fff; }
+    p { margin-bottom: 16px; }
+    a { color: #1d9bf0; }
+    ul, ol { margin: 16px 0 16px 24px; }
+    li { margin-bottom: 8px; }
+    pre { background: #1a1a1a; padding: 16px; border-radius: 8px; overflow-x: auto; margin: 16px 0; }
+    code { font-family: 'SF Mono', Monaco, Consolas, monospace; font-size: 0.9em; color: #20d5ec; }
+    pre code { color: #fff; }
+    blockquote { border-left: 3px solid #1d9bf0; padding-left: 16px; color: #888; margin: 16px 0; font-style: italic; }
+    .callout { background: #1a1a1a; border-left: 3px solid #20d5ec; padding: 16px 20px; margin: 24px 0; border-radius: 0 8px 8px 0; }
+    .callout p { margin-bottom: 8px; }
+    .callout p:last-child { margin-bottom: 0; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #2a2a2a; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    .faq-item { background: #1a1a1a; padding: 16px 20px; margin: 12px 0; border-radius: 8px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 8px; }
+    .related-posts { background: #1a1a1a; padding: 20px; border-radius: 8px; margin: 24px 0; }
+    .related-posts h3 { margin-top: 0; color: #20d5ec; }
+    .related-posts ul { list-style: none; padding: 0; margin: 0; }
+    .related-posts li { padding: 6px 0; border-bottom: 1px solid #2a2a2a; }
+    .related-posts li:last-child { border-bottom: none; }
+    footer { padding: 30px 24px; text-align: center; color: #888; font-size: 0.9rem; border-top: 1px solid #1a1a1a; margin-top: 60px; }
+    footer a { color: #888; text-decoration: none; }
+    footer a:hover { color: #1d9bf0; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Panache para Threads do X 2026: Formate e Audite o Markdown Capturado",
+    "description": "O novo formatador + linter de Markdown Panache transforma threads do X capturados em fonte limpa e republicável. Formate, audite e corrija com um CLI em Rust.",
+    "datePublished": "2026-08-23",
+    "dateModified": "2026-08-23",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/" },
+    "mainEntityOfPage": "https://threadgrab.com/pt/blog/panache-lint-markdown-thread-x-2026.html",
+    "inLanguage": "pt"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://threadgrab.com/pt/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/pt/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Panache para Threads do X 2026", "item": "https://threadgrab.com/pt/blog/panache-lint-markdown-thread-x-2026.html" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "O que é o Panache e o que ele faz com Markdown?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Panache é um language server, formatador e linter para Markdown, Quarto e R Markdown, escrito em Rust com um parser de árvore sintática concreta (CST) sem perdas. Ele oferece um único CLI que pode formatar um arquivo no lugar, auditar problemas de formatação, corrigi-los automaticamente e rodar um servidor LSP para integração com o editor. Também suporta executar formatadores e linters externos (como Prettier, ruff ou black) nos blocos de código dentro dos seus documentos Markdown."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Por que eu formataria e auditaria o Markdown que capturo de um thread do X?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Um thread capturado é uma cópia fiel, não uma versão polida: os posts chegam com larguras de linha inconsistentes, estilos de lista misturados, parágrafos com quebras irregulares e blocos de código nunca formatados. Essa fonte bagunçada é difícil de editar e republicar. Rodar um formatador normaliza as quebras, reflui parágrafos para a largura de linha que você escolher e corrige automaticamente listas e espaçamentos, transformando o Markdown em um arquivo-fonte limpo e profissional."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O Panache é uma alternativa ao Prettier ou ao mdformat?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O Panache se sobrepõe a essas ferramentas, mas é construído em torno da sintaxe de Quarto, Pandoc e R Markdown, que o Prettier e o mdformat não lidam completamente (por exemplo, divs com cercas e certa sintaxe de tabela). Ele também adiciona um language server LSP, um linter integrado com auto-correção, formatação recursiva por glob e formatadores externos de blocos de código. Para Markdown simples, você costuma usá-lo como substituto direto; para documentos Quarto ou R Markdown, ele lida com sintaxe que as ferramentas mais antigas não suportam."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso rodar o Panache em threads capturados automaticamente antes de republicar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. O Panache tem um hook de pre-commit dedicado e uma GitHub Action, permitindo formatar e auditar cada arquivo Markdown capturado automaticamente na CI ou antes de cada commit. Você também pode chamá-lo em um loop de shell de uma linha sobre um diretório de threads capturados, ou enviar um único arquivo pelo stdin com 'panache format'. Isso facilita manter cada thread capturado limpo sem precisar rodar manualmente."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a href="/pt/" class="logo">ThreadGrab</a>
+    <span class="tagline">Salve threads do X como Markdown limpo</span>
+    <div class="lang-bar">
+      <a href="/en/blog/panache-lint-x-thread-markdown-2026.html">EN</a>
+      <a href="/pt/blog/panache-lint-markdown-thread-x-2026.html" class="active">PT</a>
+      <a href="/id/blog/panache-lint-markdown-thread-x-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <h1>Panache para Threads do X 2026: <span>Formate e Audite o Markdown Capturado</span></h1>
+    <div class="meta">23 de Agosto, 2026 &middot; 8 min de leitura &middot; Guia</div>
+
+    <p>Em 22 de agosto de 2026, uma ferramenta Rust chamada <strong>Panache</strong> chegou ao Hacker News: um language server, formatador e linter para Markdown, Quarto e R Markdown, construído por <a href="https://github.com/jolars" rel="nofollow">jolars</a> com um parser de árvore sintática concreta sem perdas. Para quem captura threads do X como Markdown, vale a pena dar uma olhada de perto — porque o maior problema oculto de um thread capturado não é a captura, é a <em>bagunça</em>: os posts chegam com larguras de linha inconsistentes, estilos de lista misturados, parágrafos com quebras irregulares e blocos de código que nunca foram formatados. O Panache resolve exatamente essa classe de problema, em um único CLI.</p>
+
+    <p>Este guia é a versão prática de uma ideia simples: você já captura threads do X como Markdown limpo com o ThreadGrab; o passo que a maioria ignora é <strong>normalizar esse Markdown antes de republicar</strong>. O Panache oferece uma forma instalável e scriptável de fazer isso — formatar, auditar, auto-corrigir e até impor na CI. O ciclo inteiro leva cerca de dez minutos para configurar e compensa sempre que você transforma um thread capturado em um X Article, um post no LinkedIn ou um rascunho de blog.</p>
+
+    <div class="callout">
+      <p><strong>Resumo rápido:</strong> Capturar um thread do X como Markdown dá a você uma cópia fiel, mas não polida. O Panache — um formatador + linter de Markdown em Rust recém-lançado (HN 22 de agosto de 2026) — normaliza a largura das linhas, reflui parágrafos, corrige automaticamente listas e espaçamentos e até formata blocos de código com ferramentas externas. Combine com o ThreadGrab: capture, formate, audite e republicue limpo. Funciona como comando de uma linha, hook de pre-commit ou etapa de CI.</p>
+    </div>
+
+    <h2>Por Que Threads Capturados Precisam de um Formatador e Linter</h2>
+
+    <p>Uma captura de thread é uma cópia fiel da fonte, o que é exatamente o que você quer para um arquivo — mas raramente é o que você quer <em>publicar</em>. Quando você converte um thread de vários posts para Markdown, o resultado tende a ter:</p>
+
+    <ul>
+      <li><strong>Larguras de linha inconsistentes.</strong> Cada autor quebra o texto de um jeito, então o arquivo capturado mistura linhas curtas e longas.</li>
+      <li><strong>Estilos de lista misturados.</strong> Um thread pode usar <code>1.</code>, <code>-</code> e <code>*</code> de forma intercambiável, e colar isso num editor gera renderização inconsistente.</li>
+      <li><strong>Quebras irregulares.</strong> O reflow de parágrafos difere de post para post, então o arquivo fica desigual.</li>
+      <li><strong>Blocos de código sem formatação.</strong> Tweets com código ou configuração chegam como texto puro, sem indentação ou estilo de sintaxe consistente.</li>
+    </ul>
+
+    <p>Nada disso quebra a renderização, mas tudo isso torna o Markdown mais difícil de editar e menos profissional quando você republica. Um formatador normaliza a estrutura; um linter diz o que precisa de correção; a auto-correção faz isso por você.</p>
+
+    <h2>O Que o Panache Faz (Verificado)</h2>
+
+    <p>O Panache é <a href="https://github.com/jolars/panache" rel="nofollow">open source no GitHub</a> (licença MIT), escrito em Rust e distribuído por dezenas de canais, incluindo <code>cargo install</code>, Homebrew, npm, PyPI via <code>uv tool</code> ou <code>pipx</code>, e um script de instalação oficial. Três capacidades importam para o fluxo de republicação:</p>
+
+    <ul>
+      <li><strong>Formatação</strong> — reformate um arquivo no lugar, pelo stdin ou por padrões glob, com largura de linha e estilo de reflow configuráveis. A formatação é idempotente, então rodar duas vezes dá o mesmo resultado.</li>
+      <li><strong>Auditoria (lint)</strong> — relate problemas de formatação com <code>panache lint</code> e, opcionalmente, auto-corrija. A flag <code>--check</code> do comando <code>format</code> verifica se um arquivo já está limpo sem alterá-lo, ideal para CI.</li>
+      <li><strong>Formatadores e linters externos de blocos de código</strong> — rode Prettier em JavaScript, ruff ou black em Python, ou sua própria ferramenta nos <code>fenced code blocks</code> dentro do Markdown, mantendo cada exemplo de código consistente.</li>
+    </ul>
+
+    <p>Ele também inclui um <a href="https://panache.bz/guide/lsp" rel="nofollow">language server (LSP)</a> completo para recursos do editor — diagnósticos, code actions, outline do documento e ir para a definição de referências — então o mesmo motor funciona dentro do VS Code ou do editor de sua preferência. A <a href="https://panache.bz/guide/performance" rel="nofollow">página de performance</a> o compara com Prettier, mdformat, markdownlint e outros, e a página de comparação mostra exatamente onde ele lida com sintaxe Quarto/Pandoc que as ferramentas mais antigas não cobrem.</p>
+
+    <h2>Instale o Panache</h2>
+
+    <p>Escolha o método de instalação que se adapta à sua máquina. No macOS e Linux, o script oficial é o caminho mais curto:</p>
+
+    <pre><code># Script de instalação oficial (macOS / Linux)
+curl --proto '=https' --tlsv1.2 -sSf https://panache.bz/install | sh
+
+# Ou por gerenciadores de pacotes
+cargo install --locked panache
+brew install panache
+npm install -g @panache-cli/panache
+uv tool install panache-cli   # ou: pipx install panache-cli</code></pre>
+
+    <p>Depois de instalar, confirme que funciona:</p>
+
+    <pre><code>panache --version
+panache format --help</code></pre>
+
+    <h2>Passo 1 — Capture o Thread e Depois Formate</h2>
+
+    <p>Converta o thread público do X para Markdown com o ThreadGrab e depois normalize com <code>panache format</code>. A etapa de captura dá a você uma fonte fiel; a etapa de formatação dá uma fonte limpa.</p>
+
+    <pre><code># 1. Capture o thread público do X como Markdown limpo
+threadgrab https://x.com/you/status/1234567890123456789 \
+  --output ./drafts/thread-2026-08.md
+
+# 2. Formate no lugar, refluindo para a largura de linha escolhida
+panache format ./drafts/thread-2026-08.md
+
+# 3. Ou envie um único arquivo pelo stdin
+cat ./drafts/thread-2026-08.md | panache format</code></pre>
+
+    <p>O Panache lê a configuração de <code>.panache.toml</code> no diretório atual ou em um diretório pai, então você pode fixar o estilo uma vez e reutilizá-lo em todos os arquivos capturados. Uma configuração mínima que reflui parágrafos para uma largura confortável fica assim:</p>
+
+    <pre><code># .panache.toml
+[format]
+wrap = "reflow"
+line-width = 80
+line-ending = "auto"</code></pre>
+
+    <h2>Passo 2 — Audite e Auto-Corrija Antes de Republicar</h2>
+
+    <p>Antes de republicar, rode o linter para detectar o que a formatação deixou para trás e deixe-o corrigir o que puder:</p>
+
+    <pre><code># Relate problemas de formatação em todos os threads capturados
+panache lint ./drafts/*.md
+
+# Verifique se um arquivo já está limpo (código de saída não-zero se não estiver)
+panache format --check ./drafts/thread-2026-08.md
+
+# Formate + corrija um diretório inteiro de capturas de uma vez
+panache format ./drafts/**/*.md</code></pre>
+
+    <p>Como <code>--check</code> retorna um código de saída significativo, você pode colocá-lo em qualquer script ou job de CI: se um thread capturado não estiver formatado, o job falha e você sabe exatamente qual arquivo corrigir.</p>
+
+    <h2>Passo 3 — Mantenha Blocos de Código Consistentes com Formatadores Externos</h2>
+
+    <p>Threads que incluem código ou configuração são onde a formatação realmente compensa. O Panache roda formatadores externos nos <em>fenced code blocks</em>, então você mantém cada exemplo de código consistente com as mesmas ferramentas que já usa. Adicione uma seção <code>[formatters]</code> à sua configuração:</p>
+
+    <pre><code>[formatters]
+python = ["isort", "black"]
+javascript = "prettier"
+typescript = "prettier"
+
+[formatters.prettier]
+prepend-args = ["--print-width=100"]</code></pre>
+
+    <p>Agora, ao formatar um thread capturado que contém trechos de Python ou JavaScript, o Panache passa esses blocos por isort + black ou Prettier automaticamente. O Markdown narrativo é normalizado pelo Panache; o código embutido é normalizado pela ferramenta que o seu projeto já padronizou.</p>
+
+    <h2>Passo 4 — Imponha Automaticamente com Pre-commit ou CI</h2>
+
+    <p>O passo final é eliminar a necessidade de lembrar. O Panache oferece um <a href="https://github.com/jolars/panache-pre-commit" rel="nofollow">hook de pre-commit</a> e uma GitHub Action dedicada, então cada arquivo Markdown capturado é formatado e auditado antes de entrar no seu repositório ou na saída publicada.</p>
+
+    <pre><code># .pre-commit-config.yaml
+repos:
+  - repo: https://github.com/jolars/panache-pre-commit
+    rev: v3.4.0
+    hooks:
+      - id: panache-format
+      - id: panache-lint</code></pre>
+
+    <pre><code># GitHub Actions — no seu arquivo de workflow
+- uses: jolars/panache-action@v1</code></pre>
+
+    <p>Com um hook de pre-commit em vigor, o pipeline fica totalmente automático: capture o thread com o ThreadGrab, faça commit, e o Panache formata + audita antes de o commit ser salvo. Markdown limpo vira o padrão, não a exceção.</p>
+
+    <h2>Panache vs. o Mercado</h2>
+
+    <p>A <a href="https://panache.bz/guide/comparison" rel="nofollow">página de comparação</a> do README posiciona o Panache contra Prettier, mdformat, markdownlint, marksman e ferramentas similares. A versão curta para republicação de threads:</p>
+
+    <table>
+      <thead>
+        <tr><th>Ferramenta</th><th>Melhor em</th><th>Onde o Panache difere</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Panache</td><td>Quarto/Pandoc/R Markdown, LSP, formatadores de blocos de código</td><td>Um CLI para formatar + auditar + auto-corrigir + editor</td></tr>
+        <tr><td>Prettier</td><td>Markdown estilo JavaScript, formatação de código</td><td>Falha em alguns divs com cercas do Quarto e sintaxe de tabela</td></tr>
+        <tr><td>mdformat</td><td>Formatação simples de Markdown</td><td>Sem LSP, sem consciência de Quarto/R</td></tr>
+        <tr><td>markdownlint</td><td>Regras de auditoria</td><td>Só linter; sem formatador, sem ferramentas de blocos de código</td></tr>
+      </tbody>
+    </table>
+
+    <p>Para Markdown simples, você pode usar o Panache como formatador e linter substituto direto; para documentos Quarto ou R Markdown — ou quando você quer uma experiência de editor orientada por LSP — ele lida com casos que as ferramentas mais antigas simplesmente não conseguem.</p>
+
+    <h2>De Thread Capturado a uma Fonte Limpa e Republicável</h2>
+
+    <p>A recompensa silenciosa desse fluxo é a repetibilidade. Você acaba com um pipeline de três etapas que qualquer um pode rodar: <strong>capture</strong> o thread com o ThreadGrab, <strong>normalize</strong> com o format + lint do Panache e <strong>replublicue</strong> para X Articles, LinkedIn ou um blog a partir de uma fonte Markdown limpa e consistente. Chega de corrigir quebras irregulares à mão antes de cada post e chega de se perguntar se um thread capturado está pronto para publicar.</p>
+
+    <p>O Panache é o tipo de ferramenta que recompensa quem entra cedo: é rápido, licença MIT, mantido ativamente (com push poucos dias após o lançamento no HN) e se encaixa exatamente onde o seu arquivo de threads já vive. Combine com a etapa de captura e a sua biblioteca Markdown deixa de ser uma pilha de capturas bagunçadas e vira um arquivo bem formatado, pesquisável e republicável.</p>
+
+    <div class="related-posts">
+      <h3>Relacionados no ThreadGrab</h3>
+      <ul>
+        <li><a href="/pt/blog/x-to-markdown-3-methods-2026.html">X para Markdown: 3 Métodos 2026</a> — a camada de conversão que produz os arquivos que este guia formata</li>
+        <li><a href="/pt/blog/notula-markdown-ai-agents-2026.html">Notula 2026: Markdown Editado por Humanos para seus Agentes de IA</a> — Markdown limpo como base para arquivos legíveis por IA</li>
+        <li><a href="/pt/blog/x-thread-archiving-tools-2026.html">Ferramentas de Arquivamento de Threads do X 2026</a> — as ferramentas que capturam threads antes da etapa de formatação</li>
+        <li><a href="/pt/blog/tweet-md-api-fluxos-llm-2026.html">API tweet.md + Fluxos LLM 2026</a> — transformando Markdown capturado em saída estruturada</li>
+      </ul>
+    </div>
+
+    <h2>FAQ</h2>
+
+    <div class="faq-item">
+      <strong>O que é o Panache e o que ele faz com Markdown?</strong>
+      <p>Panache é um language server, formatador e linter para Markdown, Quarto e R Markdown, escrito em Rust com um parser de árvore sintática concreta (CST) sem perdas. Ele oferece um único CLI que pode formatar um arquivo no lugar, auditar problemas de formatação, corrigi-los automaticamente e rodar um servidor LSP para integração com o editor. Também suporta executar formatadores e linters externos (como Prettier, ruff ou black) nos blocos de código dentro dos seus documentos Markdown.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Por que eu formataria e auditaria o Markdown que capturo de um thread do X?</strong>
+      <p>Um thread capturado é uma cópia fiel, não uma versão polida: os posts chegam com larguras de linha inconsistentes, estilos de lista misturados, parágrafos com quebras irregulares e blocos de código nunca formatados. Essa fonte bagunçada é difícil de editar e republicar. Rodar um formatador normaliza as quebras, reflui parágrafos para a largura de linha que você escolher e corrige automaticamente listas e espaçamentos, transformando o Markdown em um arquivo-fonte limpo e profissional.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>O Panache é uma alternativa ao Prettier ou ao mdformat?</strong>
+      <p>O Panache se sobrepõe a essas ferramentas, mas é construído em torno da sintaxe de Quarto, Pandoc e R Markdown, que o Prettier e o mdformat não lidam completamente (por exemplo, divs com cercas e certa sintaxe de tabela). Ele também adiciona um language server LSP, um linter integrado com auto-correção, formatação recursiva por glob e formatadores externos de blocos de código. Para Markdown simples, você costuma usá-lo como substituto direto; para documentos Quarto ou R Markdown, ele lida com sintaxe que as ferramentas mais antigas não suportam.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Posso rodar o Panache em threads capturados automaticamente antes de republicar?</strong>
+      <p>Sim. O Panache tem um hook de pre-commit dedicado e uma GitHub Action, permitindo formatar e auditar cada arquivo Markdown capturado automaticamente na CI ou antes de cada commit. Você também pode chamá-lo em um loop de shell de uma linha sobre um diretório de threads capturados, ou enviar um único arquivo pelo stdin com <code>panache format</code>. Isso facilita manter cada thread capturado limpo sem precisar rodar manualmente.</p>
+    </div>
+  </main>
+
+  <footer>
+    <a href="/pt/">Início</a> &middot;
+    <a href="/pt/blog/">Blog</a> &middot;
+    <a href="/pt/blog/x-to-markdown-3-methods-2026.html">X para Markdown</a>
+    <br>
+    O ThreadGrab é uma ferramenta independente. Não afiliado à X Corp., LinkedIn ou qualquer serviço apresentado.
+    <br>
+    &copy; 2026 ThreadGrab
+  </footer>
+</body>
+</html>

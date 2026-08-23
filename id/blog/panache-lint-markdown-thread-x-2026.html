@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panache untuk Thread X 2026: Format &amp; Lint Markdown yang Diambil | ThreadGrab</title>
+  <meta name="description" content="Formatter + linter Markdown baru Panache mengubah thread X yang diambil menjadi sumber bersih yang siap diterbitkan ulang. Format, lint, dan perbaiki dengan satu CLI Rust.">
+  <meta name="keywords" content="Panache formatter markdown, Panache linter markdown, format thread X markdown, lint thread diambil 2026, language server markdown Rust, markdown bersih sebelum republish, Panache thread X 2026, alat CLI markdown, formatter Quarto R markdown">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/id/blog/panache-lint-markdown-thread-x-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/panache-lint-x-thread-markdown-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/panache-lint-markdown-thread-x-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/panache-lint-markdown-thread-x-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/panache-lint-x-thread-markdown-2026.html">
+  <meta property="og:title" content="Panache untuk Thread X 2026: Format &amp; Lint Markdown yang Diambil">
+  <meta property="og:description" content="Formatter + linter Markdown baru Panache mengubah thread X yang diambil menjadi sumber bersih yang siap diterbitkan ulang. Format, lint, dan perbaiki dengan satu CLI Rust.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/id/blog/panache-lint-markdown-thread-x-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Panache untuk Thread X 2026: Format &amp; Lint Markdown yang Diambil">
+  <meta name="twitter:description" content="Formatter + linter Markdown baru Panache mengubah thread X yang diambil menjadi sumber bersih yang siap diterbitkan ulang. Format, lint, dan perbaiki dengan satu CLI Rust.">
+  <meta property="article:published_time" content="2026-08-23">
+  <meta property="article:modified_time" content="2026-08-23">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo:hover { color: #1d9bf0; }
+    .tagline { color: #888; font-size: 0.85rem; margin-left: auto; }
+    .lang-bar { display: flex; gap: 12px; padding: 12px 24px; background: #1a1a1a; font-size: 0.85rem; }
+    .lang-bar a { color: #888; text-decoration: none; padding: 4px 10px; border-radius: 4px; }
+    .lang-bar a.active { background: #1d9bf0; color: #fff; }
+    .lang-bar a:hover:not(.active) { background: #2a2a2a; color: #fff; }
+    main { max-width: 780px; margin: 0 auto; padding: 40px 24px; }
+    h1 { font-size: 2rem; margin-bottom: 8px; line-height: 1.2; }
+    h1 span { color: #1d9bf0; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { font-size: 1.5rem; margin-top: 40px; margin-bottom: 16px; color: #1d9bf0; }
+    h3 { font-size: 1.15rem; margin-top: 24px; margin-bottom: 12px; color: #fff; }
+    p { margin-bottom: 16px; }
+    a { color: #1d9bf0; }
+    ul, ol { margin: 16px 0 16px 24px; }
+    li { margin-bottom: 8px; }
+    pre { background: #1a1a1a; padding: 16px; border-radius: 8px; overflow-x: auto; margin: 16px 0; }
+    code { font-family: 'SF Mono', Monaco, Consolas, monospace; font-size: 0.9em; color: #20d5ec; }
+    pre code { color: #fff; }
+    blockquote { border-left: 3px solid #1d9bf0; padding-left: 16px; color: #888; margin: 16px 0; font-style: italic; }
+    .callout { background: #1a1a1a; border-left: 3px solid #20d5ec; padding: 16px 20px; margin: 24px 0; border-radius: 0 8px 8px 0; }
+    .callout p { margin-bottom: 8px; }
+    .callout p:last-child { margin-bottom: 0; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #2a2a2a; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    .faq-item { background: #1a1a1a; padding: 16px 20px; margin: 12px 0; border-radius: 8px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 8px; }
+    .related-posts { background: #1a1a1a; padding: 20px; border-radius: 8px; margin: 24px 0; }
+    .related-posts h3 { margin-top: 0; color: #20d5ec; }
+    .related-posts ul { list-style: none; padding: 0; margin: 0; }
+    .related-posts li { padding: 6px 0; border-bottom: 1px solid #2a2a2a; }
+    .related-posts li:last-child { border-bottom: none; }
+    footer { padding: 30px 24px; text-align: center; color: #888; font-size: 0.9rem; border-top: 1px solid #1a1a1a; margin-top: 60px; }
+    footer a { color: #888; text-decoration: none; }
+    footer a:hover { color: #1d9bf0; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Panache untuk Thread X 2026: Format & Lint Markdown yang Diambil",
+    "description": "Formatter + linter Markdown baru Panache mengubah thread X yang diambil menjadi sumber bersih yang siap diterbitkan ulang. Format, lint, dan perbaiki dengan satu CLI Rust.",
+    "datePublished": "2026-08-23",
+    "dateModified": "2026-08-23",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/id/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/id/" },
+    "mainEntityOfPage": "https://threadgrab.com/id/blog/panache-lint-markdown-thread-x-2026.html",
+    "inLanguage": "id"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://threadgrab.com/id/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/id/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Panache untuk Thread X 2026", "item": "https://threadgrab.com/id/blog/panache-lint-markdown-thread-x-2026.html" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Apa itu Panache dan apa fungsinya dengan Markdown?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Panache adalah language server, formatter, dan linter untuk Markdown, Quarto, dan R Markdown, ditulis dalam Rust dengan parser concrete syntax tree (CST) tanpa kehilangan data. Ia menyediakan satu CLI yang dapat memformat file di tempat, melint-nya untuk masalah format, memperbaiki secara otomatis, dan menjalankan server LSP untuk integrasi editor. Ia juga mendukung menjalankan formatter dan linter eksternal (seperti Prettier, ruff, atau black) pada blok kode di dalam dokumen Markdown Anda."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Mengapa saya perlu memformat dan melint Markdown yang diambil dari thread X?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Thread yang diambil adalah salinan setia, bukan versi yang dirapikan: postingan tiba dengan lebar baris yang tidak konsisten, gaya daftar yang campur aduk, paragraf dengan pembungkusan tidak rata, dan blok kode yang tidak pernah diformat. Sumber yang berantakan itu sulit diedit dan diterbitkan ulang. Menjalankan formatter menormalkan pembungkusan, merapikan paragraf ke lebar baris yang Anda pilih, dan memperbaiki otomatis masalah daftar serta spasi, sehingga Markdown menjadi file sumber yang bersih dan profesional."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah Panache merupakan alternatif dari Prettier atau mdformat?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Panache tumpang tindih dengan alat-alat tersebut tetapi dibangun di sekitar sintaks Quarto, Pandoc, dan R Markdown, yang tidak sepenuhnya ditangani Prettier dan mdformat (misalnya fenced div dan sebagian sintaks tabel). Ia juga menambahkan language server LSP, linter terintegrasi dengan perbaikan otomatis, pemformatan glob rekursif, dan formatter blok kode eksternal. Untuk Markdown sederhana, Anda sering dapat menggunakannya sebagai pengganti langsung; untuk dokumen Quarto atau R Markdown, ia menangani sintaks yang tidak didukung alat yang lebih lama."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bisakah saya menjalankan Panache pada thread yang diambil secara otomatis sebelum menerbitkan ulang?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ya. Panache memiliki hook pre-commit khusus dan GitHub Action, sehingga Anda dapat memformat dan melint setiap file Markdown yang diambil secara otomatis di CI atau sebelum setiap commit. Anda juga dapat memanggilnya dalam loop shell satu baris pada direktori thread yang diambil, atau mengirim satu file melalui stdin dengan 'panache format'. Ini memudahkan menjaga setiap thread yang diambil tetap bersih tanpa harus menjalankannya secara manual."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a href="/id/" class="logo">ThreadGrab</a>
+    <span class="tagline">Simpan thread X sebagai Markdown bersih</span>
+    <div class="lang-bar">
+      <a href="/en/blog/panache-lint-x-thread-markdown-2026.html">EN</a>
+      <a href="/pt/blog/panache-lint-markdown-thread-x-2026.html">PT</a>
+      <a href="/id/blog/panache-lint-markdown-thread-x-2026.html" class="active">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <h1>Panache untuk Thread X 2026: <span>Format &amp; Lint Markdown yang Diambil</span></h1>
+    <div class="meta">23 Agustus 2026 &middot; 8 menit baca &middot; Panduan</div>
+
+    <p>Pada 22 Agustus 2026, alat Rust bernama <strong>Panache</strong> muncul di Hacker News: language server, formatter, dan linter untuk Markdown, Quarto, dan R Markdown, dibuat oleh <a href="https://github.com/jolars" rel="nofollow">jolars</a> dengan parser concrete syntax tree tanpa kehilangan data. Bagi siapa pun yang mengambil thread X sebagai Markdown, alat ini layak diperhatikan — karena masalah tersembunyi terbesar dari thread yang diambil bukanlah proses pengambilannya, melainkan <em>kekacauan</em>-nya: postingan tiba dengan lebar baris yang tidak konsisten, gaya daftar yang campur aduk, paragraf dengan pembungkusan tidak rata, dan blok kode yang tidak pernah diformat. Panache menyelesaikan persis masalah semacam itu, dalam satu CLI.</p>
+
+    <p>Panduan ini adalah versi praktis dari ide sederhana: Anda sudah mengambil thread X sebagai Markdown bersih dengan ThreadGrab; langkah yang paling sering dilewatkan orang adalah <strong>menormalkan Markdown itu sebelum diterbitkan ulang</strong>. Panache memberi Anda cara yang dapat diinstal dan diskrip untuk melakukannya — memformat, melint, memperbaiki otomatis, dan bahkan memastikannya di CI. Seluruh proses hanya butuh sekitar sepuluh menit untuk disiapkan dan terbayar setiap kali Anda mengubah thread yang diambil menjadi X Article, postingan LinkedIn, atau draf blog.</p>
+
+    <div class="callout">
+      <p><strong>Ringkasan singkat:</strong> Mengambil thread X sebagai Markdown memberi Anda salinan yang setia, tetapi bukan yang dirapikan. Panache — formatter + linter Markdown Rust yang baru (HN 22 Agustus 2026) — menormalkan lebar baris, merapikan paragraf, memperbaiki otomatis masalah daftar dan spasi, bahkan memformat blok kode dengan alat eksternal. Padukan dengan ThreadGrab: ambil, format, lint, lalu terbitkan ulang dengan bersih. Berfungsi sebagai one-liner, hook pre-commit, atau langkah CI.</p>
+    </div>
+
+    <h2>Mengapa Thread yang Diambil Perlu Formatter dan Linter</h2>
+
+    <p>Tangkapan thread adalah salinan setia dari sumbernya, yang memang Anda inginkan untuk arsip — tetapi jarang seperti yang Anda ingin <em>terbitkan</em>. Saat Anda mengonversi thread multi-postingan menjadi Markdown, hasilnya cenderung memiliki:</p>
+
+    <ul>
+      <li><strong>Lebar baris yang tidak konsisten.</strong> Setiap penulis membungkus teks dengan cara berbeda, sehingga file yang diambil mencampur baris pendek dan panjang.</li>
+      <li><strong>Gaya daftar yang campur aduk.</strong> Sebuah thread mungkin memakai <code>1.</code>, <code>-</code>, dan <code>*</code> secara bergantian, dan menempelkannya ke editor menghasilkan render yang tidak konsisten.</li>
+      <li><strong>Pembungkusan tidak rata.</strong> Aliran paragraf berbeda dari satu postingan ke postingan lain, sehingga file terbaca tidak merata.</li>
+      <li><strong>Blok kode yang tidak diformat.</strong> Tweet yang berisi kode atau konfigurasi tiba sebagai teks mentah tanpa indentasi atau gaya sintaks yang konsisten.</li>
+    </ul>
+
+    <p>Semua ini tidak merusak render, tetapi semuanya membuat Markdown lebih sulit diedit dan kurang profesional saat Anda menerbitkan ulang. Formatter menormalkan struktur; linter memberi tahu apa yang perlu diperbaiki; perbaikan otomatis melakukannya untuk Anda.</p>
+
+    <h2>Apa yang Dilakukan Panache (Terverifikasi)</h2>
+
+    <p>Panache adalah <a href="https://github.com/jolars/panache" rel="nofollow">open source di GitHub</a> (lisensi MIT), ditulis dalam Rust, dan didistribusikan melalui lusinan kanal termasuk <code>cargo install</code>, Homebrew, npm, PyPI melalui <code>uv tool</code> atau <code>pipx</code>, serta skrip instalasi resmi. Tiga kemampuan penting untuk alur penerbitan ulang:</p>
+
+    <ul>
+      <li><strong>Pemformatan</strong> — memformat ulang file di tempat, dari stdin, atau lintas pola glob, dengan lebar baris dan gaya reflow yang dapat dikonfigurasi. Pemformatan bersifat idempoten, sehingga menjalankannya dua kali memberi hasil yang sama.</li>
+      <li><strong>Linting</strong> — melaporkan masalah format dengan <code>panache lint</code>, dan opsional memperbaiki otomatis. Flag <code>--check</code> pada <code>format</code> memverifikasi apakah file sudah bersih tanpa mengubahnya, sempurna untuk CI.</li>
+      <li><strong>Formatter dan linter eksternal untuk blok kode</strong> — menjalankan Prettier pada JavaScript, ruff atau black pada Python, atau alat Anda sendiri pada <code>fenced code blocks</code> di dalam Markdown, menjaga setiap contoh kode tetap konsisten.</li>
+    </ul>
+
+    <p>Ia juga menyertakan <a href="https://panache.bz/guide/lsp" rel="nofollow">language server (LSP)</a> lengkap untuk fitur editor — diagnostik, code action, outline dokumen, dan lompat ke definisi referensi — sehingga mesin yang sama bekerja di dalam VS Code atau editor pilihan Anda. <a href="https://panache.bz/guide/performance" rel="nofollow">Halaman performa</a> membandingkannya dengan Prettier, mdformat, markdownlint, dan lainnya, dan halaman perbandingan menunjukkan persis di mana ia menangani sintaks Quarto/Pandoc yang tidak dicakup alat yang lebih lama.</p>
+
+    <h2>Instal Panache</h2>
+
+    <p>Pilih metode instalasi yang sesuai dengan mesin Anda. Di macOS dan Linux, skrip resmi adalah jalur terpendek:</p>
+
+    <pre><code># Skrip instalasi resmi (macOS / Linux)
+curl --proto '=https' --tlsv1.2 -sSf https://panache.bz/install | sh
+
+# Atau melalui manajer paket
+cargo install --locked panache
+brew install panache
+npm install -g @panache-cli/panache
+uv tool install panache-cli   # atau: pipx install panache-cli</code></pre>
+
+    <p>Setelah terinstal, pastikan alat berfungsi:</p>
+
+    <pre><code>panache --version
+panache format --help</code></pre>
+
+    <h2>Langkah 1 — Ambil Thread, Lalu Format</h2>
+
+    <p>Konversikan thread publik X ke Markdown dengan ThreadGrab, lalu normalisasi dengan <code>panache format</code>. Tahap pengambilan memberi Anda sumber yang setia; tahap pemformatan memberi Anda sumber yang bersih.</p>
+
+    <pre><code># 1. Ambil thread publik X sebagai Markdown bersih
+threadgrab https://x.com/you/status/1234567890123456789 \
+  --output ./drafts/thread-2026-08.md
+
+# 2. Format di tempat, rapikan ke lebar baris yang Anda pilih
+panache format ./drafts/thread-2026-08.md
+
+# 3. Atau kirim satu file melalui stdin
+cat ./drafts/thread-2026-08.md | panache format</code></pre>
+
+    <p>Panache membaca konfigurasinya dari <code>.panache.toml</code> di direktori saat ini atau direktori induk, sehingga Anda dapat menetapkan gaya sekali dan menggunakannya kembali di setiap file yang diambil. Konfigurasi minimal yang merapikan paragraf ke lebar baris yang nyaman terlihat seperti ini:</p>
+
+    <pre><code># .panache.toml
+[format]
+wrap = "reflow"
+line-width = 80
+line-ending = "auto"</code></pre>
+
+    <h2>Langkah 2 — Lint dan Perbaiki Otomatis Sebelum Terbitkan Ulang</h2>
+
+    <p>Sebelum menerbitkan ulang, jalankan linter untuk menangkap apa pun yang tertinggal dari pemformatan, dan biarkan ia memperbaiki yang bisa:</p>
+
+    <pre><code># Laporkan masalah format di semua thread yang diambil
+panache lint ./drafts/*.md
+
+# Verifikasi apakah file sudah bersih (kode keluar non-nol jika belum)
+panache format --check ./drafts/thread-2026-08.md
+
+# Format + perbaiki seluruh direktori tangkapan sekaligus
+panache format ./drafts/**/*.md</code></pre>
+
+    <p>Karena <code>--check</code> mengembalikan kode keluar yang bermakna, Anda dapat memasukkannya ke skrip atau job CI mana pun: jika thread yang diambil belum diformat, job gagal dan Anda tahu persis file mana yang perlu diperbaiki.</p>
+
+    <h2>Langkah 3 — Jaga Blok Kode Konsisten dengan Formatter Eksternal</h2>
+
+    <p>Thread yang berisi kode atau konfigurasi adalah tempat pemformatan benar-benar terbayar. Panache menjalankan formatter eksternal pada <em>fenced code blocks</em>, sehingga Anda menjaga setiap contoh kode konsisten dengan alat yang sudah Anda gunakan. Tambahkan bagian <code>[formatters]</code> ke konfigurasi Anda:</p>
+
+    <pre><code>[formatters]
+python = ["isort", "black"]
+javascript = "prettier"
+typescript = "prettier"
+
+[formatters.prettier]
+prepend-args = ["--print-width=100"]</code></pre>
+
+    <p>Sekarang, saat Anda memformat thread yang diambil berisi cuplikan Python atau JavaScript, Panache meneruskan blok-blok itu melalui isort + black atau Prettier secara otomatis. Markdown naratif dinormalisasi oleh Panache; kode yang disematkan dinormalisasi oleh alat yang sudah distandarkan proyek Anda.</p>
+
+    <h2>Langkah 4 — Terapkan Otomatis dengan Pre-commit atau CI</h2>
+
+    <p>Langkah terakhir adalah menghilangkan kebutuhan untuk mengingat. Panache menyediakan <a href="https://github.com/jolars/panache-pre-commit" rel="nofollow">hook pre-commit</a> dan GitHub Action khusus, sehingga setiap file Markdown yang diambil diformat dan dilint sebelum masuk ke repositori atau keluaran yang diterbitkan.</p>
+
+    <pre><code># .pre-commit-config.yaml
+repos:
+  - repo: https://github.com/jolars/panache-pre-commit
+    rev: v3.4.0
+    hooks:
+      - id: panache-format
+      - id: panache-lint</code></pre>
+
+    <pre><code># GitHub Actions — di file workflow Anda
+- uses: jolars/panache-action@v1</code></pre>
+
+    <p>Dengan hook pre-commit terpasang, pipeline menjadi sepenuhnya otomatis: ambil thread dengan ThreadGrab, buat commit, dan Panache memformat + melint sebelum commit tersimpan. Markdown bersih menjadi standar, bukan pengecualian.</p>
+
+    <h2>Panache vs. Alat Lain</h2>
+
+    <p><a href="https://panache.bz/guide/comparison" rel="nofollow">Halaman perbandingan</a> di README memposisikan Panache terhadap Prettier, mdformat, markdownlint, marksman, dan alat serupa. Versi singkat untuk penerbitan ulang thread:</p>
+
+    <table>
+      <thead>
+        <tr><th>Alat</th><th>Terbaik untuk</th><th>Di mana Panache berbeda</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Panache</td><td>Quarto/Pandoc/R Markdown, LSP, formatter blok kode</td><td>Satu CLI untuk format + lint + perbaikan otomatis + editor</td></tr>
+        <tr><td>Prettier</td><td>Markdown gaya JavaScript, format kode</td><td>Gagal pada beberapa fenced div Quarto dan sintaks tabel</td></tr>
+        <tr><td>mdformat</td><td>Pemformatan Markdown sederhana</td><td>Tidak ada LSP, tidak punya kesadaran Quarto/R</td></tr>
+        <tr><td>markdownlint</td><td>Aturan linting</td><td>Hanya linter; tanpa formatter, tanpa alat blok kode</td></tr>
+      </tbody>
+    </table>
+
+    <p>Untuk Markdown sederhana, Anda dapat menggunakan Panache sebagai formatter dan linter pengganti langsung; untuk dokumen Quarto atau R Markdown — atau ketika Anda menginginkan pengalaman editor berbasis LSP — ia menangani kasus yang tidak bisa ditangani alat yang lebih lama.</p>
+
+    <h2>Dari Thread yang Diambil ke Sumber Bersih yang Siap Diterbitkan Ulang</h2>
+
+    <p>Keuntungan tersembunyi dari alur ini adalah keterulangan. Anda berakhir dengan pipeline tiga tahap yang bisa dijalankan siapa pun: <strong>ambil</strong> thread dengan ThreadGrab, <strong>normalisasi</strong> dengan format + lint Panache, dan <strong>terbitkan ulang</strong> ke X Article, LinkedIn, atau blog dari sumber Markdown yang bersih dan konsisten. Tidak perlu lagi memperbaiki pembungkusan yang tidak rata secara manual sebelum setiap postingan, dan tidak perlu lagi bertanya-tanya apakah thread yang diambil sudah siap dipublikasikan.</p>
+
+    <p>Panache adalah jenis alat yang menghargai mereka yang datang lebih awal: cepat, berlisensi MIT, terpelihara secara aktif (ada push dalam beberapa hari setelah peluncuran di HN), dan cocok tepat di tempat arsip thread Anda sudah berada. Padukan dengan langkah pengambilan dan pustaka Markdown Anda tidak lagi menjadi tumpukan tangkapan yang berantakan, tetapi menjadi arsip yang terformat rapi, dapat dicari, dan dapat diterbitkan ulang.</p>
+
+    <div class="related-posts">
+      <h3>Terhubung di ThreadGrab</h3>
+      <ul>
+        <li><a href="/id/blog/x-to-markdown-3-methods-2026.html">X ke Markdown: 3 Metode 2026</a> — lapisan konversi yang menghasilkan file yang diformat panduan ini</li>
+        <li><a href="/id/blog/notula-markdown-ai-agents-2026.html">Notula 2026: Markdown yang Disunting Manusia untuk Agen AI Anda</a> — Markdown bersih sebagai fondasi arsip yang dapat dibaca AI</li>
+        <li><a href="/id/blog/x-thread-archiving-tools-2026.html">Alat Pengarsipan Thread X 2026</a> — alat yang menangkap thread sebelum langkah pemformatan</li>
+        <li><a href="/id/blog/tweet-md-api-alur-kerja-llm-2026.html">API tweet.md + Alur Kerja LLM 2026</a> — mengubah Markdown yang diambil menjadi keluaran terstruktur</li>
+      </ul>
+    </div>
+
+    <h2>FAQ</h2>
+
+    <div class="faq-item">
+      <strong>Apa itu Panache dan apa fungsinya dengan Markdown?</strong>
+      <p>Panache adalah language server, formatter, dan linter untuk Markdown, Quarto, dan R Markdown, ditulis dalam Rust dengan parser concrete syntax tree (CST) tanpa kehilangan data. Ia menyediakan satu CLI yang dapat memformat file di tempat, melint-nya untuk masalah format, memperbaiki secara otomatis, dan menjalankan server LSP untuk integrasi editor. Ia juga mendukung menjalankan formatter dan linter eksternal (seperti Prettier, ruff, atau black) pada blok kode di dalam dokumen Markdown Anda.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Mengapa saya perlu memformat dan melint Markdown yang diambil dari thread X?</strong>
+      <p>Thread yang diambil adalah salinan setia, bukan versi yang dirapikan: postingan tiba dengan lebar baris yang tidak konsisten, gaya daftar yang campur aduk, paragraf dengan pembungkusan tidak rata, dan blok kode yang tidak pernah diformat. Sumber yang berantakan itu sulit diedit dan diterbitkan ulang. Menjalankan formatter menormalkan pembungkusan, merapikan paragraf ke lebar baris yang Anda pilih, dan memperbaiki otomatis masalah daftar serta spasi, sehingga Markdown menjadi file sumber yang bersih dan profesional.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Apakah Panache merupakan alternatif dari Prettier atau mdformat?</strong>
+      <p>Panache tumpang tindih dengan alat-alat tersebut tetapi dibangun di sekitar sintaks Quarto, Pandoc, dan R Markdown, yang tidak sepenuhnya ditangani Prettier dan mdformat (misalnya fenced div dan sebagian sintaks tabel). Ia juga menambahkan language server LSP, linter terintegrasi dengan perbaikan otomatis, pemformatan glob rekursif, dan formatter blok kode eksternal. Untuk Markdown sederhana, Anda sering dapat menggunakannya sebagai pengganti langsung; untuk dokumen Quarto atau R Markdown, ia menangani sintaks yang tidak didukung alat yang lebih lama.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Bisakah saya menjalankan Panache pada thread yang diambil secara otomatis sebelum menerbitkan ulang?</strong>
+      <p>Ya. Panache memiliki hook pre-commit khusus dan GitHub Action, sehingga Anda dapat memformat dan melint setiap file Markdown yang diambil secara otomatis di CI atau sebelum setiap commit. Anda juga dapat memanggilnya dalam loop shell satu baris pada direktori thread yang diambil, atau mengirim satu file melalui stdin dengan <code>panache format</code>. Ini memudahkan menjaga setiap thread yang diambil tetap bersih tanpa harus menjalankannya secara manual.</p>
+    </div>
+  </main>
+
+  <footer>
+    <a href="/id/">Beranda</a> &middot;
+    <a href="/id/blog/">Blog</a> &middot;
+    <a href="/id/blog/x-to-markdown-3-methods-2026.html">X ke Markdown</a>
+    <br>
+    ThreadGrab adalah alat independen. Tidak berafiliasi dengan X Corp., LinkedIn, atau layanan mana pun yang ditampilkan.
+    <br>
+    &copy; 2026 ThreadGrab
+  </footer>
+</body>
+</html>
