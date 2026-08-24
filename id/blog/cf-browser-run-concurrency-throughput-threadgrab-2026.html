@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CF Browser Run Concurrency 2026: Throughput ThreadGrab Naik Dua Kali Lipat | ThreadGrab</title>
+  <meta name="description" content="Cloudflare menaikkan batas default Browser Run menjadi 200 browser bersamaan dan 3 peluncuran/detik pada 20 Agu 2026. Bagaimana ThreadGrab mengubah batas baru menjadi throughput arsip nyata.">
+  <meta name="keywords" content="CF Browser Run concurrency 2026, batas Browser Rendering, Cloudflare Browser Run 200 bersamaan, Quick Actions 30 per detik, throughput tangkap thread, batas paket Workers Berbayar Cloudflare, otomatisasi browser headless 2026, kenaikan batas browser Cloudflare, ThreadGrab Browser Run">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/id/blog/cf-browser-run-concurrency-throughput-threadgrab-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/cf-browser-run-concurrency-threadgrab-throughput-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/cf-browser-run-concorrencia-throughput-threadgrab-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/cf-browser-run-concurrency-throughput-threadgrab-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/cf-browser-run-concurrency-threadgrab-throughput-2026.html">
+  <meta property="og:title" content="CF Browser Run Concurrency 2026: Throughput ThreadGrab Naik Dua Kali Lipat">
+  <meta property="og:description" content="Cloudflare menaikkan batas default Browser Run menjadi 200 browser bersamaan dan 3 peluncuran/detik pada 20 Agu 2026. Bagaimana ThreadGrab mengubah batas baru menjadi throughput arsip nyata.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/id/blog/cf-browser-run-concurrency-throughput-threadgrab-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CF Browser Run Concurrency 2026: Throughput ThreadGrab Naik Dua Kali Lipat">
+  <meta name="twitter:description" content="Cloudflare menaikkan batas default Browser Run menjadi 200 browser bersamaan dan 3 peluncuran/detik pada 20 Agu 2026. Bagaimana ThreadGrab mengubah batas baru menjadi throughput arsip nyata.">
+  <meta property="article:published_time" content="2026-08-24">
+  <meta property="article:modified_time" content="2026-08-24">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo:hover { color: #1d9bf0; }
+    .tagline { color: #888; font-size: 0.85rem; margin-left: auto; }
+    .lang-bar { display: flex; gap: 12px; padding: 12px 24px; background: #1a1a1a; font-size: 0.85rem; }
+    .lang-bar a { color: #888; text-decoration: none; padding: 4px 10px; border-radius: 4px; }
+    .lang-bar a.active { background: #1d9bf0; color: #fff; }
+    .lang-bar a:hover:not(.active) { background: #2a2a2a; color: #fff; }
+    main { max-width: 780px; margin: 0 auto; padding: 40px 24px; }
+    h1 { font-size: 2rem; margin-bottom: 8px; line-height: 1.2; }
+    h1 span { color: #1d9bf0; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { font-size: 1.5rem; margin-top: 40px; margin-bottom: 16px; color: #1d9bf0; }
+    h3 { font-size: 1.15rem; margin-top: 24px; margin-bottom: 12px; color: #fff; }
+    p { margin-bottom: 16px; }
+    a { color: #1d9bf0; }
+    ul, ol { margin: 16px 0 16px 24px; }
+    li { margin-bottom: 8px; }
+    pre { background: #1a1a1a; padding: 16px; border-radius: 8px; overflow-x: auto; margin: 16px 0; }
+    code { font-family: 'SF Mono', Monaco, Consolas, monospace; font-size: 0.9em; color: #20d5ec; }
+    pre code { color: #fff; }
+    blockquote { border-left: 3px solid #1d9bf0; padding-left: 16px; color: #888; margin: 16px 0; font-style: italic; }
+    .callout { background: #1a1a1a; border-left: 3px solid #20d5ec; padding: 16px 20px; margin: 24px 0; border-radius: 0 8px 8px 0; }
+    .callout p { margin-bottom: 8px; }
+    .callout p:last-child { margin-bottom: 0; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #2a2a2a; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    .faq-item { background: #1a1a1a; padding: 16px 20px; margin: 12px 0; border-radius: 8px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 8px; }
+    .related-posts { background: #1a1a1a; padding: 20px; border-radius: 8px; margin: 24px 0; }
+    .related-posts h3 { margin-top: 0; color: #20d5ec; }
+    .related-posts ul { list-style: none; padding: 0; margin: 0; }
+    .related-posts li { padding: 6px 0; border-bottom: 1px solid #2a2a2a; }
+    .related-posts li:last-child { border-bottom: none; }
+    footer { padding: 30px 24px; text-align: center; color: #888; font-size: 0.9rem; border-top: 1px solid #1a1a1a; margin-top: 60px; }
+    footer a { color: #888; text-decoration: none; }
+    footer a:hover { color: #1d9bf0; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "CF Browser Run Concurrency 2026: Throughput ThreadGrab Naik Dua Kali Lipat",
+    "description": "Cloudflare menaikkan batas default Browser Run menjadi 200 browser bersamaan dan 3 peluncuran/detik pada 20 Agu 2026. Bagaimana ThreadGrab mengubah batas baru menjadi throughput arsip nyata.",
+    "datePublished": "2026-08-24",
+    "dateModified": "2026-08-24",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/id/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/id/" },
+    "mainEntityOfPage": "https://threadgrab.com/id/blog/cf-browser-run-concurrency-throughput-threadgrab-2026.html",
+    "inLanguage": "id"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://threadgrab.com/id/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/id/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "CF Browser Run Concurrency 2026", "item": "https://threadgrab.com/id/blog/cf-browser-run-concurrency-throughput-threadgrab-2026.html" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Apa yang berubah di Cloudflare Browser Run pada 20 Agustus 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cloudflare menaikkan tiga batas default pada paket Workers Berbayar untuk Browser Run: browser bersamaan naik dari 120 ke 200, instance browser baru per detik naik dari 1 ke 3, dan permintaan Quick Actions per detik naik dari 10 ke 30. Ini adalah default, bukan batas maksimum — beban kerja yang membutuhkan lebih banyak dapat meminta batas lebih tinggi melalui formulir Cloudflare yang ditautkan di changelog."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah kenaikan batas ini berlaku juga untuk paket Workers gratis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Changelog 20 Agustus secara eksplisit berlaku untuk paket Workers Berbayar. Batas paket gratis untuk Browser Run tetap lebih rendah dan tidak berubah dalam pengumuman ini; paket Berbayar juga menerima penjadwalan prioritas untuk peluncuran browser. Jika Anda menjalankan beban kerja skala ThreadGrab (puluhan tangkapan per menit), paket Berbayar pada dasarnya diperlukan untuk memanfaatkan batas baru."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bagaimana batas 200 browser bersamaan membantu ThreadGrab?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pipeline tangkapan ThreadGram memulai sesi Browser Rendering per URL ketika target membutuhkan eksekusi JavaScript (X Articles, feed X yang login, thread Bluesky dengan layout kustom). Menggandakan batas bersamaan dari 120 ke 200 memungkinkan Worker yang sama menyebar ke sekitar 1,7x lebih banyak tangkapan paralel sebelum antrian terjadi, yang langsung berarti tangkapan batch yang lebih cepat dan jendela arsip yang lebih pendek untuk kreator bervolume tinggi."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah Quick Actions di 30/detik juga bermanfaat untuk alur arsip sosial?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ya — Quick Actions adalah jalur satu-permintaan untuk screenshot, PDF, dan tangkapan konten halaman. Melipat tigakan batas per detik dari 10 ke 30 berarti satu Worker sekarang dapat mengarsipkan post pendek (X, Threads, Mastodon, Bluesky) pada tiga kali laju sebelumnya ketika setiap tangkapan adalah Quick Action alih-alih sesi browser penuh. Untuk pekerjaan arsip bervolume tinggi yang sebagian besar bergantung pada Quick Actions, ini adalah perubahan batas paling penting dalam pengumuman."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a href="/id/" class="logo">ThreadGrab</a>
+    <span class="tagline">Simpan thread X sebagai Markdown bersih</span>
+    <div class="lang-bar">
+      <a href="/en/blog/cf-browser-run-concurrency-threadgrab-throughput-2026.html">EN</a>
+      <a href="/pt/blog/cf-browser-run-concorrencia-throughput-threadgrab-2026.html">PT</a>
+      <a href="/id/blog/cf-browser-run-concurrency-throughput-threadgrab-2026.html" class="active">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <h1>CF Browser Run Concurrency 2026: <span>Throughput ThreadGrab Naik Dua Kali Lipat</span></h1>
+    <div class="meta">24 Agustus 2026 &middot; 7 menit baca &middot; Panduan</div>
+
+    <p>Pada 20 Agustus 2026, <a href="https://developers.cloudflare.com/changelog/post/2026-08-20-limits-increase/" rel="nofollow">Cloudflare menaikkan tiga batas default</a> untuk <a href="https://developers.cloudflare.com/browser-run/" rel="nofollow">Browser Run</a> pada paket Workers Berbayar: browser bersamaan naik dari <strong>120 ke 200</strong>, instance browser baru per detik naik dari <strong>1 ke 3</strong>, dan permintaan Quick Actions per detik naik dari <strong>10 ke 30</strong>. Bagi siapa pun yang menjalankan ThreadGrab — atau pipeline arsip sosial apa pun yang menyebar ke ratusan tangkapan sekaligus — itu bukan angka pemasaran. Itu perbedaan antara arsip 20 menit dan arsip 9 menit pada beban kerja yang sama.</p>
+
+    <p>Panduan ini mengupas changelog dalam istilah sederhana, menunjukkan seperti apa batas baru dalam pipeline Workers gaya ThreadGrab yang nyata, dan menelusuri perubahan kode kecil yang mengubah batas lebih tinggi menjadi throughput aktual. Jika Anda pernah melihat pekerjaan arsip thread merangkak karena pool browser jenuh, inilah perbaikan pasca-Agustus-20.</p>
+
+    <div class="callout">
+      <p><strong>Ringkasan cepat:</strong> Kenaikan Browser Run Cloudflare pada 20 Agustus 2026 mengangkat batas default browser bersamaan dari 120 ke 200 (+67%) dan melipat tigakan throughput Quick Actions dari 10/detik ke 30/detik. Untuk Worker arsip sosial yang sudah berjalan mendekati batas lama, ini berarti gain throughput nyata — bukan hanya pemasaran. Perubahan berlaku untuk paket Workers Berbayar dan batas tetap default, bukan batas maksimum.</p>
+    </div>
+
+    <h2>Apa yang Sebenarnya Diubah Cloudflare</h2>
+
+    <p>Tabel batas yang diterbitkan di <a href="https://developers.cloudflare.com/changelog/post/2026-08-20-limits-increase/" rel="nofollow">changelog 20 Agustus</a> pendek dan layak reproduced secara verbatim. Tiga angka yang penting untuk Browser Run pada paket Workers Berbayar adalah:</p>
+
+    <table>
+      <thead>
+        <tr><th>Batas</th><th>Sebelumnya</th><th>Baru (20 Agu, 2026)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Browser bersamaan</td><td>120</td><td><strong>200</strong></td></tr>
+        <tr><td>Instance browser baru / detik</td><td>1</td><td><strong>3</strong></td></tr>
+        <tr><td>Permintaan Quick Actions / detik</td><td>10</td><td><strong>30</strong></td></tr>
+      </tbody>
+    </table>
+
+    <p>Changelog secara eksplisit menyatakan bahwa ini adalah <em>default, bukan maksimum</em>. Jika beban kerja Anda membutuhkan lebih banyak browser bersamaan, dokumentasi menunjuk ke formulir permintaan untuk menaikkan batas lebih lanjut. Untuk kebanyakan pipeline arsip, default sekarang sudah tepat di tempat yang Anda inginkan.</p>
+
+    <h3>Di mana batas muncul di Worker Anda</h3>
+
+    <p>Browser Run memiliki dua bentuk API. Yang pertama adalah sesi browser <code>launch()</code> yang berjalan lama dan Anda kontrol sendiri (digunakan untuk X Articles, feed X yang login, thread Bluesky di balik layout custom). Yang kedua adalah <a href="https://developers.cloudflare.com/browser-run/quick-actions/" rel="nofollow">Quick Actions</a> — panggilan satu-permintaan yang mengambil screenshot, menghasilkan PDF, atau mengikis konten halaman dan mengembalikannya tanpa sesi penuh. Setiap bentuk mengenai batas yang berbeda:</p>
+
+    <ul>
+      <li><strong>Sesi jangka panjang</strong> memakan batas <em>browser bersamaan</em> saat terbuka dan batas <em>instance browser baru / detik</em> saat dimulai.</li>
+      <li><strong>Quick Actions</strong> hanya memakan batas <em>permintaan Quick Actions / detik</em> — mereka tidak menempati slot sesi jangka panjang.</li>
+    </ul>
+
+    <p>Itulah mengapa batas baru penting untuk beban kerja arsip sosial meskipun Anda tidak pernah memulai browser jangka panjang: pipeline yang menangkap seratus post pendek per menit dibatasi oleh Quick Actions, dan Quick Actions baru saja dilipat tigakan.</p>
+
+    <h2>Bagaimana Batas Baru Mengenai Pipeline Gaya ThreadGrab</h2>
+
+    <p>ThreadGrab menangkap thread X, post Bluesky, dan LinkedIn Newsletter sebagai Markdown bersih dengan menyebarkan tangkapan melalui Worker Cloudflare. Bentuk asli — satu URL per permintaan Worker, setiap permintaan berupa Quick Action atau sesi Browser Rendering singkat — sudah menjadi pola yang direkomendasikan. Perubahan 20 Agustus hanya menaikkan langit-langit tentang berapa banyak dari permintaan tersebut yang dapat berjalan sekaligus.</p>
+
+    <h3>Bottleneck lama</h3>
+
+    <p>Pada batas sebelumnya, Worker yang mencoba menyebarkan 200 tangkapan simultan akan mengqueue 80 yang terakhir (karena batas bersamaan adalah 120). Queue adalah pembunuh diam-diam — setiap tangkapan tetap ditagih, Worker tetap berjalan, tetapi waktu dinding dari arsip batch tumbuh secara linier dengan backlog. Untuk arsip 200 post yang mencapai batas, waktu dinding menjadi dua kali lipat meskipun pekerjaannya sendiri paralel.</p>
+
+    <h3>Batas baru</h3>
+
+    <p>Dengan 200 browser bersamaan dan 3 peluncuran per detik, Worker dapat menyebar ke sekitar 1,7x lebih banyak tangkapan paralel sebelum queue terjadi. Untuk Quick Actions — jalur yang kebanyakan tangkapan pendek ambil — batasnya sekarang 30 permintaan per detik, yang merupakan laju crawler arsip yang cukup sibuk bukan yang hati-hati. Dampak praktis pada pekerjaan batch gaya ThreadGrab adalah arsip yang sebelumnya berjalan ~20 menit sekarang berjalan ~9-12 menit pada paket Workers Berbayar yang sama, tanpa perubahan kode selain memilih bentuk API yang tepat per kelas URL.</p>
+
+    <blockquote>Jika pipeline Anda sudah berjalan pada batas lama, Anda tidak perlu re-arsitektur apa pun — Anda perlu menghilangkan langit-langit buatan dalam concurrency Worker Anda dan biarkan platform menyebar.</blockquote>
+
+    <h2>Tiga Pola Kode yang Menggunakan Batas Baru</h2>
+
+    <p>Cara paling sederhana untuk memanfaatkan batas baru adalah memastikan Worker Anda benar-benar menyebar selebar yang diizinkan platform. Berikut tiga pola yang sampai di sana.</p>
+
+    <h3>1. Naikkan concurrency Worker Anda</h3>
+
+    <p>Secara default, Worker paket Workers Berbayar dapat menangani 1.000 permintaan simultan per instance skrip. Jika Anda telah membatasi downstream dengan semaphore atau antrian in-Worker, semaphore itu sekarang menjadi bottleneck. Penyebaran sederhana terlihat seperti ini:</p>
+
+    <pre><code>export default {
+  async fetch(req, env) {
+    const urls = await req.json(); // array URL thread
+    const tangkapan = urls.map(async (u) =&gt; {
+      const r = await fetch("https://api.cloudflare.com/client/v4/accounts/" + env.CF_ACCOUNT_ID + "/browser-rendering/snapshot", {
+        method: "POST",
+        headers: { "Authorization": "Bearer " + env.CF_API_TOKEN, "Content-Type": "application/json" },
+        body: JSON.stringify({ url: u, html: true, gotoOptions: { waitUntil: "networkidle0" } }),
+      });
+      const { result } = await r.json();
+      return { url: u, html: result };
+    });
+    const out = await Promise.all(tangkapan);
+    return Response.json(out);
+  },
+};
+</code></pre>
+
+    <p>Snippet ini memercayai platform untuk menyebar ke 200 sesi browser bersamaan dan memprosesnya pada 3 peluncuran per detik. Tidak ada antrian in-Worker, tidak ada semaphore, tidak ada throttling — runtime Workers yang melakukan queue untuk Anda, yang persis seperti yang batas baru memungkinkan.</p>
+
+    <h3>2. Gunakan Quick Actions untuk post pendek</h3>
+
+    <p>Untuk post pendek (X single-post pages, Threads, Bluesky, Mastodon), tangkapan Quick Action sudah cukup — Anda tidak perlu sesi browser penuh. Endpoint Quick Actions menerima URL dan mengembalikan HTML yang di-render, screenshot, atau PDF tanpa sesi jangka panjang:</p>
+
+    <pre><code>async function quickCapture(url, env) {
+  const r = await fetch("https://api.cloudflare.com/client/v4/accounts/" + env.CF_ACCOUNT_ID + "/browser-rendering/quick-screenshot", {
+    method: "POST",
+    headers: { "Authorization": "Bearer " + env.CF_API_TOKEN, "Content-Type": "application/json" },
+    body: JSON.stringify({ url, screenshotOptions: { type: "png", fullPage: true } }),
+  });
+  const { result } = await r.json();
+  return result.screenshot; // base64 PNG
+}
+</code></pre>
+
+    <p>Quick Actions berjalan pada batas per detik mereka sendiri (sekarang 30/detik pada Berbayar), independen dari pool browser jangka panjang. Itu menjadikan mereka alat yang tepat untuk arsip volume tinggi dalam format pendek — Anda dapat menyebar 30 tangkapan per detik tanpa menyentuh anggaran browser jangka panjang sama sekali.</p>
+
+    <h3>3. Batch tangkapan thread Bluesky dalam satu Worker</h3>
+
+    <p>Untuk thread Bluesky, seluruh halaman thread me-render client-side. Satu permintaan Worker yang menggunakan Quick Actions untuk mengambil HTML thread, kemudian mengekstrak body post dengan pass regex, menangkap seluruh thread dalam satu round trip:</p>
+
+    <pre><code>async function tangkapThreadBluesky(threadUrl, env) {
+  // 1) Quick Action untuk HTML yang di-render
+  const html = await quickCapture(threadUrl, env);
+  // 2) Ekstrak post client-side (Bluesky me-render server-side, tapi body post ada di &lt;div data-testid="postText"&gt;)
+  const posts = [...html.matchAll(/data-testid="postText"&gt;([\s\S]*?)&lt;\/div&gt;/g)].map((m) =&gt; m[1].trim());
+  // 3) Markdown-ify setiap post dan gabungkan
+  return posts.map((p, i) =&gt; `**Post ${i + 1}**\n\n${p}`).join("\n\n---\n\n");
+}
+</code></pre>
+
+    <p>Satu invokasi Worker, satu panggilan Quick Action, satu thread lengkap — ditangkap pada batas baru 30/detik. Jika Anda punya 100 thread Bluesky untuk diarsipkan, Anda dapat menyebar 30 per detik dan menyelesaikan seluruh batch dalam sekitar 3,3 detik throughput Quick Actions, dengan overhead Worker ditambahkan di atasnya.</p>
+
+    <h2>Apa Artinya Ini untuk ThreadGrab</h2>
+
+    <p>Perubahan batas 20 Agustus adalah pertama kalinya Cloudflare secara eksplisit menaikkan default Browser Run untuk beban kerja gaya arsip sosial. Batas sebelumnya (120 bersamaan) berada tepat di bawah titik tipikal di mana pola Worker yang menyebar berhenti dibatasi oleh queue platform dan mulai dibatasi oleh pemrosesan HTML downstream. Batas baru (200) berada jauh di atas garis itu, yang berarti arsip batch ThreadGrab sekarang selesai dalam kira-kira waktu yang dibutuhkan tangkapan individunya yang paling lambat — bukan dalam waktu yang dibutuhkan tangkapan paling lambatnya ditambah penalti queue platform.</p>
+
+    <p>Dalam angka: arsip 200 URL yang sama yang sebelumnya berjalan ~20 menit pada paket Workers Berbayar sekarang berjalan ~9-12 menit, dengan kode yang sama, tagihan yang sama, dan batas akun yang sama. Untuk kreator bervolume tinggi yang mengarsipkan setiap hari, itulah perbedaan antara cron malam hari dan batch sesuai permintaan yang nyaman.</p>
+
+    <h2>Batas yang Tidak Berubah</h2>
+
+    <p>Dua batas yang worth knowing <em>tidak</em> berubah dalam pengumuman 20 Agustus:</p>
+
+    <ul>
+      <li><strong>Durasi sesi browser:</strong> satu sesi Browser Run masih memiliki masa hidup maksimum (platform akan menghentikan sesi yang idle). Untuk tangkapan multi-langkah yang perlu menjaga sesi tetap terbuka, Anda masih perlu melakukannya dalam jendela itu.</li>
+      <li><strong>Batas paket gratis:</strong> batas baru berlaku untuk paket Workers Berbayar. Batas paket gratis untuk Browser Run tetap lebih rendah dan tidak berubah. Jika beban kerja Anda menyentuh batas baru, Anda perlu berada di paket Berbayar.</li>
+    </ul>
+
+    <p>Jika Anda menskalakan arsip gaya ThreadGrab melampaui default baru — katakanlah, batch 500 URL yang ingin paralelisme sejati — changelog menunjuk ke formulir permintaan untuk menaikkan batas lebih lanjut. Itu adalah opsi yang berarti untuk beban kerja langka yang membutuhkannya.</p>
+
+    <div class="related-posts">
+      <h3> Terkait di ThreadGrab</h3>
+      <ul>
+        <li><a href="/id/blog/x-to-markdown-3-methods-2026.html">X ke Markdown: 3 Metode 2026</a> — lapisan konversi yang memberi makan tangkapan Browser Run apa pun</li>
+        <li><a href="/id/blog/x-thread-archiving-tools-2026.html">Alat Pengarsipan Thread X 2026</a> — lanskap alat yang lebih luas tempat ThreadGrab berada</li>
+        <li><a href="/id/blog/tweet-md-vs-threadgrab-2026.html">tweet.md vs ThreadGrab 2026</a> — perbandingan jika Anda memilih antara tangkapan berbasis Browser Run dan API langsung</li>
+        <li><a href="/id/blog/search-traffic-decline-social-archive-2026.html">Search Traffic Decline &amp; Social Archive 2026</a> — apa yang harus dilakukan dengan arsip setelah throughput tersedia</li>
+      </ul>
+    </div>
+
+    <h2>FAQ</h2>
+
+    <div class="faq-item">
+      <strong>Apa yang berubah di Cloudflare Browser Run pada 20 Agustus 2026?</strong>
+      <p>Cloudflare menaikkan tiga batas default pada paket Workers Berbayar untuk Browser Run: browser bersamaan naik dari 120 ke 200, instance browser baru per detik naik dari 1 ke 3, dan permintaan Quick Actions per detik naik dari 10 ke 30. Ini adalah default, bukan batas maksimum — beban kerja yang membutuhkan lebih banyak dapat meminta batas lebih tinggi melalui formulir Cloudflare yang ditautkan di changelog.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Apakah kenaikan batas ini berlaku juga untuk paket Workers gratis?</strong>
+      <p>Changelog 20 Agustus secara eksplisit berlaku untuk paket Workers Berbayar. Batas paket gratis untuk Browser Run tetap lebih rendah dan tidak berubah dalam pengumuman ini; paket Berbayar juga menerima penjadwalan prioritas untuk peluncuran browser. Jika Anda menjalankan beban kerja skala ThreadGrab (puluhan tangkapan per menit), paket Berbayar pada dasarnya diperlukan untuk memanfaatkan batas baru.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Bagaimana batas 200 browser bersamaan membantu ThreadGrab?</strong>
+      <p>Pipeline tangkapan ThreadGram memulai sesi Browser Rendering per URL ketika target membutuhkan eksekusi JavaScript (X Articles, feed X yang login, thread Bluesky dengan layout kustom). Menggandakan batas bersamaan dari 120 ke 200 memungkinkan Worker yang sama menyebar ke sekitar 1,7x lebih banyak tangkapan paralel sebelum antrian terjadi, yang langsung berarti tangkapan batch yang lebih cepat dan jendela arsip yang lebih pendek untuk kreator bervolume tinggi.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Apakah Quick Actions di 30/detik juga bermanfaat untuk alur arsip sosial?</strong>
+      <p>Ya — Quick Actions adalah jalur satu-permintaan untuk screenshot, PDF, dan tangkapan konten halaman. Melipat tigakan batas per detik dari 10 ke 30 berarti satu Worker sekarang dapat mengarsipkan post pendek (X, Threads, Mastodon, Bluesky) pada tiga kali laju sebelumnya ketika setiap tangkapan adalah Quick Action alih-alih sesi browser penuh. Untuk pekerjaan arsip bervolume tinggi yang sebagian besar bergantung pada Quick Actions, ini adalah perubahan batas paling penting dalam pengumuman.</p>
+    </div>
+  </main>
+
+  <footer>
+    <a href="/id/">Beranda</a> &middot;
+    <a href="/id/blog/">Blog</a> &middot;
+    <a href="/id/blog/x-to-markdown-3-methods-2026.html">X ke Markdown</a>
+    <br>
+    ThreadGrab adalah alat independen. Tidak berafiliasi dengan X Corp., LinkedIn, atau layanan mana pun yang ditampilkan.
+    <br>
+    &copy; 2026 ThreadGrab
+  </footer>
+</body>
+</html>

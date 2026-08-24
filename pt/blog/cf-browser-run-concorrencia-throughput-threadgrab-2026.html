@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CF Browser Run Concorrência 2026: Throughput do ThreadGrab Dobra | ThreadGrab</title>
+  <meta name="description" content="Cloudflare elevou os limites padrão do Browser Run para 200 navegadores concorrentes e 3 inicializações/seg em 20 de ago 2026. Como o ThreadGrab transforma os novos tetos em throughput real.">
+  <meta name="keywords" content="CF Browser Run concorrência 2026, limites Browser Rendering, Cloudflare Browser Run 200 concorrentes, Quick Actions 30 por segundo, throughput captura threads, limites plano Workers Pago Cloudflare, automação navegador headless 2026, aumento limites navegador Cloudflare, ThreadGrab Browser Run">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/pt/blog/cf-browser-run-concorrencia-throughput-threadgrab-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/cf-browser-run-concurrency-threadgrab-throughput-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/cf-browser-run-concorrencia-throughput-threadgrab-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/cf-browser-run-concurrency-throughput-threadgrab-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/cf-browser-run-concurrency-threadgrab-throughput-2026.html">
+  <meta property="og:title" content="CF Browser Run Concorrência 2026: Throughput do ThreadGrab Dobra">
+  <meta property="og:description" content="Cloudflare elevou os limites padrão do Browser Run para 200 navegadores concorrentes e 3 inicializações/seg em 20 de ago 2026. Como o ThreadGrab transforma os novos tetos em throughput real.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/pt/blog/cf-browser-run-concorrencia-throughput-threadgrab-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CF Browser Run Concorrência 2026: Throughput do ThreadGrab Dobra">
+  <meta name="twitter:description" content="Cloudflare elevou os limites padrão do Browser Run para 200 navegadores concorrentes e 3 inicializações/seg em 20 de ago 2026. Como o ThreadGrab transforma os novos tetos em throughput real.">
+  <meta property="article:published_time" content="2026-08-24">
+  <meta property="article:modified_time" content="2026-08-24">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo:hover { color: #1d9bf0; }
+    .tagline { color: #888; font-size: 0.85rem; margin-left: auto; }
+    .lang-bar { display: flex; gap: 12px; padding: 12px 24px; background: #1a1a1a; font-size: 0.85rem; }
+    .lang-bar a { color: #888; text-decoration: none; padding: 4px 10px; border-radius: 4px; }
+    .lang-bar a.active { background: #1d9bf0; color: #fff; }
+    .lang-bar a:hover:not(.active) { background: #2a2a2a; color: #fff; }
+    main { max-width: 780px; margin: 0 auto; padding: 40px 24px; }
+    h1 { font-size: 2rem; margin-bottom: 8px; line-height: 1.2; }
+    h1 span { color: #1d9bf0; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { font-size: 1.5rem; margin-top: 40px; margin-bottom: 16px; color: #1d9bf0; }
+    h3 { font-size: 1.15rem; margin-top: 24px; margin-bottom: 12px; color: #fff; }
+    p { margin-bottom: 16px; }
+    a { color: #1d9bf0; }
+    ul, ol { margin: 16px 0 16px 24px; }
+    li { margin-bottom: 8px; }
+    pre { background: #1a1a1a; padding: 16px; border-radius: 8px; overflow-x: auto; margin: 16px 0; }
+    code { font-family: 'SF Mono', Monaco, Consolas, monospace; font-size: 0.9em; color: #20d5ec; }
+    pre code { color: #fff; }
+    blockquote { border-left: 3px solid #1d9bf0; padding-left: 16px; color: #888; margin: 16px 0; font-style: italic; }
+    .callout { background: #1a1a1a; border-left: 3px solid #20d5ec; padding: 16px 20px; margin: 24px 0; border-radius: 0 8px 8px 0; }
+    .callout p { margin-bottom: 8px; }
+    .callout p:last-child { margin-bottom: 0; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #2a2a2a; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    .faq-item { background: #1a1a1a; padding: 16px 20px; margin: 12px 0; border-radius: 8px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 8px; }
+    .related-posts { background: #1a1a1a; padding: 20px; border-radius: 8px; margin: 24px 0; }
+    .related-posts h3 { margin-top: 0; color: #20d5ec; }
+    .related-posts ul { list-style: none; padding: 0; margin: 0; }
+    .related-posts li { padding: 6px 0; border-bottom: 1px solid #2a2a2a; }
+    .related-posts li:last-child { border-bottom: none; }
+    footer { padding: 30px 24px; text-align: center; color: #888; font-size: 0.9rem; border-top: 1px solid #1a1a1a; margin-top: 60px; }
+    footer a { color: #888; text-decoration: none; }
+    footer a:hover { color: #1d9bf0; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "CF Browser Run Concorrência 2026: Throughput do ThreadGrab Dobra",
+    "description": "Cloudflare elevou os limites padrão do Browser Run para 200 navegadores concorrentes e 3 inicializações/seg em 20 de ago 2026. Como o ThreadGrab transforma os novos tetos em throughput real.",
+    "datePublished": "2026-08-24",
+    "dateModified": "2026-08-24",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/" },
+    "mainEntityOfPage": "https://threadgrab.com/pt/blog/cf-browser-run-concorrencia-throughput-threadgrab-2026.html",
+    "inLanguage": "pt"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://threadgrab.com/pt/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/pt/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "CF Browser Run Concorrência 2026", "item": "https://threadgrab.com/pt/blog/cf-browser-run-concorrencia-throughput-threadgrab-2026.html" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "O que mudou no Cloudflare Browser Run em 20 de agosto de 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A Cloudflare elevou três limites padrão no plano Workers Pago para o Browser Run: navegadores concorrentes foram de 120 para 200, novas instâncias de navegador por segundo foram de 1 para 3, e requisições Quick Actions por segundo foram de 10 para 30. Esses são padrões, não tetos — cargas de trabalho que precisarem de mais podem solicitar limites maiores via formulário da Cloudflare vinculado no changelog."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O aumento de limite também se aplica aos planos Workers gratuitos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O changelog de 20 de agosto se aplica explicitamente ao plano Workers Pago. Os limites do plano gratuito para o Browser Run continuam menores e inalterados nesse anúncio; planos Pagos também recebem agendamento prioritário para inicialização de navegadores. Se você roda cargas de trabalho na escala do ThreadGrab (dezenas de capturas por minuto), o plano Pago é praticamente obrigatório para tirar proveito dos novos tetos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como o teto de 200 navegadores concorrentes ajuda o ThreadGrab?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O pipeline de captura do ThreadGrab inicia uma sessão de Browser Rendering por URL quando o alvo precisa de execução de JavaScript (X Articles, feeds X logados, threads Bluesky com layouts personalizados). Dobrar o teto concorrente de 120 para 200 permite que o mesmo Worker distribua para cerca de 1,7x mais capturas em paralelo antes do enfileiramento, o que se traduz diretamente em capturas em lote mais rápidas e janelas de arquivo menores para criadores de alto volume."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "As Quick Actions a 30/s também beneficiam fluxos de arquivo social?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim — Quick Actions é o caminho de uma única requisição para screenshots, PDFs e captura de conteúdo de página. Triplicar o teto por segundo de 10 para 30 significa que um único Worker agora pode arquivar posts curtos (X, Threads, Mastodon, Bluesky) a três vezes a taxa anterior quando cada captura é uma Quick Action em vez de uma sessão completa de navegador. Para trabalhos de arquivo de alto volume que dependem majoritariamente de Quick Actions, essa é a mudança de limite mais importante do anúncio."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a href="/pt/" class="logo">ThreadGrab</a>
+    <span class="tagline">Salve threads do X como Markdown limpo</span>
+    <div class="lang-bar">
+      <a href="/en/blog/cf-browser-run-concurrency-threadgrab-throughput-2026.html">EN</a>
+      <a href="/pt/blog/cf-browser-run-concorrencia-throughput-threadgrab-2026.html" class="active">PT</a>
+      <a href="/id/blog/cf-browser-run-concurrency-throughput-threadgrab-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <h1>CF Browser Run Concorrência 2026: <span>Throughput do ThreadGrab Dobra</span></h1>
+    <div class="meta">24 de Agosto, 2026 &middot; 7 min de leitura &middot; Guia</div>
+
+    <p>Em 20 de agosto de 2026, a <a href="https://developers.cloudflare.com/changelog/post/2026-08-20-limits-increase/" rel="nofollow">Cloudflare elevou três limites padrão</a> do <a href="https://developers.cloudflare.com/browser-run/" rel="nofollow">Browser Run</a> no plano Workers Pago: navegadores concorrentes foram de <strong>120 para 200</strong>, novas instâncias de navegador por segundo foram de <strong>1 para 3</strong>, e requisições Quick Actions por segundo foram de <strong>10 para 30</strong>. Para quem roda o ThreadGrab — ou qualquer pipeline de arquivo social que distribui capturas em paralelo — esse não é um número de marketing. É a diferença entre um arquivo de 20 minutos e um arquivo de 9 minutos sobre a mesma carga de trabalho.</p>
+
+    <p>Este guia explica o changelog em termos simples, mostra como os novos tetos aparecem em um pipeline Workers real estilo ThreadGrab, e percorre as pequenas mudanças de código que transformam limites maiores em throughput efetivo. Se você já viu um trabalho de arquivo de threads engasgar porque o pool de navegadores saturou, este é o conserto pós-agosto-2026.</p>
+
+    <div class="callout">
+      <p><strong>Resumo rápido:</strong> O aumento do Browser Run da Cloudflare em 20 de agosto de 2026 eleva o teto padrão de navegadores concorrentes de 120 para 200 (+67%) e triplica o throughput de Quick Actions de 10/s para 30/s. Para Workers de arquivo social que já rodavam perto do teto antigo, isso significa ganhos reais de throughput — não só marketing. A mudança se aplica ao plano Workers Pago e os limites continuam sendo padrões, não tetos máximos.</p>
+    </div>
+
+    <h2>O que a Cloudflare Realmente Mudou</h2>
+
+    <p>A tabela de limites publicada no <a href="https://developers.cloudflare.com/changelog/post/2026-08-20-limits-increase/" rel="nofollow">changelog de 20 de agosto</a> é curta e vale reproduzir na íntegra. Os três números que importam para o Browser Run no plano Workers Pago são:</p>
+
+    <table>
+      <thead>
+        <tr><th>Limite</th><th>Anterior</th><th>Novo (20 de ago, 2026)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Navegadores concorrentes</td><td>120</td><td><strong>200</strong></td></tr>
+        <tr><td>Novas instâncias de navegador / segundo</td><td>1</td><td><strong>3</strong></td></tr>
+        <tr><td>Requisições Quick Actions / segundo</td><td>10</td><td><strong>30</strong></td></tr>
+      </tbody>
+    </table>
+
+    <p>O changelog é explícito ao afirmar que esses são <em>padrões, não máximos</em>. Se sua carga de trabalho precisar de mais navegadores concorrentes, a documentação aponta para um formulário de solicitação para elevar o teto mais ainda. Para a maioria dos pipelines de arquivo, os padrões agora estão onde você quer.</p>
+
+    <h3>Onde os limites aparecem no seu Worker</h3>
+
+    <p>O Browser Run tem duas formas de API. A primeira é uma sessão de navegador <code>launch()</code> de longa duração que você mesmo controla (usada para X Articles, feeds X logados, threads Bluesky com layouts personalizados). A segunda são as <a href="https://developers.cloudflare.com/browser-run/quick-actions/" rel="nofollow">Quick Actions</a> — chamadas de requisição única que tiram um screenshot, geram um PDF, ou raspam o conteúdo da página e retornam sem uma sessão completa. Cada formato consome um limite diferente:</p>
+
+    <ul>
+      <li><strong>Sessões de longa duração</strong> consomem o teto de <em>navegadores concorrentes</em> enquanto estão abertas e o teto de <em>novas instâncias de navegador / segundo</em> quando iniciam.</li>
+      <li><strong>Quick Actions</strong> consomem apenas o teto de <em>requisições Quick Actions / segundo</em> — elas não ocupam um slot de sessão de longa duração.</li>
+    </ul>
+
+    <p>É por isso que os novos limites importam para cargas de trabalho de arquivo social mesmo se você nunca inicia um navegador de longa duração: um pipeline que captura cem posts curtos por minuto está limitado pelas Quick Actions, e as Quick Actions acabaram de triplicar.</p>
+
+    <h2>Como os Novos Tetos Atingem um Pipeline Estilo ThreadGrab</h2>
+
+    <p>O ThreadGrab captura threads do X, posts do Bluesky, e LinkedIn Newsletters como Markdown limpo distribuindo capturas em um Worker da Cloudflare. O formato original — uma URL por requisição do Worker, cada requisição sendo uma Quick Action ou uma sessão curta de Browser Rendering — já era o padrão recomendado. A mudança de 20 de agosto apenas eleva o teto de quantas dessas requisições podem rodar simultaneamente.</p>
+
+    <h3>O gargalo antigo</h3>
+
+    <p>Nos limites anteriores, um Worker que tentasse distribuir 200 capturas simultâneas enfileiraria as últimas 80 (porque o teto concorrente era 120). Enfileiramento é o assassino silencioso — cada captura ainda é cobrada, o Worker ainda roda, mas o tempo de relógio de um arquivo em lote cresce linearmente com o backlog. Para um arquivo de 200 posts que atingia o teto, o tempo de relógio dobrava mesmo que o trabalho em si fosse paralelo.</p>
+
+    <h3>O novo teto</h3>
+
+    <p>Com 200 navegadores concorrentes e 3 inicializações por segundo, um Worker pode distribuir para cerca de 1,7x mais capturas paralelas antes do enfileiramento começar. Para Quick Actions — o caminho que a maioria das capturas curtas usa — o teto agora é 30 requisições por segundo, que é a taxa de um arquivo razoavelmente ocupado em vez de um arquivo cuidadoso. O impacto prático em um trabalho em lote estilo ThreadGrab é que arquivos que antes rodavam ~20 minutos agora rodam ~9-12 minutos sobre o mesmo plano Workers Pago, sem mudanças de código além de escolher o formato de API correto por classe de URL.</p>
+
+    <blockquote>Se seu pipeline já roda no teto antigo, você não precisa re-arquitetar nada — precisa remover os tetos artificiais na concorrência do seu Worker e deixar a plataforma distribuir.</blockquote>
+
+    <h2>Três Padrões de Código que Usam os Novos Tetos</h2>
+
+    <p>A maneira mais simples de tirar proveito dos novos limites é garantir que seu Worker realmente distribui tão largo quanto a plataforma permite. Aqui estão três padrões que chegam lá.</p>
+
+    <h3>1. Aumente a concorrência do seu Worker</h3>
+
+    <p>Por padrão, um Worker do plano Workers Pago pode lidar com 1.000 requisições simultâneas por instância de script. Se você vem limitando o downstream com um semáforo ou fila in-Worker, esse semáforo agora é o gargalo. Uma distribuição simples fica assim:</p>
+
+    <pre><code>export default {
+  async fetch(req, env) {
+    const urls = await req.json(); // array de URLs de threads
+    const capturas = urls.map(async (u) =&gt; {
+      const r = await fetch("https://api.cloudflare.com/client/v4/accounts/" + env.CF_ACCOUNT_ID + "/browser-rendering/snapshot", {
+        method: "POST",
+        headers: { "Authorization": "Bearer " + env.CF_API_TOKEN, "Content-Type": "application/json" },
+        body: JSON.stringify({ url: u, html: true, gotoOptions: { waitUntil: "networkidle0" } }),
+      });
+      const { result } = await r.json();
+      return { url: u, html: result };
+    });
+    const out = await Promise.all(capturas);
+    return Response.json(out);
+  },
+};
+</code></pre>
+
+    <p>Esse snippet confia na plataforma para distribuir para 200 sessões de navegador concorrentes e processá-las a 3 inicializações por segundo. Não há fila in-Worker, não há semáforo, não há throttling — o runtime Workers está fazendo o enfileiramento para você, que é exatamente o que os novos limites permitem.</p>
+
+    <h3>2. Use Quick Actions para posts curtos</h3>
+
+    <p>Para posts curtos (X single-post pages, Threads, Bluesky, Mastodon), uma captura Quick Action é suficiente — você não precisa de uma sessão completa de navegador. O endpoint Quick Actions aceita uma URL e retorna o HTML renderizado, screenshot, ou PDF sem uma sessão de longa duração:</p>
+
+    <pre><code>async function quickCapture(url, env) {
+  const r = await fetch("https://api.cloudflare.com/client/v4/accounts/" + env.CF_ACCOUNT_ID + "/browser-rendering/quick-screenshot", {
+    method: "POST",
+    headers: { "Authorization": "Bearer " + env.CF_API_TOKEN, "Content-Type": "application/json" },
+    body: JSON.stringify({ url, screenshotOptions: { type: "png", fullPage: true } }),
+  });
+  const { result } = await r.json();
+  return result.screenshot; // base64 PNG
+}
+</code></pre>
+
+    <p>Quick Actions rodam em seu próprio teto por segundo (agora 30/s no Pago), independente do pool de navegadores de longa duração. Isso as torna a ferramenta certa para arquivo de alto volume em formato curto — você pode distribuir 30 capturas por segundo sem tocar no orçamento de navegador de longa duração.</p>
+
+    <h3>3. Agrupe uma thread Bluesky em um único Worker</h3>
+
+    <p>Para uma thread Bluesky, a página inteira da thread renderiza client-side. Uma única requisição Worker que usa Quick Actions para pegar o HTML da thread, e depois extrai os corpos dos posts com uma passagem de regex, captura a thread inteira em uma ida e volta:</p>
+
+    <pre><code>async function capturarThreadBluesky(threadUrl, env) {
+  // 1) Quick Action para o HTML renderizado
+  const html = await quickCapture(threadUrl, env);
+  // 2) Extrai posts client-side (Bluesky renderiza server-side, mas corpos dos posts estão em &lt;div data-testid="postText"&gt;)
+  const posts = [...html.matchAll(/data-testid="postText"&gt;([\s\S]*?)&lt;\/div&gt;/g)].map((m) =&gt; m[1].trim());
+  // 3) Converte cada post para Markdown e junta
+  return posts.map((p, i) =&gt; `**Post ${i + 1}**\n\n${p}`).join("\n\n---\n\n");
+}
+</code></pre>
+
+    <p>Uma invocação Worker, uma chamada Quick Action, uma thread completa — capturada no novo teto de 30/s. Se você tem 100 threads Bluesky para arquivar, pode distribuir 30 por segundo e terminar o lote inteiro em aproximadamente 3,3 segundos de throughput Quick Actions, com a sobrecarga do Worker somada por cima.</p>
+
+    <h2>O que Isso Significa para o ThreadGrab</h2>
+
+    <p>A mudança de limites de 20 de agosto é a primeira vez que a Cloudflare elevou explicitamente os padrões do Browser Run para uma carga de trabalho estilo arquivo social. O teto anterior (120 concorrentes) ficava logo abaixo do ponto típico onde um padrão de distribuição Workers deixa de ser limitado pelo enfileiramento da plataforma e começa a ser limitado pelo processamento HTML downstream. O novo teto (200) fica bem acima dessa linha, o que significa que um arquivo em lote ThreadGrab agora termina em aproximadamente o tempo que sua captura individual mais lenta leva — não no tempo que sua captura mais lenta leva mais a penalidade de fila da plataforma.</p>
+
+    <p>Em números: o mesmo arquivo de 200 URLs que antes rodava ~20 minutos em um plano Workers Pago agora roda ~9-12 minutos, com o mesmo código, a mesma cobrança, e os mesmos limites de conta. Para criadores de alto volume que arquivam diariamente, essa é a diferença entre um cron noturno e um lote confortável sob demanda.</p>
+
+    <h2>Limites que Não Mudaram</h2>
+
+    <p>Dois limites que vale conhecer <em>não</em> mudaram no anúncio de 20 de agosto:</p>
+
+    <ul>
+      <li><strong>Duração da sessão de navegador:</strong> uma única sessão Browser Run ainda tem um tempo máximo de vida (a plataforma encerra sessões ociosas). Para capturas multi-etapa que precisam manter uma sessão aberta, você ainda precisa realizá-las dentro dessa janela.</li>
+      <li><strong>Limites do plano gratuito:</strong> os novos tetos se aplicam ao plano Workers Pago. Os limites do plano gratuito para Browser Run permanecem menores e inalterados. Se sua carga de trabalho atinge os novos tetos, você precisa estar no Pago.</li>
+    </ul>
+
+    <p>Se você está escalando um arquivo estilo ThreadGrab além dos novos padrões — digamos, um lote de 500 URLs que quer paralelismo real — o changelog aponta para um formulário de solicitação para elevar o teto mais ainda. Essa é uma opção significativa para as raras cargas de trabalho que precisam disso.</p>
+
+    <div class="related-posts">
+      <h3>Relacionados no ThreadGrab</h3>
+      <ul>
+        <li><a href="/pt/blog/x-to-markdown-3-methods-2026.html">X para Markdown: 3 Métodos 2026</a> — a camada de conversão que alimenta qualquer captura Browser Run</li>
+        <li><a href="/pt/blog/x-thread-archiving-tools-2026.html">Ferramentas de Arquivo de Threads X 2026</a> — o panorama mais amplo de ferramentas onde o ThreadGrab se insere</li>
+        <li><a href="/pt/blog/tweet-md-vs-threadgrab-2026.html">tweet.md vs ThreadGrab 2026</a> — a comparação se você está escolhendo entre captura baseada em Browser Run e API direta</li>
+        <li><a href="/pt/blog/search-traffic-decline-social-archive-2026.html">Search Traffic Decline &amp; Social Archive 2026</a> — o que fazer com os arquivos uma vez que o throughput está disponível</li>
+      </ul>
+    </div>
+
+    <h2>FAQ</h2>
+
+    <div class="faq-item">
+      <strong>O que mudou no Cloudflare Browser Run em 20 de agosto de 2026?</strong>
+      <p>A Cloudflare elevou três limites padrão no plano Workers Pago para o Browser Run: navegadores concorrentes foram de 120 para 200, novas instâncias de navegador por segundo foram de 1 para 3, e requisições Quick Actions por segundo foram de 10 para 30. Esses são padrões, não tetos — cargas de trabalho que precisarem de mais podem solicitar limites maiores via formulário da Cloudflare vinculado no changelog.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>O aumento de limite também se aplica aos planos Workers gratuitos?</strong>
+      <p>O changelog de 20 de agosto se aplica explicitamente ao plano Workers Pago. Os limites do plano gratuito para o Browser Run continuam menores e inalterados nesse anúncio; planos Pagos também recebem agendamento prioritário para inicialização de navegadores. Se você roda cargas de trabalho na escala do ThreadGrab (dezenas de capturas por minuto), o plano Pago é praticamente obrigatório para tirar proveito dos novos tetos.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Como o teto de 200 navegadores concorrentes ajuda o ThreadGrab?</strong>
+      <p>O pipeline de captura do ThreadGrab inicia uma sessão de Browser Rendering por URL quando o alvo precisa de execução de JavaScript (X Articles, feeds X logados, threads Bluesky com layouts personalizados). Dobrar o teto concorrente de 120 para 200 permite que o mesmo Worker distribua para cerca de 1,7x mais capturas em paralelo antes do enfileiramento, o que se traduz diretamente em capturas em lote mais rápidas e janelas de arquivo menores para criadores de alto volume.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>As Quick Actions a 30/s também beneficiam fluxos de arquivo social?</strong>
+      <p>Sim — Quick Actions é o caminho de uma única requisição para screenshots, PDFs e captura de conteúdo de página. Triplicar o teto por segundo de 10 para 30 significa que um único Worker agora pode arquivar posts curtos (X, Threads, Mastodon, Bluesky) a três vezes a taxa anterior quando cada captura é uma Quick Action em vez de uma sessão completa de navegador. Para trabalhos de arquivo de alto volume que dependem majoritariamente de Quick Actions, essa é a mudança de limite mais importante do anúncio.</p>
+    </div>
+  </main>
+
+  <footer>
+    <a href="/pt/">Início</a> &middot;
+    <a href="/pt/blog/">Blog</a> &middot;
+    <a href="/pt/blog/x-to-markdown-3-methods-2026.html">X para Markdown</a>
+    <br>
+    O ThreadGrab é uma ferramenta independente. Não afiliado à X Corp., LinkedIn ou qualquer serviço apresentado.
+    <br>
+    &copy; 2026 ThreadGrab
+  </footer>
+</body>
+</html>

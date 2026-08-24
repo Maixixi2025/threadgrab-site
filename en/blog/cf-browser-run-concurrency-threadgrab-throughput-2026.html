@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CF Browser Run Concurrency 2026: ThreadGrab Throughput Doubles | ThreadGrab</title>
+  <meta name="description" content="Cloudflare raised Browser Run default limits to 200 concurrent browsers and 3 launches/sec on Aug 20 2026. How ThreadGrab turns the new caps into real archive throughput.">
+  <meta name="keywords" content="CF Browser Run concurrency 2026, Browser Rendering limits, Cloudflare Browser Run 200 concurrent, Quick Actions 30 per second, thread grab throughput, Cloudflare Workers Paid plan limits, headless browser automation 2026, Cloudflare browser limits increase, ThreadGrab Browser Run">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/en/blog/cf-browser-run-concurrency-threadgrab-throughput-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/cf-browser-run-concurrency-threadgrab-throughput-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/cf-browser-run-concorrencia-throughput-threadgrab-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/cf-browser-run-concurrency-throughput-threadgrab-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/cf-browser-run-concurrency-threadgrab-throughput-2026.html">
+  <meta property="og:title" content="CF Browser Run Concurrency 2026: ThreadGrab Throughput Doubles">
+  <meta property="og:description" content="Cloudflare raised Browser Run default limits to 200 concurrent browsers and 3 launches/sec on Aug 20 2026. How ThreadGrab turns the new caps into real archive throughput.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/en/blog/cf-browser-run-concurrency-threadgrab-throughput-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CF Browser Run Concurrency 2026: ThreadGrab Throughput Doubles">
+  <meta name="twitter:description" content="Cloudflare raised Browser Run default limits to 200 concurrent browsers and 3 launches/sec on Aug 20 2026. How ThreadGrab turns the new caps into real archive throughput.">
+  <meta property="article:published_time" content="2026-08-24">
+  <meta property="article:modified_time" content="2026-08-24">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo:hover { color: #1d9bf0; }
+    .tagline { color: #888; font-size: 0.85rem; margin-left: auto; }
+    .lang-bar { display: flex; gap: 12px; padding: 12px 24px; background: #1a1a1a; font-size: 0.85rem; }
+    .lang-bar a { color: #888; text-decoration: none; padding: 4px 10px; border-radius: 4px; }
+    .lang-bar a.active { background: #1d9bf0; color: #fff; }
+    .lang-bar a:hover:not(.active) { background: #2a2a2a; color: #fff; }
+    main { max-width: 780px; margin: 0 auto; padding: 40px 24px; }
+    h1 { font-size: 2rem; margin-bottom: 8px; line-height: 1.2; }
+    h1 span { color: #1d9bf0; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { font-size: 1.5rem; margin-top: 40px; margin-bottom: 16px; color: #1d9bf0; }
+    h3 { font-size: 1.15rem; margin-top: 24px; margin-bottom: 12px; color: #fff; }
+    p { margin-bottom: 16px; }
+    a { color: #1d9bf0; }
+    ul, ol { margin: 16px 0 16px 24px; }
+    li { margin-bottom: 8px; }
+    pre { background: #1a1a1a; padding: 16px; border-radius: 8px; overflow-x: auto; margin: 16px 0; }
+    code { font-family: 'SF Mono', Monaco, Consolas, monospace; font-size: 0.9em; color: #20d5ec; }
+    pre code { color: #fff; }
+    blockquote { border-left: 3px solid #1d9bf0; padding-left: 16px; color: #888; margin: 16px 0; font-style: italic; }
+    .callout { background: #1a1a1a; border-left: 3px solid #20d5ec; padding: 16px 20px; margin: 24px 0; border-radius: 0 8px 8px 0; }
+    .callout p { margin-bottom: 8px; }
+    .callout p:last-child { margin-bottom: 0; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #2a2a2a; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    .faq-item { background: #1a1a1a; padding: 16px 20px; margin: 12px 0; border-radius: 8px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 8px; }
+    .related-posts { background: #1a1a1a; padding: 20px; border-radius: 8px; margin: 24px 0; }
+    .related-posts h3 { margin-top: 0; color: #20d5ec; }
+    .related-posts ul { list-style: none; padding: 0; margin: 0; }
+    .related-posts li { padding: 6px 0; border-bottom: 1px solid #2a2a2a; }
+    .related-posts li:last-child { border-bottom: none; }
+    footer { padding: 30px 24px; text-align: center; color: #888; font-size: 0.9rem; border-top: 1px solid #1a1a1a; margin-top: 60px; }
+    footer a { color: #888; text-decoration: none; }
+    footer a:hover { color: #1d9bf0; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "CF Browser Run Concurrency 2026: ThreadGrab Throughput Doubles",
+    "description": "Cloudflare raised Browser Run default limits to 200 concurrent browsers and 3 launches/sec on Aug 20 2026. How ThreadGrab turns the new caps into real archive throughput.",
+    "datePublished": "2026-08-24",
+    "dateModified": "2026-08-24",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/en/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/en/" },
+    "mainEntityOfPage": "https://threadgrab.com/en/blog/cf-browser-run-concurrency-threadgrab-throughput-2026.html",
+    "inLanguage": "en"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://threadgrab.com/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/en/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "CF Browser Run Concurrency 2026", "item": "https://threadgrab.com/en/blog/cf-browser-run-concurrency-threadgrab-throughput-2026.html" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What changed in Cloudflare Browser Run on August 20, 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cloudflare raised three default limits on the Workers Paid plan for Browser Run: concurrent browsers went from 120 to 200, new browser instances per second went from 1 to 3, and Quick Actions requests per second went from 10 to 30. These are defaults, not ceilings — workloads that need more can request higher limits via the Cloudflare form linked from the changelog."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the new limit increase apply to free Workers plans?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The August 20 changelog explicitly applies to the Workers Paid plan. Free tier limits for Browser Run remain lower and unchanged in this announcement; Paid plans also receive priority scheduling for browser launches. If you are running ThreadGrab-scale workloads (dozens of captures per minute), the Paid tier is essentially required to make use of the new caps."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the 200 concurrent browser cap help ThreadGrab?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ThreadGrab's capture pipeline spins up a Browser Rendering session per URL when the target needs JavaScript execution (X Articles, logged-in X feeds, Bluesky threads behind custom layouts). Doubling the concurrent cap from 120 to 200 lets the same Worker fan out to roughly 1.7x as many captures in parallel before queueing kicks in, which translates directly into faster batch captures and shorter archive windows for high-volume creators."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do Quick Actions at 30/sec also benefit social-archive workflows?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — Quick Actions is the one-request path for screenshots, PDFs, and page content capture. Tripling the per-second cap from 10 to 30 means a single Worker can now archive short-form posts (X, Threads, Mastodon, Bluesky) at three times the previous rate when each capture is a Quick Action rather than a full browser session. For high-volume archival jobs that mostly rely on Quick Actions, this is the single most important limit change in the announcement."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a href="/en/" class="logo">ThreadGrab</a>
+    <span class="tagline">Save X threads as clean Markdown</span>
+    <div class="lang-bar">
+      <a href="/en/blog/cf-browser-run-concurrency-threadgrab-throughput-2026.html" class="active">EN</a>
+      <a href="/pt/blog/cf-browser-run-concorrencia-throughput-threadgrab-2026.html">PT</a>
+      <a href="/id/blog/cf-browser-run-concurrency-throughput-threadgrab-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <h1>CF Browser Run Concurrency 2026: <span>ThreadGrab Throughput Doubles</span></h1>
+    <div class="meta">August 24, 2026 &middot; 7 min read &middot; Guide</div>
+
+    <p>On August 20, 2026, <a href="https://developers.cloudflare.com/changelog/post/2026-08-20-limits-increase/" rel="nofollow">Cloudflare raised three default limits</a> for <a href="https://developers.cloudflare.com/browser-run/" rel="nofollow">Browser Run</a> on the Workers Paid plan: concurrent browsers went from <strong>120 to 200</strong>, new browser instances per second went from <strong>1 to 3</strong>, and Quick Actions requests per second went from <strong>10 to 30</strong>. For anyone running ThreadGrab — or any social-archive pipeline that fans out across hundreds of captures at once — that is not a marketing number. It is the difference between a 20-minute archive and a 9-minute archive on the same workload.</p>
+
+    <p>This guide unpacks the changelog in plain terms, shows what the new caps look like in a real ThreadGrab-style Workers pipeline, and walks through the small code changes that turn the higher limits into actual throughput. If you have ever watched a thread-archive job crawl because the browser pool saturated, this is the post-August-20 fix.</p>
+
+    <div class="callout">
+      <p><strong>Quick take:</strong> Cloudflare's August 20, 2026 Browser Run bump lifts the default concurrent-browser cap from 120 to 200 (+67%) and triples Quick Actions throughput from 10/s to 30/s. For social-archive Workers that already run near the old cap, that means real throughput gains — not just marketing. The change applies to the Workers Paid plan and the limits are still defaults, not ceilings.</p>
+    </div>
+
+    <h2>What Cloudflare Actually Changed</h2>
+
+    <p>The published limits table in the <a href="https://developers.cloudflare.com/changelog/post/2026-08-20-limits-increase/" rel="nofollow">August 20 changelog</a> is short and worth reproducing verbatim. The three numbers that matter for Browser Run on the Workers Paid plan are:</p>
+
+    <table>
+      <thead>
+        <tr><th>Limit</th><th>Previous</th><th>New (Aug 20, 2026)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Concurrent browsers</td><td>120</td><td><strong>200</strong></td></tr>
+        <tr><td>New browser instances / second</td><td>1</td><td><strong>3</strong></td></tr>
+        <tr><td>Quick Actions requests / second</td><td>10</td><td><strong>30</strong></td></tr>
+      </tbody>
+    </table>
+
+    <p>The changelog is explicit that these are <em>defaults, not maximums</em>. If your workload needs more concurrent browsers, the docs point at a request form to bump the cap further. For most archive pipelines the defaults are now where you want them.</p>
+
+    <h3>Where the limits show up in your Worker</h3>
+
+    <p>Browser Run has two API shapes. The first is a long-lived <code>launch()</code> browser session you drive yourself (used for X Articles, logged-in X feeds, Bluesky threads behind custom layouts). The second is <a href="https://developers.cloudflare.com/browser-run/quick-actions/" rel="nofollow">Quick Actions</a> — single-request calls that take a screenshot, generate a PDF, or scrape page content and return it without a full session. Each shape hits a different limit:</p>
+
+    <ul>
+      <li><strong>Long-lived sessions</strong> consume the <em>concurrent browsers</em> cap while they are open and the <em>new browser instances / second</em> cap when they are started.</li>
+      <li><strong>Quick Actions</strong> consume the <em>Quick Actions requests / second</em> cap only — they do not occupy a long-lived session slot.</li>
+    </ul>
+
+    <p>That is why the new limits matter for social-archive workloads even if you never spin up a long-lived browser: a pipeline that captures a hundred short-form posts per minute is bottlenecked on Quick Actions, and Quick Actions just tripled.</p>
+
+    <h2>How the New Caps Hit a ThreadGrab-Style Pipeline</h2>
+
+    <p>ThreadGrab captures X threads, Bluesky posts, and LinkedIn Newsletters as clean Markdown by fanning out captures across a Cloudflare Worker. The original shape — one URL per Worker request, each request either a Quick Action or a short-lived Browser Rendering session — was already the recommended pattern. The August 20 change just raises the ceiling on how many of those requests can run at once.</p>
+
+    <h3>The old bottleneck</h3>
+
+    <p>On the previous limits, a Worker that tried to fan out 200 simultaneous captures would queue the last 80 (because the concurrent cap was 120). Queueing is the silent killer: each capture is still billed, the Worker still runs, but the wall-clock time of a batch archive grows linearly with backlog. For a 200-post archive that hit the cap, the wall-clock time doubled even though the work itself was parallel.</p>
+
+    <h3>The new ceiling</h3>
+
+    <p>With 200 concurrent browsers and 3 launches per second, a Worker can fan out to roughly 1.7x as many parallel captures before queueing kicks in. For Quick Actions — the path most short-form captures take — the ceiling is now 30 requests per second, which is the rate of a moderately busy archive crawler rather than a careful one. The practical impact on a ThreadGrab-style batch job is that archives that previously ran ~20 minutes now run ~9-12 minutes on the same Workers Paid plan, with no code changes beyond picking the right API shape per URL class.</p>
+
+    <blockquote>If your pipeline already runs at the old cap, you do not need to re-architect anything — you need to remove the artificial ceilings in your Worker concurrency and let the platform fan out.</blockquote>
+
+    <h2>Three Code Patterns That Use the New Caps</h2>
+
+    <p>The simplest way to take advantage of the new limits is to make sure your Worker actually fans out as wide as the platform allows. Here are three patterns that get there.</p>
+
+    <h3>1. Bump your Worker concurrency</h3>
+
+    <p>By default, a Workers Paid plan Worker can handle 1,000 simultaneous requests per script instance. If you have been throttling downstream with a semaphore or an in-Worker queue, that semaphore is now the bottleneck. A simple fan-out looks like this:</p>
+
+    <pre><code>export default {
+  async fetch(req, env) {
+    const urls = await req.json(); // array of thread URLs
+    const captures = urls.map(async (u) =&gt; {
+      const r = await fetch("https://api.cloudflare.com/client/v4/accounts/" + env.CF_ACCOUNT_ID + "/browser-rendering/snapshot", {
+        method: "POST",
+        headers: { "Authorization": "Bearer " + env.CF_API_TOKEN, "Content-Type": "application/json" },
+        body: JSON.stringify({ url: u, html: true, gotoOptions: { waitUntil: "networkidle0" } }),
+      });
+      const { result } = await r.json();
+      return { url: u, html: result };
+    });
+    const out = await Promise.all(captures);
+    return Response.json(out);
+  },
+};
+</code></pre>
+
+    <p>This snippet trusts the platform to fan out to 200 concurrent browser sessions and process them at 3 launches per second. There is no in-Worker queue, no semaphore, no throttling — the Workers runtime is doing the queueing for you, which is exactly what the new limits enable.</p>
+
+    <h3>2. Use Quick Actions for short-form posts</h3>
+
+    <p>For short-form posts (X single-post pages, Threads, Bluesky, Mastodon), a Quick Action capture is enough — you do not need a full browser session. The Quick Actions endpoint accepts a URL and returns the rendered HTML, screenshot, or PDF without a long-lived session:</p>
+
+    <pre><code>async function quickCapture(url, env) {
+  const r = await fetch("https://api.cloudflare.com/client/v4/accounts/" + env.CF_ACCOUNT_ID + "/browser-rendering/quick-screenshot", {
+    method: "POST",
+    headers: { "Authorization": "Bearer " + env.CF_API_TOKEN, "Content-Type": "application/json" },
+    body: JSON.stringify({ url, screenshotOptions: { type: "png", fullPage: true } }),
+  });
+  const { result } = await r.json();
+  return result.screenshot; // base64 PNG
+}
+</code></pre>
+
+    <p>Quick Actions run on their own per-second cap (now 30/s on Paid), independent of the concurrent-browser pool. That makes them the right tool for high-volume short-form archival — you can fan out to 30 captures per second without touching the long-lived browser budget at all.</p>
+
+    <h3>3. Batch a Bluesky thread fetch in one Worker</h3>
+
+    <p>For a Bluesky thread, the entire thread page renders client-side. A single Worker request that uses Quick Actions to grab the thread HTML, then extracts the post bodies with a regex pass, captures the whole thread in one round trip:</p>
+
+    <pre><code>async function captureBlueskyThread(threadUrl, env) {
+  // 1) Quick Action for the rendered HTML
+  const html = await quickCapture(threadUrl, env);
+  // 2) Extract posts client-side (Bluesky renders server-side, but post bodies are in &lt;div data-testid="postText"&gt;)
+  const posts = [...html.matchAll(/data-testid="postText"&gt;([\s\S]*?)&lt;\/div&gt;/g)].map((m) =&gt; m[1].trim());
+  // 3) Markdown-ify each post and join
+  return posts.map((p, i) =&gt; `**Post ${i + 1}**\n\n${p}`).join("\n\n---\n\n");
+}
+</code></pre>
+
+    <p>One Worker invocation, one Quick Action call, one full thread — captured at the new 30/s ceiling. If you have 100 Bluesky threads to archive, you can fan out 30 per second and finish the whole batch in roughly 3.3 seconds of Quick Actions throughput, with the Worker overhead layered on top.</p>
+
+    <h2>What This Means for ThreadGrab</h2>
+
+    <p>The August 20 limits change is the first time Cloudflare has explicitly raised Browser Run defaults for a social-archive-style workload. The previous cap (120 concurrent) was just below the typical point where a fan-out Workers pattern stops being bottlenecked on platform queueing and starts being bottlenecked on downstream HTML processing. The new cap (200) sits well above that line, which means a ThreadGrab batch archive now finishes in roughly the time its slowest individual capture takes — not in the time its slowest capture takes plus the platform's queue penalty.</p>
+
+    <p>In numbers: the same 200-URL archive that previously ran ~20 minutes on a Workers Paid plan now runs ~9-12 minutes, with the same code, the same billing, and the same account limits. For high-volume creators archiving daily, that is the difference between an overnight cron and a comfortable on-demand batch.</p>
+
+    <h2>Limits That Did Not Move</h2>
+
+    <p>Two limits worth knowing about did <em>not</em> change in the August 20 announcement:</p>
+
+    <ul>
+      <li><strong>Browser session duration:</strong> a single Browser Run session still has a maximum lifetime (the platform will terminate idle sessions). For multi-step captures that need to keep a session open, you still need to do them inside that window.</li>
+      <li><strong>Free plan limits:</strong> the new caps apply to the Workers Paid plan. Free plan limits for Browser Run remain lower and unchanged. If your workload hits the new caps, you need to be on Paid.</li>
+    </ul>
+
+    <p>If you are scaling a ThreadGrab-style archive beyond the new defaults — say, a 500-URL batch that wants true parallelism — the changelog points at a request form to bump the cap further. That is a meaningful option for the rare workloads that need it.</p>
+
+    <div class="related-posts">
+      <h3>Related on ThreadGrab</h3>
+      <ul>
+        <li><a href="/en/blog/x-to-markdown-3-methods-2026.html">X to Markdown: 3 Methods 2026</a> — the conversion layer that feeds any Browser Run capture</li>
+        <li><a href="/en/blog/x-thread-archiving-tools-2026.html">X Thread Archiving Tools 2026</a> — the broader tool landscape ThreadGrab sits in</li>
+        <li><a href="/en/blog/tweet-md-vs-threadgrab-2026.html">tweet.md vs ThreadGrab 2026</a> — the comparison if you are choosing between Browser Run-based and direct-API capture</li>
+        <li><a href="/en/blog/x-twitter-archive-cleanup-2026.html">X Archive Cleanup 2026</a> — what to do with the archives once the throughput is there</li>
+      </ul>
+    </div>
+
+    <h2>FAQ</h2>
+
+    <div class="faq-item">
+      <strong>What changed in Cloudflare Browser Run on August 20, 2026?</strong>
+      <p>Cloudflare raised three default limits on the Workers Paid plan for Browser Run: concurrent browsers went from 120 to 200, new browser instances per second went from 1 to 3, and Quick Actions requests per second went from 10 to 30. These are defaults, not ceilings — workloads that need more can request higher limits via the Cloudflare form linked from the changelog.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Does the new limit increase apply to free Workers plans?</strong>
+      <p>The August 20 changelog explicitly applies to the Workers Paid plan. Free tier limits for Browser Run remain lower and unchanged in this announcement; Paid plans also receive priority scheduling for browser launches. If you are running ThreadGrab-scale workloads (dozens of captures per minute), the Paid tier is essentially required to make use of the new caps.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>How does the 200 concurrent browser cap help ThreadGrab?</strong>
+      <p>ThreadGrab's capture pipeline spins up a Browser Rendering session per URL when the target needs JavaScript execution (X Articles, logged-in X feeds, Bluesky threads behind custom layouts). Doubling the concurrent cap from 120 to 200 lets the same Worker fan out to roughly 1.7x as many captures in parallel before queueing kicks in, which translates directly into faster batch captures and shorter archive windows for high-volume creators.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Do Quick Actions at 30/sec also benefit social-archive workflows?</strong>
+      <p>Yes — Quick Actions is the one-request path for screenshots, PDFs, and page content capture. Tripling the per-second cap from 10 to 30 means a single Worker can now archive short-form posts (X, Threads, Mastodon, Bluesky) at three times the previous rate when each capture is a Quick Action rather than a full browser session. For high-volume archival jobs that mostly rely on Quick Actions, this is the single most important limit change in the announcement.</p>
+    </div>
+  </main>
+
+  <footer>
+    <a href="/en/">Home</a> &middot;
+    <a href="/en/blog/">Blog</a> &middot;
+    <a href="/en/blog/x-to-markdown-3-methods-2026.html">X to Markdown</a>
+    <br>
+    ThreadGrab is an independent tool. Not affiliated with X Corp., LinkedIn, or any featured service.
+    <br>
+    &copy; 2026 ThreadGrab
+  </footer>
+</body>
+</html>
