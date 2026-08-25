@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Skills API + ThreadGrab: Skill de Arquivo do X | ThreadGrab</title>
+  <meta name="description" content="A Skills API da Anthropic saiu do beta em 20 de ago. de 2026. Empacote o endpoint de arquivo do X do ThreadGrab como um Claude Skill reutilizável com versionamento e o sandbox de code execution.">
+  <meta name="keywords" content="Claude Skills API, Anthropic Skills, SKILL.md, empacotar ThreadGrab como skill, arquivo X Claude agent, Files API 1TB, sandbox code execution, ThreadGrab, Claude computer use">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/pt/blog/claude-skills-api-threadgrab-arquivo-x-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/claude-skills-api-threadgrab-x-archive-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/claude-skills-api-threadgrab-arquivo-x-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/claude-skills-api-threadgrab-arsip-x-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/claude-skills-api-threadgrab-x-archive-2026.html">
+  <meta property="og:title" content="Claude Skills API + ThreadGrab: Skill de Arquivo do X">
+  <meta property="og:description" content="A Skills API da Anthropic saiu do beta em 20 de ago. de 2026. Empacote o endpoint de arquivo do X do ThreadGrab como um Claude Skill reutilizável com versionamento e o sandbox de code execution.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/pt/blog/claude-skills-api-threadgrab-arquivo-x-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Claude Skills API + ThreadGrab: Skill de Arquivo do X">
+  <meta name="twitter:description" content="A Skills API da Anthropic saiu do beta em 20 de ago. de 2026. Empacote o endpoint de arquivo do X do ThreadGrab como um Claude Skill reutilizável com versionamento e o sandbox de code execution.">
+  <meta property="article:published_time" content="2026-08-25">
+  <meta property="article:modified_time" content="2026-08-25">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo:hover { color: #1d9bf0; }
+    .tagline { color: #888; font-size: 0.85rem; margin-left: auto; }
+    .lang-bar { display: flex; gap: 12px; padding: 12px 24px; background: #1a1a1a; font-size: 0.85rem; }
+    .lang-bar a { color: #888; text-decoration: none; padding: 4px 10px; border-radius: 4px; }
+    .lang-bar a.active { background: #1d9bf0; color: #fff; }
+    .lang-bar a:hover:not(.active) { background: #2a2a2a; color: #fff; }
+    main { max-width: 780px; margin: 0 auto; padding: 40px 24px; }
+    h1 { font-size: 2rem; margin-bottom: 8px; line-height: 1.2; }
+    h1 span { color: #1d9bf0; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { font-size: 1.5rem; margin-top: 40px; margin-bottom: 16px; color: #1d9bf0; }
+    h3 { font-size: 1.15rem; margin-top: 24px; margin-bottom: 12px; color: #fff; }
+    p { margin-bottom: 16px; color: #d0d0d0; }
+    code { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-family: 'SF Mono', Monaco, Consolas, monospace; font-size: 0.9em; color: #ff7b72; }
+    pre { background: #1a1a1a; padding: 16px; border-radius: 6px; overflow-x: auto; margin-bottom: 16px; border: 1px solid #2a2a2a; }
+    pre code { background: none; padding: 0; color: #e6e6e6; font-size: 0.85rem; line-height: 1.5; }
+    ul, ol { margin-bottom: 16px; padding-left: 24px; color: #d0d0d0; }
+    li { margin-bottom: 8px; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 0.9rem; }
+    th { background: #1a1a1a; padding: 10px 12px; text-align: left; color: #1d9bf0; border-bottom: 2px solid #2a2a2a; }
+    td { padding: 10px 12px; border-bottom: 1px solid #2a2a2a; color: #d0d0d0; }
+    tr:hover td { background: #1a1a1a; }
+    .callout { background: #1a2332; border-left: 4px solid #1d9bf0; padding: 16px 20px; margin: 24px 0; border-radius: 4px; }
+    .callout p { margin: 0; color: #d0d0d0; }
+    .callout strong { color: #1d9bf0; }
+    .cta { background: linear-gradient(135deg, #1d9bf0 0%, #1a6fb8 100%); padding: 24px; border-radius: 8px; margin: 32px 0; text-align: center; }
+    .cta p { color: #fff; margin-bottom: 12px; }
+    .btn { display: inline-block; background: #fff; color: #0f0f0f; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; }
+    .btn:hover { background: #e6e6e6; }
+    .faq-item { background: #1a1a1a; padding: 16px 20px; margin-bottom: 12px; border-radius: 6px; border-left: 3px solid #1d9bf0; }
+    .faq-item strong { color: #fff; display: block; margin-bottom: 8px; }
+    .faq-item p { margin: 0; color: #d0d0d0; }
+    .related { background: #1a1a1a; padding: 20px; border-radius: 6px; margin: 32px 0; }
+    .related h3 { color: #1d9bf0; margin-bottom: 12px; }
+    .related ul { list-style: none; padding: 0; }
+    .related li { padding: 6px 0; border-bottom: 1px solid #2a2a2a; }
+    .related li:last-child { border-bottom: none; }
+    .related a { color: #1d9bf0; text-decoration: none; }
+    .related a:hover { text-decoration: underline; }
+    footer { text-align: center; padding: 32px 24px; color: #888; font-size: 0.85rem; border-top: 1px solid #1a1a1a; margin-top: 64px; }
+    footer a { color: #888; text-decoration: none; }
+    footer a:hover { color: #fff; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/pt/" class="logo">ThreadGrab</a>
+    <span class="tagline">Arquive threads do X como Markdown</span>
+  </header>
+
+  <div class="lang-bar">
+    <a href="/en/blog/claude-skills-api-threadgrab-x-archive-2026.html">EN</a>
+    <a href="/pt/blog/claude-skills-api-threadgrab-arquivo-x-2026.html" class="active">PT</a>
+    <a href="/id/blog/claude-skills-api-threadgrab-arsip-x-2026.html">ID</a>
+  </div>
+
+  <main>
+    <h1>Claude Skills API + ThreadGrab: <span>Skill de Arquivo do X</span></h1>
+    <div class="meta">25 de Agosto, 2026 &middot; 8 min de leitura &middot; Guia</div>
+
+    <p>A <strong>Skills API</strong> da Anthropic saiu do beta em 20 de agosto de 2026, junto com uma versão atualizada da ferramenta de computer use, uma nova ferramenta de browser use e uma Files API que agora oferece limites de taxa 5&times; maiores e 1&nbsp;TB de armazenamento por organização. A Skills API é a parte que mais importa se você cria qualquer coisa que toque conteúdo social: ela permite enviar uma pasta de instruções, scripts e templates, e então pedir ao Claude que carregue essa pasta somente quando uma tarefa exigir. A pasta roda dentro do sandbox de code execution do Claude, então não há nada para você hospedar.</p>
+
+    <p>O ThreadGrab é um alvo natural para esse padrão. O ThreadGrab expõe um endpoint público <code>/api/profile/{username}</code> que transforma qualquer conta do X (antigo Twitter) em JSON estruturado, com limite de 10 requisições por minuto por IP e sem necessidade de login. Empacotar esse endpoint como Claude Skill dá a um agente uma única ferramenta que ele pode chamar sempre que um prompt mencionar arquivar, citar ou puxar posts do X. O resultado é um bloco reutilizável: peça ao Claude uma vez, versione o skill, e o mesmo fluxo de arquivo fica disponível na Claude API, no Claude Code e no <code>claude.ai</code> &mdash; sem código de cola em cada prompt.</p>
+
+    <div class="callout">
+      <p><strong>Resumo rápido:</strong> em 20 de agosto de 2026, a Anthropic tornou a Skills API disponível para todos. Você envia um diretório contendo um <code>SKILL.md</code>, mais os scripts ou templates desejados, e referencia o <code>skill_id</code> resultante no array <code>container.skills</code> de uma chamada <code>/v1/messages</code>. O endpoint de perfil do ThreadGrab é um dos alvos de arquivo social mais limpos que dá para empacotar &mdash; uma chamada HTTPS retorna JSON de qualquer username público do X, sem OAuth.</p>
+    </div>
+
+    <h2>O que a Skills API de fato entregou</h2>
+
+    <p>O post de lançamento de 20 de agosto, intitulado &ldquo;Build production agents with computer use, the Skills API, and the Files API&rdquo;, é a referência canônica. O post torna quatro coisas geralmente disponíveis na Claude Platform:</p>
+
+    <table>
+      <tr>
+        <th>Superfície</th>
+        <th>O que mudou em 20 de ago. de 2026</th>
+        <th>Onde roda</th>
+      </tr>
+      <tr>
+        <td><strong>Computer use (atualizada)</strong></td>
+        <td>Turnos multi-ação &mdash; uma única chamada ao modelo agora pode controlar vários clicks, digitações e scrolls. Tarefas terminam com menos chamadas.</td>
+        <td>Claude API, Microsoft Foundry, Vertex AI (em breve)</td>
+      </tr>
+      <tr>
+        <td><strong>Browser use tool</strong></td>
+        <td>Nova dentro do computer use. Lê a estrutura da página, não apenas pixels, então agentes miram elementos web pela identidade do campo/botão.</td>
+        <td>Claude API (via computer use)</td>
+      </tr>
+      <tr>
+        <td><strong>Skills API</strong></td>
+        <td>Envie e versione seus próprios Skills. Até 20 Skills por requisição. Roda no sandbox de code execution; você não hospeda nada.</td>
+        <td>Claude API, Claude Code, claude.ai (Pro/Max/Team/Enterprise)</td>
+      </tr>
+      <tr>
+        <td><strong>Files API</strong></td>
+        <td>Limites de taxa 5&times; maiores, expiração automática de arquivos, 1&nbsp;TB de armazenamento por organização.</td>
+        <td>Claude API, endpoints da Files API</td>
+      </tr>
+    </table>
+
+    <p>O post acompanha o anúncio com um exemplo prático: um agente de sinistros que lê um documento de admissão pela Files API, segue um Skill que codifica o procedimento da equipe, preenche a submissão no portal web da seguradora com a browser-use tool e salva a confirmação como arquivo. O mesmo loop encaixa no ThreadGrab quase exatamente: troque o portal da seguradora pelo endpoint de perfil do X, troque o documento de admissão por um username, e você tem um agente que arquiva contas do X sob demanda.</p>
+
+    <h2>Por que um Skill do ThreadGrab tem o tamanho certo</h2>
+
+    <p>Chamadas da Skills API esperam um <em>fluxo único repetível</em> &mdash; um Skill é uma pasta de instruções, scripts e templates que o Claude carrega somente quando uma tarefa exige. O arquivo de perfil do ThreadGrab é um encaixe limpo para esse formato:</p>
+
+    <ul>
+      <li><strong>Uma única chamada HTTPS:</strong> <code>GET https://threadgrab.com/api/profile/{username}</code> retorna o perfil estruturado completo.</li>
+      <li><strong>Sem auth, sem OAuth:</strong> não há token para guardar no Skill, nenhum bloco de client-credentials para gerenciar.</li>
+      <li><strong>Formato JSON previsível:</strong> a resposta é um objeto de usuário bem formado &mdash; seguro para alimentar a Files API como artefato baixável.</li>
+      <li><strong>Inputs limitados:</strong> <code>{username}</code> casa com <code>/^[a-zA-Z0-9._]{1,30}$/</code>, então não há superfície de prompt injection para defender.</li>
+      <li><strong>Reutilizável entre prompts:</strong> &ldquo;Arquive os últimos 100 posts de <code>@threadgrab</code>&rdquo;, &ldquo;Puxe a bio de <code>@naval</code>&rdquo;, &ldquo;Compare o número de seguidores destas três contas&rdquo; &mdash; todos rodam o mesmo Skill.</li>
+    </ul>
+
+    <p>Comparado a construir o mesmo fluxo dentro de ferramentas de computer use, a versão com Skills-API é cerca de um vinte-avos do código. A computer use agora suporta turnos multi-ação (uma única chamada ao modelo pode controlar vários clicks e digitações), e a browser use tool lê a estrutura da página, não apenas pixels. As duas são ótimas para tarefas sem API. O ThreadGrab <em>tem</em> API, então o caminho via Skills vence em custo de tokens, latência e confiabilidade.</p>
+
+    <h2>O layout do diretório do Skill</h2>
+
+    <p>A documentação de Skills da Anthropic é explícita sobre o layout. <strong>Todo Skill é um diretório com um arquivo <code>SKILL.md</code> na raiz.</strong> O <code>SKILL.md</code> carrega frontmatter YAML que nomeia o Skill e diz ao Claude quando carregá-lo, mais um corpo em markdown com o conhecimento procedural real &mdash; o fluxo, os scripts, as pegadinhas. Arquivos opcionais (schemas, templates, inputs de exemplo) ficam ao lado do <code>SKILL.md</code> e são carregados sob demanda quando o <code>SKILL.md</code> os referencia. O corpo do <code>SKILL.md</code> só entra na janela de contexto quando o Claude decide que o Skill bate com a tarefa do usuário; o restante dos arquivos fica no disco e custa zero tokens até ser referenciado.</p>
+
+    <p>Para um Skill de arquivo do ThreadGrab, o frontmatter precisa de três informações: o <code>name</code>, a <code>description</code> (que dobra como gatilho &mdash; &ldquo;use isto quando o usuário pedir arquivo do X, contagem de seguidores, bio, posts recentes de uma conta, ou qualquer referência a <code>@username</code>&rdquo;), e qualquer config opcional. Um esqueleto funcional se parece com isto:</p>
+
+    <pre><code>threadgrab-archive/
+&#9492;&#9472;&#9472; SKILL.md
+&#9492;&#9472;&#9472; scripts/
+    &#9492;&#9472;&#9472; fetch_profile.py
+</code></pre>
+
+    <p>As regras de <code>name</code> da Anthropic são curtas: apenas letras minúsculas, números e hífens, máximo 64 caracteres, sem tags XML, sem palavras reservadas (<code>anthropic</code>, <code>claude</code>). A <code>description</code> vai até 1.024 caracteres e não pode conter tags XML. Ambas são validadas no envio, então um valor malformado retorna 4xx antes do Skill ser criado. A documentação alerta que a <code>description</code> é o que o modelo usa para decidir se carrega o Skill, então seja explícito sobre quando ele se aplica.</p>
+
+    <h3>SKILL.md &mdash; o corpo que o Claude carrega</h3>
+
+    <p>O corpo é markdown puro e se lê como um documento de procedimento. Para um arquivo do ThreadGrab, ele deve dizer ao modelo como validar o username, o que fazer quando o erro de rate limit retorna 429, e como expor o JSON salvo ao usuário. O esqueleto abaixo é uma versão enxuta e funcional &mdash; o Skill real pode crescer com mais pegadinhas conforme você as encontrar:</p>
+
+    <pre><code>---
+name: threadgrab-archive
+description: Arquive perfis do X (Twitter) como JSON estruturado pela API do
+  ThreadGrab. Use quando o usuário pedir um arquivo do X, contagem de
+  seguidores, bio, posts recentes de uma conta ou qualquer referência a
+  @username. Aciona em frases como &quot;arquivar @handle&quot;,
+  &quot;puxar dados do perfil&quot;, &quot;comparar contas do X&quot;.
+  Não use para Threads (Meta) ou Bluesky.
+---
+
+# threadgrab-archive
+
+## Quando me carregar
+Carregue este Skill sempre que o usuário perguntar sobre uma conta do X /
+Twitter (<code>@username</code>) e pedir dados de perfil, contagem de
+seguidores, posts recentes ou um arquivo baixável. Não me carregue para
+Threads (Meta), Bluesky ou LinkedIn &mdash; essas são superfícies
+diferentes.
+
+## Inputs
+- <code>username</code>: um handle do X sem o <code>@</code> no início.
+  Deve casar com <code>/^[a-zA-Z0-9._]{1,30}$/</code>.
+
+## Endpoint
+<code>GET https://threadgrab.com/api/profile/{username}</code>
+
+- Sem autenticação necessária.
+- Limite de taxa: 10 requisições por minuto por IP do cliente. Se você
+  receber HTTP 429, espere 60 segundos e tente de novo.
+- Validação de username roda no servidor; um username inválido retorna
+  HTTP 400 com <code>{&quot;error&quot;: &quot;Invalid username&quot;}</code>.
+
+## Saída
+A resposta é um objeto JSON com o perfil de usuário do X: id, handle,
+nome de exibição, bio, contagem de seguidores, contagem de seguidos,
+contagem de posts, status de verificação, URL da imagem de perfil e
+posts recentes (onde o upstream os expõe).
+
+## Procedimento
+1. Remova qualquer <code>@</code> no início do username.
+2. Valide contra <code>/^[a-zA-Z0-9._]{1,30}$/</code>. Se inválido,
+   peça ao usuário um handle corrigido.
+3. Chame o endpoint com timeout de 15 segundos.
+4. Em 200, salve o corpo da resposta pela Files API e retorne o
+   <code>file_id</code> resultante como um pacote Markdown baixável.
+5. Em 429, durma 60 segundos e tente uma vez.
+6. Em 404, diga ao usuário que o handle não resolve.
+7. Nunca invente campos. Se a resposta não incluir
+   <code>follower_count</code>, não estime.
+</code></pre>
+
+    <h3>scripts/fetch_profile.py &mdash; o auxiliar que o Claude roda</h3>
+
+    <p>O script mora ao lado do <code>SKILL.md</code> e é carregado sob demanda somente quando o <code>SKILL.md</code> instrui o Claude a usá-lo. Como Skills na Claude API rodam em um container isolado sem acesso à rede, você não pode fazer <code>pip install</code> em tempo de execução &mdash; o script deve usar apenas os pacotes que o sandbox de code execution já tem. Para um cliente HTTPS fino, isso significa a biblioteca padrão:</p>
+
+    <pre><code># scripts/fetch_profile.py
+# Carregado sob demanda pelo SKILL.md; sem pacotes de rede para instalar.
+import json
+import sys
+import urllib.request
+import urllib.error
+
+BASE = &quot;https://threadgrab.com/api/profile/&quot;
+
+def fetch(username: str, timeout: int = 15) -&gt; dict:
+    url = BASE + username
+    req = urllib.request.Request(url, headers={&quot;User-Agent&quot;: &quot;claude-skill/1.0&quot;})
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            return {&quot;status&quot;: resp.status, &quot;body&quot;: json.loads(resp.read())}
+    except urllib.error.HTTPError as e:
+        return {&quot;status&quot;: e.code, &quot;error&quot;: e.reason}
+    except urllib.error.URLError as e:
+        return {&quot;status&quot;: 0, &quot;error&quot;: str(e.reason)}
+
+if __name__ == &quot;__main__&quot;:
+    user = sys.argv[1].lstrip(&quot;@&quot;)
+    print(json.dumps(fetch(user), indent=2))
+</code></pre>
+
+    <p>Quando o Claude carrega o Skill e decide rodar o auxiliar, ele emite <code>bash: python scripts/fetch_profile.py naval</code> &mdash; somente a saída do script entra na janela de contexto. O próprio código do script nunca entra, que é a principal afirmação de eficiência da arquitetura: um Skill pode embarcar dezenas de arquivos de referência e o custo fica limitado ao que a tarefa realmente lê.</p>
+
+    <h2>Enviando e fixando versão do Skill</h2>
+
+    <p>Com o diretório montado, envie pela Skills API. O endpoint aceita multipart form-data, com todos os arquivos em um único diretório de nível superior e <code>SKILL.md</code> na raiz. A referência da API da Anthropic mostra o formato:</p>
+
+    <pre><code>curl https://api.anthropic.com/v1/skills \
+  -H 'Content-Type: multipart/form-data' \
+  -H 'anthropic-version: 2023-06-01' \
+  -H &quot;X-Api-Key: $ANTHROPIC_API_KEY&quot; \
+  -F files='[&quot;SKILL.md&quot;, &quot;scripts/fetch_profile.py&quot;]'
+</code></pre>
+
+    <p>A resposta inclui um objeto Skill com <code>id</code> (o formato é <code>skill_01AbCdEfGhIjKlMnOpQrStUv</code>) e um <code>latest_version_id</code>. Envios posteriores criam novas versões; a API permite fixar uma versão específica em uma chamada <code>/v1/messages</code> ou usar <code>latest</code> por padrão. Versionamento é o que torna Skills prontos para produção &mdash; você pode avançar um Skill e depois fixar um fluxo em uma versão mais antiga se uma nova regredir, sem reescrever o código chamador.</p>
+
+    <p>Para anexar o Skill a uma requisição, adicione o <code>skill_id</code> ao array <code>container.skills</code> e combine com a ferramenta de code execution. Até 20 Skills podem acompanhar uma requisição, que é o teto documentado:</p>
+
+    <pre><code>import anthropic
+
+client = anthropic.Anthropic()
+
+response = client.messages.create(
+    model=&quot;claude-opus-5&quot;,
+    max_tokens=4096,
+    container={
+        &quot;skills&quot;: [
+            {
+                &quot;type&quot;: &quot;custom&quot;,
+                &quot;skill_id&quot;: &quot;skill_01AbCdEfGhIjKlMnOpQrStUv&quot;,
+                &quot;version&quot;: &quot;latest&quot;,
+            }
+        ]
+    },
+    messages=[
+        {
+            &quot;role&quot;: &quot;user&quot;,
+            &quot;content&quot;: (
+                &quot;Arquive @threadgrab como Markdown. Salve o JSON completo do perfil &quot;
+                &quot;e resuma a bio em três bullets.&quot;
+            ),
+        }
+    ],
+    tools=[{&quot;type&quot;: &quot;code_execution_20250825&quot;, &quot;name&quot;: &quot;code_execution&quot;}],
+)
+</code></pre>
+
+    <p>O objeto <code>container</code> da resposta carrega um <code>id</code> e um timestamp <code>expires_at</code>; reusa o mesmo container em mensagens seguintes para manter o Skill carregado e o sandbox de code execution aquecido. Os arquivos que o Skill escreve (o JSON do perfil salvo, o resumo em Markdown) voltam como atributos <code>file_id</code> dentro de blocos <code>bash_code_execution_tool_result</code> &mdash; baixe-os pela Files API e exponha ao usuário.</p>
+
+    <h2>Onde os Skills pode e não pode rodar</h2>
+
+    <p>A Skills API tem três superfícies, e elas não compartilham estado:</p>
+
+    <ul>
+      <li><strong>Claude API</strong> &mdash; todo o workspace. Qualquer membro do seu workspace pode chamar o Skill que você enviar. Skills rodam em um container isolado com <strong>sem acesso à rede</strong> e <strong>sem instalação de pacotes em tempo de execução</strong>. Planeje de acordo: empacote tudo que seu Skill precisa no envio.</li>
+      <li><strong>Claude Code</strong> &mdash; baseado em filesystem. Skills vivem em <code>~/.claude/skills/</code> (pessoal) ou <code>.claude/skills/</code> (projeto). Têm acesso total à rede e podem instalar pacotes, mas apenas localmente &mdash; a Anthropic explicitamente alerta contra instalações globais de pacotes.</li>
+      <li><strong>claude.ai</strong> &mdash; por usuário. Você envia Skills como arquivos zip via Settings &gt; Features, e eles ficam disponíveis nos planos Pro, Max, Team e Enterprise. <strong>Não</strong> são compartilhados pela sua organização e não podem ser gerenciados centralmente por admins.</li>
+    </ul>
+
+    <p>Para um Skill de arquivo do ThreadGrab que você pretende compartilhar com uma equipe, a Claude API é a superfície mais útil: todo o workspace, com versionamento e auditável. Para trabalho solo no seu próprio terminal, o Claude Code com um Skill local é mais rápido de iterar. Os dois caminhos usam o mesmo layout de <code>SKILL.md</code>, então um Skill escrito uma vez funciona nos dois lugares &mdash; a documentação explicitamente nota que <strong>Skills enviados para uma superfície não ficam automaticamente disponíveis nas outras</strong>, então planeje enviar separadamente se quiser em todo lugar.</p>
+
+    <h2>Considerações de segurança antes de publicar</h2>
+
+    <p>Skills dão ao Claude novas capacidades via instruções e código, o que também significa que um Skill malicioso ou comprometido pode direcionar o Claude a invocar ferramentas ou executar código de formas que não batem com o propósito declarado. A documentação lista quatro pontos que merecem análise cuidadosa antes de qualquer Skill ir para produção:</p>
+
+    <ol>
+      <li><strong>Audite minuciosamente.</strong> Revise cada arquivo do Skill: <code>SKILL.md</code>, scripts, templates, schemas. A Anthropic destaca chamadas de rede inesperadas, padrões de acesso a arquivos incomuns e operações que não batem com o propósito declarado do Skill.</li>
+      <li><strong>Fontes externas são arriscadas.</strong> Skills que buscam dados de URLs externas trazem risco particular, porque o conteúdo baixado pode conter instruções maliciosas. O endpoint do ThreadGrab retorna JSON &mdash; não HTML &mdash; então a superfície de prompt injection é bem menor que a de um Skill que faz scraping de uma página web.</li>
+      <li><strong>Mau uso de ferramentas.</strong> Um Skill com ferramentas bash, de arquivo ou code execution pode ser direcionado a fazer outras coisas. Combine um Skill com o menor conjunto de ferramentas que ele realmente precisa.</li>
+      <li><strong>Exposição de dados.</strong> Skills podem ler documentos no seu workspace. Para organizações enterprise, a Anthropic oferece varredura de conteúdo de Skills para envios pelo <code>claude.ai</code> e Claude Cowork &mdash; mas <em>não</em> para Skills enviados pela API.</li>
+    </ol>
+
+    <p>O post de lançamento de Skills traz uma frase reveladora: &ldquo;trate como instalar software&rdquo;. Para um Skill de arquivo do ThreadGrab que roda em container isolado sem acesso à rede, a superfície é pequena &mdash; mas se você adicionar Skills a um fluxo que já lida com documentos sensíveis, o trabalho de auditoria escala com o que o Skill alcança.</p>
+
+    <h2>Como o ThreadGrab encaixa no stack mais amplo de agentes</h2>
+
+    <p>O ThreadGrab é um endpoint de arquivo read-only. Ele não escreve no X, não exige OAuth e expõe um formato JSON por chamada. Isso o torna um bloco natural para Skills, servidores MCP e harnesses de agentes hospedados que precisam de dados sociais sem o overhead de compliance de guardar tokens de usuário. O mesmo endpoint move o app web público do ThreadGrab &mdash; o complemento read-side do novo X MCP hospedado, que <a href="/pt/blog/x-hosted-mcp-creator-workflow-2026.html" rel="noopener">cobrimos neste início de mês</a> para automação write-side.</p>
+
+    <p>Se você está construindo um agente baseado em Skills que toca o X, o padrão prático é: ThreadGrab para arquivos read-side (este Skill), o X MCP hospedado para automação write-side (superfície separada), e a Files API para entregar artefatos de volta ao usuário. Os três se compõem dentro de uma única chamada <code>/v1/messages</code> &mdash; Skills e a ferramenta de code execution viajam no bloco <code>container</code>, o MCP hospedado viaja em <code>mcp_servers</code>, e a Files API expõe o JSON salvo.</p>
+
+    <div class="cta">
+      <p>O ThreadGrab é o complemento read-side da nova Skills API da Claude. Uma chamada HTTPS retorna JSON estruturado de perfil do X para qualquer username público &mdash; sem auth, sem OAuth, sem código de cola em cada prompt.</p>
+      <a class="btn" href="https://threadgrab.com/pt/">Experimentar ThreadGrab Grátis</a>
+    </div>
+
+    <h2>Perguntas frequentes</h2>
+
+    <div class="faq-item">
+      <strong>O que é a Skills API, em uma frase?</strong>
+      <p>A Skills API da Anthropic, disponível em geral desde 20 de agosto de 2026, permite enviar um diretório de instruções, scripts e templates, e depois anexá-lo a qualquer chamada <code>/v1/messages</code>. O Claude carrega o <code>SKILL.md</code> somente quando uma tarefa bate com a <code>description</code> do Skill, e roda o resto do pacote dentro do sandbox de code execution.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Onde um Skill de fato roda?</strong>
+      <p>Três lugares, nenhum dos quais compartilha estado: a Claude API (todo o workspace, container isolado, sem acesso à rede, sem instalação de pacotes em tempo de execução), Claude Code (baseado em filesystem, acesso total à rede, pacotes instalam localmente) e <code>claude.ai</code> (envio por zip por usuário, disponível nos planos Pro, Max, Team, Enterprise). Você envia separadamente para cada superfície onde quiser.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Por que empacotar o ThreadGrab como Skill em vez de chamar a API diretamente?</strong>
+      <p>Duas razões. Primeiro, controle de versão &mdash; a API permite fixar um Skill em uma <code>version</code> específica, então um fluxo pode avançar sem quebrar chamadores que dependem do comportamento antigo. Segundo, compartilhamento &mdash; envie o Skill uma vez, anexe a qualquer requisição via <code>container.skills</code>, e qualquer membro do workspace pode usar o mesmo fluxo de arquivo sem reescrever a chamada HTTPS. Compare isso com construir a chamada à mão em cada prompt.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Quantos Skills uma única requisição ao Claude pode usar?</strong>
+      <p>Até 20 Skills por requisição. Cada Skill contribui com um <code>SKILL.md</code> cuja <code>description</code> entra no system prompt, então 20 também é o teto prático de orçamento de comprimento de descrição. A documentação da Anthropic diz para agrupar procedimentos relacionados em um Skill em vez de dividi-los em vários pequenos.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>A Skills API veio com computer use em 20 de agosto?</strong>
+      <p>Sim. A Skills API ficou disponível em 20 de agosto de 2026, junto com uma ferramenta de computer use atualizada (agora multi-ação por turno), uma nova browser-use tool que lê estrutura da página em vez de pixels, e uma Files API com limites de taxa 5&times; maiores e 1&nbsp;TB de armazenamento por organização. Computer use também é elegível para HIPAA sob o BAA da Anthropic a partir do mesmo lançamento.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>O que acontece se um Skill retorna um erro?</strong>
+      <p>Depende de qual superfície o Skill roda. Na Claude API, o container isolado captura a maioria dos erros e retorna um exit não-zero; o <code>bash_code_execution_tool_result</code> do Claude expõe a falha ao modelo chamador. O endpoint de perfil do ThreadGrab retorna HTTP 429 quando um IP excede 10 requisições por minuto &mdash; um Skill que tenta de novo com sleep de 60 segundos trata isso de forma elegante.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Skills são compartilhados entre usuários?</strong>
+      <p>Somente na Claude API, e somente dentro do workspace que os enviou. Skills do <code>claude.ai</code> são por usuário &mdash; cada membro do time envia sua própria cópia. Skills do Claude Code são pessoais (<code>~/.claude/skills/</code>) ou escopados ao projeto (<code>.claude/skills/</code>), com compartilhamento via Plugins do Claude Code. Nenhuma das três superfícies sincroniza Skills automaticamente.</p>
+    </div>
+
+    <div class="related">
+      <h3>Guias relacionados</h3>
+      <ul>
+        <li><a href="/pt/blog/x-to-markdown-3-methods-2026.html">X para Markdown: 3 Métodos Comparados (2026)</a></li>
+        <li><a href="/pt/blog/x-thread-archiving-tools-2026.html">Ferramentas de Arquivo de Threads do X 2026: Comparativo</a></li>
+        <li><a href="/pt/blog/x-hosted-mcp-creator-workflow-2026.html">X MCP Hospedado para Workflows de Criadores 2026</a></li>
+        <li><a href="/pt/blog/cf-browser-run-concorrencia-throughput-threadgrab-2026.html">CF Browser Run Concurrency 2026: Throughput do ThreadGrab Dobra</a></li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    <a href="/pt/">Início</a> &middot;
+    <a href="/pt/blog/">Blog</a> &middot;
+    <a href="/pt/blog/x-to-markdown-3-methods-2026.html">X para Markdown</a>
+    <br>
+    ThreadGrab é uma ferramenta independente. Não afiliada a X Corp., Twitter ou qualquer serviço apresentado.
+    <br>
+    &copy; 2026 ThreadGrab
+  </footer>
+</body>
+</html>

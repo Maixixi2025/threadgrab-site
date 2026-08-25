@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Skills API + ThreadGrab: Skill Arsip X | ThreadGrab</title>
+  <meta name="description" content="Skills API Anthropic keluar beta pada 20 Agu 2026. Bungkus endpoint arsip X ThreadGrab sebagai Claude Skill yang bisa dipakai ulang dengan version-pinning dan sandbox code execution.">
+  <meta name="keywords" content="Claude Skills API, Anthropic Skills, SKILL.md, bungkus ThreadGrab sebagai skill, arsip X agen Claude, Files API 1TB, sandbox code execution, ThreadGrab, Claude computer use">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/id/blog/claude-skills-api-threadgrab-arsip-x-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/claude-skills-api-threadgrab-x-archive-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/claude-skills-api-threadgrab-arquivo-x-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/claude-skills-api-threadgrab-arsip-x-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/claude-skills-api-threadgrab-x-archive-2026.html">
+  <meta property="og:title" content="Claude Skills API + ThreadGrab: Skill Arsip X">
+  <meta property="og:description" content="Skills API Anthropic keluar beta pada 20 Agu 2026. Bungkus endpoint arsip X ThreadGrab sebagai Claude Skill yang bisa dipakai ulang dengan version-pinning dan sandbox code execution.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/id/blog/claude-skills-api-threadgrab-arsip-x-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Claude Skills API + ThreadGrab: Skill Arsip X">
+  <meta name="twitter:description" content="Skills API Anthropic keluar beta pada 20 Agu 2026. Bungkus endpoint arsip X ThreadGrab sebagai Claude Skill yang bisa dipakai ulang dengan version-pinning dan sandbox code execution.">
+  <meta property="article:published_time" content="2026-08-25">
+  <meta property="article:modified_time" content="2026-08-25">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo:hover { color: #1d9bf0; }
+    .tagline { color: #888; font-size: 0.85rem; margin-left: auto; }
+    .lang-bar { display: flex; gap: 12px; padding: 12px 24px; background: #1a1a1a; font-size: 0.85rem; }
+    .lang-bar a { color: #888; text-decoration: none; padding: 4px 10px; border-radius: 4px; }
+    .lang-bar a.active { background: #1d9bf0; color: #fff; }
+    .lang-bar a:hover:not(.active) { background: #2a2a2a; color: #fff; }
+    main { max-width: 780px; margin: 0 auto; padding: 40px 24px; }
+    h1 { font-size: 2rem; margin-bottom: 8px; line-height: 1.2; }
+    h1 span { color: #1d9bf0; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { font-size: 1.5rem; margin-top: 40px; margin-bottom: 16px; color: #1d9bf0; }
+    h3 { font-size: 1.15rem; margin-top: 24px; margin-bottom: 12px; color: #fff; }
+    p { margin-bottom: 16px; color: #d0d0d0; }
+    code { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-family: 'SF Mono', Monaco, Consolas, monospace; font-size: 0.9em; color: #ff7b72; }
+    pre { background: #1a1a1a; padding: 16px; border-radius: 6px; overflow-x: auto; margin-bottom: 16px; border: 1px solid #2a2a2a; }
+    pre code { background: none; padding: 0; color: #e6e6e6; font-size: 0.85rem; line-height: 1.5; }
+    ul, ol { margin-bottom: 16px; padding-left: 24px; color: #d0d0d0; }
+    li { margin-bottom: 8px; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 0.9rem; }
+    th { background: #1a1a1a; padding: 10px 12px; text-align: left; color: #1d9bf0; border-bottom: 2px solid #2a2a2a; }
+    td { padding: 10px 12px; border-bottom: 1px solid #2a2a2a; color: #d0d0d0; }
+    tr:hover td { background: #1a1a1a; }
+    .callout { background: #1a2332; border-left: 4px solid #1d9bf0; padding: 16px 20px; margin: 24px 0; border-radius: 4px; }
+    .callout p { margin: 0; color: #d0d0d0; }
+    .callout strong { color: #1d9bf0; }
+    .cta { background: linear-gradient(135deg, #1d9bf0 0%, #1a6fb8 100%); padding: 24px; border-radius: 8px; margin: 32px 0; text-align: center; }
+    .cta p { color: #fff; margin-bottom: 12px; }
+    .btn { display: inline-block; background: #fff; color: #0f0f0f; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; }
+    .btn:hover { background: #e6e6e6; }
+    .faq-item { background: #1a1a1a; padding: 16px 20px; margin-bottom: 12px; border-radius: 6px; border-left: 3px solid #1d9bf0; }
+    .faq-item strong { color: #fff; display: block; margin-bottom: 8px; }
+    .faq-item p { margin: 0; color: #d0d0d0; }
+    .related { background: #1a1a1a; padding: 20px; border-radius: 6px; margin: 32px 0; }
+    .related h3 { color: #1d9bf0; margin-bottom: 12px; }
+    .related ul { list-style: none; padding: 0; }
+    .related li { padding: 6px 0; border-bottom: 1px solid #2a2a2a; }
+    .related li:last-child { border-bottom: none; }
+    .related a { color: #1d9bf0; text-decoration: none; }
+    .related a:hover { text-decoration: underline; }
+    footer { text-align: center; padding: 32px 24px; color: #888; font-size: 0.85rem; border-top: 1px solid #1a1a1a; margin-top: 64px; }
+    footer a { color: #888; text-decoration: none; }
+    footer a:hover { color: #fff; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/id/" class="logo">ThreadGrab</a>
+    <span class="tagline">Arsipkan thread X sebagai Markdown</span>
+  </header>
+
+  <div class="lang-bar">
+    <a href="/en/blog/claude-skills-api-threadgrab-x-archive-2026.html">EN</a>
+    <a href="/pt/blog/claude-skills-api-threadgrab-arquivo-x-2026.html">PT</a>
+    <a href="/id/blog/claude-skills-api-threadgrab-arsip-x-2026.html" class="active">ID</a>
+  </div>
+
+  <main>
+    <h1>Claude Skills API + ThreadGrab: <span>Skill Arsip X</span></h1>
+    <div class="meta">25 Agustus 2026 &middot; 8 menit baca &middot; Panduan</div>
+
+    <p><strong>Skills API</strong> Anthropic keluar dari beta pada 20 Agustus 2026, bersama dengan alat computer use yang diperbarui, alat browser use baru, dan Files API yang sekarang menawarkan batas rate 5&times; lebih tinggi dan 1&nbsp;TB penyimpanan per organisasi. Skills API adalah bagian yang paling penting kalau Anda membangun apa pun yang menyentuh konten sosial: API ini memungkinkan Anda mengunggah folder berisi instruksi, skrip, dan template, lalu meminta Claude memuat folder itu hanya saat tugas membutuhkannya. Folder berjalan di dalam sandbox code execution Claude, jadi tidak ada yang perlu Anda hosting.</p>
+
+    <p>ThreadGrab adalah target alami untuk pola tersebut. ThreadGrab mengekspos endpoint publik <code>/api/profile/{username}</code> yang mengubah akun X (dulu Twitter) apa pun menjadi JSON terstruktur, dengan batas 10 permintaan per menit per IP dan tanpa login. Membungkus endpoint itu sebagai Claude Skill memberi agen satu alat yang bisa ia panggil kapan pun prompt menyebut pengarsipan, kutipan, atau pengambilan post dari X. Hasilnya adalah blok yang bisa dipakai ulang: minta Claude sekali, versikan skill-nya, dan alur arsip yang sama tersedia di Claude API, Claude Code, dan <code>claude.ai</code> &mdash; tanpa kode perekat per prompt.</p>
+
+    <div class="callout">
+      <p><strong>Ringkasan cepat:</strong> pada 20 Agustus 2026, Anthropic membuat Skills API tersedia untuk umum. Anda mengunggah direktori berisi <code>SKILL.md</code>, ditambah skrip atau template yang Anda mau, lalu merujuk <code>skill_id</code> yang dihasilkan di array <code>container.skills</code> dari panggilan <code>/v1/messages</code>. Endpoint profil ThreadGrab adalah salah satu target arsip sosial paling bersih yang bisa dibungkus &mdash; satu panggilan HTTPS mengembalikan JSON untuk username X publik apa pun, tanpa OAuth.</p>
+    </div>
+
+    <h2>Apa yang sebenarnya dirilis Skills API</h2>
+
+    <p>Post peluncuran 20 Agustus, berjudul &ldquo;Build production agents with computer use, the Skills API, and the Files API&rdquo;, adalah referensi kanonik. Post itu menjadikan empat hal tersedia secara umum di Claude Platform:</p>
+
+    <table>
+      <tr>
+        <th>Permukaan</th>
+        <th>Apa yang berubah pada 20 Agu 2026</th>
+        <th>Tempat berjalan</th>
+      </tr>
+      <tr>
+        <td><strong>Computer use (diperbarui)</strong></td>
+        <td>Turn multi-aksi &mdash; satu panggilan model sekarang bisa menggerakkan beberapa klik/pengetikan/scroll. Tugas selesai dengan panggilan lebih sedikit.</td>
+        <td>Claude API, Microsoft Foundry, Vertex AI (segera)</td>
+      </tr>
+      <tr>
+        <td><strong>Browser use tool</strong></td>
+        <td>Baru di computer use. Membaca struktur halaman, bukan hanya piksel, sehingga agen menyasar elemen web lewat identitas field/tombol.</td>
+        <td>Claude API (via computer use)</td>
+      </tr>
+      <tr>
+        <td><strong>Skills API</strong></td>
+        <td>Unggah dan versikan Skill Anda sendiri. Hingga 20 Skill per permintaan. Berjalan di sandbox code execution; Anda tidak hosting apa pun.</td>
+        <td>Claude API, Claude Code, claude.ai (Pro/Max/Team/Enterprise)</td>
+      </tr>
+      <tr>
+        <td><strong>Files API</strong></td>
+        <td>Batas rate 5&times; lebih tinggi, kedaluwarsa file otomatis, 1&nbsp;TB penyimpanan per organisasi.</td>
+        <td>Claude API, endpoint Files API</td>
+      </tr>
+    </table>
+
+    <p>Post itu memadukan pengumuman dengan contoh nyata: agen klaim yang membaca dokumen intake dari Files API, mengikuti Skill yang menyandikan prosedur tim, menyelesaikan pengiriman di portal web perusahaan asuransi dengan browser-use tool, dan menyimpan konfirmasi sebagai file. Loop yang sama pas di ThreadGrab hampir persis &mdash; ganti portal asuransi dengan endpoint profil X, ganti dokumen intake dengan username, dan Anda punya agen yang mengarsip akun X sesuai permintaan.</p>
+
+    <h2>Mengapa Skill ThreadGrab punya ukuran yang tepat</h2>
+
+    <p>Panggilan Skills API mengharapkan <em>alur tunggal yang berulang</em> &mdash; Skill adalah folder berisi instruksi, skrip, dan template yang Claude muat hanya saat tugas membutuhkannya. Arsip profil ThreadGrab adalah kecocokan bersih untuk bentuk itu:</p>
+
+    <ul>
+      <li><strong>Satu panggilan HTTPS:</strong> <code>GET https://threadgrab.com/api/profile/{username}</code> mengembalikan profil terstruktur lengkap.</li>
+      <li><strong>Tanpa auth, tanpa OAuth:</strong> tidak ada token untuk disimpan di Skill, tidak ada blok client-credentials untuk diatur.</li>
+      <li><strong>Bentuk JSON terprediksi:</strong> respons adalah objek pengguna yang terbentuk baik &mdash; aman untuk diumpankan langsung ke Files API sebagai artefak yang bisa diunduh.</li>
+      <li><strong>Input terbatas:</strong> <code>{username}</code> cocok dengan <code>/^[a-zA-Z0-9._]{1,30}$/</code>, jadi tidak ada permukaan prompt injection yang harus dipertahankan.</li>
+      <li><strong>Bisa dipakai ulang lintas prompt:</strong> &ldquo;Arsipkan 100 post terakhir <code>@threadgrab</code>&rdquo;, &ldquo;Ambil bio <code>@naval</code>&rdquo;, &ldquo;Bandingkan jumlah pengikut dari tiga akun ini&rdquo; &mdash; semua menjalankan Skill yang sama.</li>
+    </ul>
+
+    <p>Dibandingkan membangun alur yang sama di dalam perkakas computer use, versi Skills API kira-kira seperduapuluh dari kode. Computer use sekarang mendukung turn multi-aksi (satu panggilan model bisa menggerakkan beberapa klik dan pengetikan), dan browser use tool membaca struktur halaman, bukan hanya piksel. Keduanya hebat untuk tugas yang tidak punya API. ThreadGrab <em>punya</em> API, jadi jalur Skills menang dari sisi biaya token, latensi, dan keandalan.</p>
+
+    <h2>Lay out direktori Skill</h2>
+
+    <p>Dokumentasi Skills Anthropic eksplisit soal lay out. <strong>Setiap Skill adalah direktori dengan file <code>SKILL.md</code> di akar.</strong> <code>SKILL.md</code> memuat frontmatter YAML yang menamai Skill dan memberi tahu Claude kapan harus memuatnya, plus body markdown yang memuat pengetahuan prosedural sebenarnya &mdash; alur, skrip, jebakan. File opsional (skema, template, input contoh) ditempatkan di samping <code>SKILL.md</code> dan dimuat sesuai permintaan ketika <code>SKILL.md</code> merujuknya. Body <code>SKILL.md</code> hanya masuk ke jendela konteks ketika Claude memutuskan Skill cocok dengan tugas pengguna; sisa file tetap di disk dan berharga nol token sampai dirujuk.</p>
+
+    <p>Untuk Skill arsip ThreadGrab, frontmatter butuh tiga informasi: <code>name</code>, <code>description</code> (yang berfungsi ganda sebagai pemicu &mdash; &ldquo;pakai ini ketika pengguna meminta arsip X, jumlah pengikut, bio, post terbaru dari akun, atau referensi apa pun ke <code>@username</code>&rdquo;), dan config opsional apa pun. Kerangka kerja yang berfungsi terlihat seperti ini:</p>
+
+    <pre><code>threadgrab-archive/
+&#9492;&#9472;&#9472; SKILL.md
+&#9492;&#9472;&#9472; scripts/
+    &#9492;&#9472;&#9472; fetch_profile.py
+</code></pre>
+
+    <p>Aturan <code>name</code> Anthropic singkat: hanya huruf kecil, angka, dan tanda hubung, maksimal 64 karakter, tanpa tag XML, tanpa kata yang dicadangkan (<code>anthropic</code>, <code>claude</code>). <code>description</code> maksimal 1.024 karakter dan tidak boleh memuat tag XML. Keduanya divalidasi pada unggahan, jadi nilai yang cacat bentuk akan mengembalikan 4xx sebelum Skill dibuat. Dokumentasi memperingatkan bahwa <code>description</code> adalah yang dipakai model untuk memutuskan apakah memuat Skill Anda, jadi jelaskan kapan itu berlaku.</p>
+
+    <h3>SKILL.md &mdash; body yang dimuat Claude</h3>
+
+    <p>Body adalah markdown polos dan terbaca seperti dokumen prosedur. Untuk arsip ThreadGrab, body harus memberi tahu model cara memvalidasi username, apa yang dilakukan saat kesalahan rate limit mengembalikan 429, dan cara memaparkan JSON yang disimpan ke pengguna. Kerangka di bawah ini adalah versi ringkas dan berfungsi &mdash; Skill yang sebenarnya bisa tumbuh dengan lebih banyak jebakan seiring Anda menemukannya:</p>
+
+    <pre><code>---
+name: threadgrab-archive
+description: Arsipkan profil X (Twitter) sebagai JSON terstruktur lewat API
+  ThreadGrab. Gunakan ketika pengguna meminta arsip X, jumlah pengikut,
+  bio, post terbaru dari akun, atau referensi apa pun ke @username. Terpicu
+  oleh frasa seperti &quot;arsipkan @handle&quot;, &quot;ambil data
+  profil&quot;, &quot;bandingkan akun X&quot;. Jangan gunakan untuk
+  Threads (Meta) atau Bluesky.
+---
+
+# threadgrab-archive
+
+## Kapan memuat saya
+Muat Skill ini setiap kali pengguna bertanya tentang akun X / Twitter
+(<code>@username</code>) dan meminta data profil, jumlah pengikut,
+post terbaru, atau arsip yang bisa diunduh. Jangan muat saya untuk
+Threads (Meta), Bluesky, atau LinkedIn &mdash; itu permukaan yang
+berbeda.
+
+## Input
+- <code>username</code>: handle X tanpa awalan <code>@</code>. Harus
+  cocok dengan <code>/^[a-zA-Z0-9._]{1,30}$/</code>.
+
+## Endpoint
+<code>GET https://threadgrab.com/api/profile/{username}</code>
+
+- Tidak perlu autentikasi.
+- Batas rate: 10 permintaan per menit per IP klien. Jika Anda mendapat
+  HTTP 429, tunggu 60 detik dan coba lagi.
+- Validasi username berjalan di sisi server; username yang tidak valid
+  mengembalikan HTTP 400 dengan
+  <code>{&quot;error&quot;: &quot;Invalid username&quot;}</code>.
+
+## Output
+Respons berupa objek JSON berisi profil pengguna X: id, handle, nama
+tampilan, bio, jumlah pengikut, jumlah yang diikuti, jumlah post, status
+verifikasi, URL foto profil, dan post terbaru (jika upstream
+memekarkannya).
+
+## Prosedur
+1. Buang awalan <code>@</code> dari username.
+2. Validasi terhadap <code>/^[a-zA-Z0-9._]{1,30}$/</code>. Jika tidak
+   valid, minta handle yang benar dari pengguna.
+3. Panggil endpoint dengan timeout 15 detik.
+4. Pada 200, simpan body respons lewat Files API dan kembalikan
+   <code>file_id</code> yang dihasilkan sebagai paket Markdown yang bisa
+   diunduh.
+5. Pada 429, tidur 60 detik dan coba satu kali.
+6. Pada 404, beri tahu pengguna handle tersebut tidak resolve.
+7. Jangan pernah mengarang field. Jika respons tidak memuat
+   <code>follower_count</code>, jangan mengira-ngira.
+</code></pre>
+
+    <h3>scripts/fetch_profile.py &mdash; pembantu yang dijalankan Claude</h3>
+
+    <p>Skrip ditempatkan di samping <code>SKILL.md</code> dan dimuat sesuai permintaan hanya ketika <code>SKILL.md</code> menyuruh Claude menggunakannya. Karena Skill di Claude API berjalan di container terisolasi tanpa akses jaringan, Anda tidak bisa <code>pip install</code> saat runtime &mdash; skrip harus memakai paket yang sudah dimiliki sandbox code execution. Untuk klien HTTPS tipis, itu berarti pustaka standar:</p>
+
+    <pre><code># scripts/fetch_profile.py
+# Dimuat sesuai permintaan oleh SKILL.md; tanpa paket jaringan untuk dipasang.
+import json
+import sys
+import urllib.request
+import urllib.error
+
+BASE = &quot;https://threadgrab.com/api/profile/&quot;
+
+def fetch(username: str, timeout: int = 15) -&gt; dict:
+    url = BASE + username
+    req = urllib.request.Request(url, headers={&quot;User-Agent&quot;: &quot;claude-skill/1.0&quot;})
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            return {&quot;status&quot;: resp.status, &quot;body&quot;: json.loads(resp.read())}
+    except urllib.error.HTTPError as e:
+        return {&quot;status&quot;: e.code, &quot;error&quot;: e.reason}
+    except urllib.error.URLError as e:
+        return {&quot;status&quot;: 0, &quot;error&quot;: str(e.reason)}
+
+if __name__ == &quot;__main__&quot;:
+    user = sys.argv[1].lstrip(&quot;@&quot;)
+    print(json.dumps(fetch(user), indent=2))
+</code></pre>
+
+    <p>Ketika Claude memuat Skill dan memutuskan menjalankan pembantu, ia mengeluarkan <code>bash: python scripts/fetch_profile.py naval</code> &mdash; hanya output skrip yang masuk ke jendela konteks. Kode skrip itu sendiri tidak pernah masuk, yang merupakan klaim efisiensi utama arsitektur: sebuah Skill bisa mengirim puluhan file referensi dan biayanya tetap terbatas pada apa yang benar-benar dibaca tugas.</p>
+
+    <h2>Mengunggah dan memversi-pinning Skill</h2>
+
+    <p>Setelah direktori dibangun, unggah lewat Skills API. Endpoint menerima multipart form-data, dengan semua file dalam satu direktori tingkat atas dan <code>SKILL.md</code> di akar. Referensi API Anthropic menunjukkan bentuknya:</p>
+
+    <pre><code>curl https://api.anthropic.com/v1/skills \
+  -H 'Content-Type: multipart/form-data' \
+  -H 'anthropic-version: 2023-06-01' \
+  -H &quot;X-Api-Key: $ANTHROPIC_API_KEY&quot; \
+  -F files='[&quot;SKILL.md&quot;, &quot;scripts/fetch_profile.py&quot;]'
+</code></pre>
+
+    <p>Respons memuat objek Skill dengan <code>id</code> (formatnya <code>skill_01AbCdEfGhIjKlMnOpQrStUv</code>) dan <code>latest_version_id</code>. Unggahan berikutnya membuat versi baru; API memungkinkan Anda memversi-pin panggilan <code>/v1/messages</code> ke versi tertentu atau default ke <code>latest</code>. Pembuatan versi adalah yang membuat Skill siap-produksi &mdash; Anda bisa menggulirkan Skill ke depan, lalu memversi-pin sebuah alur ke versi lama kalau versi baru regresi, tanpa menulis ulang kode pemanggil.</p>
+
+    <p>Untuk menempelkan Skill ke permintaan, tambahkan <code>skill_id</code> ke array <code>container.skills</code> dan pasangkan dengan alat code execution. Hingga 20 Skill bisa menumpang pada satu permintaan, yang merupakan batas yang didokumentasikan:</p>
+
+    <pre><code>import anthropic
+
+client = anthropic.Anthropic()
+
+response = client.messages.create(
+    model=&quot;claude-opus-5&quot;,
+    max_tokens=4096,
+    container={
+        &quot;skills&quot;: [
+            {
+                &quot;type&quot;: &quot;custom&quot;,
+                &quot;skill_id&quot;: &quot;skill_01AbCdEfGhIjKlMnOpQrStUv&quot;,
+                &quot;version&quot;: &quot;latest&quot;,
+            }
+        ]
+    },
+    messages=[
+        {
+            &quot;role&quot;: &quot;user&quot;,
+            &quot;content&quot;: (
+                &quot;Arsipkan @threadgrab sebagai Markdown. Simpan JSON profil lengkapnya &quot;
+                &quot;dan rangkum bio dalam tiga poin.&quot;
+            ),
+        }
+    ],
+    tools=[{&quot;type&quot;: &quot;code_execution_20250825&quot;, &quot;name&quot;: &quot;code_execution&quot;}],
+)
+</code></pre>
+
+    <p>Obyek <code>container</code> pada respons memuat <code>id</code> dan timestamp <code>expires_at</code>; gunakan ulang container yang sama di pesan berikutnya untuk menjaga Skill tetap termuat dan sandbox code execution tetap hangat. File yang ditulis Skill (JSON profil yang disimpan, rangkuman Markdown) kembali sebagai atribut <code>file_id</code> di dalam blok <code>bash_code_execution_tool_result</code> &mdash; unduh lewat Files API dan sajikan ke pengguna.</p>
+
+    <h2>Di mana Skill bisa dan tidak bisa berjalan</h2>
+
+    <p>Skills API punya tiga permukaan, dan mereka tidak berbagi state:</p>
+
+    <ul>
+      <li><strong>Claude API</strong> &mdash; satu workspace penuh. Setiap anggota workspace Anda bisa memanggil Skill yang Anda unggah. Skill berjalan di container terisolasi dengan <strong>tanpa akses jaringan</strong> dan <strong>tanpa pemasangan paket saat runtime</strong>. Rencanakan accordingly: kemas semua yang Skill Anda butuhkan ke dalam unggahan.</li>
+      <li><strong>Claude Code</strong> &mdash; berbasis filesystem. Skill hidup di <code>~/.claude/skills/</code> (pribadi) atau <code>.claude/skills/</code> (proyek). Punya akses jaringan penuh dan bisa memasang paket, tapi hanya secara lokal &mdash; Anthropic secara eksplisit memperingatkan terhadap pemasangan paket global.</li>
+      <li><strong>claude.ai</strong> &mdash; per pengguna. Anda mengunggah Skill sebagai file zip lewat Settings &gt; Features, dan tersedia di paket Pro, Max, Team, dan Enterprise. <strong>Tidak</strong> dibagikan ke seluruh organisasi dan tidak bisa diatur secara terpusat oleh admin.</li>
+    </ul>
+
+    <p>Untuk Skill arsip ThreadGrab yang Anda maksudkan untuk dibagi dengan tim, Claude API adalah permukaan paling berguna: satu workspace, dikontrol versi, dan bisa diaudit. Untuk kerja solo di terminal Anda sendiri, Claude Code dengan Skill lokal lebih cepat untuk iterasi. Kedua jalur memakai lay out <code>SKILL.md</code> yang sama, jadi Skill yang ditulis sekali bekerja di kedua tempat &mdash; dokumentasi secara eksplisit menyatakan bahwa <strong>Skill yang diunggah ke satu permukaan tidak otomatis tersedia di permukaan lain</strong>, jadi rencanakan untuk mengunggah terpisah kalau Anda ingin di semua tempat.</p>
+
+    <h2>Pertimbangan keamanan sebelum diterbitkan</h2>
+
+    <p>Skill memberi Claude kemampuan baru lewat instruksi dan kode, yang juga berarti Skill yang berbahaya atau terkompromi bisa mengarahkan Claude untuk memakai alat atau mengeksekusi kode dengan cara yang tidak sesuai dengan tujuan yang dinyatakan. Dokumentasi mendaftar empat risiko yang layak ditelaah sebelum Skill mana pun masuk produksi:</p>
+
+    <ol>
+      <li><strong>Audit secara menyeluruh.</strong> Tinjau setiap file di Skill: <code>SKILL.md</code>, skrip, template, skema. Anthropic menunjuk panggilan jaringan yang tak terduga, pola akses file yang tak biasa, dan operasi yang tidak sesuai dengan tujuan Skill yang dinyatakan.</li>
+      <li><strong>Sumber eksternal berisiko.</strong> Skill yang mengambil data dari URL eksternal membawa risiko khusus, karena konten yang diambil bisa memuat instruksi berbahaya. Endpoint ThreadGrab mengembalikan JSON &mdash; bukan HTML &mdash; jadi permukaan prompt injection jauh lebih kecil dibanding Skill yang meng-scrape halaman web.</li>
+      <li><strong>Penyalahgunaan alat.</strong> Skill dengan alat bash, file, atau code execution bisa diarahkan untuk melakukan hal lain. Pasangkan Skill dengan alat paling kecil yang benar-benar dibutuhkan.</li>
+      <li><strong>Paparan data.</strong> Skill bisa membaca dokumen di workspace Anda. Untuk organisasi enterprise, Anthropic menawarkan pemindaian konten Skill untuk unggahan lewat <code>claude.ai</code> dan Claude Cowork &mdash; tapi <em>tidak</em> untuk Skill yang diunggah lewat API.</li>
+    </ol>
+
+    <p>Post peluncuran Skill memuat kalimat yang mengungkap: &ldquo;anggap seperti memasang perangkat lunak.&rdquo; Untuk Skill arsip ThreadGrab yang berjalan di container terisolasi tanpa akses jaringan, permukaannya kecil &mdash; tapi kalau Anda menambahkan Skill ke alur yang sudah menangani dokumen sensitif, pekerjaan audit berskala dengan apa yang bisa dijangkau Skill.</p>
+
+    <h2>Bagaimana ThreadGrab muat di tumpukan agen yang lebih luas</h2>
+
+    <p>ThreadGrab adalah endpoint arsip read-only. ThreadGrab tidak menulis ke X, tidak memerlukan OAuth, dan mengekspos satu bentuk JSON per panggilan. Itu menjadikannya blok alami untuk Skill, server MCP, dan harness agen hosted yang butuh data sosial tanpa overhead compliance memegang token pengguna. Endpoint yang sama menggerakkan aplikasi web publik ThreadGrab &mdash; pelengkap read-side dari X MCP hosted yang baru, yang <a href="/id/blog/x-hosted-mcp-creator-workflow-2026.html" rel="noopener">kami liput di awal bulan ini</a> untuk otomatisasi write-side.</p>
+
+    <p>Kalau Anda membangun agen berbasis Skill yang menyentuh X, pola praktisnya: ThreadGrab untuk arsip read-side (Skill ini), X MCP hosted untuk otomatisasi write-side (permukaan terpisah), dan Files API untuk menyerahkan artefak kembali ke pengguna. Ketiganya menyusun diri dalam satu panggilan <code>/v1/messages</code> &mdash; Skill dan alat code execution menumpang di blok <code>container</code>, MCP hosted menumpang di <code>mcp_servers</code>, dan Files API memunculkan JSON yang disimpan.</p>
+
+    <div class="cta">
+      <p>ThreadGrab adalah pelengkap read-side dari Skills API baru Claude. Satu panggilan HTTPS mengembalikan JSON profil X terstruktur untuk username publik apa pun &mdash; tanpa auth, tanpa OAuth, tanpa kode perekat per prompt.</p>
+      <a class="btn" href="https://threadgrab.com/id/">Coba ThreadGrab Gratis</a>
+    </div>
+
+    <h2>FAQ</h2>
+
+    <div class="faq-item">
+      <strong>Apa itu Skills API, dalam satu kalimat?</strong>
+      <p>Skills API Anthropic, tersedia secara umum sejak 20 Agustus 2026, memungkinkan Anda mengunggah direktori berisi instruksi, skrip, dan template, lalu menempelkannya ke panggilan <code>/v1/messages</code> mana pun. Claude memuat <code>SKILL.md</code> hanya ketika tugas cocok dengan <code>description</code> Skill, dan menjalankan sisa paket di dalam sandbox code execution.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Di mana Skill sebenarnya berjalan?</strong>
+      <p>Tiga tempat, yang tidak satu pun berbagi state satu sama lain: Claude API (satu workspace, container terisolasi, tanpa akses jaringan, tanpa pemasangan paket saat runtime), Claude Code (berbasis filesystem, akses jaringan penuh, paket dipasang hanya secara lokal), dan <code>claude.ai</code> (unggahan zip per pengguna, tersedia di paket Pro, Max, Team, Enterprise). Anda mengunggah terpisah ke setiap permukaan yang Anda inginkan.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Mengapa membungkus ThreadGrab sebagai Skill, bukan memanggil API secara langsung?</strong>
+      <p>Dua alasan. Pertama, kontrol versi &mdash; API memungkinkan Anda memversi-pin Skill ke <code>version</code> tertentu, jadi alur bisa bergulir maju tanpa merusak pemanggil yang bergantung pada perilaku lama. Kedua, kemampuan berbagi &mdash; unggah Skill sekali, tempelkan ke permintaan mana pun via <code>container.skills</code>, dan setiap anggota workspace bisa menggunakan alur arsip yang sama tanpa menulis ulang panggilan HTTPS. Bandingkan dengan membangun panggilan tangan di setiap prompt.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Berapa banyak Skill yang bisa dipakai satu permintaan Claude?</strong>
+      <p>Hingga 20 Skill per permintaan. Setiap Skill menyumbang <code>SKILL.md</code> yang <code>description</code>-nya masuk ke system prompt, jadi 20 juga merupakan batas praktis anggaran panjang deskripsi. Dokumentasi Anthropic menyarankan untuk menggabungkan prosedur terkait ke dalam satu Skill, bukan membaginya ke banyak Skill kecil.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Apakah Skills API rilis bersama computer use pada 20 Agustus?</strong>
+      <p>Ya. Skills API menjadi tersedia secara umum pada 20 Agustus 2026, bersama alat computer use yang diperbarui (sekarang multi-aksi per turn), browser-use tool baru yang membaca struktur halaman, bukan piksel, dan Files API dengan batas rate 5&times; lebih tinggi dan 1&nbsp;TB penyimpanan per organisasi. Computer use juga memenuhi syarat HIPAA di bawah BAA Anthropic sejak peluncuran yang sama.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Apa yang terjadi kalau Skill mengembalikan kesalahan?</strong>
+      <p>Tergantung permukaan tempat Skill berjalan. Di Claude API, container terisolasi menangkap sebagian besar kesalahan dan mengembalikan exit non-nol; <code>bash_code_execution_tool_result</code> Claude memaparkan kegagalan ke model pemanggil. Endpoint profil ThreadGrab mengembalikan HTTP 429 saat IP melebihi 10 permintaan per menit &mdash; Skill yang mencoba lagi dengan tidur 60 detik menanganinya dengan elegan.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Apakah Skill dibagikan lintas pengguna?</strong>
+      <p>Hanya di Claude API, dan hanya di dalam workspace yang mengunggahnya. Skill <code>claude.ai</code> adalah per pengguna &mdash; setiap anggota tim mengunggah salinannya sendiri. Skill Claude Code bersifat pribadi (<code>~/.claude/skills/</code>) atau tercakup pada proyek (<code>.claude/skills/</code>), dengan pembagian lewat Plugin Claude Code. Tidak satu pun dari ketiga permukaan menyinkronkan Skill secara otomatis.</p>
+    </div>
+
+    <div class="related">
+      <h3>Panduan terkait</h3>
+      <ul>
+        <li><a href="/id/blog/x-to-markdown-3-methods-2026.html">X ke Markdown: 3 Metode Dibandingkan (2026)</a></li>
+        <li><a href="/id/blog/x-thread-archiving-tools-2026.html">Alat Pengarsipan Thread X 2026: Perbandingan</a></li>
+        <li><a href="/id/blog/x-hosted-mcp-creator-workflow-2026.html">X MCP Hosted untuk Alur Kreator 2026</a></li>
+        <li><a href="/id/blog/cf-browser-run-concurrency-throughput-threadgrab-2026.html">CF Browser Run Concurrency 2026: Throughput ThreadGrab Naik Dua Kali Lipat</a></li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    <a href="/id/">Beranda</a> &middot;
+    <a href="/id/blog/">Blog</a> &middot;
+    <a href="/id/blog/x-to-markdown-3-methods-2026.html">X ke Markdown</a>
+    <br>
+    ThreadGrab adalah alat independen. Tidak berafiliasi dengan X Corp., Twitter, atau layanan mana pun yang ditampilkan.
+    <br>
+    &copy; 2026 ThreadGrab
+  </footer>
+</body>
+</html>
