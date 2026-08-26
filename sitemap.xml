@@ -2,6 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
+    <loc>https://threadgrab.com/en/blog/track-x-posts-google-search-console-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/track-x-posts-google-search-console-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/rastrear-x-posts-google-search-console-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/lacak-x-posts-google-search-console-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/track-x-posts-google-search-console-2026.html"/>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+    <url>
     <loc>https://threadgrab.com/en/blog/cf-browser-run-concurrency-threadgrab-throughput-2026.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/cf-browser-run-concurrency-threadgrab-throughput-2026.html"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/cf-browser-run-concorrencia-throughput-threadgrab-2026.html"/>
