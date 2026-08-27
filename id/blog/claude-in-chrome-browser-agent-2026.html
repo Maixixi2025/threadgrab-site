@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude di Chrome 2026: Agen Peramban untuk Menangkap Konten | ThreadGrab</title>
+  <meta name="description" content="Anthropic merilis Claude di Chrome pada 26 Agustus 2026. Lihat cara agen peramban mengotomatiskan penangkapan konten dan mengisi arsip thread X Anda.">
+  <meta name="keywords" content="Claude di Chrome 2026, agen peramban Claude, ekstensi Chrome Anthropic, otomatisasi penangkapan konten Claude, ekstrak teks halaman Claude, penangkapan thread X, arsip konten web sebagai Markdown, ThreadGrab penangkapan peramban">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/id/blog/claude-in-chrome-browser-agent-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/claude-in-chrome-browser-agent-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/claude-in-chrome-browser-agent-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/claude-in-chrome-browser-agent-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/claude-in-chrome-browser-agent-2026.html">
+  <meta property="og:title" content="Claude di Chrome 2026: Agen Peramban untuk Menangkap Konten">
+  <meta property="og:description" content="Anthropic merilis Claude di Chrome pada 26 Agustus 2026. Lihat cara agen peramban mengotomatiskan penangkapan konten dan mengisi arsip thread X Anda.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/id/blog/claude-in-chrome-browser-agent-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Claude di Chrome 2026: Agen Peramban untuk Menangkap Konten">
+  <meta name="twitter:description" content="Anthropic merilis Claude di Chrome pada 26 Agustus 2026. Lihat cara agen peramban mengotomatiskan penangkapan konten dan mengisi arsip thread X Anda.">
+  <meta property="article:published_time" content="2026-08-27">
+  <meta property="article:modified_time" content="2026-08-27">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo:hover { color: #1d9bf0; }
+    .tagline { color: #888; font-size: 0.85rem; margin-left: auto; }
+    .lang-bar { display: flex; gap: 12px; padding: 12px 24px; background: #1a1a1a; font-size: 0.85rem; }
+    .lang-bar a { color: #888; text-decoration: none; padding: 4px 10px; border-radius: 4px; }
+    .lang-bar a.active { background: #1d9bf0; color: #fff; }
+    .lang-bar a:hover:not(.active) { background: #2a2a2a; color: #fff; }
+    main { max-width: 780px; margin: 0 auto; padding: 40px 24px; }
+    h1 { font-size: 2rem; margin-bottom: 8px; line-height: 1.2; }
+    h1 span { color: #1d9bf0; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { font-size: 1.5rem; margin-top: 40px; margin-bottom: 16px; color: #1d9bf0; }
+    h3 { font-size: 1.15rem; margin-top: 24px; margin-bottom: 12px; color: #fff; }
+    p { margin-bottom: 16px; }
+    a { color: #1d9bf0; }
+    ul, ol { margin: 16px 0 16px 24px; }
+    li { margin-bottom: 8px; }
+    pre { background: #1a1a1a; padding: 16px; border-radius: 8px; overflow-x: auto; margin: 16px 0; }
+    code { font-family: 'SF Mono', Monaco, Consolas, monospace; font-size: 0.9em; color: #20d5ec; }
+    pre code { color: #fff; }
+    blockquote { border-left: 3px solid #1d9bf0; padding-left: 16px; color: #888; margin: 16px 0; font-style: italic; }
+    .callout { background: #1a1a1a; border-left: 3px solid #20d5ec; padding: 16px 20px; margin: 24px 0; border-radius: 0 8px 8px 0; }
+    .callout p { margin-bottom: 8px; }
+    .callout p:last-child { margin-bottom: 0; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #2a2a2a; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    .faq-item { background: #1a1a1a; padding: 16px 20px; margin: 12px 0; border-radius: 8px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 8px; }
+    .related-posts { background: #1a1a1a; padding: 20px; border-radius: 8px; margin: 24px 0; }
+    .related-posts h3 { margin-top: 0; color: #20d5ec; }
+    .related-posts ul { list-style: none; padding: 0; margin: 0; }
+    .related-posts li { padding: 6px 0; border-bottom: 1px solid #2a2a2a; }
+    .related-posts li:last-child { border-bottom: none; }
+    footer { padding: 30px 24px; text-align: center; color: #888; font-size: 0.9rem; border-top: 1px solid #1a1a1a; margin-top: 60px; }
+    footer a { color: #888; text-decoration: none; }
+    footer a:hover { color: #1d9bf0; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/id/" class="logo">ThreadGrab</a>
+    <span class="tagline">Arsipkan thread X sebagai Markdown</span>
+  </header>
+
+  <div class="lang-bar">
+    <a href="/en/blog/claude-in-chrome-browser-agent-2026.html">EN</a>
+    <a href="/pt/blog/claude-in-chrome-browser-agent-2026.html">PT</a>
+    <a href="/id/blog/claude-in-chrome-browser-agent-2026.html" class="active">ID</a>
+  </div>
+
+  <main>
+    <h1>Claude di Chrome 2026: <span>Otomatiskan Penangkapan Konten dengan Agen Peramban</span></h1>
+    <div class="meta">27 Agustus 2026 &middot; 9 menit baca &middot; Panduan</div>
+
+    <p>Pada 26 Agustus 2026, Anthropic merilis <strong>Claude di Chrome</strong> secara umum di semua paket berbayar Claude. Halaman produk resminya menjelaskannya dengan jelas: <em>Claude di Chrome membaca halaman tempat Anda masuk, lalu mengklik, mengetik, dan mengisi formulir sementara Anda memutuskan apa yang terjadi selanjutnya.</em> Bagi siapa pun yang berkarya dengan konten sosial, kalimat pendek itu menyembunyikan kemampuan yang sungguh berguna &mdash; agen AI yang dapat mengoperasikan peramban Anda dan menarik teks lengkap dari halaman yang sering tidak bisa disentuh panggilan API biasa.</p>
+
+    <p>Panduan ini adalah sudut pandang praktis dari peluncuran itu. Anthropic membingkai Claude di Chrome sebagai cara untuk mengotomatiskan dasbor, mengatur Google Drive, dan meneliti pesaing. Tetapi mekanisme yang sama adalah <strong>alat penangkapan</strong> yang kuat: ketika sebuah halaman menyembunyikan konten di balik klik &ldquo;Tampilkan lebih banyak&rdquo;, dinding login, atau umpan dinamis, agen peramban tetap bisa menelusurinya dan menyerahkan teksnya. Justru di lapisan itulah archiveting thread berada &mdash; dan tempat pipeline penangkapan ThreadGrab sudah bekerja. Berikut cara berpikir soal apakah, dan di mana, Claude di Chrome cocok dengan alur ambil-dan-arsipkan Anda sendiri.</p>
+
+    <div class="callout">
+      <p><strong>Intinya:</strong> Claude di Chrome dirilis umum pada 26 Agustus 2026, tersedia di paket Pro, Max, Team, dan Enterprise (bukan di tingkat gratis). Ini adalah ekstensi Chrome yang membaca halaman tempat Anda masuk, lalu mengklik, mengetik, dan mengisi formulir untuk Anda &mdash; dari panel samping di peramban Anda. Untuk penangkapan konten, artinya ia bisa membuka thread X, memperluas setiap pos, dan mengekstrak teks lengkap sebagai Markdown. Padukan dengan snapshot API untuk bukti asal, dan Anda punya arsip tahan lama tanpa menulis kode perekat apa pun.</p>
+    </div>
+
+    <h2>Apa sebenarnya Claude di Chrome</h2>
+
+    <p>Claude di Chrome adalah ekstensi peramban yang diterbitkan oleh Anthropic, bukan aplikasi mandiri. Ia berjalan di panel samping Chrome, memakai login yang sudah Anda miliki di sebuah situs, dan bisa bertindak di beberapa tab sekaligus. Peluncurannya bertahap sejak musim panas 2025:</p>
+
+    <ul>
+      <li><strong>25 Agustus 2025</strong> &mdash; pratinjau riset untuk kelompok terbatas pengguna paket Max.</li>
+      <li><strong>24 November 2025</strong> &mdash; beta untuk semua pelanggan Max, menambahkan tugas terjadwal dan alur multi-tab.</li>
+      <li><strong>18 Desember 2025</strong> &mdash; diperluas ke Pro, Team, dan Enterprise, dengan integrasi Claude Code dan kontrol admin.</li>
+      <li><strong>26 Agustus 2026</strong> &mdash; ketersediaan umum di semua paket berbayar, dengan persetujuan tindakan otomatis yang didukung pengklasifikasi keamanan.</li>
+    </ul>
+
+    <p>Yang berubah di GA adalah model persetujuan. Sebelumnya, Claude di Chrome meminta persetujuan Anda di setiap langkah. Sekarang ia bisa bertindak atas nama Anda dalam mode <strong>persetujuan otomatis</strong>, memvalidasi setiap tindakan dengan pengklasifikasi keamanan, atau Anda bisa beralih ke mode izin manual yang memberi akses situs demi situs. Kemampuan itu sendiri &mdash; mengoperasikan peramban &mdash; sudah ada; GA-lah yang membuatnya praktis sebagai alur otomatis bawaan.</p>
+
+    <h2>Mengapa agen peramban penting untuk penangkapan konten</h2>
+
+    <p>Hampir setiap momen &ldquo;kenapa saya tidak bisa langsung mengunduh ini?&rdquo; dalam konten sosial berujung pada masalah yang sama: halaman yang Anda inginkan bukanlah file HTML statis. Thread X memuat pos secara bertahap, layanan meringkas teks di balik tombol &ldquo;Tampilkan lebih banyak&rdquo;, dan umpan yang masuk bergantung pada sesi di peramban Anda. Panggilan API hanya bisa mengembalikan apa yang diserahkan server; agen peramban bisa <strong>menelusuri halaman seperti manusia</strong> dan mengumpulkan hasil yang dirender.</p>
+
+    <p>Itulah celah yang diisi Claude di Chrome untuk alur penangkapan. Alih-alih menulis skrip peramban headless sendiri, Anda mendeskripsikan tugas di panel samping &mdash; <em>buka thread ini, perluas setiap pos, beri saya teks lengkap</em> &mdash; dan agen menangani klik serta navigasi dengan kredensial yang sudah Anda gunakan untuk masuk. Hasilnya adalah teks yang bisa Anda ubah menjadi Markdown, format tahan lama dan portabel yang menjadi inti arsip apa pun.</p>
+
+    <h2>Penangkapan agen peramban vs. penangkapan API</h2>
+
+    <table>
+      <thead>
+        <tr><th>Kemampuan</th><th>Claude di Chrome (peramban)</th><th>Penangkapan API (threadgrab / API X)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Menangani halaman ber-login / dinamis</td><td>Ya &mdash; memakai sesi masuk Anda</td><td>Hanya jika API mengekspos datanya</td></tr>
+        <tr><td>Memperluas konten &ldquo;Tampilkan lebih banyak&rdquo;</td><td>Ya &mdash; mengklik untuk membuka</td><td>Tidak &mdash; mengembalikan apa yang ada di payload</td></tr>
+        <tr><td>Output terstruktur yang dapat diprediksi</td><td>Tergantung prompt</td><td>Ya &mdash; skema JSON stabil</td></tr>
+        <tr><td>Berjalan tanpa pengawasan dalam skala besar</td><td>Terbatas &mdash; paket berbayar, terikat peramban</td><td>Ya &mdash; dibatasi laju tapi bisa diskrip</td></tr>
+        <tr><td>Bukti asal / snapshot yang bisa diambil ulang</td><td>Manual &mdash; Anda menyimpan teksnya</td><td>Dapat digunakan ulang &mdash; panggil endpoint lagi</td></tr>
+        <tr><td>Model biaya</td><td>Paket konsumen dengan ekstensi</td><td>Harga API atau endpoint gratis</td></tr>
+      </tbody>
+    </table>
+
+    <p>Singkatnya: agen peramban adalah alat terbaik untuk <strong>menangkap halaman yang dirender</strong>, sementara API adalah yang terbaik untuk <strong>snapshot terstruktur yang bisa diambil ulang</strong>. Keduanya saling melengkapi, bukan pengganti. Arsip terkuat menyimpan keduanya &mdash; Markdown yang bisa dibaca yang benar-benar Anda inginkan, plus catatan terstruktur mentah yang bisa Anda bangun ulang.</p>
+
+    <h2>Model mental dua putaran penangkapan</h2>
+
+    <pre><code># Two ways to capture a web thread in 2026
+# 1) API path      -> threadgrab /api/profile/{username} or X API
+# 2) Browser path  -> Claude in Chrome reads the page and extracts the text
+
+# Claude in Chrome flow:
+# open the thread in Chrome -> open the Claude side panel
+# -> "Capture the full thread text as Markdown"
+# -> paste the result into your archive folder</code></pre>
+
+    <p>Gunakan jalur peramban ketika konten sulit dijangkau secara terprogram &mdash; artikel khusus anggota, umpan yang membutuhkan login Anda, thread yang separuh nilainya ada di balasan yang diperluas. Gunakan jalur API ketika Anda menginginkan catatan terstruktur yang berulang untuk dibandingkan seiring waktu. Kebiasaan yang baik adalah menyimpan keduanya dalam satu folder agar salinan yang bisa dibaca dan catatan terstruktur berjalan bersama.</p>
+
+    <h2>Alur archiveting yang berfungsi</h2>
+
+    <p>Berikut tata letak konkret yang menggabungkan dua putaran penangkapan menjadi satu arsip. Folder <code>claude-captured/</code> menyimpan teks yang bisa dibaca yang diekstrak agen peramban dari halaman yang dirender; folder <code>threadgrab/</code> menyimpan snapshot API terstruktur dari thread yang sama untuk bukti asal.</p>
+
+    <pre><code>my-archive/
+  claude-captured/
+    2026-08-27-claude-in-chrome-capture.md   # captured + cleaned with Claude
+  threadgrab/
+    2026-08-27-same-thread-api.json          # API snapshot for provenance
+  README.md</code></pre>
+
+    <p>Dengan cara ini, Markdown adalah yang Anda baca, cari, dan terbitkan ulang; JSON adalah yang bisa Anda ambil ulang dan bandingkan. Jika thread berubah atau hilang, Anda tetap memiliki kedua salinan &mdash; itulah inti dari mengarsipkan konten sosial.</p>
+
+    <h2>Prompt yang menghasilkan penangkapan bersih</h2>
+
+    <p>Claude di Chrome melakukan apa yang Anda minta, jadi kualitas penangkapan bergantung pada seberapa spesifik instruksinya. <em>&ldquo;Ambilkan saya thread ini&rdquo;</em> yang samar menghasilkan hasil yang samar. Prompt penangkapan dengan aturan eksplisit tentang memperluas, mengurutkan, dan tidak menulis ulang mengembalikan teks yang bisa langsung Anda masukkan ke Markdown. Berikut prompt yang dirancang untuk archiveting:</p>
+
+    <pre><code>You are helping me archive this X thread.
+
+1. Click "Show more" on every truncated post so the full text loads.
+2. Extract each post in order as a Markdown list.
+3. Keep the original wording; do not rephrase or summarize.
+4. Add a header with the author handle, thread URL, and date.</code></pre>
+
+    <p>Langkah 1 adalah yang paling sering dilupakan orang: pada thread panjang, halaman bawaan menampilkan pos yang diringkas, dan Anda menginginkan teks lengkap &mdash; yang juga merupakan teks yang bertahan sebagai arsip yang setia. Langkah 3 adalah aturan kesetiaan &mdash; agen AI akan dengan senang hati &ldquo;memperbaiki&rdquo; kata-katanya jika Anda tidak menghentikannya, dan thread yang ditulis ulang bukan lagi catatan sejati tentang apa yang diposkan.</p>
+
+    <h2>Keamanan dan keterbatasan yang perlu diingat</h2>
+
+    <p>Anthropic menyatakan dengan tegas bahwa agen peramban membawa risiko <strong>injeksi prompt</strong>: situs web yang Anda kunjungi bisa menyembunyikan instruksi di kontennya dan mencoba membajak apa yang dilakukan Claude selanjutnya. Build GA dilengkapi pengklasifikasi keamanan untuk mode persetujuan otomatis dan dokumentasi tentang risikonya, tetapi Anda tetap harus memilih izin manual di situs yang tidak Anda percaya, dan meninjau apa yang akan dilakukan agen alih-alih membiarkannya berjalan sepenuhnya tanpa pengawasan di halaman pihak ketiga.</p>
+
+    <p>Dua keterbatasan keras juga penting untuk penangkapan. Claude di Chrome hanya berfungsi di peramban Chrome &mdash; bukan di peramban berbasis Chromium lain, bukan Safari atau Firefox, dan bukan di seluler. Dan ia membutuhkan paket Claude berbayar (Pro, Max, Team, atau Enterprise); tidak ada tingkat gratis untuk ekstensi ini. Itu menjadikannya tambahan praktis untuk perangkat kreator, bukan pengganti universal untuk penangkapan berbasis API.</p>
+
+    <h2>Di mana ia cocok dalam stack Anda</h2>
+
+    <p>Claude di Chrome paling baik dipahami sebagai satu lagi permukaan penangkapan di samping alat berbasis API yang mungkin sudah Anda gunakan. Bungkus endpoint profil publik ThreadGrab (dibahas di <a href="/id/blog/claude-skills-api-threadgrab-arsip-x-2026.html">panduan Claude Skills + ThreadGrab</a>) untuk snapshot terstruktur, gunakan pipeline penangkapan ThreadGrab (lihat <a href="/id/blog/cf-browser-run-concurrency-throughput-threadgrab-2026.html">panduan konkurensi Browser Run</a>) untuk rendering headless dalam skala besar, dan raih Claude di Chrome ketika Anda membutuhkan halaman yang dirender persis seperti dilihat manusia &mdash; terutama untuk konten di balik login Anda sendiri.</p>
+
+    <h2>Pertanyaan yang sering diajukan</h2>
+
+    <div class="faq-item">
+      <strong>Apa itu Claude di Chrome?</strong>
+      <p>Claude di Chrome adalah ekstensi peramban dari Anthropic yang mengoperasikan Chrome untuk Anda. Ia membaca halaman tempat Anda masuk, lalu mengklik, mengetik, dan mengisi formulir &mdash; dari panel samping. Ia dirilis umum di semua paket Claude berbayar pada 26 Agustus 2026.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Apakah Claude di Chrome gratis?</strong>
+      <p>Tidak. Ekstensi ini tersedia di paket Claude berbayar &mdash; Pro, Max, Team, dan Enterprise. Tingkat gratis tidak mencakupnya. Anda berlangganan satu paket, menginstal ekstensi Chrome yang diterbitkan Anthropic, masuk dengan kredensial Claude, dan membuka panel samping.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Apa bedanya Claude di Chrome dengan API Claude atau Claude Code?</strong>
+      <p>API dan Claude Code untuk membangun serta mengotomatiskan dengan kode; Claude di Chrome adalah agen peramban konsumen. Ia memakai login yang sudah ada di peramban Anda, bekerja lintas tab, dan tidak butuh kode &mdash; Anda mendeskripsikan tugas di panel samping dan ia mengerjakannya. Untuk penangkapan, ia mengekstrak teks halaman yang dirender, sementara API mengembalikan JSON terstruktur.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Bisakah Claude di Chrome menggantikan ThreadGrab untuk mengarsipkan thread X?</strong>
+      <p>Bukan sebagai pengganti &mdash; keduanya saling melengkapi. Claude di Chrome bagus untuk menangkap satu halaman yang dirender dengan login Anda, tetapi terikat peramban, berbayar, dan tidak dibuat untuk penangkapan batch yang diskrip. Pipeline ThreadGrab menawarkan rendering headless dan snapshot terstruktur yang bisa diambil ulang dalam skala besar.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Amankah membiarkan Claude di Chrome bertindak otomatis?</strong>
+      <p>Anthropic memperingatkan tentang injeksi prompt &mdash; instruksi tersembunyi di situs web yang mencoba mengarahkan agen. Build GA menambahkan pengklasifikasi keamanan untuk mode persetujuan otomatis, dan menawarkan mode izin manual. Di situs yang tidak Anda percaya, pertahankan persetujuan manual dan tinjau setiap tindakan.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Apakah Claude di Chrome berfungsi di luar Chrome?</strong>
+      <p>Tidak. Menurut dokumentasi produk, ia adalah ekstensi Chrome dan tidak didukung di peramban berbasis Chromium lain, di Safari atau Firefox, atau di seluler. Penangkapan peramban dengan Claude di Chrome karena itu mengasumsikan Chrome desktop dengan paket berbayar.</p>
+    </div>
+
+    <div class="related-posts">
+      <h3>Panduan terkait</h3>
+      <ul>
+        <li><a href="/id/blog/claude-skills-api-threadgrab-arsip-x-2026.html">Claude Skills API + ThreadGrab: Skill Arsip X</a></li>
+        <li><a href="/id/blog/cf-browser-run-concurrency-throughput-threadgrab-2026.html">CF Browser Run Konkurensi 2026: Throughput ThreadGrab Berlipat Ganda</a></li>
+        <li><a href="/id/blog/x-to-markdown-3-methods-2026.html">X ke Markdown: 3 Metode Dibandingkan (2026)</a></li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    <a href="/id/">Beranda</a> &middot;
+    <a href="/id/blog/">Blog</a> &middot;
+    <a href="/id/blog/x-to-markdown-3-methods-2026.html">X ke Markdown</a>
+    <br>
+    ThreadGrab adalah alat independen. Tidak berafiliasi dengan X Corp., Twitter, Anthropic, atau layanan lain yang ditampilkan.
+    <br>
+    &copy; 2026 ThreadGrab
+  </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Claude di Chrome 2026: Agen Peramban untuk Menangkap Konten",
+    "description": "Anthropic merilis Claude di Chrome pada 26 Agustus 2026. Lihat cara agen peramban mengotomatiskan penangkapan konten dan mengisi arsip thread X Anda.",
+    "datePublished": "2026-08-27",
+    "dateModified": "2026-08-27",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/id/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/id/" },
+    "mainEntityOfPage": "https://threadgrab.com/id/blog/claude-in-chrome-browser-agent-2026.html",
+    "inLanguage": "id"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://threadgrab.com/id/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/id/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Claude di Chrome 2026", "item": "https://threadgrab.com/id/blog/claude-in-chrome-browser-agent-2026.html" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Apa itu Claude di Chrome?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Claude di Chrome adalah ekstensi peramban dari Anthropic yang mengoperasikan Chrome untuk Anda. Ia membaca halaman tempat Anda masuk, lalu mengklik, mengetik, dan mengisi formulir dari panel samping. Ia dirilis umum di semua paket Claude berbayar pada 26 Agustus 2026."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah Claude di Chrome gratis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tidak. Ekstensi ini tersedia di paket Claude berbayar, Pro, Max, Team, dan Enterprise. Tingkat gratis tidak mencakupnya. Anda berlangganan satu paket, menginstal ekstensi yang diterbitkan Anthropic, masuk dengan kredensial Claude, dan membuka panel samping."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apa bedanya Claude di Chrome dengan API Claude atau Claude Code?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "API dan Claude Code untuk membangun serta mengotomatiskan dengan kode; Claude di Chrome adalah agen peramban konsumen. Ia memakai login yang sudah ada, bekerja lintas tab, dan tidak butuh kode. Untuk penangkapan, mengekstrak teks halaman yang dirender, sementara API mengembalikan JSON terstruktur."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bisakah Claude di Chrome menggantikan ThreadGrab untuk mengarsipkan thread X?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bukan sebagai pengganti, keduanya saling melengkapi. Claude di Chrome bagus untuk menangkap satu halaman yang dirender dengan login Anda, tetapi terikat peramban, berbayar, dan tidak dibuat untuk penangkapan batch. Pipeline ThreadGrab menawarkan rendering headless dan snapshot reobtainable dalam skala besar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Amankah membiarkan Claude di Chrome bertindak otomatis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Anthropic memperingatkan tentang injeksi prompt, instruksi tersembunyi di situs web yang mencoba mengarahkan agen. Build GA menambahkan pengklasifikasi keamanan untuk mode persetujuan otomatis, dan menawarkan mode izin manual. Di situs yang tidak Anda percaya, pertahankan persetujuan manual."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah Claude di Chrome berfungsi di luar Chrome?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tidak. Menurut dokumentasi produk, ia adalah ekstensi Chrome dan tidak didukung di peramban berbasis Chromium lain, di Safari, Firefox, atau seluler. Penangkapan peramban dengan Claude di Chrome mengasumsikan Chrome desktop dengan paket berbayar."
+        }
+      }
+    ]
+  }
+  </script>
+</body>
+</html>

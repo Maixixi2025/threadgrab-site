@@ -9,6 +9,8 @@
 - [Home (Português)](https://threadgrab.com/pt/): ThreadGrab em português.
 
 ## Blog
+- [Claude in Chrome 2026: Automate Content Capture with a Browser Agent | ThreadGrab](https://threadgrab.com/en/blog/claude-in-chrome-browser-agent-2026.html): Anthropic made Claude in Chrome GA on Aug 26, 2026. How the Chrome browser agent automates web content capture and feeds your X thread archive as clean Markdown.
+
 - [X Paywalled Tweets 2026: Archive the Public Threads | ThreadGrab](https://threadgrab.com/en/blog/x-paywalled-tweets-archive-2026.html): X is gating more posts behind subscriptions in 2026 — Exclusive Threads, X Pro, creator paywalls. Save the still-public threads as Markdown before the timeline moves behind a paywall.
 
 - [X Archive Cleanup 2026: Delete the Noise, Keep Best Threads | ThreadGrab](https://threadgrab.com/en/blog/x-twitter-archive-cleanup-2026.html): Clean up your X or Twitter archive with TweetEraser, TweetDelete, TweetDeleter, Redact, or Circleboom without losing your best work — preserve the threads that matter as Markdown before you mass-delete.

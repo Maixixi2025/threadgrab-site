@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude no Chrome 2026: Captura de Conteúdo Web por Agente | ThreadGrab</title>
+  <meta name="description" content="A Anthropic liberou o Claude no Chrome (GA) em 26/08/2026. Como o agente de navegador automatiza a captura de conteúdo e alimenta seu arquivo X.">
+  <meta name="keywords" content="Claude no Chrome 2026, agente de navegador Claude, extensao Chrome Anthropic, automatizar captura de conteudo Claude, extrair texto de pagina Claude, captura de threads do X, arquivar conteudo web como Markdown, ThreadGrab captura navegador">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/pt/blog/claude-in-chrome-browser-agent-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/claude-in-chrome-browser-agent-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/claude-in-chrome-browser-agent-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/claude-in-chrome-browser-agent-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/claude-in-chrome-browser-agent-2026.html">
+  <meta property="og:title" content="Claude no Chrome 2026: Captura de Conteúdo Web por Agente">
+  <meta property="og:description" content="A Anthropic liberou o Claude no Chrome (GA) em 26/08/2026. Como o agente de navegador automatiza a captura de conteúdo e alimenta seu arquivo X.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/pt/blog/claude-in-chrome-browser-agent-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Claude no Chrome 2026: Captura de Conteúdo Web por Agente">
+  <meta name="twitter:description" content="A Anthropic liberou o Claude no Chrome (GA) em 26/08/2026. Como o agente de navegador automatiza a captura de conteúdo e alimenta seu arquivo X.">
+  <meta property="article:published_time" content="2026-08-27">
+  <meta property="article:modified_time" content="2026-08-27">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo:hover { color: #1d9bf0; }
+    .tagline { color: #888; font-size: 0.85rem; margin-left: auto; }
+    .lang-bar { display: flex; gap: 12px; padding: 12px 24px; background: #1a1a1a; font-size: 0.85rem; }
+    .lang-bar a { color: #888; text-decoration: none; padding: 4px 10px; border-radius: 4px; }
+    .lang-bar a.active { background: #1d9bf0; color: #fff; }
+    .lang-bar a:hover:not(.active) { background: #2a2a2a; color: #fff; }
+    main { max-width: 780px; margin: 0 auto; padding: 40px 24px; }
+    h1 { font-size: 2rem; margin-bottom: 8px; line-height: 1.2; }
+    h1 span { color: #1d9bf0; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { font-size: 1.5rem; margin-top: 40px; margin-bottom: 16px; color: #1d9bf0; }
+    h3 { font-size: 1.15rem; margin-top: 24px; margin-bottom: 12px; color: #fff; }
+    p { margin-bottom: 16px; }
+    a { color: #1d9bf0; }
+    ul, ol { margin: 16px 0 16px 24px; }
+    li { margin-bottom: 8px; }
+    pre { background: #1a1a1a; padding: 16px; border-radius: 8px; overflow-x: auto; margin: 16px 0; }
+    code { font-family: 'SF Mono', Monaco, Consolas, monospace; font-size: 0.9em; color: #20d5ec; }
+    pre code { color: #fff; }
+    blockquote { border-left: 3px solid #1d9bf0; padding-left: 16px; color: #888; margin: 16px 0; font-style: italic; }
+    .callout { background: #1a1a1a; border-left: 3px solid #20d5ec; padding: 16px 20px; margin: 24px 0; border-radius: 0 8px 8px 0; }
+    .callout p { margin-bottom: 8px; }
+    .callout p:last-child { margin-bottom: 0; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #2a2a2a; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    .faq-item { background: #1a1a1a; padding: 16px 20px; margin: 12px 0; border-radius: 8px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 8px; }
+    .related-posts { background: #1a1a1a; padding: 20px; border-radius: 8px; margin: 24px 0; }
+    .related-posts h3 { margin-top: 0; color: #20d5ec; }
+    .related-posts ul { list-style: none; padding: 0; margin: 0; }
+    .related-posts li { padding: 6px 0; border-bottom: 1px solid #2a2a2a; }
+    .related-posts li:last-child { border-bottom: none; }
+    footer { padding: 30px 24px; text-align: center; color: #888; font-size: 0.9rem; border-top: 1px solid #1a1a1a; margin-top: 60px; }
+    footer a { color: #888; text-decoration: none; }
+    footer a:hover { color: #1d9bf0; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/pt/" class="logo">ThreadGrab</a>
+    <span class="tagline">Arquive threads do X como Markdown</span>
+  </header>
+
+  <div class="lang-bar">
+    <a href="/en/blog/claude-in-chrome-browser-agent-2026.html">EN</a>
+    <a href="/pt/blog/claude-in-chrome-browser-agent-2026.html" class="active">PT</a>
+    <a href="/id/blog/claude-in-chrome-browser-agent-2026.html">ID</a>
+  </div>
+
+  <main>
+    <h1>Claude no Chrome 2026: <span>Automatize a Captura de Conteúdo com um Agente de Navegador</span></h1>
+    <div class="meta">27 de Agosto, 2026 &middot; 9 min de leitura &middot; Guia</div>
+
+    <p>Em 26 de agosto de 2026, a Anthropic tornou o <strong>Claude no Chrome</strong> disponível em geral em todos os planos pagos do Claude. A página oficial do produto descreve bem: <em>o Claude no Chrome lê a página em que você está conectado e depois clica, digita e preenche formulários enquanto você decide o que acontece em seguida.</em> Para quem trabalha com conteúdo social, essa frase curta esconde uma capacidade realmente útil &mdash; um agente de IA que pode operar o seu navegador e extrair o texto completo de páginas que uma simples chamada de API muitas vezes não consegue tocar.</p>
+
+    <p>Este guia é a visão prática desse lançamento. A Anthropic apresenta o Claude no Chrome como uma forma de automatizar painéis, organizar o Google Drive e pesquisar concorrentes. Mas o mesmo mecanismo é uma poderosa <strong>ferramenta de captura</strong>: quando uma página esconde o conteúdo atrás de um clique em &ldquo;Mostrar mais&rdquo;, de um login ou de um feed dinâmico, um agente de navegador ainda consegue percorrê-la e entregar o texto. É exatamente essa a camada onde vive o arquivamento de threads &mdash; e onde o pipeline de captura do ThreadGrab já trabalha. Veja como pensar se, e onde, o Claude no Chrome se encaixa no seu próprio fluxo de capturar-e-arquivar.</p>
+
+    <div class="callout">
+      <p><strong>Resumo:</strong> o Claude no Chrome ficou disponível em geral em 26 de agosto de 2026, nos planos Pro, Max, Team e Enterprise (não no nível gratuito). É uma extensão do Chrome que lê a página em que você está conectado e depois clica, digita e preenche formulários por você &mdash; a partir de um painel lateral no seu navegador. Para captura de conteúdo, isso significa que ele pode abrir uma thread do X, expandir cada post e extrair o texto completo como Markdown. Combine com uma cópia de API para proveniência e você terá um arquivo durável sem escrever nenhum código extra.</p>
+    </div>
+
+    <h2>O que o Claude no Chrome realmente é</h2>
+
+    <p>O Claude no Chrome é uma extensão de navegador publicada pela Anthropic, não um aplicativo isolado. Ele roda em um painel lateral do Chrome, usa o login que você já tem em um site e pode atuar em várias abas ao mesmo tempo. A divulgação foi gradual desde o verão de 2025:</p>
+
+    <ul>
+      <li><strong>25 de agosto de 2025</strong> &mdash; prévia de pesquisa para um grupo limitado de usuários do plano Max.</li>
+      <li><strong>24 de novembro de 2025</strong> &mdash; beta para todos os assinantes Max, adicionando tarefas agendadas e fluxos com várias abas.</li>
+      <li><strong>18 de dezembro de 2025</strong> &mdash; expansão para Pro, Team e Enterprise, com integração com o Claude Code e controles administrativos.</li>
+      <li><strong>26 de agosto de 2026</strong> &mdash; disponibilidade geral em todos os planos pagos, com aprovação automática de ações apoiada por um classificador de segurança.</li>
+    </ul>
+
+    <p>O que mudou no GA foi o modelo de aprovação. Antes, o Claude no Chrome pedia sua aprovação a cada etapa. Agora ele pode agir em seu nome em um modo de <strong>autoaprovação</strong>, validando cada ação com um classificador de segurança, ou você pode mudar para um modo manual de permissões que concede acesso site por site. A capacidade em si &mdash; operar o navegador &mdash; já existia; o GA é o que torna isso prático como um fluxo automático padrão.</p>
+
+    <h2>Por que um agente de navegador importa para a captura</h2>
+
+    <p>Quase todo momento de &ldquo;por que eu não consigo simplesmente buscar isso?&rdquo; no conteúdo social se resume ao mesmo problema: a página que você quer não é um arquivo HTML estático. Threads do X carregam posts aos poucos, serviços colapsam texto atrás de botões &ldquo;Mostrar mais&rdquo; e feeds conectados dependem da sessão no seu navegador. Uma chamada de API só pode retornar o que o servidor entrega; um agente de navegador pode <strong>percorrer a página como um humano faria</strong> e coletar o resultado renderizado.</p>
+
+    <p>Essa é a lacuna que o Claude no Chrome preenche para um fluxo de captura. Em vez de escrever você mesmo um script de navegador headless, você descreve a tarefa no painel lateral &mdash; <em>abra esta thread, expanda cada post, me dê o texto completo</em> &mdash; e o agente cuida dos cliques e da navegação com as credenciais em que você já está conectado. O resultado é um texto que você pode transformar em Markdown, o formato durável e portátil no coração de qualquer arquivo.</p>
+
+    <h2>Captura com agente de navegador vs. captura por API</h2>
+
+    <table>
+      <thead>
+        <tr><th>Capacidade</th><th>Claude no Chrome (navegador)</th><th>Captura por API (threadgrab / API do X)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Lida com páginas com login / dinâmicas</td><td>Sim &mdash; usa sua sessão conectada</td><td>Só se a API expuser os dados</td></tr>
+        <tr><td>Expande conteúdo truncado &ldquo;Mostrar mais&rdquo;</td><td>Sim &mdash; clica para revelar</td><td>Não &mdash; retorna o que está no payload</td></tr>
+        <tr><td>Saída estruturada previsível</td><td>Depende do prompt</td><td>Sim &mdash; esquema JSON estável</td></tr>
+        <tr><td>Roda sem supervisão em escala</td><td>Limitado &mdash; plano pago, preso ao navegador</td><td>Sim &mdash; com limite de taxa, mas scriptável</td></tr>
+        <tr><td>Proveniência / cópia reobtível</td><td>Manual &mdash; você guarda o texto</td><td>Reutilizável &mdash; chame o endpoint de novo</td></tr>
+        <tr><td>Modelo de custo</td><td>Plano de consumo com extensão</td><td>Preço de API ou endpoint gratuito</td></tr>
+      </tbody>
+    </table>
+
+    <p>Em resumo: um agente de navegador é a melhor ferramenta para <strong>capturar a página renderizada</strong>, enquanto uma API é a melhor para uma <strong>cópia estruturada e reobtível</strong>. São complementares, não substitutos. O arquivo mais forte mantém ambos &mdash; o Markdown legível que você realmente quer, mais o registro estruturado bruto a partir do qual você pode reconstruir.</p>
+
+    <h2>O modelo mental de dois ciclos de captura</h2>
+
+    <pre><code># Two ways to capture a web thread in 2026
+# 1) API path      -> threadgrab /api/profile/{username} or X API
+# 2) Browser path  -> Claude in Chrome reads the page and extracts the text
+
+# Claude in Chrome flow:
+# open the thread in Chrome -> open the Claude side panel
+# -> "Capture the full thread text as Markdown"
+# -> paste the result into your archive folder</code></pre>
+
+    <p>Use o caminho do navegador quando o conteúdo for difícil de alcançar programaticamente &mdash; um artigo só para membros, um feed que exige seu login, uma thread em que metade do valor está nas respostas expandidas. Use o caminho da API quando quiser um registro repetível e estruturado que você possa comparar ao longo do tempo. Um bom hábito é manter ambos em uma pasta para que a cópia legível e o registro estruturado viajem juntos.</p>
+
+    <h2>Um fluxo de arquivamento que funciona</h2>
+
+    <p>Aqui está um layout concreto que combina os dois ciclos de captura em um único arquivo. A pasta <code>claude-captured/</code> guarda o texto legível que um agente de navegador extraiu de uma página renderizada; a pasta <code>threadgrab/</code> guarda a cópia estruturada da API da mesma thread para proveniência.</p>
+
+    <pre><code>my-archive/
+  claude-captured/
+    2026-08-27-claude-in-chrome-capture.md   # captured + cleaned with Claude
+  threadgrab/
+    2026-08-27-same-thread-api.json          # API snapshot for provenance
+  README.md</code></pre>
+
+    <p>Feito assim, o Markdown é o que você lê, pesquisa e republica; o JSON é o que você pode reobter e comparar. Se a thread mudar ou desaparecer, você ainda possui as duas cópias &mdash; que é exatamente o objetivo de arquivar conteúdo social.</p>
+
+    <h2>O prompt que gera uma captura limpa</h2>
+
+    <p>O Claude no Chrome faz o que você pede, então a qualidade da captura depende do quão específicas são as instruções. Um vago <em>&ldquo;me traga esta thread&rdquo;</em> produz um resultado vago. Um prompt de captura com regras explícitas sobre expandir, ordenar e não reformular retorna um texto que você pode colar direto em Markdown. Este é um prompt formatado para arquivamento:</p>
+
+    <pre><code>You are helping me archive this X thread.
+
+1. Click "Show more" on every truncated post so the full text loads.
+2. Extract each post in order as a Markdown list.
+3. Keep the original wording; do not rephrase or summarize.
+4. Add a header with the author handle, thread URL, and date.</code></pre>
+
+    <p>O passo 1 é o que a maioria esquece: em uma thread longa, a página padrão mostra posts colapsados, e você quer o texto completo &mdash; que também é o texto que sobrevive como um arquivo fiel. O passo 3 é a regra de fidelidade &mdash; um agente de IA felizmente &ldquo;melhoraria&rdquo; o texto se você não o impedir, e uma thread reformulada deixa de ser um registro verdadeiro do que foi publicado.</p>
+
+    <h2>Segurança e limitações a ter em mente</h2>
+
+    <p>A Anthropic é explícita de que agentes de navegador carregam um risco de <strong>injeção de prompt</strong>: um site que você visita pode esconder instruções no conteúdo e tentar sequestrar o que o Claude faz em seguida. O build do GA traz um classificador de segurança para o modo de autoaprovação e documentação sobre o risco, mas você ainda deve preferir permissões manuais em sites em que não confia e revisar o que o agente está prestes a fazer, em vez de deixá-lo rodar totalmente sem supervisão em páginas de terceiros.</p>
+
+    <p>Duas limitações importantes também importam para a captura. O Claude no Chrome só funciona no navegador Chrome &mdash; não em outros navegadores baseados em Chromium, não no Safari nem no Firefox, e não no celular. E ele exige um plano pago do Claude (Pro, Max, Team ou Enterprise); não há nível gratuito para a extensão. Isso o torna uma adição prática ao kit de um criador, não um substituto universal para a captura por API.</p>
+
+    <h2>Onde ele se encaixa no seu stack</h2>
+
+    <p>O Claude no Chrome é melhor entendido como mais uma superfície de captura ao lado das ferramentas baseadas em API que você talvez já use. Envolva o endpoint público de perfil do ThreadGrab (abordado no <a href="/pt/blog/claude-skills-api-threadgrab-arquivo-x-2026.html">guia de Claude Skills + ThreadGrab</a>) para cópias estruturadas, use o pipeline de captura do ThreadGrab (veja o <a href="/pt/blog/cf-browser-run-concorrencia-throughput-threadgrab-2026.html">guia de concorrência do Browser Run</a>) para renderização headless em escala e recorra ao Claude no Chrome quando precisar da página renderizada exatamente como um humano a veria &mdash; especialmente para conteúdo atrás do seu próprio login.</p>
+
+    <h2>Perguntas frequentes</h2>
+
+    <div class="faq-item">
+      <strong>O que é o Claude no Chrome?</strong>
+      <p>O Claude no Chrome é uma extensão de navegador da Anthropic que opera o Chrome em seu lugar. Ele lê a página em que você está conectado e depois clica, digita e preenche formulários &mdash; a partir de um painel lateral. Ficou disponível em geral em todos os planos pagos do Claude em 26 de agosto de 2026.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>O Claude no Chrome é gratuito?</strong>
+      <p>Não. A extensão está disponível nos planos pagos do Claude &mdash; Pro, Max, Team e Enterprise. O nível gratuito não a inclui. Você assina um plano, instala a extensão do Chrome publicada pela Anthropic, entra com suas credenciais do Claude e abre o painel lateral.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Qual a diferença entre o Claude no Chrome e a API do Claude ou o Claude Code?</strong>
+      <p>A API e o Claude Code servem para construir e automatizar com código; o Claude no Chrome é um agente de navegador para consumidores. Ele usa o login já presente no seu navegador, trabalha em várias abas e não exige código &mdash; você descreve uma tarefa no painel lateral e ele a realiza. Para captura, ele extrai o texto renderizado da página, enquanto a API retorna JSON estruturado.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>O Claude no Chrome pode substituir o ThreadGrab para arquivar threads do X?</strong>
+      <p>Não como substituto &mdash; eles se complementam. O Claude no Chrome é ótimo para capturar uma única página renderizada com seu login, mas é preso ao navegador, pago e não foi feito para captura em lote por script. O pipeline do ThreadGrab oferece renderização headless e cópias estruturadas reobtíveis em escala. Mantenha ambos: o agente de navegador para o texto legível, a API para proveniência.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>É seguro deixar o Claude no Chrome agir automaticamente?</strong>
+      <p>A Anthropic alerta sobre injeção de prompt &mdash; instruções escondidas em um site tentando direcionar o agente. O build do GA adiciona um classificador de segurança para o modo de autoaprovação e oferece um modo manual de permissões. Em sites em que você não confia, mantenha aprovações manuais e revise cada ação em vez de deixá-lo rodar totalmente sem supervisão.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>O Claude no Chrome funciona fora do Chrome?</strong>
+      <p>Não. Segundo a documentação do produto, é uma extensão do Chrome e não é suportado em outros navegadores baseados em Chromium, no Safari, no Firefox ou no celular. A captura no navegador com o Claude no Chrome pressupõe, portanto, um Chrome de desktop com um plano pago.</p>
+    </div>
+
+    <div class="related-posts">
+      <h3>Guias relacionados</h3>
+      <ul>
+        <li><a href="/pt/blog/claude-skills-api-threadgrab-arquivo-x-2026.html">Claude Skills API + ThreadGrab: Skill de Arquivo do X</a></li>
+        <li><a href="/pt/blog/cf-browser-run-concorrencia-throughput-threadgrab-2026.html">CF Browser Run Concorrência 2026: Throughput do ThreadGrab Dobra</a></li>
+        <li><a href="/pt/blog/x-to-markdown-3-methods-2026.html">X para Markdown: 3 Métodos Comparados (2026)</a></li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    <a href="/pt/">Início</a> &middot;
+    <a href="/pt/blog/">Blog</a> &middot;
+    <a href="/pt/blog/x-to-markdown-3-methods-2026.html">X para Markdown</a>
+    <br>
+    O ThreadGrab é uma ferramenta independente. Não afiliado ao X Corp., Twitter, Anthropic ou qualquer serviço em destaque.
+    <br>
+    &copy; 2026 ThreadGrab
+  </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Claude no Chrome 2026: Captura de Conteúdo Web por Agente",
+    "description": "A Anthropic liberou o Claude no Chrome (GA) em 26/08/2026. Como o agente de navegador automatiza a captura de conteúdo e alimenta seu arquivo X.",
+    "datePublished": "2026-08-27",
+    "dateModified": "2026-08-27",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/" },
+    "mainEntityOfPage": "https://threadgrab.com/pt/blog/claude-in-chrome-browser-agent-2026.html",
+    "inLanguage": "pt"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://threadgrab.com/pt/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/pt/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Claude no Chrome 2026", "item": "https://threadgrab.com/pt/blog/claude-in-chrome-browser-agent-2026.html" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "O que é o Claude no Chrome?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O Claude no Chrome é uma extensão de navegador da Anthropic que opera o Chrome em seu lugar. Ele lê a página em que você está conectado e depois clica, digita e preenche formulários a partir de um painel lateral. Ficou disponível em todos os planos pagos do Claude em 26 de agosto de 2026."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O Claude no Chrome é gratuito?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não. A extensão está disponível nos planos pagos do Claude, Pro, Max, Team e Enterprise. O nível gratuito não a inclui. Você assina um plano, instala a extensão publicada pela Anthropic, entra com suas credenciais e abre o painel lateral."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qual a diferença entre o Claude no Chrome e a API do Claude ou o Claude Code?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A API e o Claude Code servem para construir e automatizar com código; o Claude no Chrome é um agente de navegador para consumidores. Ele usa o login já presente no navegador, trabalha em várias abas e não exige código. Para captura, extrai o texto renderizado, enquanto a API retorna JSON estruturado."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O Claude no Chrome pode substituir o ThreadGrab para arquivar threads do X?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não como substituto, eles se complementam. O Claude no Chrome é ótimo para capturar uma única página renderizada com seu login, mas é preso ao navegador, pago e não foi feito para captura em lote. O pipeline do ThreadGrab oferece renderização headless e cópias reobtíveis em escala."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "É seguro deixar o Claude no Chrome agir automaticamente?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A Anthropic alerta sobre injeção de prompt, instruções escondidas em um site tentando direcionar o agente. O build do GA adiciona um classificador de segurança para o modo de autoaprovação e oferece um modo manual. Em sites em que você não confia, mantenha aprovações manuais."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O Claude no Chrome funciona fora do Chrome?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não. Segundo a documentação, é uma extensão do Chrome e não é suportado em outros navegadores baseados em Chromium, no Safari, no Firefox ou no celular. A captura no navegador pressupõe um Chrome de desktop com plano pago."
+        }
+      }
+    ]
+  }
+  </script>
+</body>
+</html>
