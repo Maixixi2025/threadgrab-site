@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tweet.md Stable 2026: When Nothing Changed, What Did We Learn? | ThreadGrab</title>
+  <meta name="description" content="Tweet.md has been quiet since May 2026. A landscape retrospective: where X-to-Markdown sits, when tweet.md fits, where ThreadGrab covers the rest.">
+  <meta name="keywords" content="tweet.md 2026, X to Markdown tool 2026, tweet.md vs threadgrab, social content archive, X thread archiver, thread archive Markdown, Twitter to Markdown converter 2026, Obsidian frontmatter archive, social media capture tool, ThreadGrab X archive">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/en/blog/tweet-md-stable-archive-landscape-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/tweet-md-stable-archive-landscape-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/tweet-md-stable-archive-landscape-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/tweet-md-stable-archive-landscape-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/tweet-md-stable-archive-landscape-2026.html">
+  <meta property="og:title" content="Tweet.md Stable 2026: When Nothing Changed, What Did We Learn?">
+  <meta property="og:description" content="Tweet.md has been quiet since May 2026. A landscape retrospective: where X-to-Markdown sits, when tweet.md fits, where ThreadGrab covers the rest.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/en/blog/tweet-md-stable-archive-landscape-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tweet.md Stable 2026: When Nothing Changed, What Did We Learn?">
+  <meta name="twitter:description" content="Tweet.md has been quiet since May 2026. A landscape retrospective: where X-to-Markdown sits, when tweet.md fits, where ThreadGrab covers the rest.">
+  <meta property="article:published_time" content="2026-08-28">
+  <meta property="article:modified_time" content="2026-08-28">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo:hover { color: #1d9bf0; }
+    .tagline { color: #888; font-size: 0.85rem; margin-left: auto; }
+    .lang-bar { display: flex; gap: 12px; padding: 12px 24px; background: #1a1a1a; font-size: 0.85rem; }
+    .lang-bar a { color: #888; text-decoration: none; padding: 4px 10px; border-radius: 4px; }
+    .lang-bar a.active { background: #1d9bf0; color: #fff; }
+    .lang-bar a:hover:not(.active) { background: #2a2a2a; color: #fff; }
+    main { max-width: 780px; margin: 0 auto; padding: 40px 24px; }
+    h1 { font-size: 2rem; margin-bottom: 8px; line-height: 1.2; }
+    h1 span { color: #1d9bf0; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { font-size: 1.5rem; margin-top: 40px; margin-bottom: 16px; color: #1d9bf0; }
+    h3 { font-size: 1.15rem; margin-top: 24px; margin-bottom: 12px; color: #fff; }
+    p { margin-bottom: 16px; }
+    a { color: #1d9bf0; }
+    ul, ol { margin: 16px 0 16px 24px; }
+    li { margin-bottom: 8px; }
+    pre { background: #1a1a1a; padding: 16px; border-radius: 8px; overflow-x: auto; margin: 16px 0; }
+    code { font-family: 'SF Mono', monaco, Consolas, monospace; font-size: 0.9em; color: #20d5ec; }
+    pre code { color: #fff; }
+    blockquote { border-left: 3px solid #1d9bf0; padding-left: 16px; color: #888; margin: 16px 0; font-style: italic; }
+    .callout { background: #1a1a1a; border-left: 3px solid #20d5ec; padding: 16px 20px; margin: 24px 0; border-radius: 0 8px 8px 0; }
+    .callout p { margin-bottom: 8px; }
+    .callout p:last-child { margin-bottom: 0; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #2a2a2a; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    .faq-item { background: #1a1a1a; padding: 16px 20px; margin: 12px 0; border-radius: 8px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 8px; }
+    .related-posts { background: #1a1a1a; padding: 20px; border-radius: 8px; margin: 24px 0; }
+    .related-posts h3 { margin-top: 0; color: #20d5ec; }
+    .related-posts ul { list-style: none; padding: 0; margin: 0; }
+    .related-posts li { padding: 6px 0; border-bottom: 1px solid #2a2a2a; }
+    .related-posts li:last-child { border-bottom: none; }
+    footer { padding: 30px 24px; text-align: center; color: #888; font-size: 0.9rem; border-top: 1px solid #1a1a1a; margin-top: 60px; }
+    footer a { color: #888; text-decoration: none; }
+    footer a:hover { color: #1d9bf0; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/en/" class="logo">ThreadGrab</a>
+    <span class="tagline">Archive X threads as Markdown</span>
+  </header>
+
+  <div class="lang-bar">
+    <a href="/en/blog/tweet-md-stable-archive-landscape-2026.html" class="active">EN</a>
+    <a href="/pt/blog/tweet-md-stable-archive-landscape-2026.html">PT</a>
+    <a href="/id/blog/tweet-md-stable-archive-landscape-2026.html">ID</a>
+  </div>
+
+  <main>
+    <h1>Tweet.md Stable 2026: <span>When Nothing Changed, What Did We Learn?</span></h1>
+    <div class="meta">August 28, 2026 &middot; 8 min read &middot; Landscape</div>
+
+    <p>Some weeks are news-heavy; this one is not. <a href="https://tweet.md">tweet.md</a>, the X-to-Markdown converter that launched in May 2026, has been quiet since its last changelog entry on August 27, 2026 (a "no-charge demo" alongside publish/edit dates on every post). The homepage is stable, the JSON-LD <code>dateModified</code> reads 2026-08-24, and the latest product signal is &mdash; in tweet.md&rsquo;s own words &mdash; "Try a no-charge demo." That is the whole week.</p>
+
+    <p>For an archivist, a quiet week is data. It tells you the tools that survived the first launch rush, the features that became table-stakes, and the gaps that nobody is racing to fill. This post is a tool landscape retrospective: where the X-to-Markdown market sits at the end of August 2026, when tweet.md is the right choice, and where ThreadGrab covers the rest.</p>
+
+    <div class="callout">
+      <p><strong>Quick take:</strong> tweet.md is now a stable, paid, X-only converter with strong agent-API ergonomics (Next.js on Cloudflare, $5&ndash;$49 credit packs, Obsidian YAML frontmatter, profile-as-Markdown). ThreadGrab is a free, multi-platform (X + Bluesky + LinkedIn) archiver with a public profile API and trilingual UI. Use tweet.md when you want profile snapshots in your Obsidian vault; use ThreadGrab when you want a free, durable, multi-platform archive that does not depend on a single vendor&rsquo;s pricing page.</p>
+    </div>
+
+    <h2>What tweet.md is, three months in</h2>
+
+    <p>tweet.md launched 2026-05-17 as a converter for X posts, threads, Articles, and profiles. Its homepage slogan is exactly what it does: <em>Convert X/Twitter posts, threads, Articles, and profiles to clean Markdown for LLMs, agents, research, and archives. Just swap x.com for tweet.md.</em> The site is a Next.js (App Router) build on Cloudflare, served from the Singapore edge with full server-side rendering &mdash; the H1, the four input tabs (Single post / Thread / X Article / Profile), and the JSON-LD are all in the first response, not a client shell.</p>
+
+    <p>The product surface is narrower than the homepage implies. Output is exactly two formats: <strong>markdown</strong> (default) or <strong>obsidian</strong> (Markdown with YAML frontmatter for an Obsidian vault). The docs are explicit: &ldquo;plain text, never JSON.&rdquo; Query knobs include <code>format</code>, <code>thread</code> (default <code>branch-5</code>, range 2&ndash;500), <code>userinfo</code>, <code>stats</code>, <code>metadata</code>, and <code>apikey</code>. Endpoints are <code>/i/api/convert</code> and <code>/i/api/profile</code>. There is no Bluesky, no LinkedIn, no Mastodon, no Threads.</p>
+
+    <h2>What tweet.md costs, and what is unstated</h2>
+
+    <p>Pricing is credit packs: <strong>$5 / 200 credits</strong>, <strong>$19 / 1,000</strong>, <strong>$49 / 3,000</strong> (per-credit $0.025 &rarr; $0.019 &rarr; $0.0163). No subscription, no per-seat. Authentication is API key, Bearer header, session cookie, or a <strong>trusted-IP allowlist</strong> &mdash; multiple keys per account are allowed. Controlled demos for a <code>*t-twmduser</code> test profile are free.</p>
+
+    <p>What is <strong>not</strong> published: rate limits. The site does not list a rate cap anywhere visible, which matters for a tool that costs money per call. If you build an agent on top of tweet.md, you are trusting the vendor&rsquo;s silent throttle &mdash; a risk you can avoid by buying a credit pack and treating each request as a metered spend. For research workflows that pull thousands of posts at a time, the absence of a stated rate limit is a yellow flag.</p>
+
+    <h2>Where ThreadGrab covers different ground</h2>
+
+    <p>ThreadGrab sits in the same category &mdash; capture public social content as Markdown &mdash; but with three structural differences that matter for archivists.</p>
+
+    <ul>
+      <li><strong>Multi-platform</strong>: X, Bluesky, LinkedIn, and (via the headless capture pipeline) any rendered web page. tweet.md is X-only.</li>
+      <li><strong>Free, no account</strong>: ThreadGrab&rsquo;s archive pipeline and the public <code>/api/profile/{username}</code> endpoint require no API key and no payment.</li>
+      <li><strong>Trilingual UI</strong>: EN / PT / ID. tweet.md is English-only with no localization surface in the source.</li>
+    </ul>
+
+    <p>The free + multi-platform + trilingual shape is why ThreadGrab&rsquo;s coverage overlaps with tweet.md on X but extends to platforms where tweet.md cannot follow &mdash; and why the two tools read as complements rather than substitutes.</p>
+
+    <h2>Tweet.md vs ThreadGrab, side by side</h2>
+
+    <table>
+      <thead>
+        <tr><th>Capability</th><th>tweet.md</th><th>ThreadGrab</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Platform coverage</td><td>X / Twitter only (posts, threads, Articles, profiles)</td><td>X + Bluesky + LinkedIn + headless web</td></tr>
+        <tr><td>Pricing</td><td>Paid credit packs ($5 / $19 / $49)</td><td>Free, no account</td></tr>
+        <tr><td>Output formats</td><td>Markdown, Obsidian YAML frontmatter</td><td>Markdown, structured JSON sidecar</td></tr>
+        <tr><td>API ergonomics</td><td>Bearer key, cookie, trusted IP allowlist</td><td>Public <code>/api/profile/{username}</code>, no auth</td></tr>
+        <tr><td>Profile as Markdown</td><td>Yes &mdash; first-class</td><td>Profile snapshots via the JSON API</td></tr>
+        <tr><td>Languages</td><td>English-only UI</td><td>EN / PT / ID</td></tr>
+        <tr><td>Rate limits published</td><td>No</td><td>Yes (per IP, polite defaults)</td></tr>
+        <tr><td>Hosted stack</td><td>Next.js on Cloudflare (Singapore)</td><td>Astro 7.1.6 + Cloudflare Pages Functions</td></tr>
+      </tbody>
+    </table>
+
+    <p>The honest summary: tweet.md wins on the profile-to-Obsidian workflow and on agent-API ergonomics; ThreadGrab wins on price, on multi-platform coverage, and on having documented rate limits you can plan around.</p>
+
+    <h2>The "quiet week" archive workflow</h2>
+
+    <p>When nothing is launching, the right move is to harden your existing archive. Here is a workflow that combines tweet.md&rsquo;s Obsidian-friendly profile snapshots with ThreadGrab&rsquo;s free, durable Markdown thread captures, kept side-by-side in one folder so the human-readable text and the structured provenance travel together.</p>
+
+    <pre><code>my-archive/
+  tweet-md-profiles/
+    2026-08-28-handle-profile.md        # Obsidian YAML frontmatter
+  threadgrab-threads/
+    2026-08-28-same-thread.md           # clean Markdown, no metadata
+    2026-08-28-same-thread.json         # structured sidecar (re-fetchable)
+  README.md</code></pre>
+
+    <p>Use tweet.md for the profile snapshot you want to keep in your Obsidian vault (YAML frontmatter, tags, dataview-friendly). Use ThreadGrab for the thread itself (full text + a JSON sidecar you can re-fetch later). The two formats are deliberately different: tweet.md gives you a knowledge-graph node; ThreadGrab gives you a citation. An archive needs both.</p>
+
+    <h2>A quick capture check</h2>
+
+    <p>For one-off captures, the simplest test is whether the URL pattern you already have works on the tool you are using. Here is the shape both tools expect, side by side:</p>
+
+    <pre><code># tweet.md: swap the host
+https://x.com/handle/status/123...  ->  https://tweet.md/i/status/123...
+
+# ThreadGrab: same handle, public profile API
+https://threadgrab.com/api/profile/handle
+
+# Both return Markdown; tweet.md adds Obsidian YAML frontmatter
+# on the obsidian format flag, ThreadGrab returns clean Markdown
+# plus an optional JSON sidecar you can re-fetch.</code></pre>
+
+    <p>If you find yourself swapping <code>x.com</code> for <code>tweet.md</code> in your URL bar several times a day, you are paying for the Obsidian convenience. If you find yourself pasting the same ThreadGrab profile URL into a script, you are wiring the durable archive path. Both are honest moves.</p>
+
+    <h2>When to use which, in three short rules</h2>
+
+    <ul>
+      <li><strong>Use tweet.md</strong> when the deliverable is <em>an Obsidian-friendly profile or thread snapshot</em>, when you are okay paying per call, and when you only need X.</li>
+      <li><strong>Use ThreadGrab</strong> when the deliverable is <em>a free, durable, multi-platform archive</em>, when you need a public no-auth API, or when your readers are not English-only.</li>
+      <li><strong>Use both</strong> when you want the Obsidian YAML node <em>and</em> the durable Markdown thread, and you are willing to spend a few credits to get the frontmatter right.</li>
+    </ul>
+
+    <h2>What a stable market actually means</h2>
+
+    <p>A quiet week is not a dead category &mdash; it is a category that has found its shape. tweet.md owns the X-only, Obsidian-first, agent-API niche; ThreadGrab owns the multi-platform, free, trilingual archive niche. Neither is racing to absorb the other. The honest reading is that the X-to-Markdown market in August 2026 is <em>segmented</em>, not consolidating: the converters that survive are the ones that pick a structural advantage (paid + agent-first, or free + multi-platform) and stop chasing the other side.</p>
+
+    <p>For archivists, that is good news. Two durable vendors beats one. The risks to watch are on each side: tweet.md&rsquo;s unstated rate limits and single-platform scope; ThreadGrab&rsquo;s dependency on the social platforms not changing their public-API surface out from under it. Neither is going away this month &mdash; both are worth wiring into a long-term archive workflow.</p>
+
+    <h2>FAQ</h2>
+
+    <div class="faq-item">
+      <strong>Is tweet.md free to use?</strong>
+      <p>Partially. tweet.md sells credit packs ($5 / $19 / $49) and offers a free demo for a <code>*t-twmduser</code> test profile. For real profile or thread conversions, you pay per call. There is no subscription and no free tier for production use.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>What platforms does tweet.md support?</strong>
+      <p>Only X / Twitter &mdash; posts, threads, Articles, and profiles. There is no Bluesky, LinkedIn, Mastodon, or Threads support in the visible product surface.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Can tweet.md output JSON or structured data?</strong>
+      <p>No. The documentation is explicit: output is plain text, either Markdown or Obsidian YAML-frontmatter Markdown. If you need structured JSON, you have to parse the Markdown yourself or use a different tool.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Does tweet.md publish rate limits?</strong>
+      <p>No. There is no published per-second or per-day rate limit anywhere in the visible docs. Treat each request as a metered spend against your credit balance and back off on <code>429</code> responses rather than relying on a stated quota.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>How is ThreadGrab different from tweet.md?</strong>
+      <p>ThreadGrab is free, multi-platform (X + Bluesky + LinkedIn + headless web), and ships with a public no-auth profile API. tweet.md is paid, X-only, and ships with an Obsidian-friendly YAML output. Use the one that matches your archive shape; both are worth keeping.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Should I switch from tweet.md to ThreadGrab (or vice versa)?</strong>
+      <p>Only if your archive shape changes. If you need multi-platform coverage, free unlimited capture, or a trilingual interface, move to ThreadGrab. If you need Obsidian YAML frontmatter, agent-API ergonomics, and you are happy paying per call, stay with tweet.md. Many archivists run both side-by-side.</p>
+    </div>
+
+    <div class="related-posts">
+      <h3>Related guides</h3>
+      <ul>
+        <li><a href="/en/blog/tweet-md-vs-threadgrab-2026.html">tweet.md vs ThreadGrab: X-to-Markdown Compared (2026)</a></li>
+        <li><a href="/en/blog/tweet-md-api-llm-workflows-2026.html">tweet.md API for LLM Workflows (2026)</a></li>
+        <li><a href="/en/blog/x-to-markdown-3-methods-2026.html">X to Markdown: 3 Methods Compared (2026)</a></li>
+      </ul>
+    </div>
+
+    <p style="margin-top:32px"><a href="/en/" style="display:inline-block;padding:12px 24px;background:#1d9bf0;color:#fff;border-radius:8px;text-decoration:none;font-weight:600">Try ThreadGrab &rarr;</a> <span style="color:#888;margin-left:12px">Free. No account. Multi-platform.</span></p>
+  </main>
+
+  <footer>
+    <a href="/en/">Home</a> &middot;
+    <a href="/en/blog/">Blog</a> &middot;
+    <a href="/en/blog/x-to-markdown-3-methods-2026.html">X to Markdown</a>
+    <br>
+    ThreadGrab is an independent tool. Not affiliated with X Corp., Twitter, or any featured service.
+    <br>
+    &copy; 2026 ThreadGrab
+  </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Tweet.md Stable 2026: When Nothing Changed, What Did We Learn?",
+    "description": "Tweet.md has been quiet since May 2026. A landscape retrospective: where X-to-Markdown sits, when tweet.md fits, where ThreadGrab covers the rest.",
+    "datePublished": "2026-08-28",
+    "dateModified": "2026-08-28",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/en/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/en/" },
+    "mainEntityOfPage": "https://threadgrab.com/en/blog/tweet-md-stable-archive-landscape-2026.html",
+    "inLanguage": "en"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://threadgrab.com/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/en/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Tweet.md Stable 2026", "item": "https://threadgrab.com/en/blog/tweet-md-stable-archive-landscape-2026.html" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is tweet.md free to use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Partially. tweet.md sells credit packs ($5 / $19 / $49) and offers a free demo for a *t-twmduser test profile. For real profile or thread conversions, you pay per call. There is no subscription and no free tier for production use."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What platforms does tweet.md support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Only X / Twitter: posts, threads, Articles, and profiles. There is no Bluesky, LinkedIn, Mastodon, or Threads support in the visible product surface."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can tweet.md output JSON or structured data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The documentation is explicit: output is plain text, either Markdown or Obsidian YAML-frontmatter Markdown. If you need structured JSON, you have to parse the Markdown yourself or use a different tool."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does tweet.md publish rate limits?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. There is no published per-second or per-day rate limit anywhere in the visible docs. Treat each request as a metered spend against your credit balance and back off on 429 responses rather than relying on a stated quota."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is ThreadGrab different from tweet.md?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ThreadGrab is free, multi-platform (X + Bluesky + LinkedIn + headless web), and ships with a public no-auth profile API. tweet.md is paid, X-only, and ships with an Obsidian-friendly YAML output. Use the one that matches your archive shape; both are worth keeping."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I switch from tweet.md to ThreadGrab (or vice versa)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Only if your archive shape changes. If you need multi-platform coverage, free unlimited capture, or a trilingual interface, move to ThreadGrab. If you need Obsidian YAML frontmatter, agent-API ergonomics, and you are happy paying per call, stay with tweet.md. Many archivists run both side-by-side."
+        }
+      }
+    ]
+  }
+  </script>
+</body>
+</html>

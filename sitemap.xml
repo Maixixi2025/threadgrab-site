@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://threadgrab.com/en/blog/tweet-md-stable-archive-landscape-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/tweet-md-stable-archive-landscape-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/tweet-md-stable-archive-landscape-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/tweet-md-stable-archive-landscape-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/tweet-md-stable-archive-landscape-2026.html"/>
+    <lastmod>2026-08-28</lastmod>
+  </url>
+
     <url>
     <loc>https://threadgrab.com/en/blog/claude-in-chrome-browser-agent-2026.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/claude-in-chrome-browser-agent-2026.html"/>
