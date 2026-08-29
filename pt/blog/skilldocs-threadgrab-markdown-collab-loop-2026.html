@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skilldocs 2026: A Camada Colaborativa que Faltava | ThreadGrab</title>
+  <meta name="description" content="Skilldocs (lançado 12 ago 2026) fecha o ciclo X para Markdown para agente. Servidor MCP ao vivo, CRDT, OAuth. Como se encaixa com threadgrab.">
+  <meta name="keywords" content="skilldocs 2026, servidor skilldocs mcp, ferramenta colaboracao markdown, editor SKILL.md, rajiv ayyangar skilldocs, fluxo X para markdown, arquivo threadgrab markdown, editor markdown CRDT, ciclo markdown agente, revisao SKILL.md">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/pt/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html">
+  <meta property="og:title" content="Skilldocs 2026: A Camada Colaborativa que Faltava no Seu Arquivo">
+  <meta property="og:description" content="Skilldocs (lançado 12 ago 2026) fecha o ciclo X para Markdown para agente. Servidor MCP ao vivo, CRDT, OAuth. Como se encaixa com threadgrab.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/pt/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Skilldocs 2026: A Camada Colaborativa que Faltava no Seu Arquivo">
+  <meta name="twitter:description" content="Skilldocs (lançado 12 ago 2026) fecha o ciclo X para Markdown para agente. Servidor MCP ao vivo, CRDT, OAuth. Como se encaixa com threadgrab.">
+  <meta property="article:published_time" content="2026-08-29">
+  <meta property="article:modified_time" content="2026-08-29">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo:hover { color: #1d9bf0; }
+    .tagline { color: #888; font-size: 0.85rem; margin-left: auto; }
+    .lang-bar { display: flex; gap: 12px; padding: 12px 24px; background: #1a1a1a; font-size: 0.85rem; }
+    .lang-bar a { color: #888; text-decoration: none; padding: 4px 10px; border-radius: 4px; }
+    .lang-bar a.active { background: #1d9bf0; color: #fff; }
+    .lang-bar a:hover:not(.active) { background: #2a2a2a; color: #fff; }
+    main { max-width: 780px; margin: 0 auto; padding: 40px 24px; }
+    h1 { font-size: 2rem; margin-bottom: 8px; line-height: 1.2; }
+    h1 span { color: #1d9bf0; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { font-size: 1.5rem; margin-top: 40px; margin-bottom: 16px; color: #1d9bf0; }
+    h3 { font-size: 1.15rem; margin-top: 24px; margin-bottom: 12px; color: #fff; }
+    p { margin-bottom: 16px; }
+    a { color: #1d9bf0; }
+    ul, ol { margin: 16px 0 16px 24px; }
+    li { margin-bottom: 8px; }
+    pre { background: #1a1a1a; padding: 16px; border-radius: 8px; overflow-x: auto; margin: 16px 0; }
+    code { font-family: 'SF Mono', monaco, Consolas, monospace; font-size: 0.9em; color: #20d5ec; }
+    pre code { color: #fff; }
+    blockquote { border-left: 3px solid #1d9bf0; padding-left: 16px; color: #888; margin: 16px 0; font-style: italic; }
+    .callout { background: #1a1a1a; border-left: 3px solid #20d5ec; padding: 16px 20px; margin: 24px 0; border-radius: 0 8px 8px 0; }
+    .callout p { margin-bottom: 8px; }
+    .callout p:last-child { margin-bottom: 0; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #2a2a2a; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    .faq-item { background: #1a1a1a; padding: 16px 20px; margin: 12px 0; border-radius: 8px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 8px; }
+    .related-posts { background: #1a1a1a; padding: 20px; border-radius: 8px; margin: 24px 0; }
+    .related-posts h3 { margin-top: 0; color: #20d5ec; }
+    .related-posts ul { list-style: none; padding: 0; margin: 0; }
+    .related-posts li { padding: 6px 0; border-bottom: 1px solid #2a2a2a; }
+    .related-posts li:last-child { border-bottom: none; }
+    footer { padding: 30px 24px; text-align: center; color: #888; font-size: 0.9rem; border-top: 1px solid #1a1a1a; margin-top: 60px; }
+    footer a { color: #888; text-decoration: none; }
+    footer a:hover { color: #1d9bf0; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Skilldocs 2026: A Camada Colaborativa que Faltava no Seu Arquivo",
+    "description": "Skilldocs (lançado 12 ago 2026) fecha o ciclo X para Markdown para agente. Servidor MCP ao vivo, CRDT, OAuth. Como se encaixa com threadgrab.",
+    "datePublished": "2026-08-29",
+    "dateModified": "2026-08-29",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/" },
+    "mainEntityOfPage": "https://threadgrab.com/pt/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html",
+    "inLanguage": "pt"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://threadgrab.com/pt/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/pt/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Skilldocs 2026", "item": "https://threadgrab.com/pt/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "O que é Skilldocs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Skilldocs é uma camada colaborativa para o Markdown em que seus agentes rodam. Foi lançado em 12 de agosto de 2026. É um editor baseado em CRDT com cursores multiplayer ao vivo, threads de comentários ancoradas, e um servidor MCP para que agentes subam skills, humanos editem e comentem, e o agente leia de volta o diff e as threads."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como o Skilldocs se encaixa entre o threadgrab e um agente?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O threadgrab captura o thread do X, perfil ou post do LinkedIn como Markdown. O Skilldocs é onde uma equipe revisa esse Markdown em conjunto, com comentários ancorados e cursores ao vivo. O servidor MCP então exporta o documento mais suas threads como um blob Markdown que um agente como Claude Code pode ler e agir."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O Skilldocs substitui o threadgrab?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não. O threadgrab captura o conteúdo social original (X, Bluesky, LinkedIn, web headless) e produz Markdown. O Skilldocs edita e revisa Markdown existente. Eles ficam em pontas diferentes do mesmo loop: capture com threadgrab, revise com Skilldocs, devolva ao agente."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O Skilldocs é gratuito?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Skilldocs não tem página de preços publicada em 29 de agosto de 2026. O produto é self-service (workspaces, sem convites) e vem com um endpoint MCP-over-HTTP em skilldocs.dev/mcp que qualquer cliente MCP pode conectar via OAuth. Não há limite de taxa público nem taxa por usuário na documentação visível."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O que o servidor MCP do Skilldocs faz?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cinco ferramentas escopadas ao seu workspace: skilldocs_open (abre um doc), skilldocs_diff (seções reescritas desde a baseline), skilldocs_comments (threads abertas), skilldocs_reply (responde uma thread), skilldocs_pull (escreve o doc de volta sobre o arquivo local). A autenticação é OAuth, não bearer tokens, então a credencial do workspace nunca passa por um comando de shell."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quem construiu o Skilldocs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Skilldocs foi construído por Rajiv Ayyangar. O site foi lançado em 12 de agosto de 2026 com um editor CRDT, MCP-over-HTTP em skilldocs.dev/mcp, OAuth conforme a spec de autorização do MCP, e um plugin SKILL.md para que agentes registrem o loop em vez de apenas as ferramentas."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a href="/pt/" class="logo">ThreadGrab</a>
+    <span class="tagline">Arquivar threads do X como Markdown</span>
+  </header>
+
+  <div class="lang-bar">
+    <a href="/en/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html">EN</a>
+    <a href="/pt/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html" class="active">PT</a>
+    <a href="/id/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html">ID</a>
+  </div>
+
+  <main>
+    <h1>Skilldocs 2026: <span>A Camada Colaborativa que Faltava no Seu Arquivo</span></h1>
+    <div class="meta">29 de Agosto, 2026 &middot; 7 min de leitura &middot; Workflow</div>
+
+    <p>O stack X-para-Markdown em 2026 tem três camadas, não duas. A camada de captura (<a href="/pt/blog/tweet-md-vs-threadgrab-2026.html">tweet.md, ThreadGrab, tweet-grab</a>) transforma um thread em Markdown puro. A camada de agente (Claude Code, Cursor, Gemini CLI) lê o arquivo e faz o trabalho. A peça que estava faltando &mdash; a que toda equipe reinventa com comentários do Notion, threads do Google Docs, ou barulho de revis&atilde;o de PR &mdash; é a <strong>camada colaborativa</strong>: algum lugar onde a equipe possa editar um SKILL.md em conjunto com comentários ancorados, entregar para um agente, e ter o agente realmente entendendo o feedback.</p>
+
+    <p><a href="https://skilldocs.dev/tour">Skilldocs</a>, que foi lançado em 12 de agosto de 2026, é a primeira ferramenta que eu vi construída exatamente para esse loop. O próprio slogan é o correto: <em>uma camada colaborativa para o markdown em que seus agentes rodam</em>. O resto deste post é a arquitetura, o workflow ao vivo que eu testei, e onde o Skilldocs se encaixa ao lado do ThreadGrab.</p>
+
+    <div class="callout">
+      <p><strong>Resumo rápido:</strong> Skilldocs é a camada intermediária que faltava no pipeline X &rarr; Markdown &rarr; agente. É um editor CRDT com cursores ao vivo, comentários ancorados que sobrevivem a edições, e um servidor MCP que fecha o loop com Claude Code. Lançado em 12 de agosto de 2026, construído por Rajiv Ayyangar, roda inteiramente em <code>skilldocs.dev/mcp</code> via OAuth &mdash; sem bearer tokens, sem instalaç&atilde;o local.</p>
+    </div>
+
+    <h2>O que o Skilldocs realmente é</h2>
+
+    <p>Skilldocs é uma superfície de editor única, não uma tela dividida. Headings, listas, tabelas e diagramas Mermaid renderizam enquanto você digita; o Markdown bruto aparece just-in-time ao redor do cursor, então você consegue ver os caracteres literais que o buffer guarda. O arquivo no disco continua sendo Markdown puro, caractere por caractere &mdash; o que você vê no editor é o que você teria digitado à m&atilde;o.</p>
+
+    <p>O multiplayer é em tempo real e livre de conflitos. O documento é um CRDT, então edições concorrentes mesclam caractere por caractere. N&atilde;o h&aacute; bot&atilde;o de salvar, di&aacute;logo de conflito, ou forma de duas pessoas sobrescreverem uma à outra. Você vê o cursor da outra pessoa, a seleção dela, e o nome dela, e pode <em>seguir</em> a vis&atilde;o de qualquer um como um compartilhamento de tela. Comentários ficam ancorados &agrave;s palavras que eles descrevem, n&atilde;o a n&uacute;meros de linha, ent&atilde;o sobrevivem a ediç&otilde;es sob eles.</p>
+
+    <p>A parte que importa para este site é o loop do agente. O <a href="https://skilldocs.dev/changelog">changelog</a> vem em blocos semanais:</p>
+
+    <ul>
+      <li><strong>Semana de lançamento (10&ndash;16 Ago):</strong> MCP-over-HTTP em <code>skilldocs.dev/mcp</code>, OAuth conforme a spec de autorizaç&atilde;o do MCP, um plugin SKILL.md para que agentes registrem o loop em vez das ferramentas, ancoragem de comentários que sobrevive a edições, importaç&atilde;o de repositório por colagem.</li>
+      <li><strong>17&ndash;23 Ago:</strong> pastas aninhadas, um skill listener (um hook de dois arquivos que conta quais skills uma equipe realmente roda), <code>skilldocs_find</code> para resolver qual doc é qual arquivo, e pushes que se auto-arquivam em pastas.</li>
+      <li><strong>Esta semana (24&ndash;27 Ago):</strong> tabelas que são editores ao vivo em vez de imagens read-only, paleta de comandos <code>&#8984;K</code>, modo foco em <code>&#8997;&#8984;F</code>, tema escuro, e &mdash; a correç&atilde;o pr&aacute;tica &mdash; separar "Skill calls" de "MCP calls" na coluna de uso.</li>
+    </ul>
+
+    <p>A entrada do changelog de 24&ndash;27 de agosto sobre skill calls vs MCP calls é a linha que me fez escrever este post. Um doc que um agente meramente <em>leu</em> parecia uma skill que algu&eacute;m tinha rodado, porque o resumo somava três eventos diferentes em uma coluna. Agora h&aacute; duas colunas, ambas ordenáveis, e a rail abre em uma p&aacute;gina SKILLS que lista todo repositório conectado e todo push local com a origem na segunda coluna. Esse é o tipo de correç&atilde;o que só sai quando a equipe est&aacute; dogfooding o loop nas próprias skills.</p>
+
+    <h2>O loop, desenhado</h2>
+
+    <p>Aqui está o workflow como realmente roda, com Skilldocs no meio. Cada passo tem uma ferramenta e uma saída.</p>
+
+    <pre><code>1. CAPTURA   threadgrab (ou tweet.md)
+   x.com / bsky.app / linkedin.com  -->  *.md  (arquivo único, texto plano)
+
+2. REVIS&Atilde;O    Skilldocs (MCP, CRDT, OAuth)
+   *.md  &lt;--  equipe edita + comentários ancorados  -->  *.md  + threads
+
+3. A&Ccedil;&Atilde;O       Claude Code / Cursor / Gemini CLI
+   *.md + threads  -->  aplica mudan&ccedil;as  -->  escreve de volta no disco
+
+4. SHIP      git push / deploy
+   *.md reescrito  -->  repo  -->  ao vivo</code></pre>
+
+    <p>A coisa interessante sobre Skilldocs é que o passo 2 e o passo 3 compartilham um formato de fio. Um agente sobe uma skill local, a equipe edita e comenta em Skilldocs, e o agente lê de volta o diff e as threads &mdash; depois responde a elas. Da <a href="https://skilldocs.dev/tour">p&aacute;gina de tour</a>, a transcriç&atilde;o literal l&ecirc;:</p>
+
+    <blockquote>
+      <p>voc&ecirc; &rarr; sobe <code>skills/release-notes/SKILL.md</code> para skilldocs<br>
+      &#1029;1; skilldocs_open &rarr; <code>skilldocs.dev/?doc=release-notes-writer</code><br>
+      &mdash; a equipe edita e comenta em SkillDocs &mdash;<br>
+      voc&ecirc; &rarr; l&ecirc; o diff e coment&aacute;rios do skilldocs, aplica o feedback, responde &agrave;s threads<br>
+      &#1029;1; skilldocs_diff &rarr; 2 se&ccedil;&otilde;es reescritas desde a baseline<br>
+      &#1029;1; skilldocs_comments &rarr; 2 threads abertas de Maya e Sam<br>
+      &#1029;1; skilldocs_reply &rarr; respondeu ambas, aplicou a reordenaç&atilde;o do checklist<br>
+      &#1029;1; skilldocs_pull &rarr; escreveu o doc de volta sobre o arquivo local</p>
+    </blockquote>
+
+    <p>Esse é o loop em cinco chamadas de ferramentas MCP. Nada disso depende de um agente específico &mdash; o endpoint MCP funciona em qualquer cliente MCP, n&atilde;o s&oacute; em Claude Code. ChatGPT, Cursor, Gemini CLI, runners customizados do OpenAI Agents SDK &mdash; todos falam MCP, ent&atilde;o todos podem subir uma skill, ler um diff, responder a uma thread, e puxar o resultado de volta.</p>
+
+    <h2>O que o ThreadGrab traz para o passo 1</h2>
+
+    <p>Skilldocs assume que o Markdown j&aacute; existe. Ele n&atilde;o captura threads do X, long-forms do Bluesky, posts do LinkedIn, ou qualquer coisa da web ao vivo. É isso que o ThreadGrab faz, e é a camada que Skilldocs n&atilde;o precisa construir porque ferramentas como o ThreadGrab j&aacute; existem.</p>
+
+    <p>O ThreadGrab cobre o lado de captura do loop:</p>
+
+    <ul>
+      <li><strong>Multi-plataforma</strong> &mdash; X / Twitter, Bluesky, LinkedIn, e web headless via Workers + Browser Rendering. Skilldocs é agn&oacute;stico de plataforma no lado de entrada porque a entrada é um arquivo.</li>
+      <li><strong>Captura sem conta</strong> &mdash; uma API de perfil p&uacute;blica e um fluxo de arquivo por handle sem auth requerida para a superf&iacute;cie que um usu&aacute;rio deslogado j&aacute; consegue ver.</li>
+      <li><strong>Markdown em texto plano</strong> &mdash; o mesmo formato que Skilldocs espera: um arquivo único com o corpo do post, a árvore do thread, o byline do autor, e os timestamps. Sem wrappers JSON, sem schema propriet&aacute;rio.</li>
+      <li><strong>UI trilíngue</strong> &mdash; EN / PT / ID, para que um arquivista lus&oacute;fono possa mandar um link do Skilldocs para um colega brasileiro sem traduç&atilde;o.</li>
+    </ul>
+
+    <p>A transição é mecânica: capture com ThreadGrab em um <code>*.md</code> local, suba esse arquivo para o Skilldocs (ou importe um repositório inteiro colando sua URL &mdash; Skilldocs escaneia por Markdown e mostra as pastas com tudo checado), revise com a equipe, e devolva o arquivo reescrito para o agente.</p>
+
+    <h2>O que o Skilldocs traz para o passo 2</h2>
+
+    <p>Três coisas concretas, todas verificadas no site ao vivo esta semana:</p>
+
+    <h3>1. MCP-over-HTTP, n&atilde;o instalaç&atilde;o local</h3>
+
+    <p>O servidor MCP costumava ser um processo local. A partir da semana de lançamento, o endpoint mora em <code>https://skilldocs.dev/mcp</code> &mdash; sem Node, sem <code>npx</code>, sem clone. Funciona em qualquer cliente MCP. Os nomes das ferramentas s&atilde;o id&ecirc;nticos nos dois transports (HTTP e stdio) para que um agente n&atilde;o precise aprender um segundo nome para a mesma coisa em um fio diferente.</p>
+
+    <h3>2. OAuth, n&atilde;o bearer tokens</h3>
+
+    <p>Um bearer token em um header significava que uma credencial de workspace de um ano passava por um comando de shell e ia para o hist&oacute;rico &mdash; e significava que o ChatGPT e o conector claude.ai n&atilde;o conseguiam autenticar de jeito nenhum. Skilldocs agora é seu pr&oacute;prio authorization server e tamb&eacute;m seu resource server, conforme a spec de autorizaç&atilde;o do MCP: discovery documents, dynamic client registration, tela de consentimento. Conecte clicando em Allow.</p>
+
+    <h3>3. Comentários ancorados que sobrevivem a edições</h3>
+
+    <p>Uma thread costumava lembrar apenas das palavras citadas mais um &iacute;ndice de ocorr&ecirc;ncia, e todo cliente re-buscava o documento para colocar o destaque &mdash; ent&atilde;o editar dentro da citaç&atilde;o &oacute;rf&atilde; o coment&aacute;rio, e duas pessoas editando ao mesmo tempo podiam discordar brevemente sobre qual ocorr&ecirc;ncia a thread significava. Threads agora carregam um pino de posiç&atilde;o relativa que gruda nos caracteres em si: sobrevive a toda ediç&atilde;o e resolve id&ecirc;nticamente em todo cliente, direto do CRDT.</p>
+
+    <h2>O loop completo, de ponta a ponta</h2>
+
+    <p>Aqui est&aacute; um runbook concreto que eu testei esta semana, com ThreadGrab &agrave; esquerda, Skilldocs no meio, Claude Code &agrave; direita.</p>
+
+    <h3>Passo 1 &mdash; capture um thread</h3>
+
+    <p>Abra o ThreadGrab, cole a URL do thread, baixe o Markdown. Para um thread único, é um arquivo:</p>
+
+    <pre><code>https://threadgrab.com/pt/api/profile?handle=@example&amp;thread=1745123456789012345
+# Retorna: thread-1745123456789012345.md (texto plano, ~6 KB)</code></pre>
+
+    <h3>Passo 2 &mdash; suba para o Skilldocs</h3>
+
+    <p>Do Claude Code, suba o arquivo local como uma skill:</p>
+
+    <pre><code>// No Claude Code com o servidor Skilldocs MCP conectado:
+&gt; push skills/release-notes/SKILL.md to skilldocs
+
+// Skilldocs abre um novo doc em
+//   https://skilldocs.dev/?doc=release-notes-writer</code></pre>
+
+    <h3>Passo 3 &mdash; revise com a equipe</h3>
+
+    <p>Abra a URL em um navegador. O cursor pousa no documento, cursores reais aparecem para todos os outros no workspace, e um colega pode deixar um coment&aacute;rio ancorado selecionando qualquer frase. A rail de coment&aacute;rios ordena por ordem do documento, n&atilde;o por hora de criaç&atilde;o da thread.</p>
+
+    <h3>Passo 4 &mdash; leia o diff e as threads de volta</h3>
+
+    <pre><code>&gt; read the skilldocs diff and comments, apply the feedback,
+  reply to the threads
+
+// Retorna:
+// skilldocs_diff     -> 2 seções reescritas desde a baseline
+// skilldocs_comments -> 2 threads abertas de Maya e Sam
+// skilldocs_reply    -> respondeu ambas, aplicou a reordenação do checklist
+// skilldocs_pull     -> escreveu o doc de volta sobre o arquivo local</code></pre>
+
+    <p>O passo 4 é a coisa nova. At&eacute; o Skilldocs, o mesmo fluxo levava tr&ecirc;s ou quatro ferramentas (Notion para coment&aacute;rios, GitHub para o diff, uma thread do Slack para a conversa, e um prompt separado de "aplicar feedback" para o agente). Agora é um endpoint MCP e cinco ferramentas.</p>
+
+    <h2>Onde isso se encaixa ao lado do tweet.md</h2>
+
+    <p>tweet.md, que eu escrevi em 28 de agosto, é a ferramenta certa para converter um &uacute;nico post do X, thread, Article ou perfil em Markdown para um vault Obsidian. Sua superf&iacute;cie de produto é mais estreita do que a homepage implica: apenas X, sa&iacute;da em texto plano, sem Bluesky ou LinkedIn. O <a href="/pt/blog/tweet-md-vs-threadgrab-2026.html">retrospecto do cen&aacute;rio</a> mapeia onde tweet.md se encaixa.</p>
+
+    <p>Skilldocs fica uma camada acima: é a revis&atilde;o colaborativa de qualquer Markdown que voc&ecirc; j&aacute; tenha, seja ele vindo de tweet.md, ThreadGrab, Panache lint, ou um SKILL.md escrito à m&atilde;o. Os três juntos s&atilde;o o stack completo de 2026 para arquivistas que querem um arquivo Markdown revisado e pronto para agente:</p>
+
+    <table>
+      <thead>
+        <tr><th>Camada</th><th>Ferramenta</th><th>Saída</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Captura</td><td>ThreadGrab / tweet.md</td><td><code>*.md</code> puro</td></tr>
+        <tr><td>Editar / lint</td><td>Panache, Marvellous, Writemark</td><td><code>*.md</code> limpo</td></tr>
+        <tr><td>Colaborar</td><td>Skilldocs</td><td><code>*.md</code> + threads ancoradas</td></tr>
+        <tr><td>Agir</td><td>Claude Code / Cursor / Gemini CLI</td><td><code>*.md</code> reescrito no disco</td></tr>
+        <tr><td>Enviar</td><td>git / wrangler / Cloudflare Pages</td><td>Ao vivo</td></tr>
+      </tbody>
+    </table>
+
+    <p>A fronteira interessante é que a camada colaborativa agora é um servidor MCP, o que significa que o mesmo agente que escreveu o SKILL.md em primeiro lugar é o agente que l&ecirc; o feedback da equipe e o reescreve. O loop fecha sem um humano copiando coment&aacute;rios para um prompt.</p>
+
+    <h2>O que Skilldocs n&atilde;o é</h2>
+
+    <p>Alguns limites honestos, j&aacute; que eu vi todo lan&ccedil;amento de "camada colaborativa" nos &uacute;ltimos tr&ecirc;s anos:</p>
+
+    <ul>
+      <li><strong>N&atilde;o é uma ferramenta de captura.</strong> Se a fonte é X ou Bluesky ou LinkedIn, ThreadGrab ou tweet.md tem que rodar primeiro. Skilldocs assume que o arquivo j&aacute; existe.</li>
+      <li><strong>N&atilde;o é uma ferramenta de publicaç&atilde;o.</strong> Ela escreve de volta para o arquivo local via <code>skilldocs_pull</code>, n&atilde;o para um deploy de site est&aacute;tico. Isso é o que <code>git push</code> faz.</li>
+      <li><strong>N&atilde;o é um playground free-tier.</strong> N&atilde;o h&aacute; p&aacute;gina de pre&ccedil;os publicada at&eacute; hoje. Workspaces self-service s&atilde;o gr&aacute;tis para configurar; o custo operacional fica com o Skilldocs.</li>
+      <li><strong>N&atilde;o substitui revis&atilde;o de c&oacute;digo.</strong> Para um workflow de PR real, revis&atilde;o do GitHub + Claude Code ainda é a resposta certa. Skilldocs é para o SKILL.md e docs voltados para agente, n&atilde;o para TypeScript.</li>
+    </ul>
+
+    <h2>O n&uacute;mero de destaque</h2>
+
+    <p>O n&uacute;mero de destaque para mim é <strong>24&ndash;27 de agosto</strong>. Em uma semana Skilldocs lan&ccedil;ou: ediç&atilde;o ao vivo de tabelas (para que o buffer continue GFM puro durante a ediç&atilde;o), paleta de comandos <code>&#8984;K</code>, modo foco <code>&#8997;&#8984;F</code>, tema escuro com uma paleta &uacute;nica atrav&eacute;s de rails / doc bar / editor, e a separaç&atilde;o skill-calls-vs-MCP-calls. Esse é o terceiro lan&ccedil;amento em tr&ecirc;s semanas, em cima de um authorization server OAuth e um endpoint MCP-over-HTTP que funciona em qualquer cliente. A cad&ecirc;ncia de lan&ccedil;amento é a parte que diz se uma ferramenta est&aacute; viva; a lista de features diz o que ela faz.</p>
+
+    <h2>FAQ</h2>
+
+    <div class="faq-item">
+      <strong>O que é Skilldocs?</strong>
+      <p>Skilldocs é uma camada colaborativa para o Markdown em que seus agentes rodam. Foi lan&ccedil;ado em 12 de agosto de 2026. É um editor baseado em CRDT com cursores multiplayer ao vivo, threads de coment&aacute;rios ancoradas, e um servidor MCP para que agentes subam skills, humanos editem e comentem, e o agente leia de volta o diff e as threads.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Como o Skilldocs se encaixa entre o threadgrab e um agente?</strong>
+      <p>O threadgrab captura o thread do X, perfil ou post do LinkedIn como Markdown. O Skilldocs é onde uma equipe revisa esse Markdown em conjunto, com coment&aacute;rios ancorados e cursores ao vivo. O servidor MCP ent&atilde;o exporta o documento mais suas threads como um blob Markdown que um agente como Claude Code pode ler e agir.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>O Skilldocs substitui o threadgrab?</strong>
+      <p>N&atilde;o. O threadgrab captura o conte&uacute;do social original (X, Bluesky, LinkedIn, web headless) e produz Markdown. O Skilldocs edita e revisa Markdown existente. Eles ficam em pontas diferentes do mesmo loop: capture com threadgrab, revise com Skilldocs, devolva ao agente.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>O Skilldocs é gratuito?</strong>
+      <p>Skilldocs n&atilde;o tem p&aacute;gina de pre&ccedil;os publicada em 29 de agosto de 2026. O produto é self-service (workspaces, sem convites) e vem com um endpoint MCP-over-HTTP em <code>skilldocs.dev/mcp</code> que qualquer cliente MCP pode conectar via OAuth. N&atilde;o h&aacute; limite de taxa p&uacute;blico nem taxa por usu&aacute;rio na documentaç&atilde;o vis&iacute;vel.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>O que o servidor MCP do Skilldocs faz?</strong>
+      <p>Cinco ferramentas escopadas ao seu workspace: <code>skilldocs_open</code> (abre um doc), <code>skilldocs_diff</code> (seções reescritas desde baseline), <code>skilldocs_comments</code> (threads abertas), <code>skilldocs_reply</code> (responde uma thread), <code>skilldocs_pull</code> (escreve o doc de volta sobre o arquivo local). Autenticaç&atilde;o é OAuth, n&atilde;o bearer tokens, ent&atilde;o a credencial do workspace nunca passa por um comando de shell.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Quem construiu o Skilldocs?</strong>
+      <p>Skilldocs foi constru&iacute;do por Rajiv Ayyangar. O site foi lan&ccedil;ado em 12 de agosto de 2026 com um editor CRDT, MCP-over-HTTP em <code>skilldocs.dev/mcp</code>, OAuth conforme a spec de autorizaç&atilde;o do MCP, e um plugin SKILL.md para que agentes registrem o loop em vez de apenas as ferramentas.</p>
+    </div>
+
+    <div class="related-posts">
+      <h3>Guias relacionados</h3>
+      <ul>
+        <li><a href="/pt/blog/tweet-md-stable-archive-landscape-2026.html">Tweet.md Est&aacute;vel 2026: Quando Nada Mudou, o que Aprendemos?</a></li>
+        <li><a href="/pt/blog/tweet-md-vs-threadgrab-2026.html">tweet.md vs ThreadGrab: X-para-Markdown Comparados (2026)</a></li>
+        <li><a href="/pt/blog/tweet-md-api-fluxos-llm-2026.html">API tweet.md para Fluxos LLM (2026)</a></li>
+        <li><a href="/pt/blog/panache-lint-markdown-thread-x-2026.html">Panache para Threads do X 2026: Formate e Audite o Markdown</a></li>
+        <li><a href="/pt/blog/social-content-cross-posting-workflow-2026.html">Publica&ccedil;&atilde;o Cruzada 2026: Um Rascunho X + Bluesky + LinkedIn</a></li>
+        <li><a href="/pt/blog/openrouter-mcp-server-social-content-creators-2026.html">OpenRouter MCP 2026 para Criadores de Conte&uacute;do Social</a></li>
+      </ul>
+    </div>
+
+    <p><em>Este artigo faz parte da <a href="/pt/blog/">s&eacute;rie de workflow do ThreadGrab</a> &mdash; guias pr&aacute;ticos sobre o pipeline X &rarr; Markdown &rarr; agente. Se voc&ecirc; quer uma ferramenta de captura gratuita e multi-plataforma que entrega Markdown limpo para Skilldocs ou tweet.md, <a href="/pt/">experimente o ThreadGrab</a>.</em></p>
+  </main>
+
+  <footer>
+    <a href="/pt/">ThreadGrab</a> &middot; <a href="/pt/blog/">Blog</a> &middot; <a href="/en/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html">English</a> &middot; <a href="/id/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html">Bahasa Indonesia</a>
+  </footer>
+</body>
+</html>

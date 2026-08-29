@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skilldocs 2026: Lapisan Kolaborasi yang Hilang | ThreadGrab</title>
+  <meta name="description" content="Skilldocs (rilis 12 Agustus 2026) menutup loop X ke Markdown ke agen. Server MCP aktif, CRDT, OAuth. Posisinya berdampingan dengan threadgrab.">
+  <meta name="keywords" content="skilldocs 2026, server skilldocs mcp, alat kolaborasi markdown, editor SKILL.md, rajiv ayyangar skilldocs, alur X ke markdown, arsip threadgrab markdown, editor markdown CRDT, loop markdown agen, tinjauan SKILL.md">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/id/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html">
+  <meta property="og:title" content="Skilldocs 2026: Lapisan Kolaborasi yang Hilang di Arsip Anda">
+  <meta property="og:description" content="Skilldocs (rilis 12 Agustus 2026) menutup loop X ke Markdown ke agen. Server MCP aktif, CRDT, OAuth. Posisinya berdampingan dengan threadgrab.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/id/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Skilldocs 2026: Lapisan Kolaborasi yang Hilang di Arsip Anda">
+  <meta name="twitter:description" content="Skilldocs (rilis 12 Agustus 2026) menutup loop X ke Markdown ke agen. Server MCP aktif, CRDT, OAuth. Posisinya berdampingan dengan threadgrab.">
+  <meta property="article:published_time" content="2026-08-29">
+  <meta property="article:modified_time" content="2026-08-29">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo:hover { color: #1d9bf0; }
+    .tagline { color: #888; font-size: 0.85rem; margin-left: auto; }
+    .lang-bar { display: flex; gap: 12px; padding: 12px 24px; background: #1a1a1a; font-size: 0.85rem; }
+    .lang-bar a { color: #888; text-decoration: none; padding: 4px 10px; border-radius: 4px; }
+    .lang-bar a.active { background: #1d9bf0; color: #fff; }
+    .lang-bar a:hover:not(.active) { background: #2a2a2a; color: #fff; }
+    main { max-width: 780px; margin: 0 auto; padding: 40px 24px; }
+    h1 { font-size: 2rem; margin-bottom: 8px; line-height: 1.2; }
+    h1 span { color: #1d9bf0; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { font-size: 1.5rem; margin-top: 40px; margin-bottom: 16px; color: #1d9bf0; }
+    h3 { font-size: 1.15rem; margin-top: 24px; margin-bottom: 12px; color: #fff; }
+    p { margin-bottom: 16px; }
+    a { color: #1d9bf0; }
+    ul, ol { margin: 16px 0 16px 24px; }
+    li { margin-bottom: 8px; }
+    pre { background: #1a1a1a; padding: 16px; border-radius: 8px; overflow-x: auto; margin: 16px 0; }
+    code { font-family: 'SF Mono', monaco, Consolas, monospace; font-size: 0.9em; color: #20d5ec; }
+    pre code { color: #fff; }
+    blockquote { border-left: 3px solid #1d9bf0; padding-left: 16px; color: #888; margin: 16px 0; font-style: italic; }
+    .callout { background: #1a1a1a; border-left: 3px solid #20d5ec; padding: 16px 20px; margin: 24px 0; border-radius: 0 8px 8px 0; }
+    .callout p { margin-bottom: 8px; }
+    .callout p:last-child { margin-bottom: 0; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #2a2a2a; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    .faq-item { background: #1a1a1a; padding: 16px 20px; margin: 12px 0; border-radius: 8px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 8px; }
+    .related-posts { background: #1a1a1a; padding: 20px; border-radius: 8px; margin: 24px 0; }
+    .related-posts h3 { margin-top: 0; color: #20d5ec; }
+    .related-posts ul { list-style: none; padding: 0; margin: 0; }
+    .related-posts li { padding: 6px 0; border-bottom: 1px solid #2a2a2a; }
+    .related-posts li:last-child { border-bottom: none; }
+    footer { padding: 30px 24px; text-align: center; color: #888; font-size: 0.9rem; border-top: 1px solid #1a1a1a; margin-top: 60px; }
+    footer a { color: #888; text-decoration: none; }
+    footer a:hover { color: #1d9bf0; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Skilldocs 2026: Lapisan Kolaborasi yang Hilang di Arsip Anda",
+    "description": "Skilldocs (rilis 12 Agustus 2026) menutup loop X ke Markdown ke agen. Server MCP aktif, CRDT, OAuth. Posisinya berdampingan dengan threadgrab.",
+    "datePublished": "2026-08-29",
+    "dateModified": "2026-08-29",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/id/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/id/" },
+    "mainEntityOfPage": "https://threadgrab.com/id/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html",
+    "inLanguage": "id"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://threadgrab.com/id/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/id/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Skilldocs 2026", "item": "https://threadgrab.com/id/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Apa itu Skilldocs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Skilldocs adalah lapisan kolaborasi untuk Markdown tempat agen Anda berjalan. Diluncurkan 12 Agustus 2026. Ini adalah editor berbasis CRDT dengan kursor multipemain langsung, utas komentar berlabuh, dan server MCP agar agen mendorong skill, manusia mengedit dan mengomentari, dan agen membaca kembali diff dan utas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bagaimana Skilldocs cocok di antara threadgrab dan agen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "threadgrab menangkap thread X, profil, atau postingan LinkedIn sebagai Markdown. Skilldocs adalah tempat sebuah tim meninjau Markdown itu bersama, dengan komentar berlabuh dan kursor langsung. Server MCP lalu mengekspor dokumen beserta utasnya sebagai satu blob Markdown yang bisa dibaca dan dijalankan agen seperti Claude Code."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah Skilldocs menggantikan threadgrab?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tidak. threadgrab menangkap konten sosial asli (X, Bluesky, LinkedIn, web headless) dan menghasilkan Markdown. Skilldocs mengedit dan meninjau Markdown yang sudah ada. Keduanya berada di ujung berbeda dari loop yang sama: tangkap dengan threadgrab, tinjau dengan Skilldocs, kembalikan ke agen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah Skilldocs gratis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Skilldocs belum punya halaman harga publik per 29 Agustus 2026. Produknya self-service (workspace, tanpa undangan) dan disertai endpoint MCP-over-HTTP di skilldocs.dev/mcp yang bisa dihubungkan klien MCP mana pun via OAuth. Tidak ada batas laju publik atau biaya per pengguna di dokumentasi yang terlihat."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apa yang dilakukan server MCP Skilldocs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lima alat yang dicakup ke workspace Anda: skilldocs_open (buka dokumen), skilldocs_diff (bagian yang ditulis ulang sejak baseline), skilldocs_comments (utas terbuka), skilldocs_reply (jawab utas), skilldocs_pull (tulis dokumen kembali menimpa file lokal). Autentikasinya OAuth, bukan bearer token, sehingga kredensial workspace tidak pernah melewati perintah shell."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Siapa yang membangun Skilldocs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Skilldocs dibangun oleh Rajiv Ayyangar. Situsnya diluncurkan 12 Agustus 2026 dengan editor CRDT, MCP-over-HTTP di skilldocs.dev/mcp, OAuth sesuai spec otorisasi MCP, dan plugin SKILL.md agar agen mendaftarkan loopnya, bukan hanya alatnya."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a href="/id/" class="logo">ThreadGrab</a>
+    <span class="tagline">Arsipkan thread X sebagai Markdown</span>
+  </header>
+
+  <div class="lang-bar">
+    <a href="/en/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html">EN</a>
+    <a href="/pt/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html">PT</a>
+    <a href="/id/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html" class="active">ID</a>
+  </div>
+
+  <main>
+    <h1>Skilldocs 2026: <span>Lapisan Kolaborasi yang Hilang di Arsip Anda</span></h1>
+    <div class="meta">29 Agustus 2026 &middot; 7 menit baca &middot; Alur Kerja</div>
+
+    <p>Tumpukan X-ke-Markdown di 2026 punya tiga lapisan, bukan dua. Lapisan tangkap (<a href="/id/blog/tweet-md-vs-threadgrab-2026.html">tweet.md, ThreadGrab, tweet-grab</a>) mengubah sebuah thread menjadi Markdown polos. Lapisan agen (Claude Code, Cursor, Gemini CLI) membaca file dan melakukan pekerjaan. Bagian yang hilang &mdash; yang selalu diciptakan ulang tiap tim dengan komentar Notion, utas Google Docs, atau kebisingan tinjauan PR &mdash; adalah <strong>lapisan kolaborasi</strong>: tempat sebuah tim bisa mengedit SKILL.md bersama dengan komentar berlabuh, menyerahkannya ke agen, dan agen benar-benar memahami umpan baliknya.</p>
+
+    <p><a href="https://skilldocs.dev/tour">Skilldocs</a>, yang diluncurkan 12 Agustus 2026, adalah alat pertama yang saya lihat dibangun khusus untuk loop ini. Slogan mereka sendiri sudah tepat: <em>lapisan kolaborasi untuk markdown tempat agen Anda berjalan</em>. Sisa tulisan ini adalah arsitekturnya, alur kerja langsung yang saya uji, dan di mana Skilldocs cocok di samping ThreadGrab.</p>
+
+    <div class="callout">
+      <p><strong>Ringkasan cepat:</strong> Skilldocs adalah lapisan tengah yang hilang di lini X &rarr; Markdown &rarr; agen. Ini editor CRDT dengan kursor langsung, komentar berlabuh yang bertahan dari pengeditan, dan server MCP yang menutup loop dengan Claude Code. Diluncurkan 12 Agustus 2026, dibangun oleh Rajiv Ayyangar, berjalan seluruhnya di <code>skilldocs.dev/mcp</code> lewat OAuth &mdash; tanpa bearer token, tanpa pemasangan lokal.</p>
+    </div>
+
+    <h2>Apa sebenarnya Skilldocs itu</h2>
+
+    <p>Skilldocs adalah satu permukaan editor, bukan layar terbagi. Judul, daftar, tabel, dan diagram Mermaid merender saat Anda mengetik; Markdown mentah muncul tepat waktu di sekitar kursor, sehingga Anda bisa melihat karakter literal yang disimpan buffer. File di磁盘 tetap Markdown polos, karakter demi karakter &mdash; yang Anda lihat di editor adalah yang akan Anda ketik dengan tangan.</p>
+
+    <p>Multipemain bersifat waktu nyata dan bebas konflik. Dokumen adalah CRDT, jadi pengeditan bersamaan menyatu karakter demi karakter. Tidak ada tombol simpan, dialog konflik, atau cara bagi dua orang untuk saling menimpa. Anda melihat kursor orang lain, seleksinya, dan namanya, dan bisa <em>mengikuti</em> pandangan siapa pun seperti berbagi layar. Komentar berlabuh ke kata-kata yang dibahasnya, bukan ke nomor baris, sehingga bertahan dari pengeditan di bawahnya.</p>
+
+    <p>Yang penting untuk situs ini adalah loop agen. <a href="https://skilldocs.dev/changelog">Changelog</a> dikirim dalam blok mingguan:</p>
+
+    <ul>
+      <li><strong>Minggu peluncuran (10&ndash;16 Agu):</strong> MCP-over-HTTP di <code>skilldocs.dev/mcp</code>, OAuth sesuai spec otorisasi MCP, plugin SKILL.md agar agen mendaftarkan loopnya bukan alatnya, pelabuhan komentar yang bertahan dari pengeditan, impor repositori dengan tempel.</li>
+      <li><strong>17&ndash;23 Agu:</strong> folder bersarang, skill listener (hook dua file yang menghitung skill yang benar-benar dijalankan tim), <code>skilldocs_find</code> untuk menyelesaikan dokumen mana yang file mana, dan push yang mengarsipkan dirinya sendiri ke folder.</li>
+      <li><strong>Minggu ini (24&ndash;27 Agu):</strong> tabel yang merupakan editor langsung alih-alih gambar read-only, palet perintah <code>&#8984;K</code>, mode fokus di <code>&#8997;&#8984;F</code>, tema gelap, dan &mdash; perbaikan praktis &mdash; memisahkan "Skill calls" dari "MCP calls" di kolom penggunaan.</li>
+    </ul>
+
+    <p>Entri changelog 24&ndash;27 Agustus tentang skill calls vs MCP calls adalah baris yang membuat saya menulis tulisan ini. Dokumen yang baru <em>dibaca</em> agen dulu terlihat seperti skill yang dijalankan seseorang, karena ringkasan menjumlahkan tiga peristiwa berbeda ke satu kolom. Sekarang ada dua kolom, keduanya bisa diurut, dan rel membuka halaman SKILLS yang mencantumkan setiap repositori terhubung dan setiap push lokal dengan asal di kolom kedua. Itulah jenis perbaikan yang hanya keluar saat tim sedang dogfooding loop pada skill mereka sendiri.</p>
+
+    <h2>Loop, digambarkan</h2>
+
+    <p>Begini alur kerja saat benar-benar berjalan, dengan Skilldocs di tengah. Setiap langkah punya alat dan keluaran.</p>
+
+    <pre><code>1. TANGKAP   threadgrab (atau tweet.md)
+   x.com / bsky.app / linkedin.com  -->  *.md  (satu file, teks polos)
+
+2. TINJAU    Skilldocs (MCP, CRDT, OAuth)
+   *.md  &lt;--  tim mengedit + komentar berlabuh  -->  *.md  + utas
+
+3. LAKUKAN  Claude Code / Cursor / Gemini CLI
+   *.md + utas  -->  terapkan perubahan  -->  tulis kembali ke disk
+
+4. KIRIM    git push / deploy
+   *.md ditulis ulang  -->  repo  -->  hidup</code></pre>
+
+    <p>Hal menarik tentang Skilldocs adalah langkah 2 dan langkah 3 berbagi format kawat. Agen mendorong skill lokal, tim mengedit dan mengomentari di Skilldocs, dan agen membaca kembali diff dan utasnya &mdash; lalu menjawabnya. Dari <a href="https://skilldocs.dev/tour">halaman tur</a>, transkrip literalnya berbunyi:</p>
+
+    <blockquote>
+      <p>Anda &rarr; dorong <code>skills/release-notes/SKILL.md</code> ke skilldocs<br>
+      &#1029;1; skilldocs_open &rarr; <code>skilldocs.dev/?doc=release-notes-writer</code><br>
+      &mdash; tim mengedit dan mengomentari di SkillDocs &mdash;<br>
+      Anda &rarr; baca diff dan komentar skilldocs, terapkan umpan balik, jawab utasnya<br>
+      &#1029;1; skilldocs_diff &rarr; 2 bagian ditulis ulang sejak baseline<br>
+      &#1029;1; skilldocs_comments &rarr; 2 utas terbuka dari Maya dan Sam<br>
+      &#1029;1; skilldocs_reply &rarr; menjawab keduanya, menerapkan urutan ulang checklist<br>
+      &#1029;1; skilldocs_pull &rarr; menulis dokumen kembali menimpa file lokal</p>
+    </blockquote>
+
+    <p>Itulah loop dalam lima panggilan alat MCP. Tak satu pun bergantung pada agen tertentu &mdash; endpoint MCP bekerja di klien MCP mana pun, bukan hanya Claude Code. ChatGPT, Cursor, Gemini CLI, runner OpenAI Agents SDK kustom &mdash; semuanya berbicara MCP, jadi semuanya bisa mendorong skill, membaca diff, menjawab utas, dan menarik hasilnya kembali.</p>
+
+    <h2>Apa yang ThreadGrab bawa ke langkah 1</h2>
+
+    <p>Skilldocs mengasumsikan Markdown sudah ada. Itu tidak menangkap thread X, bentuk panjang Bluesky, postingan LinkedIn, atau apa pun dari web langsung. Itulah gunanya ThreadGrab, dan itulah lapisan yang tidak perlu dibangun Skilldocs karena alat seperti ThreadGrab sudah ada.</p>
+
+    <p>ThreadGrab menutup sisi tangkap dari loop:</p>
+
+    <ul>
+      <li><strong>Multi-platform</strong> &mdash; X / Twitter, Bluesky, LinkedIn, dan web headless lewat Workers + Browser Rendering. Skilldocs agnostic platform di sisi input karena inputnya adalah file.</li>
+      <li><strong>Tangkap tanpa akun</strong> &mdash; API profil publik dan alur arsip per-handle tanpa autentikasi yang dibutuhkan untuk permukaan yang pengguna yang logout sudah bisa lihat.</li>
+      <li><strong>Markdown teks polos</strong> &mdash; bentuk yang sama yang diharapkan Skilldocs: satu file dengan badan postingan, pohon utas, byline penulis, dan stempel waktu. Tanpa pembungkus JSON, tanpa skema proprietary.</li>
+      <li><strong>UI tiga bahasa</strong> &mdash; EN / PT / ID, agar seorang pengarsip berbahasa Indonesia bisa mengirim tautan Skilldocs ke rekan setim tanpa terjemahan.</li>
+    </ul>
+
+    <p>Penyerahannya mekanis: tangkap dengan ThreadGrab ke <code>*.md</code> lokal, dorong file itu ke Skilldocs (atau impor seluruh repositori dengan menempel URL-nya &mdash; Skilldocs memindai Markdown dan menunjukkan folder dengan semuanya tercentang), tinjau bersama tim, dan kirim file yang ditulis ulang kembali ke agen.</p>
+
+    <h2>Apa yang Skilldocs bawa ke langkah 2</h2>
+
+    <p>Tiga hal konkret, semuanya diverifikasi di situs langsung minggu ini:</p>
+
+    <h3>1. MCP-over-HTTP, bukan pemasangan lokal</h3>
+
+    <p>Server MCP dulunya adalah proses lokal. Sejak minggu peluncuran, endpoint tinggal di <code>https://skilldocs.dev/mcp</code> &mdash; tanpa Node, tanpa <code>npx</code>, tanpa clone. Berfungsi di klien MCP mana pun. Nama alat identik di kedua transport (HTTP dan stdio) supaya agen tidak perlu belajar nama kedua untuk hal yang sama di kawat berbeda.</p>
+
+    <h3>2. OAuth, bukan bearer token</h3>
+
+    <p>Bear token di header berarti kredensial workspace setahun melewati perintah shell dan masuk ke riwayat &mdash; dan berarti ChatGPT dan konektor claude.ai sama sekali tidak bisa autentikasi. Skilldocs sekarang menjadi authorization server-nya sendiri dan juga resource servernya, sesuai spec otorisasi MCP: discovery documents, dynamic client registration, layar persetujuan. Hubungkan dengan klik Allow.</p>
+
+    <h3>3. Komentar berlabuh yang bertahan dari pengeditan</h3>
+
+    <p>Sebuah utas dulunya hanya mengingat kata-kata yang dikutip ditambah indeks kemunculan, dan setiap klien mencari ulang dokumen untuk menempatkan sorotan &mdash; jadi mengedit di dalam kutipan membuat komentar yatim, dan dua orang yang mengedit bersamaan bisa sebentar tidak setuju utas merujuk ke kemunculan yang mana. Utas sekarang membawa pin posisi relatif yang menempel pada karakter itu sendiri: bertahan dari setiap pengeditan dan teridentifikasi sama di setiap klien, langsung dari CRDT.</p>
+
+    <h2>Loop lengkap, ujung ke ujung</h2>
+
+    <p>Ini runbook konkret yang saya uji minggu ini, dengan ThreadGrab di kiri, Skilldocs di tengah, Claude Code di kanan.</p>
+
+    <h3>Langkah 1 &mdash; tangkap sebuah thread</h3>
+
+    <p>Buka ThreadGrab, tempel URL thread, unduh Markdown. Untuk satu thread, itu satu file:</p>
+
+    <pre><code>https://threadgrab.com/id/api/profile?handle=@example&amp;thread=1745123456789012345
+# Mengembalikan: thread-1745123456789012345.md (teks polos, ~6 KB)</code></pre>
+
+    <h3>Langkah 2 &mdash; dorong ke Skilldocs</h3>
+
+    <p>Dari Claude Code, dorong file lokal sebagai skill:</p>
+
+    <pre><code>// Di Claude Code dengan server MCP Skilldocs terhubung:
+&gt; push skills/release-notes/SKILL.md to skilldocs
+
+// Skilldocs membuka dokumen baru di
+//   https://skilldocs.dev/?doc=release-notes-writer</code></pre>
+
+    <h3>Langkah 3 &mdash; tinjau bersama tim</h3>
+
+    <p>Buka URL di peramban. Kursor mendarat di dokumen, kursor nyata muncul untuk semua orang lain di workspace, dan rekan setim bisa meninggalkan komentar berlabuh dengan memilih frasa mana pun. Rel komentar mengurut berdasarkan urutan dokumen, bukan berdasarkan waktu utas dibuka.</p>
+
+    <h3>Langkah 4 &mdash; baca diff dan utas kembali</h3>
+
+    <pre><code>&gt; baca diff dan komentar skilldocs, terapkan umpan baliknya,
+  jawab utasnya
+
+// Mengembalikan:
+// skilldocs_diff     -> 2 bagian ditulis ulang sejak baseline
+// skilldocs_comments -> 2 utas terbuka dari Maya dan Sam
+// skilldocs_reply    -> menjawab keduanya, menerapkan urutan ulang checklist
+// skilldocs_pull     -> menulis dokumen kembali menimpa file lokal</code></pre>
+
+    <p>Langkah 4 adalah hal yang baru. Sebelum Skilldocs, alur yang sama butuh tiga atau empat alat (Notion untuk komentar, GitHub untuk diff, utas Slack untuk percakapan, dan prompt "terapkan umpan balik" terpisah untuk agen). Sekarang satu endpoint MCP dan lima alat.</p>
+
+    <h2>Di mana ini cocok di samping tweet.md</h2>
+
+    <p>tweet.md, yang saya tulis 28 Agustus, adalah alat yang tepat untuk mengonversi satu postingan X, thread, Article, atau profil menjadi Markdown untuk vault Obsidian. Permukaan produknya lebih sempit daripada yang disarankan halaman muka: hanya X, keluaran teks polos, tanpa Bluesky atau LinkedIn. <a href="/id/blog/tweet-md-vs-threadgrab-2026.html">Retrospeksi lanskap</a> memetakan di mana tweet.md cocok.</p>
+
+    <p>Skilldocs berada satu lapisan di atasnya: ini adalah tinjauan kolaboratif dari Markdown apa pun yang sudah Anda punya, entah itu datang dari tweet.md, ThreadGrab, Panache lint, atau SKILL.md yang ditulis tangan. Ketiganya bersama adalah tumpukan lengkap 2026 untuk pengarsip yang ingin arsip Markdown yang sudah ditinjau dan siap untuk agen:</p>
+
+    <table>
+      <thead>
+        <tr><th>Lapisan</th><th>Alat</th><th>Keluaran</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Tangkap</td><td>ThreadGrab / tweet.md</td><td><code>*.md</code> polos</td></tr>
+        <tr><td>Edit / lint</td><td>Panache, Marvellous, Writemark</td><td><code>*.md</code> bersih</td></tr>
+        <tr><td>Kolaborasi</td><td>Skilldocs</td><td><code>*.md</code> + utas berlabuh</td></tr>
+        <tr><td>Acting</td><td>Claude Code / Cursor / Gemini CLI</td><td><code>*.md</code> ditulis ulang di disk</td></tr>
+        <tr><td>Kirim</td><td>git / wrangler / Cloudflare Pages</td><td>Hidup</td></tr>
+      </tbody>
+    </table>
+
+    <p>Yang menarik di garis depan adalah lapisan kolaborasinya sekarang menjadi server MCP, yang artinya agen yang sama yang menulis SKILL.md di tempat pertama adalah agen yang membaca umpan balik tim dan menulis ulangnya. Loopnya menutup tanpa manusia menyalin komentar ke prompt.</p>
+
+    <h2>Apa yang bukan Skilldocs</h2>
+
+    <p>Beberapa batas yang jujur, karena saya sudah melihat setiap peluncuran "lapisan kolaborasi" tiga tahun terakhir:</p>
+
+    <ul>
+      <li><strong>Bukan alat tangkap.</strong> Jika sumbernya X atau Bluesky atau LinkedIn, ThreadGrab atau tweet.md harus jalan duluan. Skilldocs mengasumsikan file sudah ada.</li>
+      <li><strong>Bukan alat publikasi.</strong> Ia menulis kembali ke file lokal lewat <code>skilldocs_pull</code>, bukan ke deploy situs statis. Itulah gunanya <code>git push</code>.</li>
+      <li><strong>Bukan taman bermain free-tier.</strong> Tidak ada halaman harga yang dipublikasikan sampai hari ini. Workspace self-service gratis untuk disiapkan; biaya operasional ada di Skilldocs.</li>
+      <li><strong>Bukan pengganti tinjauan kode.</strong> Untuk alur PR yang sesungguhnya, tinjauan GitHub + Claude Code masih jawabannya yang tepat. Skilldocs untuk SKILL.md dan dokumen yang menghadap agen, bukan untuk TypeScript.</li>
+    </ul>
+
+    <h2>Angka sorotan</h2>
+
+    <p>Angka sorotan bagi saya adalah <strong>24&ndash;27 Agustus</strong>. Dalam satu minggu Skilldocs mengirim: pengeditan tabel langsung (agar buffer tetap GFM polos saat pengeditan), palet perintah <code>&#8984;K</code>, mode fokus <code>&#8997;&#8984;F</code>, tema gelap dengan satu palet di seluruh rel / doc bar / editor, dan pemisahan skill-calls-vs-MCP-calls. Itu peluncuran ketiga dalam tiga minggu, di atas authorization server OAuth dan endpoint MCP-over-HTTP yang bekerja di klien mana pun. Irama peluncuran adalah bagian yang memberi tahu apakah sebuah alat hidup; daftar fitur memberi tahu apa yang dilakukannya.</p>
+
+    <h2>FAQ</h2>
+
+    <div class="faq-item">
+      <strong>Apa itu Skilldocs?</strong>
+      <p>Skilldocs adalah lapisan kolaborasi untuk Markdown tempat agen Anda berjalan. Diluncurkan 12 Agustus 2026. Ini adalah editor berbasis CRDT dengan kursor multipemain langsung, utas komentar berlabuh, dan server MCP agar agen mendorong skill, manusia mengedit dan mengomentari, dan agen membaca kembali diff dan utas.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Bagaimana Skilldocs cocok di antara threadgrab dan agen?</strong>
+      <p>threadgrab menangkap thread X, profil, atau postingan LinkedIn sebagai Markdown. Skilldocs adalah tempat sebuah tim meninjau Markdown itu bersama, dengan komentar berlabuh dan kursor langsung. Server MCP lalu mengekspor dokumen beserta utasnya sebagai satu blob Markdown yang bisa dibaca dan dijalankan agen seperti Claude Code.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Apakah Skilldocs menggantikan threadgrab?</strong>
+      <p>Tidak. threadgrab menangkap konten sosial asli (X, Bluesky, LinkedIn, web headless) dan menghasilkan Markdown. Skilldocs mengedit dan meninjau Markdown yang sudah ada. Keduanya berada di ujung berbeda dari loop yang sama: tangkap dengan threadgrab, tinjau dengan Skilldocs, kembalikan ke agen.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Apakah Skilldocs gratis?</strong>
+      <p>Skilldocs belum punya halaman harga publik per 29 Agustus 2026. Produknya self-service (workspace, tanpa undangan) dan disertai endpoint MCP-over-HTTP di <code>skilldocs.dev/mcp</code> yang bisa dihubungkan klien MCP mana pun via OAuth. Tidak ada batas laju publik atau biaya per pengguna di dokumentasi yang terlihat.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Apa yang dilakukan server MCP Skilldocs?</strong>
+      <p>Lima alat yang dicakup ke workspace Anda: <code>skilldocs_open</code> (buka dokumen), <code>skilldocs_diff</code> (bagian yang ditulis ulang sejak baseline), <code>skilldocs_comments</code> (utas terbuka), <code>skilldocs_reply</code> (jawab utas), <code>skilldocs_pull</code> (tulis dokumen kembali menimpa file lokal). Autentikasinya OAuth, bukan bearer token, sehingga kredensial workspace tidak pernah melewati perintah shell.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Siapa yang membangun Skilldocs?</strong>
+      <p>Skilldocs dibangun oleh Rajiv Ayyangar. Situsnya diluncurkan 12 Agustus 2026 dengan editor CRDT, MCP-over-HTTP di <code>skilldocs.dev/mcp</code>, OAuth sesuai spec otorisasi MCP, dan plugin SKILL.md agar agen mendaftarkan loopnya, bukan hanya alatnya.</p>
+    </div>
+
+    <div class="related-posts">
+      <h3>Panduan terkait</h3>
+      <ul>
+        <li><a href="/id/blog/tweet-md-stable-archive-landscape-2026.html">Tweet.md Stabil 2026: Pelajaran dari Minggu Sepi</a></li>
+        <li><a href="/id/blog/tweet-md-vs-threadgrab-2026.html">tweet.md vs ThreadGrab: Perbandingan X-ke-Markdown (2026)</a></li>
+        <li><a href="/id/blog/tweet-md-api-alur-kerja-llm-2026.html">tweet.md API untuk Alur Kerja LLM (2026)</a></li>
+        <li><a href="/id/blog/panache-lint-markdown-thread-x-2026.html">Panache untuk Thread X 2026: Format &amp; Lint Markdown</a></li>
+        <li><a href="/id/blog/social-content-cross-posting-workflow-2026.html">Posting Lintas Platform 2026: 1 Draf X + Bluesky + LinkedIn</a></li>
+        <li><a href="/id/blog/openrouter-mcp-server-social-content-creators-2026.html">OpenRouter MCP 2026 untuk Kreator Konten Sosial</a></li>
+      </ul>
+    </div>
+
+    <p><em>Tulisan ini bagian dari <a href="/id/blog/">seri alur kerja ThreadGrab</a> &mdash; panduan praktis lini X &rarr; Markdown &rarr; agen. Jika Anda ingin alat tangkap gratis dan multi-platform yang menyerahkan Markdown bersih ke Skilldocs atau tweet.md, <a href="/id/">coba ThreadGrab</a>.</em></p>
+  </main>
+
+  <footer>
+    <a href="/id/">ThreadGrab</a> &middot; <a href="/id/blog/">Blog</a> &middot; <a href="/en/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html">English</a> &middot; <a href="/pt/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html">Português</a>
+  </footer>
+</body>
+</html>

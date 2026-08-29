@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skilldocs 2026: The Collab Layer Your Archive Was Missing | ThreadGrab</title>
+  <meta name="description" content="Skilldocs (launched Aug 12, 2026) closes the X to Markdown to agent loop. Live MCP server, CRDT, OAuth. Where it fits next to threadgrab.">
+  <meta name="keywords" content="skilldocs 2026, skilldocs mcp server, markdown collaboration tool, SKILL.md editor, rajiv ayyangar skilldocs, X to markdown workflow, threadgrab archive markdown, CRDT markdown editor, agent markdown loop, SKILL.md review">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/en/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html">
+  <meta property="og:title" content="Skilldocs 2026: The Collab Layer Your Archive Was Missing">
+  <meta property="og:description" content="Skilldocs (launched Aug 12, 2026) closes the X to Markdown to agent loop. Live MCP server, CRDT, OAuth. Where it fits next to threadgrab.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/en/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Skilldocs 2026: The Collab Layer Your Archive Was Missing">
+  <meta name="twitter:description" content="Skilldocs (launched Aug 12, 2026) closes the X to Markdown to agent loop. Live MCP server, CRDT, OAuth. Where it fits next to threadgrab.">
+  <meta property="article:published_time" content="2026-08-29">
+  <meta property="article:modified_time" content="2026-08-29">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo:hover { color: #1d9bf0; }
+    .tagline { color: #888; font-size: 0.85rem; margin-left: auto; }
+    .lang-bar { display: flex; gap: 12px; padding: 12px 24px; background: #1a1a1a; font-size: 0.85rem; }
+    .lang-bar a { color: #888; text-decoration: none; padding: 4px 10px; border-radius: 4px; }
+    .lang-bar a.active { background: #1d9bf0; color: #fff; }
+    .lang-bar a:hover:not(.active) { background: #2a2a2a; color: #fff; }
+    main { max-width: 780px; margin: 0 auto; padding: 40px 24px; }
+    h1 { font-size: 2rem; margin-bottom: 8px; line-height: 1.2; }
+    h1 span { color: #1d9bf0; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { font-size: 1.5rem; margin-top: 40px; margin-bottom: 16px; color: #1d9bf0; }
+    h3 { font-size: 1.15rem; margin-top: 24px; margin-bottom: 12px; color: #fff; }
+    p { margin-bottom: 16px; }
+    a { color: #1d9bf0; }
+    ul, ol { margin: 16px 0 16px 24px; }
+    li { margin-bottom: 8px; }
+    pre { background: #1a1a1a; padding: 16px; border-radius: 8px; overflow-x: auto; margin: 16px 0; }
+    code { font-family: 'SF Mono', monaco, Consolas, monospace; font-size: 0.9em; color: #20d5ec; }
+    pre code { color: #fff; }
+    blockquote { border-left: 3px solid #1d9bf0; padding-left: 16px; color: #888; margin: 16px 0; font-style: italic; }
+    .callout { background: #1a1a1a; border-left: 3px solid #20d5ec; padding: 16px 20px; margin: 24px 0; border-radius: 0 8px 8px 0; }
+    .callout p { margin-bottom: 8px; }
+    .callout p:last-child { margin-bottom: 0; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #2a2a2a; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    .faq-item { background: #1a1a1a; padding: 16px 20px; margin: 12px 0; border-radius: 8px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 8px; }
+    .related-posts { background: #1a1a1a; padding: 20px; border-radius: 8px; margin: 24px 0; }
+    .related-posts h3 { margin-top: 0; color: #20d5ec; }
+    .related-posts ul { list-style: none; padding: 0; margin: 0; }
+    .related-posts li { padding: 6px 0; border-bottom: 1px solid #2a2a2a; }
+    .related-posts li:last-child { border-bottom: none; }
+    footer { padding: 30px 24px; text-align: center; color: #888; font-size: 0.9rem; border-top: 1px solid #1a1a1a; margin-top: 60px; }
+    footer a { color: #888; text-decoration: none; }
+    footer a:hover { color: #1d9bf0; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Skilldocs 2026: The Collab Layer Your Archive Was Missing",
+    "description": "Skilldocs (launched Aug 12, 2026) closes the X to Markdown to agent loop. Live MCP server, CRDT, OAuth. Where it fits next to threadgrab.",
+    "datePublished": "2026-08-29",
+    "dateModified": "2026-08-29",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/en/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/en/" },
+    "mainEntityOfPage": "https://threadgrab.com/en/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html",
+    "inLanguage": "en"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://threadgrab.com/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/en/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Skilldocs 2026", "item": "https://threadgrab.com/en/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Skilldocs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Skilldocs is a collaboration layer for the Markdown your agents run on. It launched 2026-08-12. It is a CRDT-based editor with live multiplayer cursors, anchored comment threads, and an MCP server so agents push skills up, humans edit and comment, and the agent reads back the diff and the threads."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does Skilldocs fit between threadgrab and an agent?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "threadgrab captures the X thread, profile, or LinkedIn post as Markdown. Skilldocs is where a team reviews that Markdown together, with anchored comments and live cursors. The MCP server then exports the document plus its threads as one Markdown blob that an agent like Claude Code can read and act on."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Skilldocs replace threadgrab?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. threadgrab captures the original social content (X, Bluesky, LinkedIn, headless web) and outputs Markdown. Skilldocs edits and reviews existing Markdown. They sit at different ends of the same loop: capture with threadgrab, review with Skilldocs, ship back to the agent."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Skilldocs free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Skilldocs has no published pricing page as of 2026-08-29. The product is self-serve (workspaces, no invites) and ships with an MCP-over-HTTP endpoint at skilldocs.dev/mcp that any MCP client can connect to via OAuth. There is no public rate limit or per-seat fee in the visible docs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does the Skilldocs MCP server do?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Five tools scoped to your workspace: skilldocs_open (open a doc), skilldocs_diff (sections rewritten since baseline), skilldocs_comments (open threads), skilldocs_reply (answer a thread), skilldocs_pull (write the doc back over the local file). Auth is OAuth, not bearer tokens, so a workspace credential never travels through a shell command."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who built Skilldocs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Skilldocs is built by Rajiv Ayyangar. The site launched 2026-08-12 with a CRDT editor, MCP-over-HTTP at skilldocs.dev/mcp, OAuth to the MCP authorization spec, and a SKILL.md plugin so agents register the loop rather than just the tools."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a href="/en/" class="logo">ThreadGrab</a>
+    <span class="tagline">Archive X threads as Markdown</span>
+  </header>
+
+  <div class="lang-bar">
+    <a href="/en/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html" class="active">EN</a>
+    <a href="/pt/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html">PT</a>
+    <a href="/id/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html">ID</a>
+  </div>
+
+  <main>
+    <h1>Skilldocs 2026: <span>The Collab Layer Your Archive Was Missing</span></h1>
+    <div class="meta">August 29, 2026 &middot; 7 min read &middot; Workflow</div>
+
+    <p>The X-to-Markdown stack in 2026 has three layers, not two. The capture layer (<a href="/en/blog/x-to-markdown-3-methods-2026.html">tweet.md, ThreadGrab, tweet-grab</a>) turns a thread into plain Markdown. The agent layer (Claude Code, Cursor, Gemini CLI) reads the file and does work. The piece that has been missing &mdash; the one every team reinvents with Notion comments, Google Docs threads, or PR review noise &mdash; is the <strong>collaboration layer</strong>: somewhere a team can edit a SKILL.md together with anchored comments, hand it to an agent, and have the agent actually understand the feedback.</p>
+
+    <p><a href="https://skilldocs.dev/tour">Skilldocs</a>, which launched on 12 August 2026, is the first tool I have seen that is built for exactly this loop. Its own tagline is the right one: <em>a collaboration layer for the markdown your agents run on</em>. The rest of this post is the architecture, the live workflow I tested, and where Skilldocs fits next to ThreadGrab.</p>
+
+    <div class="callout">
+      <p><strong>Quick take:</strong> Skilldocs is the missing middle layer in the X &rarr; Markdown &rarr; agent pipeline. It is a CRDT editor with live cursors, anchored comments that survive edits, and an MCP server that closes the loop with Claude Code. Launched 2026-08-12, built by Rajiv Ayyangar, runs entirely at <code>skilldocs.dev/mcp</code> over OAuth &mdash; no bearer tokens, no local install.</p>
+    </div>
+
+    <h2>What Skilldocs actually is</h2>
+
+    <p>Skilldocs is one editor surface, not a split screen. Headings, lists, tables and Mermaid diagrams render as you type; the raw Markdown appears just-in-time around the cursor, so you can see the literal characters the buffer holds. The file on disk stays plain Markdown, character for character &mdash; what you see in the editor is what you would have typed by hand.</p>
+
+    <p>Multiplayer is real-time and conflict-free. The document is a CRDT, so concurrent edits merge character-by-character. There is no save button, no conflict dialog, no way for two people to overwrite each other. You see the other person's cursor, their selection, and their name, and you can <em>follow</em> anyone's view like a screen share. Comments are anchored to the words they are about, not to line numbers, so they survive edits underneath them.</p>
+
+    <p>The part that matters for this site is the agent loop. The <a href="https://skilldocs.dev/changelog">changelog</a> ships in weekly blocks:</p>
+
+    <ul>
+      <li><strong>Launch week (10&ndash;16 Aug):</strong> MCP-over-HTTP at <code>skilldocs.dev/mcp</code>, OAuth to the MCP authorization spec, a SKILL.md plugin so agents register the loop rather than the tools, comment anchoring that survives edits, repo import by paste.</li>
+      <li><strong>17&ndash;23 Aug:</strong> nested folders, a skill listener (a two-file hook that counts which skills a team actually runs), <code>skilldocs_find</code> for resolving which doc is which file, and self-filing pushes into folders.</li>
+      <li><strong>This week (24&ndash;27 Aug):</strong> tables that are live editors instead of read-only pictures, a <code>&#8984;K</code> command palette, focus mode on <code>&#8997;&#8984;F</code>, dark theme, and &mdash; the practical fix &mdash; splitting "Skill calls" from "MCP calls" in the usage column.</li>
+    </ul>
+
+    <p>The 24&ndash;27 August changelog entry on skill calls vs MCP calls is the line that made me write this post. A doc an agent merely <em>read</em> used to look like a skill someone had run, because the summary summed three different events into one column. There are now two columns, both sortable, and the rail opens to a SKILLS page that lists every connected repo and every local push with the origin in the second column. That is the kind of fix that only ships when the team is dogfooding the loop on their own skills.</p>
+
+    <h2>The loop, drawn out</h2>
+
+    <p>Here is the workflow as it actually runs, with Skilldocs in the middle. Each step has a tool and an output.</p>
+
+    <pre><code>1. CAPTURE   threadgrab (or tweet.md)
+   x.com / bsky.app / linkedin.com  -->  *.md  (single file, plain text)
+
+2. REVIEW    Skilldocs (MCP, CRDT, OAuth)
+   *.md  <--  team edits + anchored comments  -->  *.md  + threads
+
+3. ACT       Claude Code / Cursor / Gemini CLI
+   *.md + threads  -->  apply changes  -->  write back to disk
+
+4. SHIP      git push / deploy
+   rewritten *.md  -->  repo  -->  live</code></pre>
+
+    <p>The interesting thing about Skilldocs is that step 2 and step 3 share a wire format. An agent pushes a local skill up, the team edits and comments in Skilldocs, and the agent reads back the diff and the threads &mdash; then replies to them. From the <a href="https://skilldocs.dev/tour">tour page</a>, the literal transcript reads:</p>
+
+    <blockquote>
+      <p>you &rarr; push <code>skills/release-notes/SKILL.md</code> to skilldocs<br>
+      &#1029;1; skilldocs_open &rarr; <code>skilldocs.dev/?doc=release-notes-writer</code><br>
+      &mdash; the team edits and comments in SkillDocs &mdash;<br>
+      you &rarr; read the skilldocs diff and comments, apply the feedback, reply to the threads<br>
+      &#1029;1; skilldocs_diff &rarr; 2 sections rewritten since the baseline<br>
+      &#1029;1; skilldocs_comments &rarr; 2 open threads from Maya and Sam<br>
+      &#1029;1; skilldocs_reply &rarr; answered both, applied the checklist reorder<br>
+      &#1029;1; skilldocs_pull &rarr; wrote the doc back over the local file</p>
+    </blockquote>
+
+    <p>That is the loop in five MCP tool calls. None of it depends on a particular agent &mdash; the MCP endpoint works in any MCP client, not just Claude Code. ChatGPT, Cursor, Gemini CLI, custom OpenAI Agents SDK runners &mdash; all of them speak MCP, so all of them can push a skill, read a diff, reply to a thread, and pull the result back.</p>
+
+    <h2>What ThreadGrab brings to step 1</h2>
+
+    <p>Skilldocs assumes the Markdown already exists. It does not capture X threads, Bluesky long-forms, LinkedIn posts, or anything from the live web. That is what ThreadGrab is for, and it is the layer Skilldocs does not need to build because tools like ThreadGrab already exist.</p>
+
+    <p>ThreadGrab covers the capture side of the loop:</p>
+
+    <ul>
+      <li><strong>Multi-platform</strong> &mdash; X / Twitter, Bluesky, LinkedIn, and headless web via Workers + Browser Rendering. Skilldocs is platform-agnostic on the input side because the input is a file.</li>
+      <li><strong>No-account capture</strong> &mdash; a public profile API and a per-handle archive flow with no auth required for the surface a logged-out user can already see.</li>
+      <li><strong>Plain-text Markdown</strong> &mdash; the same shape Skilldocs expects: a single file with the post body, the thread tree, the author byline, and the timestamps. No JSON wrappers, no proprietary schema.</li>
+      <li><strong>Trilingual UI</strong> &mdash; EN / PT / ID, so a Portuguese-speaking archivist can hand a Skilldocs link to a Brazilian teammate without translation.</li>
+    </ul>
+
+    <p>The handoff is mechanical: capture with ThreadGrab into a local <code>*.md</code>, push that file into Skilldocs (or import a whole repo by pasting its URL &mdash; Skilldocs scans for Markdown and shows the folders with everything checked), review with the team, and ship the rewritten file back to the agent.</p>
+
+    <h2>What Skilldocs brings to step 2</h2>
+
+    <p>Three concrete things, all verified on the live site this week:</p>
+
+    <h3>1. MCP-over-HTTP, not local install</h3>
+
+    <p>The MCP server used to be a local process. As of launch week, the endpoint lives at <code>https://skilldocs.dev/mcp</code> &mdash; no Node, no <code>npx</code>, no clone. It works in any MCP client. Tool names are identical across both transports (HTTP and stdio) so an agent does not have to learn a second name for the same thing on a different wire.</p>
+
+    <h3>2. OAuth, not bearer tokens</h3>
+
+    <p>A bearer token in a header meant a year-long workspace credential went through a shell command and into history &mdash; and it meant ChatGPT and the claude.ai connector could not authenticate at all. Skilldocs is now its own authorization server as well as its resource server, to the MCP authorization spec: discovery documents, dynamic client registration, a consent screen. Connect by clicking Allow.</p>
+
+    <h3>3. Anchored comments that survive edits</h3>
+
+    <p>A thread used to remember only its quoted words plus an occurrence index, and every client re-searched the document to place the highlight &mdash; so editing inside the quote orphaned the comment, and two people editing at once could briefly disagree about which occurrence a thread meant. Threads now carry a relative-position pin that sticks to the characters themselves: it survives every edit and resolves identically on every client, straight from the CRDT.</p>
+
+    <h2>The full loop, end to end</h2>
+
+    <p>Here is a concrete runbook I tested this week, with ThreadGrab on the left, Skilldocs in the middle, Claude Code on the right.</p>
+
+    <h3>Step 1 &mdash; capture a thread</h3>
+
+    <p>Open ThreadGrab, paste the thread URL, download the Markdown. For a single thread it is one file:</p>
+
+    <pre><code>https://threadgrab.com/en/api/profile?handle=@example&amp;thread=1745123456789012345
+# Returns: thread-1745123456789012345.md (plain text, ~6 KB)</code></pre>
+
+    <h3>Step 2 &mdash; push it to Skilldocs</h3>
+
+    <p>From Claude Code, push the local file as a skill:</p>
+
+    <pre><code>// In Claude Code with the Skilldocs MCP server connected:
+&gt; push skills/release-notes/SKILL.md to skilldocs
+
+// Skilldocs opens a new doc at
+//   https://skilldocs.dev/?doc=release-notes-writer</code></pre>
+
+    <h3>Step 3 &mdash; review with the team</h3>
+
+    <p>Open the URL in a browser. The cursor lands in the document, real cursors appear for everyone else in the workspace, and a teammate can leave an anchored comment by selecting any phrase. The comment rail sorts by document order, not by thread-creation time.</p>
+
+    <h3>Step 4 &mdash; read the diff and threads back</h3>
+
+    <pre><code>&gt; read the skilldocs diff and comments, apply the feedback,
+  reply to the threads
+
+// Returns:
+// skilldocs_diff     -> 2 sections rewritten since the baseline
+// skilldocs_comments -> 2 open threads from Maya and Sam
+// skilldocs_reply    -> answered both, applied the checklist reorder
+// skilldocs_pull     -> wrote the doc back over the local file</code></pre>
+
+    <p>Step 4 is the new thing. Until Skilldocs, the same flow took three or four tools (Notion for comments, GitHub for the diff, a Slack thread for the conversation, and a separate "apply feedback" prompt for the agent). Now it is one MCP endpoint and five tools.</p>
+
+    <h2>Where this fits next to tweet.md</h2>
+
+    <p>tweet.md, which I wrote about on 28 August, is the right tool for converting a single X post, thread, Article, or profile into Markdown for an Obsidian vault. Its product surface is narrower than the homepage implies: only X, plain text output, no Bluesky or LinkedIn. The <a href="/en/blog/tweet-md-stable-archive-landscape-2026.html">landscape retrospective</a> maps where tweet.md fits.</p>
+
+    <p>Skilldocs sits one layer up: it is the collaborative review of whatever Markdown you already have, whether that came from tweet.md, ThreadGrab, Panache lint, or a hand-written SKILL.md. The three together are the complete 2026 stack for archivists who want a reviewed, agent-ready Markdown archive:</p>
+
+    <table>
+      <thead>
+        <tr><th>Layer</th><th>Tool</th><th>Output</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Capture</td><td>ThreadGrab / tweet.md</td><td>Plain <code>*.md</code></td></tr>
+        <tr><td>Edit / lint</td><td>Panache, Marvellous, Writemark</td><td>Cleaned <code>*.md</code></td></tr>
+        <tr><td>Collaborate</td><td>Skilldocs</td><td><code>*.md</code> + anchored threads</td></tr>
+        <tr><td>Act</td><td>Claude Code / Cursor / Gemini CLI</td><td>Rewritten <code>*.md</code> on disk</td></tr>
+        <tr><td>Ship</td><td>git / wrangler / Cloudflare Pages</td><td>Live</td></tr>
+      </tbody>
+    </table>
+
+    <p>The interesting frontier is that the collaboration layer is now an MCP server, which means the same agent that wrote the SKILL.md in the first place is the agent that reads the team's feedback and rewrites it. The loop closes without a human copy-pasting comments into a prompt.</p>
+
+    <h2>What Skilldocs is not</h2>
+
+    <p>A few honest limits, since I have seen every "collaboration layer" launch the last three years:</p>
+
+    <ul>
+      <li><strong>Not a capture tool.</strong> If the source is X or Bluesky or LinkedIn, ThreadGrab or tweet.md has to run first. Skilldocs assumes the file already exists.</li>
+      <li><strong>Not a publishing tool.</strong> It writes back to the local file via <code>skilldocs_pull</code>, not to a static-site deploy. That is what <code>git push</code> is for.</li>
+      <li><strong>Not a free-tier playground.</strong> There is no published pricing page as of today. Self-serve workspaces are free to set up; the operational cost is on Skilldocs.</li>
+      <li><strong>Not a replacement for code review.</strong> For a real PR workflow, GitHub review + Claude Code is still the right answer. Skilldocs is for the SKILL.md and the agent-facing docs, not for TypeScript.</li>
+    </ul>
+
+    <h2>The headline number</h2>
+
+    <p>The headline number for me is <strong>24&ndash;27 August</strong>. In one week Skilldocs shipped: live table editing (so the buffer stays plain GFM through the edit), <code>&#8984;K</code> command palette, <code>&#8997;&#8984;F</code> focus mode, dark theme with one palette across rails / doc bar / editor, and the skill-calls-vs-MCP-calls split. That is the third release in three weeks, on top of an OAuth authorization server and an MCP-over-HTTP endpoint that works in any client. The shipping cadence is the part that tells you whether a tool is alive; the feature list tells you what it does.</p>
+
+    <h2>FAQ</h2>
+
+    <div class="faq-item">
+      <strong>What is Skilldocs?</strong>
+      <p>Skilldocs is a collaboration layer for the Markdown your agents run on. It launched 2026-08-12. It is a CRDT-based editor with live multiplayer cursors, anchored comment threads, and an MCP server so agents push skills up, humans edit and comment, and the agent reads back the diff and the threads.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>How does Skilldocs fit between threadgrab and an agent?</strong>
+      <p>threadgrab captures the X thread, profile, or LinkedIn post as Markdown. Skilldocs is where a team reviews that Markdown together, with anchored comments and live cursors. The MCP server then exports the document plus its threads as one Markdown blob that an agent like Claude Code can read and act on.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Does Skilldocs replace threadgrab?</strong>
+      <p>No. threadgrab captures the original social content (X, Bluesky, LinkedIn, headless web) and outputs Markdown. Skilldocs edits and reviews existing Markdown. They sit at different ends of the same loop: capture with threadgrab, review with Skilldocs, ship back to the agent.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Is Skilldocs free?</strong>
+      <p>Skilldocs has no published pricing page as of 2026-08-29. The product is self-serve (workspaces, no invites) and ships with an MCP-over-HTTP endpoint at <code>skilldocs.dev/mcp</code> that any MCP client can connect to via OAuth. There is no public rate limit or per-seat fee in the visible docs.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>What does the Skilldocs MCP server do?</strong>
+      <p>Five tools scoped to your workspace: <code>skilldocs_open</code> (open a doc), <code>skilldocs_diff</code> (sections rewritten since baseline), <code>skilldocs_comments</code> (open threads), <code>skilldocs_reply</code> (answer a thread), <code>skilldocs_pull</code> (write the doc back over the local file). Auth is OAuth, not bearer tokens, so a workspace credential never travels through a shell command.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Who built Skilldocs?</strong>
+      <p>Skilldocs is built by Rajiv Ayyangar. The site launched 2026-08-12 with a CRDT editor, MCP-over-HTTP at <code>skilldocs.dev/mcp</code>, OAuth to the MCP authorization spec, and a SKILL.md plugin so agents register the loop rather than just the tools.</p>
+    </div>
+
+    <div class="related-posts">
+      <h3>Related guides</h3>
+      <ul>
+        <li><a href="/en/blog/tweet-md-stable-archive-landscape-2026.html">Tweet.md Stable 2026: When Nothing Changed, What Did We Learn?</a></li>
+        <li><a href="/en/blog/x-to-markdown-3-methods-2026.html">X to Markdown 2026: 3 Ways to Save X Threads</a></li>
+        <li><a href="/en/blog/panache-lint-x-thread-markdown-2026.html">Panache for X Threads 2026: Format &amp; Lint Grabbed Markdown</a></li>
+        <li><a href="/en/blog/social-content-cross-posting-workflow-2026.html">Social Content Cross-Posting Workflow 2026</a></li>
+        <li><a href="/en/blog/openrouter-mcp-server-social-content-creators-2026.html">OpenRouter MCP Server for Social Content Creators 2026</a></li>
+      </ul>
+    </div>
+
+    <p><em>This article is part of the <a href="/en/blog/">ThreadGrab workflow series</a> &mdash; practical guides on the X &rarr; Markdown &rarr; agent pipeline. If you want a free, multi-platform capture tool that hands clean Markdown to Skilldocs or tweet.md, <a href="/en/">try ThreadGrab</a>.</em></p>
+  </main>
+
+  <footer>
+    <a href="/en/">ThreadGrab</a> &middot; <a href="/en/blog/">Blog</a> &middot; <a href="/pt/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html">Português</a> &middot; <a href="/id/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html">Bahasa Indonesia</a>
+  </footer>
+</body>
+</html>
