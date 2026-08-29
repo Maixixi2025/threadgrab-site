@@ -5857,6 +5857,66 @@
       },
       "qa_passed": true,
       "word_count": 1469
+    },
+    {
+      "slug": "skilldocs-threadgrab-markdown-collab-loop-2026",
+      "date": "2026-08-29",
+      "type": "workflow",
+      "lang": "en",
+      "file": "en/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html",
+      "url": "https://threadgrab.com/en/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html",
+      "title": "Skilldocs 2026: The Collab Layer Your Archive Was Missing",
+      "description": "Skilldocs (launched Aug 12, 2026) closes the X to Markdown to agent loop. Live MCP server, CRDT, OAuth. Where it fits next to threadgrab.",
+      "heat_source": "briefing-2026-08-29",
+      "status": "published",
+      "published_at": "2026-08-29",
+      "providers_featured": [
+        "Skilldocs",
+        "threadgrab",
+        "tweet.md",
+        "Claude Code"
+      ],
+      "primary_cta": "threadgrab"
+    },
+    {
+      "slug": "skilldocs-threadgrab-markdown-collab-loop-2026",
+      "date": "2026-08-29",
+      "type": "workflow",
+      "lang": "pt",
+      "file": "pt/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html",
+      "url": "https://threadgrab.com/pt/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html",
+      "title": "Skilldocs 2026: A Camada Colaborativa que Faltava no Seu Arquivo",
+      "description": "Skilldocs (lançado 12 ago 2026) fecha o ciclo X para Markdown para agente. Servidor MCP ao vivo, CRDT, OAuth. Como se encaixa com threadgrab.",
+      "heat_source": "briefing-2026-08-29",
+      "status": "published",
+      "published_at": "2026-08-29",
+      "providers_featured": [
+        "Skilldocs",
+        "threadgrab",
+        "tweet.md",
+        "Claude Code"
+      ],
+      "primary_cta": "threadgrab"
+    },
+    {
+      "slug": "skilldocs-threadgrab-markdown-collab-loop-2026",
+      "date": "2026-08-29",
+      "type": "workflow",
+      "lang": "id",
+      "file": "id/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html",
+      "url": "https://threadgrab.com/id/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html",
+      "title": "Skilldocs 2026: Lapisan Kolaborasi yang Hilang di Arsip Anda",
+      "description": "Skilldocs (rilis 12 Agustus 2026) menutup loop X ke Markdown ke agen. Server MCP aktif, CRDT, OAuth. Posisinya berdampingan dengan threadgrab.",
+      "heat_source": "briefing-2026-08-29",
+      "status": "published",
+      "published_at": "2026-08-29",
+      "providers_featured": [
+        "Skilldocs",
+        "threadgrab",
+        "tweet.md",
+        "Claude Code"
+      ],
+      "primary_cta": "threadgrab"
     }
   ],
   "drafts": [
