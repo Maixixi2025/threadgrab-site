@@ -5917,6 +5917,90 @@
         "Claude Code"
       ],
       "primary_cta": "threadgrab"
+    },
+    {
+      "slug": "google-site-reputation-policy-x-archive-2026",
+      "date": "2026-08-30",
+      "type": "analysis",
+      "lang": "en",
+      "file": "en/blog/google-site-reputation-policy-x-archive-2026.html",
+      "url": "https://threadgrab.com/en/blog/google-site-reputation-policy-x-archive-2026.html",
+      "title": "Google Site Reputation 2026: How It Hits X Archive Sites",
+      "description": "Google's Site Reputation Policy update (Aug 28, 2026) targets third-party hosting for ranking. How X archive sites and aggregators respond.",
+      "heat_source": "⭐ 2026-08-30 daily hot topics — Google Search Central Site Reputation update (Aug 28, 2026); on-disk grep for 'site reputation'/'parasitic content' returned 0 hits, fresh angle on X archive sites' third-party hosting risk post-EEA split.",
+      "status": "published",
+      "providers_featured": [
+        "Google Search Quality team"
+      ],
+      "primary_cta": "Try ThreadGrab",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "word_count": 2293,
+      "published_at": "2026-08-30T04:06:41Z"
+    },
+    {
+      "slug": "google-site-reputation-policy-archive-x-2026",
+      "date": "2026-08-30",
+      "type": "analysis",
+      "lang": "pt",
+      "file": "pt/blog/google-site-reputation-policy-archive-x-2026.html",
+      "url": "https://threadgrab.com/pt/blog/google-site-reputation-policy-archive-x-2026.html",
+      "title": "Google Site Reputation 2026: Efeitos em Sites de Arquivo do X",
+      "description": "Atualização Site Reputation do Google (28 ago 2026) mira hospedagem de terceiros para ranking. Como sites de arquivo do X devem responder.",
+      "heat_source": "⭐ 2026-08-30 daily hot topics — Google Search Central Site Reputation update (Aug 28, 2026); on-disk grep for 'site reputation'/'parasitic content' returned 0 hits, fresh angle on X archive sites' third-party hosting risk post-EEA split.",
+      "status": "published",
+      "providers_featured": [
+        "Google Search Quality team"
+      ],
+      "primary_cta": "Experimente o ThreadGrab",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "word_count": 2551,
+      "published_at": "2026-08-30T04:06:41Z"
+    },
+    {
+      "slug": "google-site-reputation-kebijakan-arsip-x-2026",
+      "date": "2026-08-30",
+      "type": "analysis",
+      "lang": "id",
+      "file": "id/blog/google-site-reputation-kebijakan-arsip-x-2026.html",
+      "url": "https://threadgrab.com/id/blog/google-site-reputation-kebijakan-arsip-x-2026.html",
+      "title": "Google Site Reputation 2026: Pengaruh ke Situs Arsip X",
+      "description": "Pembaruan Site Reputation Google (28 Agu 2026) menyasar hosting pihak ketiga untuk ranking. Bagaimana situs arsip X merespons.",
+      "heat_source": "⭐ 2026-08-30 daily hot topics — Google Search Central Site Reputation update (Aug 28, 2026); on-disk grep for 'site reputation'/'parasitic content' returned 0 hits, fresh angle on X archive sites' third-party hosting risk post-EEA split.",
+      "status": "published",
+      "providers_featured": [
+        "Google Search Quality team"
+      ],
+      "primary_cta": "Coba ThreadGrab",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "word_count": 2131,
+      "published_at": "2026-08-30T04:06:41Z"
     }
   ],
   "drafts": [
@@ -6509,14 +6593,14 @@
     "cf-browser-run-concorrencia-throughput-threadgrab-2026"
   ],
   "last_run": "2026-08-27",
-  "last_publish": "2026-08-27",
-  "last_published_slug": "claude-in-chrome-browser-agent-2026",
+  "last_publish": "2026-08-30",
+  "last_published_slug": "google-site-reputation-policy-x-archive-2026",
   "last_draft_slug": "notula-markdown-ai-agents-2026",
-  "last_published_at": "2026-08-27",
+  "last_published_at": "2026-08-30T04:06:41Z",
   "drafts_count": 24,
-  "published_count": 198,
+  "published_count": 207,
   "last_topic_picked": "x-to-linkedin-newsletter-repurpose-2026",
   "last_pick_source": "⭐ 2026-08-27 daily briefing threadgrab item — Anthropic made Claude in Chrome GA on Aug 26, 2026 (verified claude.com/claude-in-chrome product page + GA blog + Chrome Web Store: browser agent extension, reads signed-in pages, clicks/types/fills forms from side panel, auto-approve w/ safety classifier; paid plans only, Chrome-only). Angle = browser-agent web content capture feeding a Markdown thread archive; distinct from 08-25 Claude Skills API article (API/Skills surface vs browser agent — body-grep 'Claude in Chrome'/'browser agent' = 0 on disk). Prompt ⭐⭐⭐/⭐⭐/⭐ all covered on disk",
   "last_drafted_slug": "x-articles-ai-native-composer-2026",
-  "publish_notes": "Published claude-in-chrome-browser-agent-2026 (Aug 27): briefing threadgrab item 'Claude in Chrome' (GA Aug 26, 2026) mapped to browser-agent web content capture feeding a Markdown thread archive. 3 pages (en/pt/id, single-EN-slug), 7-gate PASS, deployed."
+  "publish_notes": "Published claude-in-chrome-browser-agent-2026 (Aug 27): briefing threadgrab item 'Claude in Chrome' (GA Aug 26, 2026) mapped to browser-agent web content capture feeding a Markdown thread archive. 3 pages (en/pt/id, single-EN-slug), 7-gate PASS, deployed.\n[2026-08-30] published: google-site-reputation-policy-x-archive-2026 (en/pt/id) — Google Site Reputation Policy 8-28 update angle for X archive sites; 2293/2551/2131 words; sitemap 89→90; sitemap regen script patched TODAY=2026-08-16→2026-08-30"
 }

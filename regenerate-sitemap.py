@@ -9,7 +9,7 @@ import os, re, subprocess, sys
 
 ROOT = '/root/threadgrab-site'
 DOMAIN = 'https://threadgrab.com'
-TODAY = '2026-08-16'
+TODAY = '2026-08-30'
 
 def git_lastmod(relpath):
     try:
