@@ -6001,6 +6001,102 @@
       ],
       "word_count": 2131,
       "published_at": "2026-08-30T04:06:41Z"
+    },
+    {
+      "slug": "vertex-vs-karakeep-personal-archiver-2026",
+      "date": "2026-08-31",
+      "type": "analysis",
+      "lang": "en",
+      "file": "en/blog/vertex-vs-karakeep-personal-archiver-2026.html",
+      "url": "https://threadgrab.com/en/blog/vertex-vs-karakeep-personal-archiver-2026.html",
+      "title": "Vertex vs Karakeep 2026: New Wave of Personal Archivers | ThreadGrab",
+      "description": "Vertex (Show HN Aug 27, 2026) and Karakeep (28K+ stars) lead a 2026 personal-archiver wave with MHTML snapshots. How public archives like ThreadGrab fit.",
+      "heat_source": "⭐ 2026-08-31 daily hot topics — Vertex Show HN (Aug 27, 2026, objectID 49465218) + Karakeep 28,684 stars; on-disk grep for 'vertex'/'karakeep'/'MHTML'/'hoarder'/'omnivore'/'archivebox' all returned 0 hits, fresh angle on the new wave of personal archivers vs public social archives.",
+      "status": "published",
+      "providers_featured": [
+        "Vertex Labs",
+        "Karakeep",
+        "ArchiveBox",
+        "Wayback Machine",
+        "ThreadGrab"
+      ],
+      "primary_cta": "Try ThreadGrab",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "word_count": 2348,
+      "published_at": "2026-08-31T04:15:43Z"
+    },
+    {
+      "slug": "vertex-vs-karakeep-arquivador-pessoal-2026",
+      "date": "2026-08-31",
+      "type": "analysis",
+      "lang": "pt",
+      "file": "pt/blog/vertex-vs-karakeep-arquivador-pessoal-2026.html",
+      "url": "https://threadgrab.com/pt/blog/vertex-vs-karakeep-arquivador-pessoal-2026.html",
+      "title": "Vertex vs Karakeep 2026: Nova Onda de Arquivadores Pessoais | ThreadGrab",
+      "description": "Vertex (Show HN 27 ago 2026) e Karakeep (28K+ estrelas) lideram nova onda 2026 de arquivadores pessoais. Onde entram os arquivos públicos.",
+      "heat_source": "⭐ 2026-08-31 daily hot topics — Vertex Show HN (Aug 27, 2026, objectID 49465218) + Karakeep 28,684 stars; on-disk grep for 'vertex'/'karakeep'/'MHTML'/'hoarder'/'omnivore'/'archivebox' all returned 0 hits, fresh angle on the new wave of personal archivers vs public social archives.",
+      "status": "published",
+      "providers_featured": [
+        "Vertex Labs",
+        "Karakeep",
+        "ArchiveBox",
+        "Wayback Machine",
+        "ThreadGrab"
+      ],
+      "primary_cta": "Experimente o ThreadGrab",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "word_count": 2598,
+      "published_at": "2026-08-31T04:15:43Z"
+    },
+    {
+      "slug": "vertex-vs-karakeep-arsip-pribadi-2026",
+      "date": "2026-08-31",
+      "type": "analysis",
+      "lang": "id",
+      "file": "id/blog/vertex-vs-karakeep-arsip-pribadi-2026.html",
+      "url": "https://threadgrab.com/id/blog/vertex-vs-karakeep-arsip-pribadi-2026.html",
+      "title": "Vertex vs Karakeep 2026: Gelombang Baru Arsip Personal | ThreadGrab",
+      "description": "Vertex (Show HN 27 Agu 2026) dan Karakeep (28K+ bintang) memimpin gelombang 2026 pengarsip personal. Posisi arsip publik.",
+      "heat_source": "⭐ 2026-08-31 daily hot topics — Vertex Show HN (Aug 27, 2026, objectID 49465218) + Karakeep 28,684 stars; on-disk grep for 'vertex'/'karakeep'/'MHTML'/'hoarder'/'omnivore'/'archivebox' all returned 0 hits, fresh angle on the new wave of personal archivers vs public social archives.",
+      "status": "published",
+      "providers_featured": [
+        "Vertex Labs",
+        "Karakeep",
+        "ArchiveBox",
+        "Wayback Machine",
+        "ThreadGrab"
+      ],
+      "primary_cta": "Coba ThreadGrab",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "word_count": 2165,
+      "published_at": "2026-08-31T04:15:43Z"
     }
   ],
   "drafts": [
