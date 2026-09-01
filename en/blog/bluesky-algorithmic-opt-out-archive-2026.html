@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bluesky Algorithmic Opt-Out 2026: Archive Implications | ThreadGrab</title>
+  <meta name="description" content="Bluesky's Aug 27 opt-out hides posts from Discover non-followers. How the AT Protocol preference changes what an X/Bluesky archive captures.">
+  <meta name="keywords" content="Bluesky algorithmic opt-out 2026, Bluesky Discover feed opt out, Bluesky privacy and security 2026, AT Protocol contentVisibilityDeclaration, Bluesky archive implications, hide posts from algorithmic recommendations, social archive Discover snapshot, Bluesky going viral opt out, AT Proto preference label, ThreadGrab Bluesky archive, Bluesky third-party client opt-out, social content provenance 2026">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/en/blog/bluesky-algorithmic-opt-out-archive-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/bluesky-algorithmic-opt-out-archive-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/bluesky-opt-out-algoritmico-arquivo-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/bluesky-opt-out-algoritma-arsip-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/bluesky-algorithmic-opt-out-archive-2026.html">
+  <meta property="og:title" content="Bluesky Algorithmic Opt-Out 2026: Archive Implications | ThreadGrab">
+  <meta property="og:description" content="Bluesky's Aug 27 opt-out hides posts from Discover non-followers. How the AT Protocol preference changes what an X/Bluesky archive captures.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/en/blog/bluesky-algorithmic-opt-out-archive-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bluesky Algorithmic Opt-Out 2026: Archive Implications | ThreadGrab">
+  <meta name="twitter:description" content="Bluesky's Aug 27 opt-out hides posts from Discover non-followers. How the AT Protocol preference changes what an X/Bluesky archive captures.">
+  <meta property="article:published_time" content="2026-09-01">
+  <meta property="article:modified_time" content="2026-09-01">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo:hover { color: #1d9bf0; }
+    .tagline { color: #888; font-size: 0.85rem; margin-left: auto; }
+    nav.lang-bar { display: flex; gap: 12px; padding: 12px 24px; border-bottom: 1px solid #1a1a1a; background: #141414; font-size: 0.9rem; }
+    nav.lang-bar a { color: #888; text-decoration: none; padding: 4px 10px; border-radius: 4px; }
+    nav.lang-bar a:hover { color: #fff; background: #1d9bf0; }
+    nav.lang-bar a.active { color: #fff; background: #1d9bf0; font-weight: 600; }
+    main { max-width: 760px; margin: 0 auto; padding: 32px 24px; }
+    h1 { font-size: 2rem; line-height: 1.2; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 28px; }
+    h2 { font-size: 1.5rem; margin: 36px 0 16px; color: #20d5ec; }
+    h3 { font-size: 1.15rem; margin: 24px 0 10px; color: #fff; }
+    p { margin-bottom: 16px; }
+    code { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    pre { background: #1a1a1a; padding: 16px; border-radius: 6px; overflow-x: auto; margin-bottom: 16px; border: 1px solid #2a2a2a; }
+    pre code { background: transparent; padding: 0; color: #e6e6e6; font-size: 0.85em; }
+    .callout { background: #1a1a1a; border-left: 4px solid #20d5ec; padding: 16px 20px; margin: 24px 0; border-radius: 4px; }
+    .callout p { margin-bottom: 0; }
+    blockquote { border-left: 3px solid #444; padding-left: 16px; color: #ccc; margin: 16px 0; font-style: italic; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #2a2a2a; font-size: 0.92em; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    tr:hover { background: #141414; }
+    .cta-box { background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%); border: 1px solid #20d5ec; padding: 24px; border-radius: 8px; margin: 32px 0; text-align: center; }
+    .cta-box h3 { color: #20d5ec; margin-top: 0; }
+    .cta-button { display: inline-block; background: #20d5ec; color: #0f0f0f; padding: 12px 28px; border-radius: 6px; text-decoration: none; font-weight: 600; margin-top: 12px; }
+    .cta-button:hover { background: #1ab8cc; }
+    .faq-item { margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #2a2a2a; }
+    .faq-item:last-child { border-bottom: none; }
+    .related { background: #141414; padding: 20px; border-radius: 6px; margin-top: 32px; }
+    .related h3 { margin-top: 0; color: #20d5ec; }
+    .related ul { list-style: none; padding-left: 0; }
+    .related li { margin-bottom: 8px; }
+    .related a { color: #1d9bf0; text-decoration: none; }
+    .related a:hover { text-decoration: underline; }
+    footer { padding: 24px; text-align: center; color: #888; border-top: 1px solid #1a1a1a; margin-top: 48px; font-size: 0.85rem; }
+    footer a { color: #888; text-decoration: none; }
+    footer a:hover { color: #20d5ec; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Bluesky Algorithmic Opt-Out 2026: Archive Implications | ThreadGrab",
+    "description": "Bluesky's Aug 27 opt-out hides posts from Discover non-followers. How the AT Protocol preference changes what an X/Bluesky archive captures.",
+    "datePublished": "2026-09-01",
+    "dateModified": "2026-09-01",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/en/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/en/" },
+    "mainEntityOfPage": "https://threadgrab.com/en/blog/bluesky-algorithmic-opt-out-archive-2026.html",
+    "inLanguage": "en"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://threadgrab.com/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/en/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Bluesky Algorithmic Opt-Out 2026: Archive Implications", "item": "https://threadgrab.com/en/blog/bluesky-algorithmic-opt-out-archive-2026.html" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Where exactly is the Bluesky algorithmic opt-out toggle?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Settings &rarr; Privacy and Security &rarr; 'Ask apps to hide my posts from algorithmic recommendations'. On launch (August 27, 2026) the toggle was placed alongside the logged-out-visibility toggle inside the Privacy and Security screen, gated behind a feature flag that the Bluesky team rolled out to all users the same day. The Bluesky mobile and web apps share the same Settings tree."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the opt-out opt-in or opt-out?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Opt-in (default = eligible for algorithmic recommendations). The lexicon description for app.bsky.actor.contentVisibilityDeclaration explicitly states that consumers must treat a missing record as false, so users who never opened the toggle are still eligible. The PR that shipped it (social-app PR #11417) writes both true and false as explicit records, so re-enabling algorithmic recommendations still leaves the record present with hideFromAlgorithmicRecommendations: false."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the setting make my account private?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The setting hides your posts from the non-follower recommendation surface only. Your profile page, individual posts (with a direct link), search results, mentions and quote-posts by other users, and the Following timeline of any existing follower are unaffected. Bluesky is still rolling out true private-account support at the protocol level; this is not it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to take effect?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Up to one hour, per Bluesky's official communication and TechCrunch's reporting. The delay is cache invalidation on the AppView side, not propagation of the repo record (which is immediate). For archive tools, this means a snapshot pulled in the hour after the user toggles may still see the user in a non-follower recommendation list."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do third-party Bluesky clients honor the flag?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "They can read the flag (the record is in your public repo) but are not required to honor it. Bluesky's official app honors it; Skybridge, Skeets and other AT Proto clients are free to filter or not. The Bluesky team explicitly framed this as an opt-out that travels with the user, not an enforced protocol-wide rule."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does this mean for archiving a Discover snapshot?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Three things: timestamp the snapshot to the minute, record the opt-out flag for every account in the snapshot, and back-fill the flag with null rather than infer false for any pre-August-27 historical data. Naive crawlers that ignore the flag will over-report Discover visibility, especially for quiet or niche accounts that turn it on."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a href="/en/" class="logo">ThreadGrab</a>
+    <span class="tagline">Social content archive</span>
+  </header>
+  <nav class="lang-bar">
+    <a class="active" href="/en/blog/bluesky-algorithmic-opt-out-archive-2026.html">EN</a>
+    <a href="/pt/blog/bluesky-opt-out-algoritmico-arquivo-2026.html">PT</a>
+    <a href="/id/blog/bluesky-opt-out-algoritma-arsip-2026.html">ID</a>
+  </nav>
+  <main>
+    <h1><span>Bluesky</span> Algorithmic Opt-Out 2026: Archive Implications</h1>
+    <p class="meta">September 1, 2026 &middot; ThreadGrab</p>
+    
+    <p>On August 27, 2026, Bluesky shipped a setting that lets users ask apps to hide their posts from the Discover feed's algorithmic recommendations. The post by the official <code>@bsky.app</code> account reads verbatim: <em>"Now you can opt out of having your posts shown to non-followers in the Discover feed. We know not everyone wants to go viral. Sometimes you're just posting for your followers."</em> The toggle itself is labelled <em>"Ask apps to hide my posts from algorithmic recommendations"</em> and lives under <strong>Settings &rarr; Privacy and Security</strong> in the official Bluesky app (social-app v1.131.x).</p>
+
+    <p>For an X / Bluesky / LinkedIn archive tool like ThreadGrab, the launch is more than a privacy story. The setting is stored as a singleton record in the user's PDS repo at collection <code>app.bsky.actor.contentVisibilityDeclaration</code> with rkey <code>literal:self</code> and a boolean <code>hideFromAlgorithmicRecommendations</code>. Because the record lives at the account level and not in the app's local settings, the preference travels with the user across every AT Protocol client. TechCrunch's Sarah Perez phrased it directly: <em>"the preference is recorded at the account level. That means the choice travels with the user, even if they're posting from another app that is powered by the same underlying protocol that Bluesky uses, AT Proto. However, while those other apps have access to this information, they still have to choose whether to respect it."</em></p>
+
+    <h2>What the opt-out actually changes</h2>
+
+    <p>The setting affects a single algorithmic surface: Bluesky's <strong>Discover</strong> feed for non-followers. Excluded accounts still appear in:</p>
+
+    <table>
+      <thead>
+        <tr><th>Surface</th><th>Opted-out accounts visible?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Discover feed (non-followers)</td><td>Excluded by AppView</td></tr>
+        <tr><td>Discover feed (existing followers)</td><td>Still shown</td></tr>
+        <tr><td>Profile page (direct visit)</td><td>Fully public</td></tr>
+        <tr><td>Search results (handle / display name)</td><td>Visible</td></tr>
+        <tr><td>Following timeline</td><td>Visible to followers</td></tr>
+        <tr><td>Mentions and quote-posts by others</td><td>Visible</td></tr>
+        <tr><td>Shared links / screenshots</td><td>Visible (out of Bluesky's scope)</td></tr>
+      </tbody>
+    </table>
+
+    <p>Posts remain public. The account does not become private. The toggle is also <strong>opt-in by default</strong>: per the lexicon description, "Consumers must treat a missing record as false," so a user who has never opened the new privacy panel is still eligible for algorithmic recommendations. Caching invalidation is documented to take up to one hour, meaning a freshly-toggled opt-out may still appear in a Discover snapshot during that window.</p>
+
+    <h2>Why this matters for social archive tools</h2>
+
+    <p>Three concrete archive implications fall out of the launch.</p>
+
+    <h3>1. The "Discover snapshot" is now time-stamped</h3>
+
+    <p>Before August 27, 2026, archiving a public Bluesky profile and a Discover-page snapshot of that profile produced two lists that always agreed. After the launch, the same archive pull run twice &mdash; once at 14:55 UTC and again at 16:00 UTC &mdash; may surface a different set of "people you might like" recommendations for the same query, because opt-out signals started propagating partway through. An archive that wants to claim "this is what the Discover feed showed on date X" should now also record:</p>
+
+    <ul>
+      <li>The exact UTC timestamp of the snapshot,</li>
+      <li>The <code>hideFromAlgorithmicRecommendations</code> state of every account in the snapshot,</li>
+      <li>Whether the cache-invalidation one-hour window had elapsed at capture time.</li>
+    </ul>
+
+    <h3>2. The cross-client flag breaks naive crawlers</h3>
+
+    <p>Because the preference lives at the AT Protocol account level, a third-party client that does not read <code>app.bsky.actor.contentVisibilityDeclaration</code> will produce a snapshot that includes accounts whose creators explicitly asked apps to hide them. For an archive tool that crawls via a third-party AT Proto client, that means the right move is to <strong>read the preference directly from the user's PDS</strong> (via the standard <code>com.atproto.repo.getRecord</code> call against <code>at://&lt;did&gt;/app.bsky.actor.contentVisibilityDeclaration/self</code>) rather than rely on whatever filter the client applies. The example below fetches the preference and respects it.</p>
+
+    <pre><code>// Resolve DID and check the opt-out preference
+const did = await resolveHandle(handle);
+const uri = `at://${did}/app.bsky.actor.contentVisibilityDeclaration/self`;
+
+const record = await agent.com.atproto.repo.getRecord({
+  repo: did,
+  collection: 'app.bsky.actor.contentVisibilityDeclaration',
+  rkey: 'self'
+});
+
+const optedOut = record?.value?.hideFromAlgorithmicRecommendations === true;
+console.log(`${handle} opted-out: ${optedOut}`);
+
+// Skip the post in any "Discover-shaped" archive:
+if (optedOut) {
+  console.log(`Skipping ${post.uri} from alg-recommendation archive`);
+}</code></pre>
+
+    <h3>3. Historical re-fetch is a soft cutover</h3>
+
+    <p>Lexicon <code>app.bsky.actor.contentVisibilityDeclaration</code> was added in atproto PR #5372 on August 12, 2026. social-app PR #11417 (APP-2774) merged August 16; the helper-text update merged August 26; v1.131.0 shipped August 18 with the toggle hidden behind a feature flag and went live to all users on August 27. A historical archive pull dated <em>before</em> August 12 will not show the preference for any user; a pull dated <em>after</em> August 27 will. For archive tools that already hold pre-cutover snapshots, the safest pattern is to back-fill the missing field with a sentinel value (e.g. <code>null</code> for "unknown") rather than infer <code>false</code> as the default &mdash; the lexicon says "treat missing as false" for app consumers, but an archive's job is to record what was observable, not what the app defaults to.</p>
+
+    <h2>How ThreadGrab treats the new preference</h2>
+
+    <p>The capture layer records the user's <code>hideFromAlgorithmicRecommendations</code> flag alongside each archived post and surfaces it in the public Markdown output as a small footnote:</p>
+
+    <pre><code>---
+archived_at: 2026-09-01T17:24:11Z
+author: jay.bsky.team
+opt_out_algorithmic: true
+source_post: at://did:plc:abc.../app.bsky.feed.post/3lx...
+---</code></pre>
+
+    <p>That way, anyone reading the archive later can tell whether the post was visible in a Discover snapshot at capture time. The setting does not change whether a profile can be archived (it never made the post private), only whether that post would have been <em>algorithmically surfaced</em> on Discover. ThreadGrab's X and LinkedIn pipelines already record equivalent provenance signals (logged-out visibility, mention context) so the schema pattern fits.</p>
+
+    <div class="callout">
+      <p><strong>For creators archiving someone else's Bluesky feed:</strong> the most common failure mode is grabbing the post and forgetting the preference. A Discover-shaped archive that lacks the opt-out metadata will silently misrepresent what Bluesky actually showed to non-followers on that day. ThreadGrab's capture layer now records the flag, but any hand-rolled archive should do the same.</p>
+    </div>
+
+    <h2>What it does not change</h2>
+
+    <ul>
+      <li><strong>Posts remain public.</strong> The setting is not a "private account" toggle. Private accounts at the protocol level are still rolling out and were explicitly called out as not-yet-shipped in the TechCrunch piece.</li>
+      <li><strong>Existing followers keep seeing every post.</strong> Only the recommendation surface for non-followers is filtered.</li>
+      <li><strong>The third-party client surface is unchanged at launch.</strong> Skybridge, Skeets and other AT Proto apps can read the flag but are not required to honor it. The official Bluesky app honors it.</li>
+      <li><strong>There is no enforcement on screenshots, link shares, or off-platform virality.</strong> The flag is a request to algorithmic surfaces only.</li>
+    </ul>
+
+    <h2>Frequently asked questions</h2>
+
+    <div class="faq-item">
+      <h3>Where exactly is the Bluesky algorithmic opt-out toggle?</h3>
+      <p>Settings &rarr; Privacy and Security &rarr; "Ask apps to hide my posts from algorithmic recommendations". On launch (August 27, 2026) the toggle was placed alongside the logged-out-visibility toggle inside the Privacy and Security screen, gated behind a feature flag that the Bluesky team rolled out to all users the same day. The Bluesky mobile and web apps share the same Settings tree.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Is the opt-out opt-in or opt-out?</h3>
+      <p>Opt-in (default = eligible for algorithmic recommendations). The lexicon description for <code>app.bsky.actor.contentVisibilityDeclaration</code> explicitly states that consumers must treat a missing record as false, so users who never opened the toggle are still eligible. The PR that shipped it (social-app PR #11417) writes both true and false as explicit records, so re-enabling algorithmic recommendations still leaves the record present with <code>hideFromAlgorithmicRecommendations: false</code>.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Does the setting make my account private?</h3>
+      <p>No. The setting hides your posts from the non-follower recommendation surface only. Your profile page, individual posts (with a direct link), search results, mentions and quote-posts by other users, and the Following timeline of any existing follower are unaffected. Bluesky is still rolling out true private-account support at the protocol level; this is not it.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How long does it take to take effect?</h3>
+      <p>Up to one hour, per Bluesky's official communication and TechCrunch's reporting. The delay is cache invalidation on the AppView side, not propagation of the repo record (which is immediate). For archive tools, this means a snapshot pulled in the hour after the user toggles may still see the user in a non-follower recommendation list.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Do third-party Bluesky clients honor the flag?</h3>
+      <p>They can read the flag (the record is in your public repo) but are not required to honor it. Bluesky's official app honors it; Skybridge, Skeets and other AT Proto clients are free to filter or not. The Bluesky team explicitly framed this as an opt-out that travels with the user, not an enforced protocol-wide rule.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What does this mean for archiving a Discover snapshot?</h3>
+      <p>Three things: timestamp the snapshot to the minute, record the opt-out flag for every account in the snapshot, and back-fill the flag with <code>null</code> rather than infer <code>false</code> for any pre-August-27 historical data. Naive crawlers that ignore the flag will over-report Discover visibility, especially for quiet or niche accounts that turn it on.</p>
+    </div>
+
+    <div class="related">
+      <h3>Related guides</h3>
+      <ul>
+        <li><a href="/en/blog/bluesky-hide-reposts-curate-feed-2026.html">Bluesky Hide Reposts 2026: Curating Your Own Feed</a> &mdash; the same Settings tree controls feed-curation toggles, including which reposts surface.</li>
+        <li><a href="/en/blog/atproto-bluesky-data-portability-2026.html">ATProto Data Portability 2026: Bluesky and Beyond</a> &mdash; the repo-level record pattern the opt-out uses is the same portability primitive other settings will adopt.</li>
+        <li><a href="/en/blog/tweet-md-stable-archive-landscape-2026.html">Tweet.md Stable 2026: When Nothing Changed, What Did We Learn?</a> &mdash; X-archive tools are stable, but Bluesky's protocol-level changes are still landing every few weeks.</li>
+        <li><a href="/en/blog/track-x-posts-google-search-console-2026.html">Track X Posts in Google Search Console 2026</a> &mdash; an equivalent provenance signal for X archives: recording logged-out visibility and post state at capture time.</li>
+      </ul>
+    </div>
+
+    <p style="margin-top: 32px;"><em>Last verified: September 1, 2026. Bluesky toggle label, PR numbers and feature details verified via the official @bsky.app post (at://bsky.app/app.bsky.feed.post/3mu3jzayuys2k) and TechCrunch's same-day coverage. Toggle state changes propagate within ~1 hour.</em></p>
+
+    <div class="cta-box">
+      <h3>Archive Bluesky posts with provenance metadata</h3>
+      <p>ThreadGrab records the algorithmic-opt-out flag alongside every archived Bluesky post so the snapshot reflects what the Discover feed actually showed.</p>
+      <a href="/en/" class="cta-button">Try ThreadGrab &rarr;</a>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2026 ThreadGrab. <a href="/en/">Home</a> &middot; <a href="/en/blog/">Blog</a> &middot; <a href="/en/privacy.html">Privacy</a> &middot; <a href="/en/about.html">About</a></p>
+  </footer>
+</body>
+</html>
