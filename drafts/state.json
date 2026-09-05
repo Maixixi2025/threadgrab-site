@@ -6358,6 +6358,87 @@
         "BreadcrumbList",
         "FAQPage"
       ]
+    },
+    {
+      "lang": "en",
+      "slug": "mrdown-ai-rewrite-diff-verify-2026",
+      "date": "2026-09-05",
+      "file": "en/blog/mrdown-ai-rewrite-diff-verify-2026.html",
+      "url": "https://threadgrab.com/en/blog/mrdown-ai-rewrite-diff-verify-2026.html",
+      "title": "MRDown 2026: Verify AI Redrafts Before You Republish",
+      "description": "MRDown diffs the Markdown your AI just rewrote. In the grab-rewrite-republish pipeline, it is the AI meaning-drift check before you ship.",
+      "status": "published",
+      "published_at": "2026-09-05T03:50:00Z",
+      "heat_source": "Daily briefing 2026-09-05 md2rich/threadgrab Markdown-tool suggestion + MRDown GitHub primary source (v1.14.0, 2026-09-02); HN Show HN early-Sep; body-grep-0 across 249 blog files",
+      "providers_featured": [
+        "MRDown",
+        "ThreadGrab"
+      ],
+      "primary_cta": "Grab the public thread as Markdown, then diff each AI repurposing draft against the source before you publish",
+      "lang_versions": {
+        "en": "en/blog/mrdown-ai-rewrite-diff-verify-2026.html",
+        "pt": "pt/blog/mrdown-ai-rewrite-diff-verify-2026.html",
+        "id": "id/blog/mrdown-ai-rewrite-diff-verify-2026.html"
+      },
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ]
+    },
+    {
+      "lang": "pt",
+      "slug": "mrdown-ai-rewrite-diff-verify-2026",
+      "date": "2026-09-05",
+      "file": "pt/blog/mrdown-ai-rewrite-diff-verify-2026.html",
+      "url": "https://threadgrab.com/pt/blog/mrdown-ai-rewrite-diff-verify-2026.html",
+      "title": "MRDown 2026: Verifique Redações de IA Antes de Republicar",
+      "description": "MRDown faz o diff do Markdown que a IA reescreveu. No fluxo capturar-reescrever-republicar, é a verificação contra desvio de sentido antes de publicar.",
+      "status": "published",
+      "published_at": "2026-09-05T03:50:00Z",
+      "heat_source": "Daily briefing 2026-09-05 md2rich/threadgrab Markdown-tool suggestion + MRDown GitHub primary source (v1.14.0, 2026-09-02); HN Show HN early-Sep; body-grep-0 across 249 blog files",
+      "providers_featured": [
+        "MRDown",
+        "ThreadGrab"
+      ],
+      "primary_cta": "Grab the public thread as Markdown, then diff each AI repurposing draft against the source before you publish",
+      "lang_versions": {
+        "en": "en/blog/mrdown-ai-rewrite-diff-verify-2026.html",
+        "pt": "pt/blog/mrdown-ai-rewrite-diff-verify-2026.html",
+        "id": "id/blog/mrdown-ai-rewrite-diff-verify-2026.html"
+      },
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ]
+    },
+    {
+      "lang": "id",
+      "slug": "mrdown-ai-rewrite-diff-verify-2026",
+      "date": "2026-09-05",
+      "file": "id/blog/mrdown-ai-rewrite-diff-verify-2026.html",
+      "url": "https://threadgrab.com/id/blog/mrdown-ai-rewrite-diff-verify-2026.html",
+      "title": "MRDown 2026: Verifikasi Draf Ulang AI Sebelum Terbit Ulang",
+      "description": "MRDown menampilkan diff Markdown yang ditulis ulang AI. Di alur ambil-tulis-ulang-terbitkan, ini pemeriksaan pergeseran makna AI sebelum Anda terbitkan.",
+      "status": "published",
+      "published_at": "2026-09-05T03:50:00Z",
+      "heat_source": "Daily briefing 2026-09-05 md2rich/threadgrab Markdown-tool suggestion + MRDown GitHub primary source (v1.14.0, 2026-09-02); HN Show HN early-Sep; body-grep-0 across 249 blog files",
+      "providers_featured": [
+        "MRDown",
+        "ThreadGrab"
+      ],
+      "primary_cta": "Grab the public thread as Markdown, then diff each AI repurposing draft against the source before you publish",
+      "lang_versions": {
+        "en": "en/blog/mrdown-ai-rewrite-diff-verify-2026.html",
+        "pt": "pt/blog/mrdown-ai-rewrite-diff-verify-2026.html",
+        "id": "id/blog/mrdown-ai-rewrite-diff-verify-2026.html"
+      },
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ]
     }
   ],
   "drafts": [
@@ -6949,15 +7030,15 @@
     "cf-browser-run-concurrency-throughput-threadgrab-2026",
     "cf-browser-run-concorrencia-throughput-threadgrab-2026"
   ],
-  "last_run": "2026-09-02",
-  "last_publish": "2026-09-02",
-  "last_published_slug": "nitter-xcancel-shutdown-x-anonymous-2026",
+  "last_run": "2026-09-05",
+  "last_publish": "2026-09-05",
+  "last_published_slug": "mrdown-ai-rewrite-diff-verify-2026",
   "last_draft_slug": "notula-markdown-ai-agents-2026",
-  "last_published_at": "2026-09-02",
+  "last_published_at": "2026-09-05",
   "drafts_count": 24,
-  "published_count": 216,
+  "published_count": 219,
   "last_topic_picked": "x-to-linkedin-newsletter-repurpose-2026",
   "last_pick_source": "⭐ 2026-08-27 daily briefing threadgrab item — Anthropic made Claude in Chrome GA on Aug 26, 2026 (verified claude.com/claude-in-chrome product page + GA blog + Chrome Web Store: browser agent extension, reads signed-in pages, clicks/types/fills forms from side panel, auto-approve w/ safety classifier; paid plans only, Chrome-only). Angle = browser-agent web content capture feeding a Markdown thread archive; distinct from 08-25 Claude Skills API article (API/Skills surface vs browser agent — body-grep 'Claude in Chrome'/'browser agent' = 0 on disk). Prompt ⭐⭐⭐/⭐⭐/⭐ all covered on disk",
   "last_drafted_slug": "x-articles-ai-native-composer-2026",
-  "publish_notes": "Published claude-in-chrome-browser-agent-2026 (Aug 27): briefing threadgrab item 'Claude in Chrome' (GA Aug 26, 2026) mapped to browser-agent web content capture feeding a Markdown thread archive. 3 pages (en/pt/id, single-EN-slug), 7-gate PASS, deployed.\n[2026-08-30] published: google-site-reputation-policy-x-archive-2026 (en/pt/id) — Google Site Reputation Policy 8-28 update angle for X archive sites; 2293/2551/2131 words; sitemap 89→90; sitemap regen script patched TODAY=2026-08-16→2026-08-30\n2026-09-01: Published 'Bluesky Algorithmic Opt-Out 2026' (bluesky-algorithmic-opt-out-archive-2026) — EN/PT/ID 3-lang + fixed trilingual-sitemap regression (81 PT + 81 ID alternates now referenced) + sitemap 91→86 URLs\n2026-09-02: published nitter-xcancel-shutdown-x-anonymous-2026 / nitter-xcancel-encerramento-leitor-2026 / nitter-xcancel-penutupan-pembaca-2026 — Nitter + XCancel C&D shutdown 2026-08-24; 6-outlet cross-source verified (TechCrunch Sarah Perez, Techdirt Sep 2, Forbes, Notebookcheck, heise, Cybernews); HN Algolia 1211/1348 pts/cmts; threadgrab angle = capture-before-next-C&D archive workflow"
+  "publish_notes": "Published claude-in-chrome-browser-agent-2026 (Aug 27): briefing threadgrab item 'Claude in Chrome' (GA Aug 26, 2026) mapped to browser-agent web content capture feeding a Markdown thread archive. 3 pages (en/pt/id, single-EN-slug), 7-gate PASS, deployed.\n[2026-08-30] published: google-site-reputation-policy-x-archive-2026 (en/pt/id) — Google Site Reputation Policy 8-28 update angle for X archive sites; 2293/2551/2131 words; sitemap 89→90; sitemap regen script patched TODAY=2026-08-16→2026-08-30\n2026-09-01: Published 'Bluesky Algorithmic Opt-Out 2026' (bluesky-algorithmic-opt-out-archive-2026) — EN/PT/ID 3-lang + fixed trilingual-sitemap regression (81 PT + 81 ID alternates now referenced) + sitemap 91→86 URLs\n2026-09-02: published nitter-xcancel-shutdown-x-anonymous-2026 / nitter-xcancel-encerramento-leitor-2026 / nitter-xcancel-penutupan-pembaca-2026 — Nitter + XCancel C&D shutdown 2026-08-24; 6-outlet cross-source verified (TechCrunch Sarah Perez, Techdirt Sep 2, Forbes, Notebookcheck, heise, Cybernews); HN Algolia 1211/1348 pts/cmts; threadgrab angle = capture-before-next-C&D archive workflow\n2026-09-05: published mrdown-ai-rewrite-diff-verify-2026 (en/pt/id single-EN-slug) — MRDown v1.14.0 2026-09-02 macOS markdown viewer/editor, AI-rewrite diff showpiece. Threadgrab angle = verify-AI-redraft meaning-drift check in grab->repurpose pipeline (Panache-family 08-23 precedent). Verified from GitHub README+releases (primary). Body-grep-0 (MRDown across 249 files). Sitemap 87->88, 7-gate PASS all langs, EN/PT/ID 65/70/71-char titles, 137/151/152 descs, words 1810/1977/1688."
 }
