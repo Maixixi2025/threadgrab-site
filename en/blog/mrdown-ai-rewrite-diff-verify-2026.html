@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MRDown 2026: Verify AI Redrafts Before You Republish | ThreadGrab</title>
+  <meta name="description" content="MRDown diffs the Markdown your AI just rewrote. In the grab-rewrite-republish pipeline, it is the AI meaning-drift check before you ship.">
+  <meta name="keywords" content="MRDown Markdown diff, verify AI rewrite Markdown, AI redraft before publish, avoid AI meaning drift, diff AI rewritten text, Markdown version history app, three column conflict editor, repurpose X thread AI, republish grabbed thread verify, AI agent rewrote file, ThreadGrab repurposing pipeline, verify AI redraft 2026">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/en/blog/mrdown-ai-rewrite-diff-verify-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/mrdown-ai-rewrite-diff-verify-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/mrdown-ai-rewrite-diff-verify-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/mrdown-ai-rewrite-diff-verify-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/mrdown-ai-rewrite-diff-verify-2026.html">
+  <meta property="og:title" content="MRDown 2026: Verify AI Redrafts Before You Republish | ThreadGrab">
+  <meta property="og:description" content="MRDown diffs the Markdown your AI just rewrote. In the grab-rewrite-republish pipeline, it is the AI meaning-drift check before you ship.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/en/blog/mrdown-ai-rewrite-diff-verify-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MRDown 2026: Verify AI Redrafts Before You Republish | ThreadGrab">
+  <meta name="twitter:description" content="MRDown diffs the Markdown your AI just rewrote. In the grab-rewrite-republish pipeline, it is the AI meaning-drift check before you ship.">
+  <meta property="article:published_time" content="2026-09-05">
+  <meta property="article:modified_time" content="2026-09-05">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo:hover { color: #1d9bf0; }
+    .tagline { color: #888; font-size: 0.85rem; margin-left: auto; }
+    .lang-bar { display: flex; gap: 12px; padding: 12px 24px; border-bottom: 1px solid #1a1a1a; background: #141414; font-size: 0.9rem; }
+    .lang-bar a { color: #888; text-decoration: none; padding: 4px 10px; border-radius: 4px; }
+    .lang-bar a:hover { color: #fff; background: #1d9bf0; }
+    .lang-bar a.active { color: #fff; background: #1d9bf0; font-weight: 600; }
+    main { max-width: 760px; margin: 0 auto; padding: 32px 24px; }
+    h1 { font-size: 2rem; line-height: 1.2; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 28px; }
+    h2 { font-size: 1.5rem; margin: 36px 0 16px; color: #20d5ec; }
+    h3 { font-size: 1.15rem; margin: 24px 0 10px; color: #fff; }
+    p { margin-bottom: 16px; }
+    code { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    pre { background: #1a1a1a; padding: 16px; border-radius: 6px; overflow-x: auto; margin-bottom: 16px; border: 1px solid #2a2a2a; }
+    pre code { background: transparent; padding: 0; color: #fff; }
+    ul, ol { margin-bottom: 16px; padding-left: 24px; }
+    li { margin-bottom: 8px; }
+    a { color: #1d9bf0; }
+    .callout { background: #142a3a; border-left: 4px solid #20d5ec; padding: 16px 20px; margin: 24px 0; border-radius: 0 6px 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 10px 12px; border: 1px solid #2a2a2a; text-align: left; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    .faq-item { background: #1a1a1a; padding: 16px 20px; margin: 12px 0; border-radius: 6px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .related-posts { background: #1a1a1a; padding: 20px; border-radius: 8px; margin: 24px 0; }
+    .related-posts h3 { margin-top: 0; color: #20d5ec; }
+    .related-posts ul { list-style: none; padding: 0; margin: 0; }
+    .related-posts li { padding: 6px 0; border-bottom: 1px solid #2a2a2a; }
+    .related-posts li:last-child { border-bottom: none; }
+    footer { padding: 30px 24px; text-align: center; color: #888; font-size: 0.9rem; border-top: 1px solid #1a1a1a; margin-top: 60px; }
+    footer a { color: #888; text-decoration: none; }
+    footer a:hover { color: #1d9bf0; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/en/" class="logo">ThreadGrab</a>
+    <span class="tagline">Archive X threads as Markdown</span>
+  </header>
+
+  <div class="lang-bar">
+    <a href="/en/blog/mrdown-ai-rewrite-diff-verify-2026.html" class="active">EN</a>
+    <a href="/pt/blog/mrdown-ai-rewrite-diff-verify-2026.html">PT</a>
+    <a href="/id/blog/mrdown-ai-rewrite-diff-verify-2026.html">ID</a>
+  </div>
+
+  <main>
+    <h1><span>MRDown 2026:</span> Verify AI Redrafts Before You Republish</h1>
+    <p class="meta">September 5, 2026 &middot; ThreadGrab</p>
+
+    <p>The most common way a repurposed X thread goes wrong is not the thread. It is the <strong>rewrite</strong>. You grab a public thread as Markdown, hand it to an AI to restyle into an X Article or a LinkedIn post, and the model quietly changes a number, drops a caveat, or splits one claim into a stronger one. The output reads perfectly. It is simply no longer what the original author said.</p>
+
+    <p><strong>MRDown</strong> is a macOS-native Markdown viewer and editor, MIT-licensed and free, that grew out of one developer's annoyance with the <code>.md</code> files Claude Code keeps generating. Its showpiece is a capability almost no Markdown app ships: it <em>reads you the diff of what your AI just rewrote</em>. Version 1.14.0 landed September 2, 2026. For anyone who repurposes grabbled threads with AI help, MRDown is best understood not as another editor but as the <strong>meaning-drift check</strong> between an AI redraft and a public republish.</p>
+
+    <div class="callout">
+      <p><strong>Quick take:</strong> MRDown (github.com/MR-TABATA/MRDown, v1.14.0, September 2, 2026) keeps a timestamped version every time a file is saved or rewritten — including by an outside agent — and shows any two versions side by side with only the changed words marked. In the grab &#8594; AI-rewrite &#8594; verify &#8594; republish pipeline, it is the step that catches silent meaning drift before you ship. Free, MIT, macOS 10.15+ (Apple Silicon and Intel).</p>
+    </div>
+
+    <h2>Why the rewrite is where repurposing breaks</h2>
+    <p>ThreadGrab turns a public thread into Markdown so you can edit, repackage, or republish it elsewhere. The moment you paste that Markdown into an AI composer and ask for a "more engaging" version, you lose the ability to see what actually changed. Models do not tell you which sentence they reworded and which they strengthened. Without a diff, every repurposed thread ships on faith.</p>
+    <p>The failure is rarely dramatic. An original that says "roughly half of the beta testers reported faster load times" becomes "most beta users saw drastically faster load times." The meaning did not <em>reverse</em> — it <em>drifted</em>. For archived, attributed content, drift is worse than deletion: the wrong version now carries the original author's name.</p>
+
+    <h2>What MRDown actually does</h2>
+    <p>MRDown started (the author's own words) as a two-hour project to preview <code>.md</code> files without opening a heavy editor. It became a full viewer-and-editor with one differentiator. The features that matter for a repurposing workflow:</p>
+    <ul>
+      <li><strong>Version history with diffs.</strong> Every save — and every rewrite from outside the app — quietly keeps a timestamped version. The History panel puts any two versions side by side; only the words that differ are marked, and unchanged passages fold away.</li>
+      <li><strong>Three-column conflict rescue.</strong> If something changes the file on disk while you hold unsaved edits, MRDown shows three columns — last save, what is on disk, your edits — and flags only the lines both you and the other writer changed. Nothing is silently overwritten or lost.</li>
+      <li><strong>Git HEAD joins the list.</strong> In a Git repository, your committed version appears in the same history, so the diff against what you last committed is one click away. Git is entirely optional.</li>
+      <li><strong>Compare any two files.</strong> <code>⌘⇧D</code> diffs two documents side by side in the same view — including two <code>.docx</code> files that MRDown opens as Markdown.</li>
+    </ul>
+    <p>For a tool that people reach for when an <em>agent</em> is editing their files, that last point matters: MRDown does not know which application wrote a change (macOS does not record it), but it records that <em>something changed the file on disk while you were not looking</em>, which is exactly the failure most editors hide.</p>
+
+    <h2>The grab &#8594; verify pipeline</h2>
+    <p>Here is the workflow MRDown fits into. It assumes you already captured the thread as Markdown.</p>
+    <ol>
+      <li><strong>Grab.</strong> Capture the public thread as Markdown with the ThreadGrab API or a tool in your archive stack. Save it to a local folder, ideally inside a Git repo.</li>
+      <li><strong>Rewrite with an AI.</strong> Point your AI composer at the Markdown file and ask for the repurposed draft. Tell the model to edit <em>in place</em> or save to a new draft file.</li>
+      <li><strong>Diff the redraft in MRDown.</strong> Open the History panel (clock icon) and compare the pre-AI save against the post-AI save, or compare the two draft files with <code>⌘⇧D</code>. Only the changed words light up, so a substituted number or a dropped "not" is visible in seconds.</li>
+      <li><strong>Confirm or reject each change.</strong> Restore any version in one click, non-destructively — nothing is written until you save. Mark the claim boundaries you are not willing to hand to an AI.</li>
+      <li><strong>Republish.</strong> Export the verified Markdown to HTML (<code>⌘⇧E</code>) or copy it into your X Article / LinkedIn / newsletter composer with confidence.</li>
+    </ol>
+    <p>The step most people skip is the third. Adding a diff check between the AI redraft and the source turns a blind republish into a reviewed one — without reading two long documents line by line.</p>
+
+    <h2>Side-by-side version check in code</h2>
+    <p>If you would rather verify inside the terminal, the same logic is a single diff command. This is the byte-identical command pair used in both places:</p>
+    <pre><code># works on Linux and macOS; USERNAME is the X handle to archive
+curl -s https://threadgrab.com/api/profile/USERNAME \
+  | jq -r '.[] | "# \(.author)\n\n\(.text)\n---"' &gt; original.md
+
+# after the AI writes a repurposed draft, spot every drifted line
+diff -u original.md repurposed.md</code></pre>
+    <p>MRDown gives you the same signal in a visual form — and, unlike a terminal diff, it knows that a cosmetic wording change and a meaning-altering one are both just "changed lines," so it becomes your judgment to read each highlighted word.</p>
+
+    <h2>Where MRDown sits versus the rest of the stack</h2>
+    <table>
+      <thead>
+        <tr><th>Pipeline step</th><th>Tool</th><th>What it owns</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Capture (grab a public thread)</td><td>ThreadGrab</td><td>Turns a public X thread into durable Markdown.</td></tr>
+        <tr><td>Rewrite (AI redraft)</td><td>Your AI composer</td><td>Restyles the source into a new voice or platform.</td></tr>
+        <tr><td>Verify (meaning-drift check)</td><td>MRDown</td><td>Diffs each AI redraft against the source; flags silent changes.</td></tr>
+        <tr><td>Publish output (rich text)</td><td>md2rich-style converter</td><td>Turns the verified Markdown into platform rich text.</td></tr>
+      </tbody>
+    </table>
+    <p>MRDown does not grab threads and it does not publish them. It owns the narrow, easy-to-skip step in between: proving that what you are about to publish still says what the original said.</p>
+
+    <h2>The authoring side that made it</h2>
+    <p>MRDown is open-core: the repository is the whole app, MIT, and stays MIT. The author has stated the paid features to come — AI explaining a diff, project-wide search, authenticated remotes — will live in a separate paid repository. For the repurposer, the verified facts you can rely on today: in-place editing swaps the reading view into an editor, the file on disk is never rewritten by the app itself (which keeps the diff honest), and it renders tables, code, Mermaid, KaTeX math, and task lists. It is signed and notarized with an Apple Developer ID, and runs on macOS 10.15 and later.</p>
+
+    <h2>Limitations worth knowing</h2>
+    <ul>
+      <li><strong>macOS-only binaries.</strong> It is built with Tauri and could run on Windows in principle, but no Windows build is distributed and there is no Windows code-signing certificate.</li>
+      <li><strong>It does not know which app changed the file.</strong> macOS records no such thing. MRDown knows <em>a</em> change happened on disk, not that Claude did it — which is why a dedicated diff step matters for attribution-heavy repurposing.</li>
+      <li><strong>The diff is your judgment.</strong> MRDown marks changed words; it does not judge whether a change flips meaning. For a factual claim you are attaching an author's name to, read each highlighted word yourself.</li>
+      <li><strong>Early-stage project.</strong> The rapid release cadence (six versions through August to v1.14 on September 2) means features move fast; verify current behavior in the app before you bet a weekly pipeline on it.</li>
+    </ul>
+
+    <h2>Keep the provenance with the content</h2>
+    <p>The threadgrab habit pairs naturally with MRDown. Grab once, keep the original Markdown as your source of truth, and never let an AI rewrite be the only version in the folder. When you store <code>original.md</code> and <code>repurposed.md</code> together, the diff is always reproducible — which is exactly what you want if a republished thread is ever challenged on attribution.</p>
+    <pre><code># keep both versions in one folder so the diff stays reproducible
+mkdir -p ./thread-2026-09-05 && cd ./thread-2026-09-05
+mv ~/original.md ./original.md
+# hash both; store the hashes with the files
+sha256sum original.md repurposed.md &gt; checksums.txt</code></pre>
+    <p>Archive the original. Diff the rewrite. Then publish with the source beside the version that carries your name.</p>
+
+    <div class="related-posts">
+      <h3>Related reading</h3>
+      <ul>
+        <li><a href="/en/blog/x-to-markdown-3-methods-2026.html">X to Markdown: 3 Ways to Turn a Thread Into Clean Markdown</a></li>
+        <li><a href="/en/blog/x-articles-ai-native-composer-2026.html">X Articles 2026: What the AI-Native Composer Means for Archivists</a></li>
+        <li><a href="/en/blog/skilldocs-threadgrab-markdown-collab-loop-2026.html">Skilldocs 2026: The Collab Layer Your Archive Was Missing</a></li>
+      </ul>
+    </div>
+
+    <h2>FAQ</h2>
+
+    <div class="callout">
+      <p><strong>Why not just read the AI's output carefully?</strong> Because a careful read of one polished document is exactly what lets a confident, grammatically clean rewrite hide a changed claim. A diff forces the comparison against the source; your attention goes to the words that actually moved, not to how well the whole thing reads.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>What is MRDown, in one line?</strong>
+      <p>A free, MIT-licensed macOS Markdown viewer and editor whose signature feature is reading you the diff of what your AI just rewrote — every save and every outside rewrite keeps a timestamped version you can compare side by side.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Does MRDown replace ThreadGrab?</strong>
+      <p>No. ThreadGrab captures a public X thread as Markdown; MRDown does not fetch anything from the web. MRDown sits one step later in the pipeline — after you have the Markdown and before you republish — as the verification layer between an AI redraft and the version you ship.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>How does MRDown know my AI rewrote the file?</strong>
+      <p>It does not know <em>which</em> app did it — macOS does not record that. It knows the file on disk changed while a version was open, snapshots the disk version the moment it is seen, and offers a three-column view (last save / on disk / your edits) when both you and an outside writer changed overlapping lines.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Is MRDown a good diff tool for repurposed threads even if I do not use Git?</strong>
+      <p>Yes. Version history is built in and lives in the app's data directory, so it never clutters your files or your Git repo. Git is optional — but if your Markdown is in a repo, the committed <code>HEAD</code> joins the same history list, giving you the against-commit diff in one click.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Is MRDown really free and does it stay free?</strong>
+      <p>The repository is MRDown, entirely MIT, and its author has stated it stays MIT — it is open-core. Paid features that are planned (AI explaining a diff, project-wide search, authenticated remotes like GitHub) will be developed in a separate repository and will not be removed from the free app.</p>
+    </div>
+
+    <p>Last verified: September 5, 2026 &middot; Sources: <a href="https://github.com/MR-TABATA/MRDown">MRDown GitHub repository (README, v1.14.0 release, September 2, 2026)</a>, <a href="https://mr-tabata.github.io/MRDown/">MRDown project homepage</a>.</p>
+  </main>
+
+  <footer>
+    <a href="/en/">Home</a> &middot;
+    <a href="/en/blog/">Blog</a> &middot;
+    <a href="/en/blog/x-to-markdown-3-methods-2026.html">X to Markdown</a>
+    <br>
+    ThreadGrab is an independent tool. Not affiliated with X Corp., Twitter, or any featured service.
+    <br>
+    &copy; 2026 ThreadGrab
+  </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "MRDown 2026: Verify AI Redrafts Before You Republish",
+    "description": "MRDown diffs the Markdown your AI just rewrote. In the grab-rewrite-republish pipeline, it is the AI meaning-drift check before you ship.",
+    "datePublished": "2026-09-05",
+    "dateModified": "2026-09-05",
+    "author": { "@type": "Organization", "name": "ThreadGrab" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "logo": { "@type": "ImageObject", "url": "https://threadgrab.com/logo.png" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://threadgrab.com/en/blog/mrdown-ai-rewrite-diff-verify-2026.html" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://threadgrab.com/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/en/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "MRDown 2026: Verify AI Redrafts", "item": "https://threadgrab.com/en/blog/mrdown-ai-rewrite-diff-verify-2026.html" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is MRDown, in one line?", "acceptedAnswer": { "@type": "Answer", "text": "A free, MIT-licensed macOS Markdown viewer and editor whose signature feature is reading you the diff of what your AI just rewrote — every save and every outside rewrite keeps a timestamped version you can compare side by side." } },
+      { "@type": "Question", "name": "Does MRDown replace ThreadGrab?", "acceptedAnswer": { "@type": "Answer", "text": "No. ThreadGrab captures a public X thread as Markdown; MRDown does not fetch anything from the web. MRDown sits one step later in the pipeline — after you have the Markdown and before you republish — as the verification layer between an AI redraft and the version you ship." } },
+      { "@type": "Question", "name": "How does MRDown know my AI rewrote the file?", "acceptedAnswer": { "@type": "Answer", "text": "It does not know which app did it — macOS does not record that. It knows the file on disk changed while a version was open, snapshots the disk version the moment it is seen, and offers a three-column view (last save / on disk / your edits) when both you and an outside writer changed overlapping lines." } },
+      { "@type": "Question", "name": "Is MRDown a good diff tool for repurposed threads even if I do not use Git?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Version history is built in and lives in the app's data directory, so it never clutters your files or your Git repo. Git is optional — but if your Markdown is in a repo, the committed HEAD joins the same history list, giving you the against-commit diff in one click." } },
+      { "@type": "Question", "name": "Is MRDown really free and does it stay free?", "acceptedAnswer": { "@type": "Answer", "text": "The repository is MRDown, entirely MIT, and its author has stated it stays MIT — it is open-core. Paid features that are planned (AI explaining a diff, project-wide search, authenticated remotes like GitHub) will be developed in a separate repository and will not be removed from the free app." } }
+    ]
+  }
+  </script>
+</body>
+</html>
