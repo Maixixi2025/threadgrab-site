@@ -6439,6 +6439,90 @@
         "BreadcrumbList",
         "FAQPage"
       ]
+    },
+    {
+      "lang": "en",
+      "slug": "tweet-app-new-twitter-rebrand-2026",
+      "file": "en/blog/tweet-app-new-twitter-rebrand-2026.html",
+      "url": "https://threadgrab.com/en/blog/tweet-app-new-twitter-rebrand-2026.html",
+      "title": "Tweet.app 2026: The New Twitter Fight Over Who Owns the Bird",
+      "description": "X won the Twitter name in court, then lost tweet and the bird. Tweet.app rises from the abandoned marks. What this means for X archives.",
+      "date": "2026-09-06",
+      "status": "published",
+      "published_at": "2026-09-06T03:50:00Z",
+      "heat_source": "Daily briefing 2026-09-06 threadgrab slice weak (Md2pdf=md2rich slice, rejected); fresh Google News RSS + HN gap-scan surfaced X-vs-'new Twitter' trademark ruling: Reuters 2026-09-03 (Judge Colm Connolly grants X Corp. block on 'Twitter' word mark) + Engadget 2026-09-05 (startup rebrands to Tweet.app after court lets 'tweet'+bird logo be used; X likely abandoned them) + first-party tweet.app FAQ. Body-grep-0 on tweet.app/operation bluebird/connolly/twitter.now/bird logo across 249 blog files.",
+      "providers_featured": [
+        "Tweet.app",
+        "Operation Bluebird",
+        "ThreadGrab"
+      ],
+      "primary_cta": "Capture the public X threads that matter as Markdown now: platform names, logos, and viewer tools can change or vanish overnight, but a Markdown file you export stays yours.",
+      "lang_versions": {
+        "en": "en/blog/tweet-app-new-twitter-rebrand-2026.html",
+        "pt": "pt/blog/tweet-app-new-twitter-rebrand-2026.html",
+        "id": "id/blog/tweet-app-new-twitter-rebrand-2026.html"
+      },
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ]
+    },
+    {
+      "lang": "pt",
+      "slug": "tweet-app-new-twitter-rebrand-2026",
+      "file": "pt/blog/tweet-app-new-twitter-rebrand-2026.html",
+      "url": "https://threadgrab.com/pt/blog/tweet-app-new-twitter-rebrand-2026.html",
+      "title": "Tweet.app 2026: A Nova Batalha Pelo Nome do Passarinho",
+      "description": "A X venceu o nome Twitter no tribunal, mas perdeu “tweet” e o passarinho. O Tweet.app surge das marcas abandonadas. O que isso significa.",
+      "date": "2026-09-06",
+      "status": "published",
+      "published_at": "2026-09-06T03:50:00Z",
+      "heat_source": "Daily briefing 2026-09-06 threadgrab slice weak (Md2pdf=md2rich slice, rejected); fresh Google News RSS + HN gap-scan surfaced X-vs-'new Twitter' trademark ruling: Reuters 2026-09-03 (Judge Colm Connolly grants X Corp. block on 'Twitter' word mark) + Engadget 2026-09-05 (startup rebrands to Tweet.app after court lets 'tweet'+bird logo be used; X likely abandoned them) + first-party tweet.app FAQ. Body-grep-0 on tweet.app/operation bluebird/connolly/twitter.now/bird logo across 249 blog files.",
+      "providers_featured": [
+        "Tweet.app",
+        "Operation Bluebird",
+        "ThreadGrab"
+      ],
+      "primary_cta": "Capture the public X threads that matter as Markdown now: platform names, logos, and viewer tools can change or vanish overnight, but a Markdown file you export stays yours.",
+      "lang_versions": {
+        "en": "en/blog/tweet-app-new-twitter-rebrand-2026.html",
+        "pt": "pt/blog/tweet-app-new-twitter-rebrand-2026.html",
+        "id": "id/blog/tweet-app-new-twitter-rebrand-2026.html"
+      },
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ]
+    },
+    {
+      "lang": "id",
+      "slug": "tweet-app-new-twitter-rebrand-2026",
+      "file": "id/blog/tweet-app-new-twitter-rebrand-2026.html",
+      "url": "https://threadgrab.com/id/blog/tweet-app-new-twitter-rebrand-2026.html",
+      "title": "Tweet.app 2026: Perebutan Nama Burung Biru Akhirnya Diputuskan",
+      "description": "X menang nama Twitter di pengadilan, lalu kehilangan kata tweet dan burung. Tweet.app bangkit dari merek yang ditinggalkan. Dampaknya?",
+      "date": "2026-09-06",
+      "status": "published",
+      "published_at": "2026-09-06T03:50:00Z",
+      "heat_source": "Daily briefing 2026-09-06 threadgrab slice weak (Md2pdf=md2rich slice, rejected); fresh Google News RSS + HN gap-scan surfaced X-vs-'new Twitter' trademark ruling: Reuters 2026-09-03 (Judge Colm Connolly grants X Corp. block on 'Twitter' word mark) + Engadget 2026-09-05 (startup rebrands to Tweet.app after court lets 'tweet'+bird logo be used; X likely abandoned them) + first-party tweet.app FAQ. Body-grep-0 on tweet.app/operation bluebird/connolly/twitter.now/bird logo across 249 blog files.",
+      "providers_featured": [
+        "Tweet.app",
+        "Operation Bluebird",
+        "ThreadGrab"
+      ],
+      "primary_cta": "Capture the public X threads that matter as Markdown now: platform names, logos, and viewer tools can change or vanish overnight, but a Markdown file you export stays yours.",
+      "lang_versions": {
+        "en": "en/blog/tweet-app-new-twitter-rebrand-2026.html",
+        "pt": "pt/blog/tweet-app-new-twitter-rebrand-2026.html",
+        "id": "id/blog/tweet-app-new-twitter-rebrand-2026.html"
+      },
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ]
     }
   ],
   "drafts": [
@@ -7030,15 +7114,15 @@
     "cf-browser-run-concurrency-throughput-threadgrab-2026",
     "cf-browser-run-concorrencia-throughput-threadgrab-2026"
   ],
-  "last_run": "2026-09-05",
-  "last_publish": "2026-09-05",
-  "last_published_slug": "mrdown-ai-rewrite-diff-verify-2026",
+  "last_run": "2026-09-06",
+  "last_publish": "2026-09-06",
+  "last_published_slug": "tweet-app-new-twitter-rebrand-2026",
   "last_draft_slug": "notula-markdown-ai-agents-2026",
-  "last_published_at": "2026-09-05",
+  "last_published_at": "2026-09-06",
   "drafts_count": 24,
-  "published_count": 219,
+  "published_count": 222,
   "last_topic_picked": "x-to-linkedin-newsletter-repurpose-2026",
   "last_pick_source": "⭐ 2026-08-27 daily briefing threadgrab item — Anthropic made Claude in Chrome GA on Aug 26, 2026 (verified claude.com/claude-in-chrome product page + GA blog + Chrome Web Store: browser agent extension, reads signed-in pages, clicks/types/fills forms from side panel, auto-approve w/ safety classifier; paid plans only, Chrome-only). Angle = browser-agent web content capture feeding a Markdown thread archive; distinct from 08-25 Claude Skills API article (API/Skills surface vs browser agent — body-grep 'Claude in Chrome'/'browser agent' = 0 on disk). Prompt ⭐⭐⭐/⭐⭐/⭐ all covered on disk",
   "last_drafted_slug": "x-articles-ai-native-composer-2026",
-  "publish_notes": "Published claude-in-chrome-browser-agent-2026 (Aug 27): briefing threadgrab item 'Claude in Chrome' (GA Aug 26, 2026) mapped to browser-agent web content capture feeding a Markdown thread archive. 3 pages (en/pt/id, single-EN-slug), 7-gate PASS, deployed.\n[2026-08-30] published: google-site-reputation-policy-x-archive-2026 (en/pt/id) — Google Site Reputation Policy 8-28 update angle for X archive sites; 2293/2551/2131 words; sitemap 89→90; sitemap regen script patched TODAY=2026-08-16→2026-08-30\n2026-09-01: Published 'Bluesky Algorithmic Opt-Out 2026' (bluesky-algorithmic-opt-out-archive-2026) — EN/PT/ID 3-lang + fixed trilingual-sitemap regression (81 PT + 81 ID alternates now referenced) + sitemap 91→86 URLs\n2026-09-02: published nitter-xcancel-shutdown-x-anonymous-2026 / nitter-xcancel-encerramento-leitor-2026 / nitter-xcancel-penutupan-pembaca-2026 — Nitter + XCancel C&D shutdown 2026-08-24; 6-outlet cross-source verified (TechCrunch Sarah Perez, Techdirt Sep 2, Forbes, Notebookcheck, heise, Cybernews); HN Algolia 1211/1348 pts/cmts; threadgrab angle = capture-before-next-C&D archive workflow\n2026-09-05: published mrdown-ai-rewrite-diff-verify-2026 (en/pt/id single-EN-slug) — MRDown v1.14.0 2026-09-02 macOS markdown viewer/editor, AI-rewrite diff showpiece. Threadgrab angle = verify-AI-redraft meaning-drift check in grab->repurpose pipeline (Panache-family 08-23 precedent). Verified from GitHub README+releases (primary). Body-grep-0 (MRDown across 249 files). Sitemap 87->88, 7-gate PASS all langs, EN/PT/ID 65/70/71-char titles, 137/151/152 descs, words 1810/1977/1688."
+  "publish_notes": "Published claude-in-chrome-browser-agent-2026 (Aug 27): briefing threadgrab item 'Claude in Chrome' (GA Aug 26, 2026) mapped to browser-agent web content capture feeding a Markdown thread archive. 3 pages (en/pt/id, single-EN-slug), 7-gate PASS, deployed.\n[2026-08-30] published: google-site-reputation-policy-x-archive-2026 (en/pt/id) — Google Site Reputation Policy 8-28 update angle for X archive sites; 2293/2551/2131 words; sitemap 89→90; sitemap regen script patched TODAY=2026-08-16→2026-08-30\n2026-09-01: Published 'Bluesky Algorithmic Opt-Out 2026' (bluesky-algorithmic-opt-out-archive-2026) — EN/PT/ID 3-lang + fixed trilingual-sitemap regression (81 PT + 81 ID alternates now referenced) + sitemap 91→86 URLs\n2026-09-02: published nitter-xcancel-shutdown-x-anonymous-2026 / nitter-xcancel-encerramento-leitor-2026 / nitter-xcancel-penutupan-pembaca-2026 — Nitter + XCancel C&D shutdown 2026-08-24; 6-outlet cross-source verified (TechCrunch Sarah Perez, Techdirt Sep 2, Forbes, Notebookcheck, heise, Cybernews); HN Algolia 1211/1348 pts/cmts; threadgrab angle = capture-before-next-C&D archive workflow\n2026-09-05: published mrdown-ai-rewrite-diff-verify-2026 (en/pt/id single-EN-slug) — MRDown v1.14.0 2026-09-02 macOS markdown viewer/editor, AI-rewrite diff showpiece. Threadgrab angle = verify-AI-redraft meaning-drift check in grab->repurpose pipeline (Panache-family 08-23 precedent). Verified from GitHub README+releases (primary). Body-grep-0 (MRDown across 249 files). Sitemap 87->88, 7-gate PASS all langs, EN/PT/ID 65/70/71-char titles, 137/151/152 descs, words 1810/1977/1688.\n2026-09-06: +3 Tweet.app 'new Twitter' rebrand/trademark ruling (en/pt/id). Briefing threadgrab slice weak+off-theme (Md2pdf=md2rich); PIVOT via RSS+HN gap-scan to fresh dated multi-source platform-identity story: X Corp wins 'Twitter' mark block (Reuters) but likely abandoned 'tweet'+bird -> Operation Bluebird rebrands 'Twitter' to Tweet.app (Engadget 09-05), first-party tweet.app FAQ. Body-grep-0. EN/PT/ID 73/67/75 titles, 136/137/134 descs, words 1794/1999/1661. Sitemap 88->89. 7-gate PASS."
 }
