@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MarkFlowy v0.100: Editor Markdown Dibangun Ulang untuk Dokumen Panjang 2026</title>
+  <meta name="description" content="MarkFlowy v0.100.0 membangun ulang inti editor dan membuka Markdown 2 MB dalam ~1 detik. Sudut pandang dokumen panjang untuk arsip sosial dan scraper X Articles.">
+  <meta name="keywords" content="MarkFlowy, editor Markdown, file Markdown besar, Markdown long-form, arsip X Articles, threadgrab, ProseMirror, Tauri, Markdown WYSIWYG 2026">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/id/blog/markflowy-long-document-markdown-editor-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/markflowy-long-document-markdown-editor-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/markflowy-long-document-markdown-editor-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/markflowy-long-document-markdown-editor-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/markflowy-long-document-markdown-editor-2026.html">
+  <meta property="og:title" content="MarkFlowy v0.100: Editor Markdown Dibangun Ulang untuk Dokumen Panjang 2026">
+  <meta property="og:description" content="MarkFlowy v0.100.0 membangun ulang inti editor dan membuka Markdown 2 MB dalam ~1 detik. Sudut pandang dokumen panjang untuk arsip sosial dan scraper X Articles.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/id/blog/markflowy-long-document-markdown-editor-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MarkFlowy v0.100: Editor Markdown Dibangun Ulang untuk Dokumen Panjang 2026">
+  <meta name="twitter:description" content="MarkFlowy v0.100.0 membangun ulang inti editor dan membuka Markdown 2 MB dalam ~1 detik. Sudut pandang dokumen panjang untuk arsip sosial dan scraper X Articles.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    .method-card { background: #1a1a1a; border-radius: 10px; padding: 20px 22px; margin-bottom: 18px; border-left: 3px solid #20d5ec; }
+    .method-card h3 { margin-top: 0; color: #20d5ec; }
+    .method-card .pros { color: #6fcf97; font-size: 0.9rem; }
+    .method-card .cons { color: #f2994a; font-size: 0.9rem; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "MarkFlowy v0.100: Editor Markdown Dibangun Ulang untuk Dokumen Panjang 2026",
+    "description": "MarkFlowy v0.100.0 membangun ulang inti editor dan membuka Markdown 2 MB dalam ~1 detik. Sudut pandang dokumen panjang untuk arsip sosial dan scraper X Articles.",
+    "datePublished": "2026-09-07",
+    "dateModified": "2026-09-07",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/id/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/id/" },
+    "mainEntityOfPage": "https://threadgrab.com/id/blog/markflowy-long-document-markdown-editor-2026.html",
+    "inLanguage": "id-ID"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://threadgrab.com/id/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/id/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "MarkFlowy Editor Markdown Dokumen Panjang" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Apa itu MarkFlowy dan mengapa v0.100 penting untuk file Markdown panjang?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "MarkFlowy adalah editor Markdown open-source berbantuan AI yang dibangun di atas Tauri (TypeScript + Rust) dan ProseMirror, tersedia untuk Windows, macOS, dan Linux. Rilis v0.100.0 pada 5 September 2026 adalah penulisan ulang inti editor secara menyeluruh dengan perubahan besar; hasil utamanya adalah file Markdown 2 MB sekarang terbuka dalam sekitar 1 detik di laptop modern. Untuk arsip X Articles, dump wiki besar, dan postingan long-form dari media sosial yang digabung dalam satu file Markdown, ini perubahan berarti karena editor desktop lama (VS Code, Obsidian, Typora) melambat atau macet ketika file melewati ~500 KB struktur bertingkat."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Mengapa sudut dokumen panjang penting untuk arsip X dan Bluesky?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Arsip X Articles dari satu penulis saja sudah bisa melampaui 200 KB Markdown rapi ketika setiap postingan mempertahankan daftar media, format entitas bernama, dan frontmatter. Tumpuk setahun postingan long-form dari 10 kreator dan Anda mengedit di kisaran 2 MB yang sekarang diperlakukan MarkFlowy v0.100 sebagai beban normal. Hal yang sama berlaku untuk postingan long-form Bluesky yang diambil via AT Protocol, ekspor newsletter LinkedIn, dan dump RSS Substack. Editor yang men-tokenisasi ulang seluruh file saat dibuka menjadi bottleneck; pembangunan ulang MarkFlowy mendorong pekerjaan itu ke parse awal yang lebih kecil, yang persis seperti beban kerja yang dihasilkan arsip media sosial."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bagaimana MarkFlowy dibanding VS Code, Obsidian, dan Typora pada file 2 MB?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Di perangkat keras yang sama, file Markdown 2 MB dengan ratusan bagian biasanya butuh VS Code 4 sampai 8 detik untuk dibuka dengan ekstensi seperti Markdown All in One aktif, Obsidian 3 sampai 6 detik dengan Live Preview, dan Typora sekitar 2 sampai 4 detik sebelum scroll mulus. MarkFlowy v0.100 melaporkan sekitar 1 detik pada file yang sama dalam pengujian mereka di laptop modern. Selisih utamanya paling besar di Windows, tempat editor berbasis Electron menambah overhead runtime di atas parse dokumen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bisakah saya pakai MarkFlowy untuk menyunting Markdown yang diekspor threadgrab?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bisa. threadgrab mengembalikan Markdown rapi untuk postingan, thread, dan Articles X: setiap postingan mempertahankan span bold, link, mention, dan hashtag sebagai Markdown standar, dan ekspor batch bisa digabung jadi satu file. Buka file itu di MarkFlowy dan kecepatan buka 1 detik bertahan untuk arsip sampai sekitar 2 MB; lebih dari itu editor masih membuka tapi latensi mengetik mulai naik. Alur gabungannya: scrape dengan threadgrab &rarr; buka .md di MarkFlowy &rarr; edit, lint, dan tulis ulang &rarr; publikasikan ke Notion, Ghost, atau md2rich untuk konversi rich text."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apa saja perubahan besar di MarkFlowy v0.100.0?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "v0.100.0 membangun ulang inti editor, jadi beberapa perilaku penyuntingan dan interaksi berbeda dari versi sebelumnya. Catatan rilis menandai perubahan ini secara eksplisit dan menyarankan untuk menyimpan ulang dokumen yang berasal dari v0.90.x atau lebih lama. v0.100.1, yang dirilis sehari kemudian pada 6 September, memperbaiki toggle Full Width di mode WYSIWYG, mengembalikan hint Placeholder paragraf kosong, dan meningkatkan indentasi daftar dengan Tab / Shift+Tab. Dokumen baru tidak perlu tindakan apa pun; dokumen yang sudah ada sebaiknya disimpan ulang sekali setelah upgrade untuk menormalkan representasi internal baru."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah MarkFlowy cocok untuk penulisan ulang AI pada Markdown panjang?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cocok. MarkFlowy punya panel AI bawaan yang mendukung DeepSeek, ChatGPT, dan penyedia lainnya, dan dapat merangkum, menerjemahkan, atau menulis ulang dokumen Markdown panjang langsung di editor. Untuk alur threadgrab yang khas (scrape thread panjang, minta LLM membersihkannya, publikasikan ulang versi yang dipoles), MarkFlowy menjaga penulisan ulang tetap interaktif: Anda bisa meminta model mengubah satu bagian pada satu waktu, meninjau diff di jendela yang sama, dan hanya meng-commit bagian yang Anda suka. Itu lebih cepat daripada melewatkan seluruh file ke UI chat dan menempel hasilnya kembali."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/id/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a href="/en/blog/markflowy-long-document-markdown-editor-2026.html">EN</a>
+      <a href="/id/blog/markflowy-long-document-markdown-editor-2026.html" class="active">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <p class="breadcrumb"><a href="/id/">Beranda</a> &rsaquo; <a href="/id/blog/">Blog</a> &rsaquo; MarkFlowy v0.100 Editor Markdown Dokumen Panjang</p>
+
+    <h1>MarkFlowy v0.100: Editor Markdown <span>Dibangun Ulang untuk Dokumen Panjang 2026</span></h1>
+    <p class="meta">7 September 2026 &middot; 9 menit baca &middot; oleh ThreadGrab</p>
+
+    <p>Jika Anda punya satu file Markdown yang menyimpan setahun X Articles arsip, dump Substack, atau ekspor long-form Bluesky, kemungkinan Anda sudah menabrak tembok: VS Code butuh 6 detik untuk membukanya, Obsidian tersendat saat scroll, dan Typora diam-diam memutuskan untuk render ulang seluruh dokumen pada setiap ketukan tombol. Rilis MarkFlowy v0.100.0 pada 5 September 2026 adalah penulisan ulang inti editor secara menyeluruh yang ditujukan tepat pada beban kerja itu. Menurut catatan rilis, file Markdown 2 MB sekarang terbuka dalam <strong>sekitar 1 detik</strong> di laptop masa kini.</p>
+
+    <div class="callout">
+      <p><strong>Kenapa threadgrab meliput ini:</strong> Arsip khas yang diekspor dari threadgrab (X Articles, threads, Bluesky long-form, newsletter LinkedIn) datang sebagai satu file .md yang dengan mudah melampaui 1 MB ketika Anda menggabungkan postingan satu bulan dari satu kreator. MarkFlowy v0.100 adalah editor desktop pertama yang sengaja dirancang untuk ukuran file itu tanpa kelambatan khas aplikasi Electron.</p>
+    </div>
+
+    <h2>Apa yang Berubah di MarkFlowy v0.100.0</h2>
+    <p>MarkFlowy adalah editor Markdown open-source berbantuan AI (AGPL-3.0, 2.382 bintang GitHub per 7 September 2026) yang dibangun di atas Tauri (TypeScript + Rust) dan ProseMirror. Rilis v0.100.0 pada 5 September 2026 secara eksplisit ditandai sebagai berisi <em>perubahan besar yang substansial</em>:</p>
+
+    <ul>
+      <li><strong>Inti editor dibangun ulang</strong> &mdash; parser, model dokumen, dan lapisan WYSIWYG ditulis ulang untuk memuat file besar lebih cepat.</li>
+      <li><strong>2 MB dalam ~1 detik</strong> &mdash; metrik utama dari catatan rilis; versi sebelumnya terasa jauh lebih lambat pada file di atas ~500 KB.</li>
+      <li><strong>Rendering WYSIWYG disempurnakan</strong> &mdash; penjenjangan daftar, status task, dan format inline melakukan round-trip lebih rapi melalui sumber Markdown.</li>
+      <li><strong>Kesadaran Front Matter</strong> &mdash; mengetik <code>---</code> di awal dokumen sekarang membuat blok YAML front matter alih-alih garis horizontal (ditambahkan di v0.100.1 pada 6 September).</li>
+      <li><strong>Indentasi daftar Tab / Shift+Tab</strong> &mdash; konten bertingkat, status task, dan riwayat undo/redo bertahan saat indentasi berubah.</li>
+    </ul>
+
+    <p>v0.100.1 di hari berikutnya (6 September 2026) memperbaiki tiga regresi mode WYSIWYG yang diperkenalkan v0.100.0: toggle Full Width, hint Placeholder paragraf kosong, dan perilaku indentasi daftar. Jika Anda upgrade, simpan ulang dokumen yang sudah ada sekali agar representasi internal yang baru stabil.</p>
+
+    <h2>Mengapa Sudut Dokumen Panjang Penting untuk Arsip Sosial</h2>
+    <p>Lingkaran arsip threadgrab menghasilkan file yang persis seperti beban kerja yang MarkFlowy v0.100 dibangun ulang untuknya. Beberapa contoh tipe file yang dibuka pengguna sungguhan tiap minggu:</p>
+
+    <table>
+      <thead>
+        <tr><th>Sumber arsip</th><th>Ukuran khas</th><th>Jumlah bagian</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>10 kreator × 1 bulan X Articles</td><td>~1,5 MB</td><td>~400 postingan</td></tr>
+        <tr><td>5 kreator × 1 tahun Bluesky long-form</td><td>~2,0 MB</td><td>~600 postingan</td></tr>
+        <tr><td>50 thread digabung jadi satu .md</td><td>~400 KB</td><td>~50 thread</td></tr>
+        <tr><td>Dump newsletter LinkedIn, satu penulis, 6 bulan</td><td>~800 KB</td><td>~25 edisi</td></tr>
+        <tr><td>Substack RSS diratakan ke Markdown</td><td>~1,2 MB</td><td>~30 postingan</td></tr>
+      </tbody>
+    </table>
+
+    <p>Lima contoh itu semua masuk benchmark 2 MB MarkFlowy v0.100. Editor yang men-tokenisasi ulang seluruh dokumen saat dibuka (VS Code dengan Markdown All in One, Obsidian dengan Live Preview, renderer Typora) memperlakukan ukuran itu sebagai uji stres. Penulisan ulang MarkFlowy mendorong lebih banyak kerja ke parse awal yang lebih kecil, yang menjadi pembeda antara menunggu 6 detik dan menunggu 1.</p>
+
+    <h2>MarkFlowy vs VS Code, Obsidian, dan Typora pada File 2 MB</h2>
+    <p>Angka di bawah berasal dari dokumentasi masing-masing proyek dan laporan forum pada kelas perangkat keras yang sama (laptop modern, Mac seri M atau Ryzen/Intel gen-12+). Itu khas, bukan benchmark sempurna, tapi urutannya konsisten:</p>
+
+    <table>
+      <thead>
+        <tr><th>Editor</th><th>Waktu buka 2 MB .md</th><th>Latensi ketik di 2 MB</th><th>Catatan</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>MarkFlowy v0.100</td><td>~1 dtk</td><td>rendah</td><td>Tauri (Rust + TS), inti ProseMirror</td></tr>
+        <tr><td>Typora</td><td>2-4 dtk</td><td>sedang</td><td>Render langsung mulus setelah pemanasan</td></tr>
+        <tr><td>Obsidian</td><td>3-6 dtk</td><td>sedang-tinggi</td><td>Live Preview render ulang tiap ketukan</td></tr>
+        <tr><td>VS Code (Markdown All in One)</td><td>4-8 dtk</td><td>sedang</td><td>Ekstensi menambah biaya parse</td></tr>
+        <tr><td>Sublime Text</td><td>~1 dtk</td><td>sangat rendah</td><td>Tanpa WYSIWYG; hanya penyorotan sintaks</td></tr>
+      </tbody>
+    </table>
+
+    <p>Sublime Text malah lebih cepat karena melewati rendering sepenuhnya. Korbalikannya adalah Anda kehilangan pratinjau WYSIWYG, yang justru coba dikembalikan penulisan ulang v0.100 MarkFlowy tanpa membayar biaya waktu buka.</p>
+
+    <h2>Cara Pakai MarkFlowy dengan Arsip threadgrab</h2>
+    <p>Alur gabungan punya bentuk yang sama dengan artikel scraper X Articles tapi MarkFlowy menggantikan langkah editor. Berjalan rapi dalam waktu kurang dari lima menit untuk arsip 1 MB:</p>
+
+    <div class="method-card">
+      <h3>Langkah 1 &mdash; Scrape sumber</h3>
+      <pre><code>curl -s "https://threadgrab.com/api/profile/&lt;handle&gt;/articles?cursor=&amp;limit=100" \
+  -o articles.json</code></pre>
+      <p class="pros">+ Satu panggilan per penulis, dipaginasi 20 per kali, mengembalikan span badan entitas bernama</p>
+      <p class="cons">&minus; Anda tetap perlu menggabungkan JSON jadi satu file Markdown</p>
+    </div>
+
+    <div class="method-card">
+      <h3>Langkah 2 &mdash; Gabung jadi satu .md</h3>
+      <pre><code>jq -r '.articles[] | "# " + .title + "\n\n" + .body_markdown + "\n\n---\n"' \
+  articles.json &gt; arsip-2026-09.md
+wc -c arsip-2026-09.md   # konfirmasi ukuran</code></pre>
+      <p class="pros">+ Markdown standar dengan front matter, separator, dan pemisah bagian yang rapi</p>
+      <p class="cons">&minus; Memerlukan jq; di Windows pakai <code>python -m json.tool</code> atau skrip Node kecil</p>
+    </div>
+
+    <div class="method-card">
+      <h3>Langkah 3 &mdash; Buka di MarkFlowy v0.100</h3>
+      <pre><code>markflowy arsip-2026-09.md   # binari macOS / Linux
+# atau klik dua kali file dari panel File Tree</code></pre>
+      <p class="pros">+ Terbuka dalam ~1 detik; scroll tetap mulus; mode WYSIWYG memperbarui tanpa buka ulang</p>
+      <p class="cons">&minus; Penggunaan pertama di macOS butuh <code>xattr -cr /Applications/MarkFlowy.app</code> sampai aplikasi ditandatangani</p>
+    </div>
+
+    <div class="method-card">
+      <h3>Langkah 4 &mdash; Penulisan ulang AI, bagian per bagian</h3>
+      <pre><code># Di panel AI MarkFlowy, arahkan ke kunci DeepSeek atau ChatGPT Anda,
+# lalu minta: "tulis ulang bagian 12 untuk menghilangkan hedging, pertahankan semua fakta."
+# Tinjau diff di jendela yang sama, terima atau kembalikan per bagian.</code></pre>
+      <p class="pros">+ Penulisan ulang per bagian mengalahkan tempel-kembali-dan-diff seluruh file dengan margin besar</p>
+      <p class="cons">&minus; Anda harus membawa kunci API sendiri; MarkFlowy tidak menyertakan model bawaan</p>
+    </div>
+
+    <div class="method-card">
+      <h3>Langkah 5 &mdash; Publikasikan lewat md2rich atau situs statis</h3>
+      <pre><code># Konversi Markdown yang sudah dipoles ke rich text untuk LinkedIn / Notion
+curl -s "https://md2rich.com/api/convert?md_url=https://your-site/arsip-2026-09.md"</code></pre>
+      <p class="pros">+ Markdown tetap jadi sumber kebenaran; rich text hanya sebuah render</p>
+      <p class="cons">&minus; LinkedIn masih tidak konsisten menghormati tempel-dengan-format; sedikit perbaikan manual adalah wajar</p>
+    </div>
+
+    <h2>Siapa yang Sebaiknya Beralih ke MarkFlowy v0.100</h2>
+    <p>Penulisan ulang ini bukan untuk semua orang. Tiga profil pembaca paling diuntungkan:</p>
+
+    <ul>
+      <li><strong>Pemelihara arsip sosial.</strong> Jika Anda menyimpan satu .md per penulis atau per kuartal, MarkFlowy adalah editor pertama yang membuka file itu secara instan. File Tree menangani tata letak folder per penulis, dan panel AI dalam editor memungkinkan Anda menulis ulang satu bagian tanpa meninggalkan dokumen.</li>
+      <li><strong>Penulis newsletter di platform long-form.</strong> Jika newsletter Substack atau LinkedIn Anda hidup sebagai satu Markdown sumber sebelum masuk platform publikasi, mode WYSIWYG MarkFlowy memberi pratinjau langsung yang tidak macet di 2 MB. Ekspor Pandoc yang ditambahkan di v0.90.0 (DOCX / ODT / EPUB) mencakup pengiriman sisi publikasi.</li>
+      <li><strong>Penulis yang saat ini menyunting Markdown di VS Code dan merasakan kelambatan.</strong> Jika Anda sudah menonaktifkan Markdown All in One atau pindah ke Sublime karena VS Code lambat di arsip Anda, MarkFlowy memberi WYSIWYG tanpa beban VS Code. Sistem pintasan keyboard dapat disesuaikan, sehingga memori otot berpindah.</li>
+    </ul>
+
+    <p>Tiga profil pembaca sebaiknya menunggu: siapa pun yang alurnya bergantung pada ekstensi VS Code tertentu, siapa pun yang timnya sudah membakukan diri pada ekosistem plugin Obsidian (Dataview, Templater, dll.), dan siapa pun yang menyunting file Markdown di bawah 200 KB (perbedaan kecepatan tidak terasa di ukuran itu).</p>
+
+    <h2>Tumpukan di Balik Kecepatan</h2>
+    <p>MarkFlowy adalah aplikasi Tauri: UI-nya TypeScript (3,86 MB sumber) dan sisi nativenya Rust (506 KB sumber). Editornya sendiri adalah build ProseMirror, dengan penulisan ulang v0.100 yang membangun ulang parser dan model dokumen untuk menunda rendering sampai bagian tertentu di-scroll ke tampilan. Biner tetap di bawah 20 MB dan mengirim ZIP portabel, MSI, dan installer offline untuk Windows; DMG untuk Apple silicon dan Intel di macOS; serta Flatpak (via FlatPark) plus skrip instalasi yang menaruh .deb / .rpm / AppImage di Linux.</p>
+
+    <p>Fitur AI adalah panel di dalam aplikasi, bukan layanan terpisah. MarkFlowy mendukung DeepSeek, ChatGPT, dan Copilot hari ini; Anda menyediakan kunci API sendiri, penulisan ulang terjadi di dalam editor, dan diff ditampilkan di jendela yang sama. Itulah beda praktisnya bagi seseorang yang menulis ulang arsip thread panjang: penyuntingan bagian per bagian tanpa meninggalkan dokumen, bukan tempel-kembali-dan-lihat-dengan-mata.</p>
+
+    <h2>FAQ</h2>
+
+    <div class="faq-item">
+      <strong>Apa itu MarkFlowy dan mengapa v0.100 penting untuk file Markdown panjang?</strong>
+      <p>MarkFlowy adalah editor Markdown open-source berbantuan AI yang dibangun di atas Tauri (TypeScript + Rust) dan ProseMirror, tersedia untuk Windows, macOS, dan Linux. Rilis v0.100.0 pada 5 September 2026 adalah penulisan ulang inti editor secara menyeluruh dengan perubahan besar; hasil utamanya adalah file Markdown 2 MB sekarang terbuka dalam sekitar 1 detik di laptop modern. Untuk arsip X Articles, dump wiki besar, dan postingan long-form dari media sosial yang digabung dalam satu file Markdown, ini perubahan berarti karena editor desktop lama (VS Code, Obsidian, Typora) melambat atau macet ketika file melewati ~500 KB struktur bertingkat.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Mengapa sudut dokumen panjang penting untuk arsip X dan Bluesky?</strong>
+      <p>Arsip X Articles dari satu penulis saja sudah bisa melampaui 200 KB Markdown rapi ketika setiap postingan mempertahankan daftar media, format entitas bernama, dan frontmatter. Tumpuk setahun postingan long-form dari 10 kreator dan Anda mengedit di kisaran 2 MB yang sekarang diperlakukan MarkFlowy v0.100 sebagai beban normal. Hal yang sama berlaku untuk postingan long-form Bluesky yang diambil via AT Protocol, ekspor newsletter LinkedIn, dan dump RSS Substack. Editor yang men-tokenisasi ulang seluruh file saat dibuka menjadi bottleneck; pembangunan ulang MarkFlowy mendorong pekerjaan itu ke parse awal yang lebih kecil, yang persis seperti beban kerja yang dihasilkan arsip media sosial.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Bagaimana MarkFlowy dibanding VS Code, Obsidian, dan Typora pada file 2 MB?</strong>
+      <p>Di perangkat keras yang sama, file Markdown 2 MB dengan ratusan bagian biasanya butuh VS Code 4 sampai 8 detik untuk dibuka dengan ekstensi seperti Markdown All in One aktif, Obsidian 3 sampai 6 detik dengan Live Preview, dan Typora sekitar 2 sampai 4 detik sebelum scroll mulus. MarkFlowy v0.100 melaporkan sekitar 1 detik pada file yang sama dalam pengujian mereka di laptop modern. Selisih utamanya paling besar di Windows, tempat editor berbasis Electron menambah overhead runtime di atas parse dokumen.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Bisakah saya pakai MarkFlowy untuk menyunting Markdown yang diekspor threadgrab?</strong>
+      <p>Bisa. threadgrab mengembalikan Markdown rapi untuk postingan, thread, dan Articles X: setiap postingan mempertahankan span bold, link, mention, dan hashtag sebagai Markdown standar, dan ekspor batch bisa digabung jadi satu file. Buka file itu di MarkFlowy dan kecepatan buka 1 detik bertahan untuk arsip sampai sekitar 2 MB; lebih dari itu editor masih membuka tapi latensi mengetik mulai naik. Alur gabungannya: scrape dengan threadgrab &rarr; buka .md di MarkFlowy &rarr; edit, lint, dan tulis ulang &rarr; publikasikan ke Notion, Ghost, atau md2rich untuk konversi rich text.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Apa saja perubahan besar di MarkFlowy v0.100.0?</strong>
+      <p>v0.100.0 membangun ulang inti editor, jadi beberapa perilaku penyuntingan dan interaksi berbeda dari versi sebelumnya. Catatan rilis menandai perubahan ini secara eksplisit dan menyarankan untuk menyimpan ulang dokumen yang berasal dari v0.90.x atau lebih lama. v0.100.1, yang dirilis sehari kemudian pada 6 September, memperbaiki toggle Full Width di mode WYSIWYG, mengembalikan hint Placeholder paragraf kosong, dan meningkatkan indentasi daftar dengan Tab / Shift+Tab. Dokumen baru tidak perlu tindakan apa pun; dokumen yang sudah ada sebaiknya disimpan ulang sekali setelah upgrade untuk menormalkan representasi internal baru.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Apakah MarkFlowy cocok untuk penulisan ulang AI pada Markdown panjang?</strong>
+      <p>Cocok. MarkFlowy punya panel AI bawaan yang mendukung DeepSeek, ChatGPT, dan penyedia lainnya, dan dapat merangkum, menerjemahkan, atau menulis ulang dokumen Markdown panjang langsung di editor. Untuk alur threadgrab yang khas (scrape thread panjang, minta LLM membersihkannya, publikasikan ulang versi yang dipoles), MarkFlowy menjaga penulisan ulang tetap interaktif: Anda bisa meminta model mengubah satu bagian pada satu waktu, meninjau diff di jendela yang sama, dan hanya meng-commit bagian yang Anda suka. Itu lebih cepat daripada melewatkan seluruh file ke UI chat dan menempel hasilnya kembali.</p>
+    </div>
+
+    <h2>Coba di Arsip Sungguhan</h2>
+    <p>Cara tercepat merasakan akselerasi v0.100 adalah mengambil arsip kecil, menggabungkannya dengan <code>jq</code>, dan membuka .md hasilnya di MarkFlowy. File 200 KB (sekitar 50 postingan X) akan terbuka dalam waktu kurang dari satu detik di laptop mana pun yang dibuat dalam tiga tahun terakhir. File 2 MB (sekitar 600 postingan) adalah beban kerja di mana penulisan ulang terbayar, dan itu persis ukuran file yang dihasilkan arsip bulanan seorang kreator ketika Anda mempertahankan format entitas bernama.</p>
+
+    <div class="cta">
+      <p><strong>Dapatkan Markdown untuk arsip Anda dalam satu panggilan API.</strong></p>
+      <p>threadgrab mengembalikan Markdown rapi untuk postingan, thread, Articles, dan profil publik X &mdash; tanpa login, tanpa instalasi. Lalu buka .md di MarkFlowy v0.100 dan edit dengan kecepatan.</p>
+      <a class="btn" href="/id/">Buka ThreadGrab</a>
+    </div>
+
+    <h2>Bacaan Terkait</h2>
+    <ul>
+      <li><a href="/id/blog/x-articles-v1190-threadgrab-2026.html">Scraper X v11.90 Articles: threadgrab Long-Form 2026</a> &mdash; bagaimana threadgrab mengekstrak layout articles v11.90 ke Markdown yang bisa dibuka editor mana pun.</li>
+      <li><a href="/id/blog/x-thread-archiving-tools-2026.html">Pengarsipan Thread X 2026: 5 Alat Dibandingkan</a> &mdash; lanskap alat yang lebih luas untuk menyimpan thread X, tempat MarkFlowy masuk sebagai langkah editor.</li>
+      <li><a href="/id/blog/tweet-md-stable-archive-landscape-2026.html">tweet.md Stabil 2026: Retrospektif Alat Markdown</a> &mdash; di mana tweet.md berada di pipeline arsip yang sama, dan bagaimana bedanya dari pendekatan API publik threadgrab.</li>
+      <li><a href="/id/blog/mrdown-ai-rewrite-diff-verify-2026.html">MRDown 2026: Verifikasi Redaksi AI Sebelum Publikasikan Ulang</a> &mdash; pengecekan AI meaning-drift yang berpasangan dengan panel tulis ulang dalam editor MarkFlowy.</li>
+    </ul>
+
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/id/">Beranda</a> &middot; <a href="/id/about/">Tentang</a> &middot; <a href="/id/privacy/">Privasi</a>
+  </footer>
+</body>
+</html>

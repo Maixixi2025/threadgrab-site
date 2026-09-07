@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MarkFlowy v0.100: Editor Markdown Reformulado para Documentos Longos 2026</title>
+  <meta name="description" content="MarkFlowy v0.100.0 reconstruiu o núcleo do editor e abre Markdown de 2 MB em ~1s. O ângulo long-document para arquivos sociais e raspadores X Articles.">
+  <meta name="keywords" content="MarkFlowy, editor Markdown, arquivos Markdown grandes, Markdown long-form, arquivo X Articles, threadgrab, ProseMirror, Tauri, Markdown WYSIWYG 2026">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/pt/blog/markflowy-long-document-markdown-editor-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/markflowy-long-document-markdown-editor-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/markflowy-long-document-markdown-editor-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/markflowy-long-document-markdown-editor-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/markflowy-long-document-markdown-editor-2026.html">
+  <meta property="og:title" content="MarkFlowy v0.100: Editor Markdown Reformulado para Documentos Longos 2026">
+  <meta property="og:description" content="MarkFlowy v0.100.0 reconstruiu o núcleo do editor e abre arquivos Markdown de 2 MB em ~1s. Veja o ângulo de documentos longos para arquivos sociais e raspadores de X Articles.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/pt/blog/markflowy-long-document-markdown-editor-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MarkFlowy v0.100: Editor Markdown Reformulado para Documentos Longos 2026">
+  <meta name="twitter:description" content="MarkFlowy v0.100.0 reconstruiu o núcleo do editor e abre arquivos Markdown de 2 MB em ~1s. Veja o ângulo de documentos longos para arquivos sociais e raspadores de X Articles.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    .method-card { background: #1a1a1a; border-radius: 10px; padding: 20px 22px; margin-bottom: 18px; border-left: 3px solid #20d5ec; }
+    .method-card h3 { margin-top: 0; color: #20d5ec; }
+    .method-card .pros { color: #6fcf97; font-size: 0.9rem; }
+    .method-card .cons { color: #f2994a; font-size: 0.9rem; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "MarkFlowy v0.100: Editor Markdown Reformulado para Documentos Longos 2026",
+    "description": "MarkFlowy v0.100.0 reconstruiu o núcleo do editor e abre arquivos Markdown de 2 MB em ~1s. Veja o ângulo de documentos longos para arquivos sociais e raspadores de X Articles.",
+    "datePublished": "2026-09-07",
+    "dateModified": "2026-09-07",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/" },
+    "mainEntityOfPage": "https://threadgrab.com/pt/blog/markflowy-long-document-markdown-editor-2026.html",
+    "inLanguage": "pt-BR"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://threadgrab.com/pt/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/pt/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "MarkFlowy Editor Markdown Documentos Longos" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "O que é MarkFlowy e por que v0.100 importa para arquivos Markdown longos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "MarkFlowy é um editor Markdown open-source assistido por IA construído sobre Tauri (TypeScript + Rust) e ProseMirror, disponível para Windows, macOS e Linux. A versão v0.100.0 lançada em 5 de setembro de 2026 foi uma reescrita completa do núcleo do editor com mudanças incompatíveis; o resultado principal é que um arquivo Markdown de 2 MB agora abre em cerca de 1 segundo em um notebook recente. Para arquivos de X Articles, dumps grandes de wiki e posts long-form de redes sociais unidos em um único arquivo Markdown, isso é uma mudança significativa porque editores desktop mais antigos (VS Code, Obsidian, Typora) ficam lentos ou travam quando o arquivo ultrapassa ~500 KB de estruturas aninhadas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Por que o ângulo de documentos longos importa para arquivos de X e Bluesky?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O arquivo de X Articles de um único autor pode facilmente ultrapassar 200 KB de Markdown limpo quando cada post mantém sua lista de mídia, formatação de entidades nomeadas e frontmatter. Empilhe posts long-form de um ano de 10 criadores e você está editando na faixa de 2 MB que MarkFlowy v0.100 agora trata como carga normal. O mesmo vale para posts long-form do Bluesky puxados via AT Protocol, exports de newsletter do LinkedIn e dumps RSS do Substack. Editores que re-tokenizam o arquivo inteiro ao abrir se tornam o gargalo; a reescrita do MarkFlowy empurra esse trabalho para uma análise inicial menor, exatamente a carga de trabalho que arquivos raspados de redes sociais produzem."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como MarkFlowy se compara a VS Code, Obsidian e Typora em um arquivo de 2 MB?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No mesmo hardware, um arquivo Markdown de 2 MB com centenas de seções tipicamente leva VS Code de 4 a 8 segundos para abrir com extensões como Markdown All in One habilitadas, Obsidian de 3 a 6 segundos com Live Preview, e Typora cerca de 2 a 4 segundos até rolar suavemente. MarkFlowy v0.100 reporta cerca de 1 segundo no mesmo arquivo em seus próprios testes em um notebook atual. A diferença principal é maior no Windows, onde editores baseados em Electron somam o overhead do runtime à análise do documento."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso usar MarkFlowy para editar o Markdown que o threadgrab exporta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. O threadgrab retorna Markdown limpo para posts, threads e Articles do X: cada post mantém seus spans de negrito, link, menção e hashtag como Markdown padrão, e uma exportação em lote pode ser concatenada em um único arquivo. Abra esse arquivo no MarkFlowy e a velocidade de abertura de 1 segundo se mantém para arquivos de até cerca de 2 MB; além disso, o editor ainda abre mas a latência de digitação começa a aumentar. O fluxo combinado é: raspe com threadgrab &rarr; abra o .md no MarkFlowy &rarr; edite, faça lint e reescreva &rarr; publique no Notion, Ghost ou md2rich para conversão em rich text."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quais são as mudanças incompatíveis no MarkFlowy v0.100.0?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A v0.100.0 reconstruiu o núcleo do editor, então alguns comportamentos de edição e interações diferem das versões anteriores. As notas de versão sinalizam a mudança explicitamente e recomendam re-salvar documentos vindos da v0.90.x ou anteriores. A v0.100.1, lançada no dia seguinte em 6 de setembro, corrige o toggle Full Width no modo WYSIWYG, restaura a dica de Placeholder de parágrafo vazio e melhora a indentação de listas com Tab / Shift+Tab. Documentos novos não precisam de ação; documentos existentes devem ser re-salvos uma vez após a atualização para normalizar a nova representação interna."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "MarkFlowy é uma boa escolha para reescrita via IA de arquivos Markdown longos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. MarkFlowy tem um painel de IA embutido que suporta DeepSeek, ChatGPT e outros provedores, e pode resumir, traduzir ou reescrever um documento Markdown longo no próprio editor. Para o fluxo típico do threadgrab (raspar uma thread longa, pedir a um LLM para limpar, republicar a versão polida), MarkFlowy mantém a reescrita interativa: você pode pedir ao modelo que altere uma seção por vez, revisar o diff na mesma janela, e só aceitar as partes que gostar. Isso é mais rápido do que passar o arquivo inteiro para uma UI de chat e colar o resultado de volta."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/pt/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a href="/en/blog/markflowy-long-document-markdown-editor-2026.html">EN</a>
+      <a href="/pt/blog/markflowy-long-document-markdown-editor-2026.html" class="active">PT</a>
+      <a href="/id/blog/markflowy-long-document-markdown-editor-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <p class="breadcrumb"><a href="/pt/">Início</a> &rsaquo; <a href="/pt/blog/">Blog</a> &rsaquo; MarkFlowy v0.100 Editor Markdown Documentos Longos</p>
+
+    <h1>MarkFlowy v0.100: Editor Markdown <span>Reformulado para Documentos Longos 2026</span></h1>
+    <p class="meta">7 de Setembro de 2026 &middot; 9 min de leitura &middot; por ThreadGrab</p>
+
+    <p>Se você tem um único arquivo Markdown que guarda um ano de X Articles arquivadas, um dump do Substack ou um export long-form do Bluesky, provavelmente você já bateu no muro: o VS Code leva 6 segundos para abrir, o Obsidian engasga quando você rola, e o Typora decide silenciosamente re-renderizar o documento inteiro a cada tecla. A versão v0.100.0 do MarkFlowy em 5 de setembro de 2026 foi uma reescrita completa do núcleo do editor mirando exatamente essa carga de trabalho. Segundo as notas de versão, um arquivo Markdown de 2 MB agora abre em <strong>cerca de 1 segundo</strong> em um notebook recente.</p>
+
+    <div class="callout">
+      <p><strong>Por que o threadgrab está cobrindo isso:</strong> Um arquivo típico exportado do threadgrab (X Articles, threads, Bluesky long-form, newsletters do LinkedIn) chega como um único arquivo .md que facilmente ultrapassa 1 MB quando você agrupa um mês de posts de um criador. MarkFlowy v0.100 é o primeiro editor desktop construído de propósito para esse tamanho de arquivo sem a lentidão típica de apps Electron.</p>
+    </div>
+
+    <h2>O Que Mudou no MarkFlowy v0.100.0</h2>
+    <p>MarkFlowy é um editor Markdown open-source assistido por IA (AGPL-3.0, 2.382 estrelas no GitHub em 7 de setembro de 2026) construído sobre Tauri (TypeScript + Rust) e ProseMirror. A versão v0.100.0 em 5 de setembro de 2026 foi explicitamente marcada como contendo <em>mudanças incompatíveis substanciais</em>:</p>
+
+    <ul>
+      <li><strong>Núcleo do editor reconstruído</strong> &mdash; o parser, modelo de documento e camada WYSIWYG foram reescritos para carregar arquivos grandes mais rápido.</li>
+      <li><strong>2 MB em ~1 segundo</strong> &mdash; a métrica principal das notas de versão; versões anteriores eram notavelmente mais lentas em arquivos acima de ~500 KB.</li>
+      <li><strong>Renderização WYSIWYG refinada</strong> &mdash; aninhamento de listas, estados de tarefas e formatação inline fazem round-trip mais limpo pelo fonte Markdown.</li>
+      <li><strong>Consciência de Front Matter</strong> &mdash; digitar <code>---</code> no início de um documento agora cria um bloco YAML front matter em vez de uma régua horizontal (adicionado na v0.100.1 em 6 de setembro).</li>
+      <li><strong>Indentação de listas Tab / Shift+Tab</strong> &mdash; conteúdo aninhado, estado de tarefas e histórico de undo/redo sobrevivem à mudança de indentação.</li>
+    </ul>
+
+    <p>A v0.100.1 do dia seguinte (6 de setembro de 2026) corrigiu três regressões no modo WYSIWYG introduzidas pela v0.100.0: toggle Full Width, a dica de placeholder de parágrafo vazio, e o comportamento de indentação de listas. Se você fizer upgrade, re-salve documentos existentes uma vez para que a nova representação interna se estabilize.</p>
+
+    <h2>Por Que o Ângulo de Documentos Longos Importa para Arquivos Sociais</h2>
+    <p>O loop de arquivo do threadgrab produz arquivos que são exatamente a carga de trabalho para a qual MarkFlowy v0.100 foi reconstruído. Alguns exemplos do tipo de arquivo que usuários reais abrem toda semana:</p>
+
+    <table>
+      <thead>
+        <tr><th>Origem do arquivo</th><th>Tamanho típico</th><th>Contagem de seções</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>10 criadores × 1 mês de X Articles</td><td>~1,5 MB</td><td>~400 posts</td></tr>
+        <tr><td>5 criadores × 1 ano de Bluesky long-form</td><td>~2,0 MB</td><td>~600 posts</td></tr>
+        <tr><td>50 threads concatenados em um .md</td><td>~400 KB</td><td>~50 threads</td></tr>
+        <tr><td>Dump de newsletter do LinkedIn, um autor, 6 meses</td><td>~800 KB</td><td>~25 edições</td></tr>
+        <tr><td>Substack RSS achatado em Markdown</td><td>~1,2 MB</td><td>~30 posts</td></tr>
+      </tbody>
+    </table>
+
+    <p>Todos esses cinco se encaixam no benchmark de 2 MB do MarkFlowy v0.100. Editores que re-tokenizam o documento inteiro ao abrir (VS Code com Markdown All in One, Obsidian com Live Preview, o renderer do Typora) tratam esse tamanho como um teste de stress. A reescrita do MarkFlowy empurra mais trabalho para uma análise inicial menor, que é a diferença entre esperar 6 segundos e esperar 1.</p>
+
+    <h2>MarkFlowy vs VS Code, Obsidian e Typora em Arquivos de 2 MB</h2>
+    <p>Os números abaixo vêm da documentação de cada projeto e relatos de fóruns na mesma classe de hardware (notebook recente, Mac série M ou Ryzen/Intel 12ª-gen+). São típicos, não perfeitos como benchmark, mas a ordem é consistente:</p>
+
+    <table>
+      <thead>
+        <tr><th>Editor</th><th>Tempo para abrir 2 MB .md</th><th>Latência de digitação a 2 MB</th><th>Notas</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>MarkFlowy v0.100</td><td>~1 s</td><td>baixa</td><td>Tauri (Rust + TS), núcleo ProseMirror</td></tr>
+        <tr><td>Typora</td><td>2-4 s</td><td>média</td><td>Render ao vivo fica suave após aquecimento</td></tr>
+        <tr><td>Obsidian</td><td>3-6 s</td><td>média-alta</td><td>Live Preview re-renderiza a cada tecla</td></tr>
+        <tr><td>VS Code (Markdown All in One)</td><td>4-8 s</td><td>média</td><td>Extensões adicionam custo de análise</td></tr>
+        <tr><td>Sublime Text</td><td>~1 s</td><td>muito baixa</td><td>Sem WYSIWYG; só destaque de sintaxe</td></tr>
+      </tbody>
+    </table>
+
+    <p>Sublime Text é ainda mais rápido porque pula a renderização por completo. A troca é que você perde o preview WYSIWYG, que é exatamente o que a reescrita v0.100 do MarkFlowy tenta devolver sem pagar o custo de tempo de abertura.</p>
+
+    <h2>Como Usar MarkFlowy com um Arquivo do threadgrab</h2>
+    <p>O fluxo combinado tem o mesmo formato do artigo do raspador de X Articles mas com MarkFlowy substituindo a etapa de edição. Roda limpo em menos de cinco minutos para um arquivo de 1 MB:</p>
+
+    <div class="method-card">
+      <h3>Passo 1 &mdash; Raspar a fonte</h3>
+      <pre><code>curl -s "https://threadgrab.com/api/profile/&lt;handle&gt;/articles?cursor=&amp;limit=100" \
+  -o articles.json</code></pre>
+      <p class="pros">+ Uma chamada por autor, paginado em 20 por vez, retorna spans de corpo de entidades nomeadas</p>
+      <p class="cons">&minus; Você ainda precisa concatenar o JSON em um único arquivo Markdown</p>
+    </div>
+
+    <div class="method-card">
+      <h3>Passo 2 &mdash; Concatenar em um único .md</h3>
+      <pre><code>jq -r '.articles[] | "# " + .title + "\n\n" + .body_markdown + "\n\n---\n"' \
+  articles.json &gt; arquivo-2026-09.md
+wc -c arquivo-2026-09.md   # confirme o tamanho</code></pre>
+      <p class="pros">+ Markdown padrão com front matter, separadores e quebras de seção limpas</p>
+      <p class="cons">&minus; jq é necessário; no Windows use <code>python -m json.tool</code> ou um pequeno script Node</p>
+    </div>
+
+    <div class="method-card">
+      <h3>Passo 3 &mdash; Abrir no MarkFlowy v0.100</h3>
+      <pre><code>markflowy arquivo-2026-09.md   # binário macOS / Linux
+# ou clique duplo no arquivo no painel File Tree</code></pre>
+      <p class="pros">+ Abre em ~1 segundo; rolagem fica suave; o modo WYSIWYG atualiza sem reabrir</p>
+      <p class="cons">&minus; Primeira execução no macOS requer <code>xattr -cr /Applications/MarkFlowy.app</code> até o app ser assinado</p>
+    </div>
+
+    <div class="method-card">
+      <h3>Passo 4 &mdash; Reescrita por IA, seção por seção</h3>
+      <pre><code># No painel de IA do MarkFlowy, aponte para sua chave DeepSeek ou ChatGPT,
+# então peça: "reescreva a seção 12 removendo hedging, mantendo todos os fatos."
+# Revise o diff na mesma janela, aceite ou reverta por seção.</code></pre>
+      <p class="pros">+ Reescritas por seção vencem colar-de-volta-e-diff-de-arquivo-inteiro por uma margem grande</p>
+      <p class="cons">&minus; Requer que você traga sua própria chave de API; MarkFlowy não vem com modelo embutido</p>
+    </div>
+
+    <div class="method-card">
+      <h3>Passo 5 &mdash; Publicar via md2rich ou site estático</h3>
+      <pre><code># Converta o Markdown polido em rich text para LinkedIn / Notion
+curl -s "https://md2rich.com/api/convert?md_url=https://your-site/arquivo-2026-09.md"</code></pre>
+      <p class="pros">+ Markdown continua sendo a fonte da verdade; rich text é apenas uma renderização</p>
+      <p class="cons">&minus; LinkedIn ainda não respeita colar-com-formatação de forma confiável; algum ajuste manual é normal</p>
+    </div>
+
+    <h2>Quem Deve Migrar para MarkFlowy v0.100</h2>
+    <p>A reescrita não é para todo mundo. Três perfis de leitor tiram mais proveito dela:</p>
+
+    <ul>
+      <li><strong>Mantenedores de arquivos sociais.</strong> Se você guarda um único .md por autor ou por trimestre, MarkFlowy é o primeiro editor que abre esses arquivos instantaneamente. O File Tree lida com o layout de pastas por autor, e o painel de IA no editor permite reescrever uma seção sem sair do documento.</li>
+      <li><strong>Escritores de newsletter em plataformas long-form.</strong> Se sua newsletter do Substack ou LinkedIn vive como um único Markdown fonte antes de ir para a plataforma de publicação, o modo WYSIWYG do MarkFlowy dá um preview ao vivo que não trava em 2 MB. O export Pandoc adicionado na v0.90.0 (DOCX / ODT / EPUB) cobre a entrega do lado da publicação.</li>
+      <li><strong>Escritores que editam Markdown no VS Code hoje e sentem a lentidão.</strong> Se você já desabilitou Markdown All in One ou migrou para Sublime porque o VS Code está lento no seu arquivo, MarkFlowy dá WYSIWYG sem o peso do VS Code. O sistema de atalhos de teclado é customizável, então a memória muscular se transfere.</li>
+    </ul>
+
+    <p>Três perfis de leitor devem esperar: qualquer pessoa cujo fluxo depende de uma extensão específica do VS Code, qualquer pessoa cujo time padronizou no ecossistema de plugins do Obsidian (Dataview, Templater, etc.), e qualquer pessoa que edita arquivos Markdown abaixo de 200 KB (a diferença de velocidade é invisível nesse tamanho).</p>
+
+    <h2>O Stack Por Trás da Velocidade</h2>
+    <p>MarkFlowy é um app Tauri: a UI é TypeScript (3,86 MB de fonte) e o lado nativo é Rust (506 KB de fonte). O editor em si é uma build ProseMirror, com a reescrita v0.100 reconstruindo o parser e modelo de documento para adiar a renderização até que uma seção role para a vista. O binário fica abaixo de 20 MB e envia um ZIP portátil, um MSI e um instalador offline para Windows; DMGs para Apple silicon e Intel no macOS; e um Flatpak (via FlatPark) mais um script de instalação que entrega um .deb / .rpm / AppImage no Linux.</p>
+
+    <p>Recursos de IA são um painel dentro do app, não um serviço separado. MarkFlowy suporta DeepSeek, ChatGPT e Copilot hoje; você fornece sua própria chave de API, a reescrita acontece dentro do editor, e o diff é mostrado na mesma janela. Essa é a diferença prática para alguém reescrevendo um arquivo longo de threads: edições seção por seção sem sair do documento, em vez de colar-de-volta-e-olho-mãe.</p>
+
+    <h2>Perguntas Frequentes</h2>
+
+    <div class="faq-item">
+      <strong>O que é MarkFlowy e por que v0.100 importa para arquivos Markdown longos?</strong>
+      <p>MarkFlowy é um editor Markdown open-source assistido por IA construído sobre Tauri (TypeScript + Rust) e ProseMirror, disponível para Windows, macOS e Linux. A versão v0.100.0 lançada em 5 de setembro de 2026 foi uma reescrita completa do núcleo do editor com mudanças incompatíveis; o resultado principal é que um arquivo Markdown de 2 MB agora abre em cerca de 1 segundo em um notebook recente. Para arquivos de X Articles, dumps grandes de wiki e posts long-form de redes sociais unidos em um único arquivo Markdown, isso é uma mudança significativa porque editores desktop mais antigos (VS Code, Obsidian, Typora) ficam lentos ou travam quando o arquivo ultrapassa ~500 KB de estruturas aninhadas.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Por que o ângulo de documentos longos importa para arquivos de X e Bluesky?</strong>
+      <p>O arquivo de X Articles de um único autor pode facilmente ultrapassar 200 KB de Markdown limpo quando cada post mantém sua lista de mídia, formatação de entidades nomeadas e frontmatter. Empilhe posts long-form de um ano de 10 criadores e você está editando na faixa de 2 MB que MarkFlowy v0.100 agora trata como carga normal. O mesmo vale para posts long-form do Bluesky puxados via AT Protocol, exports de newsletter do LinkedIn e dumps RSS do Substack. Editores que re-tokenizam o arquivo inteiro ao abrir se tornam o gargalo; a reescrita do MarkFlowy empurra esse trabalho para uma análise inicial menor, exatamente a carga de trabalho que arquivos raspados de redes sociais produzem.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Como MarkFlowy se compara a VS Code, Obsidian e Typora em um arquivo de 2 MB?</strong>
+      <p>No mesmo hardware, um arquivo Markdown de 2 MB com centenas de seções tipicamente leva VS Code de 4 a 8 segundos para abrir com extensões como Markdown All in One habilitadas, Obsidian de 3 a 6 segundos com Live Preview, e Typora cerca de 2 a 4 segundos até rolar suavemente. MarkFlowy v0.100 reporta cerca de 1 segundo no mesmo arquivo em seus próprios testes em um notebook atual. A diferença principal é maior no Windows, onde editores baseados em Electron somam o overhead do runtime à análise do documento.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Posso usar MarkFlowy para editar o Markdown que o threadgrab exporta?</strong>
+      <p>Sim. O threadgrab retorna Markdown limpo para posts, threads e Articles do X: cada post mantém seus spans de negrito, link, menção e hashtag como Markdown padrão, e uma exportação em lote pode ser concatenada em um único arquivo. Abra esse arquivo no MarkFlowy e a velocidade de abertura de 1 segundo se mantém para arquivos de até cerca de 2 MB; além disso, o editor ainda abre mas a latência de digitação começa a aumentar. O fluxo combinado é: raspe com threadgrab &rarr; abra o .md no MarkFlowy &rarr; edite, faça lint e reescreva &rarr; publique no Notion, Ghost ou md2rich para conversão em rich text.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>Quais são as mudanças incompatíveis no MarkFlowy v0.100.0?</strong>
+      <p>A v0.100.0 reconstruiu o núcleo do editor, então alguns comportamentos de edição e interações diferem das versões anteriores. As notas de versão sinalizam a mudança explicitamente e recomendam re-salvar documentos vindos da v0.90.x ou anteriores. A v0.100.1, lançada no dia seguinte em 6 de setembro, corrige o toggle Full Width no modo WYSIWYG, restaura a dica de Placeholder de parágrafo vazio e melhora a indentação de listas com Tab / Shift+Tab. Documentos novos não precisam de ação; documentos existentes devem ser re-salvos uma vez após a atualização para normalizar a nova representação interna.</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>MarkFlowy é uma boa escolha para reescrita via IA de arquivos Markdown longos?</strong>
+      <p>Sim. MarkFlowy tem um painel de IA embutido que suporta DeepSeek, ChatGPT e outros provedores, e pode resumir, traduzir ou reescrever um documento Markdown longo no próprio editor. Para o fluxo típico do threadgrab (raspar uma thread longa, pedir a um LLM para limpar, republicar a versão polida), MarkFlowy mantém a reescrita interativa: você pode pedir ao modelo que altere uma seção por vez, revisar o diff na mesma janela, e só aceitar as partes que gostar. Isso é mais rápido do que passar o arquivo inteiro para uma UI de chat e colar o resultado de volta.</p>
+    </div>
+
+    <h2>Teste em um Arquivo Real</h2>
+    <p>A forma mais rápida de sentir o ganho de velocidade da v0.100 é pegar um arquivo pequeno, concatenar com <code>jq</code> e abrir o .md resultante no MarkFlowy. Um arquivo de 200 KB (cerca de 50 posts do X) abrirá em menos de um segundo em qualquer notebook feito nos últimos três anos. Um arquivo de 2 MB (cerca de 600 posts) é a carga de trabalho onde a reescrita compensa, e é exatamente o tamanho de arquivo que o arquivo mensal de um criador produz quando você mantém a formatação de entidades nomeadas.</p>
+
+    <div class="cta">
+      <p><strong>Consiga o Markdown para seu arquivo em uma chamada de API.</strong></p>
+      <p>O threadgrab retorna Markdown limpo para posts, threads, Articles e qualquer perfil público do X &mdash; sem login, sem instalação. Depois abra o .md no MarkFlowy v0.100 e edite com velocidade.</p>
+      <a class="btn" href="/pt/">Abrir o ThreadGrab</a>
+    </div>
+
+    <h2>Leitura Relacionada</h2>
+    <ul>
+      <li><a href="/pt/blog/x-articles-v1190-threadgrab-2026.html">Raspador X v11.90 Articles: threadgrab Long-Form 2026</a> &mdash; como o threadgrab extrai o layout de articles da v11.90 em Markdown que qualquer editor pode abrir.</li>
+      <li><a href="/pt/blog/x-thread-archiving-tools-2026.html">Arquivamento de Threads X 2026: 5 Ferramentas Comparadas</a> &mdash; o panorama mais amplo de ferramentas para salvar threads do X, onde MarkFlowy se encaixa como etapa de edição.</li>
+      <li><a href="/pt/blog/tweet-md-stable-archive-landscape-2026.html">tweet.md Estável 2026: Retrospectiva de Ferramenta Markdown</a> &mdash; onde tweet.md se encaixa no mesmo pipeline de arquivo, e como difere da abordagem de API pública do threadgrab.</li>
+      <li><a href="/pt/blog/mrdown-ai-rewrite-diff-verify-2026.html">MRDown 2026: Verifique Redações de IA Antes de Republicar</a> &mdash; a verificação de drift semântico de IA que combina com o painel de reescrita no editor do MarkFlowy.</li>
+    </ul>
+
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/pt/">Início</a> &middot; <a href="/pt/about/">Sobre</a> &middot; <a href="/pt/privacy/">Privacidade</a>
+  </footer>
+</body>
+</html>

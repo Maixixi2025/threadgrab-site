@@ -6523,6 +6523,51 @@
         "BreadcrumbList",
         "FAQPage"
       ]
+    },
+    {
+      "slug": "markflowy-long-document-markdown-editor-2026",
+      "date": "2026-09-07",
+      "type": "Workflow",
+      "lang": "en",
+      "file": "en/blog/markflowy-long-document-markdown-editor-2026.html",
+      "url": "https://threadgrab.com/en/blog/markflowy-long-document-markdown-editor-2026.html",
+      "title": "MarkFlowy v0.100: Markdown Editor Rebuilt for Long Documents 2026",
+      "description": "MarkFlowy v0.100.0 rebuilt its editor core and opens 2 MB Markdown in ~1s. Here's the long-document angle for social archives and X Articles scrapers.",
+      "heat_source": "⭐ 2026-09-07 daily briefing threadgrab item — Show HN: MarkFlowy – open source Markdown editor rebuilt for large documents (objectID 49586334, 2 pts, 1 cmt, 2026-09-06 13:25 UTC, github.com/drl990114/MarkFlowy). v0.100.0 release (2026-09-05 17:38 UTC) flagged as substantial breaking changes with editor-core rewrite — 2 MB Markdown opens in ~1 second. v0.100.1 (2026-09-06 10:16 UTC) follows with Full Width/Placeholder/list-indent fixes. Stack: Tauri (TS 3.86 MB + Rust 506 KB), ProseMirror core, AGPL-3.0, 2,382 stars. Cross-platform: Windows (MSI/portable ZIP/offline installer), macOS (DMG aarch64/x64), Linux (Flatpak via FlatPark + install script for .deb/.rpm/AppImage). Body-grep-0 verified across all 142 prior slugs for \"MarkFlowy\"/\"v0.100\"/\"ProseMirror\"/\"2 MB\"/\"editor core rebuilt\" → fresh angle. Threadgrab angle: a typical archive exported from threadgrab (X Articles, threads, Bluesky long-form, LinkedIn newsletters) lands as a single .md file that crosses 1 MB easily; MarkFlowy v0.100 is the first desktop editor purpose-built for that file size without Electron-based lag.",
+      "status": "published",
+      "published_at": "2026-09-07T12:05:25",
+      "providers_featured": [],
+      "primary_cta": "/en/"
+    },
+    {
+      "slug": "markflowy-long-document-markdown-editor-2026",
+      "date": "2026-09-07",
+      "type": "Workflow",
+      "lang": "pt",
+      "file": "pt/blog/markflowy-long-document-markdown-editor-2026.html",
+      "url": "https://threadgrab.com/pt/blog/markflowy-long-document-markdown-editor-2026.html",
+      "title": "MarkFlowy v0.100: Editor Markdown Reformulado para Documentos Longos 2026",
+      "description": "MarkFlowy v0.100.0 reconstruiu o núcleo do editor e abre Markdown de 2 MB em ~1s. O ângulo long-document para arquivos sociais e raspadores X Articles.",
+      "heat_source": "⭐ 2026-09-07 daily briefing threadgrab item — Show HN: MarkFlowy – open source Markdown editor rebuilt for large documents (objectID 49586334, 2 pts, 1 cmt, 2026-09-06 13:25 UTC, github.com/drl990114/MarkFlowy). v0.100.0 release (2026-09-05 17:38 UTC) flagged as substantial breaking changes with editor-core rewrite — 2 MB Markdown opens in ~1 second. v0.100.1 (2026-09-06 10:16 UTC) follows with Full Width/Placeholder/list-indent fixes. Stack: Tauri (TS 3.86 MB + Rust 506 KB), ProseMirror core, AGPL-3.0, 2,382 stars. Cross-platform: Windows (MSI/portable ZIP/offline installer), macOS (DMG aarch64/x64), Linux (Flatpak via FlatPark + install script for .deb/.rpm/AppImage). Body-grep-0 verified across all 142 prior slugs for \"MarkFlowy\"/\"v0.100\"/\"ProseMirror\"/\"2 MB\"/\"editor core rebuilt\" → fresh angle. Threadgrab angle: a typical archive exported from threadgrab (X Articles, threads, Bluesky long-form, LinkedIn newsletters) lands as a single .md file that crosses 1 MB easily; MarkFlowy v0.100 is the first desktop editor purpose-built for that file size without Electron-based lag.",
+      "status": "published",
+      "published_at": "2026-09-07T12:05:25",
+      "providers_featured": [],
+      "primary_cta": "/pt/"
+    },
+    {
+      "slug": "markflowy-long-document-markdown-editor-2026",
+      "date": "2026-09-07",
+      "type": "Workflow",
+      "lang": "id",
+      "file": "id/blog/markflowy-long-document-markdown-editor-2026.html",
+      "url": "https://threadgrab.com/id/blog/markflowy-long-document-markdown-editor-2026.html",
+      "title": "MarkFlowy v0.100: Editor Markdown Dibangun Ulang untuk Dokumen Panjang 2026",
+      "description": "MarkFlowy v0.100.0 membangun ulang inti editor dan membuka Markdown 2 MB dalam ~1 detik. Sudut pandang dokumen panjang untuk arsip sosial dan scraper X Articles.",
+      "heat_source": "⭐ 2026-09-07 daily briefing threadgrab item — Show HN: MarkFlowy – open source Markdown editor rebuilt for large documents (objectID 49586334, 2 pts, 1 cmt, 2026-09-06 13:25 UTC, github.com/drl990114/MarkFlowy). v0.100.0 release (2026-09-05 17:38 UTC) flagged as substantial breaking changes with editor-core rewrite — 2 MB Markdown opens in ~1 second. v0.100.1 (2026-09-06 10:16 UTC) follows with Full Width/Placeholder/list-indent fixes. Stack: Tauri (TS 3.86 MB + Rust 506 KB), ProseMirror core, AGPL-3.0, 2,382 stars. Cross-platform: Windows (MSI/portable ZIP/offline installer), macOS (DMG aarch64/x64), Linux (Flatpak via FlatPark + install script for .deb/.rpm/AppImage). Body-grep-0 verified across all 142 prior slugs for \"MarkFlowy\"/\"v0.100\"/\"ProseMirror\"/\"2 MB\"/\"editor core rebuilt\" → fresh angle. Threadgrab angle: a typical archive exported from threadgrab (X Articles, threads, Bluesky long-form, LinkedIn newsletters) lands as a single .md file that crosses 1 MB easily; MarkFlowy v0.100 is the first desktop editor purpose-built for that file size without Electron-based lag.",
+      "status": "published",
+      "published_at": "2026-09-07T12:05:25",
+      "providers_featured": [],
+      "primary_cta": "/id/"
     }
   ],
   "drafts": [
@@ -7112,17 +7157,18 @@
     "claude-skills-api-threadgrab-arquivo-x-2026",
     "claude-skills-api-threadgrab-arsip-x-2026",
     "cf-browser-run-concurrency-throughput-threadgrab-2026",
-    "cf-browser-run-concorrencia-throughput-threadgrab-2026"
+    "cf-browser-run-concorrencia-throughput-threadgrab-2026",
+    "markflowy-long-document-markdown-editor-2026"
   ],
-  "last_run": "2026-09-06",
-  "last_publish": "2026-09-06",
-  "last_published_slug": "tweet-app-new-twitter-rebrand-2026",
-  "last_draft_slug": "notula-markdown-ai-agents-2026",
-  "last_published_at": "2026-09-06",
+  "last_run": "2026-09-07",
+  "last_publish": "2026-09-07",
+  "last_published_slug": "markflowy-long-document-markdown-editor-2026",
+  "last_draft_slug": "markflowy-long-document-markdown-editor-2026",
+  "last_published_at": "2026-09-07T12:05:25",
   "drafts_count": 24,
-  "published_count": 222,
-  "last_topic_picked": "x-to-linkedin-newsletter-repurpose-2026",
-  "last_pick_source": "⭐ 2026-08-27 daily briefing threadgrab item — Anthropic made Claude in Chrome GA on Aug 26, 2026 (verified claude.com/claude-in-chrome product page + GA blog + Chrome Web Store: browser agent extension, reads signed-in pages, clicks/types/fills forms from side panel, auto-approve w/ safety classifier; paid plans only, Chrome-only). Angle = browser-agent web content capture feeding a Markdown thread archive; distinct from 08-25 Claude Skills API article (API/Skills surface vs browser agent — body-grep 'Claude in Chrome'/'browser agent' = 0 on disk). Prompt ⭐⭐⭐/⭐⭐/⭐ all covered on disk",
+  "published_count": 225,
+  "last_topic_picked": "MarkFlowy v0.100 long-document Markdown editor",
+  "last_pick_source": "⭐ 2026-09-07 daily briefing threadgrab item — Show HN MarkFlowy (objectID 49586334, 2026-09-06)",
   "last_drafted_slug": "x-articles-ai-native-composer-2026",
-  "publish_notes": "Published claude-in-chrome-browser-agent-2026 (Aug 27): briefing threadgrab item 'Claude in Chrome' (GA Aug 26, 2026) mapped to browser-agent web content capture feeding a Markdown thread archive. 3 pages (en/pt/id, single-EN-slug), 7-gate PASS, deployed.\n[2026-08-30] published: google-site-reputation-policy-x-archive-2026 (en/pt/id) — Google Site Reputation Policy 8-28 update angle for X archive sites; 2293/2551/2131 words; sitemap 89→90; sitemap regen script patched TODAY=2026-08-16→2026-08-30\n2026-09-01: Published 'Bluesky Algorithmic Opt-Out 2026' (bluesky-algorithmic-opt-out-archive-2026) — EN/PT/ID 3-lang + fixed trilingual-sitemap regression (81 PT + 81 ID alternates now referenced) + sitemap 91→86 URLs\n2026-09-02: published nitter-xcancel-shutdown-x-anonymous-2026 / nitter-xcancel-encerramento-leitor-2026 / nitter-xcancel-penutupan-pembaca-2026 — Nitter + XCancel C&D shutdown 2026-08-24; 6-outlet cross-source verified (TechCrunch Sarah Perez, Techdirt Sep 2, Forbes, Notebookcheck, heise, Cybernews); HN Algolia 1211/1348 pts/cmts; threadgrab angle = capture-before-next-C&D archive workflow\n2026-09-05: published mrdown-ai-rewrite-diff-verify-2026 (en/pt/id single-EN-slug) — MRDown v1.14.0 2026-09-02 macOS markdown viewer/editor, AI-rewrite diff showpiece. Threadgrab angle = verify-AI-redraft meaning-drift check in grab->repurpose pipeline (Panache-family 08-23 precedent). Verified from GitHub README+releases (primary). Body-grep-0 (MRDown across 249 files). Sitemap 87->88, 7-gate PASS all langs, EN/PT/ID 65/70/71-char titles, 137/151/152 descs, words 1810/1977/1688.\n2026-09-06: +3 Tweet.app 'new Twitter' rebrand/trademark ruling (en/pt/id). Briefing threadgrab slice weak+off-theme (Md2pdf=md2rich); PIVOT via RSS+HN gap-scan to fresh dated multi-source platform-identity story: X Corp wins 'Twitter' mark block (Reuters) but likely abandoned 'tweet'+bird -> Operation Bluebird rebrands 'Twitter' to Tweet.app (Engadget 09-05), first-party tweet.app FAQ. Body-grep-0. EN/PT/ID 73/67/75 titles, 136/137/134 descs, words 1794/1999/1661. Sitemap 88->89. 7-gate PASS."
+  "publish_notes": "Published claude-in-chrome-browser-agent-2026 (Aug 27): briefing threadgrab item 'Claude in Chrome' (GA Aug 26, 2026) mapped to browser-agent web content capture feeding a Markdown thread archive. 3 pages (en/pt/id, single-EN-slug), 7-gate PASS, deployed.\n[2026-08-30] published: google-site-reputation-policy-x-archive-2026 (en/pt/id) — Google Site Reputation Policy 8-28 update angle for X archive sites; 2293/2551/2131 words; sitemap 89→90; sitemap regen script patched TODAY=2026-08-16→2026-08-30\n2026-09-01: Published 'Bluesky Algorithmic Opt-Out 2026' (bluesky-algorithmic-opt-out-archive-2026) — EN/PT/ID 3-lang + fixed trilingual-sitemap regression (81 PT + 81 ID alternates now referenced) + sitemap 91→86 URLs\n2026-09-02: published nitter-xcancel-shutdown-x-anonymous-2026 / nitter-xcancel-encerramento-leitor-2026 / nitter-xcancel-penutupan-pembaca-2026 — Nitter + XCancel C&D shutdown 2026-08-24; 6-outlet cross-source verified (TechCrunch Sarah Perez, Techdirt Sep 2, Forbes, Notebookcheck, heise, Cybernews); HN Algolia 1211/1348 pts/cmts; threadgrab angle = capture-before-next-C&D archive workflow\n2026-09-05: published mrdown-ai-rewrite-diff-verify-2026 (en/pt/id single-EN-slug) — MRDown v1.14.0 2026-09-02 macOS markdown viewer/editor, AI-rewrite diff showpiece. Threadgrab angle = verify-AI-redraft meaning-drift check in grab->repurpose pipeline (Panache-family 08-23 precedent). Verified from GitHub README+releases (primary). Body-grep-0 (MRDown across 249 files). Sitemap 87->88, 7-gate PASS all langs, EN/PT/ID 65/70/71-char titles, 137/151/152 descs, words 1810/1977/1688.\n2026-09-06: +3 Tweet.app 'new Twitter' rebrand/trademark ruling (en/pt/id). Briefing threadgrab slice weak+off-theme (Md2pdf=md2rich); PIVOT via RSS+HN gap-scan to fresh dated multi-source platform-identity story: X Corp wins 'Twitter' mark block (Reuters) but likely abandoned 'tweet'+bird -> Operation Bluebird rebrands 'Twitter' to Tweet.app (Engadget 09-05), first-party tweet.app FAQ. Body-grep-0. EN/PT/ID 73/67/75 titles, 136/137/134 descs, words 1794/1999/1661. Sitemap 88->89. 7-gate PASS.\n2026-09-07: Published 'MarkFlowy v0.100: Markdown Editor Rebuilt for Long Documents 2026' (markflowy-long-document-markdown-editor-2026) — 3-lang (en/pt/id) workflow piece; angle = threadgrab → editor step for long X Articles / Bluesky archives; v0.100.0 release 2026-09-05, v0.100.1 follow-up 2026-09-06; Show HN objectID 49586334; body-grep-0 for MarkFlowy/v0.100/ProseMirror/2 MB across all 142 prior slugs."
 }
