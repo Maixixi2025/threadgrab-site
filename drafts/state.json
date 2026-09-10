@@ -6700,6 +6700,96 @@
         "BreadcrumbList",
         "FAQPage"
       ]
+    },
+    {
+      "slug": "muse-band-handle-handover-meta-ai-2026",
+      "date": "2026-09-10",
+      "type": "news",
+      "lang": "en",
+      "file": "en/blog/muse-band-handle-handover-meta-ai-2026.html",
+      "url": "https://threadgrab.com/en/blog/muse-band-handle-handover-meta-ai-2026.html",
+      "title": "Muse Band Loses @muse Handle to Meta AI 2026: Own Your Name",
+      "description": "Meta's new Muse AI agent took the @muse handles a British rock band used for years. What handle handovers mean for your social archive.",
+      "heat_source": "⭐⭐ 2026-09-10 daily briefing threadgrab slice was md2rich's Markdown-editor beat (mdedit/MarkFlowy, already covered 09-08); pivoted to fresh Google News RSS + HN Algolia gap-scan, which surfaced a dated multi-source platform-identity story the briefing engines missed: Engadget 2026-09-09 'Muse, The Band, Lost Its Social Media Handles To Muse, Meta's New AI Agent' (Karissa Bell) — body-verified datePublished 2026-09-09T22:52:49+00:00. Meta unveiled its Muse personal AI agent 2026-09-08; the band (trademarked 1999) now posts as @museband on Instagram and X while the agent holds @Muse. 12+ same-day outlets (Stereogum, Vulture, Consequence of Sound, Digital Music News, Cybernews, SF Chronicle, The Independent, Futurism) + HN Algolia item 174pts. Body-grep-0 across all 261 on-disk articles for {@muse, museband, handle squat, meta ai agent, name collision, lost its handle}. Angle = platform handle instability maps onto the 09-06 Tweet.app trademark article family: a handle is a lease, the post-level Markdown capture is the deed.",
+      "status": "published",
+      "published_at": "2026-09-10",
+      "providers_featured": [
+        "Meta",
+        "Instagram",
+        "X",
+        "ThreadGrab"
+      ],
+      "primary_cta": "Try ThreadGrab (en)",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ]
+    },
+    {
+      "slug": "muse-band-handle-handover-meta-ai-2026",
+      "date": "2026-09-10",
+      "type": "noticia",
+      "lang": "pt",
+      "file": "pt/blog/muse-band-handle-handover-meta-ai-2026.html",
+      "url": "https://threadgrab.com/pt/blog/muse-band-handle-handover-meta-ai-2026.html",
+      "title": "Banda Muse Perde Handle @muse para IA da Meta 2026: Seu Nome",
+      "description": "O agente Muse, da Meta, assumiu os handles @muse de uma banda britânica. O que isso significa para o seu arquivo social.",
+      "heat_source": "PT translation of EN article 2026-09-10 (Muse band handle handover to Meta Muse AI agent)",
+      "status": "published",
+      "published_at": "2026-09-10",
+      "providers_featured": [
+        "Meta",
+        "Instagram",
+        "X",
+        "ThreadGrab"
+      ],
+      "primary_cta": "Experimente o ThreadGrab (pt)",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ]
+    },
+    {
+      "slug": "muse-band-handle-handover-meta-ai-2026",
+      "date": "2026-09-10",
+      "type": "berita",
+      "lang": "id",
+      "file": "id/blog/muse-band-handle-handover-meta-ai-2026.html",
+      "url": "https://threadgrab.com/id/blog/muse-band-handle-handover-meta-ai-2026.html",
+      "title": "Band Muse Kehilangan Handle @muse ke AI Meta 2026",
+      "description": "Agen Muse milik Meta mengambil handle @muse dari band rock Inggris. Apa artinya ini untuk arsip media sosial Anda.",
+      "heat_source": "ID translation of EN article 2026-09-10 (Muse band handle handover to Meta Muse AI agent)",
+      "status": "published",
+      "published_at": "2026-09-10",
+      "providers_featured": [
+        "Meta",
+        "Instagram",
+        "X",
+        "ThreadGrab"
+      ],
+      "primary_cta": "Coba ThreadGrab (id)",
+      "lang_versions": [
+        "en",
+        "pt",
+        "id"
+      ],
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ]
     }
   ],
   "drafts": [
@@ -7292,15 +7382,15 @@
     "cf-browser-run-concorrencia-throughput-threadgrab-2026",
     "markflowy-long-document-markdown-editor-2026"
   ],
-  "last_run": "2026-09-09",
-  "last_publish": "2026-09-09",
-  "last_published_slug": "nitter-xcancel-back-online-2026",
+  "last_run": "2026-09-10",
+  "last_publish": "2026-09-10",
+  "last_published_slug": "muse-band-handle-handover-meta-ai-2026",
   "last_draft_slug": "markflowy-long-document-markdown-editor-2026",
-  "last_published_at": "2026-09-09T04:09Z",
+  "last_published_at": "2026-09-10",
   "drafts_count": 24,
-  "published_count": 231,
-  "last_topic_picked": "Australia Algorithm Opt-Out (Digital Duty of Care) — regulatory feed-choice story for archivers",
-  "last_pick_source": "2026-09-08 briefing (thin threadgrab slice) + fresh Google-News multi-source verification (ABC/Guardian/BBC/AlJazeera/SMH 09-06..09-08)",
+  "published_count": 234,
+  "last_topic_picked": "Muse band loses @muse handle to Meta Muse AI agent (platform handle instability -> own the Markdown capture)",
+  "last_pick_source": "2026-09-10 briefing (threadgrab slice = md2rich Markdown-editor beat, already covered) + fresh Google News RSS + HN Algolia gap-scan -> Engadget 2026-09-09 dated story, 12+ same-day outlets",
   "last_drafted_slug": "x-articles-ai-native-composer-2026",
-  "publish_notes": "Published claude-in-chrome-browser-agent-2026 (Aug 27): briefing threadgrab item 'Claude in Chrome' (GA Aug 26, 2026) mapped to browser-agent web content capture feeding a Markdown thread archive. 3 pages (en/pt/id, single-EN-slug), 7-gate PASS, deployed.\n[2026-08-30] published: google-site-reputation-policy-x-archive-2026 (en/pt/id) — Google Site Reputation Policy 8-28 update angle for X archive sites; 2293/2551/2131 words; sitemap 89→90; sitemap regen script patched TODAY=2026-08-16→2026-08-30\n2026-09-01: Published 'Bluesky Algorithmic Opt-Out 2026' (bluesky-algorithmic-opt-out-archive-2026) — EN/PT/ID 3-lang + fixed trilingual-sitemap regression (81 PT + 81 ID alternates now referenced) + sitemap 91→86 URLs\n2026-09-02: published nitter-xcancel-shutdown-x-anonymous-2026 / nitter-xcancel-encerramento-leitor-2026 / nitter-xcancel-penutupan-pembaca-2026 — Nitter + XCancel C&D shutdown 2026-08-24; 6-outlet cross-source verified (TechCrunch Sarah Perez, Techdirt Sep 2, Forbes, Notebookcheck, heise, Cybernews); HN Algolia 1211/1348 pts/cmts; threadgrab angle = capture-before-next-C&D archive workflow\n2026-09-05: published mrdown-ai-rewrite-diff-verify-2026 (en/pt/id single-EN-slug) — MRDown v1.14.0 2026-09-02 macOS markdown viewer/editor, AI-rewrite diff showpiece. Threadgrab angle = verify-AI-redraft meaning-drift check in grab->repurpose pipeline (Panache-family 08-23 precedent). Verified from GitHub README+releases (primary). Body-grep-0 (MRDown across 249 files). Sitemap 87->88, 7-gate PASS all langs, EN/PT/ID 65/70/71-char titles, 137/151/152 descs, words 1810/1977/1688.\n2026-09-06: +3 Tweet.app 'new Twitter' rebrand/trademark ruling (en/pt/id). Briefing threadgrab slice weak+off-theme (Md2pdf=md2rich); PIVOT via RSS+HN gap-scan to fresh dated multi-source platform-identity story: X Corp wins 'Twitter' mark block (Reuters) but likely abandoned 'tweet'+bird -> Operation Bluebird rebrands 'Twitter' to Tweet.app (Engadget 09-05), first-party tweet.app FAQ. Body-grep-0. EN/PT/ID 73/67/75 titles, 136/137/134 descs, words 1794/1999/1661. Sitemap 88->89. 7-gate PASS.\n2026-09-07: Published 'MarkFlowy v0.100: Markdown Editor Rebuilt for Long Documents 2026' (markflowy-long-document-markdown-editor-2026) — 3-lang (en/pt/id) workflow piece; angle = threadgrab → editor step for long X Articles / Bluesky archives; v0.100.0 release 2026-09-05, v0.100.1 follow-up 2026-09-06; Show HN objectID 49586334; body-grep-0 for MarkFlowy/v0.100/ProseMirror/2 MB across all 142 prior slugs.\n2026-09-08: Published 'Australia Algorithm Opt-Out 2026: Why It Matters for Archiving' (australia-algorithm-opt-out-social-archive-2026) — 3-lang (en/pt/id) Guide; angle = regulatory feed-choice mandate (Australia Digital Duty of Care, exposure draft due week of Sep 7, 2026) -> following-only feed becomes a legal first-class surface -> feed_mode/algorithm_version provenance; Anika Wells/Meta/Google/TikTok/$100M fines; corroborated ABC+Guardian+BBC+AlJazeera+SMH; body-grep-0 for australia/switch off algorithm across all prior slugs; EN title 75/desc 147, PT 62/142, ID 66/150 (all <=75/<=155 gates); sitemap 90->91.\n2026-09-09: Published 'Nitter and XCancel Back Online 2026: The C&D Reversal' (nitter-xcancel-back-online-2026) — 3-lang (en/pt/id) News; status-reversal of the 2026-09-02 Nitter/XCancel shutdown article: 1 week after X Corp C&D (Aug 24), nitter.net + xcancel.com back online after legal advice; zedeus/nitter commit 1428b4c 'Nitter lives' (Sep 6); HN 49571634 more instances than before (731pts) + 49588988/49589003 (915/270pts); The Register+GIGAZINE 09-07/08; verified from primary (nitter.net banner, xcancel.com/cdclegal, GitHub). Body-grep-0 on reversal tokens in prior article. Threadgrab angle: single-frontend fragility -> own-the-Markdown. EN/PT/ID titles 66/65/73, descs ~143/141/155, words ~1947/2133/1774. Sitemap 91->92."
+  "publish_notes": "Published claude-in-chrome-browser-agent-2026 (Aug 27): briefing threadgrab item 'Claude in Chrome' (GA Aug 26, 2026) mapped to browser-agent web content capture feeding a Markdown thread archive. 3 pages (en/pt/id, single-EN-slug), 7-gate PASS, deployed.\n[2026-08-30] published: google-site-reputation-policy-x-archive-2026 (en/pt/id) — Google Site Reputation Policy 8-28 update angle for X archive sites; 2293/2551/2131 words; sitemap 89→90; sitemap regen script patched TODAY=2026-08-16→2026-08-30\n2026-09-01: Published 'Bluesky Algorithmic Opt-Out 2026' (bluesky-algorithmic-opt-out-archive-2026) — EN/PT/ID 3-lang + fixed trilingual-sitemap regression (81 PT + 81 ID alternates now referenced) + sitemap 91→86 URLs\n2026-09-02: published nitter-xcancel-shutdown-x-anonymous-2026 / nitter-xcancel-encerramento-leitor-2026 / nitter-xcancel-penutupan-pembaca-2026 — Nitter + XCancel C&D shutdown 2026-08-24; 6-outlet cross-source verified (TechCrunch Sarah Perez, Techdirt Sep 2, Forbes, Notebookcheck, heise, Cybernews); HN Algolia 1211/1348 pts/cmts; threadgrab angle = capture-before-next-C&D archive workflow\n2026-09-05: published mrdown-ai-rewrite-diff-verify-2026 (en/pt/id single-EN-slug) — MRDown v1.14.0 2026-09-02 macOS markdown viewer/editor, AI-rewrite diff showpiece. Threadgrab angle = verify-AI-redraft meaning-drift check in grab->repurpose pipeline (Panache-family 08-23 precedent). Verified from GitHub README+releases (primary). Body-grep-0 (MRDown across 249 files). Sitemap 87->88, 7-gate PASS all langs, EN/PT/ID 65/70/71-char titles, 137/151/152 descs, words 1810/1977/1688.\n2026-09-06: +3 Tweet.app 'new Twitter' rebrand/trademark ruling (en/pt/id). Briefing threadgrab slice weak+off-theme (Md2pdf=md2rich); PIVOT via RSS+HN gap-scan to fresh dated multi-source platform-identity story: X Corp wins 'Twitter' mark block (Reuters) but likely abandoned 'tweet'+bird -> Operation Bluebird rebrands 'Twitter' to Tweet.app (Engadget 09-05), first-party tweet.app FAQ. Body-grep-0. EN/PT/ID 73/67/75 titles, 136/137/134 descs, words 1794/1999/1661. Sitemap 88->89. 7-gate PASS.\n2026-09-07: Published 'MarkFlowy v0.100: Markdown Editor Rebuilt for Long Documents 2026' (markflowy-long-document-markdown-editor-2026) — 3-lang (en/pt/id) workflow piece; angle = threadgrab → editor step for long X Articles / Bluesky archives; v0.100.0 release 2026-09-05, v0.100.1 follow-up 2026-09-06; Show HN objectID 49586334; body-grep-0 for MarkFlowy/v0.100/ProseMirror/2 MB across all 142 prior slugs.\n2026-09-08: Published 'Australia Algorithm Opt-Out 2026: Why It Matters for Archiving' (australia-algorithm-opt-out-social-archive-2026) — 3-lang (en/pt/id) Guide; angle = regulatory feed-choice mandate (Australia Digital Duty of Care, exposure draft due week of Sep 7, 2026) -> following-only feed becomes a legal first-class surface -> feed_mode/algorithm_version provenance; Anika Wells/Meta/Google/TikTok/$100M fines; corroborated ABC+Guardian+BBC+AlJazeera+SMH; body-grep-0 for australia/switch off algorithm across all prior slugs; EN title 75/desc 147, PT 62/142, ID 66/150 (all <=75/<=155 gates); sitemap 90->91.\n2026-09-09: Published 'Nitter and XCancel Back Online 2026: The C&D Reversal' (nitter-xcancel-back-online-2026) — 3-lang (en/pt/id) News; status-reversal of the 2026-09-02 Nitter/XCancel shutdown article: 1 week after X Corp C&D (Aug 24), nitter.net + xcancel.com back online after legal advice; zedeus/nitter commit 1428b4c 'Nitter lives' (Sep 6); HN 49571634 more instances than before (731pts) + 49588988/49589003 (915/270pts); The Register+GIGAZINE 09-07/08; verified from primary (nitter.net banner, xcancel.com/cdclegal, GitHub). Body-grep-0 on reversal tokens in prior article. Threadgrab angle: single-frontend fragility -> own-the-Markdown. EN/PT/ID titles 66/65/73, descs ~143/141/155, words ~1947/2133/1774. Sitemap 91->92.\n2026-09-10: Published 'Muse Band Loses @muse Handle to Meta AI 2026: Own Your Name' (muse-band-handle-handover-meta-ai-2026) — 3-lang (en/pt/id) News; Meta unveiled Muse AI agent 2026-09-08 and the @muse Instagram+X handles held by the British band (1999 trademark) now belong to the agent; band posts as @museband; Engadget 2026-09-09 datePublished-verified, 12+ same-day outlets, HN 174pts; body-grep-0 on {@muse, museband, handle squat, meta ai agent} across 261 on-disk articles. Precedents: @Meta (2021 motorcycle magazine) + @threads (2023 American Threads); X handle marketplace counter-position (The Verge/TechCrunch/Decrypt Oct 2025). Threadgrab angle: a handle is a lease, post-level Markdown is the deed. EN/PT/ID titles 72/73/62, descs 135/120/114, 6 FAQ, 7 H2, 2 code blocks byte-identical. Sitemap 92->93."
 }
