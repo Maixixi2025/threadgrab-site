@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marginal 2026: O Editor Markdown Feito Para Coding Agents | ThreadGrab</title>
+  <meta name="description" content="O Marginal encontra os CLAUDE.md, AGENTS.md e skills que guiam seu coding agent. Por que arquivos de instrução viraram material de arquivo.">
+  <meta name="keywords" content="Marginal editor markdown 2026, editor para coding agent, editor CLAUDE.md, arquivos AGENTS.md, skills de agente em markdown, Claude Code skills, arquivar instruções de agente, ThreadGrab arquivos de agente, QWEN.md, regras de agente, proveniência de instruções">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/pt/blog/marginal-markdown-editor-coding-agents-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/marginal-markdown-editor-coding-agents-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/marginal-markdown-editor-coding-agents-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/marginal-markdown-editor-coding-agents-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/marginal-markdown-editor-coding-agents-2026.html">
+  <meta property="og:title" content="Marginal 2026: O Editor Markdown Feito Para Coding Agents | ThreadGrab">
+  <meta property="og:description" content="O Marginal encontra os CLAUDE.md, AGENTS.md e skills que guiam seu coding agent. Por que arquivos de instrução viraram material de arquivo.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/pt/blog/marginal-markdown-editor-coding-agents-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Marginal 2026: O Editor Markdown Feito Para Coding Agents | ThreadGrab">
+  <meta name="twitter:description" content="O Marginal encontra os CLAUDE.md, AGENTS.md e skills que guiam seu coding agent. Por que arquivos de instrução viraram material de arquivo.">
+  <meta property="article:published_time" content="2026-09-12">
+  <meta property="article:modified_time" content="2026-09-12">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo:hover { color: #1d9bf0; }
+    .tagline { color: #888; font-size: 0.85rem; margin-left: auto; }
+    nav.lang-bar { display: flex; gap: 12px; padding: 12px 24px; border-bottom: 1px solid #1a1a1a; background: #141414; font-size: 0.9rem; }
+    nav.lang-bar a { color: #888; text-decoration: none; padding: 4px 10px; border-radius: 4px; }
+    nav.lang-bar a:hover { color: #fff; }
+    nav.lang-bar a.active { background: #1d9bf0; color: #fff; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 24px 60px; }
+    h1 { font-size: 2rem; line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    p.meta { color: #888; font-size: 0.9rem; margin-bottom: 28px; }
+    h2 { font-size: 1.4rem; margin: 36px 0 14px; color: #20d5ec; }
+    h3 { font-size: 1.1rem; margin: 24px 0 10px; }
+    p { margin-bottom: 16px; color: #ddd; }
+    ul, ol { margin: 0 0 16px 24px; color: #ddd; }
+    li { margin-bottom: 8px; }
+    a { color: #1d9bf0; }
+    code { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    pre { background: #1a1a1a; padding: 16px; border-radius: 6px; overflow-x: auto; margin-bottom: 16px; border: 1px solid #2a2a2a; }
+    pre code { background: transparent; padding: 0; color: #e6e6e6; font-size: 0.85em; }
+    .callout { background: #1a1a1a; border-left: 4px solid #20d5ec; padding: 16px 20px; margin: 24px 0; border-radius: 4px; }
+    .callout p { margin-bottom: 0; }
+    blockquote { border-left: 3px solid #444; padding-left: 16px; color: #ccc; margin: 16px 0; font-style: italic; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #2a2a2a; font-size: 0.92em; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    tr:hover { background: #141414; }
+    .cta-box { background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%); border: 1px solid #20d5ec; padding: 24px; border-radius: 8px; margin: 32px 0; text-align: center; }
+    .cta-box h3 { color: #20d5ec; margin-top: 0; }
+    .cta-button { display: inline-block; background: #20d5ec; color: #0f0f0f; padding: 12px 28px; border-radius: 6px; text-decoration: none; font-weight: 600; margin-top: 12px; }
+    .cta-button:hover { background: #1ab8cc; }
+    .faq-item { margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #2a2a2a; }
+    .faq-item:last-child { border-bottom: none; }
+    .related { background: #141414; padding: 20px; border-radius: 6px; margin-top: 32px; }
+    .related h3 { margin-top: 0; }
+    footer { border-top: 1px solid #1a1a1a; padding: 24px; text-align: center; color: #888; font-size: 0.85rem; }
+    footer a { color: #888; text-decoration: none; }
+    footer a:hover { color: #1d9bf0; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Marginal 2026: O Editor Markdown Feito Para Coding Agents | ThreadGrab",
+    "description": "O Marginal encontra os CLAUDE.md, AGENTS.md e skills que guiam seu coding agent. Por que arquivos de instrução viraram material de arquivo.",
+    "datePublished": "2026-09-12",
+    "dateModified": "2026-09-12",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/" },
+    "mainEntityOfPage": "https://threadgrab.com/pt/blog/marginal-markdown-editor-coding-agents-2026.html",
+    "inLanguage": "pt"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://threadgrab.com/pt/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/pt/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Marginal 2026: O Editor Markdown Feito Para Coding Agents", "item": "https://threadgrab.com/pt/blog/marginal-markdown-editor-coding-agents-2026.html" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "O que é o Marginal e quem o criou?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O Marginal é um editor markdown nativo para macOS, Windows e Linux, criado por Kunihiro Ishiguro e anunciado em um post chamado 'Markdown Editors Weren't Built for Coding Agents, So I Made One', de 2 de setembro de 2026. Seu diferencial é descobrir e listar os arquivos CLAUDE.md, AGENTS.md, regras, skills, sub-agentes e comandos que realmente estão em vigor para o coding agent que você selecionou. Custa US$ 10 por mês ou US$ 96 por ano, com 14 dias de teste."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quais coding agents e arquivos de instrução o Marginal suporta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O manual lista seis: Claude Code (CLAUDE.md, o padrão), Codex (AGENTS.md), Grok Build (AGENTS.md), OpenCode (AGENTS.md), Cursor (AGENTS.md mais o diretório .cursor/rules) e Qwen Code (QWEN.md). Você escolhe o agente em Configurações, dentro de IA, e a barra lateral lista os arquivos que aquele agente lê no projeto atual, em vez de arquivos de uma pasta escolhida por você."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "É preciso assinatura para usar o Marginal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A leitura é gratuita. Abrir arquivos e pastas, a pré-visualização ao vivo, imprimir, exportar em PDF, exportar em HTML e os temas funcionam com ou sem login. A assinatura governa a escrita: editar no painel de texto, criar documentos novos e aplicar uma edição de IA. Se a assinatura vencer, o aplicativo passa a somente leitura em vez de travar, e um documento alterado enquanto licenciado ainda pode ser salvo. Os recursos de IA usam sua própria chave de API da Anthropic, OpenAI, Google, xAI ou Alibaba Cloud, e o Marginal nunca os bloqueia."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Por que alguém que arquiva conteúdo se interessaria por um editor markdown?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Porque os arquivos que guiam um coding agent são eles mesmos um registro. Um CLAUDE.md ou um AGENTS.md codifica o que foi dito a um agente, a quais regras ele estava preso e quais skills estavam instaladas em determinado momento. Quando você lê um commit assistido por IA, um plano gerado ou uma auditoria de segurança de meses atrás, as instruções em vigor naquele momento são o contexto que falta. O Marginal mostra apenas o estado atual; guardar cópias datadas é outro trabalho."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O Marginal tem alguma relação com arquivar conteúdo social?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não diretamente - é uma ferramenta de desenvolvimento, não de redes sociais. A conexão é conceitual. Os dois problemas tratam de arquivos markdown no seu próprio disco que carregam uma proveniência impossível de reconstruir depois. O mesmo instinto que faz você guardar cópias datadas do CLAUDE.md é o que faz você guardar cópias datadas de uma thread antes que a conta ou a plataforma mudem por baixo dela."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O Marginal é um produto acabado?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Trate-o como um produto jovem, de um autor solo. O post de 2 de setembro de 2026 é uma apresentação, não um changelog, e o autor pede feedback explicitamente: se o seu coding agent guarda os arquivos em algum lugar que o Marginal ainda não procura, dizer isso 'vira uma linha de uma tabela'. A lista de agentes suportados deve ser verificada antes da compra, e o anúncio gerou pouquíssima discussão - o envio no Hacker News teve apenas alguns pontos e nenhum comentário."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a href="/pt/" class="logo">ThreadGrab</a>
+    <span class="tagline">Arquivo de conteúdo social</span>
+  </header>
+  <nav class="lang-bar">
+    <a href="/en/blog/marginal-markdown-editor-coding-agents-2026.html">EN</a>
+    <a class="active" href="/pt/blog/marginal-markdown-editor-coding-agents-2026.html">PT</a>
+    <a href="/id/blog/marginal-markdown-editor-coding-agents-2026.html">ID</a>
+  </nav>
+  <main>
+    <h1><span>Editores markdown</span> foram feitos para notas, não para agentes</h1>
+    <p class="meta">12 de Setembro de 2026 &middot; ThreadGrab</p>
+
+    <p>Existe uma categoria de arquivo que não existia cinco anos atrás e que hoje fica no centro de como o software é escrito. Não é código-fonte. É a pilha de markdown que diz a um coding agent o que fazer: <code>CLAUDE.md</code>, <code>AGENTS.md</code>, regras, skills, sub-agentes, comandos. Em 2 de setembro de 2026, Kunihiro Ishiguro publicou um post chamado <a href="https://marginal.md/blog.html" rel="nofollow">"Markdown Editors Weren't Built for Coding Agents, So I Made One"</a> e lançou o editor que ele queria: o <a href="https://marginal.md/" rel="nofollow">Marginal</a>.</p>
+
+    <p>O post abre com um problema que eu reconheço por uma direção completamente diferente. O autor conta que, depois de usar coding agents intensamente, principalmente o Claude Code, acabou com "uma quantidade esmagadora de documentos markdown, às vezes mais de 100, espalhados por subdiretórios diferentes", e tinha "perdido completamente a noção de quais skills estão disponíveis, quais sub-agentes estão instalados e quais regras estão em vigor".</p>
+
+    <p>Eu escrevo sobre arquivar conteúdo social, então meu interesse aqui não é o editor. É a classe de arquivo. Esses arquivos de instrução são um registro do que foi dito a uma IA, e quase ninguém guarda cópias datadas deles.</p>
+
+    <h2>O que o Marginal realmente faz diferente</h2>
+
+    <p>A maioria dos editores markdown trata um arquivo como arquivo. Você entrega uma pasta e ele mostra o que há lá dentro. O Marginal inverte isso: você diz qual coding agent usa, e ele encontra os arquivos que aquele agente realmente lê, onde quer que estejam.</p>
+
+    <p>Essa distinção é o produto inteiro. A reclamação do autor é precisa - alguns arquivos de instrução são locais do projeto, outros são compartilhados por uma conta em uma máquina específica, e cada agente procura em caminhos diferentes. Uma visão genérica de pasta não responde "quais regras estão em vigor agora", porque a resposta está espalhada por pelo menos três locais e depende de qual agente está rodando.</p>
+
+    <h3>Os agentes suportados e os arquivos que cada um lê</h3>
+
+    <p>Segundo o <a href="https://marginal.md/docs/" rel="nofollow">manual do Marginal</a>, o agente é escolhido em Configurações, dentro de IA, com o Claude Code como padrão. O manual lista todas as pastas que cada agente lê:</p>
+
+    <table>
+      <thead>
+        <tr><th>Coding agent</th><th>Arquivo de instrução</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Claude Code</td><td><code>CLAUDE.md</code></td></tr>
+        <tr><td>Codex</td><td><code>AGENTS.md</code></td></tr>
+        <tr><td>Grok Build</td><td><code>AGENTS.md</code></td></tr>
+        <tr><td>OpenCode</td><td><code>AGENTS.md</code></td></tr>
+        <tr><td>Cursor</td><td><code>AGENTS.md</code> mais <code>.cursor/rules</code></td></tr>
+        <tr><td>Qwen Code</td><td><code>QWEN.md</code></td></tr>
+      </tbody>
+    </table>
+
+    <p>Leia essa tabela duas vezes e algo óbvio aparece. Quatro dos seis agentes leem um arquivo chamado <code>AGENTS.md</code>, e todos leem de lugares diferentes. O mesmo nome de arquivo significa coisas diferentes dependendo de quem olha. Se você mantém instruções para mais de um agente, está mantendo documentos sobrepostos sem nenhum índice comum - exatamente o estado que o autor descreve.</p>
+
+    <h3>Os outros recursos, resumidamente</h3>
+
+    <ul>
+      <li><strong>Listagem de arquivos em subdiretórios</strong> - opcional, para quando seu markdown está espalhado por pastas aninhadas. Filtre por trecho do caminho, incluindo <code>/</code> para casar com um diretório.</li>
+      <li><strong>Duas interfaces de IA</strong> - selecione o texto e pressione <code>&#8984;K</code> para uma reescrita em linha que aparece como um diff que você aceita ou rejeita como um único passo de desfazer; ou pressione <code>&#8984;J</code> para um painel de terminal e rode <code>claude</code> ou <code>codex</code> ali mesmo.</li>
+      <li><strong>Recarga ao vivo quando o agente escreve</strong> - quando o agente escreve em um arquivo que você tem aberto, o Marginal percebe e oferece recarregar, e uma skill recém-salva aparece na barra lateral sem reabrir a pasta.</li>
+      <li><strong>Leitura e exportação</strong> - clique duas vezes em um arquivo no Finder para abri-lo em modo de leitura, e exporte como PDF ou HTML.</li>
+      <li><strong>Modos de edição Emacs e Vim</strong> com mapeamento de teclas personalizado, e dez temas embutidos em cinco pares claro/escuro (Marginal, GitHub, Solarized, Zenburn, Dracula), mais temas em JSON do usuário carregados sem reiniciar.</li>
+    </ul>
+
+    <p>Um detalhe de implementação vale ser citado, porque explica a qualidade da exportação: um único motor markdown em Rust alimenta o editor, a pré-visualização, a exportação em PDF e o contexto entregue à IA. Um analisador, quatro consumidores.</p>
+
+    <h2>O modelo de preço é mais amigável que o da maioria</h2>
+
+    <p>O Marginal tem <a href="https://marginal.md/pricing.html" rel="nofollow">um plano, duas formas de pagar</a>: US$ 10 por mês, ou US$ 96 por ano, o que dá US$ 8 por mês, com um teste de 14 dias que não pede cartão. Mas a divisão entre gratuito e pago é a parte interessante, porque ela é traçada na escrita, não na leitura:</p>
+
+    <table>
+      <thead>
+        <tr><th>Sempre funciona</th><th>Exige teste ou assinatura</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Abrir arquivos e pastas</td><td>Editar no painel de texto</td></tr>
+        <tr><td>Leitura e pré-visualização ao vivo</td><td>Criar documentos novos</td></tr>
+        <tr><td>Imprimir, exportar PDF, exportar HTML</td><td>Aplicar uma edição de IA</td></tr>
+        <tr><td>Temas, claro e escuro</td><td>&nbsp;</td></tr>
+        <tr><td>Salvar um documento alterado enquanto licenciado</td><td>&nbsp;</td></tr>
+      </tbody>
+    </table>
+
+    <p>A consequência declarada de uma assinatura vencida é somente leitura, e não bloqueio: "Seus arquivos são markdown puro no seu disco, e nunca ficam reféns." A IA roda com sua própria chave da Anthropic, OpenAI, Google, xAI ou Alibaba Cloud, guardada no chaveiro do sistema e não nos servidores do fornecedor, e o site afirma claramente que a assinatura nunca bloqueia a IA.</p>
+
+    <div class="callout">
+      <p><strong>A ressalva honesta:</strong> este é um produto jovem, de um autor solo. O post de 2 de setembro é uma apresentação, não um changelog, e quando verifiquei o envio no Hacker News tinha poucos pontos e nenhum comentário. A lista de agentes suportados do manual é o item com maior chance de mudar - verifique antes de comprar, e note que no Windows e no Linux os atalhos com <code>&#8984;</code> passam a ser Alt.</p>
+    </div>
+
+    <h2>Por que arquivos de instrução de agente merecem cópias datadas</h2>
+
+    <p>Aqui está a parte que se conecta ao que eu realmente faço. O Marginal responde "o que está em vigor agora". Ele não responde "o que estava em vigor quando isso aconteceu", e essas são perguntas diferentes.</p>
+
+    <p>Considere o que um <code>CLAUDE.md</code> ou um <code>AGENTS.md</code> contém depois de alguns meses de uso real. Ele acumula regras que o agente deve seguir, convenções de projeto, padrões proibidos, deploys que você não pode tocar. É editado constantemente, muitas vezes pelo próprio agente. Daqui a seis meses, quando você estiver lendo um commit, um arquivo de plano ou uma auditoria de segurança que o agente produziu, o arquivo de instrução <em>como ele estava naquele momento</em> é a metade que falta do registro. A versão que você tem hoje é um documento diferente que por acaso compartilha um nome de arquivo.</p>
+
+    <p>Este é o mesmo modo de falha de arquivar uma thread pelo seu handle. Os dois são casos em que a coisa que você salvou ainda resolve, mas resolve para outra coisa. O <a href="/pt/blog/notula-markdown-ai-agents-2026.html">Notula</a> cobre a direção da leitura - garantir que seu markdown esteja limpo o suficiente para um agente usar. O Marginal cobre a direção da edição. Nenhum dos dois cobre a direção histórica, que não é produto de ninguém e é problema de todos.</p>
+
+    <h2>Capturar o estado do agente junto com o conteúdo que ele produziu</h2>
+
+    <p>Você não precisa de uma ferramenta especial para isso, o que é a boa notícia. Os arquivos de instrução são markdown puro no seu disco, então uma cópia datada é uma cópia. O trabalho é decidir o que fotografar e onde colocar.</p>
+
+    <p>Um script mínimo de snapshot - coloque-o ao lado do projeto e rode sempre que o agente fizer algo que você talvez precise explicar depois:</p>
+
+    <pre><code>#!/usr/bin/env bash
+# Snapshot the coding-agent instruction files for a project.
+set -euo pipefail
+
+PROJECT_DIR="${1:-.}"
+STAMP="$(date -u +%Y-%m-%dT%H-%M-%SZ)"
+OUT="agent-state/${STAMP}"
+
+mkdir -p "$OUT"
+
+# Instruction files this project may use, across the agents Marginal lists.
+for f in CLAUDE.md AGENTS.md QWEN.md GEMINI.md; do
+  if [ -f "$PROJECT_DIR/$f" ]; then
+    cp "$PROJECT_DIR/$f" "$OUT/$f"
+  fi
+done
+
+# Cursor rules, if present.
+if [ -d "$PROJECT_DIR/.cursor/rules" ]; then
+  cp -R "$PROJECT_DIR/.cursor/rules" "$OUT/cursor-rules"
+fi
+
+# Skills and commands, if present.
+for d in .claude/skills .claude/commands .codex/prompts; do
+  if [ -d "$PROJECT_DIR/$d" ]; then
+    mkdir -p "$OUT/$(dirname "$d")"
+    cp -R "$PROJECT_DIR/$d" "$OUT/$d"
+  fi
+done
+
+echo "Snapshot written to $OUT"</code></pre>
+
+    <p>Rode com o diretório do projeto como argumento e você obtém uma pasta com data e hora contendo exatamente as instruções em vigor naquele momento. Faça commit dos snapshots, ou mantenha-os fora do git se as regras contiverem algo sensível - de qualquer forma, eles existem como arquivos, e não como a lembrança de que você pretendia verificar.</p>
+
+    <p>Nomes de arquivo são a parte fácil. A outra metade de um arquivo é saber o que o conteúdo capturado realmente dizia, e para isso o padrão de proveniência importa:</p>
+
+    <pre><code># Record the instruction version alongside what the agent produced.
+# Keep this in the same directory as the artifact it explains.
+cat &gt; artifact.provenance.txt &lt;&lt;EOF
+agent: claude-code
+instruction_files: CLAUDE.md AGENTS.md
+captured_at: $(date -u +%Y-%m-%dT%H:%M:%SZ)
+source_url: https://github.com/org/repo/commit/abc1234
+snapshot_dir: agent-state/$(date -u +%Y-%m-%dT%H-%M-%SZ)
+note: rules in effect at generation time, not today's rules
+EOF</code></pre>
+
+    <p>O objetivo do segundo arquivo é a última linha. Qualquer arquivo que guarde um artefato sem as regras que o moldaram será mal interpretado depois - não porque alguém foi descuidado, mas porque as regras mudaram silenciosamente e nada registrou a mudança.</p>
+
+    <h2>A pilha, de ponta a ponta</h2>
+
+    <p>Coloque as peças em ordem e aparece um padrão muito mais antigo do que os coding agents:</p>
+
+    <ol>
+      <li><strong>Descoberta</strong> - encontre os arquivos que realmente estão em vigor. O Marginal, no editor.</li>
+      <li><strong>Snapshot</strong> - copie-os, com data, para que a versão sobreviva à próxima edição.</li>
+      <li><strong>Captura</strong> - guarde o artefato que o agente produziu junto das regras que o produziram.</li>
+      <li><strong>Re-verificação</strong> - antes de citar algo de meses atrás, consulte o snapshot, não o arquivo atual.</li>
+    </ol>
+
+    <p>O passo 1 agora é um produto que alguém vende por US$ 10 por mês, o que mostra que o problema é real e comum. Os passos 2 a 4 continuam manuais, e são eles que decidem se o seu arquivo será utilizável daqui a um ano.</p>
+
+    <h2>Onde o ThreadGrab entra</h2>
+
+    <p>O ThreadGrab captura conteúdo público do X, Bluesky e LinkedIn em Markdown, com data e hora e a URL de origem, para que o que você salvou mantenha a identidade que tinha quando você salvou. É um arquivador de conteúdo social, não uma ferramenta de desenvolvimento, e não lê o seu repositório. O que ele compartilha com o problema do Marginal é o princípio: a cópia que você controla, marcada com quando você a fez, é a única versão que ainda significa o que significava.</p>
+
+    <p>Se você mantém instruções de agente, a pergunta não é se você vai precisar da versão antiga. É se você vai tê-la.</p>
+
+    <h2 id="faq">Perguntas frequentes</h2>
+
+    <div class="faq-item">
+      <h3>O que é o Marginal e quem o criou?</h3>
+      <p>O Marginal é um editor markdown nativo para macOS, Windows e Linux, criado por Kunihiro Ishiguro e anunciado em um post chamado "Markdown Editors Weren't Built for Coding Agents, So I Made One", de 2 de setembro de 2026. Seu diferencial é descobrir e listar os arquivos <code>CLAUDE.md</code>, <code>AGENTS.md</code>, regras, skills, sub-agentes e comandos que realmente estão em vigor para o coding agent que você selecionou. Custa US$ 10 por mês ou US$ 96 por ano, com 14 dias de teste.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Quais coding agents e arquivos de instrução o Marginal suporta?</h3>
+      <p>O manual lista seis: Claude Code (<code>CLAUDE.md</code>, o padrão), Codex (<code>AGENTS.md</code>), Grok Build (<code>AGENTS.md</code>), OpenCode (<code>AGENTS.md</code>), Cursor (<code>AGENTS.md</code> mais o diretório <code>.cursor/rules</code>) e Qwen Code (<code>QWEN.md</code>). Você escolhe o agente em Configurações, dentro de IA, e a barra lateral lista os arquivos que aquele agente lê no projeto atual, em vez de arquivos de uma pasta escolhida por você.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>É preciso assinatura para usar o Marginal?</h3>
+      <p>A leitura é gratuita. Abrir arquivos e pastas, a pré-visualização ao vivo, imprimir, exportar em PDF, exportar em HTML e os temas funcionam com ou sem login. A assinatura governa a escrita: editar no painel de texto, criar documentos novos e aplicar uma edição de IA. Se a assinatura vencer, o aplicativo passa a somente leitura em vez de travar, e um documento alterado enquanto licenciado ainda pode ser salvo. Os recursos de IA usam sua própria chave de API da Anthropic, OpenAI, Google, xAI ou Alibaba Cloud, e o Marginal nunca os bloqueia.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Por que alguém que arquiva conteúdo se interessaria por um editor markdown?</h3>
+      <p>Porque os arquivos que guiam um coding agent são eles mesmos um registro. Um <code>CLAUDE.md</code> ou um <code>AGENTS.md</code> codifica o que foi dito a um agente, a quais regras ele estava preso e quais skills estavam instaladas em determinado momento. Quando você lê um commit assistido por IA, um plano gerado ou uma auditoria de segurança de meses atrás, as instruções em vigor naquele momento são o contexto que falta. O Marginal mostra apenas o estado atual; guardar cópias datadas é outro trabalho.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>O Marginal tem alguma relação com arquivar conteúdo social?</h3>
+      <p>Não diretamente - é uma ferramenta de desenvolvimento, não de redes sociais. A conexão é conceitual. Os dois problemas tratam de arquivos markdown no seu próprio disco que carregam uma proveniência impossível de reconstruir depois. O mesmo instinto que faz você guardar cópias datadas do <code>CLAUDE.md</code> é o que faz você guardar cópias datadas de uma thread antes que a conta ou a plataforma mudem por baixo dela.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>O Marginal é um produto acabado?</h3>
+      <p>Trate-o como um produto jovem, de um autor solo. O post de 2 de setembro de 2026 é uma apresentação, não um changelog, e o autor pede feedback explicitamente: se o seu coding agent guarda os arquivos em algum lugar que o Marginal ainda não procura, dizer isso "vira uma linha de uma tabela". A lista de agentes suportados deve ser verificada antes da compra, e o anúncio gerou pouquíssima discussão - o envio no Hacker News teve apenas alguns pontos e nenhum comentário.</p>
+    </div>
+
+    <div class="related">
+      <h3>Guias relacionados</h3>
+      <ul>
+        <li><a href="/pt/blog/notula-markdown-ai-agents-2026.html">Notula 2026: Markdown Editado por Humanos que Seus Agentes de IA Leem</a> &mdash; a direção da leitura do mesmo problema: seu markdown é realmente utilizável por um agente?</li>
+        <li><a href="/pt/blog/claude-skills-api-threadgrab-arquivo-x-2026.html">Claude Skills API e ThreadGrab 2026</a> &mdash; como arquivos SKILL.md são estruturados, versionados e enviados, e de quais pastas um agente os lê.</li>
+        <li><a href="/pt/blog/markdown-first-content-strategy-2026.html">Estratégia de Conteúdo Markdown-First 2026</a> &mdash; por que ter a versão em texto puro é a escolha durável entre ferramentas e plataformas.</li>
+        <li><a href="/pt/blog/social-media-content-backup-strategy-2026.html">Estratégia de Backup de Conteúdo Social 2026</a> &mdash; a lista plataforma por plataforma para guardar cópias antes que um handle ou um frontend mude.</li>
+      </ul>
+    </div>
+
+    <p style="margin-top: 32px;"><em>Última verificação: 12 de Setembro de 2026. Fontes primárias: Marginal, "Markdown Editors Weren't Built for Coding Agents, So I Made One", de Kunihiro Ishiguro (2 de setembro de 2026), em marginal.md/blog.html; o manual do Marginal em marginal.md/docs, incluindo a página de coding agents e a tabela de arquivos de instrução por agente; e a página de preços em marginal.md/pricing.html, para o plano de US$ 10 mensais / US$ 96 anuais, os termos do teste de 14 dias, a divisão entre recursos gratuitos e pagos e os provedores de chave de API suportados. O envio do post no Hacker News (3 de setembro de 2026) é citado pelo baixo volume de discussão. Preço e lista de agentes suportados são os detalhes com maior chance de mudar; confirme-os nas páginas do fornecedor antes de comprar.</em></p>
+
+    <div class="cta-box">
+      <h3>Guarde as postagens, não apenas os links</h3>
+      <p>O ThreadGrab transforma conteúdo público do X, Bluesky e LinkedIn em Markdown limpo e com data e hora &mdash; para que seu arquivo preserve autores e contexto.</p>
+      <a href="/pt/" class="cta-button">Experimente o ThreadGrab &rarr;</a>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2026 ThreadGrab. <a href="/pt/">Início</a> &middot; <a href="/pt/blog/">Blog</a> &middot; <a href="/pt/privacy.html">Privacidade</a> &middot; <a href="/pt/about.html">Sobre</a></p>
+  </footer>
+</body>
+</html>
