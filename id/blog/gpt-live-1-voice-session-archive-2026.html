@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merekam Panggilan GPT-Live 1: Apa yang Harus Disimpan | ThreadGrab</title>
+  <meta name="description" content="API GPT-Live 1 OpenAI menagih US$0,05 per menit untuk suara full-duplex. Apa yang ditinggalkan panggilan langsung dan cara menyimpan rekamannya.">
+  <meta name="keywords" content="rekaman GPT-Live 1 2026, API suara OpenAI, suara full-duplex, arsip transkrip suara, US$0,05 per menit, endpoint Live sessions, izin merekam, agen suara, threadgrab suara, transkripsi real-time">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/id/blog/gpt-live-1-voice-session-archive-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/gpt-live-1-voice-session-archive-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/gpt-live-1-voice-session-archive-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/gpt-live-1-voice-session-archive-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/gpt-live-1-voice-session-archive-2026.html">
+  <meta property="og:title" content="Merekam Panggilan GPT-Live 1: Apa yang Harus Disimpan | ThreadGrab">
+  <meta property="og:description" content="API GPT-Live 1 OpenAI menagih US$0,05 per menit untuk suara full-duplex. Apa yang ditinggalkan panggilan langsung dan cara menyimpan rekamannya.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/id/blog/gpt-live-1-voice-session-archive-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Merekam Panggilan GPT-Live 1: Apa yang Harus Disimpan | ThreadGrab">
+  <meta name="twitter:description" content="API GPT-Live 1 OpenAI menagih US$0,05 per menit untuk suara full-duplex. Apa yang ditinggalkan panggilan langsung dan cara menyimpan rekamannya.">
+  <meta property="article:published_time" content="2026-09-13">
+  <meta property="article:modified_time" content="2026-09-13">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo:hover { color: #1d9bf0; }
+    .tagline { color: #888; font-size: 0.85rem; margin-left: auto; }
+    nav.lang-bar { display: flex; gap: 12px; padding: 12px 24px; border-bottom: 1px solid #1a1a1a; background: #141414; font-size: 0.9rem; }
+    nav.lang-bar a { color: #888; text-decoration: none; padding: 4px 10px; border-radius: 4px; }
+    nav.lang-bar a:hover { color: #fff; }
+    nav.lang-bar a.active { background: #1d9bf0; color: #fff; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 24px 60px; }
+    h1 { font-size: 2rem; line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    p.meta { color: #888; font-size: 0.9rem; margin-bottom: 28px; }
+    h2 { font-size: 1.4rem; margin: 36px 0 14px; color: #20d5ec; }
+    h3 { font-size: 1.1rem; margin: 24px 0 10px; }
+    p { margin-bottom: 16px; color: #ddd; }
+    ul, ol { margin: 0 0 16px 24px; color: #ddd; }
+    li { margin-bottom: 8px; }
+    a { color: #1d9bf0; }
+    code { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    pre { background: #1a1a1a; padding: 16px; border-radius: 6px; overflow-x: auto; margin-bottom: 16px; border: 1px solid #2a2a2a; }
+    pre code { background: transparent; padding: 0; color: #e6e6e6; font-size: 0.85em; }
+    .callout { background: #1a1a1a; border-left: 4px solid #20d5ec; padding: 16px 20px; margin: 24px 0; border-radius: 4px; }
+    .callout p { margin-bottom: 0; }
+    blockquote { border-left: 3px solid #444; padding-left: 16px; color: #ccc; margin: 16px 0; font-style: italic; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #2a2a2a; font-size: 0.92em; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    tr:hover { background: #141414; }
+    .cta-box { background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%); border: 1px solid #20d5ec; padding: 24px; border-radius: 8px; margin: 32px 0; text-align: center; }
+    .cta-box h3 { color: #20d5ec; margin-top: 0; }
+    .cta-button { display: inline-block; background: #20d5ec; color: #0f0f0f; padding: 12px 28px; border-radius: 6px; text-decoration: none; font-weight: 600; margin-top: 12px; }
+    .cta-button:hover { background: #1ab8cc; }
+    .faq-item { margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #2a2a2a; }
+    .faq-item:last-child { border-bottom: none; }
+    .related { background: #141414; padding: 20px; border-radius: 6px; margin-top: 32px; }
+    .related h3 { margin-top: 0; }
+    footer { border-top: 1px solid #1a1a1a; padding: 24px; text-align: center; color: #888; font-size: 0.85rem; }
+    footer a { color: #888; text-decoration: none; }
+    footer a:hover { color: #1d9bf0; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Merekam Panggilan GPT-Live 1: Apa yang Harus Disimpan | ThreadGrab",
+    "description": "API GPT-Live 1 OpenAI menagih US$0,05 per menit untuk suara full-duplex. Apa yang ditinggalkan panggilan langsung dan cara menyimpan rekamannya.",
+    "datePublished": "2026-09-13",
+    "dateModified": "2026-09-13",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/id/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/id/" },
+    "mainEntityOfPage": "https://threadgrab.com/id/blog/gpt-live-1-voice-session-archive-2026.html",
+    "inLanguage": "id"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://threadgrab.com/id/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/id/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Merekam Panggilan GPT-Live 1", "item": "https://threadgrab.com/id/blog/gpt-live-1-voice-session-archive-2026.html" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Berapa biaya satu sesi suara GPT-Live 1?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sesi suara ditagih US$0,05 per menit, dihitung per detik dan tidak dibulatkan ke menit penuh berikutnya. Sesi 90 detik berbiaya US$0,075. Semua yang didelegasikan model suara ke agen backend - penalaran, pemanggilan alat, model yang menulis jawabannya - ditagih terpisah sesuai tarif normal model yang Anda konfigurasi, jadi angka per menit itu batas bawah, bukan total. Durasi sesi diukur dalam sesi bersamaan untuk batas laju, mulai dari 25 di Tier 1 sampai 500 di Tier 5, dan tingkat gratis tidak didukung."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah GPT-Live 1 menyimpan transkrip percakapan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Itu pertanyaan yang salah untuk dijadikan dasar arsitektur, karena jawabannya milik vendor dan bisa berubah. Yang bisa Anda verifikasi adalah apa yang ditulis oleh integrasi Anda sendiri. Audio adalah masukan dan keluaran pada model ini, jadi apa pun yang menghasilkan rekaman tahan lama harus menjadi keputusan Anda: tangkap aliran audio saat melewati klien Anda, catat transkrip teks jika peristiwa yang Anda tangani menyertakannya, dan beri cap id sesi serta stempel waktu UTC pada setiap artefak. Perlakukan apa yang disimpan vendor sebagai bonus, bukan sebagai arsip Anda."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apa bedanya sesi suara langsung dengan sesi transkripsi Realtime?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sesi GPT-Live 1 di endpoint Live adalah model suara dua arah: ia mendengar dan berbicara sekaligus, menangani interupsi, dan bisa menyerahkan penalaran atau penggunaan alat ke agen backend. Sesi transkripsi di endpoint transcription_sessions bersifat satu arah - audio masuk, teks keluar - dan ada untuk menjabarkan audio, bukan untuk bercakap-cakap. Jika tujuan Anda adalah rekaman ucapan yang bisa dicari, jalur transkripsi memberi teks dengan perangkat jauh lebih sedikit; jika tujuan Anda adalah agen suara yang juga butuh rekaman, Anda membangun rekaman itu sendiri di atas sesi langsung."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bisakah saya mengarsipkan panggilan suara seperti mengarsipkan postingan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Separuh penyimpanannya sama dan separuh pengumpulannya lebih sulit. Postingan datang sebagai teks terstruktur dengan tautan permanen; suara datang sebagai aliran yang hanya ada selama sesi terbuka. Jadi langkah pengumpulan harus berjalan langsung - Anda tidak bisa kembali dan mengambil panggilan kemarin - sementara langkah penyimpanan harus mengikuti aturan yang sama seperti yang sudah Anda pakai untuk konten sosial: berkas biasa yang Anda kendalikan, pengenal sumber, stempel waktu pengambilan, dan tanpa format yang hanya bisa dibuka alat satu vendor. ThreadGrab menangani bagian postingan; bagian suara adalah skrip milik Anda."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah saya perlu izin untuk merekam panggilan GPT-Live 1?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hukum perekaman berbeda antar yurisdiksi dan artikel ini bukan nasihat hukum, tetapi bentuk praktisnya konsisten: ketika ada manusia di salah satu sisi panggilan, aturan perekaman melekat pada manusia itu, bukan pada model. Beberapa yurisdiksi mewajibkan persetujuan semua pihak. Jawaban rekayasa yang paling murah adalah membuat langkah pengambilan bersuara, bukan senyap - umumkan di awal sesi, simpan penanda izin di samping transkrip, dan nyatakan jendela retensi secara eksplisit. Rekaman yang asal-usulnya tidak bisa Anda jelaskan lebih buruk daripada tidak ada rekaman."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah GPT-Live 1 model yang tepat untuk arsip suara yang harus bertahan bertahun-tahun?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Versi model adalah bagian paling tidak tahan lama dari tumpukan ini. gpt-live-1 adalah nama snapshot hari ini; snapshot dihentikan, endpoint digantikan, dan tingkatan harga direstrukturisasi. Rancang agar model menjadi bagian yang bisa diganti: simpan audionya, simpan transkrip teksnya, dan simpan berkas metadata kecil yang mencatat id model, endpoint, dan tanggalnya. Jika makna arsip Anda bergantung pada model suara mana yang menjawab, catat itu seperti Anda mencatat akun mana yang memposting sebuah utas - sebagai kolom, bukan sebagai asumsi."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a href="/id/" class="logo">ThreadGrab</a>
+    <span class="tagline">Arsip konten sosial</span>
+  </header>
+  <nav class="lang-bar">
+    <a href="/en/blog/gpt-live-1-voice-session-archive-2026.html">EN</a>
+    <a href="/pt/blog/gpt-live-1-voice-session-archive-2026.html">PT</a>
+    <a class="active" href="/id/blog/gpt-live-1-voice-session-archive-2026.html">ID</a>
+  </nav>
+  <main>
+    <h1><span>Suara adalah media pertama</span> yang tak pernah dipelajari web untuk disimpan</h1>
+    <p class="meta">13 September 2026 &middot; ThreadGrab</p>
+
+    <p>OpenAI merilis <a href="https://platform.openai.com/docs/models/gpt-live-1" rel="nofollow">GPT-Live 1</a> ke dalam API, dan bagian yang menarik bukanlah modelnya. Melainkan satuan penagihannya. Sesi suara berbiaya <strong>US$0,05 per menit</strong>, dihitung per detik, dan semua yang didelegasikan model suara - penalaran, pemanggilan alat, model yang benar-benar menyusun jawabannya - ditagih terpisah. Untuk pertama kalinya, sebuah perusahaan bisa membeli percakapan dan membayarnya seperti membayar pulsa telepon.</p>
+
+    <p>Yang memunculkan pertanyaan yang tidak dijawab dokumentasinya. Ketika sesi berakhir, apa yang Anda miliki?</p>
+
+    <p>Postingan adalah dokumen. Ia punya tautan permanen, stempel waktu yang terlihat, dan salinan yang bertahan melewati permintaan HTTP. Anda bisa mengarsipkannya setahun kemudian dan tetap mendapat byte yang sama. Sesi suara adalah kebalikannya: ia ada selama soket terbuka, dan begitu soket ditutup, rekamannya entah ada dalam sesuatu yang Anda tulis atau tidak ada sama sekali. Tidak ada cara kembali untuk mengambil panggilan kemarin.</p>
+
+    <p>Asimetri itulah yang dibahas artikel ini. Saya mengarsipkan postingan publik sebagai pekerjaan sehari-hari, dan hadirnya API suara full-duplex yang ditagih per menit mematahkan asumsi nyaman yang saya pegang bertahun-tahun - bahwa konten apa pun yang layak disimpan akan masih ada besok untuk dikumpulkan.</p>
+
+    <h2>Apa sebenarnya GPT-Live 1, menurut dokumentasinya sendiri</h2>
+
+    <p>Kartu modelnya tidak biasa karena begitu lugas. GPT-Live 1 dijabarkan sebagai model suara full-duplex yang "bisa mendengar dan berbicara sekaligus, dan menyerahkan penalaran serta penggunaan alat ke agen backend". Full-duplex adalah frasa yang menopang semuanya. Ini bukan ucapan-ke-teks yang menyuapi model bahasa yang menyuapi teks-ke-ucapan, tiga langkah dalam satu antrean. Ini satu model yang menjalankan percakapan di mana interupsi itu normal dan kedua arahnya hidup.</p>
+
+    <table>
+      <thead>
+        <tr><th>Atribut</th><th>Nilai</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Harga</td><td>US$0,05 per menit, ditagih per detik</td></tr>
+        <tr><td>Catatan penagihan</td><td>Durasi sesi tidak dibulatkan ke menit penuh berikutnya</td></tr>
+        <tr><td>Modalitas</td><td>Teks dan audio masuk, teks dan audio keluar</td></tr>
+        <tr><td>Tidak didukung</td><td>Gambar, video, keluaran terstruktur, fine-tuning, keluaran terprediksi</td></tr>
+        <tr><td>Endpoint</td><td>Live <code>v1/live/sessions</code>, plus Chat Completions, Responses, Realtime</td></tr>
+        <tr><td>Batas pengetahuan</td><td>31 Juli 2025</td></tr>
+        <tr><td>Batas laju</td><td>Diukur dalam sesi bersamaan: Tier 1 = 25 hingga Tier 5 = 500; tingkat gratis tidak didukung</td></tr>
+      </tbody>
+    </table>
+
+    <p>Dua detail dari tabel itu lebih penting dari kelihatannya. Pertama, "ditagih terpisah" untuk penggunaan backend berarti harga per menit itu batas bawah. Sesi suara yang berpikir keras adalah sesi suara plus tagihan model teks plus biaya alat apa pun. Kedua, batas laju diukur dalam <em>sesi bersamaan</em> alih-alih permintaan per menit, yang merupakan satuan tepat untuk sesuatu yang menempati soket selama percakapan berlangsung - dan itu juga petunjuk tentang objek macam apa sebuah sesi.</p>
+
+    <p>Di antara modalitas audio dan teks ada perbedaan yang layak dinamai, karena itulah yang menentukan arsitektur Anda. Audio adalah masukan sekaligus keluaran, dan platform yang sama mengekspos endpoint transkripsi secara terpisah. Sesi transkripsi bersifat satu arah: audio masuk, teks keluar, dibuat untuk menjabarkan ucapan. Sesi langsung bersifat dua arah dan dibuat untuk bercakap-cakap. Jika yang Anda inginkan hanya rekaman ucapan yang bisa dicari, jalur transkripsi memberi teks dengan perangkat jauh lebih sedikit. Jika Anda menginginkan agen suara, Anda membangun rekamannya sendiri di atas itu.</p>
+
+    <h2>Tiga hal yang ditinggalkan sesi suara</h2>
+
+    <p>Tanyakan apa yang bertahan setelah soket ditutup, dan jawabannya lebih kecil dari dugaan orang. Ada tepat tiga kategori artefak, dan hanya satu di antaranya yang Anda buat sendiri.</p>
+
+    <h3>Transkrip yang dialirkan, jika klien Anda menyimpannya</h3>
+
+    <p>API suara langsung memancarkan peristiwa saat percakapan berjalan - transkrip parsial dan final, batas giliran, muatan pemanggilan fungsi. Peristiwa itu tiba di klien Anda, yang berarti klien Anda bisa menuliskannya. Ini artefak bernilai tertinggi dan paling mudah hilang: jika Anda hanya meneruskan peristiwa ke antarmuka dan tidak pernah menyimpannya, transkrip itu hanya tampilan, bukan rekaman. Menyimpannya adalah perubahan dua baris pada penangan peristiwa Anda dan perubahan permanen pada apa yang bisa dijawab arsip Anda nanti.</p>
+
+    <h3>Audionya, jika Anda memintanya</h3>
+
+    <p>Audio adalah masukan dan keluaran pada model ini, jadi kedua arah bisa ditangkap. Ingat bahwa ini berlaku dua arah: berkas audio adalah rekaman paling setia dan paling tidak bisa dipakai. Anda tidak bisa melakukan grep padanya, tidak bisa membandingkannya, dan biaya penyimpanannya sebanding dengan durasi percakapan, bukan dengan apa yang dikatakan. Dalam praktik, audio adalah buktinya dan teks adalah indeksnya, dan arsip yang jujur menyimpan keduanya alih-alih berpura-pura salah satunya sudah cukup.</p>
+
+    <h3>Metadata sesinya, yang tak seorang pun menangkap dan semua orang butuhkan</h3>
+
+    <p>Inilah kategori yang terlewat, dan justru inilah yang menentukan apakah arsip Anda bisa ditafsirkan delapan belas bulan lagi. Transkrip tanpa id sesi tidak bisa dipasangkan dengan baris tagihan. Transkrip tanpa id model tidak bisa dijelaskan ketika suaranya berubah. Transkrip tanpa endpoint yang tercatat tidak bisa direproduksi ketika permukaan API bergerak. Tak satu pun dari kolom ini sulit ditulis; semuanya mustahil direkonstruksi setelah kejadian.</p>
+
+    <div class="callout">
+      <p><strong>Bagian yang tidak nyaman:</strong> ketiga artefak itu hidup di sisi soket milik Anda. Tidak ada apa pun di kartu model yang menjanjikan sesi yang sudah selesai bisa diambil kembali nanti, dan tidak seharusnya ada. Perilaku retensi vendor adalah kebijakan, bukan kontrak - persis jenis jaminan yang <a href="/id/blog/social-content-ownership-local-archiving-2026.html">hilang untuk postingan sosial</a>, dan akan hilang untuk suara dengan cara yang sama begitu menyimpannya menjadi mahal.</p>
+    </div>
+
+    <h2>Menangkap sesi langsung: apa yang harus ditulis</h2>
+
+    <p>Langkah pengumpulan harus berjalan selama soket terbuka, jadi tempat yang tepat untuknya adalah di dalam proses yang sudah menangani peristiwanya. Berikut bentuk yang saya pakai - penangan peristiwa minimal yang menulis rekaman teks tahan lama selama percakapan berjalan, dengan metadata yang membuatnya bisa ditafsirkan nanti:</p>
+
+    <pre><code># Persist a GPT-Live 1 session as a durable text record.
+# Run this inside the process that already handles the stream events.
+import json, pathlib, datetime
+
+SESSION_ID = "sess_abc123"          # from v1/live/sessions
+MODEL_ID = "gpt-live-1"
+ENDPOINT = "v1/live/sessions"
+OUT = pathlib.Path("voice-archive") / SESSION_ID
+OUT.mkdir(parents=True, exist_ok=True)
+
+def utc_now():
+    return datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds")
+
+transcript = OUT / "transcript.jsonl"
+
+# One JSON object per event, appended as it arrives. JSONL is the right
+# container: it is line-greppable, append-only, and survives a crash
+# mid-session without losing the turns that already landed.
+def on_event(evt):
+    row = {
+        "captured_at": utc_now(),
+        "session_id": SESSION_ID,
+        "model": MODEL_ID,
+        "type": evt["type"],                  # speech_started / transcript / response
+        "role": evt.get("role"),              # "user" or "assistant"
+        "text": evt.get("text"),
+        "turn": evt.get("turn"),
+    }
+    with transcript.open("a", encoding="utf-8") as fh:
+        fh.write(json.dumps(row, ensure_ascii=False) + "\n")</code></pre>
+
+    <p>JSONL alih-alih satu dokumen JSON, dan alasannya layak disebut: percakapan adalah rangkaian yang hanya ditambahi, dan wadah yang hanya ditambahi berarti kegagalan di menit kesembilan tetap meninggalkan sembilan menit transkrip. Konversikan ke satu objek di akhir jika mau, tapi jangan membuat keabsahan berkas bergantung pada sesi yang berakhir dengan mulus.</p>
+
+    <p>Bagian kedua adalah berkas metadatanya. Ia kecil, membosankan, dan justru inilah yang mengubah tumpukan teks menjadi arsip:</p>
+
+    <pre><code># Write the metadata alongside the transcript, once, at session close.
+cat &gt; voice-archive/$SESSION_ID/session.provenance.txt &lt;&lt;EOF
+session_id: ${SESSION_ID}
+model: gpt-live-1
+endpoint: v1/live/sessions
+started_at: $(date -u +%Y-%m-%dT%H:%M:%SZ)
+billed_unit: 0.05 USD per minute, metered per second
+backend_calls: separate billing, model recorded per call
+consent: announced at session start, flag stored alongside transcript
+retention: audio 90 days, transcript and metadata indefinite
+note: transcript is the index, audio is the evidence
+EOF</code></pre>
+
+    <p>Baris <code>note</code> di bagian bawah bukan hiasan. Siapa pun yang membuka folder ini dua tahun lagi perlu memahami dalam lima detik berkas mana yang harus dipercaya untuk kutipan dan mana yang untuk nada bicara. Itu keputusan desain, dan satu-satunya tempat ia bisa hidup adalah di dalam arsip itu sendiri.</p>
+
+    <h2>Soal izin, ditangani sebagai masalah rekayasa</h2>
+
+    <p>Hukum perekaman berbeda antar yurisdiksi dan saya tidak akan berpura-pura ini nasihat hukum. Tapi bentuk rekayasanya stabil di yurisdiksi yang saya kenal: ketika ada manusia di salah satu sisi rekaman, aturannya melekat pada manusia itu, dan beberapa tempat mewajibkan semua pihak menyetujui. API suara yang ditagih per menit membuat ini makin umum, bukan makin jarang - inti tawarannya adalah membeli percakapan kini murah dan mudah.</p>
+
+    <p>Jadi perlakukan itu seperti Anda memperlakukan penanda kepatuhan lain: buat bersuara dan jadikan data. Umumkan di awal sesi alih-alih menguburnya di syarat dan ketentuan. Simpan status izin sebagai kolom di samping transkrip, bukan sebagai asumsi di ingatan seseorang. Tulis jendela retensi ke dalam metadata supaya permintaan penghapusan di masa depan menjadi pencarian, bukan proyek arkeologi. Mode kegagalan yang harus dihindari adalah yang biasa - rekaman yang ada, yang asal-usulnya tak bisa dijelaskan siapa pun, yang tak seorang pun yakin legal untuk disimpan.</p>
+
+    <h2>Mengapa versi model adalah bagian paling tidak tahan lama</h2>
+
+    <p>Ini masalahnya membangun arsip di atas <code>gpt-live-1</code>: itu nama snapshot. Snapshot dihentikan. Endpoint digantikan - model ini sudah bisa diakses lewat Live, Chat Completions, Responses, dan Realtime, yang menunjukkan permukaannya masih bergerak. Tingkatan harga direstrukturisasi, dan batas sesi bersamaan yang tampak longgar di Tier 5 adalah kebijakan yang bisa berubah tanpa arsip Anda menyadarinya.</p>
+
+    <p>Tidak satu pun dari itu alasan untuk tidak membangun. Itu alasan untuk membangun supaya modelnya menjadi bagian yang bisa diganti. Simpan audionya. Simpan transkrip teksnya. Simpan berkas kecil yang mencatat id model, endpoint, dan tanggalnya. Jika makna arsip Anda bergantung pada suara mana yang menjawab, catat itu sebagai kolom dengan cara yang sama Anda mencatat akun mana yang memposting sebuah utas - karena platform yang berubah di bawah artefak yang tersimpan adalah mode kegagalan yang saya tulis setiap minggu, dan suara tidak punya padanan tautan permanen sebagai jaring pengaman.</p>
+
+    <p>Ini insting yang sama dengan mengarsipkan utas alih-alih menyimpan tautannya sebagai penanda. Penanda membuktikan benda itu pernah ada dan masih mengarah ke <em>sesuatu</em>. Salinannya membuktikan apa yang dikatakannya. Suara adalah kasus di mana perbedaan itu berhenti menjadi preferensi, karena sesuatu yang diarahkannya minggu depan bisa jadi suara berbeda, model berbeda, atau tidak ada apa-apa.</p>
+
+    <h2>Tumpukan lengkapnya, dari awal sampai akhir</h2>
+
+    <ol>
+      <li><strong>Umumkan</strong> - nyatakan di awal sesi bahwa percakapan direkam, dan simpan penanda izin di samping transkrip.</li>
+      <li><strong>Tangkap langsung</strong> - simpan peristiwa transkrip dan audio saat melewati klien Anda. Ini satu-satunya langkah yang tidak bisa dijalankan terlambat.</li>
+      <li><strong>Beri cap</strong> - tulis id sesi, id model, endpoint, dan stempel waktu UTC ke berkas metadata saat sesi ditutup.</li>
+      <li><strong>Pisahkan bukti dari indeks</strong> - audio untuk nada dan pembuktian, teks untuk pencarian dan pengutipan, dan catatan di metadata yang menyatakan mana yang mana.</li>
+      <li><strong>Verifikasi ulang sebelum mengutip</strong> - saat mengutip panggilan berbulan-bulan lalu, baca transkripnya, periksa kolom modelnya, dan jangan menganggap API saat ini berperilaku seperti yang menghasilkannya.</li>
+    </ol>
+
+    <h2>Di mana ThreadGrab berperan</h2>
+
+    <p>ThreadGrab menangkap konten publik X, Bluesky, dan LinkedIn menjadi Markdown dengan stempel waktu dan URL sumbernya, supaya yang Anda simpan tetap mempertahankan identitas yang dimilikinya saat Anda menyimpannya. Ia tidak merekam panggilan dan tidak menyentuh audio - pipeline suara di atas adalah skrip yang Anda jalankan sendiri, terhadap soket yang sudah Anda miliki.</p>
+
+    <p>Yang dimiliki keduanya adalah aturannya, dan aturan itu tidak peduli pada mediumnya: salinan yang Anda kendalikan, dicap dengan waktu Anda mengambilnya, adalah satu-satunya versi yang masih bermakna seperti makna aslinya. Postingan punya tautan permanen yang perlahan menjadi dusta. Sesi suara tidak pernah punya satu pun sejak awal. Keduanya diselesaikan dengan cara yang sama, dan hanya satu di antaranya memberi Anda kesempatan kedua untuk menyelesaikannya.</p>
+
+    <h2 id="faq">Pertanyaan umum</h2>
+
+    <div class="faq-item">
+      <h3>Berapa biaya satu sesi suara GPT-Live 1?</h3>
+      <p>Sesi suara ditagih <strong>US$0,05 per menit</strong>, dihitung per detik dan tidak dibulatkan ke menit penuh berikutnya. Sesi 90 detik berbiaya US$0,075. Semua yang didelegasikan model suara ke agen backend - penalaran, pemanggilan alat, model yang menulis jawabannya - ditagih terpisah sesuai tarif normal model yang Anda konfigurasi, jadi angka per menit itu batas bawah, bukan total. Durasi sesi diukur dalam sesi bersamaan untuk batas laju, mulai dari 25 di Tier 1 sampai 500 di Tier 5, dan tingkat gratis tidak didukung.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Apakah GPT-Live 1 menyimpan transkrip percakapan?</h3>
+      <p>Itu pertanyaan yang salah untuk dijadikan dasar arsitektur, karena jawabannya milik vendor dan bisa berubah. Yang bisa Anda verifikasi adalah apa yang ditulis oleh integrasi Anda sendiri. Audio adalah masukan dan keluaran pada model ini, jadi apa pun yang menghasilkan rekaman tahan lama harus menjadi keputusan Anda: tangkap aliran audio saat melewati klien Anda, catat transkrip teks jika peristiwa yang Anda tangani menyertakannya, dan beri cap id sesi serta stempel waktu UTC pada setiap artefak. Perlakukan apa yang disimpan vendor sebagai bonus, bukan sebagai arsip Anda.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Apa bedanya sesi suara langsung dengan sesi transkripsi Realtime?</h3>
+      <p>Sesi GPT-Live 1 di endpoint Live adalah model suara dua arah: ia mendengar dan berbicara sekaligus, menangani interupsi, dan bisa menyerahkan penalaran atau penggunaan alat ke agen backend. Sesi transkripsi di endpoint <code>transcription_sessions</code> bersifat satu arah - audio masuk, teks keluar - dan ada untuk menjabarkan audio, bukan untuk bercakap-cakap. Jika tujuan Anda adalah rekaman ucapan yang bisa dicari, jalur transkripsi memberi teks dengan perangkat jauh lebih sedikit; jika tujuan Anda adalah agen suara yang juga butuh rekaman, Anda membangun rekaman itu sendiri di atas sesi langsung.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Bisakah saya mengarsipkan panggilan suara seperti mengarsipkan postingan?</h3>
+      <p>Separuh penyimpanannya sama dan separuh pengumpulannya lebih sulit. Postingan datang sebagai teks terstruktur dengan tautan permanen; suara datang sebagai aliran yang hanya ada selama sesi terbuka. Jadi langkah pengumpulan harus berjalan langsung - Anda tidak bisa kembali dan mengambil panggilan kemarin - sementara langkah penyimpanan harus mengikuti aturan yang sama seperti yang sudah Anda pakai untuk konten sosial: berkas biasa yang Anda kendalikan, pengenal sumber, stempel waktu pengambilan, dan tanpa format yang hanya bisa dibuka alat satu vendor. ThreadGrab menangani bagian postingan; bagian suara adalah skrip milik Anda.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Apakah saya perlu izin untuk merekam panggilan GPT-Live 1?</h3>
+      <p>Hukum perekaman berbeda antar yurisdiksi dan artikel ini bukan nasihat hukum, tetapi bentuk praktisnya konsisten: ketika ada manusia di salah satu sisi panggilan, aturan perekaman melekat pada manusia itu, bukan pada model. Beberapa yurisdiksi mewajibkan persetujuan semua pihak. Jawaban rekayasa yang paling murah adalah membuat langkah pengambilan bersuara, bukan senyap - umumkan di awal sesi, simpan penanda izin di samping transkrip, dan nyatakan jendela retensi secara eksplisit. Rekaman yang asal-usulnya tidak bisa Anda jelaskan lebih buruk daripada tidak ada rekaman.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Apakah GPT-Live 1 model yang tepat untuk arsip suara yang harus bertahan bertahun-tahun?</h3>
+      <p>Versi model adalah bagian paling tidak tahan lama dari tumpukan ini. <code>gpt-live-1</code> adalah nama snapshot hari ini; snapshot dihentikan, endpoint digantikan, dan tingkatan harga direstrukturisasi. Rancang agar model menjadi bagian yang bisa diganti: simpan audionya, simpan transkrip teksnya, dan simpan berkas metadata kecil yang mencatat id model, endpoint, dan tanggalnya. Jika makna arsip Anda bergantung pada model suara mana yang menjawab, catat itu seperti Anda mencatat akun mana yang memposting sebuah utas - sebagai kolom, bukan sebagai asumsi.</p>
+    </div>
+
+    <div class="related">
+      <h3>Panduan terkait</h3>
+      <ul>
+        <li><a href="/id/blog/social-content-ownership-local-archiving-2026.html">Kepemilikan Konten Sosial dan Pengarsipan Lokal 2026</a> &mdash; mengapa salinan di disk Anda sendiri adalah versi yang bertahan dari keputusan platform.</li>
+        <li><a href="/id/blog/ai-social-content-provenance-2026.html">Provenans Konten Sosial AI 2026</a> &mdash; mencatat model mana yang menghasilkan apa, sebelum itu menjadi mustahil direkonstruksi.</li>
+        <li><a href="/id/blog/social-media-content-backup-strategy-2026.html">Strategi Cadangan Konten Media Sosial 2026</a> &mdash; rutinitas per platform untuk menyimpan salinan sebelum antarmuka atau akun berubah.</li>
+        <li><a href="/id/blog/markdown-first-content-strategy-2026.html">Strategi Konten Markdown-First 2026</a> &mdash; mengapa teks biasa bertahan lebih lama dari setiap alat yang membacanya, termasuk yang menulisnya.</li>
+      </ul>
+    </div>
+
+    <p style="margin-top: 32px;"><em>Terakhir diverifikasi: 13 September 2026. Sumber utama: kartu model GPT-Live 1 dari OpenAI di platform.openai.com/docs/models/gpt-live-1, yang menjadi dasar bagi penagihan US$0,05 per menit, penghitungan per detik, penagihan backend terpisah, modalitas teks dan audio, daftar fitur yang tidak didukung, daftar endpoint, batas pengetahuan 31 Juli 2025, dan tingkatan batas sesi bersamaan. Halaman pengumuman di openai.com mengembalikan HTTP 403 untuk setiap pengambilan otomatis dan tidak digunakan. Rancangan pengambilan audio, skema JSONL, dan templat metadata adalah milik penulis dan bukan panduan vendor. Hukum perekaman berbeda antar yurisdiksi; persyaratan izin harus diperiksa terhadap aturan setempat dan artikel ini bukan nasihat hukum.</em></p>
+
+    <div class="cta-box">
+      <h3>Simpan postingannya, bukan cuma tautannya</h3>
+      <p>ThreadGrab mengubah konten publik X, Bluesky, dan LinkedIn menjadi Markdown bersih berstempel waktu &mdash; supaya arsip Anda mempertahankan penulis dan konteksnya.</p>
+      <a href="/id/" class="cta-button">Coba ThreadGrab &rarr;</a>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2026 ThreadGrab. <a href="/id/">Beranda</a> &middot; <a href="/id/blog/">Blog</a> &middot; <a href="/id/privacy.html">Privasi</a> &middot; <a href="/id/about.html">Tentang</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recording Calls with GPT-Live 1: What to Keep 2026 | ThreadGrab</title>
+  <meta name="description" content="OpenAI's GPT-Live 1 API bills $0.05 per minute for full-duplex voice. What a live call leaves behind, what it does not, and how to keep the record.">
+  <meta name="keywords" content="GPT-Live 1 recording 2026, OpenAI realtime voice API, full-duplex voice API, voice session transcript archive, $0.05 per minute voice API, OpenAI Live sessions endpoint, call recording consent, voice agent archive, threadgrab voice, realtime transcription archive">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/en/blog/gpt-live-1-voice-session-archive-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/gpt-live-1-voice-session-archive-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/gpt-live-1-voice-session-archive-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/gpt-live-1-voice-session-archive-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/gpt-live-1-voice-session-archive-2026.html">
+  <meta property="og:title" content="Recording Calls with GPT-Live 1: What to Keep 2026 | ThreadGrab">
+  <meta property="og:description" content="OpenAI's GPT-Live 1 API bills $0.05 per minute for full-duplex voice. What a live call leaves behind, what it does not, and how to keep the record.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/en/blog/gpt-live-1-voice-session-archive-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Recording Calls with GPT-Live 1: What to Keep 2026 | ThreadGrab">
+  <meta name="twitter:description" content="OpenAI's GPT-Live 1 API bills $0.05 per minute for full-duplex voice. What a live call leaves behind, what it does not, and how to keep the record.">
+  <meta property="article:published_time" content="2026-09-13">
+  <meta property="article:modified_time" content="2026-09-13">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo:hover { color: #1d9bf0; }
+    .tagline { color: #888; font-size: 0.85rem; margin-left: auto; }
+    nav.lang-bar { display: flex; gap: 12px; padding: 12px 24px; border-bottom: 1px solid #1a1a1a; background: #141414; font-size: 0.9rem; }
+    nav.lang-bar a { color: #888; text-decoration: none; padding: 4px 10px; border-radius: 4px; }
+    nav.lang-bar a:hover { color: #fff; }
+    nav.lang-bar a.active { background: #1d9bf0; color: #fff; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 24px 60px; }
+    h1 { font-size: 2rem; line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    p.meta { color: #888; font-size: 0.9rem; margin-bottom: 28px; }
+    h2 { font-size: 1.4rem; margin: 36px 0 14px; color: #20d5ec; }
+    h3 { font-size: 1.1rem; margin: 24px 0 10px; }
+    p { margin-bottom: 16px; color: #ddd; }
+    ul, ol { margin: 0 0 16px 24px; color: #ddd; }
+    li { margin-bottom: 8px; }
+    a { color: #1d9bf0; }
+    code { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    pre { background: #1a1a1a; padding: 16px; border-radius: 6px; overflow-x: auto; margin-bottom: 16px; border: 1px solid #2a2a2a; }
+    pre code { background: transparent; padding: 0; color: #e6e6e6; font-size: 0.85em; }
+    .callout { background: #1a1a1a; border-left: 4px solid #20d5ec; padding: 16px 20px; margin: 24px 0; border-radius: 4px; }
+    .callout p { margin-bottom: 0; }
+    blockquote { border-left: 3px solid #444; padding-left: 16px; color: #ccc; margin: 16px 0; font-style: italic; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #2a2a2a; font-size: 0.92em; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    tr:hover { background: #141414; }
+    .cta-box { background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%); border: 1px solid #20d5ec; padding: 24px; border-radius: 8px; margin: 32px 0; text-align: center; }
+    .cta-box h3 { color: #20d5ec; margin-top: 0; }
+    .cta-button { display: inline-block; background: #20d5ec; color: #0f0f0f; padding: 12px 28px; border-radius: 6px; text-decoration: none; font-weight: 600; margin-top: 12px; }
+    .cta-button:hover { background: #1ab8cc; }
+    .faq-item { margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #2a2a2a; }
+    .faq-item:last-child { border-bottom: none; }
+    .related { background: #141414; padding: 20px; border-radius: 6px; margin-top: 32px; }
+    .related h3 { margin-top: 0; }
+    footer { border-top: 1px solid #1a1a1a; padding: 24px; text-align: center; color: #888; font-size: 0.85rem; }
+    footer a { color: #888; text-decoration: none; }
+    footer a:hover { color: #1d9bf0; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Recording Calls with GPT-Live 1: What to Keep 2026 | ThreadGrab",
+    "description": "OpenAI's GPT-Live 1 API bills $0.05 per minute for full-duplex voice. What a live call leaves behind, what it does not, and how to keep the record.",
+    "datePublished": "2026-09-13",
+    "dateModified": "2026-09-13",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/en/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/en/" },
+    "mainEntityOfPage": "https://threadgrab.com/en/blog/gpt-live-1-voice-session-archive-2026.html",
+    "inLanguage": "en"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://threadgrab.com/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/en/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Recording Calls with GPT-Live 1", "item": "https://threadgrab.com/en/blog/gpt-live-1-voice-session-archive-2026.html" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much does a GPT-Live 1 voice session cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Voice sessions are billed at $0.05 per minute, metered per second and not rounded up to the next whole minute. A 90-second session costs $0.075. Anything the voice model delegates to a backend agent - the reasoning, the tool calls, the model that writes the answer - is billed separately at the normal rate for whichever model you configured, so the per-minute figure is a floor, not a total. Session duration is measured in concurrent sessions for rate limits, which range from 25 on Tier 1 to 500 on Tier 5, and the Free tier is not supported."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does GPT-Live 1 keep a transcript of the conversation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "That is the wrong question to design around, because the answer belongs to the vendor and can change. What you can verify is what your own integration writes down. Audio is input and output on the model, so whatever produces a durable record has to be a decision you make on your side: capture the audio stream as it passes through your client, log the text transcripts if the events you handle include them, and stamp every artifact with the session id and a UTC timestamp. Treat anything the vendor retains as a bonus, never as your archive."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between a live voice session and a Realtime transcription session?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A GPT-Live 1 session on the Live endpoint is a two-way voice model: it listens and speaks at once, handles interruption, and can hand reasoning or tool use off to a backend agent. A transcription session on the transcription_sessions endpoint is one-way - audio in, text out - and exists to describe audio rather than to converse. If your goal is a searchable record of speech, the transcription path gives you text with far less machinery; if your goal is a voice agent that also needs a record, you are building the record yourself on top of the live session."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I archive voice calls the same way I archive posts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The storage half is the same and the collection half is harder. Posts arrive as structured text with a permalink; voice arrives as a stream that exists only while the session is open. So the collection step has to run live - you cannot go back and fetch yesterday's call - while the custody step should follow exactly the same rules you already use for social content: plain files you control, a source identifier, a capture timestamp, and no format that only one vendor's tool can open. ThreadGrab does the post half; the voice half is a script you own."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need consent to record a GPT-Live 1 call?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Recording law is jurisdictional and this article is not legal advice, but the practical shape is consistent: when a human is on one end of the call, recording rules attach to that human, not to the model. Several jurisdictions require all-party consent. The cheap engineering answer is to make the capture step loud rather than silent - announce at session start, store the consent flag next to the transcript, and make the retention window explicit. A recording you cannot explain the provenance of is worse than no recording."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is GPT-Live 1 the right model for a voice archive that has to last years?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The model version is the least durable part of the stack. gpt-live-1 is a snapshot name today; snapshots get deprecated, endpoints get superseded, and pricing tiers get restructured. Design so that the model is replaceable: keep the audio, keep a text transcript, and keep a small metadata file naming the model id, the endpoint, and the date. If the archive's meaning depends on which voice model answered, record that the way you would record which account posted a thread - as a field, not as an assumption."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a href="/en/" class="logo">ThreadGrab</a>
+    <span class="tagline">Social content archive</span>
+  </header>
+  <nav class="lang-bar">
+    <a class="active" href="/en/blog/gpt-live-1-voice-session-archive-2026.html">EN</a>
+    <a href="/pt/blog/gpt-live-1-voice-session-archive-2026.html">PT</a>
+    <a href="/id/blog/gpt-live-1-voice-session-archive-2026.html">ID</a>
+  </nav>
+  <main>
+    <h1><span>Voice is the first</span> medium the web never learned to save</h1>
+    <p class="meta">September 13, 2026 &middot; ThreadGrab</p>
+
+    <p>OpenAI shipped <a href="https://platform.openai.com/docs/models/gpt-live-1" rel="nofollow">GPT-Live 1</a> into the API, and the interesting part is not the model. It is the billing unit. Voice sessions cost <strong>$0.05 per minute</strong>, metered per second, and anything the voice model delegates - reasoning, tool calls, the model that actually composes the answer - is billed separately. For the first time, a company can buy a conversation and pay for it the way you pay for a phone call.</p>
+
+    <p>Which raises a question the docs do not answer. When the session ends, what do you have?</p>
+
+    <p>A post is a document. It has a permalink, a visible timestamp, and a copy that survives an HTTP fetch. You can archive it a year late and still get the same bytes. A voice session is the opposite: it exists while a socket is open, and the moment it closes, the record either exists in something you wrote or it does not exist at all. There is no going back to fetch yesterday's call.</p>
+
+    <p>That asymmetry is what this article is about. I archive public posts for a living, and the arrival of a metered, full-duplex voice API breaks a comfortable assumption I had been making for years - that any content worth keeping would still be there tomorrow to collect.</p>
+
+    <h2>What GPT-Live 1 actually is, in the docs' own terms</h2>
+
+    <p>The model card is unusually plain. GPT-Live 1 is described as a full-duplex voice model that "can listen and speak at the same time, and delegate reasoning and tool use to a backend agent." Full duplex is the load-bearing phrase. This is not speech-to-text feeding a language model feeding text-to-speech, three steps in a queue. It is one model handling a conversation where interruption is normal and both directions are live.</p>
+
+    <table>
+      <thead>
+        <tr><th>Attribute</th><th>Value</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Price</td><td>$0.05 per minute, billed per second</td></tr>
+        <tr><td>Billing note</td><td>Session duration is not rounded up to the next whole minute</td></tr>
+        <tr><td>Modalities</td><td>Text and audio in, text and audio out</td></tr>
+        <tr><td>Not supported</td><td>Image, video, structured outputs, fine-tuning, predicted outputs</td></tr>
+        <tr><td>Endpoints</td><td>Live <code>v1/live/sessions</code>, plus Chat Completions, Responses, Realtime</td></tr>
+        <tr><td>Knowledge cutoff</td><td>July 31, 2025</td></tr>
+        <tr><td>Rate limits</td><td>Measured in concurrent sessions: Tier 1 = 25 up to Tier 5 = 500; Free tier not supported</td></tr>
+      </tbody>
+    </table>
+
+    <p>Two details in that table matter more than they look. First, "billed separately" for backend usage means the per-minute price is a floor. A voice session that thinks hard is a voice session plus a text model bill plus whatever the tools cost. Second, rate limits are measured in <em>concurrent sessions</em> rather than requests per minute, which is the correct unit for something that occupies a socket for the duration of a conversation - and it is also a hint about what kind of object a session is.</p>
+
+    <p>Between the audio and text modalities there is a distinction worth naming, because it decides your architecture. Audio is both an input and an output, and the same platform exposes the transcription endpoints separately. A transcription session is one-way: audio in, text out, built to describe speech. A live session is two-way and built to converse. If all you want is a searchable record of what was said, the transcription path gets you text with far less machinery. If you want a voice agent, you are building the record yourself on top of it.</p>
+
+    <h2>The three things a voice session leaves behind</h2>
+
+    <p>Ask what survives a closed socket and the answer is smaller than people assume. There are exactly three categories of artifact, and only one of them is created by you.</p>
+
+    <h3>The streamed transcript, if your client kept it</h3>
+
+    <p>Live voice APIs emit events as the conversation runs - partial and final transcripts, turn boundaries, function-call payloads. Those events arrive at your client, which means your client can write them down. This is the highest-value artifact and the easiest to lose: if you only forward the events to a UI and never persist them, the transcript is a rendering, not a record. Persisting it is a two-line change to your event handler and a permanent change to what your archive can answer later.</p>
+
+    <h3>The audio, if you asked for it</h3>
+
+    <p>Audio is input and output on this model, so both directions can be captured. Keep in mind this cuts both ways: an audio file is the highest-fidelity record and the least usable one. You cannot grep it, you cannot diff it, and it costs storage proportional to the conversation rather than to what was said. In practice audio is the evidence and text is the index, and the honest archive keeps both rather than pretending one of them is sufficient.</p>
+
+    <h3>The session metadata, which nobody captures and everybody needs</h3>
+
+    <p>This is the category that gets skipped, and it is the one that decides whether the archive is interpretable in eighteen months. A transcript with no session id cannot be matched to a billing line. A transcript with no model id cannot be explained when the voice changes. A transcript with no endpoint recorded cannot be reproduced when the API surface moves. None of these fields are hard to write; all of them are impossible to reconstruct after the fact.</p>
+
+    <div class="callout">
+      <p><strong>The uncomfortable part:</strong> all three artifacts live on your side of the socket. Nothing in the model card promises that a completed session is retrievable afterward, and nothing should. A vendor's retention behavior is a policy, not a contract - it is exactly the kind of guarantee that <a href="/en/blog/social-content-ownership-local-archiving-2026.html">disappeared for social posts</a>, and it will disappear for voice the same way the first time it becomes expensive to keep.</p>
+    </div>
+
+    <h2>Capturing a live session: what to write down</h2>
+
+    <p>The collection step has to run while the socket is open, so the right place for it is inside whatever process already handles the events. Here is the shape I use - a minimal event handler that writes a durable text record as the conversation runs, with the metadata that makes it interpretable later:</p>
+
+    <pre><code># Persist a GPT-Live 1 session as a durable text record.
+# Run this inside the process that already handles the stream events.
+import json, pathlib, datetime
+
+SESSION_ID = "sess_abc123"          # from v1/live/sessions
+MODEL_ID = "gpt-live-1"
+ENDPOINT = "v1/live/sessions"
+OUT = pathlib.Path("voice-archive") / SESSION_ID
+OUT.mkdir(parents=True, exist_ok=True)
+
+def utc_now():
+    return datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds")
+
+transcript = OUT / "transcript.jsonl"
+
+# One JSON object per event, appended as it arrives. JSONL is the right
+# container: it is line-greppable, append-only, and survives a crash
+# mid-session without losing the turns that already landed.
+def on_event(evt):
+    row = {
+        "captured_at": utc_now(),
+        "session_id": SESSION_ID,
+        "model": MODEL_ID,
+        "type": evt["type"],                  # speech_started / transcript / response
+        "role": evt.get("role"),              # "user" or "assistant"
+        "text": evt.get("text"),
+        "turn": evt.get("turn"),
+    }
+    with transcript.open("a", encoding="utf-8") as fh:
+        fh.write(json.dumps(row, ensure_ascii=False) + "\n")</code></pre>
+
+    <p>JSONL rather than a single JSON document, and the reason is worth stating: a conversation is an append-only sequence, and an append-only container means a crash at minute nine still leaves you nine minutes of transcript. Convert it to a single object at the end if you want, but do not make the file's validity depend on the session ending cleanly.</p>
+
+    <p>The second half is the metadata file. It is small, it is boring, and it is what turns a pile of text into an archive:</p>
+
+    <pre><code># Write the metadata alongside the transcript, once, at session close.
+cat &gt; voice-archive/$SESSION_ID/session.provenance.txt &lt;&lt;EOF
+session_id: ${SESSION_ID}
+model: gpt-live-1
+endpoint: v1/live/sessions
+started_at: $(date -u +%Y-%m-%dT%H:%M:%SZ)
+billed_unit: 0.05 USD per minute, metered per second
+backend_calls: separate billing, model recorded per call
+consent: announced at session start, flag stored alongside transcript
+retention: audio 90 days, transcript and metadata indefinite
+note: transcript is the index, audio is the evidence
+EOF</code></pre>
+
+    <p>The <code>note</code> line at the bottom is not decoration. Whoever opens this folder in two years needs to understand within five seconds which file they should trust for a quote and which one they should trust for tone. That is a design decision, and the only place it can live is in the archive itself.</p>
+
+    <h2>The consent question, handled as an engineering problem</h2>
+
+    <p>Recording law is jurisdictional and I am not going to pretend this is legal advice. But the engineering shape is stable across the jurisdictions I know of: when a human is on one side of the recording, the rules attach to that human, and several places require every party to agree. A metered voice API makes this more common, not less - the whole pitch is that buying a conversation is now cheap and easy.</p>
+
+    <p>So treat it the way you would treat any other compliance flag: make it loud and make it data. Announce at session start rather than burying it in terms. Store the consent state as a field next to the transcript, not as an assumption in someone's memory. Write the retention window into the metadata so a future deletion request is a lookup rather than an archaeology project. The failure mode to avoid is the ordinary one - a recording that exists, that nobody can explain the provenance of, that nobody is sure is legal to keep.</p>
+
+    <h2>Why the model version is the least durable part</h2>
+
+    <p>Here is the thing about building an archive on top of <code>gpt-live-1</code>: it is a snapshot name. Snapshots get deprecated. Endpoints get superseded - this model is already reachable through Live, Chat Completions, Responses and Realtime, which tells you the surface is still moving. Pricing tiers get restructured, and the concurrent-session limits that look generous at Tier 5 are a policy that can change without your archive noticing.</p>
+
+    <p>None of that is a reason not to build. It is a reason to build so the model is the replaceable part. Keep the audio. Keep a text transcript. Keep a small file that names the model id, the endpoint, and the date. If the meaning of your archive depends on which voice answered, record that as a field the same way you record which account posted a thread - because the platform changing underneath a saved artifact is the failure mode I write about every week, and voice has no equivalent of a permalink to fall back on.</p>
+
+    <p>This is the same instinct as archiving a thread rather than bookmarking a link. The bookmark proves the thing existed and still resolves to <em>something</em>. The copy proves what it said. Voice is the case where that distinction stops being a preference, because the something it resolves to next week might be a different voice, a different model, or nothing.</p>
+
+    <h2>The stack, end to end</h2>
+
+    <ol>
+      <li><strong>Announce</strong> - state at session start that the conversation is recorded, and store the consent flag next to the transcript.</li>
+      <li><strong>Capture live</strong> - persist transcript events and audio as they pass through your client. This is the only step that cannot be run late.</li>
+      <li><strong>Stamp</strong> - write session id, model id, endpoint, and a UTC timestamp into a metadata file at session close.</li>
+      <li><strong>Separate evidence from index</strong> - audio for tone and proof, text for search and quoting, and a note in the metadata saying which is which.</li>
+      <li><strong>Re-verify before citing</strong> - when quoting a call from months ago, read the transcript, check the model field, and do not assume the current API behaves like the one that produced it.</li>
+    </ol>
+
+    <h2>Where ThreadGrab fits</h2>
+
+    <p>ThreadGrab captures public X, Bluesky and LinkedIn content into Markdown with timestamps and the source URL, so what you saved keeps the identity it had when you saved it. It does not record calls and it does not touch audio - the voice pipeline above is a script you run yourself, against a socket you already own.</p>
+
+    <p>What the two have in common is the rule, and the rule does not care about the medium: the copy you control, stamped with when you took it, is the only version that still means what it meant. A post has a permalink that slowly becomes a lie. A voice session never had one to begin with. Both are solved the same way, and only one of them gives you a second chance to solve it.</p>
+
+    <h2 id="faq">FAQ</h2>
+
+    <div class="faq-item">
+      <h3>How much does a GPT-Live 1 voice session cost?</h3>
+      <p>Voice sessions are billed at <strong>$0.05 per minute</strong>, metered per second and not rounded up to the next whole minute. A 90-second session costs $0.075. Anything the voice model delegates to a backend agent - the reasoning, the tool calls, the model that writes the answer - is billed separately at the normal rate for whichever model you configured, so the per-minute figure is a floor, not a total. Session duration is measured in concurrent sessions for rate limits, which range from 25 on Tier 1 to 500 on Tier 5, and the Free tier is not supported.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Does GPT-Live 1 keep a transcript of the conversation?</h3>
+      <p>That is the wrong question to design around, because the answer belongs to the vendor and can change. What you can verify is what your own integration writes down. Audio is input and output on the model, so whatever produces a durable record has to be a decision you make on your side: capture the audio stream as it passes through your client, log the text transcripts if the events you handle include them, and stamp every artifact with the session id and a UTC timestamp. Treat anything the vendor retains as a bonus, never as your archive.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What is the difference between a live voice session and a Realtime transcription session?</h3>
+      <p>A GPT-Live 1 session on the Live endpoint is a two-way voice model: it listens and speaks at once, handles interruption, and can hand reasoning or tool use off to a backend agent. A transcription session on the <code>transcription_sessions</code> endpoint is one-way - audio in, text out - and exists to describe audio rather than to converse. If your goal is a searchable record of speech, the transcription path gives you text with far less machinery; if your goal is a voice agent that also needs a record, you are building the record yourself on top of the live session.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Can I archive voice calls the same way I archive posts?</h3>
+      <p>The storage half is the same and the collection half is harder. Posts arrive as structured text with a permalink; voice arrives as a stream that exists only while the session is open. So the collection step has to run live - you cannot go back and fetch yesterday's call - while the custody step should follow exactly the same rules you already use for social content: plain files you control, a source identifier, a capture timestamp, and no format that only one vendor's tool can open. ThreadGrab does the post half; the voice half is a script you own.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Do I need consent to record a GPT-Live 1 call?</h3>
+      <p>Recording law is jurisdictional and this article is not legal advice, but the practical shape is consistent: when a human is on one end of the call, recording rules attach to that human, not to the model. Several jurisdictions require all-party consent. The cheap engineering answer is to make the capture step loud rather than silent - announce at session start, store the consent flag next to the transcript, and make the retention window explicit. A recording you cannot explain the provenance of is worse than no recording.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Is GPT-Live 1 the right model for a voice archive that has to last years?</h3>
+      <p>The model version is the least durable part of the stack. <code>gpt-live-1</code> is a snapshot name today; snapshots get deprecated, endpoints get superseded, and pricing tiers get restructured. Design so that the model is replaceable: keep the audio, keep a text transcript, and keep a small metadata file naming the model id, the endpoint, and the date. If the archive's meaning depends on which voice model answered, record that the way you would record which account posted a thread - as a field, not as an assumption.</p>
+    </div>
+
+    <div class="related">
+      <h3>Related guides</h3>
+      <ul>
+        <li><a href="/en/blog/social-content-ownership-local-archiving-2026.html">Social Content Ownership and Local Archiving 2026</a> &mdash; why the copy on your own disk is the version that survives a platform decision.</li>
+        <li><a href="/en/blog/ai-social-content-provenance-2026.html">AI Social Content Provenance 2026</a> &mdash; recording which model produced what, before it becomes impossible to reconstruct.</li>
+        <li><a href="/en/blog/social-media-content-backup-strategy-2026.html">Social Media Content Backup Strategy 2026</a> &mdash; the per-platform routine for keeping copies before a frontend or a handle changes.</li>
+        <li><a href="/en/blog/markdown-first-content-strategy-2026.html">Markdown-First Content Strategy 2026</a> &mdash; why plain text outlives every tool that reads it, including the ones that write it.</li>
+      </ul>
+    </div>
+
+    <p style="margin-top: 32px;"><em>Last verified: September 13, 2026. Primary source: the OpenAI model card for GPT-Live 1 at platform.openai.com/docs/models/gpt-live-1, which is the basis for the $0.05 per minute billing unit, the per-second metering, the separate backend billing, the text/audio modalities, the unsupported features list, the endpoint list, the July 31, 2025 knowledge cutoff, and the concurrent-session rate-limit tiers. The openai.com announcement page returned HTTP 403 to every automated fetch and was not used. The audio-capture design, the JSONL schema, and the metadata template are the author's own and are not vendor guidance. Recording law varies by jurisdiction; consent requirements should be checked against local rules and this article is not legal advice.</em></p>
+
+    <div class="cta-box">
+      <h3>Keep the posts, not just the links</h3>
+      <p>ThreadGrab turns public X, Bluesky and LinkedIn content into clean, timestamped Markdown &mdash; so your archive keeps its authors and its context.</p>
+      <a href="/en/" class="cta-button">Try ThreadGrab &rarr;</a>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2026 ThreadGrab. <a href="/en/">Home</a> &middot; <a href="/en/blog/">Blog</a> &middot; <a href="/en/privacy.html">Privacy</a> &middot; <a href="/en/about.html">About</a></p>
+  </footer>
+</body>
+</html>
