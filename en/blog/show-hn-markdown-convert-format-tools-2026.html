@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Show HN: 6 Markdown-to-Format Tools Worth Watching (2026) | ThreadGrab</title>
+  <meta name="description" content="Six Markdown conversion tools from Show HN 2026: Slidev decks, email HTML, PowerPoint, KDP books, and anything-to-Markdown. Picks and tradeoffs.">
+  <meta name="keywords" content="Markdown converter, Markdown to slides, Markdown to PDF, Show HN Markdown, Markdown tools 2026, Markdown to PowerPoint, Deckstream, Slidown, Email.md, MkSlides, markdown to book, anyto.md">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/en/blog/show-hn-markdown-convert-format-tools-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/show-hn-markdown-convert-format-tools-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/show-hn-markdown-convert-format-tools-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/show-hn-markdown-convert-format-tools-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/show-hn-markdown-convert-format-tools-2026.html">
+  <meta property="og:title" content="Show HN: 6 Markdown-to-Format Tools Worth Watching (2026)">
+  <meta property="og:description" content="Six Markdown conversion tools that crossed Show HN in 2026 — Slidev decks, email HTML, PowerPoint, KDP books, slides, and anything-to-Markdown.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/en/blog/show-hn-markdown-convert-format-tools-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Show HN: 6 Markdown-to-Format Tools Worth Watching (2026)">
+  <meta name="twitter:description" content="Six Markdown conversion tools from Show HN 2026 — Slidev, PowerPoint, email, books, slides, and reverse direction.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    code:not(pre code) { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #20d5ec; }
+    .faq-item { background: #1a1a1a; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+    .faq-item strong { color: #20d5ec; display: block; margin-bottom: 6px; }
+    .faq-item p { color: #ccc; margin-bottom: 0; font-size: 0.95rem; }
+    .cta { background: linear-gradient(135deg, #11212a, #0d1a20); border: 1px solid #20d5ec; border-radius: 10px; padding: 22px 24px; margin: 28px 0; text-align: center; }
+    .cta p { color: #c5e8ee; margin-bottom: 12px; }
+    .cta a.btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 11px 26px; border-radius: 8px; text-decoration: none; }
+    .cta a.btn:hover { background: #1bc4d4; }
+    footer { text-align: center; padding: 40px 24px 24px; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+    footer a { color: #666; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Show HN: 6 Markdown-to-Format Tools Worth Watching (2026)",
+    "description": "Six Markdown conversion tools that crossed Show HN in 2026 — Slidev decks, email HTML, PowerPoint, KDP books, slides, and anything-to-Markdown. Picks, tradeoffs, and the wider 2026 Markdown-tooling landscape.",
+    "datePublished": "2026-09-14",
+    "dateModified": "2026-09-14",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/en/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/en/", "logo": { "@type": "ImageObject", "url": "https://threadgrab.com/og-image.png" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://threadgrab.com/en/blog/show-hn-markdown-convert-format-tools-2026.html" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://threadgrab.com/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/en/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Show HN: 6 Markdown-to-Format Tools Worth Watching (2026)" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which Show HN Markdown tool had the highest engagement in 2026?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Email.md (Markdown to responsive email-safe HTML, MJML output, Outlook compatible) had 380 points and 94 comments when it launched on 2026-03-24 — by a wide margin the highest engagement among the 2026 Markdown conversion launches." }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the difference between Deckstream and MkSlides?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Deckstream renders Slidev (Vue + Vite) presentations live as you type in a browser and publishes a shareable URL — no local install, no CLI. MkSlides builds static HTML slideshows from Markdown via Reveal.js and runs locally as a Python static-site generator — you ship HTML files anywhere." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I convert Markdown to PowerPoint without an AI service?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Slidown (Songmu, MIT, Go) writes standalone .pptx files via a pure-Go OOXML writer with no third-party Office dependencies and no AI in the generation pipeline. It is the sibling tool to k1LoW/deck (Markdown to Google Slides)." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a Markdown to KDP-ready PDF/EPUB tool?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes — vpuna/markdown-to-book (39 stars, MIT, first commit 2026-03-05) is a CLI that converts Markdown text into PDF and EPUB files formatted for Amazon KDP and similar print-on-demand pipelines." }
+      },
+      {
+        "@type": "Question",
+        "name": "What if I need to go the reverse way — convert PDFs and Office docs into Markdown?",
+        "acceptedAnswer": { "@type": "Answer", "text": "anyto.md (vlucas, Show HN 2026-09-02, 7 points) converts URLs, PDFs, Office files, HTML, and images into AI-friendly Markdown. Its pitch is context-window economics: the converted Markdown uses roughly 86% fewer tokens than sending the original file straight to a model." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/en/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a href="/en/blog/show-hn-markdown-convert-format-tools-2026.html" class="active">EN</a>
+      <a href="/pt/blog/show-hn-markdown-convert-format-tools-2026.html">PT</a>
+      <a href="/id/blog/show-hn-markdown-convert-format-tools-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <p class="breadcrumb"><a href="/en/">Home</a> &rsaquo; <a href="/en/blog/">Blog</a> &rsaquo; Show HN: 6 Markdown-to-Format Tools Worth Watching (2026)</p>
+
+    <h1>Show HN: 6 Markdown-to-Format Tools <span>Worth Watching in 2026</span></h1>
+    <p class="meta">September 14, 2026 &middot; 10 min read &middot; by ThreadGrab</p>
+
+    <p>Markdown has been quietly winning the long tail of content tooling for years, but the past twelve months on Show HN have made the pattern impossible to ignore. Builders are turning Markdown — a 20-year-old plain-text format — into slides, presentations, PowerPoint decks, email HTML, KDP-ready PDFs, EPUBs, and the other way around: anything-to-Markdown for AI pipelines. This is a tour through six of the most interesting launches of 2026, what each one is good at, and where they sit in a writer's tool chain.</p>
+
+    <p>For people who live on X and Bluesky, this matters twice: Markdown is the canonical source format you should keep for your long posts, and these tools are how you actually publish them in the form your audience expects.</p>
+
+    <div class="callout">
+      <p><strong>TL;DR.</strong> The 2026 Markdown conversion scene splits cleanly into three directions: <strong>Markdown to presentation</strong> (Deckstream for live browser decks, MkSlides for static HTML, Slidown for .pptx), <strong>Markdown to publishable document</strong> (Email.md for email HTML, markdown-to-book for KDP PDF/EPUB), and <strong>anything to Markdown</strong> (anyto.md, aimed squarely at AI context-window economics). Pick the direction first; the format second; the tool third.</p>
+    </div>
+
+    <h2>The Six at a Glance (2026)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Tool</th>
+          <th>Direction</th>
+          <th>Output</th>
+          <th>Show HN date</th>
+          <th>HN points</th>
+          <th>License</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://deckstream.org">Deckstream</a></td>
+          <td>MD &rarr; slides</td>
+          <td>Live Slidev deck + shareable URL</td>
+          <td>2026-09-12</td>
+          <td>1</td>
+          <td>Closed beta</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.emailmd.dev/">Email.md</a></td>
+          <td>MD &rarr; email</td>
+          <td>MJML / responsive HTML (Outlook safe)</td>
+          <td>2026-03-24</td>
+          <td>380</td>
+          <td>npm package</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/Songmu/slidown">Slidown</a></td>
+          <td>MD &rarr; PowerPoint</td>
+          <td>Standalone .pptx (pure Go OOXML)</td>
+          <td>2026-07-07</td>
+          <td>2</td>
+          <td>MIT</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/MartenBE/mkslides">MkSlides</a></td>
+          <td>MD &rarr; slides</td>
+          <td>Static HTML slideshows (Reveal.js)</td>
+          <td>2025-11-27</td>
+          <td>78</td>
+          <td>MIT</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/vpuna/markdown-to-book">markdown-to-book</a></td>
+          <td>MD &rarr; book</td>
+          <td>Print-ready PDF + EPUB (KDP-friendly)</td>
+          <td>2026-03-06</td>
+          <td>6</td>
+          <td>MIT</td>
+        </tr>
+        <tr>
+          <td><a href="https://anyto.md/">anyto.md</a></td>
+          <td>Anything &rarr; MD</td>
+          <td>AI-ready Markdown from URL/PDF/Office/HTML/IMG</td>
+          <td>2026-09-02</td>
+          <td>7</td>
+          <td>Hosted API</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>1. Deckstream — Markdown Becomes a Slidev Deck, Live in the Browser</h2>
+    <p>Deckstream launched on Show HN on 2026-09-12. The pitch is "presentations, at the speed of thought": you type Markdown on the left and watch a fully rendered Slidev deck on the right, then publish a shareable live link in one click. There is no local install, no CLI, no theme authoring — the render engine is Slidev (Vue + Vite) and the shareable URL is the actual deck, not a static export.</p>
+
+    <p>Show HN engagement was modest (1 point, 0 comments as of writing), but the angle is interesting for a specific use case: technical talks where you want the same deck to render identically for every viewer without worrying about PDF fonts, broken speaker notes, or someone opening the file in the wrong version of PowerPoint.</p>
+
+    <h3>Where Deckstream shines</h3>
+    <ul>
+      <li><strong>Zero install.</strong> Browser-only; the shareable URL is the deliverable.</li>
+      <li><strong>Live preview as you type.</strong> If you've used Slidev locally, Deckstream is the same workflow without the Node toolchain.</li>
+      <li><strong>Single source of truth.</strong> The Markdown file is the deck. No .pptx round-tripping.</li>
+    </ul>
+
+    <h3>Where it hurts</h3>
+    <ul>
+      <li><strong>Closed beta.</strong> No public repo, no CLI, no local fallback if the service goes down.</li>
+      <li><strong>Slidev lock-in.</strong> You inherit Slidev's plugin and theme ecosystem — flexible, but you can't easily port to Google Slides or PowerPoint.</li>
+      <li><strong>Offline is on you.</strong> Without an export, a flaky conference Wi-Fi is a real risk.</li>
+    </ul>
+
+    <h2>2. Email.md — The 380-Point Hit That Finally Makes Markdown Work in Outlook</h2>
+    <p>Email.md (Show HN 2026-03-24, 380 points, 94 comments) was the runaway engagement winner of the 2026 Markdown conversion launches. The author is dancablam; the homepage describes it as "responsive, email-safe HTML that renders perfectly across every client," and the underlying engine is MJML, which means the output is tables and inline styles all the way down — the only thing that survives Gmail, Apple Mail, and Outlook at the same time.</p>
+
+    <p>What makes Email.md different from the dozen other "MD to email" projects is the syntax extension: ::: highlight, ::: divider, ::: callout, and inline directives like <code>{width=600}</code> on images. You write Markdown; you ship email; you never have to look at the resulting HTML.</p>
+
+    <pre><code>$ npm install emailmd
+
+# newsletter.md
+::: highlight compact center bg=#0A0A0A color=#FFE500
+**MOONBEAN MONTHLY &middot; NO. 012 &middot; FRESH ROASTS ONLY**
+:::
+
+# NEW DROPS. ZERO DECAF.
+
+![Coffee bench](coffee.jpg){width="600"}
+
+::: callout center
+# DFY-X7U
+:::
+
+$ npx emailmd build newsletter.md -o out/
+# &gt; out/newsletter.html  (Outlook-safe, responsive, ready to send)</code></pre>
+
+    <h2>3. Slidown — Markdown to PowerPoint, With No AI in the Pipeline</h2>
+    <p>Slidown (Show HN 2026-07-07, 2 points) is by Songmu and lives at github.com/Songmu/slidown. It is the .pptx sibling of <a href="https://github.com/k1LoW/deck">k1LoW/deck</a>, the Markdown-to-Google-Slides tool, and they share the same Markdown format and slide-element mapping. Slidown writes standalone .pptx files via a pure-Go OOXML writer — no third-party Office dependency, no AI in generation, no Microsoft license.</p>
+
+    <p>Installable via Homebrew (<code>brew install Songmu/tap/slidown</code>) or <code>go install</code>. 31 stars on GitHub at the time of writing, MIT-licensed.</p>
+
+    <pre><code># deck.md
+---
+title: Talk about slidown
+---
+
+# First slide
+
+## A subtitle
+
+- a bullet point
+- **bold** and *italic* and `code`
+
+---
+
+# Second slide
+
+A paragraph with a [link](https://example.com).
+
+$ slidown apply deck.md
+# Wrote deck.pptx (2 slide(s))</code></pre>
+
+    <p>The "no AI" framing is deliberate: the author is positioning Slidown against a wave of 2025-2026 "Markdown to PPT with AI" tools that hallucinate slide content. If your Markdown is already canonical, you want a deterministic compiler, not a model.</p>
+
+    <h2>4. MkSlides — The MkDocs-Style Static Slide Generator</h2>
+    <p>MkSlides (Show HN 2025-11-27, 78 points, 15 comments — so it straddles late 2025 and the 2026 conversation) is a Python static-site generator geared specifically toward slideshows. The command set and config file format are deliberately modeled on MkDocs, which means anyone who has shipped project documentation with MkDocs can build a deck in about ten minutes.</p>
+
+    <p>Slides are written in Markdown, themed via a single YAML file, and the output is plain Reveal.js HTML. You can host it anywhere static files go: a GitHub Pages branch, an S3 bucket, or a Cloudflare Pages site. 474 stars on GitHub, MIT-licensed, on PyPI as <code>mkslides</code>.</p>
+
+    <h3>When to pick MkSlides</h3>
+    <ul>
+      <li><strong>You want to ship a deck as files</strong>, not as a live service.</li>
+      <li><strong>You have a folder of slides, not one file.</strong> MkSlides treats each .md file as a deck and generates an index landing page.</li>
+      <li><strong>You already use MkDocs</strong> and want the same muscle memory.</li>
+    </ul>
+
+    <h2>5. markdown-to-book — KDP-Ready PDF and EPUB From a Single CLI</h2>
+    <p><a href="https://github.com/vpuna/markdown-to-book">vpuna/markdown-to-book</a> (Show HN 2026-03-06, 6 points, 5 comments) does one thing and does it specifically: converts a Markdown manuscript into PDF and EPUB files formatted for Amazon KDP and other print-on-demand pipelines. 39 stars, MIT, first commit 2026-03-05. If you've ever tried to ship a self-published book and lost a weekend to LibreOffice template wrangling, this is the tool.</p>
+
+    <h2>6. anyto.md — Reverse Direction: Anything Into AI-Friendly Markdown</h2>
+    <p>anyto.md (vlucas, Show HN 2026-09-02, 7 points) is the one tool on this list that goes the other way. Its job is to convert URLs, PDFs, Office files, HTML, and images into clean Markdown so you can feed them to an AI model without paying for layout and metadata tokens. The marketing claim is roughly <strong>86% fewer tokens</strong> when the converted Markdown goes to an LLM, versus sending the original PDF or HTML directly.</p>
+
+    <p>The free tier is five conversions without an account; beyond that you pay per conversion via API key. The conversion audit log is searchable, which is useful if you're running an agent pipeline that converts the same source more than once.</p>
+
+    <h3>Why the reverse direction matters for social archives</h3>
+    <p>If you save an X thread or an Article for later reading, and then later want to summarize it with an LLM, the HTML you scraped is the worst possible input. anyto.md is one way to get clean Markdown from saved HTML; ThreadGrab's <a href="/en/">public thread-fetch API</a> is another — it returns the thread text directly, not the page HTML.</p>
+
+    <h2>How to Pick: A Three-Question Decision Tree</h2>
+    <ol>
+      <li><strong>What is the destination?</strong> Slides (Deckstream, MkSlides, Slidown), email (Email.md), a published book (markdown-to-book), or an AI context window (anyto.md or just your own converter)?</li>
+      <li><strong>Do you need a live URL or a static file?</strong> Live = Deckstream (browser-rendered). Static = MkSlides (HTML files) or Slidown (.pptx) or markdown-to-book (PDF/EPUB).</li>
+      <li><strong>Is the Markdown already canonical, or do you want AI to fill in slides?</strong> Canonical = Slidown, MkSlides, markdown-to-book, Email.md, Deckstream. AI-assisted = the dozen 2025-2026 "MD to PPT with AI" tools, which are explicitly <em>not</em> on this list.</li>
+    </ol>
+
+    <div class="cta">
+      <p>Found a great X thread or Article you want to keep, summarize, or feed to an AI?</p>
+      <a class="btn" href="/en/">Try ThreadGrab &mdash; Free X Thread &amp; Article Fetcher</a>
+    </div>
+
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <strong>Which Show HN Markdown tool had the highest engagement in 2026?</strong>
+      <p>Email.md (Markdown to responsive email-safe HTML, MJML output, Outlook compatible) hit 380 points and 94 comments when it launched on 2026-03-24 — by a wide margin the highest engagement among the 2026 Markdown conversion launches.</p>
+    </div>
+    <div class="faq-item">
+      <strong>What's the difference between Deckstream and MkSlides?</strong>
+      <p>Deckstream renders Slidev (Vue + Vite) presentations live as you type in a browser and publishes a shareable URL — no local install, no CLI. MkSlides builds static HTML slideshows from Markdown via Reveal.js and runs locally as a Python static-site generator — you ship HTML files anywhere.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Can I convert Markdown to PowerPoint without an AI service?</strong>
+      <p>Yes. Slidown (Songmu, MIT, Go) writes standalone .pptx files via a pure-Go OOXML writer with no third-party Office dependencies and no AI in the generation pipeline. It is the sibling tool to k1LoW/deck (Markdown to Google Slides).</p>
+    </div>
+    <div class="faq-item">
+      <strong>Is there a Markdown to KDP-ready PDF/EPUB tool?</strong>
+      <p>Yes — vpuna/markdown-to-book (39 stars, MIT, first commit 2026-03-05) is a CLI that converts Markdown text into PDF and EPUB files formatted for Amazon KDP and similar print-on-demand pipelines.</p>
+    </div>
+    <div class="faq-item">
+      <strong>What if I need to go the reverse way — convert PDFs and Office docs into Markdown?</strong>
+      <p>anyto.md (vlucas, Show HN 2026-09-02, 7 points) converts URLs, PDFs, Office files, HTML, and images into AI-friendly Markdown. Its pitch is context-window economics: the converted Markdown uses roughly 86% fewer tokens than sending the original file straight to a model.</p>
+    </div>
+
+    <h2>Wrap-up: Markdown as the Canonical Source</h2>
+    <p>The 2026 Show HN Markdown wave confirms a pattern that has been building for a decade: Markdown is the canonical source format for long content, and every other format — slides, decks, email, books, AI prompts — is a render target. The smart move for anyone publishing long posts on X Articles, Bluesky, or LinkedIn Newsletter in 2026 is to keep the Markdown as the source of truth, pick the export tool that matches the destination, and re-render for each audience.</p>
+
+    <p>If most of your reading happens on X, give <a href="/en/">ThreadGrab</a> a try the next time you want to save a thread or article for later reading — it stays out of your way, costs nothing, and works in any browser.</p>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/en/">Home</a> &middot; <a href="/en/blog/">Blog</a> &middot; <a href="/en/about/">About</a> &middot; <a href="/en/privacy/">Privacy</a>
+    <br>Not affiliated with X Corp., Hacker News, Y Combinator, or any of the tools mentioned.
+  </footer>
+</body>
+</html>
