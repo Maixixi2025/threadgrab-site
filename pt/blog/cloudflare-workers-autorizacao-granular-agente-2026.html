@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloudflare Workers 2026: Autorização Granular para Agentes | ThreadGrab</title>
+  <meta name="description" content="Cloudflare lança quatro papéis com escopo por Worker para que agentes e tokens CI só recebam o acesso necessário. Receita para arquivo social.">
+  <meta name="keywords" content="Cloudflare Workers autorização granular 2026, Workers menor privilégio agente, escopo Worker API token, papéis Developer Platform Cloudflare, escopo CI token Workers, papel Editor Worker, acesso Durable Objects, ThreadGrab arquivo social">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/pt/blog/cloudflare-workers-autorizacao-granular-agente-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/cloudflare-workers-granular-authorization-agent-permission-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/cloudflare-workers-autorizacao-granular-agente-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/cloudflare-workers-otorisasi-granular-agen-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/cloudflare-workers-granular-authorization-agent-permission-2026.html">
+  <meta property="og:title" content="Cloudflare Workers 2026: Autorização Granular para Agentes">
+  <meta property="og:description" content="Cloudflare lança quatro papéis com escopo por Worker para que agentes e tokens CI só recebam o acesso necessário. Receita para arquivo social.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/pt/blog/cloudflare-workers-autorizacao-granular-agente-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="article:published_time" content="2026-09-16">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cloudflare Workers 2026: Autorização Granular para Agentes">
+  <meta name="twitter:description" content="Cloudflare lança quatro papéis com escopo por Worker para que agentes e tokens CI só recebam o acesso necessário. Receita para arquivo social.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    .faq h3 { color: #20d5ec; margin-top: 22px; }
+    .faq p { color: #ccc; }
+    .cta { background: #11212a; border: 1px solid #20d5ec; padding: 24px; border-radius: 8px; margin: 32px 0; text-align: center; }
+    .cta a.cta-btn { display: inline-block; background: #20d5ec; color: #0f0f0f; padding: 10px 20px; border-radius: 6px; font-weight: 700; text-decoration: none; }
+    footer { color: #666; font-size: 0.85rem; text-align: center; padding: 30px 20px; border-top: 1px solid #1a1a1a; }
+    footer a { color: #20d5ec; text-decoration: none; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Cloudflare Workers 2026: Autorização Granular para Agentes",
+    "description": "Cloudflare lança quatro papéis com escopo por Worker para que agentes e tokens CI só recebam o acesso necessário. Receita para arquivo social.",
+    "datePublished": "2026-09-16",
+    "dateModified": "2026-09-16",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/pt/", "logo": { "@type": "ImageObject", "url": "https://threadgrab.com/og-image.png" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://threadgrab.com/pt/blog/cloudflare-workers-autorizacao-granular-agente-2026.html" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://threadgrab.com/pt/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/pt/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Cloudflare Workers 2026: Autorização Granular para Agentes", "item": "https://threadgrab.com/pt/blog/cloudflare-workers-autorizacao-granular-agente-2026.html" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "O que é a Autorização Granular do Cloudflare Workers?",
+        "acceptedAnswer": { "@type": "Answer", "text": "É uma atualização de 2026-09-15 da Cloudflare Developer Platform que lança quatro novos papéis por Worker (Metadata Read-Only, Content Read-Only, Editor, Admin) e a capacidade de limitar cada papel a um único Worker. Um colega, token de CI ou agente de IA com esse token só consegue agir naquele Worker e em mais nada da sua conta." }
+      },
+      {
+        "@type": "Question",
+        "name": "Como isso difere dos tokens antigos da conta?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Tokens antigos cobriam a conta inteira: um token com Workers Scripts:Edit podia fazer deploy, renomear ou deletar qualquer Worker da conta. Os tokens com escopo novo prendem o mesmo papel Editor a um Worker, então o token só consegue publicar naquele aplicativo e não pode deletar nem tocar em mais nada." }
+      },
+      {
+        "@type": "Question",
+        "name": "O que é o papel Editor e quando devo usá-lo para um agente?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Editor é leitura e escrita no Worker, incluindo deploys, mas explicitamente não consegue criar nem deletar o próprio Worker. A Cloudflare recomenda como papel padrão para um agente de IA ou token de CI que precisa publicar código: com escopo em um único Worker, ele publica mudanças, mas não tira o aplicativo do ar por acidente." }
+      },
+      {
+        "@type": "Question",
+        "name": "Isso funciona para Durable Objects?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sim. Durable Objects não têm papéis próprios; o acesso é determinado pelo papel no Worker que implementa o objeto. Conceda Editor no Worker e o agente consegue ler e modificar o Durable Object via Worker; Metadata Read-Only permite ver métricas, logs e traces daquele Worker, mas não os dados armazenados." }
+      },
+      {
+        "@type": "Question",
+        "name": "O que muda para D1, R2 e KV?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A Cloudflare afirmou que os mesmos quatro papéis serão levados para os outros produtos da Developer Platform. O princípio se mantém: Metadata Read-Only inspeciona schema D1 ou metadata de bucket R2 sem mostrar linhas ou objetos; Content Read-Only lê linhas ou arquivos sem modificar; Admin fica acima. O lançamento de 2026-09-15 cobre Workers; D1/R2/KV estão marcados como próximos." }
+      },
+      {
+        "@type": "Question",
+        "name": "Como adiciono rotas ou Custom Domains no novo modelo?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Rotas e Custom Domains ficam na zona, não no Worker. Para adicionar, mudar ou remover uma rota, o token precisa de Editor no Worker E permissão Workers Routes para a zona. Uma vez configurada a rota, deploys que não alteram a conexão não exigem mais a permissão da zona, então o CI segue publicando sem acesso aos seus domínios." }
+      },
+      {
+        "@type": "Question",
+        "name": "Por que isso importa para um Worker de arquivo social?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Um Worker de arquivo social normalmente busca posts do X, Bluesky ou LinkedIn, grava no R2 ou D1 e expõe um endpoint JSON pequeno. No modelo antigo, um token CI com Workers Scripts:Edit podia reescrever o Worker, incluindo código que toca seu bucket R2. No modelo novo, dá-se Editor com escopo naquele único Worker, mantendo Admin e Content Read-Only em um token só humano. Se o token do agente vazar, o raio de destruição é um Worker." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/pt/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a href="/en/blog/cloudflare-workers-granular-authorization-agent-permission-2026.html">EN</a>
+      <a href="/pt/blog/cloudflare-workers-autorizacao-granular-agente-2026.html" class="active">PT</a>
+      <a href="/id/blog/cloudflare-workers-otorisasi-granular-agen-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb"><a href="/pt/">Início</a> &rarr; <a href="/pt/blog/">Blog</a> &rarr; Cloudflare Workers 2026: Autorização Granular para Agentes</div>
+
+    <h1>Cloudflare Workers 2026: <span>Autorização Granular</span> para Agentes</h1>
+    <div class="meta">16 de Setembro, 2026 &middot; 9 min de leitura &middot; Tutorial</div>
+
+    <p>Em 2026-09-15 a Cloudflare entregou a maior reformulação de controle de acesso da Developer Platform em anos: quatro papéis com escopo por Worker, três níveis de escopo e uma forma de prender qualquer um deles a um único Worker. O post de lançamento é <a href="https://blog.cloudflare.com/workers-granular-authorization/">"Give every teammate and agent the right level of access to your Workers"</a>, datado de 2026-09-15, e o recurso está no ar para todos os clientes hoje.</p>
+
+    <p>A frase importa mais do que parece. Por uma década a API da Cloudflare tratou Workers como um recurso plano da conta: um token com <code>Workers Scripts:Edit</code> podia fazer deploy, renomear ou deletar <em>todos</em> os Workers da conta. Se você rodava um Worker que alimenta um endpoint de arquivo social na Cloudflare, não tinha um jeito limpo de dar a um agente de IA ou token de CI apenas o acesso suficiente para publicar código sem entregar as chaves do resto da conta. Os papéis novos resolvem isso — e foram desenhados, nas palavras da própria Cloudflare, para que <em>"um agente pudesse usar as APIs Cloudflare para investigar um problema sem ver dados de nenhum outro Worker na conta"</em>.</p>
+
+    <h2>Os Quatro Papéis Novos, Em Uma Tabela</h2>
+
+    <p>A Cloudflare agrupou dezenas de micro-permissões em exatamente quatro papéis, cada um refletindo um nível que você de fato concederia:</p>
+
+    <table>
+      <thead>
+        <tr><th>Papel</th><th>O que permite</th><th>Quando conceder</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Metadata Read-Only</td>
+          <td>Ver listas de recursos, configurações e dados de observabilidade (métricas, logs, traces). Sem código-fonte, sem escrita.</td>
+          <td>Agente ou colega que precisa depurar, mas não deve ver código nem mudar nada.</td>
+        </tr>
+        <tr>
+          <td>Content Read-Only</td>
+          <td>Ler código do Worker, linhas do D1, objetos do R2 — sem modificar.</td>
+          <td>Code reviewer ou agente de revisão que precisa ler o que o Worker faz, mas não deve publicar mudanças.</td>
+        </tr>
+        <tr>
+          <td>Editor</td>
+          <td>Ler e escrever conteúdo e configurações. <strong>Não pode</strong> criar ou deletar o Worker.</td>
+          <td>Padrão para pipeline CI/CD ou agente de IA que publica código — com escopo em um Worker para não tirar o app do ar.</td>
+        </tr>
+        <tr>
+          <td>Admin</td>
+          <td>Controle total: criar, renomear, deletar, conceder acesso a outros.</td>
+          <td>Dono humano que precisa poder deletar o Worker. Prenda a um Worker para o acesso não se estender ao resto da conta.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Todo papel pode ser definido em um de três escopos. Do mais permissivo ao mais estreito: <strong>Account</strong> (vale para todos os Workers da conta), <strong>Zone</strong> (vale para os Workers associados a uma zona) e <strong>Individual Worker</strong> (vale para um Worker nomeado). A Cloudflare afirmou que os mesmos quatro papéis serão estendidos a D1, R2 e KV, com o mesmo princípio — Metadata Read-Only inspeciona schema D1 ou metadata de bucket R2 sem mostrar linhas ou objetos.</p>
+
+    <h2>Por Que "Editor com Escopo a Um Worker" É o Padrão Certo Para um Agente</h2>
+
+    <p>O papel mais útil para um agente de IA é Editor, com escopo em um Worker individual. O próprio exemplo da Cloudflare é o workflow CI/CD que só deve poder publicar o aplicativo que possui: <em>"Se o workflow estiver mal configurado ou o token dele vazar, o impacto permanece contido: ele publica mudanças naquele Worker, mas não pode deletá-lo nem tocar em nenhum outro aplicativo da conta."</em></p>
+
+    <p>Para um Worker de arquivo social que busca posts do X, Bluesky ou LinkedIn e grava no R2, essa é a regra que você realmente quer. No modelo antigo, um token CI vazado podia reescrever o Worker para exfiltrar seu bucket R2, apontá-lo para um namespace KV diferente ou simplesmente deletar o Worker e tirar a API do ar. No modelo novo, Editor com escopo naquele único Worker consegue publicar código que toca aquele único Worker e só aquele Worker.</p>
+
+    <p>Note um detalhe sutil mas importante: <em>Editor não pode deletar o próprio Worker</em>. Essa é a propriedade que torna Editor seguro para entregar a um agente. A capacidade de deletar um Worker fica reservada ao Admin. Então mesmo se a injeção de prompt do agente o levar a algo destrutivo, o pior caso é um deploy ruim, não um aplicativo ausente.</p>
+
+    <h2>Como Criar um Token de API com Escopo no Painel Cloudflare</h2>
+
+    <p>O post de lançamento percorre a receita. A versão curta, para um Worker de arquivo social chamado <code>social-archive-api</code>:</p>
+
+    <ol>
+      <li>Abra o painel Cloudflare e vá em <em>Meu Perfil &rarr; API Tokens &rarr; Criar Token</em>.</li>
+      <li>Escolha o template <strong>Edit Cloudflare Workers</strong> e personalize.</li>
+      <li>Em <em>Recursos da Conta</em>, escolha o Worker ao qual o token deve se aplicar. Defina o escopo como <strong>Worker</strong> e selecione <code>social-archive-api</code>.</li>
+      <li>Em <em>Permissões</em>, escolha o papel do Worker: <strong>Editor</strong> para agente ou token CI, <strong>Metadata Read-Only</strong> para token apenas de debug.</li>
+      <li>Salve o token uma vez e copie. A Cloudflare mostra o valor do token só na criação.</li>
+    </ol>
+
+<pre><code># Um deploy CI para o Worker de arquivo social usando um token Editor com escopo
+# O token SÓ consegue publicar este Worker; não pode deletar nem tocar em mais nada.
+
+CLOUDFLARE_API_TOKEN=&lt;seu...token
+# O comando de deploy em si não muda.
+npx wrangler deploy \
+  --name social-archive-api \
+  --compatibility-date 2026-09-01
+
+# Se este token vazar, o pior caso é:
+#   - alguém consegue enviar código novo para este Worker
+#   - NÃO pode deletar o Worker
+#   - NÃO pode ler seu código-fonte (Editor escreve; não inclui vazamento de source pela API)
+#   - NÃO pode publicar em outro Worker da conta</code></pre>
+
+    <h2>Como Rotas e Custom Domains Interagem Com o Escopo do Worker</h2>
+
+    <p>Um ponto em que o modelo novo fica sutil é o roteamento. A rota ou Custom Domain de um Worker é configurada na zona, não no Worker. O bloco de rota de exemplo da Cloudflare em <code>wrangler.jsonc</code> se parece com isto:</p>
+
+<pre><code>{
+  "route": {
+    "pattern": "example.com/*",
+    "zone_name": "example.com"
+  }
+}</code></pre>
+
+    <p>Como mudar uma rota pode redirecionar tráfego de produção ou tirar o Worker do ar, <strong>adicionar, remover ou mudar uma rota exige Editor no Worker E permissão Workers Routes para a zona</strong>. O raciocínio da Cloudflare: quem administra como o tráfego chega ao Worker não deve também poder mudar configurações não relacionadas do domínio.</p>
+
+    <p>Uma vez configurada a rota, deploys que não mudam a rota não exigem mais a permissão da zona. Isso significa que um token CI pode seguir publicando o Worker sem também manter acesso aos seus domínios, bancos ou storage. É a letra miúda que torna Editor com escopo a um Worker genuinamente útil.</p>
+
+    <h2>Durable Objects Seguem o Papel do Worker</h2>
+
+    <p>Se seu Worker de arquivo social expõe um Durable Object (por exemplo, um store de sessão por usuário que rastreia quais posts ele já buscou para não re-arquivar duplicados), o Durable Object não tem papel próprio. O acesso é determinado inteiramente pelo papel no Worker que o implementa.</p>
+
+    <p>Consequência concreta: Metadata Read-Only no Worker permite que o agente veja métricas, logs e traces do Durable Object — mas não os dados armazenados no objeto. Para consultar ou modificar esses dados, o agente precisa de Editor no Worker. A Cloudflare é explícita que essa separação se manterá quando os mesmos papéis forem levados para D1, R2 e KV: Metadata Read-Only inspeciona schema ou metadata de bucket sem expor linhas ou objetos.</p>
+
+    <h2>O Que Muda Quando um Token Não Tem o Papel Certo</h2>
+
+    <p>O lançamento também traz uma melhoria pequena mas de alto impacto nas mensagens de erro da API: em vez de retornar um genérico <code>403 Forbidden</code> quando um token não tem o papel certo, a API Cloudflare agora inclui um link para a documentação relevante explicando exatamente qual permissão é exigida.</p>
+
+    <p>O motivo de isso importar na prática é debug. O modo de falha antigo para um agente que recebeu o token errado era um <code>403</code> silencioso e um humano confuso tentando descobrir qual das dezenas de permissões legadas da Cloudflare conceder. No modelo novo, a própria mensagem de erro aponta para o papel que o agente precisa — e dá para promover a partir dali sem conceder acesso mais amplo do que o trabalho exige.</p>
+
+    <h2>Como o ThreadGrab Usa Isso Na Prática</h2>
+
+    <p>Os Workers do ThreadGrab que alimentam a API de arquivo social em <code>/functions/api/</code> se encaixam no mesmo padrão. Um Worker busca posts do X, Bluesky e LinkedIn, grava em um bucket R2 da Cloudflare e serve um endpoint JSON pequeno. O Worker é todo o raio de destruição de qualquer token CI ou agente que o toca. Até 2026-09-15 a única opção segura era tokens com escopo de conta, com o dono humano como único Editor — o que tornava impossível dar a um agente de IA a capacidade de publicar um hotfix.</p>
+
+    <p>Com os papéis novos conseguimos separar isso de forma limpa:</p>
+
+    <ul>
+      <li><strong>Editor com escopo em <code>social-archive-api</code></strong> — entregue ao agente e ao pipeline CI. Publica, não deleta, não toca outros Workers.</li>
+      <li><strong>Metadata Read-Only</strong> — entregue a um token separado só de debug usado por dashboards de observabilidade que precisam puxar logs e métricas.</li>
+      <li><strong>Admin</strong> — mantido só pelo dono humano, usado quando um Worker precisa ser renomeado ou aposentado.</li>
+    </ul>
+
+    <p>O resultado é o padrão que a Cloudflare explicitamente recomenda — e o padrão que deve ser o default para qualquer Worker que um agente de IA ou token CI toca.</p>
+
+    <h2>Perguntas Frequentes</h2>
+    <div class="faq">
+      <h3>O que é a Autorização Granular do Cloudflare Workers?</h3>
+      <p>É uma atualização de 2026-09-15 da Cloudflare Developer Platform que lança quatro novos papéis por Worker (Metadata Read-Only, Content Read-Only, Editor, Admin) e a capacidade de limitar cada papel a um único Worker. Um colega, token de CI ou agente de IA com esse token só consegue agir naquele Worker e em mais nada da sua conta.</p>
+
+      <h3>Como isso difere dos tokens antigos da conta?</h3>
+      <p>Tokens antigos cobriam a conta inteira: um token com Workers Scripts:Edit podia fazer deploy, renomear ou deletar qualquer Worker da conta. Os tokens com escopo novo prendem o mesmo papel Editor a um Worker, então o token só consegue publicar naquele aplicativo e não pode deletar nem tocar em mais nada.</p>
+
+      <h3>O que é o papel Editor e quando devo usá-lo para um agente?</h3>
+      <p>Editor é leitura e escrita no Worker, incluindo deploys, mas explicitamente não consegue criar nem deletar o próprio Worker. A Cloudflare recomenda como papel padrão para um agente de IA ou token de CI que precisa publicar código: com escopo em um único Worker, ele publica mudanças, mas não tira o aplicativo do ar por acidente.</p>
+
+      <h3>Isso funciona para Durable Objects?</h3>
+      <p>Sim. Durable Objects não têm papéis próprios; o acesso é determinado pelo papel no Worker que implementa o objeto. Conceda Editor no Worker e o agente consegue ler e modificar o Durable Object via Worker; Metadata Read-Only permite ver métricas, logs e traces daquele Worker, mas não os dados armazenados.</p>
+
+      <h3>O que muda para D1, R2 e KV?</h3>
+      <p>A Cloudflare afirmou que os mesmos quatro papéis serão levados para os outros produtos da Developer Platform. O princípio se mantém: Metadata Read-Only inspeciona schema D1 ou metadata de bucket R2 sem mostrar linhas ou objetos; Content Read-Only lê linhas ou arquivos sem modificar; Admin fica acima. O lançamento de 2026-09-15 cobre Workers; D1/R2/KV estão marcados como próximos.</p>
+
+      <h3>Como adiciono rotas ou Custom Domains no novo modelo?</h3>
+      <p>Rotas e Custom Domains ficam na zona, não no Worker. Para adicionar, mudar ou remover uma rota, o token precisa de Editor no Worker E permissão Workers Routes para a zona. Uma vez configurada a rota, deploys que não alteram a conexão não exigem mais a permissão da zona, então o CI segue publicando sem acesso aos seus domínios.</p>
+
+      <h3>Por que isso importa para um Worker de arquivo social?</h3>
+      <p>Um Worker de arquivo social normalmente busca posts do X, Bluesky ou LinkedIn, grava no R2 ou D1 e expõe um endpoint JSON pequeno. No modelo antigo, um token CI com Workers Scripts:Edit podia reescrever o Worker, incluindo código que toca seu bucket R2. No modelo novo, dá-se Editor com escopo naquele único Worker, mantendo Admin e Content Read-Only em um token só humano. Se o token do agente vazar, o raio de destruição é um Worker.</p>
+    </div>
+
+    <h2>A Conclusão</h2>
+
+    <p>O lançamento da Autorização Granular de Workers de 2026-09-15 não é uma atualização de menu de configurações; é a primeira vez que a Cloudflare entrega um modelo de menor privilégio que cabe em como Workers são realmente usados hoje — por agentes de IA e tokens CI, não por humanos clicando em painéis. Para quem roda um Worker que um agente toca, a migração é a mesma: escolha Editor com escopo no Worker para o agente, segure Admin para você, e aposente o token Scripts:Edit com escopo de conta. A mudança nas mensagens de erro torna o resto de graça.</p>
+
+    <div class="cta">
+      <p style="color:#ccc;margin-bottom:12px;">Quer um Worker de arquivo social que dá para entregar a um agente sem abrir mão das chaves?</p>
+      <a class="cta-btn" href="/pt/">Experimentar o ThreadGrab</a>
+      <p style="color:#888;font-size:0.85rem;margin-top:12px;">Workers em <code>/functions/api/</code> buscam posts do X, Bluesky e LinkedIn e gravam no R2 — exatamente o tipo de Worker para o qual essa atualização foi feita.</p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/pt/">Início</a> &middot; <a href="/pt/blog/">Blog</a> &middot; <a href="/pt/about/">Sobre</a> &middot; <a href="/pt/privacy/">Privacidade</a>
+    <br>Não afiliado a X Corp., Google, Cloudflare ou qualquer uma das fontes citadas.
+  </footer>
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloudflare Workers 2026: Granular Authorization for Agents | ThreadGrab</title>
+  <meta name="description" content="Cloudflare ships four scoped Worker roles so agents and CI tokens get only the access they need. Recipe for a social-archive Worker inside.">
+  <meta name="keywords" content="Cloudflare Workers granular authorization 2026, Workers least privilege agent, Worker scope API token, Cloudflare developer platform roles, CI token Workers scope, Editor role Worker, durable objects access, ThreadGrab social archive">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/en/blog/cloudflare-workers-granular-authorization-agent-permission-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/cloudflare-workers-granular-authorization-agent-permission-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/cloudflare-workers-autorizacao-granular-agente-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/cloudflare-workers-otorisasi-granular-agen-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/cloudflare-workers-granular-authorization-agent-permission-2026.html">
+  <meta property="og:title" content="Cloudflare Workers 2026: Granular Authorization for Agents">
+  <meta property="og:description" content="Cloudflare ships four scoped Worker roles so agents and CI tokens get only the access they need. Recipe for a social-archive Worker inside.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/en/blog/cloudflare-workers-granular-authorization-agent-permission-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:published_time" content="2026-09-16">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cloudflare Workers 2026: Granular Authorization for Agents">
+  <meta name="twitter:description" content="Cloudflare ships four scoped Worker roles so agents and CI tokens get only the access they need. Recipe for a social-archive Worker inside.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { color: #20d5ec; font-size: 1.4rem; margin: 36px 0 14px; line-height: 1.3; }
+    h3 { color: #fff; font-size: 1.1rem; margin: 18px 0 8px; }
+    p { color: #ccc; margin-bottom: 14px; font-size: 1rem; }
+    a { color: #20d5ec; }
+    ul, ol { color: #ccc; padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    .callout { background: #11212a; border-left: 3px solid #20d5ec; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
+    .callout p { color: #b5dde3; margin-bottom: 0; }
+    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 8px; padding: 14px 18px; overflow-x: auto; margin: 16px 0 20px; }
+    pre code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #c5e8ee; white-space: pre; }
+    .faq h3 { color: #20d5ec; margin-top: 22px; }
+    .faq p { color: #ccc; }
+    .cta { background: #11212a; border: 1px solid #20d5ec; padding: 24px; border-radius: 8px; margin: 32px 0; text-align: center; }
+    .cta a.cta-btn { display: inline-block; background: #20d5ec; color: #0f0f0f; padding: 10px 20px; border-radius: 6px; font-weight: 700; text-decoration: none; }
+    footer { color: #666; font-size: 0.85rem; text-align: center; padding: 30px 20px; border-top: 1px solid #1a1a1a; }
+    footer a { color: #20d5ec; text-decoration: none; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Cloudflare Workers 2026: Granular Authorization for Agents",
+    "description": "Cloudflare ships four scoped Worker roles so agents and CI tokens get only the access they need. Recipe for a social-archive Worker inside.",
+    "datePublished": "2026-09-16",
+    "dateModified": "2026-09-16",
+    "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/en/" },
+    "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/en/", "logo": { "@type": "ImageObject", "url": "https://threadgrab.com/og-image.png" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://threadgrab.com/en/blog/cloudflare-workers-granular-authorization-agent-permission-2026.html" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://threadgrab.com/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/en/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Cloudflare Workers 2026: Granular Authorization for Agents", "item": "https://threadgrab.com/en/blog/cloudflare-workers-granular-authorization-agent-permission-2026.html" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Cloudflare Workers Granular Authorization?",
+        "acceptedAnswer": { "@type": "Answer", "text": "It is a 2026-09-15 update to the Cloudflare Developer Platform that ships four new per-Worker roles (Metadata Read-Only, Content Read-Only, Editor, Admin) and the ability to scope each role to a single Worker. A teammate, CI token, or AI agent that holds the scoped token can only act on that Worker and nothing else in your account." }
+      },
+      {
+        "@type": "Question",
+        "name": "How does this differ from the old Account API tokens?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Old tokens were account-wide: a token with Workers Scripts:Edit could deploy, rename, or delete every Worker in the account. The new scoped tokens let you pin the same Editor role to one Worker so the token can only deploy changes to that one application and cannot delete it or touch anything else." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the Editor role and when should I use it for an agent?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Editor is read-and-write on the Worker, including deploys, but explicitly cannot create or delete the Worker itself. Cloudflare recommends it as the default role for an AI agent or CI token that needs to ship code: scoped to a single Worker, it can deploy changes but cannot accidentally take the application offline." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this work for Durable Objects?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Durable Objects do not have their own roles; access is determined by the role on the Worker that implements the object. Grant Editor on the Worker and the agent can read and modify the Durable Object via the Worker; grant Metadata Read-Only and the agent can only see metrics, logs, and traces for that Worker, not the data in the object." }
+      },
+      {
+        "@type": "Question",
+        "name": "What changes are coming to D1, R2, and KV?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Cloudflare stated the same four roles will be brought to other Developer Platform products. The principle is preserved: Metadata Read-Only will let an agent inspect D1 schema or R2 bucket metadata without seeing the rows or the objects; Content Read-Only will let it read rows or files but not modify them; Editor and Admin will sit above those. The 2026-09-15 launch covers Workers; D1/R2/KV are listed as coming." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I add routes or Custom Domains under the new model?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Routes and Custom Domains live on the zone, not the Worker. To add, change, or remove a route, the token needs both Editor on the Worker AND Workers Routes permission for the zone. Once a route is configured, deployments that do not alter the connection no longer require the zone permission, so a CI token can keep shipping without zone access." }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does this matter for a social-archive Worker?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A social-archive Worker typically fetches posts from X, Bluesky, or LinkedIn, writes them to R2 or D1, and exposes a small JSON endpoint. Under the old model a CI token with Workers Scripts:Edit could rewrite or replace the whole Worker, including code that touches your R2 bucket. Under the new model you can give the agent Editor scoped to that one Worker, while keeping Admin and Content Read-Only on a human-only account token. If the agent's token leaks, the blast radius is one Worker." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/en/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a href="/en/blog/cloudflare-workers-granular-authorization-agent-permission-2026.html" class="active">EN</a>
+      <a href="/pt/blog/cloudflare-workers-autorizacao-granular-agente-2026.html">PT</a>
+      <a href="/id/blog/cloudflare-workers-otorisasi-granular-agen-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb"><a href="/en/">Home</a> &rarr; <a href="/en/blog/">Blog</a> &rarr; Cloudflare Workers 2026: Granular Authorization for Agents</div>
+
+    <h1>Cloudflare Workers 2026: <span>Granular Authorization</span> for Agents</h1>
+    <div class="meta">September 16, 2026 &middot; 9 min read &middot; Tutorial</div>
+
+    <p>On 2026-09-15 Cloudflare shipped the largest access-control change to the Developer Platform in years: four scoped Worker roles, three scope levels, and a way to pin any of them to a single Worker. The launch post is <a href="https://blog.cloudflare.com/workers-granular-authorization/">"Give every teammate and agent the right level of access to your Workers"</a>, dated 2026-09-15, and the feature is live for all customers today.</p>
+
+    <p>That sentence matters more than it sounds. For the last decade the Cloudflare API treated Workers like a flat account-wide resource: a token with <code>Workers Scripts:Edit</code> could deploy, rename, or delete <em>every</em> Worker in your account. If you ran a Worker that powers a social-archive endpoint on Cloudflare, you had no clean way to give an AI agent or a CI token just enough access to ship code without also handing it the keys to the rest of your account. The new roles fix that — and they were designed, in Cloudflare's words, so that "an agent <a href="https://blog.cloudflare.com/workers-granular-authorization/">could use the Cloudflare APIs to investigate an issue without seeing data from any other Worker in the account</a>."</p>
+
+    <h2>The Four New Roles, In One Table</h2>
+
+    <p>Cloudflare collapsed dozens of micro-permissions into exactly four roles, each reflecting a level you would actually want to grant:</p>
+
+    <table>
+      <thead>
+        <tr><th>Role</th><th>What it allows</th><th>When to grant it</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Metadata Read-Only</td>
+          <td>View resource lists, settings, and observability data (metrics, logs, traces). No source code, no writes.</td>
+          <td>An agent or teammate that needs to debug an issue but should not see your code or change anything.</td>
+        </tr>
+        <tr>
+          <td>Content Read-Only</td>
+          <td>Read Worker code, D1 rows, R2 objects — without modifying them.</td>
+          <td>A code reviewer or review agent that needs to read what the Worker does but should not deploy changes.</td>
+        </tr>
+        <tr>
+          <td>Editor</td>
+          <td>Read and write content and settings. <strong>Cannot</strong> create or delete the Worker.</td>
+          <td>The default for a CI/CD pipeline or an AI agent that ships code — scoped to one Worker so it cannot take the app offline.</td>
+        </tr>
+        <tr>
+          <td>Admin</td>
+          <td>Full control: create, rename, delete, grant access to others.</td>
+          <td>A human owner who needs to be able to delete the Worker. Pin to one Worker so the access does not extend to the rest of the account.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Every role can be set at one of three scopes. From the most permissive to the narrowest: <strong>Account</strong> (applies to every Worker in the account), <strong>Zone</strong> (applies to the Workers associated with one zone), and <strong>Individual Worker</strong> (applies to one named Worker). Cloudflare stated the same four roles will be extended to D1, R2, and KV, with the same principle — Metadata Read-Only will inspect D1 schema or R2 bucket metadata without exposing rows or objects.</p>
+
+    <h2>Why "Editor Scoped to One Worker" Is the Right Default for an Agent</h2>
+
+    <p>The most useful role for an AI agent is Editor, scoped to an individual Worker. Cloudflare's own example is the CI/CD workflow that should only be able to deploy the application it owns: <em>"If the workflow is misconfigured or its token is exposed, the impact remains contained: it can deploy changes to that Worker, but it cannot delete it or touch any other application in your account."</em></p>
+
+    <p>For a social-archive Worker that fetches posts from X, Bluesky, or LinkedIn and writes them to R2, this is the rule you actually want. Under the old model, a leaked CI token could rewrite the Worker to exfiltrate your R2 bucket, point it at a different KV namespace, or simply delete the Worker and take the API offline. Under the new model, Editor scoped to that one Worker can deploy code that touches that one Worker and that Worker alone.</p>
+
+    <p>Note one subtle but important detail: <em>Editor cannot delete the Worker itself</em>. That is the property that makes Editor safe to hand to an agent. The ability to delete a Worker is reserved for Admin. So even if the agent's prompt-injection causes it to do something destructive, the worst case is a bad deploy, not a missing application.</p>
+
+    <h2>How to Create a Scoped API Token in the Cloudflare Dashboard</h2>
+
+    <p>The launch post walks through the recipe. The short version, for a social-archive Worker called <code>social-archive-api</code>:</p>
+
+    <ol>
+      <li>Open the Cloudflare dashboard and go to <em>My Profile &rarr; API Tokens &rarr; Create Token</em>.</li>
+      <li>Pick the <strong>Edit Cloudflare Workers</strong> template, then customize it.</li>
+      <li>Under <em>Account Resources</em>, pick the Worker you want the token to apply to. Set the scope to <strong>Worker</strong> and select <code>social-archive-api</code>.</li>
+      <li>Under <em>Permissions</em>, choose the Worker role you want: <strong>Editor</strong> for an agent or CI token, <strong>Metadata Read-Only</strong> for a debug-only token.</li>
+      <li>Save the token once and copy it. Cloudflare shows the token value only at creation time.</li>
+    </ol>
+
+    <pre><code># A CI deploy for the social-archive Worker using a scoped Editor token
+# The token can ONLY deploy this Worker; it cannot delete it or touch anything else.
+
+CLOUDFLARE_API_TOKEN=&lt;your-scoped-editor-token&gt;
+CLOUDFLARE_ACCOUNT_ID=&lt;your-account-id&gt;
+
+# The deploy command itself doesn't change.
+npx wrangler deploy \
+  --name social-archive-api \
+  --compatibility-date 2026-09-01
+
+# If this token leaked, the worst case is:
+#   - someone can push new code to this Worker
+#   - they CANNOT delete the Worker
+#   - they CANNOT read your source code (Editor writes; it doesn't include source-leak via API)
+#   - they CANNOT deploy to a different Worker in the account</code></pre>
+
+    <h2>How Routes and Custom Domains Interact With Worker Scope</h2>
+
+    <p>One place the new model gets nuanced is routing. A Worker route or Custom Domain is configured on the zone, not the Worker itself. Cloudflare's example <code>wrangler.jsonc</code> route block looks like this:</p>
+
+<pre><code>{
+  "route": {
+    "pattern": "example.com/*",
+    "zone_name": "example.com"
+  }
+}</code></pre>
+
+    <p>Because changing a route can redirect production traffic or take the Worker offline, <strong>adding, removing, or changing a route requires both Editor access to the Worker AND Workers Routes permission for the zone</strong>. Cloudflare's reasoning: someone managing how traffic reaches a Worker should not also be able to change unrelated settings for the domain.</p>
+
+    <p>Once a route is configured, deployments that do not change the route no longer require the zone permission. That means a CI token can keep shipping the Worker without also holding access to your domains, databases, or storage. It is the small print that makes Editor scoped to a Worker genuinely useful.</p>
+
+    <h2>Durable Objects Follow the Worker's Role</h2>
+
+    <p>If your social-archive Worker exposes a Durable Object (for example, a per-user session store that tracks which posts a user has already fetched so you don't re-archive duplicates), the Durable Object does not have its own role. Access is determined entirely by the role on the Worker that implements it.</p>
+
+    <p>Concrete consequence: Metadata Read-Only on the Worker lets the agent see Durable Object metrics, logs, and traces — but not the data stored in the object. To query or modify that data the agent needs Editor on the Worker. Cloudflare is explicit that this separation will hold as the same roles are brought to D1, R2, and KV: Metadata Read-Only will inspect schema or bucket metadata without exposing rows or objects.</p>
+
+    <h2>What Changes When a Token Lacks the Right Role</h2>
+
+    <p>The launch also ships a small but high-leverage improvement to API error messages: instead of returning a generic <code>403 Forbidden</code> when a token lacks the right role, the Cloudflare API now includes a link to the relevant documentation explaining exactly which permission is required.</p>
+
+    <p>The reason this matters in practice is debugging. The old failure mode for an agent that had been given the wrong token was a silent <code>403</code> and a confused human trying to figure out which of the dozens of legacy Cloudflare permissions to grant. Under the new model the error message itself points at the role the agent needs — and you can promote it from there without granting broader access than the work requires.</p>
+
+    <h2>How ThreadGrab Uses This in Practice</h2>
+
+    <p>The ThreadGrab Workers that power the social-archive API at <code>/functions/api/</code> fit the same pattern. A Worker fetches posts from X, Bluesky, and LinkedIn, writes them to a Cloudflare R2 bucket, and serves a small JSON endpoint. The Worker is the entire blast radius for any CI token or agent that touches it. Until 2026-09-15 the only safe option was account-scoped tokens, with the human owner as the only Editor — which made it impossible to give an AI agent the ability to ship a hotfix.</p>
+
+    <p>With the new roles we can split that cleanly:</p>
+
+    <ul>
+      <li><strong>Editor scoped to <code>social-archive-api</code></strong> — given to the agent and the CI pipeline. Can deploy, cannot delete, cannot touch other Workers.</li>
+      <li><strong>Metadata Read-Only</strong> — given to a separate debug-only token used by observability dashboards that need to pull logs and metrics.</li>
+      <li><strong>Admin</strong> — held only by the human owner, used when a Worker needs to be renamed or retired.</li>
+    </ul>
+
+    <p>The result is the pattern Cloudflare explicitly recommends — and the pattern that should be the default for any Worker that an AI agent or CI token touches.</p>
+
+    <h2>FAQ</h2>
+    <div class="faq">
+      <h3>What is Cloudflare Workers Granular Authorization?</h3>
+      <p>It is a 2026-09-15 update to the Cloudflare Developer Platform that ships four new per-Worker roles (Metadata Read-Only, Content Read-Only, Editor, Admin) and the ability to scope each role to a single Worker. A teammate, CI token, or AI agent that holds the scoped token can only act on that Worker and nothing else in your account.</p>
+
+      <h3>How does this differ from the old Account API tokens?</h3>
+      <p>Old tokens were account-wide: a token with Workers Scripts:Edit could deploy, rename, or delete every Worker in the account. The new scoped tokens let you pin the same Editor role to one Worker so the token can only deploy changes to that one application and cannot delete it or touch anything else.</p>
+
+      <h3>What is the Editor role and when should I use it for an agent?</h3>
+      <p>Editor is read-and-write on the Worker, including deploys, but explicitly cannot create or delete the Worker itself. Cloudflare recommends it as the default role for an AI agent or CI token that needs to ship code: scoped to a single Worker, it can deploy changes but cannot accidentally take the application offline.</p>
+
+      <h3>Does this work for Durable Objects?</h3>
+      <p>Yes. Durable Objects do not have their own roles; access is determined by the role on the Worker that implements the object. Grant Editor on the Worker and the agent can read and modify the Durable Object via the Worker; grant Metadata Read-Only and the agent can only see metrics, logs, and traces for that Worker, not the data in the object.</p>
+
+      <h3>What changes are coming to D1, R2, and KV?</h3>
+      <p>Cloudflare stated the same four roles will be brought to other Developer Platform products. The principle is preserved: Metadata Read-Only will let an agent inspect D1 schema or R2 bucket metadata without seeing the rows or the objects; Content Read-Only will let it read rows or files but not modify them; Editor and Admin will sit above those. The 2026-09-15 launch covers Workers; D1/R2/KV are listed as coming.</p>
+
+      <h3>How do I add routes or Custom Domains under the new model?</h3>
+      <p>Routes and Custom Domains live on the zone, not the Worker. To add, change, or remove a route, the token needs both Editor on the Worker AND Workers Routes permission for the zone. Once a route is configured, deployments that do not alter the connection no longer require the zone permission, so a CI token can keep shipping without zone access.</p>
+
+      <h3>Why does this matter for a social-archive Worker?</h3>
+      <p>A social-archive Worker typically fetches posts from X, Bluesky, or LinkedIn, writes them to R2 or D1, and exposes a small JSON endpoint. Under the old model a CI token with Workers Scripts:Edit could rewrite or replace the whole Worker, including code that touches your R2 bucket. Under the new model you can give the agent Editor scoped to that one Worker, while keeping Admin and Content Read-Only on a human-only account token. If the agent's token leaks, the blast radius is one Worker.</p>
+    </div>
+
+    <h2>The Takeaway</h2>
+
+    <p>The 2026-09-15 Workers Granular Authorization launch is not a "settings menu" update; it is the first time Cloudflare has shipped a least-privilege model that fits how Workers actually get used today — by AI agents and CI tokens, not by humans clicking through dashboards. For anyone running a Worker that an agent touches, the migration is the same: pick Editor scoped to the Worker for the agent, hold Admin for yourself, and retire the account-wide Scripts:Edit token. The error-message change makes the rest free.</p>
+
+    <div class="cta">
+      <p style="color:#ccc;margin-bottom:12px;">Want a social-archive Worker you can hand to an agent without giving away the keys?</p>
+      <a class="cta-btn" href="/en/">Try ThreadGrab</a>
+      <p style="color:#888;font-size:0.85rem;margin-top:12px;">Workers under <code>/functions/api/</code> fetch posts from X, Bluesky, and LinkedIn and write them to R2 — exactly the kind of Worker this update was built for.</p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 ThreadGrab &middot; <a href="/en/">Home</a> &middot; <a href="/en/blog/">Blog</a> &middot; <a href="/en/about/">About</a> &middot; <a href="/en/privacy/">Privacy</a>
+    <br>Not affiliated with X Corp., Google, Cloudflare, or any of the outlets cited.
+  </footer>
+</body>
+</html>
