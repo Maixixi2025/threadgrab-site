@@ -7435,6 +7435,66 @@
       "url": "https://threadgrab.com/id/blog/octoverse-2026-pull-request-draf-agen-konten-sosial-2026.html",
       "title": "Octoverse 2026: 40% Pull Request didraf oleh agen",
       "description": "GitHub Octoverse 2026: 17,9 miliar commit, 40%+ Pull Request didraf agen AI. Dampaknya bagi konten sosial di X, Bluesky, dan LinkedIn"
+    },
+    {
+      "slug": "discord-public-servers-google-indexing-social-content-2026",
+      "date": "2026-10-31",
+      "type": "blog",
+      "lang": "en",
+      "file": "en/blog/discord-public-servers-google-indexing-social-content-2026.html",
+      "url": "https://threadgrab.com/en/blog/discord-public-servers-google-indexing-social-content-2026.html",
+      "title": "From X to Discord: Public Server Chats Are Now Searchable",
+      "description": "Discord is opening 63,000+ discoverable servers to public web pages and Google indexing starting December 2026. What this means for social content archiving.",
+      "heat_source": "3ea88f8bb2d0/2026-10-31_08-10-39.md item 8",
+      "status": "published",
+      "published_at": "2026-10-31",
+      "providers_featured": [
+        "Discord",
+        "X",
+        "Bluesky",
+        "LinkedIn"
+      ],
+      "primary_cta": "ThreadGrab export"
+    },
+    {
+      "slug": "discord-servidores-publicos-indexacao-google-conteudo-social-2026",
+      "date": "2026-10-31",
+      "type": "blog",
+      "lang": "pt",
+      "file": "pt/blog/discord-servidores-publicos-indexacao-google-conteudo-social-2026.html",
+      "url": "https://threadgrab.com/pt/blog/discord-servidores-publicos-indexacao-google-conteudo-social-2026.html",
+      "title": "Servidores Públicos do Discord Agora São Buscáveis",
+      "description": "Discord abre 63.000+ servidores para páginas públicas e indexação pelo Google a partir de dezembro de 2026. O que significa para arquivamento de conteúdo.",
+      "heat_source": "3ea88f8bb2d0/2026-10-31_08-10-39.md item 8",
+      "status": "published",
+      "published_at": "2026-10-31",
+      "providers_featured": [
+        "Discord",
+        "X",
+        "Bluesky",
+        "LinkedIn"
+      ],
+      "primary_cta": "ThreadGrab export"
+    },
+    {
+      "slug": "discord-server-publik-pengindeksan-google-konten-sosial-2026",
+      "date": "2026-10-31",
+      "type": "blog",
+      "lang": "id",
+      "file": "id/blog/discord-server-publik-pengindeksan-google-konten-sosial-2026.html",
+      "url": "https://threadgrab.com/id/blog/discord-server-publik-pengindeksan-google-konten-sosial-2026.html",
+      "title": "Server Publik Discord Kini Bisa Dicari",
+      "description": "Discord membuka 63.000+ server ke halaman web publik dan pengindeksan Google mulai Desember 2026. Apa artinya untuk arsip konten sosial.",
+      "heat_source": "3ea88f8bb2d0/2026-10-31_08-10-39.md item 8",
+      "status": "published",
+      "published_at": "2026-10-31",
+      "providers_featured": [
+        "Discord",
+        "X",
+        "Bluesky",
+        "LinkedIn"
+      ],
+      "primary_cta": "ThreadGrab export"
     }
   ],
   "drafts": [
