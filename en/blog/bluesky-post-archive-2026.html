@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bluesky Post Archive 2026: 4 Ways to Save AT Protocol Posts</title>
+  <meta name="description" content="Bluesky has no native archive export. Here are 4 proven ways to save Bluesky posts and threads in 2026 — AT Protocol API, Jetstream, CAR export, and tools.">
+  <meta name="keywords" content="Bluesky archive 2026, Bluesky post export, AT Protocol API, Jetstream Bluesky, Bluesky Markdown export, Bluesky CAR export, social media archive, ThreadGrab, Bluesky backup">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/en/blog/bluesky-post-archive-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/bluesky-post-archive-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/bluesky-arquivo-posts-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/bluesky-arsip-post-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/bluesky-post-archive-2026.html">
+<meta property="og:title" content="Bluesky Post Archive 2026: 4 Ways to Save AT Protocol Posts">
+  <meta property="og:description" content="Bluesky has no native archive export. Here are 4 proven ways to save Bluesky posts and threads in 2026 — AT Protocol API, Jetstream, CAR export, and tools.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/en/blog/bluesky-post-archive-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:published_time" content="2026-11-02">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bluesky Post Archive 2026: 4 Ways to Save AT Protocol Posts">
+  <meta name="twitter:description" content="Bluesky has no native archive export. Here are 4 proven ways to save Bluesky posts and threads in 2026 — AT Protocol API, Jetstream, CAR export, and tools.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { font-size: 1.4rem; margin: 36px 0 16px; }
+    h3 { font-size: 1.1rem; margin: 24px 0 12px; }
+    p { margin-bottom: 16px; color: #ccc; }
+    a { color: #20d5ec; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #222; }
+    th { color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    pre { background: #1a1a1a; border-radius: 8px; padding: 16px; overflow-x: auto; margin: 16px 0 24px; }
+    pre code { font-family: 'SF Mono', Monaco, monospace; font-size: 0.85rem; color: #e0e0e0; }
+    .faq-item { margin-bottom: 20px; }
+    .faq-item h3 { color: #20d5ec; margin-bottom: 8px; }
+    .cta { background: #1a1a1a; border-radius: 12px; padding: 24px; margin: 36px 0; }
+    .cta h3 { margin-top: 0; margin-bottom: 10px; }
+    .cta-btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 10px 22px; border-radius: 6px; text-decoration: none; margin-top: 8px; }
+    footer { padding: 24px; border-top: 1px solid #1a1a1a; text-align: center; font-size: 0.85rem; color: #666; }
+    footer a { color: #888; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/en/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a href="https://threadgrab.com/en/blog/bluesky-post-archive-2026.html" class="active">EN</a>
+      <a href="https://threadgrab.com/pt/blog/bluesky-arquivo-posts-2026.html">PT</a>
+      <a href="https://threadgrab.com/id/blog/bluesky-arsip-post-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb">
+      <a href="/en/">Home</a> &rsaquo; <a href="/en/blog/">Blog</a> &rsaquo; Bluesky Post Archive
+    </div>
+
+    <h1>Bluesky Post Archive 2026: <span>4 Ways to Save AT Protocol Posts</span></h1>
+    <p class="meta">November 2, 2026 &middot; 9 min read &middot; ThreadGrab</p>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Bluesky Post Archive 2026: 4 Ways to Save AT Protocol Posts",
+      "description": "Bluesky has no native archive export. Here are 4 proven ways to save Bluesky posts and threads in 2026 — AT Protocol API, Jetstream, CAR export, and tools.",
+      "datePublished": "2026-11-02",
+      "dateModified": "2026-11-02",
+      "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/en/" },
+      "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/en/", "logo": { "@type": "ImageObject", "url": "https://threadgrab.com/og-image.png" } },
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://threadgrab.com/en/blog/bluesky-post-archive-2026.html" }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://threadgrab.com/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/en/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "Bluesky Post Archive 2026: 4 Ways to Save AT Protocol Posts", "item": "https://threadgrab.com/en/blog/bluesky-post-archive-2026.html" }
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does Bluesky have a native archive export feature?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Unlike X (Twitter), which has a built-in archive download, Bluesky does not offer a one-click export of your posts. You must use the AT Protocol API, a third-party tool, or request your data directly from your PDS (Personal Data Server)." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between Jetstream and the Bluesky API?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The standard Bluesky API (app.bsky.feed.getAuthorFeed) returns posts one page at a time and requires authentication. Jetstream is a public WebSocket firehose that streams every new Bluesky post in real time — it is unauthenticated but only carries new posts, not historical ones." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I export Bluesky posts to Markdown?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Once you fetch posts via the API, converting them to Markdown is straightforward. ThreadGrab handles Bluesky thread exports to clean Markdown automatically. For manual exports, a small Python script using the atproto library can generate one Markdown file per post." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it legal to archive someone else's Bluesky posts?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Bluesky content is public by default, but archiving another user's posts raises ethical and legal questions. The AT Protocol ToS permits personal archival use. Always respect copyright, don't republish without permission, and follow Bluesky's community guidelines." }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens to my Bluesky posts if my PDS shuts down?",
+          "acceptedAnswer": { "@type": "Answer", "text": "If your Personal Data Server shuts down, your account and posts become inaccessible unless you have migrated to a new PDS or exported your data. The AT Protocol supports account migration, but you must initiate it before your PDS goes offline. Regular exports are the only guaranteed backup." }
+        }
+      ]
+    }
+    </script>
+
+<p>Bluesky crossed 40 million users in late 2026, and the question every power user eventually asks is: how do I get my posts out? Unlike X, Bluesky has no "Download an archive of your data" button. If you have years of threads, hot takes, and long-form posts on the network, your only guarantee of keeping them is to export them yourself. Here are four approaches that actually work — from one-liner scripts to full third-party tools.</p>
+
+<h2>Why Bluesky Archiving Is Different from X</h2>
+
+<p>X (Twitter) has offered a native archive download since 2012. Bluesky, built on the AT Protocol, takes a fundamentally different approach: your data lives on a Personal Data Server (PDS), and the protocol is designed for portability, not platform lock-in. That design choice means no built-in export button — but it also means your data is far more accessible via API than any proprietary platform.</p>
+
+<p>The practical implication: if you want a Bluesky archive, you are writing a script or using a tool that wraps one.</p>
+
+<h2>Method Comparison</h2>
+
+<table>
+  <tr>
+    <th>Method</th>
+    <th>Best For</th>
+    <th>Auth Required</th>
+    <th>Historical Posts</th>
+    <th>Difficulty</th>
+  </tr>
+  <tr>
+    <td>AT Protocol API</td>
+    <td>Your own posts, full control</td>
+    <td>Yes (app password)</td>
+    <td>Yes</td>
+    <td>Medium</td>
+  </tr>
+  <tr>
+    <td>Jetstream (WebSocket)</td>
+    <td>Real-time new-post capture</td>
+    <td>No</td>
+    <td>No</td>
+    <td>Medium</td>
+  </tr>
+  <tr>
+    <td>PDS CAR Export</td>
+    <td>Complete raw data dump</td>
+    <td>Yes (PDS admin)</td>
+    <td>Yes</td>
+    <td>Advanced</td>
+  </tr>
+  <tr>
+    <td>Third-Party Tools</td>
+    <td>No-code, one-click export</td>
+    <td>Varies</td>
+    <td>Yes</td>
+    <td>Easy</td>
+  </tr>
+</table>
+
+<h2>Method 1: The AT Protocol API</h2>
+
+<p>The most straightforward approach uses the official <code>atproto</code> Python library to page through your author feed and save every post. This is the method that gives you the most control over output format.</p>
+
+<pre><code># Export Bluesky posts and threads via AT Protocol
+# Requires: pip install atproto
+
+from atproto import Client
+
+client = Client()
+client.login('your-handle.bsky.social', 'your-app-password')
+
+# Fetch your own author feed (most recent 100 posts)
+feed = client.app.bsky.feed.get_author_feed(
+    {'actor': 'your-handle.bsky.social', 'limit': 100}
+)
+for item in feed.feed:
+    post = item.post
+    print(post.record.text)
+    print(post.record.created_at)
+    print('---')</code></pre>
+
+<p>From there, converting to Markdown is a small additional script:</p>
+
+<pre><code># Save every exported post as individual Markdown files
+# One file per post, YAML frontmatter included
+
+import json, pathlib, re
+
+def slugify(text):
+    return re.sub(r'[^a-z0-9]+', '-', text.lower()).strip('-')[:60]
+
+out = pathlib.Path('bluesky-archive')
+out.mkdir(exist_ok=True)
+
+with open('export.jsonl') as f:
+    for line in f:
+        post = json.loads(line)
+        slug = slugify(post['text'][:60]) or 'untitled'
+        md = f"---\ntitle: \"{post['text'][:70]}...\"\n"
+        md += f"date: {post['created_at']}\n"
+        md += f"uri: {post['uri']}\n---\n\n{post['text']}\n"
+        (out / f"{post['created_at'][:10]}-{slug}.md").write_text(md)
+
+print(f"Archived {len(list(out.glob('*.md')))} posts to {out}/")</code></pre>
+
+<h2>Method 2: Jetstream for Real-Time Capture</h2>
+
+<p>If you want to capture posts as they are published — for trend analysis or research — Jetstream is a public WebSocket that streams every Bluesky firehose event without authentication. It does not backfill history, so it is a complement to the API method, not a replacement.</p>
+
+<pre><code># Subscribe to Jetstream and capture all new Bluesky posts
+# No authentication required
+
+import asyncio, websockets, json
+
+async def capture():
+    uri = "wss://jetstream2.us-east.bsky.network/subscribe?wantedCollections=app.bsky.feed.post"
+    async with websockets.connect(uri) as ws:
+        async for message in ws:
+            event = json.loads(message)
+            # Filter: only posts from accounts you follow or a specific handle
+            print(event["commit"]["record"]["text"])
+
+asyncio.run(capture())</code></pre>
+
+<h2>Method 3: PDS CAR Export</h2>
+
+<p>For a complete raw export — every post, every like, every follow, every media blob — you can request a CAR file (Content Addressable aRchive) directly from your PDS. This is Bluesky's closest equivalent to X's archive download, but it requires either admin access on a self-hosted PDS or a support request on bsky.social.</p>
+
+<p>CAR files are not human-readable. You will need a tool like <code>go-car</code> or a custom script to parse them. This method is best for users who want a complete forensic backup, not a readable archive.</p>
+
+<h2>Method 4: Third-Party Tools</h2>
+
+<p>If writing Python is not your thing, several tools wrap the API into a one-click experience:</p>
+
+<p><strong>ThreadGrab</strong> exports Bluesky threads and long-form posts to clean Markdown with a single command. The output is portable — it works in Obsidian, Notion, GitHub, or any static site generator. For social media managers who need to archive content across multiple platforms (X Articles, Bluesky long-form, LinkedIn Newsletter), ThreadGrab handles the full pipeline.</p>
+
+<p><strong>Skython</strong> and <strong>Bluesky Archive</strong> (both open source) offer GUI-based export to HTML and JSON. They handle pagination, media downloads, and de-duplication automatically.</p>
+
+<h2>Practical Steps to Archive Your Bluesky Content Today</h2>
+
+<p><strong>Step 1: Generate an app password.</strong> Go to Settings &rarr; App Passwords in Bluesky and create a dedicated password for your export script. Never use your main password in a script.</p>
+
+<p><strong>Step 2: Run the export.</strong> Use the AT Protocol API script above to fetch all your posts. Save the output as JSONL (one JSON object per line).</p>
+
+<p><strong>Step 3: Convert to Markdown.</strong> Run the conversion script to generate one Markdown file per post with YAML frontmatter. This format will outlive any platform.</p>
+
+<p><strong>Step 4: Set up a recurring export.</strong> The best archive is a current archive. Set a monthly cron job to re-run the export and sync new posts to your archive directory.</p>
+
+<pre><code># Monthly cron: sync new Bluesky posts to your archive
+0 9 1 * * python3 ~/scripts/bluesky-export.py && python3 ~/scripts/bluesky-to-md.py</code></pre>
+
+<h2 id="faq">FAQ</h2>
+<div class="faq-item"><h3>Does Bluesky have a native archive export feature?</h3><p>No. Unlike X (Twitter), which has a built-in archive download, Bluesky does not offer a one-click export of your posts. You must use the AT Protocol API, a third-party tool, or request your data directly from your PDS (Personal Data Server).</p></div>
+<div class="faq-item"><h3>What is the difference between Jetstream and the Bluesky API?</h3><p>The standard Bluesky API (app.bsky.feed.getAuthorFeed) returns posts one page at a time and requires authentication. Jetstream is a public WebSocket firehose that streams every new Bluesky post in real time — it is unauthenticated but only carries new posts, not historical ones.</p></div>
+<div class="faq-item"><h3>Can I export Bluesky posts to Markdown?</h3><p>Yes. Once you fetch posts via the API, converting them to Markdown is straightforward. ThreadGrab handles Bluesky thread exports to clean Markdown automatically. For manual exports, a small Python script using the atproto library can generate one Markdown file per post.</p></div>
+<div class="faq-item"><h3>Is it legal to archive someone else's Bluesky posts?</h3><p>Bluesky content is public by default, but archiving another user's posts raises ethical and legal questions. The AT Protocol ToS permits personal archival use. Always respect copyright, don't republish without permission, and follow Bluesky's community guidelines.</p></div>
+<div class="faq-item"><h3>What happens to my Bluesky posts if my PDS shuts down?</h3><p>If your Personal Data Server shuts down, your account and posts become inaccessible unless you have migrated to a new PDS or exported your data. The AT Protocol supports account migration, but you must initiate it before your PDS goes offline. Regular exports are the only guaranteed backup.</p></div>
+
+<h2>Bottom Line</h2>
+
+<p>Bluesky's lack of a native export is a feature of its decentralized design, not an oversight. The AT Protocol makes your data more portable than any proprietary platform — but portability requires you to actually port it. Pick one of the four methods above, run your first export today, and set a recurring job so your archive stays current. The posts you wrote in 2024 will thank you in 2030.</p>
+
+<div class="cta">
+  <h3>Archive Bluesky threads to Markdown — automatically</h3>
+  <p style="margin-bottom: 8px;">ThreadGrab exports Bluesky threads, X Articles, and LinkedIn Newsletter issues to clean Markdown. One command, portable output, no lock-in.</p>
+  <a href="/en/" class="cta-btn">Try ThreadGrab →</a>
+</div>
+
+<p><em>Sources: <a href="https://atproto.com/guides/applications">AT Protocol documentation</a>, <a href="https://github.com/bluesky-social/jetstream">Bluesky Jetstream on GitHub</a>. Code examples verified against the atproto Python SDK v0.0.59.</em></p>
+
+  </main>
+
+  <footer>
+    <a href="/en/">Home</a>
+    <a href="/en/blog/">Blog</a>
+    <a href="/en/about/">About</a>
+    <a href="/en/privacy/">Privacy</a>
+    <span style="margin-left:12px;">© 2026 ThreadGrab</span>
+  </footer>
+</body>
+</html>

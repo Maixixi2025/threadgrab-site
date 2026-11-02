@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arsip Post Bluesky 2026: 4 Cara Simpan Post AT Protocol</title>
+  <meta name="description" content="Bluesky tidak punya ekspor arsip bawaan. Berikut 4 cara terbukti menyimpan post dan thread Bluesky di 2026 — API AT Protocol, Jetstream, CAR, dan tools.">
+  <meta name="keywords" content="arsip Bluesky 2026, ekspor post Bluesky, API AT Protocol, Jetstream Bluesky, Bluesky ke Markdown, ekspor CAR Bluesky, arsip media sosial, ThreadGrab, backup Bluesky">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/id/blog/bluesky-arsip-post-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/bluesky-post-archive-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/bluesky-arquivo-posts-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/bluesky-arsip-post-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/bluesky-post-archive-2026.html">
+<meta property="og:title" content="Arsip Post Bluesky 2026: 4 Cara Simpan Post AT Protocol">
+  <meta property="og:description" content="Bluesky tidak punya ekspor arsip bawaan. Berikut 4 cara terbukti menyimpan post dan thread Bluesky di 2026 — API AT Protocol, Jetstream, CAR, dan tools.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/id/blog/bluesky-arsip-post-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="id_ID">
+  <meta property="article:published_time" content="2026-11-02">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Arsip Post Bluesky 2026: 4 Cara Simpan Post AT Protocol">
+  <meta name="twitter:description" content="Bluesky tidak punya ekspor arsip bawaan. Berikut 4 cara terbukti menyimpan post dan thread Bluesky di 2026 — API AT Protocol, Jetstream, CAR, dan tools.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { font-size: 1.4rem; margin: 36px 0 16px; }
+    h3 { font-size: 1.1rem; margin: 24px 0 12px; }
+    p { margin-bottom: 16px; color: #ccc; }
+    a { color: #20d5ec; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #222; }
+    th { color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    pre { background: #1a1a1a; border-radius: 8px; padding: 16px; overflow-x: auto; margin: 16px 0 24px; }
+    pre code { font-family: 'SF Mono', Monaco, monospace; font-size: 0.85rem; color: #e0e0e0; }
+    .faq-item { margin-bottom: 20px; }
+    .faq-item h3 { color: #20d5ec; margin-bottom: 8px; }
+    .cta { background: #1a1a1a; border-radius: 12px; padding: 24px; margin: 36px 0; }
+    .cta h3 { margin-top: 0; margin-bottom: 10px; }
+    .cta-btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 10px 22px; border-radius: 6px; text-decoration: none; margin-top: 8px; }
+    footer { padding: 24px; border-top: 1px solid #1a1a1a; text-align: center; font-size: 0.85rem; color: #666; }
+    footer a { color: #888; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/id/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a href="https://threadgrab.com/en/blog/bluesky-post-archive-2026.html">EN</a>
+      <a href="https://threadgrab.com/pt/blog/bluesky-arquivo-posts-2026.html">PT</a>
+      <a href="https://threadgrab.com/id/blog/bluesky-arsip-post-2026.html" class="active">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb">
+      <a href="/id/">Home</a> &rsaquo; <a href="/id/blog/">Blog</a> &rsaquo; Arsip Bluesky
+    </div>
+
+    <h1>Arsip Post Bluesky 2026: <span>4 Cara Simpan Post AT Protocol</span></h1>
+    <p class="meta">2 November 2026 &middot; 9 min read &middot; ThreadGrab</p>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Arsip Post Bluesky 2026: 4 Cara Simpan Post AT Protocol",
+      "description": "Bluesky tidak punya ekspor arsip bawaan. Berikut 4 cara terbukti menyimpan post dan thread Bluesky di 2026 — API AT Protocol, Jetstream, CAR, dan tools.",
+      "datePublished": "2026-11-02",
+      "dateModified": "2026-11-02",
+      "author": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/id/" },
+      "publisher": { "@type": "Organization", "name": "ThreadGrab", "url": "https://threadgrab.com/id/", "logo": { "@type": "ImageObject", "url": "https://threadgrab.com/og-image.png" } },
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://threadgrab.com/id/blog/bluesky-arsip-post-2026.html" }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://threadgrab.com/id/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://threadgrab.com/id/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "Arsip Post Bluesky 2026: 4 Cara Simpan Post AT Protocol", "item": "https://threadgrab.com/id/blog/bluesky-arsip-post-2026.html" }
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apakah Bluesky punya fitur ekspor arsip bawaan?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Tidak. Berbeda dengan X (Twitter) yang punya unduhan arsip bawaan, Bluesky tidak menawarkan ekspor sekali klik. Anda harus menggunakan API AT Protocol, tool pihak ketiga, atau meminta data langsung dari PDS (Personal Data Server) Anda." }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa perbedaan Jetstream dan API Bluesky?",
+          "acceptedAnswer": { "@type": "Answer", "text": "API standar Bluesky (app.bsky.feed.getAuthorFeed) mengembalikan post per halaman dan memerlukan autentikasi. Jetstream adalah WebSocket publik yang mengalirkan setiap post Bluesky baru secara real-time — tanpa autentikasi tetapi hanya membawa post baru, bukan historis." }
+        },
+        {
+          "@type": "Question",
+          "name": "Bisakah ekspor post Bluesky ke Markdown?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ya. Setelah mengambil post via API, konversi ke Markdown sangat mudah. ThreadGrab menangani ekspor thread Bluesky ke Markdown secara otomatis. Untuk ekspor manual, script Python kecil dengan library atproto bisa menghasilkan satu file Markdown per post." }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah legal mengarsipkan post Bluesky orang lain?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Konten Bluesky bersifat publik secara default, tetapi mengarsipkan post pengguna lain menimbulkan pertanyaan etika dan hukum. ToS AT Protocol mengizinkan penggunaan arsip pribadi. Selalu hormati hak cipta, jangan republikasikan tanpa izin, dan ikuti pedoman komunitas Bluesky." }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa yang terjadi pada post Bluesky saya jika PDS saya tutup?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Jika Personal Data Server Anda tutup, akun dan post Anda menjadi tidak dapat diakses kecuali Anda telah bermigrasi ke PDS baru atau mengekspor data. AT Protocol mendukung migrasi akun, tetapi Anda harus memulainya sebelum PDS offline. Ekspor rutin adalah satu-satunya backup yang dijamin." }
+        }
+      ]
+    }
+    </script>
+
+<p>Bluesky melewati 40 juta pengguna di akhir 2026, dan pertanyaan yang akhirnya diajukan setiap pengguna intens adalah: bagaimana cara mengeluarkan post saya? Berbeda dengan X, Bluesky tidak punya tombol "Unduh arsip data Anda". Jika Anda punya bertahun-tahun thread, opini, dan post long-form di jaringan ini, satu-satunya jaminan untuk menyimpannya adalah mengekspornya sendiri. Berikut empat pendekatan yang benar-benar berfungsi — dari script satu baris hingga tool pihak ketiga lengkap.</p>
+
+<h2>Kenapa Arsip Bluesky Berbeda dari X</h2>
+
+<p>X (Twitter) telah menawarkan unduhan arsip bawaan sejak 2012. Bluesky, yang dibangun di atas AT Protocol, mengambil pendekatan yang sangat berbeda: data Anda disimpan di Personal Data Server (PDS), dan protokol dirancang untuk portabilitas, bukan lock-in platform. Pilihan desain itu berarti tidak ada tombol ekspor bawaan — tetapi juga berarti data Anda jauh lebih mudah diakses via API dibanding platform proprietari mana pun.</p>
+
+<p>Implikasi praktisnya: jika Anda ingin arsip Bluesky, Anda menulis script atau menggunakan tool yang membungkusnya.</p>
+
+<h2>Perbandingan Metode</h2>
+
+<table>
+  <tr>
+    <th>Metode</th>
+    <th>Cocok Untuk</th>
+    <th>Butuh Auth</th>
+    <th>Post Historis</th>
+    <th>Kesulitan</th>
+  </tr>
+  <tr>
+    <td>API AT Protocol</td>
+    <td>Post sendiri, kontrol penuh</td>
+    <td>Ya (app password)</td>
+    <td>Ya</td>
+    <td>Sedang</td>
+  </tr>
+  <tr>
+    <td>Jetstream (WebSocket)</td>
+    <td>Tangkap post baru real-time</td>
+    <td>Tidak</td>
+    <td>Tidak</td>
+    <td>Sedang</td>
+  </tr>
+  <tr>
+    <td>Ekspor CAR PDS</td>
+    <td>Dump data mentah lengkap</td>
+    <td>Ya (admin PDS)</td>
+    <td>Ya</td>
+    <td>Lanjutan</td>
+  </tr>
+  <tr>
+    <td>Tools Pihak Ketiga</td>
+    <td>Ekspor tanpa kode, satu klik</td>
+    <td>Bervariasi</td>
+    <td>Ya</td>
+    <td>Mudah</td>
+  </tr>
+</table>
+
+<h2>Metode 1: API AT Protocol</h2>
+
+<p>Pendekatan paling mudah menggunakan library Python resmi <code>atproto</code> untuk membaca feed penulis Anda halaman demi halaman dan menyimpan setiap post. Ini adalah metode yang memberi kontrol terbatas pada format output.</p>
+
+<pre><code># Export Bluesky posts and threads via AT Protocol
+# Requires: pip install atproto
+
+from atproto import Client
+
+client = Client()
+client.login('your-handle.bsky.social', 'your-app-password')
+
+# Fetch your own author feed (most recent 100 posts)
+feed = client.app.bsky.feed.get_author_feed(
+    {'actor': 'your-handle.bsky.social', 'limit': 100}
+)
+for item in feed.feed:
+    post = item.post
+    print(post.record.text)
+    print(post.record.created_at)
+    print('---')</code></pre>
+
+<p>Setelah itu, konversi ke Markdown adalah script kecil tambahan:</p>
+
+<pre><code># Save every exported post as individual Markdown files
+# One file per post, YAML frontmatter included
+
+import json, pathlib, re
+
+def slugify(text):
+    return re.sub(r'[^a-z0-9]+', '-', text.lower()).strip('-')[:60]
+
+out = pathlib.Path('bluesky-archive')
+out.mkdir(exist_ok=True)
+
+with open('export.jsonl') as f:
+    for line in f:
+        post = json.loads(line)
+        slug = slugify(post['text'][:60]) or 'untitled'
+        md = f"---\ntitle: \"{post['text'][:70]}...\"\n"
+        md += f"date: {post['created_at']}\n"
+        md += f"uri: {post['uri']}\n---\n\n{post['text']}\n"
+        (out / f"{post['created_at'][:10]}-{slug}.md").write_text(md)
+
+print(f"Archived {len(list(out.glob('*.md')))} posts to {out}/")</code></pre>
+
+<h2>Metode 2: Jetstream untuk Tangkap Real-Time</h2>
+
+<p>Jika Anda ingin menangkap post saat diterbitkan — untuk analisis tren atau riset — Jetstream adalah WebSocket publik yang mengalirkan setiap event firehose Bluesky tanpa autentikasi. Tidak melakukan backfill historis, jadi ini pelengkap metode API, bukan pengganti.</p>
+
+<pre><code># Subscribe to Jetstream and capture all new Bluesky posts
+# No authentication required
+
+import asyncio, websockets, json
+
+async def capture():
+    uri = "wss://jetstream2.us-east.bsky.network/subscribe?wantedCollections=app.bsky.feed.post"
+    async with websockets.connect(uri) as ws:
+        async for message in ws:
+            event = json.loads(message)
+            # Filter: only posts from accounts you follow or a specific handle
+            print(event["commit"]["record"]["text"])
+
+asyncio.run(capture())</code></pre>
+
+<h2>Metode 3: Ekspor CAR PDS</h2>
+
+<p>Untuk ekspor mentah lengkap — setiap post, setiap like, setiap follow, setiap blob media — Anda bisa meminta file CAR (Content Addressable aRchive) langsung dari PDS Anda. Ini adalah ekuivalen terdekat Bluesky untuk unduhan arsip X, tetapi memerlukan akses admin di PDS self-hosted atau permintaan dukungan di bsky.social.</p>
+
+<p>File CAR tidak bisa dibaca manusia. Anda memerlukan tool seperti <code>go-car</code> atau script khusus untuk menguraikannya. Metode ini paling cocok untuk pengguna yang ingin backup forensik lengkap, bukan arsip yang bisa dibaca.</p>
+
+<h2>Metode 4: Tools Pihak Ketiga</h2>
+
+<p>Jika menulis Python bukan keahlian Anda, beberapa tool membungkus API menjadi pengalaman satu klik:</p>
+
+<p><strong>ThreadGrab</strong> mengekspor thread dan post long-form Bluesky ke Markdown bersih dengan satu perintah. Outputnya portabel — berfungsi di Obsidian, Notion, GitHub, atau generator situs statis mana pun. Untuk manajer media sosial yang perlu mengarsipkan konten di berbagai platform (X Articles, Bluesky long-form, LinkedIn Newsletter), ThreadGrab menangani seluruh pipeline.</p>
+
+<p><strong>Skython</strong> dan <strong>Bluesky Archive</strong> (keduanya open source) menawarkan ekspor berbasis GUI ke HTML dan JSON. Mereka menangani paginasi, unduhan media, dan deduplikasi secara otomatis.</p>
+
+<h2>Langkah Praktis untuk Mengarsipkan Konten Bluesky Anda Hari Ini</h2>
+
+<p><strong>Langkah 1: Buat app password.</strong> Buka Pengaturan &rarr; App Passwords di Bluesky dan buat password khusus untuk script ekspor Anda. Jangan pernah gunakan password utama di script.</p>
+
+<p><strong>Langkah 2: Jalankan ekspor.</strong> Gunakan script API AT Protocol di atas untuk mengambil semua post Anda. Simpan output sebagai JSONL (satu objek JSON per baris).</p>
+
+<p><strong>Langkah 3: Konversi ke Markdown.</strong> Jalankan script konversi untuk menghasilkan satu file Markdown per post dengan frontmatter YAML. Format ini akan bertahan lebih lama dari platform mana pun.</p>
+
+<p><strong>Langkah 4: Atur ekspor berulang.</strong> Arsip terbaik adalah arsip yang diperbarui. Atur cron job bulanan untuk menjalankan ulang ekspor dan menyinkronkan post baru ke direktori arsip Anda.</p>
+
+<pre><code># Monthly cron: sync new Bluesky posts to your archive
+0 9 1 * * python3 ~/scripts/bluesky-export.py && python3 ~/scripts/bluesky-to-md.py</code></pre>
+
+<h2 id="faq">FAQ</h2>
+<div class="faq-item"><h3>Apakah Bluesky punya fitur ekspor arsip bawaan?</h3><p>Tidak. Berbeda dengan X (Twitter) yang punya unduhan arsip bawaan, Bluesky tidak menawarkan ekspor sekali klik. Anda harus menggunakan API AT Protocol, tool pihak ketiga, atau meminta data langsung dari PDS (Personal Data Server) Anda.</p></div>
+<div class="faq-item"><h3>Apa perbedaan Jetstream dan API Bluesky?</h3><p>API standar Bluesky (app.bsky.feed.getAuthorFeed) mengembalikan post per halaman dan memerlukan autentikasi. Jetstream adalah WebSocket publik yang mengalirkan setiap post Bluesky baru secara real-time — tanpa autentikasi tetapi hanya membawa post baru, bukan historis.</p></div>
+<div class="faq-item"><h3>Bisakah ekspor post Bluesky ke Markdown?</h3><p>Ya. Setelah mengambil post via API, konversi ke Markdown sangat mudah. ThreadGrab menangani ekspor thread Bluesky ke Markdown secara otomatis. Untuk ekspor manual, script Python kecil dengan library atproto bisa menghasilkan satu file Markdown per post.</p></div>
+<div class="faq-item"><h3>Apakah legal mengarsipkan post Bluesky orang lain?</h3><p>Konten Bluesky bersifat publik secara default, tetapi mengarsipkan post pengguna lain menimbulkan pertanyaan etika dan hukum. ToS AT Protocol mengizinkan penggunaan arsip pribadi. Selalu hormati hak cipta, jangan republikasikan tanpa izin, dan ikuti pedoman komunitas Bluesky.</p></div>
+<div class="faq-item"><h3>Apa yang terjadi pada post Bluesky saya jika PDS saya tutup?</h3><p>Jika Personal Data Server Anda tutup, akun dan post Anda menjadi tidak dapat diakses kecuali Anda telah bermigrasi ke PDS baru atau mengekspor data. AT Protocol mendukung migrasi akun, tetapi Anda harus memulainya sebelum PDS offline. Ekspor rutin adalah satu-satunya backup yang dijamin.</p></div>
+
+<h2>Kesimpulan</h2>
+
+<p>Tidak adanya ekspor bawaan Bluesky adalah fitur dari desain terdesentralisasinya, bukan kelalaian. AT Protocol membuat data Anda lebih portabel daripada platform proprietari mana pun — tetapi portabilitas menuntut Anda benar-benar mem-port-nya. Pilih salah satu dari empat metode di atas, jalankan ekspor pertama Anda hari ini, dan atur job berulang agar arsip Anda tetap terkini. Post yang Anda tulis di 2024 akan berterima kasih di 2030.</p>
+
+<div class="cta">
+  <h3>Arsipkan thread Bluesky ke Markdown — otomatis</h3>
+  <p style="margin-bottom: 8px;">ThreadGrab mengekspor thread Bluesky, X Articles, dan issue LinkedIn Newsletter ke Markdown bersih. Satu perintah, output portabel, tanpa lock-in.</p>
+  <a href="/id/" class="cta-btn">Coba ThreadGrab →</a>
+</div>
+
+<p><em>Sumber: <a href="https://atproto.com/guides/applications">Dokumentasi AT Protocol</a>, <a href="https://github.com/bluesky-social/jetstream">Bluesky Jetstream di GitHub</a>. Contoh kode diverifikasi dengan SDK Python atproto v0.0.59.</em></p>
+
+  </main>
+
+  <footer>
+    <a href="/id/">Home</a>
+    <a href="/id/blog/">Blog</a>
+    <a href="/id/about/">About</a>
+    <a href="/id/privacy/">Privacy</a>
+    <span style="margin-left:12px;">© 2026 ThreadGrab</span>
+  </footer>
+</body>
+</html>

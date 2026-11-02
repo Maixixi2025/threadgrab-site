@@ -2,17 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://threadgrab.com/en/blog/octoverse-2026-agent-drafted-pull-requests-social-content-2026.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/octoverse-2026-agent-drafted-pull-requests-social-content-2026.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/octoverse-2026-pull-requests-roteadas-agentes-conteudo-social-2026.html"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/octoverse-2026-pull-request-draf-agen-konten-sosial-2026.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/octoverse-2026-agent-drafted-pull-requests-social-content-2026.html"/>
-    <lastmod>2026-10-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
     <loc>https://threadgrab.com/en/blog/ai-assisted-social-content-human-voice-2026.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/ai-assisted-social-content-human-voice-2026.html"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/conteudo-social-com-voz-humana-2026.html"/>
@@ -117,6 +106,16 @@
     <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/bluesky-bentuk-panjang-vs-x-articles-linkedin-newsletter-2026.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/bluesky-long-form-vs-x-articles-linkedin-newsletter-2026.html"/>
     <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://threadgrab.com/en/blog/bluesky-long-form-vs-x-articles-vs-linkedin-newsletter-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/bluesky-long-form-vs-x-articles-vs-linkedin-newsletter-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/bluesky-long-form-x-articles-linkedin-newsletter-comparacao-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/bluesky-long-form-x-articles-linkedin-newsletter-perbandingan-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/bluesky-long-form-vs-x-articles-vs-linkedin-newsletter-2026.html"/>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -231,6 +230,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://threadgrab.com/en/blog/cloudflare-workers-granular-authorization-agent-permission-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/cloudflare-workers-granular-authorization-agent-permission-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/cloudflare-workers-autorizacao-granular-agente-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/cloudflare-workers-otorisasi-granular-agen-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/cloudflare-workers-granular-authorization-agent-permission-2026.html"/>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://threadgrab.com/en/blog/crawlie-seo-crawler-tools-2026.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/crawlie-seo-crawler-tools-2026.html"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/crawlie-seo-crawler-tools-2026.html"/>
@@ -251,12 +260,32 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://threadgrab.com/en/blog/discord-public-servers-google-indexing-social-content-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/discord-public-servers-google-indexing-social-content-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/discord-servidores-publicos-indexacao-google-conteudo-social-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/discord-server-publik-pengindeksan-google-konten-sosial-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/discord-public-servers-google-indexing-social-content-2026.html"/>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://threadgrab.com/en/blog/gemini-managed-agents-threadgrab-mcp-2026.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/gemini-managed-agents-threadgrab-mcp-2026.html"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/gemini-managed-agents-threadgrab-mcp-2026.html"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/gemini-managed-agents-threadgrab-mcp-2026.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/gemini-managed-agents-threadgrab-mcp-2026.html"/>
     <lastmod>2026-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://threadgrab.com/en/blog/google-ai-mode-publisher-payout-pilot-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/google-ai-mode-publisher-payout-pilot-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/google-ai-mode-pagamento-editora-piloto-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/google-ai-mode-pembayaran-penerbit-pilot-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/google-ai-mode-publisher-payout-pilot-2026.html"/>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -481,6 +510,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://threadgrab.com/en/blog/octoverse-2026-agent-drafted-pull-requests-social-content-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/octoverse-2026-agent-drafted-pull-requests-social-content-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/octoverse-2026-pull-requests-roteadas-agentes-conteudo-social-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/octoverse-2026-pull-request-draf-agen-konten-sosial-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/octoverse-2026-agent-drafted-pull-requests-social-content-2026.html"/>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://threadgrab.com/en/blog/openrouter-mcp-server-social-content-creators-2026.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/openrouter-mcp-server-social-content-creators-2026.html"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/openrouter-mcp-server-social-content-creators-2026.html"/>
@@ -567,6 +606,16 @@
     <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/shadowbroker-mcp-osint-social-creators-2026.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/shadowbroker-mcp-osint-social-creators-2026.html"/>
     <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://threadgrab.com/en/blog/show-hn-markdown-convert-format-tools-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/show-hn-markdown-convert-format-tools-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/show-hn-markdown-convert-format-tools-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/show-hn-markdown-convert-format-tools-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/show-hn-markdown-convert-format-tools-2026.html"/>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -751,6 +800,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://threadgrab.com/en/blog/x-articles-audio-export-markdown-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/x-articles-audio-export-markdown-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/x-articles-audio-export-markdown-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/x-articles-audio-export-markdown-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/x-articles-audio-export-markdown-2026.html"/>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://threadgrab.com/en/blog/x-articles-bluesky-scraping-frontier-2026.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/x-articles-bluesky-scraping-frontier-2026.html"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/x-articles-bluesky-scraping-frontier-2026.html"/>
@@ -781,6 +840,14 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://threadgrab.com/en/blog/x-articles-platform-update-seo-metadata-longform-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/x-articles-platform-update-seo-metadata-longform-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/x-articles-platform-update-seo-metadata-longform-2026.html"/>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://threadgrab.com/en/blog/x-articles-rich-media-premium-plus-2026.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/x-articles-rich-media-premium-plus-2026.html"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/x-articles-rich-media-premium-plus-2026.html"/>
@@ -807,6 +874,16 @@
     <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/x-articles-vs-bluesky-vs-linkedin-newsletter-2026.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/x-articles-vs-bluesky-vs-linkedin-newsletter-2026.html"/>
     <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://threadgrab.com/en/blog/x-articles-vs-instagram-long-form-video-platform-war-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/x-articles-vs-instagram-long-form-video-platform-war-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/x-articles-vs-instagram-video-longo-guerra-plataformas-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/x-articles-vs-instagram-video-panjang-perang-platform-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/x-articles-vs-instagram-long-form-video-platform-war-2026.html"/>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -911,6 +988,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://threadgrab.com/en/blog/x-trend-tracker-tools-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/x-trend-tracker-tools-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/x-trend-tracker-tools-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/x-trend-tracker-tools-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/x-trend-tracker-tools-2026.html"/>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://threadgrab.com/en/blog/x-twitter-archive-cleanup-2026.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/x-twitter-archive-cleanup-2026.html"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/limpeza-arquivo-x-twitter-2026.html"/>
@@ -929,10 +1016,26 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://threadgrab.com/id/blog/x-articles-platform-update-seo-metadata-longform-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/x-articles-platform-update-seo-metadata-longform-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/id/blog/x-articles-platform-update-seo-metadata-longform-2026.html"/>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://threadgrab.com/pt/blog/ai-social-content-provenance-2026.html</loc>
     <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/ai-social-content-provenance-2026.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/pt/blog/ai-social-content-provenance-2026.html"/>
     <lastmod>2026-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://threadgrab.com/pt/blog/x-articles-platform-update-seo-metadata-longform-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/x-articles-platform-update-seo-metadata-longform-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/pt/blog/x-articles-platform-update-seo-metadata-longform-2026.html"/>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1027,34 +1130,13 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://threadgrab.com/en/blog/show-hn-markdown-convert-format-tools-2026.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/show-hn-markdown-convert-format-tools-2026.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/show-hn-markdown-convert-format-tools-2026.html"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/show-hn-markdown-convert-format-tools-2026.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/show-hn-markdown-convert-format-tools-2026.html"/>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://threadgrab.com/en/blog/google-ai-mode-publisher-payout-pilot-2026.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/google-ai-mode-publisher-payout-pilot-2026.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/google-ai-mode-pagamento-editora-piloto-2026.html"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/google-ai-mode-pembayaran-penerbit-pilot-2026.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/google-ai-mode-publisher-payout-pilot-2026.html"/>
-    <lastmod>2026-09-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-<url>
-    <loc>https://threadgrab.com/en/blog/cloudflare-workers-granular-authorization-agent-permission-2026.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/cloudflare-workers-granular-authorization-agent-permission-2026.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/cloudflare-workers-autorizacao-granular-agente-2026.html"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/cloudflare-workers-otorisasi-granular-agen-2026.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/cloudflare-workers-granular-authorization-agent-permission-2026.html"/>
-    <lastmod>2026-09-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://threadgrab.com/en/blog/bluesky-post-archive-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/bluesky-post-archive-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/bluesky-arquivo-posts-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/bluesky-arsip-post-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/bluesky-post-archive-2026.html"/>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
