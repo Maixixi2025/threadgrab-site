@@ -7753,6 +7753,63 @@
         "ThreadGrab"
       ],
       "primary_cta": "ThreadGrab Bluesky export"
+    },
+    {
+      "slug": "medium-tk-draft-layer-provenance-2026",
+      "date": "2026-11-10",
+      "type": "daily-article",
+      "lang": "en",
+      "file": "en/blog/medium-tk-draft-layer-provenance-2026.html",
+      "url": "https://threadgrab.com/en/blog/medium-tk-draft-layer-provenance-2026.html",
+      "title": "Medium TK 2026: Private Drafts, AI Provenance, Archives",
+      "description": "Medium launched TK in November 2026: a free private writing app with AI in the editor, Markdown export, and AI-provenance notes. What it changes.",
+      "heat_source": "3ea88f8bb2d0/2026-11-10 brief ⭐ Medium TK launch",
+      "status": "live",
+      "published_at": "2026-11-10T04:14:55Z",
+      "providers_featured": [
+        "Medium",
+        "Medium TK",
+        "ThreadGrab"
+      ],
+      "primary_cta": "ThreadGrab export to Markdown"
+    },
+    {
+      "slug": "medium-tk-camada-rascunho-proveniencia-2026",
+      "date": "2026-11-10",
+      "type": "daily-article",
+      "lang": "pt",
+      "file": "pt/blog/medium-tk-camada-rascunho-proveniencia-2026.html",
+      "url": "https://threadgrab.com/pt/blog/medium-tk-camada-rascunho-proveniencia-2026.html",
+      "title": "Medium TK 2026: Rascunhos Privados e Proveniencia de IA",
+      "description": "A Medium lancou o TK em novembro de 2026: app de escrita privado e gratuito, IA no editor, exportacao em Markdown e notas de proveniencia de IA.",
+      "heat_source": "3ea88f8bb2d0/2026-11-10 brief ⭐ Medium TK launch",
+      "status": "live",
+      "published_at": "2026-11-10T04:14:55Z",
+      "providers_featured": [
+        "Medium",
+        "Medium TK",
+        "ThreadGrab"
+      ],
+      "primary_cta": "ThreadGrab exportar para Markdown"
+    },
+    {
+      "slug": "medium-tk-lapisan-draf-provenansi-2026",
+      "date": "2026-11-10",
+      "type": "daily-article",
+      "lang": "id",
+      "file": "id/blog/medium-tk-lapisan-draf-provenansi-2026.html",
+      "url": "https://threadgrab.com/id/blog/medium-tk-lapisan-draf-provenansi-2026.html",
+      "title": "Medium TK 2026: Draf Privat, Provenansi AI, Arsip",
+      "description": "Medium meluncurkan TK pada November 2026: aplikasi tulis privat gratis dengan AI di editor, ekspor Markdown, dan catatan provenansi AI.",
+      "heat_source": "3ea88f8bb2d0/2026-11-10 brief ⭐ Medium TK launch",
+      "status": "live",
+      "published_at": "2026-11-10T04:14:55Z",
+      "providers_featured": [
+        "Medium",
+        "Medium TK",
+        "ThreadGrab"
+      ],
+      "primary_cta": "ThreadGrab ekspor ke Markdown"
     }
   ],
   "drafts": [

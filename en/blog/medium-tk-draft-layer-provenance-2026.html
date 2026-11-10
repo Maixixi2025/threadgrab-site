@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medium TK 2026: Private Drafts, AI Provenance, Archives</title>
+  <meta name="description" content="Medium launched TK in November 2026: a free private writing app with AI in the editor, Markdown export, and AI-provenance notes. What it changes.">
+  <meta name="keywords" content="Medium TK 2026, Medium TK app, AI provenance writing, AI disclosure notes, Markdown export writing app, private draft app, Medium export archive, Claude skill writing, MCP server notes, ThreadGrab, social content archive">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/en/blog/medium-tk-draft-layer-provenance-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/medium-tk-draft-layer-provenance-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/medium-tk-camada-rascunho-proveniencia-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/medium-tk-lapisan-draf-provenansi-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/medium-tk-draft-layer-provenance-2026.html">
+<meta property="og:title" content="Medium TK 2026: Private Drafts, AI Provenance, Archives">
+  <meta property="og:description" content="Medium launched TK in November 2026: a free private writing app with AI in the editor, Markdown export, and AI-provenance notes. What it changes.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/en/blog/medium-tk-draft-layer-provenance-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:published_time" content="2026-11-10">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Medium TK 2026: Private Drafts, AI Provenance, Archives">
+  <meta name="twitter:description" content="Medium launched TK in November 2026: a free private writing app with AI in the editor, Markdown export, and AI-provenance notes. What it changes.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { font-size: 1.4rem; margin: 36px 0 16px; }
+    h3 { font-size: 1.1rem; margin: 24px 0 12px; }
+    p { margin-bottom: 16px; color: #ccc; }
+    a { color: #20d5ec; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #222; }
+    th { color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    pre { background: #1a1a1a; border-radius: 8px; padding: 16px; overflow-x: auto; margin: 16px 0 24px; }
+    pre code { font-family: 'SF Mono', Monaco, monospace; font-size: 0.85rem; color: #e0e0e0; }
+    .faq-item { margin-bottom: 20px; }
+    .faq-item h3 { color: #20d5ec; margin-bottom: 8px; }
+    .cta { background: #1a1a1a; border-radius: 12px; padding: 24px; margin: 36px 0; }
+    .cta h3 { margin-top: 0; margin-bottom: 10px; }
+    .cta-btn { display: inline-block; background: #20d5ec; color: #000; font-weight: 600; padding: 10px 22px; border-radius: 6px; text-decoration: none; margin-top: 8px; }
+    footer { padding: 24px; border-top: 1px solid #1a1a1a; text-align: center; font-size: 0.85rem; color: #666; }
+    footer a { color: #888; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/en/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a href="https://threadgrab.com/en/blog/medium-tk-draft-layer-provenance-2026.html" class="active">EN</a>
+      <a href="https://threadgrab.com/pt/blog/medium-tk-camada-rascunho-proveniencia-2026.html">PT</a>
+      <a href="https://threadgrab.com/id/blog/medium-tk-lapisan-draf-provenansi-2026.html">ID</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb">
+      <a href="/en/">Home</a> &rsaquo; <a href="/en/blog/">Blog</a> &rsaquo; Medium TK 2026: Private Drafts, AI Provenance, Archives
+    </div>
+
+    <h1>Medium TK 2026: <span>Private Drafts, AI Provenance, Archives</span></h1>
+    <p class="meta">November 10, 2026 &middot; 10 min read &middot; Social Media Tools</p>
+
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Medium TK 2026: Private Drafts, AI Provenance, Archives",
+  "description": "Medium launched TK in November 2026: a free private writing app with AI in the editor, Markdown export, and AI-provenance notes. What it changes.",
+  "datePublished": "2026-11-10",
+  "dateModified": "2026-11-10",
+  "author": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/en/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/en/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://threadgrab.com/og-image.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://threadgrab.com/en/blog/medium-tk-draft-layer-provenance-2026.html"
+  }
+}
+    </script>
+
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://threadgrab.com/en/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://threadgrab.com/en/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Medium TK 2026: Private Drafts, AI Provenance, Archives",
+      "item": "https://threadgrab.com/en/blog/medium-tk-draft-layer-provenance-2026.html"
+    }
+  ]
+}
+    </script>
+
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Medium TK and who can use it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TK is a free writing and note-taking app Medium launched on 9 November 2026. It is available on the web to anyone with a Medium account, and Medium says a desktop app is on the roadmap. You call the AI assistant by typing @TK followed by your request."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is TK free, and do I need a Medium account?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, TK is free, and yes, it needs a Medium account. Medium states the tool is free for account holders and that the company is profitable, so the account requirement is a funnel rather than a paywall. Your notes stay in your account unless you export them."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does TK replace publishing on Medium?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. TK sits before publishing. A draft can stay private, be shared with a handful of readers inside a small group, or move on to Medium's publishing platform. Medium's CEO Tony Stubblebine puts it as: TK is the gym and Medium is the stage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does TK export to Markdown, and is TK a Markdown app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TK can import and export Markdown, and Medium is explicit that TK is not a Markdown app itself. You can also import your Medium archive and notes from Bear and Obsidian. The practical consequence is that Markdown is the interchange format between TK and the rest of your toolchain, while the editor itself stays Medium's."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is TK's AI disclosure different from LinkedIn's AI label?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LinkedIn's badge collapses the signal into one word, decided by the platform's classifier, and can be reversed overnight. TK lets the author publish a note explaining how AI was used, right down to the prompting and source material, so the evidence stays with the record instead of the verdict."
+      }
+    }
+  ]
+}
+    </script>
+<p>On 9 November 2026, Medium launched TK &mdash; a free writing and note-taking app for people with a Medium account. The launch story is a traffic story: Medium gets 44% of its traffic from Google, and CEO Tony Stubblebine told The Verge that those referrals fell "when Google started taking away all the traffic." His answer was to take the writing underground. "We&#39;re just going to take everything underground."</p>
+
+<p>That is the summary. It is not the interesting part.</p>
+
+<p>TK is not a better Medium editor, and it is not another X Articles or LinkedIn Newsletter competitor. It sits one step earlier in the chain, in a layer almost nobody archives: the draft. What TK does is make the pre-publication stage &mdash; where you think, where you use AI, and where you disclose what the AI actually did &mdash; into a first-class, exportable, agent-readable space. That is the part that changes your workflow, and it is the part that quietly creates a new archiving problem.</p>
+
+<h2>What Medium&#39;s TK Actually Is</h2>
+
+<p>The feature list is short enough to read in a minute, and every item matters for what you own afterwards.</p>
+
+<p><strong>Free, web-based, account-gated.</strong> TK launched on the web on 9 November. Medium says a desktop app is on the roadmap. You need a Medium account, and Medium states plainly that the company is profitable &mdash; so the account requirement is a funnel, not a paywall.</p>
+
+<p><strong>An assistant you call with @TK.</strong> Type @TK followed by a request and the assistant answers: how many days are in a given month, or the paragraph you saved last week that you half-remember. Medium says it also gives editorial feedback, headline feedback, matches a draft against a Medium publication&#39;s style guide, and summarises related notes while linking back to the originals.</p>
+
+<p><strong>Import and export, and one honest admission.</strong> You can import your Medium archive and notes from Bear and Obsidian. You can export Markdown. And Medium is explicit about the boundary: the app can import and export Markdown, but it is not a Markdown app itself.</p>
+
+<p><strong>An optional bridge to your own agent.</strong> TK can connect to an external agent through its MCP server or a Claude skill, so the app understands your projects, your positions, and whatever your agent already remembers.</p>
+
+<p><strong>Collaboration, not confidentiality.</strong> The writing in TK is not encrypted, because the app is designed for collaboration. Access-control permissions are there instead.</p>
+
+<p><strong>Provenance at the source.</strong> TK lets authors publish notes that explain how AI was used, and Medium describes the goal directly: "make the provenance of writing clear, transparent, and inspectable, right down to the prompting and source material."</p>
+
+<h2>The Three Layers of a 2026 Post</h2>
+
+<p>Once you place TK on a map, the rest gets simple. A piece of social content now moves through three layers, and the interesting question is which one your tools actually capture.</p>
+
+<table>
+  <tr>
+    <th>Layer</th>
+    <th>Where it happens</th>
+    <th>Who owns it</th>
+    <th>What survives</th>
+    <th>Archived today?</th>
+  </tr>
+  <tr>
+    <td>Draft</td>
+    <td>Medium TK</td>
+    <td>Medium, via a free app tied to your account</td>
+    <td>Markdown export plus AI-provenance notes</td>
+    <td>Rarely &mdash; most drafts die inside the app</td>
+  </tr>
+  <tr>
+    <td>Publish</td>
+    <td>Medium, X Articles, LinkedIn Newsletter, Bluesky</td>
+    <td>The platform</td>
+    <td>The published post, plus a one-word AI badge or a classifier estimate</td>
+    <td>Yes &mdash; this is what content tools capture</td>
+  </tr>
+  <tr>
+    <td>Archive</td>
+    <td>Your own folder or repository</td>
+    <td>You</td>
+    <td>Markdown files with frontmatter</td>
+    <td>Yes, if you actually run the export</td>
+  </tr>
+</table>
+
+<p>Every content-capture tool on the market works on the middle row. That row is also the one with the least information about how the piece was made. The prompt that shaped the paragraph, the source material you fed in, the draft you rejected &mdash; none of it is on the published post.</p>
+
+<h2>The Provenance Gap Nobody Is Archiving</h2>
+
+<p>Three platforms now show you some signal about AI in writing, and they have quietly chosen incompatible contracts.</p>
+
+<table>
+  <tr>
+    <th>Platform</th>
+    <th>Signal</th>
+    <th>Granularity</th>
+    <th>Decided by</th>
+    <th>Survives a reclassification?</th>
+  </tr>
+  <tr>
+    <td>Medium TK</td>
+    <td>Author disclosure, prompts and source material</td>
+    <td>The actual working</td>
+    <td>You</td>
+    <td>Yes</td>
+  </tr>
+  <tr>
+    <td>Substack</td>
+    <td>"Scan for AI text" (powered by Pangram)</td>
+    <td>An estimated share: human, AI, assisted</td>
+    <td>A classifier</td>
+    <td>No</td>
+  </tr>
+  <tr>
+    <td>LinkedIn</td>
+    <td>"AI-generated" or "AI-assisted" badge</td>
+    <td>One word, plus a hidden score</td>
+    <td>The platform classifier</td>
+    <td>No</td>
+  </tr>
+</table>
+
+<p>Medium&#39;s is the only one that shows the working. Substack&#39;s scan returns an estimate, and LinkedIn&#39;s badge returns a verdict. Both verdicts can be re-litigated by a classifier update that never asks you: when LinkedIn revised its classifier in February 2026, roughly 9% of previously cleared posts were demoted to "AI-assisted" overnight, which is exactly what a one-word verdict invites. A disclosure model does not have that failure mode. If the prompt and the source material are in the record, a reclassification changes a label, not the evidence.</p>
+
+<p>TechCrunch read TK as Medium taking the side that these nuances will not matter in the end. That is a defensible product bet. It is also worth noticing that the disclosure is the part of TK with actual archival value, whichever way the bet resolves.</p>
+
+<h2>Why Medium Is Doing This Now</h2>
+
+<p><strong>The referral tap is running dry.</strong> Medium gets 44% of its traffic from Google and says those referrals are falling. The wider number behind it is worse for publishers: Pew Research Center, analysing March 2025 browsing data, found that users clicked a traditional search result on 8% of Google visits carrying an AI summary, against 15% of visits without one. Google is eating the top of its own funnel, and publishers are the ones paying for it.</p>
+
+<p><strong>Everyone else is hedging too.</strong> Substack now turns a podcast recording into an editable transcript, suggests short clips from a video for Notes or Instagram, and offers "Scan for AI text" powered by Pangram. The whole category is scrambling for a layer that search does not control.</p>
+
+<p><strong>The trust squeeze is real.</strong> In a 2026 survey Medium ran with The Harris Poll, 71% of writers said they had used AI in their writing process in the previous three months, yet 69% said they distrusted AI-assisted writing from other people. Medium&#39;s own framing &mdash; "we are not anti-AI, we are pro-human and that&#39;s why we built TK" &mdash; is aimed straight at that gap.</p>
+
+<p><strong>The economics are simple.</strong> A profitable Medium ships a free writing tool, gets every user into an account, and keeps the published layer for itself. "TK is the gym and Medium is the stage," Stubblebine said. The assistant sits a few keystrokes from every unfinished sentence, which is either a very good drafting tool or a very efficient slop generator. TK ships with disclosure, which is Medium&#39;s answer to that second reading.</p>
+
+<h2>What To Do This Week</h2>
+
+<p><strong>Step 1: Test the export before you trust the app.</strong> Install TK, write one throwaway note, and export it. You are testing the exit, not the editor. If the export is unclear or lossy, you have learned that before you have three drafts in there.</p>
+
+<p><strong>Step 2: Pull your existing notes in.</strong> Import your Medium archive, plus Bear and Obsidian notes if you keep any. What cannot come in cannot come out.</p>
+
+<p><strong>Step 3: Run the export and file it by month.</strong> This is the whole habit, and it takes seconds.</p>
+
+<pre><code># 1. Export from TK
+#    TK (web app) -> Settings -> Export -> Markdown
+#    You get a folder of .md files plus a ZIP of attachments.
+
+# 2. File the export under its month so it stays sortable
+mkdir -p ~/archive/tk/$(date +%Y-%m)
+mv ~/Downloads/tk-export/*.md ~/archive/tk/$(date +%Y-%m)/
+
+# 3. Keep a plain-text manifest of what you exported
+ls -1 ~/archive/tk/$(date +%Y-%m)/*.md > ~/archive/tk/$(date +%Y-%m)/MANIFEST.txt</code></pre>
+
+<p><strong>Step 4: Add frontmatter so the archive survives the next migration.</strong> Plain .md files are fine until you want to know, a year later, whether a note was written by you or started from an AI suggestion. A dozen lines of Python is enough.</p>
+
+<pre><code>#!/usr/bin/env python3
+"""Turn a TK Markdown export into an archive-friendly record.
+
+TK exports plain .md files. This adds YAML frontmatter, flags whether the
+note carried an AI-provenance disclosure, and keeps the original text
+untouched below the frontmatter.
+"""
+import pathlib
+import re
+import datetime
+
+AI_BLOCK = re.compile(
+    r"<!--\s*AI[ _-]?(provenance|usage|disclosure).*?-->", re.I | re.S
+)
+
+
+def slugify(text):
+    return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")[:60] or "untitled"
+
+
+src = pathlib.Path.home() / "archive" / "tk"
+dst = pathlib.Path.home() / "archive" / "tk-md"
+dst.mkdir(parents=True, exist_ok=True)
+
+count = 0
+for md in sorted(src.rglob("*.md")):
+    text = md.read_text(encoding="utf-8", errors="ignore")
+
+    found = AI_BLOCK.search(text)
+    provenance = "present" if found else "none"
+
+    title = ""
+    for line in text.splitlines():
+        if line.startswith("#"):
+            title = line.lstrip("# ").strip()
+            break
+        if line.strip():
+            title = line.strip()
+            break
+
+    head = [
+        "---",
+        'title: "' + title[:80] + '"',
+        "source: tk",
+        "exported: " + datetime.date.today().isoformat(),
+        "provenance: " + provenance,
+        "---",
+        "",
+    ]
+    (dst / (slugify(title) + ".md")).write_text(
+        "\n".join(head) + text, encoding="utf-8"
+    )
+    count += 1
+
+print(str(count) + " TK notes archived to " + str(dst))</code></pre>
+
+<p><strong>Step 5: Keep the published side in the same folder.</strong> The draft is only half the record. ThreadGrab&#39;s public profile endpoint returns clean JSON for a public account, so the same archive directory can hold both your working notes and the public record you published from them.</p>
+
+<pre><code># 4. The published side: ThreadGrab's public profile endpoint
+#    GET /api/profile/{username}  ->  JSON  (rate limit: 10 requests/min per IP)
+
+curl -s "https://threadgrab.com/api/profile/zuck" \
+  -H "Accept: application/json" \
+  | python3 -m json.tool | head -20
+
+# 5. Save it next to your TK drafts, so the archive is one folder
+mkdir -p ~/archive/profiles
+curl -s "https://threadgrab.com/api/profile/zuck" -o ~/archive/profiles/zuck.json</code></pre>
+
+<p><strong>Step 6: Schedule it.</strong> A monthly export you never run is an export you do not have.</p>
+
+<pre><code># 6. Run the export on a schedule, so drafts never pile up unreferenced
+#    (crontab -e)
+
+0 21 * * * cd ~/archive/tk && tar czf ~/archive/tk-backup-$(date +\%Y-\%m-\%d).tgz .</code></pre>
+
+<h2 id="faq">FAQ</h2>
+<div class="faq-item"><h3>What is Medium TK and who can use it?</h3><p>TK is a free writing and note-taking app Medium launched on 9 November 2026. It is available on the web to anyone with a Medium account, and Medium says a desktop app is on the roadmap. You call the AI assistant by typing @TK followed by your request.</p></div>
+<div class="faq-item"><h3>Is TK free, and do I need a Medium account?</h3><p>Yes, TK is free, and yes, it needs a Medium account. Medium states the tool is free for account holders and that the company is profitable, so the account requirement is a funnel rather than a paywall. Your notes stay in your account unless you export them.</p></div>
+<div class="faq-item"><h3>Does TK replace publishing on Medium?</h3><p>No. TK sits before publishing. A draft can stay private, be shared with a handful of readers inside a small group, or move on to Medium's publishing platform. Medium's CEO Tony Stubblebine puts it as: TK is the gym and Medium is the stage.</p></div>
+<div class="faq-item"><h3>Does TK export to Markdown, and is TK a Markdown app?</h3><p>TK can import and export Markdown, and Medium is explicit that TK is not a Markdown app itself. You can also import your Medium archive and notes from Bear and Obsidian. The practical consequence is that Markdown is the interchange format between TK and the rest of your toolchain, while the editor itself stays Medium's.</p></div>
+<div class="faq-item"><h3>How is TK's AI disclosure different from LinkedIn's AI label?</h3><p>LinkedIn's badge collapses the signal into one word, decided by the platform's classifier, and can be reversed overnight. TK lets the author publish a note explaining how AI was used, right down to the prompting and source material, so the evidence stays with the record instead of the verdict.</p></div>
+
+<h2>Bottom Line</h2>
+
+<p>Medium built TK because Google was taking the traffic, and that motive is worth keeping in view. But the durable part of what shipped on 9 November is not the assistant &mdash; it is the combination of a Markdown export and a disclosure record that shows the prompts and the source material behind a piece of writing.</p>
+
+<p>Every other platform tells you whether a post looks like AI. TK is the first one letting you keep the reason. If you are a writer who now drafts with an assistant, that difference decides what your archive is worth in five years: a pile of verdicts, or a reproducible record of how you actually wrote.</p>
+
+<div class="cta">
+  <h3>Keep your drafts and your published posts in one archive</h3>
+  <p style="margin-bottom: 8px;">ThreadGrab saves public X threads, Bluesky posts, and LinkedIn articles as clean Markdown. One command, portable output, no lock-in.</p>
+  <a href="/en/" class="cta-btn">Try ThreadGrab &rarr;</a>
+</div>
+
+<p><em>Sources: <a href="https://techcrunch.com/2026/11/09/mediums-new-tk-app-brings-ai-assistance-directly-into-the-writing-process/">TechCrunch on the TK launch</a>, <a href="https://mashable.com/tech/medium-tk-ai-writing-app">Mashable on Medium&#39;s traffic decline and TK</a>, <a href="https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/">Pew Research Center on clicks with AI summaries</a>.</em></p>
+  </main>
+
+  <footer>
+    <a href="/en/">Home</a>
+    <a href="/en/blog/">Blog</a>
+    <a href="/en/about/">About</a>
+    <a href="/en/privacy/">Privacy</a>
+    <span style="margin-left:12px;">© 2026 ThreadGrab</span>
+  </footer>
+</body>
+</html>
