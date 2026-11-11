@@ -7810,6 +7810,51 @@
         "ThreadGrab"
       ],
       "primary_cta": "ThreadGrab ekspor ke Markdown"
+    },
+    {
+      "slug": "x-clips-creator-revenue-split-monetization-2026",
+      "date": "2026-11-11",
+      "type": "daily-article",
+      "lang": "en",
+      "file": "en/blog/x-clips-creator-revenue-split-monetization-2026.html",
+      "url": "https://threadgrab.com/en/blog/x-clips-creator-revenue-split-monetization-2026.html",
+      "title": "X Clips Revenue Split 2026: Creator Payout Rules",
+      "description": "X's Clip tool lets clippers and original creators split revenue. Learn the 5-60 second rule, Original Content Rewards requirement, and payout structure.",
+      "heat_source": "daily-briefing-2026-11-11 (X Clip launch, Mashable)",
+      "status": "published",
+      "published_at": "2026-11-11T10:30:00+08:00",
+      "providers_featured": [],
+      "primary_cta": "/en/"
+    },
+    {
+      "slug": "x-clips-divisao-receita-monetizacao-2026",
+      "date": "2026-11-11",
+      "type": "daily-article",
+      "lang": "pt",
+      "file": "pt/blog/x-clips-divisao-receita-monetizacao-2026.html",
+      "url": "https://threadgrab.com/pt/blog/x-clips-divisao-receita-monetizacao-2026.html",
+      "title": "Divisao de Receita do X Clips 2026: Regras de Pagamento",
+      "description": "A nova ferramenta Clip do X permite dividir receita entre criadores. Aprenda a regra de 5-60 segundos e o requisito de Original Content Rewards.",
+      "heat_source": "daily-briefing-2026-11-11 (X Clip launch, Mashable)",
+      "status": "published",
+      "published_at": "2026-11-11T10:30:00+08:00",
+      "providers_featured": [],
+      "primary_cta": "/en/"
+    },
+    {
+      "slug": "x-clips-pembagian-pendapatan-monetisasi-2026",
+      "date": "2026-11-11",
+      "type": "daily-article",
+      "lang": "id",
+      "file": "id/blog/x-clips-pembagian-pendapatan-monetisasi-2026.html",
+      "url": "https://threadgrab.com/id/blog/x-clips-pembagian-pendapatan-monetisasi-2026.html",
+      "title": "Pembagian Pendapatan X Clips 2026: Aturan Pembayaran Kreator",
+      "description": "Alat Clip baru X memungkinkan pembagian pendapatan antar kreator. Pelajari aturan 5-60 detik dan syarat Original Content Rewards untuk 2026.",
+      "heat_source": "daily-briefing-2026-11-11 (X Clip launch, Mashable)",
+      "status": "published",
+      "published_at": "2026-11-11T10:30:00+08:00",
+      "providers_featured": [],
+      "primary_cta": "/en/"
     }
   ],
   "drafts": [
@@ -8129,7 +8174,7 @@
   "last_draft_slug": "google-ai-mode-publisher-payout-pilot-2026",
   "last_published_at": "2026-09-15",
   "drafts_count": 12,
-  "published_count": 276,
+  "published_count": 285,
   "last_topic_picked": "Google AI Mode AI contribution pilot pays publishers 2026",
   "last_pick_source": "3ea88f8bb2d0",
   "last_drafted_slug": "show-hn-markdown-convert-format-tools-2026",
