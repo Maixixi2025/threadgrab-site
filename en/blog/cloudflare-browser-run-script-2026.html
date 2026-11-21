@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloudflare Browser Run /script: Custom Browser Automation</title>
+  <meta name="description" content="Cloudflare shipped Browser Run /script on Nov 20, 2026. One API call runs your Playwright code - but sessions stay open and billable until you close them.">
+  <meta name="keywords" content="Cloudflare Browser Run, /script endpoint, custom browser automation, Playwright, Puppeteer, Chrome DevTools Protocol, browser session, keep_alive, X-Browser-Ms-Used, social content archive, ThreadGrab">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/en/blog/cloudflare-browser-run-script-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/cloudflare-browser-run-script-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/cloudflare-browser-run-script-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/cloudflare-browser-run-script-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/cloudflare-browser-run-script-2026.html">
+  <meta property="og:title" content="Cloudflare Browser Run /script: Custom Browser Automation">
+  <meta property="og:description" content="Cloudflare shipped Browser Run /script on Nov 20, 2026. One API call runs your Playwright code - but sessions stay open and billable until you close them.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/en/blog/cloudflare-browser-run-script-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:published_time" content="2026-11-21">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cloudflare Browser Run /script: Custom Browser Automation">
+  <meta name="twitter:description" content="Cloudflare shipped Browser Run /script on Nov 20, 2026. One API call runs your Playwright code - but sessions stay open and billable until you close them.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { font-size: 1.4rem; margin: 36px 0 16px; }
+    h3 { font-size: 1.1rem; margin: 24px 0 12px; }
+    p { margin-bottom: 16px; color: #ccc; }
+    a { color: #20d5ec; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #222; }
+    th { color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    pre { background: #1a1a1a; border-radius: 8px; padding: 16px; overflow-x: auto; margin: 16px 0 24px; }
+    pre code { font-family: 'SF Mono', Monaco, monospace; font-size: 0.85rem; color: #e0e0e0; }
+    ul { margin: 0 0 16px 20px; color: #ccc; }
+    li { margin-bottom: 8px; }
+    .faq-item { margin-bottom: 20px; }
+    .faq-item h3 { font-size: 1rem; color: #fff; margin-bottom: 6px; }
+    .faq-item p { color: #aaa; font-size: 0.95rem; }
+    .related { background: #141414; border: 1px solid #1f1f1f; border-radius: 10px; padding: 18px 22px; margin: 28px 0; }
+    .related h3 { margin-top: 0; }
+    .related ul { list-style: none; padding: 0; margin: 0; }
+    .related a { text-decoration: none; }
+    .cta { background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%); border-radius: 12px; padding: 28px; margin: 32px 0 24px; }
+    .cta h3 { margin-top: 0; margin-bottom: 8px; color: #fff; }
+    .cta-btn { display: inline-block; margin-top: 12px; padding: 10px 22px; background: #20d5ec; color: #000; font-weight: 600; border-radius: 6px; text-decoration: none; }
+    footer { border-top: 1px solid #1a1a1a; padding: 24px; text-align: center; color: #666; font-size: 0.85rem; }
+    footer a { color: #888; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+    .sources { color: #777; font-size: 0.88rem; line-height: 1.7; }
+    .sources a { color: #20d5ec; }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a class="logo" href="https://threadgrab.com/en/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a href="https://threadgrab.com/en/blog/cloudflare-browser-run-script-2026.html" class="active">EN</a>
+      <a href="https://threadgrab.com/pt/blog/cloudflare-browser-run-script-2026.html">PT</a>
+      <a href="https://threadgrab.com/id/blog/cloudflare-browser-run-script-2026.html">ID</a>
+    </div>
+  </header>
+  <main>
+    <div class="breadcrumb">
+      <a href="https://threadgrab.com/en/">Home</a> &rsaquo; <a href="/en/blog/">Blog</a> &rsaquo; Cloudflare Browser Run /script: Custom Browser Automation
+    </div>
+
+    <h1>Cloudflare Browser Run /script: <span>Custom Browser Automation</span></h1>
+    <p class="meta">November 21, 2026 &middot; 11 min read &middot; Social Media Tools</p>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Cloudflare Browser Run /script: Custom Browser Automation",
+  "description": "Cloudflare shipped Browser Run /script on Nov 20, 2026. One API call runs your Playwright code - but sessions stay open and billable until you close them.",
+  "datePublished": "2026-11-21",
+  "dateModified": "2026-11-21",
+  "author": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/en/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/en/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://threadgrab.com/og-image.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://threadgrab.com/en/blog/cloudflare-browser-run-script-2026.html"
+  }
+}
+    </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://threadgrab.com/en/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://threadgrab.com/en/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Cloudflare Browser Run /script: Custom Browser Automation",
+      "item": "https://threadgrab.com/en/blog/cloudflare-browser-run-script-2026.html"
+    }
+  ]
+}
+    </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need to deploy a Worker to use the /script endpoint?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Browser Run executes your submitted function in an isolated Worker connected to the browser session, so there is nothing to deploy before it runs. You can also call env.BROWSER.script() from a Worker you already have, with no API token, or try scripts from the Script Studio page in the Cloudflare dashboard."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the /script endpoint close the browser session automatically?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Neither endpoint closes the session once your script has started - not on success, not on an error, not on a timeout. The session keeps running and keeps counting toward your browser hours until you close it with a DELETE on the devtools browser endpoint or call browser.close(), or until the keep_alive idle timeout expires (60 seconds by default, up to 20 minutes)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a 408 and a 422 error?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A 408 means your own timeout was lower than the library default, so the run limit interrupted the slow call. A 422 means the library timeout fired first - usually the 30 second default on page.goto() - and your script threw. Raise the library timeout inside your script and keep it below your timeout to get the behaviour you expect."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does a custom script cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Browser hours are shared across all Browser Run methods. Workers Free includes 10 minutes per day; Workers Paid includes 10 hours per month and then charges $0.09 per additional hour. Concurrent browsers are billed separately, and note that you are billed for the session lifetime rather than per request, so an unclosed session keeps costing money until it idles out."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I run custom scripts locally during development?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The script() method is not supported in local development mode. Use npx wrangler dev --remote, or set remote to true in your browser binding configuration. This differs from Quick Actions, which do work locally against a Chrome instance on your own machine."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Kitesurf the same as the default browser?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Kitesurf is Cloudflare's stateless browser for AI agents, and it follows different rules: only the CDP runner is supported, launch options do not apply, and no reusable session is created, so a Kitesurf run cannot be continued. It also cannot negotiate a bot-challenge handshake with real TLS fingerprints, which rules it out for long-running authenticated sessions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will a custom user agent stop sites from blocking Browser Run?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Cloudflare states that requests from Browser Run will always be identified as a bot and that the configurable user agent does not bypass bot protection. Destination servers that want to block Browser Run can identify it, so headless capture remains a constrained approach on sites that block datacenter traffic."
+      }
+    }
+  ]
+}
+    </script>
+
+
+<p>On November 20, 2026, Cloudflare added an endpoint that lets you run your own browser
+automation code with a single HTTP request. You submit a JavaScript function, Cloudflare
+acquires a real browser, runs your function against it in an isolated Worker, and returns a
+JSON result. No Worker to deploy, no browser to babysit, no session to hold open.</p>
+
+<p>That is the headline. It is also the part that is easy to get wrong, because the same
+release contains a set of rules about who closes the session, when it stops costing money,
+and which error code you get when you get the ordering wrong. Get those wrong and a
+one-request workflow quietly turns into a bill that grows every minute.</p>
+
+<p>This is a look at what actually shipped, read from Cloudflare's own changelog and API
+documentation, for people whose job is capturing social content - posts, threads, articles
+that live behind a login or render only after JavaScript runs.</p>
+
+<h2>What shipped on November 20, 2026</h2>
+
+<p>The changelog entry is short: "Run custom scripts in Browser Run with /script". The
+documentation underneath it is where the useful detail lives.</p>
+
+<table>
+<tr><th>Endpoint</th><th>What it does</th><th>Session</th></tr>
+<tr><td><code>POST /script</code></td><td>Runs your function and lets Browser Run acquire the browser</td><td>Creates one; the session and target IDs come back in response headers</td></tr>
+<tr><td><code>POST /script/&lt;sessionId&gt;</code></td><td>Runs a follow-up function in a session you already hold</td><td>Reuses the session, so pages, cookies and navigation history survive between calls</td></tr>
+</table>
+
+<p>The request body always needs <code>code</code>, a JavaScript function expression. You
+choose the runner with <code>library</code>: <code>playwright</code>, <code>puppeteer</code>,
+or omit it and use the raw Chrome DevTools Protocol. The function is invoked with a
+library-specific object - Playwright gets <code>{ page, context, browser, request }</code>,
+Puppeteer gets <code>{ page, browser, request }</code>, and CDP gets
+<code>{ send, on, off, sessionId, targetId, request }</code> instead.</p>
+
+<p>Your return value is turned into the response body. A JSON-serializable value comes back
+as <code>{ "success": true, "result": ... }</code>. Return <code>null</code> or
+<code>undefined</code> and you get <code>result: null</code>. Return a <code>Response</code>
+with a JSON body and Browser Run keeps your headers but rewrites the status to 200. Return
+binary data and it is passed through untouched with its own content type.</p>
+
+<h2>The session is yours to close, and that is the whole story</h2>
+
+<p>This is the part worth reading twice.</p>
+
+<p>Neither endpoint closes the session after your script runs. Not on success, not on a
+compile error, not on an exception, not on a timeout. Cloudflare closes the session in
+exactly one case: when <code>/script</code> fails <em>after</em> acquiring the browser but
+<em>before</em> your script starts - and in that case you never received the session ID
+anyway.</p>
+
+<p>Once your script starts, the session keeps running and keeps counting toward your
+browser hours until its idle timeout expires. That timeout is <code>keep_alive</code>,
+which defaults to 60,000 milliseconds (one minute) and can be set anywhere between 10,000
+and 1,200,000 milliseconds (twenty minutes).</p>
+
+<p>So the arithmetic is: a request that fails at 14:00 and is never closed keeps billing
+until 14:01 at the earliest. A request that fails at 14:00 with <code>keep_alive=120000</code>
+keeps billing until 14:02. If you are running a loop over fifty URLs and four of them
+throw, you now have four open browsers until they time out on their own.</p>
+
+<p>Closing is explicit. Either call <code>DELETE /devtools/browser/&lt;sessionId&gt;</code>,
+or call <code>browser.close()</code> at the end of your last script. Disconnecting is not
+enough - dropping a WebSocket or calling <code>puppeteer.disconnect()</code> does not
+close the browser, because the browser never belonged to your process in the first place.</p>
+
+<pre><code># 2. Continue the same session, then close it.
+#    /script NEVER closes the session for you - not on success, not on a
+#    422. An open session keeps running and keeps billing until keep_alive
+#    expires, which is 60 seconds by default and 20 minutes at the maximum.
+
+curl -s -X POST \
+  "https://api.cloudflare.com/client/v4/accounts/ACCOUNT_ID/browser-run/script/SESSION_ID" \
+  -H "Authorization: Bearer YOUR_CF_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "code": "async function ({ page }) { return { url: page.url() }; }",
+    "library": "playwright",
+    "targetId": "TARGET_ID"
+  }'
+
+# Close it explicitly, or the browser stays alive and stays billable.
+curl -s -X DELETE \
+  "https://api.cloudflare.com/client/v4/accounts/ACCOUNT_ID/browser-run/devtools/browser/SESSION_ID" \
+  -H "Authorization: Bearer YOUR_CF_TOKEN"</code></pre>
+
+<p>One more trap in the same family: Browser Run closes a browser for you on task completion
+only if it never became a session. Once you are in session mode, the browser outlives the
+request that created it.</p>
+
+<h2>What it costs, and where Cloudflare's own pages disagree</h2>
+
+<p>Browser hours are shared across every method - Quick Actions, Puppeteer, Playwright, CDP
+and custom scripts all draw from the same pool. Workers Free gives you 10 minutes of
+browser time per day. Workers Paid gives you 10 hours per month, then $0.09 per additional
+hour.</p>
+
+<p>Concurrent browsers are billed separately, and this is where Cloudflare's documentation
+contains a genuine inconsistency that will cost you if you read only one of the two pages.</p>
+
+<table>
+<tr><th>Source</th><th>Workers Paid concurrent browsers</th><th>Page date</th></tr>
+<tr><td>Limits page</td><td>200 per account</td><td>Modified 14 Oct 2026</td></tr>
+<tr><td>Pricing page</td><td>10 browsers averaged monthly, then $2.00 per additional browser</td><td>Modified 20 Nov 2026</td></tr>
+</table>
+
+<p>The Pricing page is the newer one and it is also the one that tells you how the number is
+actually calculated: Cloudflare records your daily peak concurrency and averages those
+peaks across the month. So a workload that spikes to 40 browsers for one afternoon and
+sits at 2 for the rest of the month is billed on something close to the monthly average,
+not on 40.</p>
+
+<p>The Limits page, which was last touched six days before the pricing page, still says 200
+per account. Read together, the honest reading is: 200 is the hard ceiling, 10 is the
+included allowance, and everything above 10 is billed on the monthly average. If your
+workflow really does run 200 concurrent browsers every day, the $2.00-per-browser line is
+the one that shows up on your invoice.</p>
+
+<p>Two more billing details worth knowing. First, browser hours are billed for the
+<em>session lifetime</em>, not per request - a session that sits idle for nineteen minutes
+is nineteen minutes of billable time even if you only made one call. Second, failed requests
+are generally not charged: a Quick Action that fails with a <code>waitForTimeout</code>
+error does not bill the session.</p>
+
+<p>You can see what you are spending as you go. Every Quick Action and <code>/script</code>
+response carries an <code>X-Browser-Ms-Used</code> header. For <code>/script</code> it reports
+the cumulative browser time since the session began, not just this call - which is exactly
+the number you want, because it is the number that decides whether you closed the session in
+time.</p>
+
+<h2>Timeouts come in two layers, and they fail differently</h2>
+
+<p>Your <code>timeout</code> field caps the whole script run, excluding browser acquisition
+time. The default is 60 seconds and the maximum is 120 seconds. But Cloudflare does not pass
+your <code>timeout</code> down into Playwright or Puppeteer, so calls inside your script keep
+their library defaults - and in both libraries <code>page.goto()</code> and the
+<code>waitFor*</code> methods time out after 30 seconds.</p>
+
+<p>Which one fires first decides the error code you get:</p>
+
+<ul>
+<li>If your <code>timeout</code> is <em>lower</em> than the library timeout, the run limit
+interrupts the slow call and the request fails with <code>408</code>.</li>
+<li>If your <code>timeout</code> is <em>higher</em>, the library timeout fires first, your
+script throws something like <code>Navigation timeout of 30000 ms exceeded</code>, and the
+request fails with <code>422</code>.</li>
+</ul>
+
+<p>That distinction matters because a 408 means "you asked for too little" and a 422 means
+"the browser gave up first". If you want a slow page to load, raise the library timeout
+inside your script and keep it below your <code>timeout</code>, so your script can still
+catch the failure and return something useful.</p>
+
+<pre><code># 1. One request, one browser, one structured result.
+#    /script executes your function in an isolated Worker attached to a real
+#    browser session, so there is nothing to deploy before it runs.
+
+curl -i -X POST \
+  "https://api.cloudflare.com/client/v4/accounts/ACCOUNT_ID/browser-run/script?keep_alive=120000" \
+  -H "Authorization: Bearer YOUR_CF_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "code": "async function ({ page }) { await page.goto(\"https://example.com/article\"); return { title: await page.title(), url: page.url() }; }",
+    "library": "playwright",
+    "timeout": 45000
+  }'
+
+# The session lives in the response headers, not in the body:
+#   cf-browser-session-id:  SESSION_ID
+#   cf-browser-target-id:   TARGET_ID
+#   X-Browser-Ms-Used:      4210</code></pre>
+
+<p>The full error table is worth having nearby: 400 for invalid parameters, 401 for missing
+auth, 404 for a session or target that does not exist, 408 for your run timeout, 410 for a
+closed session, 413 for a body over 10 MiB, 422 for a script that failed to compile or
+threw, 429 for a rate or concurrency limit, 503 when no browser is available. A 422 also
+fires when you await a promise that can never resolve, so bound your waits.</p>
+
+<h2>Three ways to call it, and one way that will bite you</h2>
+
+<table>
+<tr><th>Method</th><th>What it needs</th><th>Good for</th></tr>
+<tr><td>REST API</td><td>An API token with the <code>Browser Run - Edit</code> permission</td><td>Calling from anywhere, including your own scripts</td></tr>
+<tr><td>Workers binding</td><td>A <code>browser</code> binding named <code>BROWSER</code>, no token</td><td>Running inside a Worker you already deploy</td></tr>
+<tr><td>Script Studio</td><td>Only the dashboard</td><td>Trying a script interactively before you call the API</td></tr>
+</table>
+
+<p>The Workers binding is the cleanest path if you already run a Worker: call
+<code>env.BROWSER.script()</code> with no API token at all. The SDK names are worth noting
+because they are not the same as the REST path - in the Python SDK the body
+<code>timeout</code> field is called <code>api_timeout</code>.</p>
+
+<p>The way that will bite you is local development. <code>script()</code> is not supported in
+local mode. If you run <code>wrangler dev</code> and call it, you get an error, not a browser
+on your laptop. Use <code>npx wrangler dev --remote</code>, or set <code>"remote": true</code>
+in the browser binding configuration. This differs from Quick Actions, where local mode
+works and runs against a Chrome instance on your machine.</p>
+
+<h2>Kitesurf: a different browser with different rules</h2>
+
+<p>There is a second browser backend. <code>?browser=kitesurf</code> runs your function on
+Kitesurf, Cloudflare's stateless browser built for AI agents. It is faster and cheaper
+because it does not ship a full Chromium engine - it trades away tabs, themes, extensions
+and pixel-perfect rendering for scalability.</p>
+
+<p>Three restrictions apply, and each one returns a <code>400</code> if you break it. Only
+the CDP runner is supported, so setting <code>library</code> is an error. Launch options do
+not apply, so sending <code>keep_alive</code>, <code>recording</code> or <code>lab</code>
+together with <code>browser</code> is an error. And no reusable session is created: the
+response has no session headers and cannot be continued with
+<code>/script/&lt;sessionId&gt;</code>. Kitesurf also follows its own pricing rather than the
+browser-hours table above, and it is currently free in beta.</p>
+
+<p>Kitesurf is also not right for authenticated sessions. It cannot negotiate a bot-challenge
+handshake with real TLS fingerprints, and it is not built for long-running authenticated
+sessions that need persistent state. For signing into an account and capturing what is
+behind the login, use the default Chromium browser.</p>
+
+<h2>Running several scripts at once in one session</h2>
+
+<p>Requests to the same session and target are not serialised. Two overlapping runs against
+the same page will interfere with each other - one navigates while the other reads. To run
+concurrently inside one session, give each run its own target: create an extra page with
+the DevTools Browser Targets create API, then pass that target ID as <code>targetId</code>
+to <code>/script/&lt;sessionId&gt;</code>. Pages created this way live in the session's
+default context, so they persist across runs and can be targeted again later.</p>
+
+<p>One related detail: <code>/script</code> always pins the run to the session's first page
+and returns that target in the <code>cf-browser-target-id</code> header. On
+<code>/script/&lt;sessionId&gt;</code> there is no fallback to another page when the target
+you named is not open. A 404 there usually means your target ID is stale, not that the
+session died.</p>
+
+<h2>Where this fits in a social content workflow</h2>
+
+<p>For anyone archiving social content, the appeal of <code>/script</code> is specific: it
+removes the deployment step between "I want this page" and "I have this page". Quick
+Actions already gave you <code>/content</code>, <code>/markdown</code>, <code>/screenshot</code>
+and <code>/scrape</code> in one request each, and the <code>/snapshot</code> endpoint added
+multiple formats from one page load. What <code>/script</code> adds is the multi-step case -
+sign in, expand the replies, click through to the quoted post, wait for the lazy images,
+then extract - as one request instead of a chain of them, without writing a Worker.</p>
+
+<p>The honest caveat is that the endpoint is a browser, and a browser is identifiable.
+Cloudflare's own documentation states that requests from Browser Run will always be
+identified as a bot, and that a custom <code>userAgent</code> does not change that. Sites
+that block datacenter traffic will still block you. That is the same constraint you have
+with any headless capture, and it is the reason an archive you own is worth more than a
+capture you rent.</p>
+
+<pre><code># 3. Attach provenance to the capture, then keep your own copy of the
+#    source-side record. The capture time belongs next to the content.
+
+printf '%s\n' \
+  "source_url: https://example.com/article" \
+  "captured_at: 2026-11-21T09:00:00Z" \
+  "browser_ms_used: 4210" \
+  "session_id: SESSION_ID" \
+  | tee archive/article-provenance.yml
+
+# ThreadGrab keeps the profile record as JSON, with the fetch time attached.
+curl -s "https://threadgrab.com/api/profile/USERNAME" \
+  -H "Accept: application/json" \
+  -o archive/USERNAME-profile.json</code></pre>
+
+<p>So the practical workflow is: use <code>/script</code> to get the rendered content you
+could not get otherwise, close the session explicitly, and write down the capture time and
+the source URL next to what you saved. The content is the asset. The browser session is the
+tool that got it, and it is billed until you say so.</p>
+
+<h2>FAQ</h2>
+
+<div class="faq-item"><h3>Do I need to deploy a Worker to use the /script endpoint?</h3><p>No. Browser Run executes your submitted function in an isolated Worker connected to the browser session, so there is nothing to deploy before it runs. You can also call <code>env.BROWSER.script()</code> from a Worker you already have, with no API token, or try scripts from the Script Studio page in the Cloudflare dashboard.</p></div>
+<div class="faq-item"><h3>Does the /script endpoint close the browser session automatically?</h3><p>No. Neither endpoint closes the session once your script has started - not on success, not on an error, not on a timeout. The session keeps running and keeps counting toward your browser hours until you close it with a DELETE on the devtools browser endpoint or call browser.close(), or until the keep_alive idle timeout expires (60 seconds by default, up to 20 minutes).</p></div>
+<div class="faq-item"><h3>What is the difference between a 408 and a 422 error?</h3><p>A 408 means your own timeout was lower than the library default, so the run limit interrupted the slow call. A 422 means the library timeout fired first - usually the 30 second default on page.goto() - and your script threw. Raise the library timeout inside your script and keep it below your timeout to get the behaviour you expect.</p></div>
+<div class="faq-item"><h3>How much does a custom script cost?</h3><p>Browser hours are shared across all Browser Run methods. Workers Free includes 10 minutes per day; Workers Paid includes 10 hours per month and then charges $0.09 per additional hour. Concurrent browsers are billed separately, and note that you are billed for the session lifetime rather than per request, so an unclosed session keeps costing money until it idles out.</p></div>
+<div class="faq-item"><h3>Can I run custom scripts locally during development?</h3><p>No. The script() method is not supported in local development mode. Use npx wrangler dev --remote, or set remote to true in your browser binding configuration. This differs from Quick Actions, which do work locally against a Chrome instance on your own machine.</p></div>
+<div class="faq-item"><h3>Is Kitesurf the same as the default browser?</h3><p>No. Kitesurf is Cloudflare's stateless browser for AI agents, and it follows different rules: only the CDP runner is supported, launch options do not apply, and no reusable session is created, so a Kitesurf run cannot be continued. It also cannot negotiate a bot-challenge handshake with real TLS fingerprints, which rules it out for long-running authenticated sessions.</p></div>
+<div class="faq-item"><h3>Will a custom user agent stop sites from blocking Browser Run?</h3><p>No. Cloudflare states that requests from Browser Run will always be identified as a bot and that the configurable user agent does not bypass bot protection. Destination servers that want to block Browser Run can identify it, so headless capture remains a constrained approach on sites that block datacenter traffic.</p></div>
+
+<h2>The bottom line</h2>
+
+<p>Cloudflare's <code>/script</code> endpoint is a real change for anyone who needs
+multi-step browser work without running infrastructure: your Playwright or Puppeteer code
+goes out as one HTTP request and comes back as JSON. Three things are worth internalising
+before you rely on it.</p>
+
+<p>First, you own the session. It never closes itself, it bills until it idles out, and
+closing it is a separate call. Second, the timeout you set and the timeout your library
+uses are different numbers that fail with different status codes. Third, the concurrency
+allowance is documented in two places that disagree - use the pricing page, because it is
+the newer one and it explains how the average is calculated.</p>
+
+<p>And keep your own copy of what you captured. A browser session is rented time on
+Cloudflare's infrastructure; the archive is the part that stays yours.</p>
+
+<div class="related"><h3>Related on ThreadGrab</h3><ul><li><a href="/en/blog/cf-browser-run-concurrency-threadgrab-throughput-2026.html">CF Browser Run Concurrency 2026: ThreadGrab Throughput Doubles</a></li>
+<li><a href="/en/blog/x-thread-archiving-tools-2026.html">2026 X Thread Archiving: 5 Tools Compared</a></li>
+<li><a href="/en/blog/x-to-markdown-3-methods-2026.html">X to Markdown 2026: 3 Ways to Save X Threads &amp; Articles</a></li>
+<li><a href="/en/blog/search-result-redirects-cloaking-goto-2026.html">Search Result Redirects 2026: GOTO, Cloaking, Agent Pay</a></li>
+<li><a href="/en/blog/spur-coalition-content-telemetry-2026.html">SPUR Coalition 2026: Content Telemetry for Publishers</a></li></ul></div>
+
+<div class="cta">
+  <h3>Archive the rendered page, not just the URL</h3>
+  <p style="margin-bottom: 8px;">ThreadGrab saves public X threads, Bluesky posts and LinkedIn articles as clean Markdown and JSON, with the capture time attached. A browser session can fetch the rendered page; the archive is what still belongs to you afterwards.</p>
+  <a href="https://threadgrab.com/en/" class="cta-btn">Try ThreadGrab &rarr;</a>
+</div>
+
+<div class="sources">
+
+<p><strong>Primary sources</strong></p>
+<ul>
+<li><a href="https://developers.cloudflare.com/changelog/post/2026-11-20-script-endpoint/">Cloudflare Changelog &mdash; Run custom scripts in Browser Run with /script, 20 Nov 2026</a></li>
+<li><a href="https://developers.cloudflare.com/browser-run/script/">Cloudflare Docs &mdash; Custom scripts: endpoints, runner arguments, return values, error and timeout tables, session lifecycle</a></li>
+<li><a href="https://developers.cloudflare.com/browser-run/limits/">Cloudflare Docs &mdash; Limits: Workers Free and Workers Paid tables, concurrency and keep_alive, last modified 14 Oct 2026</a></li>
+<li><a href="https://developers.cloudflare.com/browser-run/pricing/">Cloudflare Docs &mdash; Pricing: browser hours, concurrent browser rates, X-Browser-Ms-Used, last modified 20 Nov 2026</a></li>
+<li><a href="https://developers.cloudflare.com/browser-run/get-started/">Cloudflare Docs &mdash; Get started: choosing between Quick Actions, Browser Sessions and Custom scripts</a></li>
+<li><a href="https://developers.cloudflare.com/browser-run/kitesurf/">Cloudflare Docs &mdash; Kitesurf: stateless browser, CDP only, restrictions and what it cannot do</a></li>
+<li><a href="https://developers.cloudflare.com/browser-run/quick-actions/markdown-endpoint/">Cloudflare Docs &mdash; Markdown endpoint: custom user agent does not bypass bot protection</a></li>
+<li><a href="https://blog.cloudflare.com/kitesurf">Cloudflare Blog &mdash; Kitesurf, the stateless browser for AI agents</a></li>
+</ul>
+
+</div>
+
+  </main>
+  <footer>
+    <a href="https://threadgrab.com/en/">Home</a>
+    <a href="/en/blog/">Blog</a>
+    <a href="https://threadgrab.com/en/about/">About</a>
+    <a href="https://threadgrab.com/en/privacy/">Privacy</a>
+    <span style="margin-left:12px;">&copy; 2026 ThreadGrab</span>
+  </footer>
+</body>
+</html>

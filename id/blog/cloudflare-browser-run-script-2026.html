@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloudflare Browser Run /script: Otomatisasi Browser</title>
+  <meta name="description" content="Cloudflare memperkenalkan /script pada 20 November 2026: satu panggilan API menjalankan kode Playwright Anda, tapi sesi tetap terbuka dan berbayar.">
+  <meta name="keywords" content="Cloudflare Browser Run, endpoint /script, otomatisasi browser kustom, Playwright, Puppeteer, Chrome DevTools Protocol, sesi browser, keep_alive, X-Browser-Ms-Used, arsip konten sosial, ThreadGrab">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/id/blog/cloudflare-browser-run-script-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/cloudflare-browser-run-script-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/cloudflare-browser-run-script-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/cloudflare-browser-run-script-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/cloudflare-browser-run-script-2026.html">
+  <meta property="og:title" content="Cloudflare Browser Run /script: Otomatisasi Browser">
+  <meta property="og:description" content="Cloudflare memperkenalkan /script pada 20 November 2026: satu panggilan API menjalankan kode Playwright Anda, tapi sesi tetap terbuka dan berbayar.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/id/blog/cloudflare-browser-run-script-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="id_ID">
+  <meta property="article:published_time" content="2026-11-21">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cloudflare Browser Run /script: Otomatisasi Browser">
+  <meta name="twitter:description" content="Cloudflare memperkenalkan /script pada 20 November 2026: satu panggilan API menjalankan kode Playwright Anda, tapi sesi tetap terbuka dan berbayar.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { font-size: 1.4rem; margin: 36px 0 16px; }
+    h3 { font-size: 1.1rem; margin: 24px 0 12px; }
+    p { margin-bottom: 16px; color: #ccc; }
+    a { color: #20d5ec; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #222; }
+    th { color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    pre { background: #1a1a1a; border-radius: 8px; padding: 16px; overflow-x: auto; margin: 16px 0 24px; }
+    pre code { font-family: 'SF Mono', Monaco, monospace; font-size: 0.85rem; color: #e0e0e0; }
+    ul { margin: 0 0 16px 20px; color: #ccc; }
+    li { margin-bottom: 8px; }
+    .faq-item { margin-bottom: 20px; }
+    .faq-item h3 { font-size: 1rem; color: #fff; margin-bottom: 6px; }
+    .faq-item p { color: #aaa; font-size: 0.95rem; }
+    .related { background: #141414; border: 1px solid #1f1f1f; border-radius: 10px; padding: 18px 22px; margin: 28px 0; }
+    .related h3 { margin-top: 0; }
+    .related ul { list-style: none; padding: 0; margin: 0; }
+    .related a { text-decoration: none; }
+    .cta { background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%); border-radius: 12px; padding: 28px; margin: 32px 0 24px; }
+    .cta h3 { margin-top: 0; margin-bottom: 8px; color: #fff; }
+    .cta-btn { display: inline-block; margin-top: 12px; padding: 10px 22px; background: #20d5ec; color: #000; font-weight: 600; border-radius: 6px; text-decoration: none; }
+    footer { border-top: 1px solid #1a1a1a; padding: 24px; text-align: center; color: #666; font-size: 0.85rem; }
+    footer a { color: #888; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+    .sources { color: #777; font-size: 0.88rem; line-height: 1.7; }
+    .sources a { color: #20d5ec; }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a class="logo" href="https://threadgrab.com/id/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a href="https://threadgrab.com/en/blog/cloudflare-browser-run-script-2026.html">EN</a>
+      <a href="https://threadgrab.com/pt/blog/cloudflare-browser-run-script-2026.html">PT</a>
+      <a href="https://threadgrab.com/id/blog/cloudflare-browser-run-script-2026.html" class="active">ID</a>
+    </div>
+  </header>
+  <main>
+    <div class="breadcrumb">
+      <a href="https://threadgrab.com/id/">Home</a> &rsaquo; <a href="/id/blog/">Blog</a> &rsaquo; Cloudflare Browser Run /script: Otomatisasi Browser
+    </div>
+
+    <h1>Cloudflare Browser Run /script: <span>Otomatisasi Browser</span></h1>
+    <p class="meta">21 November 2026 &middot; 11 menit baca &middot; Tools Media Sosial</p>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Cloudflare Browser Run /script: Otomatisasi Browser",
+  "description": "Cloudflare memperkenalkan /script pada 20 November 2026: satu panggilan API menjalankan kode Playwright Anda, tapi sesi tetap terbuka dan berbayar.",
+  "datePublished": "2026-11-21",
+  "dateModified": "2026-11-21",
+  "author": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/id/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/id/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://threadgrab.com/og-image.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://threadgrab.com/id/blog/cloudflare-browser-run-script-2026.html"
+  }
+}
+    </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://threadgrab.com/id/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://threadgrab.com/id/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Cloudflare Browser Run /script: Otomatisasi Browser",
+      "item": "https://threadgrab.com/id/blog/cloudflare-browser-run-script-2026.html"
+    }
+  ]
+}
+    </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Apakah saya harus men-deploy Worker untuk memakai endpoint /script?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tidak. Browser Run menjalankan fungsi yang Anda kirim di dalam Worker terisolasi yang terhubung ke sesi browser, jadi tidak ada yang perlu di-deploy sebelum eksekusi. Anda juga bisa memanggil env.BROWSER.script() dari Worker yang sudah Anda miliki, tanpa token API, atau mencoba skrip dari halaman Script Studio di dasbor Cloudflare."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah endpoint /script menutup sesi browser secara otomatis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tidak. Tidak ada satu pun dari kedua endpoint yang menutup sesi setelah skrip Anda mulai - bukan saat sukses, bukan saat error, bukan saat timeout. Sesi terus berjalan dan terus dihitung sebagai jam browser Anda sampai Anda menutupnya dengan DELETE pada endpoint devtools browser atau memanggil browser.close(), atau sampai batas waktu idle keep_alive habis (60 detik secara default, sampai 20 menit)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apa perbedaan antara error 408 dan error 422?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Error 408 berarti timeout Anda sendiri lebih rendah daripada default pustaka, sehingga batas eksekusi memutus panggilan lambat itu. Error 422 berarti timeout pustaka menyala lebih dulu - biasanya default 30 detik pada page.goto() - dan skrip Anda melempar exception. Naikkan timeout pustaka di dalam skrip dan jagalah tetap di bawah timeout Anda untuk perilaku yang Anda inginkan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Berapa biaya sebuah skrip kustom?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Jam browser dipakai bersama oleh semua metode Browser Run. Workers Free mencakup 10 menit per hari; Workers Paid mencakup 10 jam per bulan lalu menagih US$ 0,09 per jam tambahan. Browser yang berjalan bersamaan ditagih terpisah, dan perhatikan bahwa Anda membayar berdasarkan umur sesi, bukan per permintaan, sehingga sesi yang tidak ditutup terus berbiaya sampai kehabisan waktu idle."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bisakah saya menjalankan skrip kustom secara lokal saat pengembangan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tidak. Metode script() tidak didukung dalam mode pengembangan lokal. Gunakan npx wrangler dev --remote, atau setel remote ke true pada konfigurasi binding browser. Ini berbeda dari Quick Actions, yang jalan lokal memakai instance Chrome di mesin Anda sendiri."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah Kitesurf sama dengan browser bawaan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tidak. Kitesurf adalah browser stateless milik Cloudflare untuk agen AI, dan ia mengikuti aturan berbeda: hanya runner CDP yang didukung, opsi peluncuran tidak berlaku, dan tidak ada sesi yang bisa dipakai ulang sehingga eksekusi Kitesurf tidak bisa dilanjutkan. Ia juga tidak bernegosiasi handshake tantangan bot dengan sidik jari TLS asli, sehingga tidak cocok untuk sesi terautentikasi jangka panjang."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah user agent kustom mencegah situs memblokir Browser Run?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tidak. Cloudflare menyatakan bahwa permintaan dari Browser Run selalu akan dikenali sebagai bot dan bahwa user agent yang bisa disesuaikan tidak melewati proteksi bot. Server tujuan yang ingin memblokir Browser Run bisa mengenaliinya, sehingga penangkapan headless tetap terbatas di situs yang memblokir lalu lintas pusat data."
+      }
+    }
+  ]
+}
+    </script>
+
+
+<p>Pada 20 November 2026, Cloudflare menambahkan endpoint yang memungkinkan Anda menjalankan
+kode otomatisasi browser sendiri dengan satu permintaan HTTP. Anda kirim sebuah fungsi
+JavaScript, Cloudflare mendapat browser sungguhan, menjalankan fungsi Anda di terhadapnya
+dalam sebuah Worker terisolasi, lalu mengembalikan hasil JSON. Tidak ada Worker yang perlu
+dideploy, tidak ada browser yang perlu dijaga, tidak ada sesi yang harus dibiarkan terbuka.</p>
+
+<p><em>ITulah judulnya</em>. Dan itu juga bagian yang mudah keliru, karena rilis yang sama berisi
+seperangkat aturan tentang siapa yang menutup sesi, kapan biaya itu berhenti, dan kode
+error apa yang Anda terima saat urutan salah. Salah menerapkan aturan itu akan mengubah
+alur satu permintaan secara diam-diam menjadi tagihan yang bertambah setiap menit.</p>
+
+<p>Artikel ini melihat apa yang benar-benar dirilis, dibaca langsung dari changelog dan
+dokumentasi API Cloudflare, untuk orang yang pekerjaannya adalah mengarsipkan konten sosial
+- post, thread, dan artikel yang berada di balik login atau hanya tampil setelah JavaScript
+menjalankan.</p>
+
+<h2>Apa yang rilis pada 20 November 2026</h2>
+
+<p>Entri changelognya singkat: "Run custom scripts in Browser Run with /script". Yang
+berguna ada di dokumentasi di bawahnya.</p>
+
+<table>
+<tr><th>Endpoint</th><th>Apa yang dikerjakan</th><th>Sesi</th></tr>
+<tr><td><code>POST /script</code></td><td>Menjalankan fungsi Anda dan membiarkan Browser Run mendapat browser sendiri</td><td>Membuat satu sesi; ID sesi dan target kembali di header respons</td></tr>
+<tr><td><code>POST /script/&lt;sessionId&gt;</code></td><td>Menjalankan fungsi lanjutan pada sesi yang sudah Anda pegang</td><td>Memakai ulang sesi, sehingga halaman, cookie, dan riwayat navigasi bertahan antar panggilan</td></tr>
+</table>
+
+<p>Badan permintaan selalu memerlukan <code>code</code>, yaitu ekspresi fungsi JavaScript.
+Anda memilih runner dengan <code>library</code>: <code>playwright</code>,
+<code>puppeteer</code>, atau menghilangkannya untuk memakai Chrome DevTools Protocol
+mentah. Fungsi tersebut dipanggil dengan objek khusus per pustaka - Playwright menerima
+<code>{ page, context, browser, request }</code>, Puppeteer menerima
+<code>{ page, browser, request }</code>, dan CDP menerima
+<code>{ send, on, off, sessionId, targetId, request }</code> sebagai gantinya.</p>
+
+<p>Nilai yang Anda kembalikan menjadi badan respons. Nilai yang bisa diserialisasi ke JSON
+kembali sebagai <code>{ "success": true, "result": ... }</code>. Kembalikan
+<code>null</code> atau <code>undefined</code>, Anda mendapat <code>result: null</code>.
+Kembalikan sebuah <code>Response</code> dengan badan JSON, Browser Run mempertahankan
+header Anda tetapi menulis ulang statusnya menjadi 200. Kembalikan data biner, data itu
+diteruskan apa adanya dengan content type-nya sendiri.</p>
+
+<h2>Sesi milik Anda untuk ditutup, dan itu inti semuanya</h2>
+
+<p>Bagian ini layak dibaca dua kali.</p>
+
+<p>Tidak ada satu pun dari kedua endpoint yang menutup sesi setelah skrip Anda berjalan.
+Bukan saat sukses, bukan saat error kompilasi, bukan saat exception, bukan saat timeout.
+Cloudflare menutup sesi dalam tepat satu kasus: ketika <code>/script</code> gagal
+<em>setelah</em> mendapatkan browser tapi <em>sebelum</em> skrip Anda mulai - dan pada kasus
+itu Anda memang tidak pernah menerima ID sesi.</p>
+
+<p>Setelah skrip Anda mulai, sesi terus berjalan dan terus dihitung sebagai jam browser
+Anda sampai batas waktu idle habis. Batas waktu itu adalah <code>keep_alive</code>, yang
+default-nya 60.000 milidetik (satu menit) dan bisa diatur antara 10.000 sampai 1.200.000
+milidetik (dua puluh menit).</p>
+
+<p>Jadi hitungannya begini: permintaan yang gagal pukul 14.00 dan tidak pernah ditutup
+tetap berbiaya sampai pukul 14.01 paling cepat. Permintaan yang gagal pukul 14.00 dengan
+<code>keep_alive=120000</code> tetap berbiaya sampai pukul 14.02. Kalau Anda menjalankan
+loop atas lima puluh URL dan empat di antaranya melempar exception, sekarang ada empat
+browser terbuka sampai mereka kehabisan waktu dengan sendirinya.</p>
+
+<p>Penutupan bersifat eksplisit. Panggil <code>DELETE /devtools/browser/&lt;sessionId&gt;</code>,
+atau panggil <code>browser.close()</code> di akhir skrip terakhir Anda. Putus koneksi saja
+tidak cukup - meninggalkan WebSocket atau memanggil
+<code>puppeteer.disconnect()</code> tidak menutup browser, karena browser itu memang tidak
+pernah milik proses Anda.</p>
+
+<pre><code># 2. Continue the same session, then close it.
+#    /script NEVER closes the session for you - not on success, not on a
+#    422. An open session keeps running and keeps billing until keep_alive
+#    expires, which is 60 seconds by default and 20 minutes at the maximum.
+
+curl -s -X POST \
+  "https://api.cloudflare.com/client/v4/accounts/ACCOUNT_ID/browser-run/script/SESSION_ID" \
+  -H "Authorization: Bearer YOUR_CF_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "code": "async function ({ page }) { return { url: page.url() }; }",
+    "library": "playwright",
+    "targetId": "TARGET_ID"
+  }'
+
+# Close it explicitly, or the browser stays alive and stays billable.
+curl -s -X DELETE \
+  "https://api.cloudflare.com/client/v4/accounts/ACCOUNT_ID/browser-run/devtools/browser/SESSION_ID" \
+  -H "Authorization: Bearer YOUR_CF_TOKEN"</code></pre>
+
+<p>Perangkap lain di keluarga yang sama: Browser Run menutup browser untuk Anda saat tugas
+selesai hanya jika browser itu tidak pernah berubah menjadi sesi. Begitu sudah dalam mode
+sesi, browser itu bertahan melewati permintaan yang membuatnya.</p>
+
+<h2>Biayanya berapa, dan di mana halaman Cloudflare sendiri saling berbeda</h2>
+
+<p>Jam browser dipakai bersama oleh semua metode - Quick Actions, Puppeteer, Playwright,
+CDP, dan skrip kustom semuanya menarik dari reservoir yang sama. Workers Free memberi 10
+menit waktu browser per hari. Workers Paid memberi 10 jam per bulan, lalu menagih US$ 0,09
+per jam tambahan.</p>
+
+<p>Browser yang berjalan bersamaan ditagih secara terpisah, dan di sinilah dokumentasi
+Cloudflare memuat ketidakkonsistenan yang sungguhan dan bisa memakan biaya kalau Anda
+hanya membaca satu dari dua halaman itu.</p>
+
+<table>
+<tr><th>Sumber</th><th>Browser bersamaan di Workers Paid</th><th>Tanggal halaman</th></tr>
+<tr><td>Halaman limits</td><td>200 per akun</td><td>Diperbarui 14 Okt 2026</td></tr>
+<tr><td>Halaman pricing</td><td>10 browser rata-rata bulanan, lalu US$ 2,00 per browser tambahan</td><td>Diperbarui 20 Nov 2026</td></tr>
+</table>
+
+<p>Halaman pricing adalah yang lebih baru, dan juga yang memberitahu bagaimana angka itu
+sebenarnya dihitung: Cloudflare mencatat puncak konkurensi harian Anda lalu mengambil
+rata-rata puncak-puncak itu sepanjang bulan. Jadi beban kerja yang melonjak ke 40 browser
+pada satu sore lalu berada di angka 2 sepanjang sisa bulan ditagih berdasarkan sesuatu yang
+mendekati rata-rata bulanan, bukan 40.</p>
+
+<p>Halaman limits, yang terakhir diubah enam hari sebelum halaman pricing, masih
+menyebutkan 200 per akun. Dibaca bersama, pembacaan yang jujur adalah: 200 adalah batas
+keras, 10 adalah kuota yang termasuk, dan semua di atas 10 ditagih berdasarkan rata-rata
+bulanan. Kalau alur kerja Anda benar-benar menjalankan 200 browser bersamaan setiap hari,
+baris US$ 2,00 per browser itulah yang muncul di tagihan Anda.</p>
+
+<p>Detail penagihan lain yang perlu diketahui. Pertama, jam browser ditagih berdasarkan
+<em>umur sesi</em>, bukan per permintaan - sesi yang menganggur selama sembilan belas menit
+adalah sembilan belas menit waktu yang bisa ditagih, meski Anda hanya melakukan satu
+panggilan. Kedua, permintaan yang gagal umumnya tidak ditagih: sebuah Quick Action yang
+gagal dengan error <code>waitForTimeout</code> tidak menagih sesi.</p>
+
+<p>Anda bisa melihat pengeluaran saat berjalan. Setiap respons Quick Action dan
+<code>/script</code> membawa header <code>X-Browser-Ms-Used</code>. Untuk
+<code>/script</code> header itu melaporkan waktu browser kumulatif sejak sesi dimulai,
+bukan hanya panggilan ini - dan itu persis angkanya yang Anda butuhkan, karena itu yang
+menentukan apakah Anda menutup sesi tepat waktu.</p>
+
+<h2>Timeout datang dalam dua lapis, dan gagal dengan cara berbeda</h2>
+
+<p>Field <code>timeout</code> membatasi seluruh eksekusi skrip, tidak termasuk waktu
+pengambilan browser. Default-nya 60 detik dan maksimalnya 120 detik. Tapi Cloudflare tidak
+meneruskan <code>timeout</code> Anda ke dalam Playwright atau Puppeteer, sehingga
+panggilan di dalam skrip Anda tetap memakai default pustaka - dan di kedua pustaka,
+<code>page.goto()</code> serta metode <code>waitFor*</code> kehabisan waktu setelah 30
+detik.</p>
+
+<p>Yang mana yang lebih dulu menentukan kode error yang Anda terima:</p>
+
+<ul>
+<li>Jika <code>timeout</code> Anda <em>lebih kecil</em> dari timeout pustaka, batas
+eksekusi memutus panggilan lambat itu dan permintaan gagal dengan <code>408</code>.</li>
+<li>Jika <code>timeout</code> Anda <em>lebih besar</em>, timeout pustaka yang lebih dulu
+menyala, skrip Anda melempar sesuatu seperti
+<code>Navigation timeout of 30000 ms exceeded</code>, dan permintaan gagal dengan
+<code>422</code>.</li>
+</ul>
+
+<p>Perbedaan ini penting karena 408 berarti "Anda meminta terlalu sedikit" sedangkan 422
+berarti "browser menyerah lebih dulu". Kalau Anda ingin halaman lambat termuat, naikkan
+timeout pustaka di dalam skrip dan jagalah tetap di bawah <code>timeout</code> Anda, supaya
+skrip masih bisa menangani kegagalan itu dan mengembalikan sesuatu yang berguna.</p>
+
+<pre><code># 1. One request, one browser, one structured result.
+#    /script executes your function in an isolated Worker attached to a real
+#    browser session, so there is nothing to deploy before it runs.
+
+curl -i -X POST \
+  "https://api.cloudflare.com/client/v4/accounts/ACCOUNT_ID/browser-run/script?keep_alive=120000" \
+  -H "Authorization: Bearer YOUR_CF_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "code": "async function ({ page }) { await page.goto(\"https://example.com/article\"); return { title: await page.title(), url: page.url() }; }",
+    "library": "playwright",
+    "timeout": 45000
+  }'
+
+# The session lives in the response headers, not in the body:
+#   cf-browser-session-id:  SESSION_ID
+#   cf-browser-target-id:   TARGET_ID
+#   X-Browser-Ms-Used:      4210</code></pre>
+
+<p>Tabel error lengkapnya layak dijaga di dekat: 400 untuk parameter tidak valid, 401 untuk autentikasi
+hilang, 404 untuk sesi atau target yang tidak ada, 408 untuk timeout eksekusi Anda, 410
+untuk sesi yang sudah ditutup, 413 untuk badan lebih dari 10 MiB, 422 untuk skrip yang gagal
+kompilasi atau melempar exception, 429 untuk batas laju atau konkurensi, 503 ketika tidak ada
+browser yang tersedia. 422 juga menyala ketika Anda menunggu promise yang tak akan pernah
+resolve, jadi bataskan setiap menunggu.</p>
+
+<h2>Tiga cara memanggilnya, dan satu yang akan menggigit Anda</h2>
+
+<table>
+<tr><th>Metode</th><th>Yang dibutuhkan</th><th>Cocok untuk</th></tr>
+<tr><td>REST API</td><td>Token API dengan izin <code>Browser Run - Edit</code></td><td>Memanggil dari mana saja, termasuk dari skrip Anda sendiri</td></tr>
+<tr><td>Binding Workers</td><td>Binding <code>browser</code> bernama <code>BROWSER</code>, tanpa token</td><td>Berjalan di dalam Worker yang sudah Anda deploy</td></tr>
+<tr><td>Script Studio</td><td>Hanya dasbor</td><td>Mencoba skrip secara interaktif sebelum memanggil API</td></tr>
+</table>
+
+<p>Binding Workers adalah jalur terbersih kalau Anda sudah menjalankan sebuah Worker:
+panggil <code>env.BROWSER.script()</code> tanpa token API sama sekali. Nama-nama di SDK
+perlu dicatat karena tidak sama dengan path REST - di SDK Python, field <code>timeout</code>
+pada badan bernama <code>api_timeout</code>.</p>
+
+<p>Yang akan menggigit Anda adalah pengembangan lokal. <code>script()</code> tidak didukung
+dalam mode lokal. Kalau Anda menjalankan <code>wrangler dev</code> lalu memanggilnya, yang
+Anda dapat adalah error, bukan browser di mesin Anda sendiri. Gunakan
+<code>npx wrangler dev --remote</code>, atau setel <code>"remote": true</code> pada
+konfigurasi binding browser. Ini berbeda dari Quick Actions, yang jalan lokal dengan
+instance Chrome di mesin Anda sendiri.</p>
+
+<h2>Kitesurf: browser berbeda dengan aturan berbeda</h2>
+
+<p>Ada backend browser kedua. <code>?browser=kitesurf</code> menjalankan fungsi Anda di
+Kitesurf, browser stateless milik Cloudflare yang dibuat untuk agen AI. Browser ini lebih
+cepat dan lebih murah karena tidak membawa mesin Chromium penuh - ia menukar tab, tema,
+ekstensi, dan render pixel-perfect dengan skalabilitas.</p>
+
+<p>Ada tiga pembatasan, dan masing-masing mengembalikan <code>400</code> kalau Anda
+melanggarnya. Hanya runner CDP yang didukung, jadi menetapkan <code>library</code> adalah
+error. Opsi peluncuran tidak berlaku, jadi mengirim <code>keep_alive</code>,
+<code>recording</code>, atau <code>lab</code> bersama <code>browser</code> adalah error.
+Dan tidak ada sesi yang bisa dipakai ulang yang dibuat: responsnya tidak punya header sesi
+dan tidak bisa dilanjutkan dengan <code>/script/&lt;sessionId&gt;</code>. Kitesurf juga
+mengikuti tabel harga sendiri dan saat ini gratis dalam beta.</p>
+
+<p>Kitesurf juga bukan pilihan untuk sesi terautentikasi. Ia tidak bisa bernegosiasi
+handshake tantangan bot dengan sidik jari TLS asli, dan tidak dibangun untuk sesi
+terautentikasi jangka panjang yang membutuhkan state persisten. Untuk masuk ke sebuah akun
+dan mengarsipkan apa pun di balik login, gunakan browser Chromium bawaan.</p>
+
+<h2>Menjalankan beberapa skrip sekaligus dalam satu sesi</h2>
+
+<p>Permintaan ke sesi dan target yang sama tidak diserialisasi. Dua eksekusi yang tumpang
+tindih pada halaman sama akan mengganggu satu sama lain - satu sedang bernavigasi sementara
+yang lain membaca. Untuk menjalankan secara paralel di dalam satu sesi, beri setiap
+eksekusi target sendiri: buat halaman tambahan dengan API pembuatan DevTools Browser Targets,
+lalu kirim target ID itu sebagai <code>targetId</code> ke
+<code>/script/&lt;sessionId&gt;</code>. Halaman yang dibuat dengan cara itu hidup di konteks
+default sesi, sehingga bertahan antar eksekusi dan bisa ditargeting lagi nanti.</p>
+
+<p>Detail terkait: <code>/script</code> selalu mem-pin eksekusi ke halaman pertama sesi
+dan mengembalikan target itu di header <code>cf-browser-target-id</code>. Pada
+<code>/script/&lt;sessionId&gt;</code> tidak ada fallback ke halaman lain ketika target
+yang Anda sebut tidak terbuka. 404 di sana biasanya berarti target ID Anda sudah basi,
+bukan berarti sesinya mati.</p>
+
+<h2>Di mana ini masuk ke alur konten sosial</h2>
+
+<p>Bagi siapa pun yang mengarsipkan konten sosial, daya tarik <code>/script</code> bersifat
+spesifik: ia menghapus langkah deploy antara "saya mau halaman ini" dan "saya punya halaman
+ini". Quick Actions sebenarnya sudah memberi Anda <code>/content</code>,
+<code>/markdown</code>, <code>/screenshot</code>, dan <code>/scrape</code> dalam satu
+permintaan masing-masing, dan endpoint <code>/snapshot</code> menambahkan beberapa format
+dari satu kali pemuatan halaman. Yang ditambahkan <code>/script</code> adalah kasus banyak
+langkah - masuk ke akun, buka balasan, klik ke kutipan, tunggu gambar lazy, baru ekstrak -
+sebagai satu permintaan alih-alih rantai permintaan, tanpa menulis Worker.</p>
+
+<p>Catatan jujurannya: endpoint ini adalah browser, dan browser itu bisa dikenali.
+Dokumentasi Cloudflare sendiri menyatakan bahwa permintaan dari Browser Run selalu akan
+dikenali sebagai bot dan bahwa <code>userAgent</code> yang bisa disesuaikan tidak
+mengubah hal itu. Situs yang memblokir lalu lintas dari pusat data tetap akan memblokir
+Anda. Itu batasan yang sama dengan setiap penangkapan headless, dan itulah alasan arsip
+milik Anda sendiri lebih berharga daripada penangkapan yang Anda sewa.</p>
+
+<pre><code># 3. Attach provenance to the capture, then keep your own copy of the
+#    source-side record. The capture time belongs next to the content.
+
+printf '%s\n' \
+  "source_url: https://example.com/article" \
+  "captured_at: 2026-11-21T09:00:00Z" \
+  "browser_ms_used: 4210" \
+  "session_id: SESSION_ID" \
+  | tee archive/article-provenance.yml
+
+# ThreadGrab keeps the profile record as JSON, with the fetch time attached.
+curl -s "https://threadgrab.com/api/profile/USERNAME" \
+  -H "Accept: application/json" \
+  -o archive/USERNAME-profile.json</code></pre>
+
+<p>Jadi alur praktisnya begini: gunakan <code>/script</code> untuk mendapatkan konten
+rendered yang tidak bisa Anda dapatkan dengan cara lain, tutup sesi secara eksplisit, dan
+catat waktu pengambilan serta URL sumber di samping apa yang Anda simpan. Kontennya adalah
+asetnya. Sesi browser hanyalah alat yang menghasilkannya, dan itu ditagih sampai Anda
+berkata berhenti.</p>
+
+<h2>FAQ</h2>
+
+<div class="faq-item"><h3>Apakah saya harus men-deploy Worker untuk memakai endpoint /script?</h3><p>Tidak. Browser Run menjalankan fungsi yang Anda kirim di dalam Worker terisolasi yang terhubung ke sesi browser, jadi tidak ada yang perlu di-deploy sebelum eksekusi. Anda juga bisa memanggil <code>env.BROWSER.script()</code> dari Worker yang sudah Anda miliki, tanpa token API, atau mencoba skrip dari halaman Script Studio di dasbor Cloudflare.</p></div>
+<div class="faq-item"><h3>Apakah endpoint /script menutup sesi browser secara otomatis?</h3><p>Tidak. Tidak ada satu pun dari kedua endpoint yang menutup sesi setelah skrip Anda mulai - bukan saat sukses, bukan saat error, bukan saat timeout. Sesi terus berjalan dan terus dihitung sebagai jam browser Anda sampai Anda menutupnya dengan DELETE pada endpoint devtools browser atau memanggil browser.close(), atau sampai batas waktu idle keep_alive habis (60 detik secara default, sampai 20 menit).</p></div>
+<div class="faq-item"><h3>Apa perbedaan antara error 408 dan error 422?</h3><p>Error 408 berarti timeout Anda sendiri lebih rendah daripada default pustaka, sehingga batas eksekusi memutus panggilan lambat itu. Error 422 berarti timeout pustaka menyala lebih dulu - biasanya default 30 detik pada page.goto() - dan skrip Anda melempar exception. Naikkan timeout pustaka di dalam skrip dan jagalah tetap di bawah timeout Anda untuk perilaku yang Anda inginkan.</p></div>
+<div class="faq-item"><h3>Berapa biaya sebuah skrip kustom?</h3><p>Jam browser dipakai bersama oleh semua metode Browser Run. Workers Free mencakup 10 menit per hari; Workers Paid mencakup 10 jam per bulan lalu menagih US$ 0,09 per jam tambahan. Browser yang berjalan bersamaan ditagih terpisah, dan perhatikan bahwa Anda membayar berdasarkan umur sesi, bukan per permintaan, sehingga sesi yang tidak ditutup terus berbiaya sampai kehabisan waktu idle.</p></div>
+<div class="faq-item"><h3>Bisakah saya menjalankan skrip kustom secara lokal saat pengembangan?</h3><p>Tidak. Metode script() tidak didukung dalam mode pengembangan lokal. Gunakan npx wrangler dev --remote, atau setel remote ke true pada konfigurasi binding browser. Ini berbeda dari Quick Actions, yang jalan lokal memakai instance Chrome di mesin Anda sendiri.</p></div>
+<div class="faq-item"><h3>Apakah Kitesurf sama dengan browser bawaan?</h3><p>Tidak. Kitesurf adalah browser stateless milik Cloudflare untuk agen AI, dan ia mengikuti aturan berbeda: hanya runner CDP yang didukung, opsi peluncuran tidak berlaku, dan tidak ada sesi yang bisa dipakai ulang sehingga eksekusi Kitesurf tidak bisa dilanjutkan. Ia juga tidak bernegosiasi handshake tantangan bot dengan sidik jari TLS asli, sehingga tidak cocok untuk sesi terautentikasi jangka panjang.</p></div>
+<div class="faq-item"><h3>Apakah user agent kustom mencegah situs memblokir Browser Run?</h3><p>Tidak. Cloudflare menyatakan bahwa permintaan dari Browser Run selalu akan dikenali sebagai bot dan bahwa user agent yang bisa disesuaikan tidak melewati proteksi bot. Server tujuan yang ingin memblokir Browser Run bisa mengenaliinya, sehingga penangkapan headless tetap terbatas di situs yang memblokir lalu lintas pusat data.</p></div>
+
+<h2>Intinya</h2>
+
+<p>Endpoint <code>/script</code> dari Cloudflare adalah perubahan nyata bagi siapa pun yang
+butuh kerja browser banyak langkah tanpa menjalankan infrastruktur: kode Playwright atau
+Puppeteer Anda dikirim sebagai satu permintaan HTTP dan kembali sebagai JSON. Tiga hal
+perlu dihafal sebelum Anda bergantung padanya.</p>
+
+<p>Pertama, sesi itu milik Anda. Ia tidak pernah menutup dirinya sendiri, ia tetap
+berbiaya sampai kehabisan waktu idle, dan menutupnya adalah panggilan terpisah. Kedua,
+timeout yang Anda tetapkan dan timeout pustaka Anda adalah dua angka berbeda yang gagal
+dengan kode status berbeda. Ketiga, kuota konkurensi terdokumentasi di dua tempat yang
+saling berbeda - pakai halaman pricing, karena itu yang lebih baru dan karena menjelaskan
+bagaimana rata-ratanya dihitung.</p>
+
+<p>Dan simpan salinan Anda sendiri dari yang Anda tangkap. Sesi browser adalah waktu sewa
+di infrastruktur Cloudflare; arsipnya adalah bagian yang tetap milik Anda.</p>
+
+<div class="related"><h3>Related on ThreadGrab</h3><ul><li><a href="/id/blog/cf-browser-run-concurrency-throughput-threadgrab-2026.html">CF Browser Run Concurrency 2026: Throughput ThreadGrab Naik Dua Kali Lipat</a></li>
+<li><a href="/id/blog/x-thread-archiving-tools-2026.html">Pengarsipan Thread X 2026: 5 Alat Dibandingkan</a></li>
+<li><a href="/id/blog/x-to-markdown-3-methods-2026.html">X ke Markdown 2026: 3 Cara Menyimpan Thread &amp; Artikel X</a></li>
+<li><a href="/id/blog/search-result-redirects-cloaking-goto-2026.html">Redirect Hasil Pencarian 2026: GOTO, Cloaking, Bayar per Request</a></li>
+<li><a href="/id/blog/koalisi-spur-telemetri-konten-2026.html">Koalisi SPUR 2026: Telemetri Konten untuk Penerbit</a></li></ul></div>
+
+<div class="cta">
+  <h3>Arsipkan halaman yang sudah dirender, bukan hanya URL-nya</h3>
+  <p style="margin-bottom: 8px;">ThreadGrab menyimpan thread publik X, post Bluesky, dan artikel LinkedIn sebagai Markdown dan JSON yang bersih, lengkap dengan waktu pengambilan. Sesi browser bisa mengambil halaman yang sudah dirender; arsipnya yang tetap milik Anda setelah itu.</p>
+  <a href="https://threadgrab.com/id/" class="cta-btn">Coba ThreadGrab &rarr;</a>
+</div>
+
+<div class="sources">
+
+<p><strong>Sumber primer</strong></p>
+<ul>
+<li><a href="https://developers.cloudflare.com/changelog/post/2026-11-20-script-endpoint/">Cloudflare Changelog &mdash; Run custom scripts in Browser Run with /script, 20 Nov 2026</a></li>
+<li><a href="https://developers.cloudflare.com/browser-run/script/">Cloudflare Docs &mdash; Custom scripts: endpoint, argumen runner, nilai balik, tabel error dan timeout, siklus hidup sesi</a></li>
+<li><a href="https://developers.cloudflare.com/browser-run/limits/">Cloudflare Docs &mdash; Limits: tabel Workers Free dan Workers Paid, konkurensi dan keep_alive, diperbarui 14 Okt 2026</a></li>
+<li><a href="https://developers.cloudflare.com/browser-run/pricing/">Cloudflare Docs &mdash; Pricing: jam browser, tarif browser bersamaan, X-Browser-Ms-Used, diperbarui 20 Nov 2026</a></li>
+<li><a href="https://developers.cloudflare.com/browser-run/get-started/">Cloudflare Docs &mdash; Get started: memilih antara Quick Actions, Browser Sessions, dan Custom scripts</a></li>
+<li><a href="https://developers.cloudflare.com/browser-run/kitesurf/">Cloudflare Docs &mdash; Kitesurf: browser stateless, hanya CDP, batasan dan apa yang tidak bisa dilakukannya</a></li>
+<li><a href="https://developers.cloudflare.com/browser-run/quick-actions/markdown-endpoint/">Cloudflare Docs &mdash; Markdown endpoint: user agent kustom tidak melewati proteksi bot</a></li>
+<li><a href="https://blog.cloudflare.com/kitesurf">Cloudflare Blog &mdash; Kitesurf, browser stateless untuk agen AI</a></li>
+</ul>
+
+</div>
+
+  </main>
+  <footer>
+    <a href="https://threadgrab.com/id/">Home</a>
+    <a href="/id/blog/">Blog</a>
+    <a href="https://threadgrab.com/id/about/">About</a>
+    <a href="https://threadgrab.com/id/privacy/">Privacy</a>
+    <span style="margin-left:12px;">&copy; 2026 ThreadGrab</span>
+  </footer>
+</body>
+</html>

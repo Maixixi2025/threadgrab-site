@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloudflare Browser Run /script: Automacao de Navegador</title>
+  <meta name="description" content="Cloudflare lancou o /script do Browser Run em 20 de novembro de 2026: uma chamada de API roda seu codigo Playwright, mas a sessao fica aberta e cobra.">
+  <meta name="keywords" content="Cloudflare Browser Run, endpoint /script, automacao de navegador, Playwright, Puppeteer, Chrome DevTools Protocol, sessao de navegador, keep_alive, X-Browser-Ms-Used, arquivo de conteudo social, ThreadGrab">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="ThreadGrab">
+  <link rel="canonical" href="https://threadgrab.com/pt/blog/cloudflare-browser-run-script-2026.html">
+  <link rel="alternate" hreflang="en" href="https://threadgrab.com/en/blog/cloudflare-browser-run-script-2026.html">
+  <link rel="alternate" hreflang="pt" href="https://threadgrab.com/pt/blog/cloudflare-browser-run-script-2026.html">
+  <link rel="alternate" hreflang="id" href="https://threadgrab.com/id/blog/cloudflare-browser-run-script-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://threadgrab.com/en/blog/cloudflare-browser-run-script-2026.html">
+  <meta property="og:title" content="Cloudflare Browser Run /script: Automacao de Navegador">
+  <meta property="og:description" content="Cloudflare lancou o /script do Browser Run em 20 de novembro de 2026: uma chamada de API roda seu codigo Playwright, mas a sessao fica aberta e cobra.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threadgrab.com/pt/blog/cloudflare-browser-run-script-2026.html">
+  <meta property="og:site_name" content="ThreadGrab">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="article:published_time" content="2026-11-21">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cloudflare Browser Run /script: Automacao de Navegador">
+  <meta name="twitter:description" content="Cloudflare lancou o /script do Browser Run em 20 de novembro de 2026: uma chamada de API roda seu codigo Playwright, mas a sessao fica aberta e cobra.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+    header { padding: 20px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo span { color: #20d5ec; }
+    .lang-bar { margin-left: auto; display: flex; gap: 6px; }
+    .lang-bar a { color: #888; text-decoration: none; font-size: 0.85rem; padding: 4px 8px; border-radius: 4px; }
+    .lang-bar a:hover, .lang-bar a.active { color: #fff; background: #222; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+    .breadcrumb { color: #666; font-size: 0.85rem; margin-bottom: 24px; }
+    .breadcrumb a { color: #20d5ec; text-decoration: none; }
+    h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); line-height: 1.25; margin-bottom: 12px; }
+    h1 span { color: #20d5ec; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 32px; }
+    h2 { font-size: 1.4rem; margin: 36px 0 16px; }
+    h3 { font-size: 1.1rem; margin: 24px 0 12px; }
+    p { margin-bottom: 16px; color: #ccc; }
+    a { color: #20d5ec; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.9rem; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #222; }
+    th { color: #20d5ec; font-weight: 600; }
+    td { color: #ccc; }
+    pre { background: #1a1a1a; border-radius: 8px; padding: 16px; overflow-x: auto; margin: 16px 0 24px; }
+    pre code { font-family: 'SF Mono', Monaco, monospace; font-size: 0.85rem; color: #e0e0e0; }
+    ul { margin: 0 0 16px 20px; color: #ccc; }
+    li { margin-bottom: 8px; }
+    .faq-item { margin-bottom: 20px; }
+    .faq-item h3 { font-size: 1rem; color: #fff; margin-bottom: 6px; }
+    .faq-item p { color: #aaa; font-size: 0.95rem; }
+    .related { background: #141414; border: 1px solid #1f1f1f; border-radius: 10px; padding: 18px 22px; margin: 28px 0; }
+    .related h3 { margin-top: 0; }
+    .related ul { list-style: none; padding: 0; margin: 0; }
+    .related a { text-decoration: none; }
+    .cta { background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%); border-radius: 12px; padding: 28px; margin: 32px 0 24px; }
+    .cta h3 { margin-top: 0; margin-bottom: 8px; color: #fff; }
+    .cta-btn { display: inline-block; margin-top: 12px; padding: 10px 22px; background: #20d5ec; color: #000; font-weight: 600; border-radius: 6px; text-decoration: none; }
+    footer { border-top: 1px solid #1a1a1a; padding: 24px; text-align: center; color: #666; font-size: 0.85rem; }
+    footer a { color: #888; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #20d5ec; }
+    .sources { color: #777; font-size: 0.88rem; line-height: 1.7; }
+    .sources a { color: #20d5ec; }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a class="logo" href="https://threadgrab.com/pt/">Thread<span>Grab</span></a>
+    <div class="lang-bar">
+      <a href="https://threadgrab.com/en/blog/cloudflare-browser-run-script-2026.html">EN</a>
+      <a href="https://threadgrab.com/pt/blog/cloudflare-browser-run-script-2026.html" class="active">PT</a>
+      <a href="https://threadgrab.com/id/blog/cloudflare-browser-run-script-2026.html">ID</a>
+    </div>
+  </header>
+  <main>
+    <div class="breadcrumb">
+      <a href="https://threadgrab.com/pt/">Home</a> &rsaquo; <a href="/pt/blog/">Blog</a> &rsaquo; Cloudflare Browser Run /script: Automacao de Navegador
+    </div>
+
+    <h1>Cloudflare Browser Run /script: <span>Automacao de Navegador</span></h1>
+    <p class="meta">21 de Novembro, 2026 &middot; 11 min de leitura &middot; Ferramentas de Redes Sociais</p>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Cloudflare Browser Run /script: Automacao de Navegador",
+  "description": "Cloudflare lancou o /script do Browser Run em 20 de novembro de 2026: uma chamada de API roda seu codigo Playwright, mas a sessao fica aberta e cobra.",
+  "datePublished": "2026-11-21",
+  "dateModified": "2026-11-21",
+  "author": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/pt/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ThreadGrab",
+    "url": "https://threadgrab.com/pt/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://threadgrab.com/og-image.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://threadgrab.com/pt/blog/cloudflare-browser-run-script-2026.html"
+  }
+}
+    </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://threadgrab.com/pt/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://threadgrab.com/pt/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Cloudflare Browser Run /script: Automacao de Navegador",
+      "item": "https://threadgrab.com/pt/blog/cloudflare-browser-run-script-2026.html"
+    }
+  ]
+}
+    </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Preciso implantar um Worker para usar o endpoint /script?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nao. O Browser Run executa a funcao enviada em um Worker isolado conectado a sessao do navegador, entao nao ha nada para implantar antes da execucao. Voce tambem pode chamar env.BROWSER.script() de um Worker que voce ja tem, sem token de API, ou testar scripts na pagina Script Studio do painel da Cloudflare."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O endpoint /script fecha a sessao do navegador automaticamente?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nao. Nenhum dos dois endpoints fecha a sessao depois que o seu script comecou - nem no sucesso, nem em erro, nem em timeout. A sessao continua rodando e continua contando para as suas horas de navegador ate voce fecha-la com um DELETE no endpoint devtools browser ou chamar browser.close(), ou ate o timeout de ociosidade keep_alive expirar (60 segundos por padrao, ate 20 minutos)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual a diferenca entre um erro 408 e um erro 422?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Um 408 significa que o seu proprio timeout era menor que o padrao da biblioteca, entao o limite de execucao interrompeu a chamada lenta. Um 422 significa que o timeout da biblioteca disparou primeiro - geralmente os 30 segundos padrao do page.goto() - e o seu script lancou excecao. Aumente o timeout da biblioteca dentro do script e mantenha-o abaixo do seu timeout para obter o comportamento que voce espera."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto custa um script personalizado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As horas de navegador sao compartilhadas por todos os metodos do Browser Run. O Workers Free inclui 10 minutos por dia; o Workers Paid inclui 10 horas por mes e depois cobra US$ 0,09 por hora adicional. Os navegadores concorrentes sao cobrados separadamente, e repare que voce paga pelo tempo de vida da sessao e nao por requisicao, entao uma sessao nao fechada continua custando dinheiro ate expirar por ociosidade."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Posso rodar scripts personalizados localmente durante o desenvolvimento?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nao. O metodo script() nao e suportado no modo de desenvolvimento local. Use npx wrangler dev --remote, ou defina remote como true na configuracao do binding do navegador. Isso difere das Quick Actions, que funcionam localmente contra uma instancia do Chrome na sua propria maquina."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O Kitesurf e o mesmo que o navegador padrao?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nao. Kitesurf e o navegador sem estado da Cloudflare para agentes de IA, e segue regras diferentes: apenas o runner CDP e suportado, opcoes de inicializacao nao se aplicam e nenhuma sessao reutilizavel e criada, entao uma execucao no Kitesurf nao pode ser continuada. Ele tambem nao negocia um handshake de desafio de bot com impressoes digitais de TLS reais, o que o descarta para sessoes autenticadas de longa duracao."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Um user agent customizado impede os sites de bloquearem o Browser Run?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nao. A Cloudflare afirma que as requisicoes do Browser Run sempre serao identificadas como bot e que o user agent configuravel nao contorna a protecao contra bots. Servidores de destino que queiram bloquear o Browser Run consegue identifica-lo, entao a captura headless continua sendo uma abordagem limitada em sites que bloqueiam trafego de datacenter."
+      }
+    }
+  ]
+}
+    </script>
+
+
+<p>Em 20 de novembro de 2026, a Cloudflare adicionou um endpoint que permite executar seu
+proprio codigo de automacao de navegador com uma unica requisicao HTTP. Voce envia uma
+funcao JavaScript, a Cloudflare adquire um navegador real, executa sua funcao contra ele em
+um Worker isolado e devolve um resultado JSON. Sem Worker para implantar, sem navegador
+para babysitar, sem sessao para manter aberta.</p>
+
+<p>Esse e o titulo. E tambem a parte que da para errar com facilidade, porque o mesmo
+lancamento contem um conjunto de regras sobre quem fecha a sessao, quando ela para de custar
+dinheiro e qual codigo de erro voce recebe quando inverte a ordem das coisas. Errar essas
+regras transforma silenciosamente um fluxo de uma requisicao em uma fatura que cresce a cada
+minuto.</p>
+
+<p>Este e um olhar sobre o que realmente foi lancado, lido no changelog e na documentacao de
+API da propria Cloudflare, para quem trabalha capturando conteudo social - posts, threads e
+artigos que ficam atras de um login ou que so aparecem depois que o JavaScript roda.</p>
+
+<h2>O que foi lancado em 20 de novembro de 2026</h2>
+
+<p>A entrada no changelog e curta: "Run custom scripts in Browser Run with /script". A
+documentacao por baixo dela e onde esta o detalhe util.</p>
+
+<table>
+<tr><th>Endpoint</th><th>O que faz</th><th>Sessao</th></tr>
+<tr><td><code>POST /script</code></td><td>Executa sua funcao e deixa o Browser Run adquirir o navegador</td><td>Cria uma; os IDs de sessao e de target voltam nos cabecalhos da resposta</td></tr>
+<tr><td><code>POST /script/&lt;sessionId&gt;</code></td><td>Executa uma funcao seguinte em uma sessao que voce ja tem</td><td>Reaproveita a sessao, entao paginas, cookies e historico de navegacao sobrevivem entre chamadas</td></tr>
+</table>
+
+<p>O corpo da requisicao sempre precisa de <code>code</code>, uma expressao de funcao
+JavaScript. Voce escolhe o runner com <code>library</code>: <code>playwright</code>,
+<code>puppeteer</code>, ou omite e usa o Chrome DevTools Protocol puro. A funcao e
+chamada com um objeto especifico da biblioteca - o Playwright recebe
+<code>{ page, context, browser, request }</code>, o Puppeteer recebe
+<code>{ page, browser, request }</code>, e o CDP recebe
+<code>{ send, on, off, sessionId, targetId, request }</code> no lugar.</p>
+
+<p>O valor que voce devolve vira o corpo da resposta. Um valor serializavel em JSON volta
+como <code>{ "success": true, "result": ... }</code>. Se voce devolver <code>null</code> ou
+<code>undefined</code>, recebe <code>result: null</code>. Se devolver um
+<code>Response</code> com corpo JSON, o Browser Run mantem seus cabecalhos, mas reescreve
+o status para 200. Se devolver dados binarios, eles passam intactos com o proprio content
+type.</p>
+
+<h2>A sessao e sua para fechar, e e isso tudo</h2>
+
+<p>Esta e a parte que vale ler duas vezes.</p>
+
+<p>Nenhum dos dois endpoints fecha a sessao depois que o seu script roda. Nao no sucesso,
+nao em erro de compilacao, nao em excecao, nao em timeout. A Cloudflare fecha a sessao em
+exatamente um caso: quando <code>/script</code> falha <em>depois</em> de adquirir o
+navegador, mas <em>antes</em> do seu script comecar - e, nesse caso, voce nunca recebeu o
+ID da sessao de qualquer forma.</p>
+
+<p>Uma vez que o script comeca, a sessao continua rodando e continua contando para as suas
+horas de navegador ate o timeout de ociosidade expirar. Esse timeout e o
+<code>keep_alive</code>, que tem padrao de 60.000 milissegundos (um minuto) e pode ser
+definido entre 10.000 e 1.200.000 milissegundos (vinte minutos).</p>
+
+<p>Entao a conta e esta: uma requisicao que falha as 14:00 e nunca e fechada continua
+cobrando ate as 14:01, no minimo. Uma requisicao que falha as 14:00 com
+<code>keep_alive=120000</code> continua cobrando ate as 14:02. Se voce roda um laco sobre
+cinquenta URLs e quatro delas lancam excecao, agora existem quatro navegadores abertos ate
+eles expirarem sozinhos.</p>
+
+<p>O fechamento e explicito. Chame <code>DELETE /devtools/browser/&lt;sessionId&gt;</code>,
+ou chame <code>browser.close()</code> no fim do seu ultimo script. Desconectar nao basta -
+abandonar um WebSocket ou chamar <code>puppeteer.disconnect()</code> nao fecha o navegador,
+porque o navegador nunca pertenceu ao seu processo.</p>
+
+<pre><code># 2. Continue the same session, then close it.
+#    /script NEVER closes the session for you - not on success, not on a
+#    422. An open session keeps running and keeps billing until keep_alive
+#    expires, which is 60 seconds by default and 20 minutes at the maximum.
+
+curl -s -X POST \
+  "https://api.cloudflare.com/client/v4/accounts/ACCOUNT_ID/browser-run/script/SESSION_ID" \
+  -H "Authorization: Bearer YOUR_CF_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "code": "async function ({ page }) { return { url: page.url() }; }",
+    "library": "playwright",
+    "targetId": "TARGET_ID"
+  }'
+
+# Close it explicitly, or the browser stays alive and stays billable.
+curl -s -X DELETE \
+  "https://api.cloudflare.com/client/v4/accounts/ACCOUNT_ID/browser-run/devtools/browser/SESSION_ID" \
+  -H "Authorization: Bearer YOUR_CF_TOKEN"</code></pre>
+
+<p>Mais uma armadilha da mesma familia: o Browser Run fecha um navegador para voce quando a
+tarefa termina apenas se ele nunca virou sessao. Uma vez no modo de sessao, o navegador
+sobrevive a requisicao que o criou.</p>
+
+<h2>Quanto custa, e onde as proprias paginas da Cloudflare discordam</h2>
+
+<p>As horas de navegador sao compartilhadas por todos os metodos - Quick Actions,
+Puppeteer, Playwright, CDP e scripts personalizados puxam do mesmo reservatorio. O Workers
+Free da 10 minutos de tempo de navegador por dia. O Workers Paid da 10 horas por mes e
+depois cobra US$ 0,09 por hora adicional.</p>
+
+<p>Os navegadores concorrentes sao cobrados separadamente, e e aqui que a documentacao da
+Cloudflare tem uma inconsistencia real que custa dinheiro se voce ler apenas uma das duas
+paginas.</p>
+
+<table>
+<tr><th>Fonte</th><th>Navegadores concorrentes no Workers Paid</th><th>Data da pagina</th></tr>
+<tr><td>Pagina de limites</td><td>200 por conta</td><td>Modificada em 14 de out 2026</td></tr>
+<tr><td>Pagina de precos</td><td>10 navegadores na media mensal, depois US$ 2,00 por navegador adicional</td><td>Modificada em 20 de nov 2026</td></tr>
+</table>
+
+<p>A pagina de precos e a mais nova, e tambem e a que explica como o numero e realmente
+calculado: a Cloudflare registra seu pico diario de concorrencia e faz a media desses picos
+ao longo do mes. Entao uma carga de trabalho que sobe para 40 navegadores numa tarde e fica
+em 2 no resto do mes e cobrado por algo proximo a media mensal, e nao por 40.</p>
+
+<p>A pagina de limites, mexida seis dias antes da pagina de precos, ainda diz 200 por
+conta. Lidas juntas, a leitura honesta e esta: 200 e o teto maximo, 10 e a cota inclusa, e
+tudo acima de 10 e cobrado pela media mensal. Se o seu fluxo realmente roda 200 navegadores
+concorrentes todo dia, a linha de US$ 2,00 por navegador e a que aparece na sua fatura.</p>
+
+<p>Mais dois detalhes de cobranca que valem conhecer. Primeiro, as horas de navegador sao
+cobradas pelo <em>tempo de vida da sessao</em>, e nao por requisicao - uma sessao que fica
+ociosa por dezenove minutos sao dezenove minutos de tempo cobravel, mesmo que voce tenha
+feito apenas uma chamada. Segundo, requisicoes que falham em geral nao sao cobradas: uma
+Quick Action que falha com erro de <code>waitForTimeout</code> nao cobra a sessao.</p>
+
+<p>Voce consegue ver o que esta gastando durante a execucao. Toda resposta de Quick Action
+e de <code>/script</code> traz o cabecalho <code>X-Browser-Ms-Used</code>. Para
+<code>/script</code> ele informa o tempo de navegador acumulado desde o inicio da sessao,
+nao apenas esta chamada - que e exatamente o numero que importa, porque e o numero que
+decide se voce fechou a sessao a tempo.</p>
+
+<h2>Os timeouts vem em duas camadas, e falham de formas diferentes</h2>
+
+<p>O campo <code>timeout</code> limita toda a execucao do script, sem contar o tempo de
+aquisicao do navegador. O padrao e 60 segundos e o maximo e 120 segundos. Mas a Cloudflare
+nao repassa seu <code>timeout</code> para dentro do Playwright ou do Puppeteer, entao as
+chamadas dentro do seu script mantem os padroes das bibliotecas - e nas duas, o
+<code>page.goto()</code> e os metodos <code>waitFor*</code> expiram depois de 30
+segundos.</p>
+
+<p>Qual dos dois dispara primeiro decide o codigo de erro que voce recebe:</p>
+
+<ul>
+<li>Se o seu <code>timeout</code> for <em>menor</em> que o timeout da biblioteca, o limite
+de execucao interrompe a chamada lenta e a requisicao falha com <code>408</code>.</li>
+<li>Se o seu <code>timeout</code> for <em>maior</em>, o timeout da biblioteca dispara
+primeiro, seu script lanca algo como <code>Navigation timeout of 30000 ms exceeded</code>, e
+a requisicao falha com <code>422</code>.</li>
+</ul>
+
+<p>Essa distincao importa porque 408 significa "voce pediu pouco" e 422 significa "o
+navegador desistiu antes". Se voce quiser que uma pagina lenta carregue, aumente o timeout
+da biblioteca dentro do script e mantenha-o abaixo do seu <code>timeout</code>, para que
+o script ainda consiga tratar a falha e devolver algo util.</p>
+
+<pre><code># 1. One request, one browser, one structured result.
+#    /script executes your function in an isolated Worker attached to a real
+#    browser session, so there is nothing to deploy before it runs.
+
+curl -i -X POST \
+  "https://api.cloudflare.com/client/v4/accounts/ACCOUNT_ID/browser-run/script?keep_alive=120000" \
+  -H "Authorization: Bearer YOUR_CF_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "code": "async function ({ page }) { await page.goto(\"https://example.com/article\"); return { title: await page.title(), url: page.url() }; }",
+    "library": "playwright",
+    "timeout": 45000
+  }'
+
+# The session lives in the response headers, not in the body:
+#   cf-browser-session-id:  SESSION_ID
+#   cf-browser-target-id:   TARGET_ID
+#   X-Browser-Ms-Used:      4210</code></pre>
+
+<p>A tabela completa de erros vale ter por perto: 400 para parametros invalidos, 401 para
+autenticacao ausente, 404 para sessao ou target inexistente, 408 para o seu timeout de
+execucao, 410 para sessao ja fechada, 413 para corpo acima de 10 MiB, 422 para um script
+que nao compilou ou lancou excecao, 429 para limite de taxa ou concorrencia, 503 quando
+nao ha navegador disponivel. Um 422 tambem dispara quando voce espera por uma promessa que
+nunca vai ser resolvida, entao limite as esperas.</p>
+
+<h2>Tres formas de chamar, e uma que vai te morder</h2>
+
+<table>
+<tr><th>Método</th><th>O que exige</th><th>Para que serve</th></tr>
+<tr><td>API REST</td><td>Um token com a permissao <code>Browser Run - Edit</code></td><td>Chamar de qualquer lugar, inclusive dos seus proprios scripts</td></tr>
+<tr><td>Binding do Workers</td><td>Um binding <code>browser</code> chamado <code>BROWSER</code>, sem token</td><td>Rodar dentro de um Worker que voce ja implantou</td></tr>
+<tr><td>Script Studio</td><td>Somente o painel</td><td>Testar um script interativamente antes de chamar a API</td></tr>
+</table>
+
+<p>O binding do Workers e o caminho mais limpo se voce ja roda um Worker: chame
+<code>env.BROWSER.script()</code> sem token de API nenhum. Os nomes no SDK valem nota porque
+nao sao iguais ao caminho REST - no SDK do Python, o campo <code>timeout</code> do corpo se
+chama <code>api_timeout</code>.</p>
+
+<p>A forma que vai te morder e o desenvolvimento local. O <code>script()</code> nao funciona
+no modo local. Se voce rodar <code>wrangler dev</code> e chamar, recebe um erro, e nao um
+navegador na sua maquina. Use <code>npx wrangler dev --remote</code>, ou defina
+<code>"remote": true</code> na configuracao do binding do navegador. Isso difere das Quick
+Actions, que funcionam localmente contra uma instancia do Chrome na sua propria maquina.</p>
+
+<h2>Kitesurf: um navegador diferente, com regras diferentes</h2>
+
+<p>Existe um segundo backend de navegador. <code>?browser=kitesurf</code> executa sua funcao
+no Kitesurf, o navegador sem estado da Cloudflare feito para agentes de IA. Ele e mais
+rapido e mais barato porque nao embarca um motor Chromium completo - ele troca abas, temas,
+extensoes e renderizacao pixel-perfect por escalabilidade.</p>
+
+<p>Tres restricoes valem e cada uma delas devolve <code>400</code> se voce quebrar. Apenas o
+runner CDP e suportado, entao definir <code>library</code> e erro. Opcoes de inicializacao
+nao se aplicam, entao enviar <code>keep_alive</code>, <code>recording</code> ou
+<code>lab</code> junto com <code>browser</code> e erro. E nenhuma sessao reutilizavel e
+criada: a resposta nao tem cabecalhos de sessao e nao pode ser continuada com
+<code>/script/&lt;sessionId&gt;</code>. O Kitesurf tambem segue sua propria tabela de precos
+e, hoje, esta gratis em beta.</p>
+
+<p>O Kitesurf tambem nao e a opcao para sessoes autenticadas. Ele nao negocia um handshake de
+desafio de bot com impressoes digitais de TLS reais, e nao foi feito para sessoes
+autenticadas de longa duracao que precisam de estado persistente. Para entrar em uma conta
+e capturar o que esta atras do login, use o navegador Chromium padrao.</p>
+
+<h2>Rodar varios scripts ao mesmo tempo em uma mesma sessao</h2>
+
+<p>Requisicoes para a mesma sessao e o mesmo target nao sao serializadas. Duas execucoes
+sobrepostas na mesma pagina atrapalham uma a outra - uma navega enquanto a outra le. Para
+rodar em paralelo dentro de uma sessao, de a cada execucao seu proprio target: crie uma
+pagina extra com a API de criacao de targets do DevTools Browser e passe esse target ID
+como <code>targetId</code> para <code>/script/&lt;sessionId&gt;</code>. Paginas criadas
+dessa forma vivem no contexto padrao da sessao, entao persistem entre execucoes e podem ser
+miradas de novo depois.</p>
+
+<p>Um detalhe relacionado: <code>/script</code> sempre fixa a execucao na primeira pagina
+da sessao e devolve esse target no cabecalho <code>cf-browser-target-id</code>. Em
+<code>/script/&lt;sessionId&gt;</code> nao existe fallback para outra pagina quando o
+target que voce nomeou nao esta aberto. Um 404 ali normalmente significa que seu target ID
+esta velho, e nao que a sessao morreu.</p>
+
+<h2>Onde isso entra em um fluxo de conteudo social</h2>
+
+<p>Para quem arquiva conteudo social, o appeal do <code>/script</code> e especifico: ele
+tira o passo de implantacao entre "quero esta pagina" e "tenho esta pagina". As Quick
+Actions ja davam <code>/content</code>, <code>/markdown</code>, <code>/screenshot</code> e
+<code>/scrape</code> em uma requisicao cada, e o endpoint <code>/snapshot</code> adicionou
+varios formatos em um unico carregamento de pagina. O que o <code>/script</code> acrescenta
+e o caso de multiplos passos - entrar na conta, expandir as respostas, clicar na citacao,
+esperar as imagens lazy, e so entao extrair - em uma requisicao em vez de uma cadeia delas,
+sem escrever um Worker.</p>
+
+<p>A ressalva honesta e que o endpoint e um navegador, e um navegador e identificavel. A
+propria documentacao da Cloudflare diz que as requisicoes do Browser Run sempre serao
+identificadas como bot e que um <code>userAgent</code> customizado nao muda isso. Sites que
+bloqueiam trafego de datacenter continuam bloqueando voce. Essa e a mesma restricao de
+qualquer captura headless, e e a razao pela qual um arquivo que voce tem vale mais do que
+uma captura que voce aluga.</p>
+
+<pre><code># 3. Attach provenance to the capture, then keep your own copy of the
+#    source-side record. The capture time belongs next to the content.
+
+printf '%s\n' \
+  "source_url: https://example.com/article" \
+  "captured_at: 2026-11-21T09:00:00Z" \
+  "browser_ms_used: 4210" \
+  "session_id: SESSION_ID" \
+  | tee archive/article-provenance.yml
+
+# ThreadGrab keeps the profile record as JSON, with the fetch time attached.
+curl -s "https://threadgrab.com/api/profile/USERNAME" \
+  -H "Accept: application/json" \
+  -o archive/USERNAME-profile.json</code></pre>
+
+<p>Entao o fluxo pratico e este: use o <code>/script</code> para obter o conteudo renderizado
+que voce nao conseguiria de outro jeito, feche a sessao explicitamente e anote o horario da
+captura e a URL de origem ao lado do que voce salvou. O conteudo e o ativo. A sessao de
+navegador e a ferramenta que o trouxe, e ela e cobrada ate voce dizer que pode parar.</p>
+
+<h2>FAQ</h2>
+
+<div class="faq-item"><h3>Preciso implantar um Worker para usar o endpoint /script?</h3><p>Nao. O Browser Run executa a funcao enviada em um Worker isolado conectado a sessao do navegador, entao nao ha nada para implantar antes da execucao. Voce tambem pode chamar <code>env.BROWSER.script()</code> de um Worker que voce ja tem, sem token de API, ou testar scripts na pagina Script Studio do painel da Cloudflare.</p></div>
+<div class="faq-item"><h3>O endpoint /script fecha a sessao do navegador automaticamente?</h3><p>Nao. Nenhum dos dois endpoints fecha a sessao depois que o seu script comecou - nem no sucesso, nem em erro, nem em timeout. A sessao continua rodando e continua contando para as suas horas de navegador ate voce fecha-la com um DELETE no endpoint devtools browser ou chamar browser.close(), ou ate o timeout de ociosidade keep_alive expirar (60 segundos por padrao, ate 20 minutos).</p></div>
+<div class="faq-item"><h3>Qual a diferenca entre um erro 408 e um erro 422?</h3><p>Um 408 significa que o seu proprio timeout era menor que o padrao da biblioteca, entao o limite de execucao interrompeu a chamada lenta. Um 422 significa que o timeout da biblioteca disparou primeiro - geralmente os 30 segundos padrao do page.goto() - e o seu script lancou excecao. Aumente o timeout da biblioteca dentro do script e mantenha-o abaixo do seu timeout para obter o comportamento que voce espera.</p></div>
+<div class="faq-item"><h3>Quanto custa um script personalizado?</h3><p>As horas de navegador sao compartilhadas por todos os metodos do Browser Run. O Workers Free inclui 10 minutos por dia; o Workers Paid inclui 10 horas por mes e depois cobra US$ 0,09 por hora adicional. Os navegadores concorrentes sao cobrados separadamente, e repare que voce paga pelo tempo de vida da sessao e nao por requisicao, entao uma sessao nao fechada continua custando dinheiro ate expirar por ociosidade.</p></div>
+<div class="faq-item"><h3>Posso rodar scripts personalizados localmente durante o desenvolvimento?</h3><p>Nao. O metodo script() nao e suportado no modo de desenvolvimento local. Use npx wrangler dev --remote, ou defina remote como true na configuracao do binding do navegador. Isso difere das Quick Actions, que funcionam localmente contra uma instancia do Chrome na sua propria maquina.</p></div>
+<div class="faq-item"><h3>O Kitesurf e o mesmo que o navegador padrao?</h3><p>Nao. Kitesurf e o navegador sem estado da Cloudflare para agentes de IA, e segue regras diferentes: apenas o runner CDP e suportado, opcoes de inicializacao nao se aplicam e nenhuma sessao reutilizavel e criada, entao uma execucao no Kitesurf nao pode ser continuada. Ele tambem nao negocia um handshake de desafio de bot com impressoes digitais de TLS reais, o que o descarta para sessoes autenticadas de longa duracao.</p></div>
+<div class="faq-item"><h3>Um user agent customizado impede os sites de bloquearem o Browser Run?</h3><p>Nao. A Cloudflare afirma que as requisicoes do Browser Run sempre serao identificadas como bot e que o user agent configuravel nao contorna a protecao contra bots. Servidores de destino que queiram bloquear o Browser Run consegue identifica-lo, entao a captura headless continua sendo uma abordagem limitada em sites que bloqueiam trafego de datacenter.</p></div>
+
+<h2>O que levar em conta</h2>
+
+<p>O endpoint <code>/script</code> da Cloudflare e uma mudanca real para quem precisa de
+trabalho de navegador em multiplos passos sem rodar infraestrutura: seu codigo Playwright
+ou Puppeteer sai como uma requisicao HTTP e volta como JSON. Tres coisas valem internalizar
+antes de depender dele.</p>
+
+<p>Primeiro, a sessao e sua. Ela nunca se fecha sozinha, continua custando ate expirar por
+ociosidade, e fechar e uma chamada separada. Segundo, o timeout que voce define e o timeout
+da sua biblioteca sao numeros diferentes que falham com codigos de status diferentes. Terceiro,
+a cota de concorrencia esta documentada em dois lugares que discordam - use a pagina de
+precos, porque e a mais nova e porque ela explica como a media e calculada.</p>
+
+<p>E guarde a sua propria copia do que capturou. Uma sessao de navegador e tempo alugado na
+infraestrutura da Cloudflare; o arquivo e a parte que continua sendo sua.</p>
+
+<div class="related"><h3>Related on ThreadGrab</h3><ul><li><a href="/pt/blog/cf-browser-run-concorrencia-throughput-threadgrab-2026.html">CF Browser Run Concorrencia 2026: Throughput do ThreadGrab Dobra</a></li>
+<li><a href="/pt/blog/x-thread-archiving-tools-2026.html">Arquivamento de Threads do X em 2026: 5 Ferramentas Comparadas</a></li>
+<li><a href="/pt/blog/x-to-markdown-3-methods-2026.html">X para Markdown 2026: 3 Maneiras de Salvar Threads &amp; Artigos do X</a></li>
+<li><a href="/pt/blog/search-result-redirects-cloaking-goto-2026.html">Redirecionamentos em Resultados de Busca 2026: GOTO e Cloaking</a></li>
+<li><a href="/pt/blog/coalizao-spur-telemetria-conteudo-2026.html">Coalizao SPUR 2026: Telemetria de Conteudo para Publicadores</a></li></ul></div>
+
+<div class="cta">
+  <h3>Arquive a pagina renderizada, nao apenas a URL</h3>
+  <p style="margin-bottom: 8px;">O ThreadGrab salva threads publicas do X, posts do Bluesky e artigos do LinkedIn como Markdown e JSON limpos, com o horario da captura anexado. Uma sessao de navegador pode buscar a pagina renderizada; o arquivo e o que ainda e seu depois disso.</p>
+  <a href="https://threadgrab.com/pt/" class="cta-btn">Testar o ThreadGrab &rarr;</a>
+</div>
+
+<div class="sources">
+
+<p><strong>Fontes primarias</strong></p>
+<ul>
+<li><a href="https://developers.cloudflare.com/changelog/post/2026-11-20-script-endpoint/">Cloudflare Changelog &mdash; Run custom scripts in Browser Run with /script, 20 de nov 2026</a></li>
+<li><a href="https://developers.cloudflare.com/browser-run/script/">Cloudflare Docs &mdash; Custom scripts: endpoints, argumentos do runner, valores de retorno, tabelas de erro e timeout, ciclo de vida da sessao</a></li>
+<li><a href="https://developers.cloudflare.com/browser-run/limits/">Cloudflare Docs &mdash; Limits: tabelas Workers Free e Workers Paid, concorrencia e keep_alive, modificado em 14 de out 2026</a></li>
+<li><a href="https://developers.cloudflare.com/browser-run/pricing/">Cloudflare Docs &mdash; Pricing: horas de navegador, tarifa de navegadores concorrentes, X-Browser-Ms-Used, modificado em 20 de nov 2026</a></li>
+<li><a href="https://developers.cloudflare.com/browser-run/get-started/">Cloudflare Docs &mdash; Get started: escolha entre Quick Actions, Browser Sessions e Custom scripts</a></li>
+<li><a href="https://developers.cloudflare.com/browser-run/kitesurf/">Cloudflare Docs &mdash; Kitesurf: navegador sem estado, apenas CDP, restricoes e o que ele nao faz</a></li>
+<li><a href="https://developers.cloudflare.com/browser-run/quick-actions/markdown-endpoint/">Cloudflare Docs &mdash; Markdown endpoint: user agent customizado nao contorna a protecao contra bots</a></li>
+<li><a href="https://blog.cloudflare.com/kitesurf">Cloudflare Blog &mdash; Kitesurf, o navegador sem estado para agentes de IA</a></li>
+</ul>
+
+</div>
+
+  </main>
+  <footer>
+    <a href="https://threadgrab.com/pt/">Home</a>
+    <a href="/pt/blog/">Blog</a>
+    <a href="https://threadgrab.com/pt/about/">About</a>
+    <a href="https://threadgrab.com/pt/privacy/">Privacy</a>
+    <span style="margin-left:12px;">&copy; 2026 ThreadGrab</span>
+  </footer>
+</body>
+</html>
